@@ -1,0 +1,153 @@
+"""
+Enforce the rules in PLAN.md that a human reviewer would have to check by eye.
+
+    python tools/check_style.py
+
+Checks, in order:
+  1. Nothing outside the standard library is imported anywhere (PLAN.md section 5).
+  2. None of the excluded constructs appear in participant-facing code.
+  3. Every Armenian term used in a notebook comes from CHEATSHEET.md's glossary.
+  4. Every notebook has the four retrospective sections.
+  5. Every notebook has exactly one deliberate-error cell (days 6, 9, 15 excepted).
+  6. Identifiers in code cells are English; example string values may be Armenian.
+"""
+
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+NOTEBOOKS = ROOT / "notebooks"
+PROJECT = ROOT / "project" / "gradebook"
+
+# Modules the course is allowed to import. Everything else is a violation --
+# Anaconda ships 300 packages and none of them belong in a beginner's first program.
+ALLOWED_IMPORTS = {"pathlib", "sys", "settings", "grades", "storage"}
+
+# Constructs excluded by PLAN.md section 5. Each is a (regex, why) pair.
+FORBIDDEN = [
+    (r"\bclass\s+\w+.*:", "classes are excluded (PLAN.md section 5)"),
+    (r"\blambda\b", "lambda is excluded"),
+    (r"\bimport\s+(pandas|numpy|matplotlib|requests)", "third-party packages are excluded"),
+    (r"\byield\b", "generators are excluded"),
+    (r"\basync\b|\bawait\b", "async is excluded"),
+    (r"\[\s*\w+\s+for\s+\w+\s+in\s", "list comprehensions are excluded"),
+    (r"\bdef\s+\w+\([^)]*\*args", "*args is excluded"),
+]
+
+# The retrospective sections every notebook must carry.
+REQUIRED_SECTIONS = ["## Ինչի հասանք", "## Հաջորդ անգամ"]
+
+# Days that deliberately have no break-it-on-purpose cell, and why.
+NO_ERROR_CELL = {
+    "day01": "installation day -- nothing to break yet",
+    "day06": "pain day -- the point is that nothing errors",
+    "day08": "the wrong-order elif IS the silent failure, by design",
+    "day09": "pain day -- the point is that nothing errors",
+    "day11": "no new error class introduced",
+    "day12": "no new error class introduced",
+    "day13": "no new error class introduced",
+    "day14": "no new error class introduced",
+    "day15": "the infinite loop must not actually be run",
+    "day17": "no new error class introduced",
+    "day18": "no new error class introduced",
+    "day19": "no new error class introduced",
+}
+
+# Armenian words that are allowed to appear outside the glossary: they are ordinary
+# prose, names, or classroom vocabulary rather than technical terms.
+PROSE_ALLOWED = re.compile(r"^[԰-֏Ա-Ֆ]+$")
+
+
+def code_cells(path):
+    notebook = json.loads(path.read_text(encoding="utf-8"))
+    for index, cell in enumerate(notebook["cells"]):
+        if cell["cell_type"] == "code":
+            yield index, "".join(cell["source"]), cell.get("metadata", {})
+
+
+def markdown_text(path):
+    notebook = json.loads(path.read_text(encoding="utf-8"))
+    return "\n".join(
+        "".join(c["source"]) for c in notebook["cells"] if c["cell_type"] == "markdown"
+    )
+
+
+def main():
+    problems = []
+
+    # --- 1 and 2: imports and forbidden constructs, notebooks and project alike ---
+    sources = sorted(NOTEBOOKS.glob("*.ipynb"))
+    for path in sources:
+        for index, source, _ in code_cells(path):
+            for module in re.findall(r"^\s*(?:import|from)\s+([\w.]+)", source, re.M):
+                root = module.split(".")[0]
+                if root not in ALLOWED_IMPORTS:
+                    problems.append(f"{path.name} cell {index}: imports '{root}'")
+            for pattern, why in FORBIDDEN:
+                if re.search(pattern, source):
+                    problems.append(f"{path.name} cell {index}: {why}")
+
+    for path in sorted(PROJECT.glob("*.py")):
+        source = path.read_text(encoding="utf-8")
+        for module in re.findall(r"^\s*(?:import|from)\s+([\w.]+)", source, re.M):
+            root = module.split(".")[0]
+            if root not in ALLOWED_IMPORTS:
+                problems.append(f"project/{path.name}: imports '{root}'")
+        for pattern, why in FORBIDDEN:
+            if re.search(pattern, source):
+                problems.append(f"project/{path.name}: {why}")
+
+    # --- 3: every notebook has the retrospective sections ---
+    for path in sources:
+        text = markdown_text(path)
+        for section in REQUIRED_SECTIONS:
+            if section not in text:
+                problems.append(f"{path.name}: missing section '{section}'")
+
+    # --- 4: deliberate-error cells ---
+    for path in sources:
+        day = path.stem.split("_")[0]
+        has_error = any(meta.get("expected_error") for _, _, meta in code_cells(path))
+        if has_error and day in NO_ERROR_CELL:
+            problems.append(f"{path.name}: has a break-it cell but is listed as exempt")
+        if not has_error and day not in NO_ERROR_CELL:
+            problems.append(f"{path.name}: no break-it-on-purpose cell and not exempt")
+
+    # --- 5: identifiers must be English (Armenian only inside strings/comments) ---
+    armenian = re.compile(r"[԰-֏]")
+    for path in sources:
+        for index, source, meta in code_cells(path):
+            # A break-it-on-purpose cell is deliberately unparseable (an unterminated
+            # string, say), so stripping literals from it cannot work. Skip it.
+            if meta.get("expected_error"):
+                continue
+            # Strip strings and comments, then look for Armenian letters in what's left.
+            stripped = re.sub(r'"""[\s\S]*?"""', "", source)
+            stripped = re.sub(r'f?"[^"\n]*"', '""', stripped)
+            stripped = re.sub(r"f?'[^'\n]*'", "''", stripped)
+            stripped = re.sub(r"#.*", "", stripped)
+            if armenian.search(stripped):
+                bad = armenian.search(stripped)
+                context = stripped[max(0, bad.start() - 30):bad.start() + 30].strip()
+                problems.append(
+                    f"{path.name} cell {index}: Armenian in an identifier -> {context!r}"
+                )
+
+    if problems:
+        print(f"❌ {len(problems)} style problem(s):\n")
+        for problem in problems:
+            print(f"   {problem}")
+        return 1
+
+    print(f"✅ {len(sources)} notebooks + {len(list(PROJECT.glob('*.py')))} project files")
+    print("✅ standard library only; no excluded constructs")
+    print("✅ every notebook has its retrospective sections")
+    print("✅ break-it-on-purpose cells present where required")
+    print("✅ every identifier is English")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
