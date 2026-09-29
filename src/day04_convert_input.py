@@ -17,7 +17,7 @@
 <h3 style="color:#06c; margin-top:0;">🔄 Որտեղ էինք մնացել</h3>
 <p style="color:#06c; margin-bottom:0;">
 Չորս տեսակ՝ <code>str</code>, <code>int</code>, <code>float</code>, <code>bool</code>։
-<code>"9" + 1</code> տալիս է <code>TypeError</code>, որովհետև տեքստին թիվ չես կպցնի։
+<code>"9" + 1</code> տալիս է <code>TypeError</code>։
 </p>
 </div>
 
@@ -32,8 +32,7 @@ print(str(9))
 print(float("6.5"))
 
 #%% md
-Ամեն մեկը տալիս է **նոր** արժեք։ Բնօրինակը չի փոխվում — պարզապես ստանում ես նույն բանը
-ուրիշ տեսակով։
+Ամեն մեկը տալիս է **նոր** արժեք։ Բնօրինակը չի փոխվում։
 
 Հիմա երեկվա խնդիրը լուծված է։
 
@@ -48,8 +47,8 @@ print(round(6.4762, 1))
 print(round(6.4762))
 
 #%% md
-Երկրորդ թիվը ասում է՝ քանի նիշ թողնել ստորակետից հետո։ Եթե չգրես, կլորացնում է
-ամբողջ թվի։ Սա պետք կգա 13-րդ օրը, երբ միջին ենք հաշվելու։
+Երկրորդ թիվը ասում է՝ քանի նիշ թողնել ստորակետից հետո։ Սա պետք կգա 11-րդ օրը, երբ
+միջին ենք հաշվելու։
 
 #%% md
 ## Բ մաս: `input()` — հարցնել օգտվողից
@@ -59,9 +58,10 @@ print(round(6.4762))
 
 Գործարկի՛ր ներքևի բջիջը։ Վերևում կհայտնվի դաշտ — գրի՛ր անունդ և սեղմի՛ր Enter։
 
-#%% code interactive: Անահիտ
-teacher_name = input("Ի՞նչ է քո անունը՝ ")
-print("Բարև,", teacher_name)
+#%% code interactive: Anahit
+teacher_name = input("What is your name? ")
+
+print("Hello,", teacher_name)
 
 #%% md
 Երկու բան կատարվեց.
@@ -75,7 +75,7 @@ print("Բարև,", teacher_name)
 <p style="color:#900; margin-bottom:0;">
 Երբ բջիջը <code>input()</code> ունի, նրա կողքին հայտնվում է <b>[*]</b> և տետրը սպասում է
 քեզ։ Ուրիշ բջիջ այդ ընթացքում չի աշխատի։<br/><br/>
-Եթե մոռացել ես պատասխանել՝ գրի՛ր ինչ-որ բան և սեղմիր Enter։ Կամ սեղմի՛ր վերևի
+Եթե մոռացել ես պատասխանել՝ գրի՛ր ինչ-որ բան և սեղմի՛ր Enter։ Կամ սեղմի՛ր վերևի
 <b>■</b> (Interrupt) կոճակը։
 </p>
 </div>
@@ -90,7 +90,8 @@ print("Բարև,", teacher_name)
 Նույնիսկ եթե գրի `9`, դու ստանում ես `"9"`։ Ստուգենք։
 
 #%% code interactive: 9
-answer = input("Գնահատականը՝ ")
+answer = input("Grade: ")
+
 print(answer)
 print(type(answer))
 
@@ -100,26 +101,29 @@ print(type(answer))
 Իսկ հիմա փորձենք այդ գնահատականին մեկ միավոր ավելացնել։
 
 #%% code expected-error: TypeError
-answer = "9"           # ուղիղ այն, ինչ input()-ը կտար
+answer = "9"           # exactly what input() would have given us
+
 print(answer + 1)
 
 #%% md
 Նույն `TypeError`-ն է, ինչ երեկ։ Բայց հիմա այն հանդիպում է **իրական իրավիճակում** —
-ամեն անգամ, երբ ինչ-որ բան հարցնում ես օգտվողից և ուզում ես հաշվարկ անել։
+ամեն անգամ, երբ ինչ-որ բան հարցնում ես և ուզում ես հաշվարկ անել։
 
 Լուծումը՝ վերածի՛ր թվի։
 
 #%% code
 answer = "9"
 grade = int(answer)
+
 print(grade + 1)
 
 #%% md
 Սովորաբար դա գրում են մեկ տողում՝ `input()`-ը ուղղակի փաթաթում են `int()`-ի մեջ։
 
 #%% code interactive: 9
-grade = int(input("Գնահատականը՝ "))
-print("Մեկ միավոր ավելի՝", grade + 1)
+grade = int(input("Grade: "))
+
+print("One point more:", grade + 1)
 
 #%% md
 ### Հիմա կոտրենք
@@ -127,25 +131,25 @@ print("Մեկ միավոր ավելի՝", grade + 1)
 Իսկ ի՞նչ է լինում, եթե օգտվողը թիվ չգրի։
 
 #%% code expected-error: ValueError
-print(int("ինը"))
+print(int("nine"))
 
 #%% md
 ### Ինչ գրված է այնտեղ
 
 ```
-ValueError: invalid literal for int() with base 10: 'ինը'
+ValueError: invalid literal for int() with base 10: 'nine'
 ```
 
 | Մասը | Ի՞նչ է ասում |
 |---|---|
 | `ValueError` | «Տեսակը ճիշտ է, բայց արժեքը՝ ոչ» |
 | `invalid literal for int()` | «Սա թիվ դարձնել չեմ կարող» |
-| `'ինը'` | ուղիղ այն, ինչ չհասկացա |
+| `'nine'` | ուղիղ այն, ինչ չհասկացա |
 
 **`TypeError`-ի և `ValueError`-ի տարբերությունը.** `TypeError` — սխալ **տեսակի** բան ես
 տվել։ `ValueError` — տեսակը ճիշտ է (տեքստ), բայց բովանդակությունը թիվ չէ։
 
-15-րդ օրը կսովորենք, թե ինչպես ստուգել՝ նախքան վերածելը։
+13-րդ օրը կսովորենք, թե ինչպես ստուգել՝ նախքան վերածելը։
 
 #%% md
 <div style="border-left: 6px solid #181; background: #f2fff5; padding: 12px 16px; margin: 12px 0;">
@@ -159,52 +163,88 @@ ValueError: invalid literal for int() with base 10: 'ինը'
 
 #%% md
 <div style="border-left: 6px solid #900; background: #fff4f4; padding: 12px 16px; margin: 12px 0;">
-<h3 style="color:#900; margin-top:0;">🎯 Առաջադրանքներ</h3>
+<h3 style="color:#900; margin-top:0;">🎯 Պարտադիր առաջադրանքներ</h3>
 <p style="color:#900; margin-bottom:0;">
-<b>1. Պարտադիր։</b> Հարցրո՛ւ աշակերտի անունը և տպի՛ր «Բարև, ...»։<br/><br/>
-<b>2. Պարտադիր։</b> Հարցրո՛ւ գնահատականը, վերածի՛ր թվի և տպի՛ր այն՝ մեկ միավոր ավելացրած։<br/><br/>
-<b>3. Պարտադիր։</b> Հարցրո՛ւ երկու գնահատական և տպի՛ր դրանց միջինը՝ մեկ նիշով
-կլորացրած (<code>round</code>)։<br/><br/>
-<b>4. Պարտադիր։</b> <b>Կոտրի՛ր դիտավորյալ։</b> Առաջադրանք 2-ում գնահատականի փոխարեն
-գրի՛ր տառերով։ Կարդա՛ սխալը։<br/><br/>
-<b>5. Ցանկության դեպքում։</b> Ի՞նչ է լինում, եթե <code>int("9.5")</code> գրես։
-Նախ գուշակի՛ր, հետո ստուգի՛ր։
+<b>1.</b> Հարցրո՛ւ աշակերտի անունը և տպի՛ր ողջույն։<br/><br/>
+<b>2.</b> Հարցրո՛ւ գնահատականը, վերածի՛ր թվի և տպի՛ր այն՝ մեկ միավոր ավելացրած։<br/><br/>
+<b>3.</b> Հարցրո՛ւ երկու գնահատական և տպի՛ր դրանց միջինը՝ մեկ նիշով կլորացրած։<br/><br/>
+<b>4.</b> <b>Կոտրի՛ր դիտավորյալ։</b> Առաջադրանք 2-ում գնահատականի փոխարեն գրի՛ր
+տառերով։ Կարդա՛ սխալը։
 </p>
 </div>
 
-#%% code interactive: Անի
-# Առաջադրանք 1
+#%% code interactive: Ani
+# Exercise 1
 
-student_name = input("Աշակերտի անունը՝ ")
-print("Բարև,", student_name)
+student_name = input("Student name: ")
+
+print("Hello,", student_name)
 
 #%% code interactive: 9
-# Առաջադրանք 2 — մի մոռացիր int()-ը
+# Exercise 2 - do not forget int()
 
-grade = int(input("Գնահատականը՝ "))
+grade = int(input("Grade: "))
+
 print(grade + 1)
 
 #%% code interactive: 9; 6
-# Առաջադրանք 3 — երկու գնահատականի միջինը
+# Exercise 3 - the average of two grades
 
-first_grade = int(input("Առաջին գնահատականը՝ "))
-second_grade = int(input("Երկրորդ գնահատականը՝ "))
+first_grade = int(input("First grade: "))
+second_grade = int(input("Second grade: "))
 
 print(round((first_grade + second_grade) / 2, 1))
+
+#%% md
+<div style="border-left: 6px solid #f71; background: #fff8f2; padding: 12px 16px; margin: 12px 0;">
+<h3 style="color:#f71; margin-top:0;">🚀 Լրացուցիչ առաջադրանքներ</h3>
+<p style="color:#f71; margin-bottom:0;">
+<b>5.</b> Ի՞նչ է լինում, եթե <code>int("9.5")</code> գրես։ Նախ գուշակի՛ր, հետո
+ստուգի՛ր։ Ինչպե՞ս ճիշտ անել։<br/><br/>
+<b>6.</b> Հարցրո՛ւ երեք գնահատական և տպի՛ր միջինը։<br/><br/>
+<b>7.</b> Հարցրո՛ւ աշակերտի անունը և գնահատականը, հետո տպի՛ր մեկ տողով՝
+<code>Ani: 9</code> ձևաչափով։<br/><br/>
+<b>8.</b> Ի՞նչ է տալիս <code>str(9) + str(1)</code>։ Ինչո՞ւ է այն տարբեր
+<code>9 + 1</code>-ից։
+</p>
+</div>
+
+#%% code
+# Extra 5-8 - your space
+
+print(float("9.5"))
+
+#%% md
+<div style="border-left: 6px solid #06c; background: #f2f7ff; padding: 12px 16px; margin: 12px 0;">
+<h3 style="color:#06c; margin-top:0;">🧗 Մարտահրավեր</h3>
+<p style="color:#06c; margin-bottom:0;">
+<b>9.</b> Հարցրո՛ւ դասարանի աշակերտների թիվը և միավորների գումարը, հետո տպի՛ր միջինը՝
+երկու նիշով։<br/><br/>
+<b>10.</b> Ի՞նչ է լինում, եթե դատարկ պատասխանես (ուղղակի Enter)։ Ի՞նչ սխալ է լինում
+<code>int("")</code>-ի դեպքում։
+</p>
+</div>
+
+#%% code
+# Challenge 9-10
+
+total = 78
+how_many = 12
+
+print(round(total / how_many, 2))
 
 #%% md
 ## Ինչի հասանք
 
 - `int()`, `str()`, `float()` — փոխում են տեսակը։ `round()` — կլորացնում է։
-- `input("հարց")` — հարցնում է և սպասում պատասխանի։
+- `input("question")` — հարցնում է և սպասում պատասխանի։
 - **`input()`-ը միշտ տեքստ է տալիս։** Հաշվարկից առաջ վերածի՛ր թվի։
 - `ValueError` — տեսակը ճիշտ է, արժեքը՝ ոչ։
 
 ## Հաջորդ անգամ
 
 Այսօր երկու անգամ գրեցինք `grade = ...` և ասացինք՝ «այս մասին վաղը»։ Վաղը հենց այդ
-մասին է՝ **փոփոխականներ**։ Դա դասընթացի ամենակարևոր գաղափարն է, և հաջորդ երկու օրը
-նվիրված է դրան։
+մասին է՝ **փոփոխականներ**։
 
 ## Երկու րոպե ինքնուրույն (ըստ ցանկության)
 

@@ -8,20 +8,27 @@ background**, built to the rules in `PLAN.md` and the house style in
 |---|---|
 | **Participants** | Public-school teachers, any subject. No prior programming. |
 | **Format** | 24 sessions × 50 minutes = **20 hours exactly**, 3 per week over 8 weeks |
-| **Language** | **Armenian** prose, comments and example values; **English** code and identifiers |
+| **Language** | **Armenian** explanations; **English** everything inside a code cell |
 | **Tools** | Anaconda (Python) + VS Code. Two installs on Day 1, nothing after |
 | **Dependencies** | **Standard library only.** No `pip`, no venv, no network, no accounts, no cost |
 | **Final deliverable** | A working `python main.py` gradebook over the teacher's own class list |
 
 ## The idea
 
-Teachers learn by feeling a problem before being handed its solution. They write forty
-variables by hand (Day 6) before being shown a list (Day 10). They copy-paste twenty-five
-`if` blocks (Day 9) before being shown a loop (Day 14). They write the same six lines four
-times (Day 17) before being shown a function (Day 18).
+Teachers are given a real classroom task, solve it with what they already know, and then —
+**in the same session** — meet the tool that collapses it.
 
-Nothing is introduced as "good practice". Everything is introduced as the thing that stops
-a specific pain they felt three minutes ago. The full plan of record is §4 of `PLAN.md`.
+| Day | The task | The long way | The tool, same day |
+|---|---|---|---|
+| 6 | A register for the whole class | one variable per student | **lists** |
+| 10 | Mark the whole class | one `if` block per student | **`for` loops** |
+| 14 | Find one student's grade | two parallel lists and a position | **dictionaries** |
+| 17 | An average on every report card | the same six lines, four times | **functions** |
+| 22 | Keep the register after closing | retyping it every time | **files** |
+
+Nothing is introduced as "good practice", and **the course never tells a participant that
+the long way was there to make a point** — the task is genuine on its own terms. The full
+plan of record is §4 of `PLAN.md`.
 
 Every example is a classroom: students, grades, attendance, averages, report lines. No
 `foo`, no `x = 5`, no shopping baskets.
@@ -39,6 +46,7 @@ public_school_python/
 ├── check_setup.py          <- six checks, run on Day 1
 ├── notebooks/              <- Days 1-19, one per day  + sample_class.csv
 ├── solutions/              <- Days 2-19, handed out AFTER each session
+├── tests/                  <- 4 fortnightly tests + instructor marking guides
 ├── guides/                 <- Days 20-24, markdown, read beside the code
 ├── project/gradebook/      <- the finished reference program
 ├── src/                    <- notebook SOURCES (see below)
@@ -80,8 +88,10 @@ exact error it claims. A demo that stops failing is a bug.
 | Notebook execution | ✅ 19 notebooks, every cell, in order |
 | Deliberate errors | ✅ 9 cells raise exactly the error they claim |
 | Solutions | ✅ 18 notebooks, every cell runs |
+| Tests | ✅ 4 tests + 4 marking guides; every cell runs |
 | Project | ✅ `python main.py` end to end; 4 failure paths give one sentence each |
 | Style | ✅ stdlib only, no excluded constructs, every identifier English |
+| Language rule | ✅ no Armenian anywhere inside a code cell — verified by script |
 | **Armenian terminology** | ⏳ **awaiting native-speaker review** (Decision D9) |
 | **Fresh-laptop install test** | ⏳ **not yet run** — see `INSTRUCTOR_NOTES.md` §1 |
 

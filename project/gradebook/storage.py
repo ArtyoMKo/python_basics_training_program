@@ -1,12 +1,12 @@
 """
-Դասարանը կարդալ ֆայլից և գրել ետ։
+Read the class from a file and write it back.
 
-Այս ֆայլը ոչինչ չգիտի գնահատականների մասին։ Նրա համար դրանք պարզապես թվեր են։
+This file knows nothing about grades. To it they are just numbers.
 
-Ֆայլի ձևաչափը՝
+The file format is:
     name,grade
-    Անի,9
-    Դավիթ,6
+    Ani,9
+    Davit,6
 """
 
 from pathlib import Path
@@ -16,38 +16,39 @@ import settings
 
 def load_class(file_name=settings.CLASS_FILE):
     """
-    Կարդում է ֆայլը և վերադարձնում բառարան՝ {"Անի": 9}։
+    Read the file and return a dictionary, like {"Ani": 9}.
 
-    Եթե ֆայլը չկա, վերադարձնում է դատարկ բառարան և ասում այդ մասին —
-    ծրագիրը չի կանգնում։
+    If the file is missing, say so and return an empty dictionary - the
+    program keeps running instead of stopping with a traceback.
     """
     path = Path(file_name)
 
     if not path.exists():
-        print(f"❌ {file_name} ֆայլը չգտնվեց։")
-        print(f"   Ստուգի՛ր, որ այն կա, և որ settings.py-ում անունը ճիշտ է գրված։")
+        print(f"Could not find {file_name}")
+        print("Check that it exists, and that the name in settings.py is right.")
         return {}
 
-    # encoding="utf-8"-ը պարտադիր է, այլապես հայերեն անունները կկոտրվեն։
+    # encoding="utf-8" is required: your own class file will have Armenian
+    # names in it, and without this they come back broken.
     lines = path.read_text(encoding="utf-8").strip().splitlines()
 
     class_grades = {}
 
-    # Առաջին տողը վերնագիրն է (name,grade), ուստի սկսում ենք երկրորդից։
+    # The first line is the header (name,grade), so start from the second.
     for line in lines[1:]:
         if not line.strip():
             continue
 
         parts = line.split(",")
         if len(parts) != 2:
-            print(f"⚠️  Այս տողը բաց թողնվեց, որովհետև ստորակետը մեկը չէ՝ {line}")
+            print(f"Skipped this line - it does not have exactly one comma: {line}")
             continue
 
         student_name = parts[0].strip()
         grade_text = parts[1].strip()
 
         if not grade_text.isdigit():
-            print(f"⚠️  {student_name} — «{grade_text}»-ը թիվ չէ, տողը բաց թողնվեց։")
+            print(f"Skipped {student_name} - '{grade_text}' is not a number.")
             continue
 
         class_grades[student_name] = int(grade_text)
@@ -56,7 +57,7 @@ def load_class(file_name=settings.CLASS_FILE):
 
 
 def save_class(class_grades, file_name=settings.CLASS_FILE):
-    """Գրում է բառարանը ետ ֆայլ՝ նույն ձևաչափով։"""
+    """Write the dictionary back to the file, in the same format."""
     path = Path(file_name)
     path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -66,11 +67,11 @@ def save_class(class_grades, file_name=settings.CLASS_FILE):
 
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-    print(f"✅ Պահպանվեց՝ {file_name} ({len(class_grades)} աշակերտ)")
+    print(f"Saved {file_name} ({len(class_grades)} students)")
 
 
 if __name__ == "__main__":
-    print("Ստուգում՝ storage.py")
+    print("Checking storage.py")
     loaded = load_class()
-    print(f"Կարդացվեց {len(loaded)} աշակերտ")
+    print(f"read {len(loaded)} students")
     print(loaded)

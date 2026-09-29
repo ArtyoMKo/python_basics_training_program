@@ -27,11 +27,13 @@ ALLOWED_IMPORTS = {"pathlib", "sys", "settings", "grades", "storage"}
 
 # Constructs excluded by PLAN.md section 5. Each is a (regex, why) pair.
 FORBIDDEN = [
-    (r"\bclass\s+\w+.*:", "classes are excluded (PLAN.md section 5)"),
+    # Anchored to the start of a line so the words "class average" in a string
+    # are not mistaken for a class definition.
+    (r"(?m)^\s*class\s+\w+\s*[(:]", "classes are excluded (PLAN.md section 5)"),
     (r"\blambda\b", "lambda is excluded"),
     (r"\bimport\s+(pandas|numpy|matplotlib|requests)", "third-party packages are excluded"),
-    (r"\byield\b", "generators are excluded"),
-    (r"\basync\b|\bawait\b", "async is excluded"),
+    (r"(?m)^\s*yield\b", "generators are excluded"),
+    (r"(?m)^\s*(async|await)\b", "async is excluded"),
     (r"\[\s*\w+\s+for\s+\w+\s+in\s", "list comprehensions are excluded"),
     (r"\bdef\s+\w+\([^)]*\*args", "*args is excluded"),
 ]
@@ -42,17 +44,17 @@ REQUIRED_SECTIONS = ["## Ինչի հասանք", "## Հաջորդ անգամ"]
 # Days that deliberately have no break-it-on-purpose cell, and why.
 NO_ERROR_CELL = {
     "day01": "installation day -- nothing to break yet",
-    "day06": "pain day -- the point is that nothing errors",
-    "day08": "the wrong-order elif IS the silent failure, by design",
-    "day09": "pain day -- the point is that nothing errors",
+    "day07": "no new error class introduced",
+    "day09": "the wrong-order elif IS the silent failure, by design",
+    "day10": "the two-list drift is a silent wrong answer, by design",
     "day11": "no new error class introduced",
     "day12": "no new error class introduced",
-    "day13": "no new error class introduced",
-    "day14": "no new error class introduced",
-    "day15": "the infinite loop must not actually be run",
+    "day13": "the infinite loop must not actually be run",
+    "day15": "no new error class introduced",
+    "day16": "no new error class introduced",
     "day17": "no new error class introduced",
     "day18": "no new error class introduced",
-    "day19": "no new error class introduced",
+    "day19": "consolidation day -- no new error class",
 }
 
 # Armenian words that are allowed to appear outside the glossary: they are ordinary
@@ -79,7 +81,9 @@ def main():
 
     # --- 1 and 2: imports and forbidden constructs, notebooks and project alike ---
     sources = sorted(NOTEBOOKS.glob("*.ipynb"))
-    for path in sources:
+    solutions = sorted((ROOT / "solutions").glob("*.ipynb"))
+    tests = sorted((ROOT / "tests").glob("*.ipynb"))
+    for path in sources + solutions + tests:
         for index, source, _ in code_cells(path):
             for module in re.findall(r"^\s*(?:import|from)\s+([\w.]+)", source, re.M):
                 root = module.split(".")[0]
@@ -141,11 +145,12 @@ def main():
             print(f"   {problem}")
         return 1
 
-    print(f"✅ {len(sources)} notebooks + {len(list(PROJECT.glob('*.py')))} project files")
+    print(f"✅ {len(sources)} notebooks + {len(solutions)} solutions + {len(tests)} tests "
+          f"+ {len(list(PROJECT.glob('*.py')))} project files")
     print("✅ standard library only; no excluded constructs")
     print("✅ every notebook has its retrospective sections")
     print("✅ break-it-on-purpose cells present where required")
-    print("✅ every identifier is English")
+    print("✅ no Armenian anywhere inside a code cell")
     return 0
 
 

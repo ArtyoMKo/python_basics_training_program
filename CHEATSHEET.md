@@ -7,8 +7,10 @@
 
 ## 1. Բառարան — հայերեն ու անգլերեն
 
-Կոդի բոլոր բառերը անգլերեն են, և դա փոխել հնարավոր չէ։ Ստորև՝ ինչպես ենք դրանք
-անվանում հայերեն, երբ խոսում ենք դասին։
+**Կոդի ներսում ամեն բան անգլերեն է** — բառերը, փոփոխականների անունները,
+մեկնաբանությունները և տպվող տեքստը։ Բացատրությունները հայերեն են։
+
+Ստորև՝ ինչպես ենք կոչում այս հասկացությունները հայերեն, երբ խոսում ենք դասին։
 
 | Անգլերեն | Հայերեն | Ինչ է դա |
 |---|---|---|
@@ -20,9 +22,9 @@
 | output | արդյունք | Այն, ինչ հայտնվում է բջիջի տակ |
 | error | սխալ | Կարմիր տեքստը։ Ոչ թե աղետ, այլ հաղորդագրություն |
 | comment | մեկնաբանություն | `#`-ից հետո գրվածը։ Python-ը չի կարդում այն |
-| value | արժեք | Մեկ տվյալ՝ `9`, `"Անի"`, `6.5` |
+| value | արժեք | Մեկ տվյալ՝ `9`, `"Ani"`, `6.5` |
 | type | տիպ | Արժեքի տեսակը՝ տեքստ, ամբողջ թիվ, տասնորդական, ճիշտ/սխալ |
-| text (string) | տեքստ | Չակերտների մեջ գրված արժեք՝ `"Անի"` |
+| text (string) | տեքստ | Չակերտների մեջ գրված արժեք՝ `"Ani"` |
 | integer | ամբողջ թիվ | `9`, `12`, `0` |
 | float | տասնորդական թիվ | `6.5`, `9.25` |
 | boolean | ճիշտ կամ սխալ | Միայն երկու արժեք՝ `True` և `False` |
@@ -36,8 +38,8 @@
 | index | ինդեքս | Տարրի տեղը ցուցակում։ Հաշվարկը սկսվում է **0**-ից |
 | to add (append) | ավելացնել | Ցուցակի վերջում նոր տարր դնել |
 | loop | ցիկլ | Նույն գործողությունը կրկնել ամեն տարրի համար |
-| dictionary | բառարան | Զույգեր՝ `{"Անի": 9}`. անուն ներս, գնահատական դուրս |
-| key | բանալի | Բառարանի ձախ կողմը՝ `"Անի"` |
+| dictionary | բառարան | Զույգեր՝ `{"Ani": 9}`. անուն ներս, գնահատական դուրս |
+| key | բանալի | Բառարանի ձախ կողմը՝ `"Ani"` |
 | function | ֆունկցիա | Կոդի կտոր, որին անուն ենք տալիս և կանչում ենք |
 | to define | սահմանել | `def` բառով ֆունկցիա գրել |
 | to call | կանչել | Ֆունկցիան աշխատեցնել՝ `average_of(grades)` |
@@ -71,51 +73,51 @@
 ## 2. Տպել
 
 ```python
-print("Բարև")                      # տեքստ
-print(9)                            # թիվ
-print("Անի", 9)                     # երկու արժեք, բացատով
-print("Անի:", 9, "միավոր")
-print()                             # դատարկ տող
-print("Նա ասաց՝ «բարև»")            # չակերտի մեջ չակերտ — օգտագործիր « »
+print("Hello")                      # text
+print(9)                            # a number
+print("Ani", 9)                     # two values, with a space
+print("Ani:", 9, "points")
+print()                             # a blank line
+print('He said "hello"')            # a quote inside text: use the other kind
 ```
 
 ## 3. Չորս տիպ
 
 ```python
-name = "Անի"          # տեքստ            str
-grade = 9             # ամբողջ թիվ       int
-average = 6.5         # տասնորդական      float
-passed = True         # ճիշտ կամ սխալ    bool
+name = "Ani"          # text              str
+grade = 9             # whole number      int
+average = 6.5         # decimal           float
+passed = True         # true or false     bool
 
-type(name)            # ցույց է տալիս տիպը
+type(name)            # shows the type
 ```
 
 **Տիպը փոխել**
 
 ```python
-int("9")              # տեքստից ամբողջ թիվ  -> 9
-float("6.5")          # տեքստից տասնորդական -> 6.5
-str(9)                # թվից տեքստ          -> "9"
-round(6.4762, 1)      # կլորացնել           -> 6.5
+int("9")              # text to whole number   -> 9
+float("6.5")          # text to decimal        -> 6.5
+str(9)                # number to text         -> "9"
+round(6.4762, 1)      # round it               -> 6.5
 ```
 
 **`input()`-ը միշտ տեքստ է տալիս**
 
 ```python
-answer = input("Գնահատականը՝ ")     # նույնիսկ եթե գրես 9, ստանում ես "9"
-grade = int(answer)                  # այնպես որ փոխի՛ր տիպը
+answer = input("Grade: ")            # even if they type 9, you get "9"
+grade = int(answer)                  # so convert it
 ```
 
 ## 4. Փոփոխականներ
 
 ```python
-student_name = "Անի"
+student_name = "Ani"
 student_grade = 9
 
-student_grade = 10          # նոր արժեք՝ նույն անվան տակ
+student_grade = 10          # a new value under the same name
 
 print(f"{student_name}: {student_grade}")
-print(f"Միջինը՝ {average:.1f}")      # մեկ նիշ ստորակետից հետո
+print(f"Average: {average:.1f}")     # one digit after the point
 ```
 
 Անվանման կանոններ՝ միայն անգլերեն տառեր, թվեր և `_`։ Թվով չի սկսվում։ Բացատ չկա։
@@ -126,20 +128,20 @@ print(f"Միջինը՝ {average:.1f}")      # մեկ նիշ ստորակետից
 PASS_MARK = 4
 
 if grade >= PASS_MARK:
-    print("անցավ")
+    print("passed")
 else:
-    print("չանցավ")
+    print("failed")
 ```
 
 ```python
 if grade >= 9:
-    print("գերազանց")
+    print("excellent")
 elif grade >= 7:
-    print("լավ")
+    print("good")
 elif grade >= PASS_MARK:
-    print("բավարար")
+    print("satisfactory")
 else:
-    print("անբավարար")
+    print("unsatisfactory")
 ```
 
 | Նշան | Իմաստ |
@@ -159,15 +161,15 @@ else:
 ```python
 grades = [9, 6, 10, 3, 8]
 
-grades[0]            # առաջին տարրը   -> 9    (հաշվարկը 0-ից է)
-grades[-1]           # վերջին տարրը   -> 8
-len(grades)          # քանի հատ է     -> 5
-grades[0:3]          # առաջին երեքը   -> [9, 6, 10]
+grades[0]            # the first one   -> 9    (counting starts at 0)
+grades[-1]           # the last one    -> 8
+len(grades)          # how many        -> 5
+grades[0:3]          # the first three -> [9, 6, 10]
 
-grades.append(7)     # վերջում ավելացնել
-grades.remove(3)     # 3 արժեքը հանել
-grades.sort()        # դասավորել
-3 in grades          # կա՞ ցուցակում  -> True կամ False
+grades.append(7)     # add at the end
+grades.remove(3)     # remove the value 3
+grades.sort()        # sort it
+3 in grades          # is it there?    -> True or False
 ```
 
 ## 7. Ցիկլեր
@@ -177,7 +179,7 @@ for grade in grades:
     print(grade)
 
 for student_name in student_names:
-    print(f"Բարև, {student_name}")
+    print(f"Hello, {student_name}")
 ```
 
 **Հաշվել և գումարել**
@@ -193,7 +195,7 @@ average = total / len(grades)
 **`range` — թվերի շարք**
 
 ```python
-for number in range(1, 11):     # 1-ից 10, 11-ը ներառված չէ
+for number in range(1, 11):     # 1 to 10; 11 is not included
     print(number)
 ```
 
@@ -210,20 +212,20 @@ for name, grade in class_grades.items():
 
 ```python
 while True:
-    answer = input("Հրաման (կամ «դուրս»)՝ ")
-    if answer == "դուրս":
+    answer = input("Command (or 'quit'): ")
+    if answer == "quit":
         break
 ```
 
 ## 8. Բառարաններ
 
 ```python
-class_grades = {"Անի": 9, "Դավիթ": 6, "Նարե": 10}
+class_grades = {"Ani": 9, "Davit": 6, "Nare": 10}
 
-class_grades["Անի"]              # -> 9
-class_grades["Գոռ"] = 4          # ավելացնել
-class_grades["Անի"] = 10         # ուղղել
-"Գոռ" in class_grades            # կա՞ -> True
+class_grades["Ani"]              # -> 9
+class_grades["Gor"] = 4          # add
+class_grades["Ani"] = 10         # correct
+"Gor" in class_grades            # is it there? -> True
 
 for name, grade in class_grades.items():
     print(f"{name}: {grade}")
@@ -233,19 +235,19 @@ for name, grade in class_grades.items():
 
 ```python
 def average_of(grades):
-    """Վերադարձնում է գնահատականների միջինը։"""
+    """Return the average of a list of grades."""
     total = 0
     for grade in grades:
         total = total + grade
     return round(total / len(grades), 1)
 
 
-class_average = average_of([9, 6, 10])     # կանչել և արդյունքը պահել
+class_average = average_of([9, 6, 10])     # call it and keep the result
 print(class_average)
 ```
 
 ```python
-def has_passed(grade, pass_mark=PASS_MARK):    # պարամետր՝ լռելյայն արժեքով
+def has_passed(grade, pass_mark=PASS_MARK):    # a parameter with a default
     return grade >= pass_mark
 ```
 
@@ -254,14 +256,14 @@ def has_passed(grade, pass_mark=PASS_MARK):    # պարամետր՝ լռելյա
 ## 10. Ֆայլեր
 
 ```python
-# կարդալ
+# read
 with open("data/my_class.csv", encoding="utf-8") as file:
     lines = file.readlines()
 
-# գրել
+# write
 with open("data/my_class.csv", "w", encoding="utf-8") as file:
     file.write("name,grade\n")
-    file.write("Անի,9\n")
+    file.write("Ani,9\n")
 ```
 
 `encoding="utf-8"`-ը **պարտադիր է**, այլապես հայերեն տառերը կկոտրվեն։
@@ -269,10 +271,10 @@ with open("data/my_class.csv", "w", encoding="utf-8") as file:
 ## 11. Մոդուլներ
 
 ```python
-# settings.py ֆայլում
+# in settings.py
 PASS_MARK = 4
 
-# main.py ֆայլում
+# in main.py
 import settings
 from grades import average_of
 
@@ -281,14 +283,14 @@ print(settings.PASS_MARK)
 
 ```python
 if __name__ == "__main__":
-    main()        # այս մասն աշխատում է միայն երբ ուղղակի գործարկում ես այս ֆայլը
+    main()        # this part runs only when you run this file directly
 ```
 
 ## 12. Տերմինալ — ընդամենը երկու հրաման
 
 ```bash
-cd Documents/python_course      # գնալ թղթապանակ
-python main.py                  # գործարկել ծրագիրը
+cd Documents/python_course      # go to the folder
+python main.py                  # run the program
 ```
 
 VS Code-ում տերմինալը բացվում է **Ctrl + `** (Mac-ում՝ **Control + `**)։
@@ -306,7 +308,7 @@ VS Code-ում տերմինալը բացվում է **Ctrl + `** (Mac-ում՝ *
 | `IndentationError` | Բացատները սխալ են | Չորս բացատը մոռացվել է կամ խառնվել |
 | `NameError` | Այս անունը չեմ ճանաչում | Տառասխալ, կամ բջիջը վերևում չի գործարկվել |
 | `TypeError` | Այս երկուսը միասին չեն աշխատում | Տեքստ ու թիվ ես գումարում |
-| `ValueError` | Տիպը ճիշտ է, արժեքը՝ ոչ | `int("ինը")` — սա թիվ չէ |
+| `ValueError` | Տիպը ճիշտ է, արժեքը՝ ոչ | `int("nine")` - this is not a number |
 | `IndexError` | Այդ տեղը ցուցակում չկա | Հաշվարկը 0-ից է. 12 տարրի վերջինը `[11]`-ն է |
 | `KeyError` | Այդ բանալին բառարանում չկա | Տառասխալ անվան մեջ, կամ աշակերտը հեռացել է |
 | `FileNotFoundError` | Այդ ֆայլը չգտա | Սխալ թղթապանակում ես, կամ անունը սխալ է |

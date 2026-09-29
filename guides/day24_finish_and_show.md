@@ -67,7 +67,7 @@ README-ն այն է, ինչ կարդում է մարդը, երբ առաջին ա
 Ստեղծի՛ր `data/my_class.csv` այս ձևաչափով՝
 
     name,grade
-    Անի,9
+    Ani,9
 
 Հետո `settings.py`-ում գրի՛ր `CLASS_FILE = "data/my_class.csv"`։
 ```

@@ -5,22 +5,23 @@
 քոնը նույնպես ճիշտ է։
 
 #%% code
-# Առաջադրանք 1 — դասարանի վերնագիրը
+# Exercises 1 and 2 - the header and four students
 
-print("7-րդ Բ դասարան — կենսաբանություն")
-
-#%% code
-# Առաջադրանք 2 — չորս աշակերտ
-
-print("Անի:", 9)
-print("Դավիթ:", 6)
-print("Նարե:", 10)
-print("Արամ:", 3)
-
-#%% code
-# Առաջադրանք 5 — ամբողջ մատյանը, դատարկ տողով բաժանված
-
-print("7-րդ Բ դասարան")
+print("7-B class - biology")
 print()
-print("Անի:", 9)
-print("Դավիթ:", 6)
+print("Ani:", 9)
+print("Davit:", 6)
+print("Nare:", 10)
+print("Aram:", 3)
+
+#%% code
+# Extra 8 - a quote inside text. Use the other kind of quote outside.
+
+print('He said "yes"')
+
+#%% code
+# Challenge 9 - aligned columns by hand: pad the short names with spaces
+
+print("Ani      9")
+print("Davit    6")
+print("Mariam   8")

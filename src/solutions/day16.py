@@ -2,27 +2,58 @@
 # Օր 16 — Լուծումներ
 
 #%% code
-# Առաջադրանք 1, 2, 3
+# Exercises 1-5 - report cards with several grades each
 
-class_grades = {"Անի": 9, "Դավիթ": 6, "Նարե": 10, "Արամ": 3, "Մարիամ": 8}
+PASS_MARK = 4
 
-print(class_grades["Անի"])
-print(class_grades["Նարե"])
+class_grades = {
+    "Ani": [9, 10, 8],
+    "Davit": [6, 5, 7],
+    "Nare": [10, 10, 9],
+    "Aram": [3, 4, 2],
+}
 
-class_grades["Տիգրան"] = 5          # ավելացնել
-class_grades["Արամ"] = 4            # ուղղել
-del class_grades["Դավիթ"]           # հեռացնել
+class_grades["Ani"].append(7)
 
-print(class_grades)
+print("=== REPORT CARDS ===")
+
+for student_name, grades in class_grades.items():
+    total = 0
+    for grade in grades:
+        total = total + grade
+    student_average = total / len(grades)
+
+    if student_average >= PASS_MARK:
+        result = "passed"
+    else:
+        result = "failed"
+
+    print(f"{student_name:<10} {str(grades):<16} {student_average:.1f}   {result}")
 
 #%% code
-# Առաջադրանք 4 և 5 — անվտանգ որոնում
+# Extra 8 - each student's best grade
 
-def look_up(class_grades, student_name):
-    if student_name in class_grades:
-        print(f"{student_name}: {class_grades[student_name]}")
-    else:
-        print(f"{student_name} — այդպիսի աշակերտ չկա")
+for student_name, grades in class_grades.items():
+    highest = grades[0]
+    for grade in grades:
+        if grade > highest:
+            highest = grade
+    print(f"{student_name}: best {highest}")
 
-look_up(class_grades, "Անի")
-look_up(class_grades, "Դավիթ")
+#%% code
+# Extra 11 - an empty list makes the average divide by zero.
+# Guard it before dividing.
+
+grades = []
+
+if not grades:
+    print("no grades yet")
+else:
+    print(sum(grades) / len(grades))
+
+#%% code
+# Challenge 12 - who improved the most. :+d shows the plus sign.
+
+for student_name, grades in class_grades.items():
+    improvement = grades[-1] - grades[0]
+    print(f"{student_name}: {improvement:+d}")

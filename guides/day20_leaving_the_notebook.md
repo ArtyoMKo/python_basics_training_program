@@ -44,9 +44,10 @@ VS Code-ում, ձախ ցանկում, `python_course` թղթապանակի վր
 
 ---
 
-## Քայլ 2 — Տեղափոխի՛ր չորս ֆունկցիաները
+## Քայլ 2 — Տեղափոխի՛ր ֆունկցիաները
 
-Բացի՛ր 19-րդ օրվա տետրը։ Գտի՛ր այն բջիջը, որտեղ չորս ֆունկցիաներն են։
+Բացի՛ր 19-րդ օրվա տետրը — այն, որտեղ ամբողջ ծրագիրը հավաքեցինք։
+Գտի՛ր այն բջիջը, որտեղ ֆունկցիաներն են։
 
 **Պատճենի՛ր ամբողջը և տեղադրի՛ր `grades.py`-ի մեջ։**
 
@@ -57,7 +58,7 @@ PASS_MARK = 4
 
 
 def average_of(grades):
-    """Վերադարձնում է գնահատականների միջինը։"""
+    """Return the average of a list of grades."""
     total = 0
     for grade in grades:
         total = total + grade
@@ -65,7 +66,7 @@ def average_of(grades):
 
 
 def has_passed(grade, pass_mark=PASS_MARK):
-    """Վերադարձնում է True, եթե գնահատականը անցողիկ է։"""
+    """Return True if this grade is a pass."""
     return grade >= pass_mark
 ```
 
@@ -112,7 +113,7 @@ python grades.py
 
 **Ոչինչ չտպվեց։**
 
-Եվ դա **ճիշտ է**։ Ֆայլում միայն `def`-եր են։ 18-րդ օրվա դասը՝ սահմանելը և կանչելը
+Եվ դա **ճիշտ է**։ Ֆայլում միայն `def`-եր են։ 17-րդ օրվա դասը՝ սահմանելը և կանչելը
 տարբեր բաներ են։ Դու սահմանեցիր չորս ֆունկցիա և ոչ մեկը չկանչեցիր։
 
 ✅ **ՍՏՈՒԳՈՒՄ։** `python grades.py`-ն ոչինչ չտպեց և սխալ չտվեց։ Դա հաջողություն է։
@@ -128,10 +129,10 @@ python grades.py
 Ֆայլի **վերջում** ավելացրո՛ւ՝
 
 ```python
-test_class = {"Անի": 9, "Դավիթ": 6, "Նարե": 10, "Արամ": 3}
+test_class = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3}
 
-print("Միջինը՝", average_of(list(test_class.values())))
-print("Ամենաբարձրը՝", highest_of(test_class))
+print("average:", average_of(list(test_class.values())))
+print("highest:", highest_of(test_class))
 ```
 
 Պահի՛ր և գործարկի՛ր նորից՝ `python grades.py`
@@ -154,10 +155,10 @@ print("Ամենաբարձրը՝", highest_of(test_class))
 
 ```python
 if __name__ == "__main__":
-    test_class = {"Անի": 9, "Դավիթ": 6, "Նարե": 10, "Արամ": 3}
+    test_class = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3}
 
-    print("Միջինը՝", average_of(list(test_class.values())))
-    print("Ամենաբարձրը՝", highest_of(test_class))
+    print("average:", average_of(list(test_class.values())))
+    print("highest:", highest_of(test_class))
 ```
 
 Կարդացվում է այսպես.

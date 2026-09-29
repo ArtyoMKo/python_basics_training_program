@@ -39,6 +39,7 @@ engineering. Concretely, this course has:
 | One new built-in per concept | The three ways Python can do it |
 | Four files in the final project | Five, or a package |
 | Zero installs after Day 1 | `pip install` anything, ever |
+| One language per place — Armenian explains, English codes | Armenian inside a code cell |
 
 **When reviewing any artefact, the first question is: what can be removed?** A teacher who
 never programmed does not need the second-best way to do something. They need one way that
@@ -54,11 +55,13 @@ Every example is about a classroom — students, grades, attendance, averages, r
 and the course ends with each participant running a gradebook program over their own
 (anonymised) class list, from a terminal, on their own laptop.
 
-The teaching engine is **repetition until it hurts, then relief**: participants write forty
-variables by hand before they are shown a list, copy-paste twenty-five `if` blocks before
-they are shown a loop, and write the same six lines four times before they are shown a
-function. Nothing is introduced as "good practice". Everything is introduced as the thing
-that stops a specific pain they felt three minutes ago.
+The teaching engine is **do it the long way, then learn the short way — in the same
+session**. Participants are given a real classroom task, solve it with what they already
+know, and then, twenty minutes later, meet the tool that collapses it. Nothing is
+introduced as "good practice"; everything arrives as the thing that shortens work they
+have just finished doing. The task is always genuine — a register, a pass list, a report
+card — and the course never tells a participant that the long way was there to make a
+point.
 
 ---
 
@@ -138,8 +141,27 @@ Every day in the notebook phase uses this agenda unless stated otherwise:
 capped at 12 minutes and may never exceed 15 in any variant agenda. This is the rule the
 review should check first: *if a day talks for more than 15 minutes, it is wrong.*
 
-Days 1, 6, 9, 21 and 24 have bespoke agendas (installation, the two pain days, the "it
-runs" day, and the showcase). Each still sums to 50.
+### The discovery shape
+
+Days 6, 10, 14, 17 and 22 — where a tool arrives to replace work done the same session —
+use this instead:
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap | 5 |
+| 2 | **Teach:** today's task, and the only way we can do it so far | 7 |
+| 3 | **Do it the long way:** the real task, with shipped boilerplate | 13 |
+| 4 | **Teach:** the tool that shortens it | 9 |
+| 5 | **Do the same task again**, with the tool. Compare | 13 |
+| 6 | Retrospective | 3 |
+| | **Total** | **50** |
+
+Teaching is 16 minutes but **split into two blocks of 7 and 9** — neither approaches the
+15-minute ceiling, and the second one lands on a participant who now wants it. Hands-on
+is 26 of 50.
+
+Days 1, 20, 21, 23 and 24 have bespoke agendas (installation, the transition, the build
+day and the showcase). Each still sums to 50.
 
 ### Per-day deliverable
 
@@ -155,41 +177,82 @@ This is the backbone and §4 sets it out in full.
 
 ---
 
-## 4. The pain spiral — the plan of record
+## 4. Discovery days — the plan of record
 
-Every concept arrives as relief. This table is the course. Build against it; if a notebook
-teaches something that is not the resolution of a named pain, it needs a reason.
+Every concept arrives as relief from work the participant has just done **in the same
+session**. This table is the course; build against it.
 
-| # | Pain planted | Where | Felt as | Resolved by | Where |
-|---|---|---|---|---|---|
-| 1 | **Forty variables by hand** | Day 6 | "Add one point to everyone" = 40 edits | **Lists** | Day 10 |
-| 2 | Forty `print(name_01)` lines | Day 11 | 40 lines to show 40 names | **`for` loop** | Day 12 |
-| 3 | **Twenty-five copy-pasted `if` blocks** | Day 9 | Pass mark 10 → 11 = 25 edits | *Half-fix:* one `PASS_MARK` variable | Day 9 |
-| 4 | …the 25 near-identical blocks that remain | Day 9 | Still 25 blocks | **Loop over a list** | Day 14 |
-| 5 | A list of names and a list of grades, side by side | Day 13 | "Which grade is Anna's?" — counting positions | **Dictionaries** | Day 16 |
-| 6 | The same six-line grade calculation, in four places | Day 17 | Fix a bug → fix it four times | **Functions** | Day 18 |
-| 7 | Results printed but not kept | Day 19 | Close the notebook, everything is gone | **Files** | Day 22 |
-| 8 | Nineteen notebooks, nothing you can hand to a colleague | Day 19 | "How do I give this to someone?" | **`.py` + terminal** | Days 20–21 |
+| Day | The real task they are given | The laborious way they do it first | The tool that arrives, same day |
+|---|---|---|---|
+| **6** | Build a register that holds the whole class | One variable per student, ~30 of them | **Lists** |
+| **10** | Mark the whole class pass/fail | One `if`/`else` block per student | **`for` loops** |
+| **14** | Look up one student's grade by name | Two parallel lists and a position counter | **Dictionaries** |
+| **17** | Put an average on every report card | The same six lines written four times | **Functions** |
+| **22** | Keep the register after closing the program | Retyping it every time | **Files** |
+| **20–21** | Give the program to a colleague | Explaining which cells to run in what order | **`.py` files and the terminal** |
 
-**Pain 3 is the user's own example and is staged deliberately in two halves.** The
-"increase that number in all conditions by 1" pain is fixed *immediately* on Day 9 with a
-single variable — participants already know variables, so they fix it themselves, which is
-the point. The residue (twenty-five near-identical blocks) is named out loud, written down,
-and left standing until Day 14. Naming a pain you are not yet fixing is a course
-convention, not an oversight (§6.4).
+### 4.1 Same session, always
 
-### Designing a pain so it fits in 50 minutes
+**The laborious version and its replacement happen in the same 50 minutes.** A participant
+never goes home having only done the slow thing. They go home having done the slow thing
+*and* seen it collapse.
 
-Forty variables typed by hand takes longer than the lesson. So:
+This is the shape (§3 has the minute-by-minute agenda):
 
-> **The boilerplate rule.** The notebook **ships** the tedious code already written — 30
-> variables, 25 `if` blocks — and the participant's job is to **extend it by ten and then
-> change it**. Editing 40 things by hand takes four minutes and hurts exactly as much as
-> writing them did.
+```
+a real task  →  do it the only way you currently can  →  notice it is slow
+             →  learn the tool  →  do the same task again  →  see the difference
+```
 
-Never ask a participant to type more than ten repetitive lines. Ship the rest.
+Leaving the laborious half hanging until the next session is **forbidden**. Adults do not
+return to a course that wasted their evening.
 
----
+### 4.2 The task is real; the tedium is never named
+
+This is the rule most likely to be broken by accident, so it is stated bluntly.
+
+**A participant must never be told they are doing something in order to suffer.** They are
+building a class register because a teacher needs a class register. That is the whole
+reason, and it is a true one.
+
+| ❌ Never write this | ✅ Write this |
+|---|---|
+| "Today is a pain day." | "Today we build a register for the whole class." |
+| "Write forty variables so you feel how bad it is." | "We need somewhere to keep each student's name and score." |
+| "This is deliberately tedious." | *(say nothing — just give the task)* |
+| "Notice how awful that was." | "That worked. It took a while, though — and there is a shorter way." |
+
+The task is grounded in something the participant actually does: a register, a pass list,
+a report card, a saved file. If a task cannot be justified to a teacher on its own terms,
+**it does not belong in the course**, no matter how well it sets up the next concept.
+
+### 4.3 Reassure forward, every single time
+
+Before and during any stretch of repetitive typing, the notebook says — plainly and
+without drama — that a shorter way is coming and names when.
+
+> **Այս ձևը աշխատում է, բայց երկար է։ Դասի երկրորդ կեսին կսովորենք մի բան, որը սա
+> դարձնում է մի քանի տող։**
+> *(This way works, but it is long. In the second half of today we will learn something
+> that turns this into a few lines.)*
+
+Placed **before** the long task, not after it. A participant who knows a shortcut is
+twenty minutes away types the long version willingly; one who does not starts wondering
+whether the course knows what it is doing.
+
+Where minor friction does cross a session boundary — printing a list item by item on
+Day 7, say — the same reassurance names the day: *"Day 10 makes this three lines."*
+
+### 4.4 Sizing the laborious half
+
+Typing thirty variables takes longer than the lesson allows. So:
+
+> **The boilerplate rule.** The notebook **ships** most of the repetitive code already
+> written — twenty or so entries — and the participant's job is to **extend it by a few
+> and then change it**. Editing thirty things takes four minutes and teaches the same
+> lesson as typing them.
+
+Never ask a participant to type more than ten repetitive lines.
 
 ## 5. What we teach, and what we deliberately do not
 
@@ -281,17 +344,19 @@ that edit is itself the exercise.
 
 `day12_for_loops.ipynb`. If a day needs two nouns in its name, it is two days.
 
-### 6.4 Name the pain out loud, in writing
+### 6.4 Compare the two versions, in writing
 
-On a pain day, the notebook ends with a section that says plainly what was wrong and that
-we are not fixing it yet:
+A discovery day ends by putting the two versions side by side, as a table of facts. No
+commentary on how it felt:
 
-> ### What still annoys us
-> You changed forty lines to add one point. If your class had 300 students you would have
-> changed 300 lines. There is nothing clever you can do about this with what you know
-> today — which is the honest answer. Day 10 fixes it completely.
+> | | Separate variables | List |
+> |---|---|---|
+> | 20 students | 40 lines | **2 lines** |
+> | "how many?" | count by hand | `len(...)` |
+> | 300 students | 600 lines | **2 lines** |
 
-Never hint. Never say "we'll see a better way". Say which day.
+Where minor friction genuinely does cross a session boundary, **name the day it ends**
+(§4.3). Never hint, never say "we'll see a better way later" — say which day.
 
 ### 6.5 Break it on purpose — one cell per notebook
 
@@ -352,12 +417,11 @@ and it removes the failure mode that costs the TUMO course its riskiest hour.
 5.  "🧨 Let's break it"    the deliberate error cell (§6.5) + its explanation
 6.  ## 🎯 Exercises        3–5, worked first item each (§7.3)
 7.  ## Where we got to     3–5 bullets
-8.  ## What still annoys us  pain days only
-9.  ## Next time           one sentence, names the day number
-10. ## Two-minute practice optional, genuinely two minutes
+8.  ## Next time           one sentence; names the day number if it fixes something
+9.  ## Two-minute practice optional, genuinely two minutes
 ```
 
-Sections 7–10 together are the **retrospective** and are mandatory on every notebook.
+Sections 7–9 together are the **retrospective** and are mandatory on every notebook.
 
 ### Size targets
 
@@ -386,11 +450,23 @@ student_01 = "Anna"
 # your turn:
 ```
 
-- Mark each **Required** or **Extra**. Required ones must be completable in the 15 minutes.
+- **Three tiers, and the third is not optional to write.**
+
+| Tier | How many | Sized for |
+|---|---|---|
+| **Պարտադիր** (Required) | 3–4 | Everyone, inside the allotted minutes |
+| **Լրացուցիչ** (Extra) | **3–4** | The participant who finished Required with 8 minutes left |
+| **Մարտահրավեր** (Challenge) | 1–2 | The fastest one or two in the room |
+
+- **Every notebook ships at least three Extra tasks.** In a room of sixteen adults, three
+  or four will finish Required work early in every single session. "Help your neighbour"
+  is a fine answer once; it is not a plan for eight weeks. Running out of work is how a
+  competent participant concludes the course is beneath them.
+- Extra tasks use **only what the course has already taught** — they are wider, not
+  further ahead. A Challenge may combine two earlier days.
 - Never a blank cell. Always a skeleton with a comment saying what goes where.
 - Exercise 1 of every notebook is a two-minute confidence win.
-- The last Required exercise of each notebook is the one that produces the day's
-  deliverable (§3).
+- The last Required exercise produces the day's deliverable (§3).
 
 ### 7.4 Solutions
 
@@ -425,50 +501,77 @@ verification discipline (§11.2). Rules:
   value is needed downstream, the notebook assigns it directly and mentions that `input()`
   would do the same thing.
 
-### 7.7 Armenian prose, English code — the exact split
+### 7.7 Armenian descriptions, English everything-else — the exact split
 
-The rule in one line: **everything a participant reads is Armenian; everything a
-participant types is English.** In detail:
+The rule in one line: **Armenian appears only in markdown. Every character inside a code
+cell is English.**
 
-| Element | Language | Note |
-|---|---|---|
-| Markdown cells, callouts, exercise instructions, retrospectives | **Armenian** | |
-| Keywords, built-ins, method names | English | `if`, `for`, `print`, `append` — not a choice |
-| Variable and function names in shipped code | **English** | `student_name`, `class_average`, `pass_mark` |
-| String *values* inside examples | **Armenian** | `student_01 = "Անի"`, `print("Անցավ")` |
-| Comments inside code cells | **Armenian** | This is where the explaining happens at the point of use |
-| File and folder names | English, lowercase | `day12_for_loops.ipynb`, `sample_class.csv` |
-| `SETUP.md`, `CHEATSHEET.md`, `ANNOUNCEMENT.md`, solutions | **Armenian** | Participant-facing |
-| `PLAN.md`, `CURRICULUM.md`, `OUTLINE.md`, `INSTRUCTOR_NOTES.md`, `tools/` | English | Build and instructor documents |
+| Element | Language |
+|---|---|
+| Markdown cells, callouts, exercise instructions, retrospectives | **Armenian** |
+| Guides (`guides/*.md`), `SETUP.md`, `CHEATSHEET.md`, `ANNOUNCEMENT.md` prose | **Armenian** |
+| Keywords, built-ins, method names | English |
+| Variable and function names | English |
+| **Comments inside code cells** | **English** |
+| **String values** — `print("...")`, example names, menu text | **English** |
+| **Docstrings** | **English** |
+| Output the program prints at runtime | **English** |
+| File and folder names | English, lowercase |
+| `PLAN.md`, `CURRICULUM.md`, `OUTLINE.md`, `RATIONALE.md`, `INSTRUCTOR_NOTES.md`, `tools/` | English |
 
-**Why identifiers stay English.** A beginner who names a variable `անուն` writes valid
-Python and then cannot read a single line of any other Python they ever see, cannot search
-for an answer, and cannot copy a snippet. The cost of English identifiers is ten new words;
-the cost of Armenian ones is the rest of their programming life. The ten words are taught
-explicitly instead — see the glossary below.
+**Why the line is drawn at the cell boundary.** A participant reads the explanation in
+their own language and then types code that looks exactly like every other piece of Python
+in the world. Anything they can copy from this course into a real project, or search for
+when stuck, is already in the form the rest of the world uses. Armenian inside a code cell
+would make the course a dialect.
 
-**Armenian string values are not decoration.** `print("Անի անցավ")` proves that Python
-handles Armenian text correctly, which is the first thing a teacher will want to know and
-the first thing they will doubt. Day 2 shows it deliberately.
+**Example names are transliterated Armenian**, so the data stays familiar without leaving
+Latin script: `Ani`, `Davit`, `Nare`, `Aram`, `Mariam`, `Tigran`, `Lilit`, `Gor`,
+`Anahit`, `Hayk`, `Sona`, `Vahe`. A teacher recognises their own classroom; Python sees
+plain ASCII.
 
-**Error messages are in English and always will be.** §6.5's deliberate-error cells
-therefore have a third job: they teach a participant to read an English error message.
-Each explanation cell shows the English text, then names in Armenian which word in it
-matters (`NameError` → the name, `line 3` → the line).
+**`encoding="utf-8"` keeps its motivation.** The shipped sample data is Latin, but on
+Day 22 participants type their *own* class list, and many will use Armenian names there.
+That is where the encoding argument is demonstrated and where it earns its place.
 
-**A bilingual glossary is a deliverable, not a nicety.** `CHEATSHEET.md` opens with a
-two-column table of roughly 40 terms — *variable · փոփոխական*, *list · ցուցակ*,
-*loop · ցիկլ*, *function · ֆունկցիա* — agreed **once**, before Day 1, and then used
-identically in every notebook. Inconsistent terminology across 19 notebooks is the most
-likely way this course confuses people, and it is entirely preventable. The glossary is
-produced in Build Block 1 and reviewed before any notebook is written.
+**Error messages are English and always will be.** §6.5's deliberate-error cells therefore
+have a second job: teaching a participant to read an English error message. The explanation
+above each one is Armenian; the message it explains is not.
 
-**Review note.** I can write Armenian technical prose, but I am not a native speaker and
-the terminology in particular should be read by one. Treat the glossary and Day 1–2 prose
-(Build Block 2) as the language checkpoint: get the vocabulary right there, and the
-remaining 17 notebooks inherit it.
+**The bilingual glossary is still a deliverable.** `CHEATSHEET.md` §1 maps ~40 terms —
+*variable · փոփոխական*, *list · ցուցակ* — because the instructor and the markdown talk
+about these concepts in Armenian even though the code never does.
 
----
+### 7.8 Fortnightly assessment
+
+**Four take-home tests, one every two weeks**, after Days 6, 12, 18 and 24 — each covering
+the six sessions before it.
+
+| Test | After day | Covers | Sessions |
+|---|---|---|---|
+| `test1_first_steps` | 6 | `print`, types, `input`, variables, f-strings, lists | 1–6 |
+| `test2_decisions_and_loops` | 12 | `if`/`elif`, `and`/`or`, `for`, `range`, totals, filtering | 7–12 |
+| `test3_data_and_functions` | 18 | `while`, dictionaries, reports, functions | 13–18 |
+| `test4_the_program` | 24 | `return`, `.py` files, modules, files, the project | 19–24 |
+
+Rules that make them worth setting:
+
+- **Homework, not session time.** Handed out at the end of the session, collected at the
+  start of the next one. The agendas do not change and still sum to 50.
+- **One notebook per test**, same format as a lesson: a skeleton per question, nothing
+  blank. Six to eight questions, ~30 minutes of work.
+- **Every question is a classroom task**, never a puzzle. "Print a register for these
+  five students", not "reverse a string".
+- **Nothing untaught**, and nothing from the Extra tier — a test measures the floor, not
+  the ceiling.
+- **A marking guide ships with each test** (`tests/markN_guide.md`): the expected answer,
+  and *what a wrong answer tells the instructor*. That second column is the point — these
+  exist to tell the instructor whether the method is working (`RATIONALE.md` §5), not to
+  grade teachers.
+- **Test 4 carries the transfer question.** Its last item is one small task using only
+  taught syntax that the course never demonstrated. That single question is the closest
+  thing the programme has to a measurement of its own hypothesis, and it is marked
+  separately from the rest.
 
 ## 8. Code style for this audience
 
@@ -526,6 +629,7 @@ public_school_python/
 ├── SETUP.md                    <- Anaconda install, Windows AND macOS, screenshots-in-words
 ├── INSTRUCTOR_NOTES.md         <- pre-flight, pacing, what to cut, the risk register
 ├── CHEATSHEET.md               <- printable, 4 pages; opens with the bilingual glossary (§7.7)
+├── RATIONALE.md                <- why this method, the risk, the experiment (for colleagues)
 ├── ANNOUNCEMENT.md             <- recruitment text, written for teachers
 ├── check_setup.py              <- 6 checks, run on Day 1
 ├── notebooks/                  <- GENERATED -- do not edit by hand
@@ -537,6 +641,9 @@ public_school_python/
 │   └── solutions/              <- split per day by the build step
 ├── solutions/
 │   └── day02.ipynb … day19.ipynb                                  (18)
+├── tests/                      <- fortnightly assessment (§7.8)
+│   ├── test1_first_steps.ipynb … test4_the_program.ipynb          (4)
+│   └── mark1_guide.md … mark4_guide.md   <- instructor only       (4)
 ├── guides/
 │   ├── day20_leaving_the_notebook.md
 │   ├── day21_four_files.md
@@ -659,32 +766,34 @@ is Day 1's entire content and the largest single risk to the programme. It must:
 
 ## 10. The 24-day map
 
-| Day | Title | Phase | New idea | Pain | 📦 Deliverable |
-|---|---|---|---|---|---|
-| 1 | Install everything and run your first line | NB | Anaconda + VS Code, a cell, Shift+Enter | — | `check_setup.py` green; a notebook that prints their name in Armenian |
-| 2 | Printing properly | NB | `print`, quotes, comments | — | A printed class register header, 4 lines |
-| 3 | Four kinds of value | NB | `str` `int` `float` `bool`, `type()` | — | A cell showing each type and what `"2" + 2` does |
-| 4 | Changing type, and asking a question | NB | `int()`, `str()`, `input()` | — | A cell that takes a grade and prints it plus one |
-| 5 | Giving a value a name | NB | variables, f-strings | — | One student's full row printed from named values |
-| 6 | **One hundred variables** | NB | — (practice) | **plants #1** | 40 variables written and edited by hand + a written sentence on what was wrong |
-| 7 | The first decision | NB | `if` / `else`, comparisons, indentation | — | Pass/fail printed for their own pass mark |
-| 8 | More than two outcomes | NB | `elif`, `and` / `or` / `not` | — | A grade banded into 4 levels, and one two-condition rule |
-| 9 | **One hundred ifs** | NB | — (practice) | **plants #3, resolves half** | The same file rewritten so one edit changes the pass mark everywhere |
-| 10 | One name for many values | NB | lists, index, `len` | **resolves #1** | Day 6's 40 variables as one list |
-| 11 | Working with a list | NB | `append` `remove` `in` `sort` `[a:b]` | **plants #2** | Their own class as a list, sorted, with one student added and one removed |
-| 12 | Doing it to everyone | NB | `for` over a list | **resolves #2** | Day 11's 40 print lines as 3 lines |
-| 13 | Counting and totalling | NB | `range`, counters, sum, average | **plants #5** | Their class average, computed |
-| 14 | Loops that decide | NB | loop + `if`, building a new list | **resolves #4** | Who failed, how many passed, the highest grade |
-| 15 | Repeating until you say stop | NB | `while`, input validation | — | A menu that keeps asking until the teacher types `quit` |
-| 16 | Which grade belongs to whom | NB | dictionaries, lookup, update | **resolves #5** | Their class as `name → grade` |
-| 17 | Reports from a dictionary | NB | `.items()`, dict of lists | **plants #6** | A printed report card per student, several grades each |
-| 18 | Writing it once | NB | `def`, parameters | **resolves #6** | The Day 17 calculation as a function, called four times |
-| 19 | Sending an answer back | NB | `return`, default argument | **plants #7, #8** | Four grade functions, working, in one notebook |
-| 20 | Leaving the notebook | **TR** | a `.py` file, the terminal, `__main__` | **resolves #8 (half)** | `python grades.py` runs in the terminal |
-| 21 | Four files that each do one thing | **TR** | `import`, modules | **resolves #8** | **A working `python main.py`** — confirmed individually for every participant |
-| 22 | Your own class, saved | PR | reading and writing a file | **resolves #7** | Their own anonymised class list, loaded from a file and saved back |
-| 23 | Make it yours | PR | designing a small feature | — | One self-designed feature working |
-| 24 | Finish and show | PR | README, the fresh-laptop test, demoing | — | A 90-second demo, a README a colleague can follow |
+**D** = discovery day (the tool arrives the same session). **TR** = transition, **PR** = project.
+
+| Day | Title | Phase | New idea | 📦 Deliverable |
+|---|---|---|---|---|
+| 1 | Install everything and run your first line | NB | JupyterLab in VS Code, a cell, Shift+Enter | `check_setup.py` green; a notebook printing their name |
+| 2 | Printing properly | NB | `print`, quotes, comments | A four-line register header |
+| 3 | Four kinds of value | NB | `str` `int` `float` `bool`, `type()` | A cell showing each type and what `"2" + 2` does |
+| 4 | Changing type, and asking a question | NB | `int()`, `str()`, `input()` | A cell that takes a grade and prints it plus one |
+| 5 | Giving a value a name | NB | variables, f-strings | One student's row printed from named values |
+| **6** | **A register for the whole class** | **D** | many variables → **lists** | Their class as one list, plus the count |
+| 7 | Working with the register | NB | `append` `remove` `in` `sort` `[a:b]` | A sorted class list, one student added, one removed |
+| 8 | The first decision | NB | `if`/`else`, comparisons, indentation | Pass/fail for one grade, on their own pass mark |
+| 9 | More than two outcomes | NB | `elif`, `and`/`or`/`not` | A grade banded into four levels |
+| **10** | **Marking the whole class** | **D** | one `if` block per student → **`for` loops** | The whole register marked, in four lines |
+| 11 | Counting and totalling | NB | `range`, accumulator, average | Their own class average, computed |
+| 12 | Loops that decide | NB | loop + `if`, building a new list | Who failed, how many passed, the highest grade |
+| 13 | Entering grades one by one | NB | `while`, `break`, validating input | A loop that collects grades until they type `quit` |
+| **14** | **Finding one student** | **D** | two parallel lists → **dictionaries** | Their class as `name → grade` |
+| 15 | Reports from the register | NB | `.items()`, two loop variables | A printed line per student, from the dictionary |
+| 16 | Several grades per student | NB | a dictionary of lists | A report card per student with three grades each |
+| **17** | **An average on every card** | **D** | the same six lines, four times → **functions** | The calculation as a function, called four times |
+| 18 | Sending an answer back | NB | `return`, default parameter | Four grade functions that return values |
+| 19 | The register, assembled | NB | consolidation — no new syntax | The complete register program, in one notebook |
+| 20 | Leaving the notebook | **TR** | a `.py` file, the terminal, `__main__` | `python grades.py` runs in a terminal |
+| 21 | Four files that each do one thing | **TR** | `import`, modules | **A working `python main.py`** — confirmed individually |
+| **22** | **Keeping it after you close it** | **D** | retyping every time → **files** | Their own class in `data/my_class.csv`, loaded and saved |
+| 23 | Make it yours | PR | designing a small feature | One self-designed feature working |
+| 24 | Finish and show | PR | README, the fresh-laptop test, demoing | A 90-second demo; a README a colleague can follow |
 
 ```
 Notebook phase   Days  1–19   950 min   15 h 50
@@ -694,22 +803,20 @@ Project          Days 22–24   150 min    2 h 30
                              1,200 min  = 20 h  ✓
 ```
 
+**Tests** after Days 6, 12, 18 and 24 (§7.8) — homework, so the agendas are unaffected.
+
 ### Week map (3 sessions/week × 8 weeks)
 
-| Week | Days | Arc |
-|---|---|---|
-| 1 | 1–3 | It runs on my laptop, and I know what a value is |
-| 2 | 4–6 | I can name things — and naming a hundred things is awful |
-| 3 | 7–9 | The computer can decide — and deciding a hundred times is awful |
-| 4 | 10–12 | Lists and loops. **The two worst days of the course get fixed this week.** |
-| 5 | 13–15 | I can compute things about my whole class |
-| 6 | 16–18 | Dictionaries and my first function |
-| 7 | 19–21 | It is a program now, not a notebook |
-| 8 | 22–24 | It has my class in it, and I showed it to someone |
-
-Week 4 is the emotional centre. If the schedule slips, protect it.
-
----
+| Week | Days | Arc | Ends with |
+|---|---|---|---|
+| 1 | 1–3 | It runs on my laptop, and I know what a value is | |
+| 2 | 4–6 | I can name things, and keep a whole class in one list | **Test 1** |
+| 3 | 7–9 | The computer can decide | |
+| 4 | 10–12 | One loop marks thirty students | **Test 2** |
+| 5 | 13–15 | I can find any student by name | |
+| 6 | 16–18 | I write the calculation once and use it everywhere | **Test 3** |
+| 7 | 19–21 | It is a program now, not a notebook | |
+| 8 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Test 4** |
 
 ## 11. Verification discipline
 
@@ -790,13 +897,19 @@ every number and file name that was true before it.
 
 Cut, never compress. In this order:
 
-1. Day 15 `while` loops — the menu can be shipped in Day 21's guide and explained in two
-   minutes. This is the one genuinely removable day.
-2. Day 17's dict-of-lists (several grades per student) — the project works with one grade.
-3. Day 23's own-feature work — it can become optional homework.
+1. Day 13 `while` loops — the project menu ships written and can be explained in two
+   minutes on Day 21. This is the one genuinely removable day.
+2. Day 16's dict-of-lists (several grades per student) — the project works with one grade.
+3. Day 19's consolidation day, if the room is already ahead.
+4. Day 23's own-feature work — it can become optional homework.
 
-**Never cut:** Day 6 and Day 9 (the pain is the course), Day 12 (the first real relief),
-Days 20–21 (the transition), Day 24 (finishing something is the point).
+**Never cut:** the five discovery days (6, 10, 14, 17, 22) — each is a concept *and* its
+motivation in one session, so cutting one costs both. Nor Days 20–21 (the transition) or
+Day 24 (finishing something is the point).
+
+**Never split a discovery day across two sessions.** If Day 10 runs out of time, cut its
+Extra tasks — never its second half. A session that ends after the long way and before the
+short way is the single worst outcome the design can produce.
 
 **Catch-up rule for a missed session:** the solutions notebook for that day, plus the next
 day's recap callout, must be enough. Build each notebook so this is true.
@@ -856,7 +969,7 @@ review closes — this is what keeps a wrong decision from propagating into 19 n
 | **0 · Decisions** | All closed (§15); repository initialised with `.gitignore` | — |
 | **1 · Skeleton** | `CURRICULUM.md` (24 agendas, times verified), `OUTLINE.md`, `README.md`, the **bilingual glossary**, the sample class data | Is the day map right? Is the pain spiral right? **Is the Armenian terminology right?** Is anything taught that shouldn't be? |
 | **2 · Day 1 vertical slice** | `SETUP.md`, `check_setup.py`, `day01`, `day02`, `solutions/day02` | Is this the right level, tone, pace and length for a teacher who has never programmed — **and is the Armenian prose right?** **This is the most important review of the project.** Get it wrong here and 19 notebooks inherit it |
-| **3 · Notebook phase** | Days 3–19 + solutions, in four batches (3–6, 7–9, 10–14, 15–19) | Per batch: does the pain land? Does the relief land? Does each day fit 50 minutes? |
+| **3 · Notebook phase** | Days 3–19 + solutions + Tests 1–3, in four batches (3–6, 7–10, 11–14, 15–19) | Per batch: is the task believable? Does the tool land in the same session? Does each day fit 50 minutes? Are there enough Extra tasks? |
 | **4 · Transition + project** | Guides 20–24, `project/gradebook/`, `CHEATSHEET.md` | Can a participant who followed the notebooks actually do this? |
 | **5 · Verification & handover** | All of §11 passing, `INSTRUCTOR_NOTES.md`, the fresh-laptop test results | Definition of done (§17) |
 
@@ -873,7 +986,12 @@ exercise size and the retrospective format — and cheap to throw away.
 - [ ] Every deliberate-failure cell raises the exact error it claims
 - [ ] Every numeric claim in markdown matches what the code actually produces
 - [ ] Every Required exercise has a solution in `solutions/`
-- [ ] Every notebook has the four retrospective sections
+- [ ] Every notebook has at least 3 Extra tasks and 1 Challenge (§7.3)
+- [ ] Every notebook has the three retrospective sections
+- [ ] Every discovery day resolves its own laborious half **in the same notebook** (§4.1)
+- [ ] No notebook tells a participant the long way was there to make a point (§4.2)
+- [ ] Every stretch of repetitive work is preceded by the forward reassurance (§4.3)
+- [ ] All four tests and their marking guides exist and run
 - [ ] No notebook after Day 1 needs the internet
 - [ ] Nothing outside the standard library is imported anywhere — including Anaconda's own bundled packages
 - [ ] `project/gradebook/` runs end to end from a clean folder
@@ -881,6 +999,6 @@ exercise size and the retrospective format — and cheap to throw away.
 - [ ] `check_setup.py` passes on a fresh Windows machine and a fresh macOS machine, timed
 - [ ] `SETUP.md` verified by following it literally on a machine with no Python (§11.5)
 - [ ] Every Armenian term matches the glossary — **verified by script**, not by eye
-- [ ] Every identifier in every code cell is English; every string value in examples is Armenian
+- [ ] **No Armenian anywhere inside a code cell** — verified by script (§7.7)
 - [ ] The exclusion list in §5 holds — grep the notebooks for `class `, `lambda`, `import ` of anything third-party, and comprehensions
 - [ ] Anything that could not be verified is **stated plainly**, with how to verify it

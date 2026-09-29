@@ -2,33 +2,38 @@
 # Օր 8 — Լուծումներ
 
 #%% code
-# Առաջադրանք 1 և 2 — չորս մակարդակ, ստուգված չորս գնահատականով
+# Exercises 1, 2 and 3
 
-for grade in [10, 8, 5, 2]:
-    if grade >= 9:
-        print(grade, "— գերազանց")
-    elif grade >= 7:
-        print(grade, "— լավ")
-    elif grade >= 4:
-        print(grade, "— բավարար")
-    else:
-        print(grade, "— անբավարար")
+PASS_MARK = 4
 
-#%% code
-# Առաջադրանք 3 — կանոն and-ով
+student_name = "Ani"
+grade = 9
 
-grade = 8
-attendance = 90
-
-if grade >= 4 and attendance >= 80:
-    print("վկայականը տրվում է")
+if grade == 10:
+    print(f"{student_name}: excellent")
+elif grade >= PASS_MARK:
+    print(f"{student_name}: passed")
 else:
-    print("վկայականը չի տրվում")
+    print(f"{student_name}: failed")
 
 #%% code
-# Առաջադրանք 5 — not (grade >= 4) և grade < 4 նույն բանն են
+# Extra 7 - compare two grades
 
-grade = 3
+first_grade = 9
+second_grade = 6
 
-print(not (grade >= 4))
-print(grade < 4)
+if first_grade > second_grade:
+    print("the first one is higher")
+else:
+    print("the second one is higher or equal")
+
+#%% code
+# Challenge 11 - a condition inside a condition
+
+student_names = ["Ani", "Davit"]
+student_name = "Ani"
+grade = 10
+
+if student_name in student_names:
+    if grade == 10:
+        print(f"{student_name} is in the class and has a perfect grade")

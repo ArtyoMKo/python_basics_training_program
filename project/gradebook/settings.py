@@ -1,29 +1,28 @@
 """
-Ծրագրի բոլոր թվերն ու անունները՝ մեկ տեղում։
+Every number and name the program uses, in one place.
 
-Այս ֆայլը ոչինչ չի անում։ Այն միայն պահում է որոշումներ։
+This file does nothing. It only holds decisions.
 
-Հիշո՞ւմ ես 9-րդ օրը՝ երբ անցողիկ միավորը գրված էր քսանհինգ տեղում և փոխելը
-քսանհինգ խմբագրում էր։ Այս ֆայլը այդ դասն է՝ դարձած առանձին ֆայլ։
-
-Երբ ինչ-որ բան ուզում ես փոխել ծրագրում, նախ նայի՛ր այստեղ։
+Day 8 taught that a number which matters gets a name (PASS_MARK). This file is
+that lesson made into a file: when you want to change something about the
+program, look here first.
 """
 
-# Անցողիկ միավորը։ Փոխի՛ր այն քո դպրոցի կանոնի համաձայն։
-# Այս մեկ թիվը որոշում է, թե ով է «անցել» ամբողջ ծրագրում։
+# The pass mark. Change it to match your school's rule.
+# This one number decides who has "passed" everywhere in the program.
 PASS_MARK = 4
 
-# Ո՞ր ֆայլում է քո դասարանը։
-# Ֆայլը պետք է լինի data/ թղթապանակում, առաջին տողը՝ name,grade
+# Which file holds the class?
+# The file lives in data/ and its first line must be:  name,grade
 CLASS_FILE = "data/sample_class.csv"
 
-# Երբ պատրաստ լինես քո իրական դասարանով աշխատելու (22-րդ օր),
-# փոխի՛ր վերևի տողը այսպես.
+# When you are ready to work with your own class (day 22), change the line
+# above to:
 #     CLASS_FILE = "data/my_class.csv"
 
-# Քանի՞ նիշ թողնել միջինի ստորակետից հետո։
+# How many digits after the decimal point in an average?
 DECIMAL_PLACES = 1
 
-# Որքա՞ն լայն լինի անունների սյունակը մատյան տպելիս։
-# Եթե երկար անուններ ունես, մեծացրո՛ւ այս թիվը։
+# How wide should the name column be when printing the register?
+# If your students have long names, make this bigger.
 NAME_WIDTH = 12

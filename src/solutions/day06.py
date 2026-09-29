@@ -1,12 +1,27 @@
 #%% md
 # Օր 6 — Լուծումներ
 
-Այս օրվա առաջադրանքը լուծում չունի. այն կատարվում է ձեռքով, և դա հենց դասն էր։
+#%% code
+# Exercises 3 and 4 - the whole class in two lists
 
-Առաջադրանք 3-ի համար ահա մի քանի պատասխան, որ մասնակիցները սովորաբար գրում են.
+student_names = ["Ani", "Davit", "Nare", "Aram", "Mariam",
+                 "Tigran", "Lilit", "Gor", "Anahit", "Hayk"]
+class_grades = [9, 6, 10, 3, 8, 5, 8, 4, 9, 2]
 
-- «Վատն այն էր, որ նույն բանը քառասուն անգամ գրեցի»։
-- «Վատն այն էր, որ մեկ փոփոխության համար քառասուն տեղ պետք էր ուղղել»։
-- «Վատն այն էր, որ չգիտեի՝ ինչ-որ մեկը բաց թողեցի, թե ոչ»։
+print("students:", len(student_names))
+print("first:   ", student_names[0])
+print("last:    ", student_names[-1])
 
-Երեքն էլ ճիշտ են։ **10-րդ օրը այս երեքն էլ լուծվում են։**
+#%% code
+# Extra 6 and 7 - one row, and the sum of the first three
+
+print(f"{student_names[2]}: {class_grades[2]}")
+print(class_grades[0] + class_grades[1] + class_grades[2])
+
+#%% code
+# Challenge 10 - the whole register, one index at a time.
+# Ten students, ten lines. Day 10 turns this into four.
+
+print(f"{student_names[0]}: {class_grades[0]}")
+print(f"{student_names[1]}: {class_grades[1]}")
+print(f"{student_names[2]}: {class_grades[2]}")

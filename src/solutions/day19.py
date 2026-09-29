@@ -1,67 +1,87 @@
 #%% md
 # Օր 19 — Լուծումներ
 
-**Պահի՛ր այս տետրը։** 20-րդ օրը այս չորս ֆունկցիան տեղափոխվում են `grades.py` ֆայլ։
+**Սա ամբողջական ծրագիրն է։** 20-րդ և 21-րդ օրերին այն բաժանվում է չորս ֆայլի։
 
 #%% code
-# Առաջադրանք 1-4 — չորս ֆունկցիա, որոնք վերադարձնում են արժեք
+# The whole assembled register program
 
 PASS_MARK = 4
+DECIMAL_PLACES = 1
+NAME_WIDTH = 12
+
+class_grades = {
+    "Ani": [9, 10, 8],
+    "Davit": [6, 5, 7],
+    "Nare": [10, 10, 9],
+    "Aram": [3, 4, 2],
+    "Mariam": [8, 8, 9],
+    "Tigran": [5, 6, 5],
+}
 
 
 def average_of(grades):
-    """Վերադարձնում է գնահատականների միջինը։"""
+    """Return the average of a list of grades."""
+    if not grades:
+        return 0
     total = 0
     for grade in grades:
         total = total + grade
-    return round(total / len(grades), 1)
+    return round(total / len(grades), DECIMAL_PLACES)
 
 
-def has_passed(grade, pass_mark=PASS_MARK):
-    """Վերադարձնում է True, եթե գնահատականը անցողիկ է։"""
-    return grade >= pass_mark
+def has_passed(grades, pass_mark=PASS_MARK):
+    """Return True if this student's average is a pass."""
+    return average_of(grades) >= pass_mark
 
 
-def highest_of(class_grades):
-    """Վերադարձնում է ամենաբարձր գնահատական ունեցող աշակերտի անունը։"""
-    best_name = ""
-    best_grade = -1
-    for student_name, grade in class_grades.items():
-        if grade > best_grade:
-            best_grade = grade
-            best_name = student_name
-    return best_name
-
-
-def failing_students(class_grades, pass_mark=PASS_MARK):
-    """Վերադարձնում է չանցած աշակերտների անունների ցուցակը։"""
+def failing_students(class_grades):
+    """Return the names of the students who did not pass."""
     failing = []
-    for student_name, grade in class_grades.items():
-        if grade < pass_mark:
+    for student_name, grades in class_grades.items():
+        if not has_passed(grades):
             failing.append(student_name)
     return failing
 
 
-my_class = {"Անի": 9, "Դավիթ": 6, "Նարե": 10, "Արամ": 3,
-            "Մարիամ": 8, "Տիգրան": 5, "Լիլիթ": 8, "Գոռ": 4,
-            "Անահիտ": 9, "Հայկ": 2, "Սոնա": 8, "Վահե": 6}
+def class_average(class_grades):
+    """Return the average of every student's average."""
+    all_averages = []
+    for student_name, grades in class_grades.items():
+        all_averages.append(average_of(grades))
+    return average_of(all_averages)
 
-print("Միջինը՝", average_of(list(my_class.values())))
-print("Ամենաբարձրը՝", highest_of(my_class))
-print("Չեն անցել՝", failing_students(my_class))
+
+def print_register(class_grades):
+    """Print the whole register, one line per student."""
+    print()
+    print("=== REGISTER ===")
+    for student_name, grades in class_grades.items():
+        if has_passed(grades):
+            result = "passed"
+        else:
+            result = "failed"
+        print(f"{student_name:<{NAME_WIDTH}} {str(grades):<14} "
+              f"{average_of(grades):>5}   {result}")
+    print()
+    print(f"students:      {len(class_grades)}")
+    print(f"class average: {class_average(class_grades)}")
+    print(f"did not pass:  {len(failing_students(class_grades))}")
+
+
+print_register(class_grades)
 
 #%% code
-# Առաջադրանք 5 — lowest_of. նույն ձևը, հակառակ համեմատությամբ
+# Extra 8 - removing a student, guarded with in
 
-def lowest_of(class_grades):
-    """Վերադարձնում է ամենացածր գնահատական ունեցող աշակերտի անունը։"""
-    worst_name = ""
-    worst_grade = 11
-    for student_name, grade in class_grades.items():
-        if grade < worst_grade:
-            worst_grade = grade
-            worst_name = student_name
-    return worst_name
+def remove_student(class_grades, student_name):
+    """Remove one student. Says so if there is no such student."""
+    if student_name not in class_grades:
+        print(f"{student_name} is not in this class - nothing removed")
+        return
+    del class_grades[student_name]
+    print(f"{student_name} removed")
 
 
-print("Ամենացածրը՝", lowest_of(my_class))
+remove_student(class_grades, "Tigran")
+remove_student(class_grades, "Vahe")

@@ -1,11 +1,11 @@
 """
-Մատյան — ծրագիր ուսուցչի համար։
+Register - a program for teachers.
 
-Գործարկի՛ր այսպես՝
+Run it like this:
     python main.py
 
-Այս ֆայլը ինքը ոչինչ չի հաշվում և ֆայլ չի կարդում։ Նա հարցնում է ուսուցչին,
-թե ինչ է ուզում, և խնդրում է մյուս ֆայլերին անել այդ գործը։
+This file does no calculating of its own and reads no files. It asks the
+teacher what they want, and then asks the other files to do the work.
 """
 
 import grades
@@ -14,81 +14,81 @@ import storage
 
 
 def show_register(class_grades):
-    """Տպում է ամբողջ մատյանը։"""
+    """Print the whole register."""
     if not class_grades:
-        print("Դասարանը դատարկ է։")
+        print("The class is empty.")
         return
 
     print()
-    print("=== ՄԱՏՅԱՆ ===")
+    print("=== REGISTER ===")
 
     for student_name, grade in class_grades.items():
         if grades.has_passed(grade):
-            result = "անցավ"
+            result = "passed"
         else:
-            result = "չանցավ"
+            result = "failed"
         print(f"{student_name:<{settings.NAME_WIDTH}} {grade:>3}   {result}")
 
     print()
-    print(f"Աշակերտների թիվը՝ {len(class_grades)}")
-    print(f"Դասարանի միջինը՝ {grades.class_average(class_grades)}")
+    print(f"students:      {len(class_grades)}")
+    print(f"class average: {grades.class_average(class_grades)}")
 
 
 def show_failing(class_grades):
-    """Տպում է չանցածներին։"""
+    """Print only the students who did not pass."""
     failing = grades.failing_students(class_grades)
 
     print()
     if not failing:
-        print("Բոլորն անցել են։")
+        print("Everyone passed.")
         return
 
-    print(f"Չեն անցել ({len(failing)} աշակերտ)՝")
+    print(f"Did not pass ({len(failing)} students):")
     for student_name in failing:
         print(f" - {student_name}: {class_grades[student_name]}")
 
 
 def add_grade(class_grades):
-    """Հարցնում է անուն և գնահատական, ավելացնում կամ ուղղում է։"""
-    student_name = input("Աշակերտի անունը՝ ").strip()
+    """Ask for a name and a grade, then add or correct it."""
+    student_name = input("Student name: ").strip()
     if not student_name:
-        print("Անունը դատարկ է — ոչինչ չավելացվեց։")
+        print("The name is empty - nothing was added.")
         return
 
-    answer = input("Գնահատականը (1-10)՝ ").strip()
+    answer = input("Grade (1-10): ").strip()
     if not answer.isdigit():
-        print("Դա թիվ չէ — ոչինչ չավելացվեց։")
+        print("That is not a number - nothing was added.")
         return
 
     grade = int(answer)
     if grade < 1 or grade > 10:
-        print("Գնահատականը պետք է լինի 1-ից 10 — ոչինչ չավելացվեց։")
+        print("The grade must be between 1 and 10 - nothing was added.")
         return
 
     if student_name in class_grades:
-        print(f"{student_name}-ի գնահատականը փոխվեց {class_grades[student_name]}-ից {grade}-ի։")
+        print(f"{student_name}: changed from {class_grades[student_name]} to {grade}")
     else:
-        print(f"{student_name} ավելացվեց։")
+        print(f"{student_name} added.")
 
     class_grades[student_name] = grade
 
 
 def show_menu():
     print()
-    print("1 — ցույց տալ մատյանը")
-    print("2 — ցույց տալ չանցածներին")
-    print("3 — ավելացնել կամ ուղղել գնահատական")
-    print("4 — պահպանել")
-    print("5 — դուրս գալ")
+    print("1 - show the register")
+    print("2 - show who did not pass")
+    print("3 - add or correct a grade")
+    print("4 - save")
+    print("5 - quit")
 
 
 def main():
     class_grades = storage.load_class()
-    print(f"Բացվեց {settings.CLASS_FILE} — {len(class_grades)} աշակերտ")
+    print(f"Opened {settings.CLASS_FILE} - {len(class_grades)} students")
 
     while True:
         show_menu()
-        choice = input("Ընտրի՛ր՝ ").strip()
+        choice = input("Choose: ").strip()
 
         if choice == "1":
             show_register(class_grades)
@@ -99,22 +99,22 @@ def main():
         elif choice == "4":
             storage.save_class(class_grades)
         elif choice == "5":
-            print("Ցտեսություն։")
+            print("Goodbye.")
             break
         else:
-            print("Այդպիսի հրաման չկա։ Գրի՛ր 1-ից 5։")
+            print("No such command. Type a number from 1 to 5.")
 
 
 if __name__ == "__main__":
-    # Մեկ try/except ամբողջ ծրագրում, ամենադրսում։
-    # Եթե ինչ-որ անսպասելի բան պատահի, ուսուցիչը տեսնի հասկանալի նախադասություն,
-    # ոչ թե տասը տող կարմիր տեքստ։
+    # One try/except in the whole program, at the very outside.
+    # If something unexpected happens, the teacher sees a sentence they can
+    # act on instead of ten lines of red text.
     try:
         main()
     except KeyboardInterrupt:
         print()
-        print("Ընդհատվեց։ Ցտեսություն։")
+        print("Interrupted. Goodbye.")
     except Exception as error:
         print()
-        print(f"Անսպասելի սխալ՝ {type(error).__name__}: {error}")
-        print("Ցույց տո՛ւր այս տողը ուսուցչին։")
+        print(f"Unexpected error: {type(error).__name__}: {error}")
+        print("Show this line to your instructor.")

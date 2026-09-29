@@ -49,18 +49,18 @@ python grades.py
 Ստեղծի՛ր նոր ֆայլ՝ **`settings.py`**, և գրի՛ր՝
 
 ```python
-"""Ծրագրի բոլոր թվերը՝ մեկ տեղում։"""
+"""Every number the program uses, in one place."""
 
-# Անցողիկ միավորը։ Փոխի՛ր քո դպրոցի կանոնի համաձայն։
+# The pass mark. Change it to match your school.
 PASS_MARK = 4
 
-# Ո՞ր ֆայլում է դասարանը։
+# Which file holds the class?
 CLASS_FILE = "data/sample_class.csv"
 
-# Քանի՞ նիշ ստորակետից հետո։
+# How many digits after the decimal point?
 DECIMAL_PLACES = 1
 
-# Անունների սյունակի լայնությունը մատյան տպելիս։
+# How wide is the name column when printing?
 NAME_WIDTH = 12
 ```
 
@@ -82,8 +82,8 @@ NAME_WIDTH = 12
 
 ```
 name,grade
-Անի,9
-Դավիթ,6
+Ani,9
+Davit,6
 ```
 
 Առաջին տողը վերնագիրն է։ Հետո՝ մեկ տող՝ մեկ աշակերտի համար, ստորակետով բաժանված։
@@ -97,7 +97,7 @@ name,grade
 Ստեղծի՛ր **`storage.py`**՝
 
 ```python
-"""Դասարանը կարդալ ֆայլից և գրել ետ։"""
+"""Read the class from a file and write it back."""
 
 from pathlib import Path
 
@@ -105,11 +105,11 @@ import settings
 
 
 def load_class(file_name=settings.CLASS_FILE):
-    """Կարդում է ֆայլը և վերադարձնում բառարան՝ {"Անի": 9}։"""
+    """Read the file and return a dictionary, like {"Ani": 9}."""
     path = Path(file_name)
 
     if not path.exists():
-        print(f"❌ {file_name} ֆայլը չգտնվեց։")
+        print(f"Could not find {file_name}")
         return {}
 
     lines = path.read_text(encoding="utf-8").strip().splitlines()
@@ -135,7 +135,7 @@ if __name__ == "__main__":
   պարտադիր է**, այլապես հայերեն անունները կկոտրվեն։
 - `line.split(",")` — կտրում է տողը ստորակետով և տալիս ցուցակ՝ `["Անի", "9"]`։
 
-Իսկ `lines[1:]`-ը 11-րդ օրվա կտրելն է՝ «առաջինից բացի բոլորը», որովհետև առաջինը
+Իսկ `lines[1:]`-ը 7-րդ օրվա կտրելն է՝ «առաջինից բացի բոլորը», որովհետև առաջինը
 վերնագիրն է։
 
 ✅ **ՍՏՈՒԳՈՒՄ։** `python storage.py` տպում է բառարանը՝ 12 աշակերտով, հայերեն
@@ -165,7 +165,7 @@ def has_passed(grade, pass_mark=settings.PASS_MARK):
 
 ```python
 def class_average(class_grades):
-    """Վերադարձնում է ամբողջ դասարանի միջինը։"""
+    """Return the average grade of the whole class."""
     return average_of(list(class_grades.values()))
 ```
 
@@ -183,7 +183,7 @@ def class_average(class_grades):
 Վերջին ֆայլը։ Ստեղծի՛ր **`main.py`**՝
 
 ```python
-"""Մատյան — ծրագիր ուսուցչի համար։"""
+"""Register - a program for teachers."""
 
 import grades
 import settings
@@ -191,20 +191,20 @@ import storage
 
 
 def show_register(class_grades):
-    """Տպում է ամբողջ մատյանը։"""
+    """Print the whole register."""
     print()
-    print("=== ՄԱՏՅԱՆ ===")
+    print("=== REGISTER ===")
 
     for student_name, grade in class_grades.items():
         if grades.has_passed(grade):
-            result = "անցավ"
+            result = "passed"
         else:
-            result = "չանցավ"
+            result = "failed"
         print(f"{student_name:<{settings.NAME_WIDTH}} {grade:>3}   {result}")
 
     print()
-    print(f"Աշակերտների թիվը՝ {len(class_grades)}")
-    print(f"Դասարանի միջինը՝ {grades.class_average(class_grades)}")
+    print(f"students:      {len(class_grades)}")
+    print(f"class average: {grades.class_average(class_grades)}")
 
 
 def main():
@@ -212,18 +212,18 @@ def main():
 
     while True:
         print()
-        print("1 — ցույց տալ մատյանը")
-        print("2 — դուրս գալ")
+        print("1 - show the register")
+        print("2 - quit")
 
-        choice = input("Ընտրի՛ր՝ ").strip()
+        choice = input("Choose: ").strip()
 
         if choice == "1":
             show_register(class_grades)
         elif choice == "2":
-            print("Ցտեսություն։")
+            print("Goodbye.")
             break
         else:
-            print("Այդպիսի հրաման չկա։")
+            print("No such command.")
 
 
 if __name__ == "__main__":
@@ -234,7 +234,7 @@ if __name__ == "__main__":
 `storage`-ին կարդալ և `grades`-ին հաշվել։
 
 Եվ ուշադրություն՝ `grades.has_passed(...)` — ֆայլի անունը, կետ, ֆունկցիայի անունը։
-Ուղիղ այնպես, ինչպես `student_names.append(...)`-ը 11-րդ օրը։
+Ուղիղ այնպես, ինչպես `student_names.append(...)`-ը 7-րդ օրը։
 
 ---
 

@@ -1,30 +1,53 @@
 #%% md
 # Օր 15 — Լուծումներ
 
-Այս տետրում input()-ի փոխարեն ցուցակ է օգտագործված, որպեսզի կարողանաս գործարկել։
-Քո տետրում input()-ը պետք է մնա։
+#%% code
+# Exercises 1-4 - the full register from a dictionary
+
+PASS_MARK = 4
+
+class_grades = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3,
+                "Mariam": 8, "Tigran": 5, "Lilit": 8, "Gor": 4}
+
+total = 0
+failing = 0
+
+print("=== REGISTER ===")
+
+for student_name, grade in class_grades.items():
+    if grade >= PASS_MARK:
+        result = "passed"
+    else:
+        result = "failed"
+        failing = failing + 1
+    total = total + grade
+    print(f"{student_name:<10} {grade:>3}   {result}")
+
+print()
+print(f"students: {len(class_grades)}")
+print(f"average:  {total / len(class_grades):.1f}")
+print(f"failing:  {failing}")
 
 #%% code
-# Առաջադրանք 1-4 — ամբողջական ցիկլ բոլոր ստուգումներով
+# Extra 8 - a numbered register needs a counter before the loop
 
-answers = ["9", "ինը", "15", "6", "դուրս"]      # այն, ինչ օգտվողը կգրեր
-class_grades = []
+number = 1
 
-for answer in answers:
-    if answer == "դուրս":
-        break
+for student_name, grade in class_grades.items():
+    print(f"{number}. {student_name:<10} {grade:>3}")
+    number = number + 1
 
-    if not answer.isdigit():
-        print(f"«{answer}» — դա թիվ չէ։")
-        continue
+#%% code
+# Extra 10 - names starting with A. student_name[0] is the first letter.
 
-    grade = int(answer)
+for student_name, grade in class_grades.items():
+    if student_name[0] == "A":
+        print(student_name)
 
-    if grade < 1 or grade > 10:
-        print(f"{grade} — պետք է լինի 1-ից 10։")
-        continue
+#%% code
+# Challenge 11 - sorted by grade, high to low
 
-    class_grades.append(grade)
-
-print(f"Հավաքվեց {len(class_grades)} գնահատական՝ {class_grades}")
-print(f"Միջինը՝ {sum(class_grades) / len(class_grades):.1f}")
+for mark in range(10, 0, -1):
+    for student_name, grade in class_grades.items():
+        if grade == mark:
+            print(f"{student_name:<10} {grade:>3}")

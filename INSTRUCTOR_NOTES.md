@@ -66,23 +66,30 @@ Other frequent problems, in order of how often they occur:
 
 ---
 
-## 3. The two pain days are the course. Do not rescue them.
+## 3. The five discovery days are the course. Never split one.
 
-**Day 6** (forty variables by hand) and **Day 9** (twenty-five `if` blocks) are designed
-to be tedious. Participants will ask, halfway through, whether there is a better way.
+**Days 6, 10, 14, 17 and 22** each give participants a real task, let them solve it the
+long way with what they know, and then — **in the same fifty minutes** — hand them the tool
+that collapses it.
 
-**Say yes, and say which day.** Do not show them. Day 6's answer is Day 10; Day 9's
-residue is answered on Day 14. The materials name the day in writing, so you are not
-being evasive — you are keeping a promise they can check.
+**The single most important rule in this document: never let a discovery day end at the
+halfway point.** If Day 10 is running long, cut its Extra tasks. Cut the Challenge. Cut the
+recap. Do *not* stop after the fifteen `if` blocks and promise the loop on Thursday. A
+session that ends after the long way and before the short way is the worst outcome this
+design can produce, and with working adults it is the one that loses people.
 
-The retrospective on both days asks them to **write one sentence** about what was wrong.
-Read three or four out loud. That two minutes is what makes Day 10 and Day 14 land; skipping
-it turns the relief into just another feature.
+**Do not rescue them early, either.** Someone will ask, twenty minutes in, whether there
+is a faster way. The answer is yes, and it is after the break — the notebook says so in
+writing before the long half starts, so you are keeping a promise, not being evasive.
+
+**Never tell them the long way was a lesson.** They are building a class register because
+a teacher needs a class register. That is true, and it is the only framing the materials
+use. "Now you see how bad that was" undoes the whole effect: it turns work they chose to
+do into a trick played on them. The notebooks compare the two versions with a table of line
+counts and nothing else. Do the same out loud.
 
 **Week 4 (Days 10–12) is the emotional centre of the course.** If the schedule slips,
 protect it.
-
----
 
 ## 4. Timing
 
@@ -98,13 +105,16 @@ stop, so nobody will tell you when you are over.
 
 **If you run out of time, cut — never compress.** In this order:
 
-1. **Day 15 (`while` loops).** The only genuinely removable day. The project's menu ships
+1. **Day 13 (`while` loops).** The only genuinely removable day. The project's menu ships
    written; explain it in two minutes on Day 21.
-2. **Day 17's dict-of-lists** (several grades per student). The project works with one.
-3. **Day 23's own-feature work.** It can become optional homework.
+2. **Day 16's dict-of-lists** (several grades per student). The project works with one.
+3. **Day 19's consolidation**, if the room is already ahead — but see §5, it is also the
+   catch-up day.
+4. **Day 23's own-feature work.** It can become optional homework.
 
-**Never cut:** Day 6 and Day 9 (the pain is the course), Day 12 (the first real relief),
-Days 20–21 (the transition), Day 24 (finishing something is the point).
+**Never cut:** the five discovery days (6, 10, 14, 17, 22) — each is a concept *and* its
+motivation in one session, so cutting one costs both. Nor Days 20–21 (the transition) or
+Day 24 (finishing something is the point).
 
 ---
 
@@ -123,6 +133,35 @@ These are working adults meeting three times a week. Some will miss sessions.
 - **The practice task at the end of each notebook is optional and the next day never
   assumes it was done.** Say that out loud in week 1, or half the room will arrive
   anxious.
+
+---
+
+## 5b. The fortnightly tests
+
+Four take-home tests, after Days 6, 12, 18 and 24. Handed out at the end of the session,
+collected at the start of the next. **They do not use session time**, so the agendas are
+unaffected.
+
+**Say what they are for, out loud, when you hand out the first one.** These are not exams
+and nobody is graded. They exist to tell *you* where to slow down — and, across the eight
+weeks, to tell the programme whether the method is working (`RATIONALE.md` §5). An honest
+blank is more useful than a copied answer, and the tests say so in writing.
+
+Each test has a marking guide at `tests/markN_guide.md`. **Its second column is the
+point:** what a wrong answer tells you. Read that column before marking, not after.
+
+Three results are worth watching specifically:
+
+| Test | Question | Why it matters |
+|---|---|---|
+| 1 | Q5 (`x = x + 1`) | If a third of the room misses this, do not start Day 7 as written |
+| 2 | Q4 (writing a loop) | The first real evidence for or against the whole approach |
+| 3 | Q6, Q8, Q10 (`return`) | If these fail, spend Day 19 on `return` instead of consolidation |
+
+**Test 4 carries the transfer question** — one small task, using only taught syntax, that
+the course never demonstrated. It is marked separately and is the closest thing the
+programme has to a measurement of its own hypothesis. `tests/mark4_guide.md` explains how
+to read it; the short version is that *a correct plan with incomplete code is a success*.
 
 ---
 
@@ -182,10 +221,11 @@ school uses a different word, change the glossary and re-run the checker.
 | Day | They leave with |
 |---|---|
 | 1 | `check_setup.py` green, and their name printed in Armenian |
-| 6 | Forty variables edited by hand, and one written sentence about why that was bad |
-| 9 | One edit that changes the pass mark everywhere, proved by changing it twice |
-| 12 | Yesterday's forty print lines as a three-line loop |
-| 19 | Four working grade functions |
+| 6 | Their class as one list, written both ways, with the line counts compared |
+| 10 | The whole register marked in four lines, proved by adding students |
+| 14 | Their class as a dictionary, and a note of what went wrong with two lists |
+| 17 | The average as a function, with a formatting change proved in one edit |
+| 19 | The complete register program working in one notebook |
 | **21** | **A working `python main.py` — confirm this individually, for every person, before they leave** |
 | 22 | Their own class in `data/my_class.csv`, loaded and saved back |
 | 24 | A README a colleague successfully ran from, and a 90-second demo |

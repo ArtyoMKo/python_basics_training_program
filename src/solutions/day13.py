@@ -1,35 +1,34 @@
 #%% md
 # Օր 13 — Լուծումներ
 
-#%% code
-# Առաջադրանք 1, 2 — գումարը և միջինը
+`input()`-ի փոխարեն ցուցակ է օգտագործված, որպեսզի կարողանաս գործարկել։
+Քո տետրում `input()`-ը պետք է մնա։
 
-class_grades = [9, 6, 10, 3, 8, 5, 8, 4, 9, 2, 8, 6]
+#%% code
+# Exercises 1-4 - the full loop with every check
+
+answers = ["9", "nine", "15", "6", "quit"]      # what the teacher would type
+class_grades = []
+
+for answer in answers:
+    if answer == "quit":
+        break
+
+    if not answer.isdigit():
+        print(f"'{answer}' is not a number.")
+        continue
+
+    grade = int(answer)
+
+    if grade < 1 or grade > 10:
+        print(f"{grade} must be between 1 and 10.")
+        continue
+
+    class_grades.append(grade)
+
+print(f"collected {len(class_grades)}: {class_grades}")
 
 total = 0
 for grade in class_grades:
     total = total + grade
-
-print(f"Գումարը՝ {total}")
-print(f"Միջինը՝ {total / len(class_grades):.1f}")
-
-#%% code
-# Առաջադրանք 4 — քանի՞սն ունեն 10
-
-how_many = 0
-
-for grade in class_grades:
-    if grade == 10:
-        how_many = how_many + 1
-
-print(how_many)
-
-#%% code
-# Առաջադրանք 5 — բաշխումը
-
-for mark in range(1, 11):
-    how_many = 0
-    for grade in class_grades:
-        if grade == mark:
-            how_many = how_many + 1
-    print(f"{mark} միավոր՝ {how_many} աշակերտ")
+print(f"average: {total / len(class_grades):.1f}")

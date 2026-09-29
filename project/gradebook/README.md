@@ -44,8 +44,8 @@ python grades.py
 
 ```
 name,grade
-Անի,9
-Դավիթ,6
+Ani,9
+Davit,6
 ```
 
 2. `settings.py`-ում գրի՛ր `CLASS_FILE = "data/my_class.csv"`
@@ -57,6 +57,6 @@ name,grade
 | Սխալը | Ի՞նչ անել |
 |---|---|
 | `ModuleNotFoundError: No module named 'settings'` | Չորս ֆայլերը նույն թղթապանակում չեն |
-| `❌ ... ֆայլը չգտնվեց` | `settings.py`-ում ֆայլի անունը սխալ է, կամ `data`-ն սխալ տեղում է |
+| `Could not find ...` | `settings.py`-ում ֆայլի անունը սխալ է, կամ `data`-ն սխալ տեղում է |
 | Հայերենը կոտրված է | `encoding="utf-8"`-ը մոռացվել է |
 | Ոչինչ չի տպվում | `main()`-ը չի կանչվել |

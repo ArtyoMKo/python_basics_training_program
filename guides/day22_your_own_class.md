@@ -55,7 +55,7 @@
 
 ```python
 def save_class(class_grades, file_name=settings.CLASS_FILE):
-    """Գրում է բառարանը ետ ֆայլ՝ նույն ձևաչափով։"""
+    """Write the dictionary back to the file, in the same format."""
     path = Path(file_name)
 
     lines = ["name,grade"]
@@ -64,7 +64,7 @@ def save_class(class_grades, file_name=settings.CLASS_FILE):
 
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-    print(f"✅ Պահպանվեց՝ {file_name} ({len(class_grades)} աշակերտ)")
+    print(f"Saved {file_name} ({len(class_grades)} students)")
 ```
 
 Երեք բան.
@@ -89,37 +89,37 @@ python storage.py
 
 ```python
 def add_grade(class_grades):
-    """Հարցնում է անուն և գնահատական, ավելացնում կամ ուղղում է։"""
-    student_name = input("Աշակերտի անունը՝ ").strip()
+    """Ask for a name and a grade, then add or correct it."""
+    student_name = input("Student name: ").strip()
     if not student_name:
-        print("Անունը դատարկ է — ոչինչ չավելացվեց։")
+        print("The name is empty - nothing was added.")
         return
 
-    answer = input("Գնահատականը (1-10)՝ ").strip()
+    answer = input("Grade (1-10): ").strip()
     if not answer.isdigit():
-        print("Դա թիվ չէ — ոչինչ չավելացվեց։")
+        print("That is not a number - nothing was added.")
         return
 
     grade = int(answer)
     if grade < 1 or grade > 10:
-        print("Գնահատականը պետք է լինի 1-ից 10 — ոչինչ չավելացվեց։")
+        print("The grade must be between 1 and 10 - nothing was added.")
         return
 
     class_grades[student_name] = grade
-    print(f"{student_name} — {grade}։ Պահպանելու համար ընտրի՛ր 4։")
+    print(f"{student_name}: {grade}. Choose 4 to save.")
 ```
 
-Սա ուղիղ 15-րդ օրվա ստուգումներն են՝ `.isdigit()` և միջակայքի ստուգումը։
+Սա ուղիղ 13-րդ օրվա ստուգումներն են՝ `.isdigit()` և միջակայքի ստուգումը։
 **Ամեն սխալ ունի իր առանձին հաղորդագրությունը** — «սխալ մուտք» ոչինչ չի ասում։
 
 Հետո մենյուում՝
 
 ```python
-        print("1 — ցույց տալ մատյանը")
-        print("2 — ցույց տալ չանցածներին")
-        print("3 — ավելացնել կամ ուղղել գնահատական")
-        print("4 — պահպանել")
-        print("5 — դուրս գալ")
+        print("1 - show the register")
+        print("2 - show who did not pass")
+        print("3 - add or correct a grade")
+        print("4 - save")
+        print("5 - quit")
 ```
 
 և համապատասխան `elif`-երը՝
@@ -147,9 +147,9 @@ def add_grade(class_grades):
 
 ```
 name,grade
-Անի,9
-Դավիթ,6
-Նարե,10
+Ani,9
+Davit,6
+Nare,10
 ```
 
 **Հիշի՛ր վերևի կանոնները՝ միայն անուններ, փոխված գնահատականներ։**
@@ -182,7 +182,7 @@ python main.py
 Պետք է տեսնես՝
 
 ```
-❌ data/my_clas.csv ֆայլը չգտնվեց։
+Could not find data/my_clas.csv
 ```
 
 **Ոչ թե տասը տող կարմիր տեքստ։** Մեկ նախադասություն, որը ասում է, թե ինչ է սխալ։

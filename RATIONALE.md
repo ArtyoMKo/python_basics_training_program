@@ -90,34 +90,49 @@ The last step is **not in this course**. That is the next one, if this works.
 
 This is the part that is easiest to misunderstand, so here is the actual mechanism.
 
-**Day 6.** Participants write **forty variables by hand** — `student_01_name = "Անի"`,
-forty times. Then "the ministry adds one point to every grade", and they edit all forty by
-hand. Nobody is shown a better way. The session ends with them writing **one sentence**
-about what was wrong with it.
+**Day 6.** Participants are told: *a teacher needs somewhere to keep the whole class —
+every name, every score — so the program can work with all of them.* That is a real task
+and it is given as one. With what they know on Day 6, it means one variable per student.
+The notebook ships twenty already written; they add a few of their own and update the
+scores. It works, and it takes a while.
 
-Nothing is taught that day. It is deliberately tedious.
+**Thirty minutes later, in the same session**, the list arrives and the whole register
+becomes two lines. The notebook puts the two versions side by side and counts the lines:
+40 against 2.
 
-**Day 10** opens with those forty lines on screen and replaces them with one line — a list.
+We do not have to explain why lists are useful. They spent twenty minutes finding out —
+and then got the answer before they went home.
 
-We do not have to explain why lists are useful. They spent fifty minutes finding out.
+The same thing happens five times:
 
-The same thing happens three times across the course:
+| Day | The real task | The long way | The tool, same session |
+|---|---|---|---|
+| 6 | A register for the whole class | one variable per student | **lists** |
+| 10 | Mark the whole class pass/fail | one `if` block per student | **`for` loops** |
+| 14 | Find one student's grade by name | two parallel lists and a position | **dictionaries** |
+| 17 | An average on every report card | the same six lines, four times | **functions** |
+| 22 | Keep the register after closing it | retyping it every time | **files** |
 
-| They feel | Then they get |
-|---|---|
-| Day 6 — 40 variables, edited by hand | Day 10 — **lists** |
-| Day 9 — the number `4` copy-pasted into 25 `if` blocks | Day 14 — **loops** (125 lines become 4) |
-| Day 17 — the same 6-line calculation in 4 places | Day 18 — **functions** |
+### Two rules that make it work, and are easy to get wrong
 
-Day 9 has a detail worth noticing: **half the fix is theirs.** They replace the 25 copies
-of `4` with one `PASS_MARK` variable themselves, using something they learned on Day 5.
-The rest of the problem is named out loud, written down, and left standing for five
-sessions. On Day 14 we open that file again and put the two versions side by side.
+**The relief comes in the same session. Always.** An earlier draft of this course planted
+a problem on Day 6 and solved it on Day 10. That is good structure on paper and bad
+teaching in practice: adults who spend an evening on tedious work and go home with no
+resolution do not come back. The long way and its replacement are now always fifty minutes
+apart, never four sessions.
 
-**A teacher who has typed forty variables understands why a list exists better than one
-who was given a good definition of it.** That is the whole bet, in one sentence.
+**The tedium is never named.** A participant is never told they are doing something in
+order to suffer, or that the long way was there to make a point. They are building a class
+register because a teacher needs a class register — which is true. The materials say, before
+the long half begins, that a shorter way is coming after the break. They never say
+afterwards "now you see how bad that was".
 
----
+That distinction matters more than it sounds. Work you chose to do, and were then shown a
+better way to do, is a lesson. The identical work, revealed afterwards to have been a
+deliberate ordeal, is a trick — and this audience has been let down enough already.
+
+**A teacher who has written out a whole register by hand understands why a list exists
+better than one who was given a good definition of it.** That is the bet, in one sentence.
 
 ## 4. Why this is risky
 
@@ -131,9 +146,12 @@ and no amount of the course being pleasant changes that.
 
 **Participants may not accept it.** Adults often judge a course by how substantial it
 feels. A course that explains little and asks them to type a lot can read as shallow, or
-as not respecting their time. Days 6 and 9 — the deliberately tedious ones — are the
-sharpest version of this risk: they are designed to feel like a waste of time, and some
-participants will conclude they were.
+as not respecting their time. The discovery days are the sharpest version of this risk:
+the first half of those sessions is deliberately laborious. We mitigate it by resolving
+every one of them within the same fifty minutes, by promising the shortcut in writing
+before the long half starts, and by never framing the work as an ordeal — but a
+participant who leaves on Day 6 thinking "I typed for twenty minutes" rather than "I
+learned what a list is for" is a real failure mode, and it will happen to somebody.
 
 **Twenty hours is not much.** Eight weeks, 50 minutes at a time, for working teachers.
 The scope is deliberately narrow, and narrow means things are missing.
@@ -169,20 +187,38 @@ extra work:
 
 | When | The check | Why it is the right one |
 |---|---|---|
-| **Day 12** | Can they write a `for` loop over their own list, unaided? | The first real test that mechanical fluency is forming |
+| **Test 1** (after Day 6) | Q5: do they write `x = x + 1` rather than the answer? | The earliest signal that "assign" has landed; everything later needs it |
+| **Test 2** (after Day 12) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
+| **Test 3** (after Day 18) | Q6/Q8/Q10: do they understand `return`? | If not, the four-file project is not reachable |
 | **Day 21** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
 | **Day 24** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
 | **Day 24** | Attendance across all 24 sessions | Below a certain point, nothing else is interpretable |
 
+The four tests are take-home, one per fortnight, and each ships an instructor marking guide
+whose second column is *what a wrong answer tells you*. They are not graded and the
+participants are told so: they exist to show where to slow down, and to give this decision
+something to stand on.
+
 **The one measurement we have to add.** None of the above tests the actual bet, because
 none of them is an algorithmic problem. So:
 
-> At the very end, give them **one small algorithmic task that was never taught** — with
-> no new syntax, only what they know. For example: *given a class dictionary, find the
-> student whose grade is closest to the class average.* Nothing in the course covers this.
+> **Test 4, question 8** is that measurement, and it is already written: *given a class
+> dictionary, find the student whose grade is closest to the class average.* It uses no
+> syntax the course did not teach, and the course never demonstrates it.
 >
-> **How many can do it, and how do they behave while trying?** Do they now attack the
-> problem — or do they still freeze on the mechanics?
+> The question asks them to **write their approach in plain words first**, then attempt the
+> code, and to say where they stopped if they could not finish.
+
+Four things get recorded, not one (`tests/mark4_guide.md`):
+
+1. Did they write the plain-words plan at all?
+2. Was the plan a **correct approach**, even if the code failed?
+3. Did the code work?
+4. **Where did they stop, in their own words?**
+
+**A correct plan with incomplete code is a success.** It means they can now reason about a
+problem and the remaining gap is practice — which is exactly what the next course would
+provide. Do not report question 8 as a pass rate.
 
 That is the experiment. Everything else measures whether the course ran well; **this
 measures whether the theory was right.**

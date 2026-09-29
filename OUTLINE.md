@@ -17,17 +17,23 @@ One command, their own laptop, no internet, nothing to pay for. **They write it 
 They start from not having Python installed, and in most cases from never having written
 a line of code.
 
-The method is **feel the problem, then get the solution**:
+The method is **do it the long way, then learn the short way — in the same session**:
 
-| Day | They do this | Day | They get this |
+| Day | The real task | The long way they do it first | The tool, same day |
 |---|---|---|---|
-| 6 | Write 40 variables by hand, then edit all 40 because the grades changed | 10 | **Lists** — the 40 lines become 1 |
-| 9 | Edit the number `4` in 25 copy-pasted `if` blocks | 14 | **Loops** — the 125 lines become 4 |
-| 17 | Write the same 6-line calculation in 4 places | 18 | **Functions** — one place, one fix |
+| 6 | A register for the whole class | one variable per student | **lists** |
+| 10 | Mark the whole class pass/fail | one `if` block per student | **`for` loops** |
+| 14 | Find one student's grade by name | two parallel lists and a position | **dictionaries** |
+| 17 | An average on every report card | the same 6 lines, 4 times | **functions** |
+| 22 | Keep the register after closing it | retyping it every time | **files** |
 
-Nothing is introduced as "good practice". Everything arrives as the thing that stops a pain
-they felt three minutes ago. A teacher who has typed 40 variables understands why a list
-exists better than one who was given a good definition of it.
+Nothing is introduced as "good practice". Everything arrives as the thing that shortens
+work just finished. A teacher who has written out a whole register by hand understands why
+a list exists better than one who was given a good definition of it.
+
+**The task is always genuine, and the course never says the long way was a lesson.** They
+are building a register because a teacher needs a register. The laborious half and its
+replacement are never split across two sessions.
 
 **Every example is a classroom** — students, grades, attendance, averages, report lines.
 No `foo`, no `x = 5`, no fizzbuzz.
@@ -60,9 +66,14 @@ install software. Anaconda + VS Code — two installs on Day 1, nothing after. N
 accounts, no API keys, **no internet after Day 1**. **Cost: zero.**
 
 **Provided:** 19 notebooks, 5 guides, 18 solutions (handed out after each session so a
-missed day is recoverable), `SETUP.md` for Windows and macOS, a printable cheatsheet with
-a bilingual glossary, `check_setup.py`, a fictional 12-student sample class, and the
-finished reference program.
+missed day is recoverable), **4 fortnightly take-home tests with instructor marking
+guides**, `SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
+glossary, `check_setup.py`, a fictional 12-student sample class, and the finished
+reference program.
+
+Every notebook carries **three tiers of exercise** — Required, Extra and Challenge — so
+that the three or four participants who finish early in every session always have
+somewhere to go.
 
 > **⚠️ One preparation item is not optional.** The Anaconda download is ~1 GB. Sixteen
 > people downloading it at once on school wifi will cost a session. **A USB stick with

@@ -2,18 +2,45 @@
 # Օր 9 — Լուծումներ
 
 #%% code
-# Առաջադրանք 2 — մեկ փոփոխական քսանհինգ թվի փոխարեն
+# Exercises 1 and 2 - four bands, tested on four grades
 
-PASS_MARK = 4
-
-class_grades = {"Անի": 9, "Դավիթ": 6, "Նարե": 10, "Արամ": 3}
-
-for student_name, grade in class_grades.items():
-    if grade >= PASS_MARK:
-        print(f"{student_name}: անցավ")
+for grade in [10, 8, 5, 2]:
+    if grade >= 9:
+        print(grade, "- excellent")
+    elif grade >= 7:
+        print(grade, "- good")
+    elif grade >= 4:
+        print(grade, "- satisfactory")
     else:
-        print(f"{student_name}: չանցավ")
+        print(grade, "- unsatisfactory")
 
-#%% md
-> Այս լուծումը ցիկլ է օգտագործում, որը դեռ չենք սովորել 9-րդ օրը։ Այն այստեղ է,
-> որպեսզի տեսնես, թե ուր ենք գնում։ **14-րդ օրը դա գրելու ես ինքդ։**
+#%% code
+# Exercise 3 - a rule with and
+
+grade = 8
+attendance = 90
+
+if grade >= 4 and attendance >= 80:
+    print("certificate granted")
+else:
+    print("certificate not granted")
+
+#%% code
+# Extra 5 - not (grade >= 4) and grade < 4 are the same thing
+
+grade = 3
+
+print(not (grade >= 4))
+print(grade < 4)
+
+#%% code
+# Challenge 10 - the real certificate rule, three conditions
+
+grade = 8
+attendance = 90
+behaviour_ok = True
+
+if grade >= 4 and attendance >= 80 and behaviour_ok:
+    print("certificate granted")
+else:
+    print("certificate not granted")

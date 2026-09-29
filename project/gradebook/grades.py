@@ -1,10 +1,11 @@
 """
-Հաշվարկները՝ միջին, ամենաբարձր, անցավ թե ոչ։
+The calculations: average, highest, passed or not.
 
-Այս ֆայլը ոչինչ չգիտի ֆայլերի մասին և ոչինչ չգիտի տպելու մասին։
-Նա միայն հաշվում է։
+This file knows nothing about files and nothing about printing. It only
+calculates.
 
-Դա դիտավորյալ է. այսպես կարող ես ստուգել հաշվարկները՝ առանց ֆայլ ունենալու։
+That is deliberate: it means you can test the calculations without having a
+data file at all. Run this file on its own and you will see.
 """
 
 import settings
@@ -12,10 +13,10 @@ import settings
 
 def average_of(grades):
     """
-    Վերադարձնում է գնահատականների միջինը՝ կլորացրած։
+    Return the average of a list of grades, rounded.
 
-    Սպասում է ցուցակ՝ [9, 6, 10]։ Դատարկ ցուցակի դեպքում վերադարձնում է 0,
-    որովհետև զրոյի վրա բաժանելը ծրագիրը կկանգնեցներ։
+    Expects a list, like [9, 6, 10]. An empty list returns 0, because dividing
+    by zero would stop the program.
     """
     if not grades:
         return 0
@@ -28,16 +29,16 @@ def average_of(grades):
 
 
 def has_passed(grade, pass_mark=settings.PASS_MARK):
-    """Վերադարձնում է True, եթե գնահատականը անցողիկ է։"""
+    """Return True if this grade is a pass."""
     return grade >= pass_mark
 
 
 def highest_of(class_grades):
     """
-    Վերադարձնում է ամենաբարձր գնահատական ունեցող աշակերտի անունը։
+    Return the name of the student with the highest grade.
 
-    Սպասում է բառարան՝ {"Անի": 9}։ Դատարկ դասարանի դեպքում վերադարձնում է ""։
-    Եթե մի քանիսը նույն բարձր գնահատականն ունեն, վերադարձնում է առաջինին։
+    Expects a dictionary, like {"Ani": 9}. An empty class returns "".
+    If several students share the highest grade, the first one is returned.
     """
     best_name = ""
     best_grade = -1
@@ -51,7 +52,7 @@ def highest_of(class_grades):
 
 
 def failing_students(class_grades, pass_mark=settings.PASS_MARK):
-    """Վերադարձնում է չանցած աշակերտների անունների ցուցակը։"""
+    """Return a list of the names of the students who did not pass."""
     failing = []
 
     for student_name, grade in class_grades.items():
@@ -62,17 +63,17 @@ def failing_students(class_grades, pass_mark=settings.PASS_MARK):
 
 
 def class_average(class_grades):
-    """Վերադարձնում է ամբողջ դասարանի միջինը։"""
+    """Return the average grade of the whole class."""
     return average_of(list(class_grades.values()))
 
 
 if __name__ == "__main__":
-    # Այս մասը աշխատում է միայն երբ գործարկում ես ուղիղ այս ֆայլը՝
+    # This part only runs when you run this file directly:
     #     python grades.py
-    # Երբ main.py-ն ներմուծում է այս ֆայլը, այս տողերը չեն աշխատում։
-    test_class = {"Անի": 9, "Դավիթ": 6, "Նարե": 10, "Արամ": 3}
+    # When main.py imports this file, these lines do not run.
+    test_class = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3}
 
-    print("Ստուգում՝ grades.py")
-    print("Միջինը՝", class_average(test_class))
-    print("Ամենաբարձրը՝", highest_of(test_class))
-    print("Չեն անցել՝", failing_students(test_class))
+    print("Checking grades.py")
+    print("class average:", class_average(test_class))
+    print("highest:      ", highest_of(test_class))
+    print("failing:      ", failing_students(test_class))
