@@ -25,6 +25,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 NOTEBOOKS = ROOT / "notebooks"
 
+# Every directory of generated notebooks. Solutions and tests must run too: a solution
+# that no longer works is worse than no solution, because it is handed out as an answer.
+FOLDERS = ["notebooks", "solutions", "tests"]
+
 
 def run_notebook(path):
     """Return (failures, executed, expected_errors_seen)."""
@@ -90,34 +94,45 @@ def run_notebook(path):
 
 
 def main(argv):
-    wanted = argv[1] if len(argv) > 1 else None
-    paths = sorted(NOTEBOOKS.glob("*.ipynb"))
-    if wanted:
-        paths = [p for p in paths if p.stem.startswith(wanted)]
-    if not paths:
-        print(f"❌ No notebooks found" + (f" matching '{wanted}'" if wanted else ""))
-        return 1
-
-    # Notebooks read sample_class.csv by a bare filename, exactly as a participant
-    # does with the folder open in VS Code.
     import os
-    os.chdir(NOTEBOOKS)
 
+    wanted = argv[1] if len(argv) > 1 else None
     total_failures = 0
-    for path in paths:
-        failures, executed, deliberate = run_notebook(path)
-        total_failures += len(failures)
-        mark = "✅" if not failures else "❌"
-        extra = f", {deliberate} deliberate error(s) raised as designed" if deliberate else ""
-        print(f"{mark} {path.stem:<32} {executed:>3} code cells{extra}")
-        for failure in failures:
-            print(f"      {failure}")
+    total_notebooks = 0
+
+    for folder in FOLDERS:
+        paths = sorted((ROOT / folder).glob("*.ipynb"))
+        if wanted:
+            paths = [p for p in paths if p.stem.startswith(wanted)]
+        if not paths:
+            continue
+
+        # Notebooks read sample_class.csv by a bare filename, exactly as a participant
+        # does with the folder open in VS Code.
+        os.chdir(ROOT / folder)
+        print(f"{folder}/")
+
+        for path in paths:
+            failures, executed, deliberate = run_notebook(path)
+            total_failures += len(failures)
+            total_notebooks += 1
+            mark = "✅" if not failures else "❌"
+            extra = f", {deliberate} deliberate error(s) raised as designed" if deliberate else ""
+            print(f"  {mark} {path.stem:<32} {executed:>3} code cells{extra}")
+            for failure in failures:
+                print(f"        {failure}")
+
+    os.chdir(ROOT)
+
+    if not total_notebooks:
+        print("❌ No notebooks found" + (f" matching '{wanted}'" if wanted else ""))
+        return 1
 
     print()
     if total_failures:
-        print(f"❌ {total_failures} problem(s) across {len(paths)} notebook(s)")
+        print(f"❌ {total_failures} problem(s) across {total_notebooks} notebook(s)")
         return 1
-    print(f"✅ {len(paths)} notebook(s), every cell executed in order")
+    print(f"✅ {total_notebooks} notebook(s), every cell executed in order")
     return 0
 
 

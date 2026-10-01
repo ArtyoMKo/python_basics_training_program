@@ -6,8 +6,8 @@ inside JSON string arrays is unreviewable and error-prone, and the participant-f
 simplicity rule (PLAN.md section 0) says nothing about how we author the material. So the
 source of truth is a readable text file per day, and the .ipynb is generated.
 
-    python tools/nbbuild.py            # build everything
-    python tools/nbbuild.py day03      # build one
+    python tools/nbbuild.py            # build everything: notebooks, solutions, tests
+    python tools/nbbuild.py day03      # build one notebook
 
 SOURCE FORMAT. Cells are separated by marker lines:
 
@@ -28,6 +28,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 OUT = ROOT / "notebooks"
+
+# The 18 solutions live in ONE source file so they can be reviewed in one pass, and are
+# split out per day at build time. The four tests have a source file each.
+SOLUTIONS_SOURCE = SRC / "solutions_source.py"
+SOLUTION_MARKER = re.compile(r"^#%% (day\d\d) (md|code)\s*$", re.M)
 
 MARKER = re.compile(r"^#%%\s+(md|code)(?:\s+(expected-error|interactive):\s*(.*))?\s*$")
 
@@ -86,9 +91,51 @@ def build(cells):
     }
 
 
+def write_notebook(cells, target):
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        json.dumps(build(cells), ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
+    )
+    code = sum(1 for c in cells if c[0] == "code")
+    print(f"✅ {str(target.relative_to(ROOT)):<42} {len(cells):>3} cells "
+          f"({code} code, {len(cells) - code} md)")
+
+
+def build_solutions():
+    """Split solutions_source.py into one source and one notebook per day."""
+    if not SOLUTIONS_SOURCE.exists():
+        return 0
+
+    chunks = SOLUTION_MARKER.split(SOLUTIONS_SOURCE.read_text(encoding="utf-8"))
+    days = {}
+    for index in range(1, len(chunks), 3):
+        day, kind, body = chunks[index], chunks[index + 1], chunks[index + 2]
+        days.setdefault(day, []).append(f"#%% {kind}\n{body.strip()}\n")
+
+    (SRC / "solutions").mkdir(exist_ok=True)
+    for day, cell_sources in sorted(days.items()):
+        text = "\n".join(cell_sources)
+        (SRC / "solutions" / f"{day}.py").write_text(text, encoding="utf-8")
+        write_notebook(parse(text), ROOT / "solutions" / f"{day}.ipynb")
+
+    return len(days)
+
+
+def build_tests():
+    """Build one notebook per test source."""
+    sources = sorted((SRC / "tests").glob("*.py"))
+    for source in sources:
+        cells = parse(source.read_text(encoding="utf-8"))
+        write_notebook(cells, ROOT / "tests" / f"{source.stem}.ipynb")
+    return len(sources)
+
+
 def main(argv):
     wanted = argv[1] if len(argv) > 1 else None
-    sources = sorted(SRC.glob("*.py"))
+
+    # Only the dayNN sources become notebooks. solutions_source.py is split by
+    # build_solutions() instead, and src/tests/ is handled by build_tests().
+    sources = sorted(SRC.glob("day*.py"))
     if wanted:
         sources = [s for s in sources if s.stem.startswith(wanted)]
     if not sources:
@@ -97,14 +144,16 @@ def main(argv):
 
     OUT.mkdir(exist_ok=True)
     for source in sources:
-        cells = parse(source.read_text(encoding="utf-8"))
-        target = OUT / f"{source.stem}.ipynb"
-        target.write_text(
-            json.dumps(build(cells), ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
-        )
-        code = sum(1 for c in cells if c[0] == "code")
-        print(f"✅ {target.name:<34} {len(cells):>3} cells ({code} code, {len(cells) - code} md)")
+        write_notebook(parse(source.read_text(encoding="utf-8")), OUT / f"{source.stem}.ipynb")
 
+    # Building one notebook by name does not rebuild everything else.
+    if wanted:
+        return 0
+
+    solutions = build_solutions()
+    tests = build_tests()
+    print()
+    print(f"✅ {len(sources)} notebooks, {solutions} solutions, {tests} tests")
     return 0
 
 

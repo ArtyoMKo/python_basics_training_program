@@ -1,0 +1,13 @@
+Read AGENTS.md at the repository root before changing anything. It is the complete
+contract for agents working here and the single source of truth; this file deliberately
+contains no rules of its own so the two cannot drift apart.
+
+The one thing worth repeating, because it silently destroys work:
+
+  notebooks/, solutions/ and tests/ are GENERATED from src/.
+  Never edit a .ipynb. Edit the source, then rebuild.
+
+The whole workflow is two commands:
+
+  python tools/nbbuild.py     rebuild notebooks, solutions and tests from src/
+  python tools/verify.py      four checks; nothing is done until this passes

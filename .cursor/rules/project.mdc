@@ -1,0 +1,40 @@
+---
+description: Course-wide contract for the teacher Python course. Read AGENTS.md first.
+globs:
+alwaysApply: true
+---
+
+# Read AGENTS.md first
+
+`AGENTS.md` at the repository root is the complete contract for agents working here, and
+the single source of truth. **Open it before making any change.** This rule file carries
+only the three things that are expensive to discover by failing.
+
+## 1. The notebooks are generated
+
+`notebooks/`, `solutions/` and `tests/` are built from `src/`. **Editing a `.ipynb`
+silently loses your work** on the next build.
+
+```bash
+vim src/day10_for_loops.py      # edit the source
+python tools/nbbuild.py         # rebuild notebooks, solutions and tests
+```
+
+## 2. Armenian explains, English codes
+
+Markdown cells, guides and `SETUP.md` are **Armenian**. **Everything inside a code cell is
+English** — identifiers, comments, docstrings and string values alike. Example names are
+transliterated: `Ani`, `Davit`, `Nare`.
+
+## 3. Nothing is done until these pass
+
+```bash
+python tools/verify.py
+```
+
+Four checks: agenda arithmetic, all 41 notebooks executing in order, the language rule,
+and `python main.py` end to end.
+
+Everything else — the same-session discovery structure, the rule that the tedium is never
+named, the exercise tiers, the excluded constructs, the load-bearing numbers in the sample
+class — is in `AGENTS.md`. Read it.

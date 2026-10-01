@@ -33,9 +33,15 @@ plan of record is §4 of `PLAN.md`.
 Every example is a classroom: students, grades, attendance, averages, report lines. No
 `foo`, no `x = 5`, no shopping baskets.
 
+> **Picking this up with a coding agent (Codex, Cursor, Claude Code)?**
+> Point it at **`AGENTS.md`** — the contract for agents working here, and the single
+> source of truth. `CLAUDE.md`, `.cursorrules` and `.cursor/rules/` all point there and
+> carry no rules of their own, so they cannot drift apart.
+
 ```
 public_school_python/
-├── PLAN.md                 <- the build specification  ** read first **
+├── AGENTS.md               <- contract for coding agents  ** agents read this first **
+├── PLAN.md                 <- the build specification     ** humans read this first **
 ├── CURRICULUM.md           <- 24 day agendas, time math, deliverables
 ├── RATIONALE.md            <- why this method, the risk, the experiment  ** for colleagues **
 ├── OUTLINE.md              <- what the course is: 4-part outline, short
@@ -56,12 +62,18 @@ public_school_python/
 ## Notebooks are generated — edit `src/`, not `notebooks/`
 
 Nineteen notebooks are nineteen large JSON files, and editing Armenian prose inside JSON
-string arrays is unreviewable. So the source of truth is a readable text file per day.
+string arrays is unreviewable. So the source of truth is a readable text file per day, and
+`notebooks/`, `solutions/` and `tests/` are built from it.
+
+**The whole workflow is two commands:**
 
 ```bash
-python tools/nbbuild.py           # rebuild every notebook from src/
-python tools/nbbuild.py day07     # rebuild one
+python tools/nbbuild.py     # rebuild notebooks, solutions and tests from src/
+python tools/verify.py      # four checks; nothing is done until this passes
 ```
+
+`nbbuild.py day07` rebuilds one notebook while iterating. The build is idempotent, so
+`git status` after a rebuild shows exactly what you changed.
 
 Cell markers: `#%% md`, `#%% code`, `#%% code expected-error: TypeError`,
 `#%% code interactive: 9`. The last two become cell metadata, not text the participant
@@ -69,23 +81,21 @@ sees.
 
 ## Verification
 
-Run all three after any change. A course is not done until they pass.
+`python tools/verify.py` runs four checks:
 
-```bash
-python tools/check_times.py          # every agenda sums to 50; 24 days = 1,200 min
-python tools/run_all_notebooks.py    # every cell runs in order, input() stubbed
-python tools/check_style.py          # stdlib only, no excluded constructs, English identifiers
-```
-
-`run_all_notebooks.py` also asserts that every **break-it-on-purpose** cell raises the
-exact error it claims. A demo that stops failing is a bug.
+| | What it proves |
+|---|---|
+| agenda arithmetic | every agenda sums to 50; 24 days = 1,200 minutes |
+| notebooks execute | all 41 notebooks — lessons, solutions and tests — run cell by cell in order, with `input()` stubbed and every **break-it-on-purpose** cell raising exactly the error it claims. A demo that stops failing is a bug |
+| style and language | no Armenian inside any code cell, standard library only, no excluded constructs |
+| project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
 
 ## Current state
 
 | Check | Result |
 |---|---|
 | Agenda arithmetic | ✅ 8 agenda tables, 24 days, 1,200 minutes |
-| Notebook execution | ✅ 19 notebooks, every cell, in order |
+| Notebook execution | ✅ 41 notebooks (19 lessons + 18 solutions + 4 tests), every cell, in order |
 | Deliberate errors | ✅ 9 cells raise exactly the error they claim |
 | Solutions | ✅ 18 notebooks, every cell runs |
 | Tests | ✅ 4 tests + 4 marking guides; every cell runs |
