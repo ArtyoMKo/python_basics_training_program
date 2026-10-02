@@ -203,7 +203,9 @@ solutions/              generated .ipynb — do not edit
 tests/                  generated .ipynb + mark1–4_guide.md (hand-written, instructor only)
 guides/                 Days 20–24, markdown, read beside the code  (Armenian)
 project/gradebook/      the finished reference program (4 files)
-tools/                  nbbuild.py + the three checkers
+partners/               generated .docx dossier for external partners — do not edit
+tools/                  nbbuild.py, verify.py, the three checkers,
+                        build_partner_docx.py
 ```
 
 ---
@@ -219,7 +221,8 @@ tools/                  nbbuild.py + the three checkers
 | Writing "now you see how slow that was" | breaks rule 3 | compare line counts in a table |
 | Planting a problem to solve next session | breaks rule 2 | resolve it in the same notebook |
 | Committing notebooks with outputs | unreadable diffs, stale numbers | outputs stay cleared |
-| Changing the sample class casually | silently falsifies prose in several days | grep every quoted number |
+| Changing the sample class casually | silently falsifies prose in several days | grep every quoted number, then rebuild the dossier |
+| Editing the `.docx` in `partners/` | overwritten on next build | edit `tools/build_partner_docx.py` |
 | Marking a deliberate-error cell as a bug | it is a teaching device | `expected-error:` cells must raise |
 
 ---
@@ -231,6 +234,8 @@ python tools/nbbuild.py              # rebuild everything from src/
 python tools/nbbuild.py day10        # rebuild one notebook
 
 python tools/verify.py               # all four checks — nothing is done until this passes
+
+python tools/build_partner_docx.py   # regenerate the partner dossier (.docx)
 
 # the individual checkers, if you want one in isolation
 python tools/check_times.py

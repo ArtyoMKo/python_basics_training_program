@@ -49,6 +49,7 @@ public_school_python/
 ├── CHEATSHEET.md           <- printable reference + the bilingual glossary  (Armenian)
 ├── INSTRUCTOR_NOTES.md     <- pre-flight, pacing, risks, what to cut
 ├── ANNOUNCEMENT.md         <- recruitment text for teachers   (Armenian)
+├── partners/               <- the .docx programme dossier for external partners
 ├── check_setup.py          <- six checks, run on Day 1
 ├── notebooks/              <- Days 1-19, one per day  + sample_class.csv
 ├── solutions/              <- Days 2-19, handed out AFTER each session
@@ -72,7 +73,18 @@ python tools/nbbuild.py     # rebuild notebooks, solutions and tests from src/
 python tools/verify.py      # four checks; nothing is done until this passes
 ```
 
-`nbbuild.py day07` rebuilds one notebook while iterating. The build is idempotent, so
+`nbbuild.py day07` rebuilds one notebook while iterating.
+
+The partner dossier is generated too:
+
+```bash
+python tools/build_partner_docx.py     # -> partners/*.docx
+```
+
+It **restates** facts rather than linking to them, so it is the one document that can
+drift. The build verifies every figure it quotes against the repository — day count,
+total minutes, material counts, the sample-class numbers, the five discovery days — and
+refuses to write the file if any of them disagree. The build is idempotent, so
 `git status` after a rebuild shows exactly what you changed.
 
 Cell markers: `#%% md`, `#%% code`, `#%% code expected-error: TypeError`,
