@@ -34,35 +34,53 @@ OUT = ROOT / "notebooks"
 SOLUTIONS_SOURCE = SRC / "solutions_source.py"
 SOLUTION_MARKER = re.compile(r"^#%% (day\d\d) (md|code)\s*$", re.M)
 
-MARKER = re.compile(r"^#%%\s+(md|code)(?:\s+(expected-error|interactive):\s*(.*))?\s*$")
+# #%% md | #%% code | #%% md teacher | #%% code expected-error: X | #%% code interactive: 9
+# The optional `teacher` flag marks a cell only the grader sees -- used by the exams,
+# where the rubric sits beside the question and must not reach the participant.
+MARKER = re.compile(
+    r"^#%%\s+(md|code)"
+    r"(?:\s+(teacher))?"
+    r"(?:\s+(expected-error|interactive):\s*(.*))?"
+    r"\s*$"
+)
 
 
 def parse(text):
-    """Turn one source file into a list of (kind, tag, tag_value, source) cells."""
+    """Turn one source file into a list of (kind, tag, tag_value, source, teacher) cells."""
     cells = []
     kind = tag = value = None
+    teacher = False
     body = []
 
     for line in text.splitlines():
         match = MARKER.match(line)
         if match:
             if kind is not None:
-                cells.append((kind, tag, value, "\n".join(body).strip("\n")))
-            kind, tag, value = match.group(1), match.group(2), match.group(3)
+                cells.append((kind, tag, value, "\n".join(body).strip("\n"), teacher))
+            kind = match.group(1)
+            teacher = match.group(2) is not None
+            tag, value = match.group(3), match.group(4)
             body = []
         elif kind is not None:
             body.append(line)
 
     if kind is not None:
-        cells.append((kind, tag, value, "\n".join(body).strip("\n")))
+        cells.append((kind, tag, value, "\n".join(body).strip("\n"), teacher))
 
     return [cell for cell in cells if cell[3].strip()]
 
 
+def participant_only(cells):
+    """Drop the grader's cells, for the version handed to participants."""
+    return [cell for cell in cells if not cell[4]]
+
+
 def build(cells):
     out = []
-    for index, (kind, tag, value, source) in enumerate(cells):
+    for index, (kind, tag, value, source, teacher) in enumerate(cells):
         metadata = {}
+        if teacher:
+            metadata["audience"] = "instructor"
         if tag == "expected-error":
             metadata["expected_error"] = value.strip()
         elif tag == "interactive":
@@ -122,11 +140,22 @@ def build_solutions():
 
 
 def build_tests():
-    """Build one notebook per test source."""
+    """
+    Build two notebooks per exam source.
+
+    tests/<name>.ipynb              the grader's copy: questions plus rubric
+    tests/participant/<name>.ipynb  what the exam platform hands out: questions only
+
+    Handing a participant the grader's copy would give away what each question is
+    measuring and what it is worth, so the split is done by the build rather than by
+    remembering to delete cells.
+    """
     sources = sorted((SRC / "tests").glob("*.py"))
     for source in sources:
         cells = parse(source.read_text(encoding="utf-8"))
         write_notebook(cells, ROOT / "tests" / f"{source.stem}.ipynb")
+        write_notebook(participant_only(cells),
+                       ROOT / "tests" / "participant" / f"{source.stem}.ipynb")
     return len(sources)
 
 

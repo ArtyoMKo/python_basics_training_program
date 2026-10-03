@@ -1,32 +1,52 @@
-# Marking guide — Test 2 (Days 7–12)
+# Marking guide — Test 2, midpoint (after day 12)
 
-**Instructor-facing. Do not hand out.**
+**Instructor-facing. Hand out `tests/participant/test2_midpoint.ipynb`.**
 
-| Q | Expected | What a wrong answer tells you |
-|---|---|---|
-| 1 | `.append()` on both lists, then `len()` | Appended to one list only → they have not felt the two-list fragility. Good: Day 14 is built on exactly this, so it will land |
-| 2 | `if grade >= PASS_MARK:` / `else:` | Hardcoded `4` instead of `PASS_MARK` → minor, but mention it; `settings.py` on Day 21 depends on this habit |
-| 3 | Four-branch `elif`, strictest first, tested on four values | Chain in the wrong order → they did not absorb Day 9's silent-failure warning. **Worth repeating out loud**, because it fails without an error |
-| 4 | `for student_name in student_names:` | Still indexing `[0]`, `[1]`, `[2]` → Day 10's second half did not land. This is the single most important miss on this test |
-| 5 | `for position in range(len(...))` with both lists | Only one list used → they cannot yet combine two sequences. Day 14 fixes this permanently; reassure them |
-| 6 | Accumulator, then `total / len(...)`, rounded | `total = 0` placed *inside* the loop → the classic accumulator bug. Show it once on the board; it recurs on Day 16 |
-| 7 | Counter with `if grade < PASS_MARK` | Counted everyone → the `if` is missing inside the loop. Usually a structure problem, not a logic one |
-| 8 | Empty list, loop, `if`, `.append()` | Appended the grade instead of the name → they lost track of which list they were indexing. Common and self-correcting |
-| 9 | "Because the first true condition wins, and `10 >= 4` is true" | Cannot explain it → the most valuable thing to re-teach from this test. A wrong answer with no error is the hardest thing for a beginner to accept |
+| | |
+|---|---|
+| **When** | After day 12, as a separate sitting |
+| **Length** | 60–75 minutes |
+| **Total** | **50 points**, across 6 questions |
+| **Covers** | Days 6–12: lists, `if`/`else`, `elif`, `for`, accumulators, filtering |
+| **Variants** | A/B/C per question — each participant gets **one** |
 
-## How to read the results as a whole
+## What this test is for
 
-- **Q4 is the headline.** If most of the group wrote a loop, the Day 10 discovery
-  structure worked and the method is doing what it claims. If most are still indexing by
-  hand, that is the strongest early evidence **against** the approach and should be
-  recorded as such.
-- **Q6's misplaced `total = 0`** is a structural misunderstanding, not carelessness. Ten
-  minutes at the start of Day 13 is well spent if several people hit it.
-- **Q9 measures something no other question does:** whether they can reason about code
-  that runs and is wrong. That skill is what the whole programme is betting on.
+Everything up to day 12 is mechanical fluency: can they write and fix basic code with
+lists, conditions and loops, unaided? **This is the first point at which the programme's
+central claim is testable**, and the most important single result in it is Q4.
 
-## What to record
+Record the help level (`3`–`0`) alongside the score, as in test 1.
 
-Per question: correct / wrong / blank, plus completion rate. Compare Q4 here with Q6 on
-Test 1 — together they say whether "feel it, then get the tool" is producing transfer or
-just producing recognition.
+## Question by question
+
+| Q | Points | Expected | What a wrong answer tells you |
+|---|---|---|---|
+| 1 | 8 | `.append()` to **both** lists, then correct one grade by index | Appending to one list only is the two-list fragility the course deliberately exposes on day 14. **Not a failure** — note it, and expect day 14 to land well |
+| 2 | 7 | `if grade >= PASS_MARK:` / `else:` | Hardcoding the number instead of using `PASS_MARK` is minor here, but it is the habit `settings.py` depends on at day 21. Mention it individually |
+| 3 | 8 | Spots that the chain is in the wrong order and reorders it, strictest first | **The only question with no error message to guide them.** Not spotting it means they cannot yet reason about code that runs and is wrong — the hardest thing for a beginner to accept, and worth re-teaching out loud |
+| 4 | 10 | A `for` loop over the register, with the condition inside it | **This is the headline result of the whole test.** A loop means the day 10 discovery structure worked. Hand-written repetition for every student means it did not |
+| 5 | 9 | `total = 0` before the loop, accumulate inside, divide after, `round` | `total = 0` placed *inside* the loop is the classic accumulator bug. Show it once on the board; it recurs at day 16 |
+| 6 | 8 | Empty list, loop, condition, `.append()`, print | Appending the grade rather than the name means they lost track of which list they were indexing. Common, and self-correcting |
+
+## The result that decides what happens next
+
+> **Q4 is the measurement.** If most of the cohort wrote a loop, the "do it the long way,
+> then get the tool" structure is producing transfer and the second half of the course can
+> run as designed.
+>
+> If most are still writing one block per student after twelve sessions, that is **the
+> strongest early evidence against the approach** and must be recorded as such in the
+> report — not explained away.
+
+Two other decisions come out of this test:
+
+- **Q5 wrong for several people** → spend ten minutes at the start of day 13 on where
+  `total = 0` goes.
+- **Q3 wrong across the room** → revisit the `elif` ordering trap before day 15, where
+  report logic starts stacking up.
+
+## What to keep for the final report
+
+Per participant: score and help level per question, and the total. Separately, the single
+number that matters most: **how many wrote a loop in Q4**.

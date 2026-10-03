@@ -542,38 +542,47 @@ above each one is Armenian; the message it explains is not.
 *variable · փոփոխական*, *list · ցուցակ* — because the instructor and the markdown talk
 about these concepts in Armenian even though the code never does.
 
-### 7.8 Fortnightly assessment
+### 7.8 Assessment — three sittings
 
-**Four take-home tests, one every two weeks**, after Days 6, 12, 18 and 24 — each covering
-the six sessions before it.
+**Three assessments, designed with our partner colleague**, replacing an earlier design
+of four take-home tests. They are **separate sittings, not session time**: the 24 teaching
+sessions stay at 20 hours exactly and the assessments add roughly 3½ hours.
 
-| Test | After day | Covers | Sessions |
-|---|---|---|---|
-| `test1_first_steps` | 6 | `print`, types, `input`, variables, f-strings, lists | 1–6 |
-| `test2_decisions_and_loops` | 12 | `if`/`elif`, `and`/`or`, `for`, `range`, totals, filtering | 7–12 |
-| `test3_data_and_functions` | 18 | `while`, dictionaries, reports, functions | 13–18 |
-| `test4_the_program` | 24 | `return`, `.py` files, modules, files, the project | 19–24 |
+| Test | When | Length | Points | Covers |
+|---|---|---|---|---|
+| `test1_diagnostic` | **Before day 1** | 45–60 min | 44 | nothing — the baseline |
+| `test2_midpoint` | **After day 12** | 60–75 min | 50 | days 6–12 |
+| `test3_final_practical` | **Day 24** | 90–120 min | 70 + 10 separate | days 14–24 |
 
 Rules that make them worth setting:
 
-- **Homework, not session time.** Handed out at the end of the session, collected at the
-  start of the next one. The agendas do not change and still sum to 50.
-- **One notebook per test**, same format as a lesson: a skeleton per question, nothing
-  blank. Six to eight questions, ~30 minutes of work.
-- **Every question is a classroom task**, never a puzzle. "Print a register for these
-  five students", not "reverse a string".
-- **Nothing untaught**, and nothing from the Extra tier — a test measures the floor, not
-  the ceiling.
-- **A marking guide ships with each test** (`tests/markN_guide.md`): the expected answer,
-  and *what a wrong answer tells the instructor*. That second column is the point — these
-  exist to tell the instructor whether the method is working (`RATIONALE.md` §5), not to
-  grade teachers.
-- **Test 4 carries the transfer question.** Its last item is one small task using only
-  taught syntax that the course never demonstrated. That single question is the closest
-  thing the programme has to a measurement of its own hypothesis, and it is marked
-  separately from the rest.
+- **Every question has variants A, B, C**, equivalent in difficulty and points; the
+  platform gives each participant one. Question 8 of the final test is the exception —
+  the same for everyone.
+- **Two notebooks are generated from each source.** `#%% md teacher` cells carry the
+  rubric and appear only in `tests/<name>.ipynb`; `tests/participant/<name>.ipynb` has
+  questions only. **Never hand out the grader's copy** — it states what each question
+  measures and what it is worth.
+- **Every score is recorded with a help level**: `3` independent, `2` after one hint,
+  `1` step-by-step, `0` did not finish. On the diagnostic the help level carries more
+  information than the score.
+- **Scores diagnose the programme, not the teachers**, and the materials say so. The
+  earlier design refused to score at all; scoring plus the explicit framing keeps the
+  diagnostic value while gaining a measurable before-and-after.
+- **Every question is a classroom task**, never a puzzle, and nothing untaught appears —
+  except question 8, which is untaught by design.
+- **A marking guide ships with each test** (`tests/markN_guide.md`): expected answer, and
+  *what a wrong answer tells the instructor*. That second column is the point.
 
-## 8. Code style for this audience
+**The diagnostic is what makes the experiment measurable.** Without a before-measurement
+the programme can only report an endpoint; with one it reports change. It is also an
+early warning: a participant who cannot run a cell at help level 3 predicts a hard day 1.
+
+**Question 8 of the final test carries the transfer question** — one small task using
+only taught syntax that the course never demonstrates, marked separately and never
+reported as a pass rate (§ `RATIONALE.md` 5).
+
+## 8. Code style for this audience## 8. Code style for this audience
 
 `METHODOLOGY.md` §6 applies; these override or sharpen it.
 
@@ -641,9 +650,11 @@ public_school_python/
 │   └── solutions/              <- split per day by the build step
 ├── solutions/
 │   └── day02.ipynb … day19.ipynb                                  (18)
-├── tests/                      <- fortnightly assessment (§7.8)
-│   ├── test1_first_steps.ipynb … test4_the_program.ipynb          (4)
-│   └── mark1_guide.md … mark4_guide.md   <- instructor only       (4)
+├── tests/                      <- assessment (§7.8) -- GENERATED
+│   ├── test1_diagnostic.ipynb … test3_final_practical.ipynb       (3, grader's copy)
+│   ├── participant/            <- the same three, rubric stripped (3)
+│   ├── mark1_guide.md … mark3_guide.md   <- instructor only       (3)
+│   └── README.md               <- how the three sittings work
 ├── guides/
 │   ├── day20_leaving_the_notebook.md
 │   ├── day21_four_files.md
@@ -803,20 +814,20 @@ Project          Days 22–24   150 min    2 h 30
                              1,200 min  = 20 h  ✓
 ```
 
-**Tests** after Days 6, 12, 18 and 24 (§7.8) — homework, so the agendas are unaffected.
+**Assessments** before Day 1, after Day 12 and on Day 24 (§7.8) — separate sittings, so the agendas are unaffected.
 
 ### Week map (3 sessions/week × 8 weeks)
 
-| Week | Days | Arc | Ends with |
+| Week | Days | Arc | Assessment |
 |---|---|---|---|
-| 1 | 1–3 | It runs on my laptop, and I know what a value is | |
-| 2 | 4–6 | I can name things, and keep a whole class in one list | **Test 1** |
+| 1 | 1–3 | It runs on my laptop, and I know what a value is | *(diagnostic sat before day 1)* |
+| 2 | 4–6 | I can name things, and keep a whole class in one list | |
 | 3 | 7–9 | The computer can decide | |
-| 4 | 10–12 | One loop marks thirty students | **Test 2** |
+| 4 | 10–12 | One loop marks thirty students | **Midpoint** |
 | 5 | 13–15 | I can find any student by name | |
-| 6 | 16–18 | I write the calculation once and use it everywhere | **Test 3** |
+| 6 | 16–18 | I write the calculation once and use it everywhere | |
 | 7 | 19–21 | It is a program now, not a notebook | |
-| 8 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Test 4** |
+| 8 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** |
 
 ## 11. Verification discipline
 
@@ -991,7 +1002,8 @@ exercise size and the retrospective format — and cheap to throw away.
 - [ ] Every discovery day resolves its own laborious half **in the same notebook** (§4.1)
 - [ ] No notebook tells a participant the long way was there to make a point (§4.2)
 - [ ] Every stretch of repetitive work is preceded by the forward reassurance (§4.3)
-- [ ] All four tests and their marking guides exist and run
+- [ ] All three assessments, both versions, and their marking guides exist and run
+- [ ] No `teacher` cell leaks into `tests/participant/`
 - [ ] No notebook after Day 1 needs the internet
 - [ ] Nothing outside the standard library is imported anywhere — including Anaconda's own bundled packages
 - [ ] `project/gradebook/` runs end to end from a clean folder

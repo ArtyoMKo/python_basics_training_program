@@ -1,34 +1,65 @@
-# Marking guide — Test 1 (Days 1–6)
+# Marking guide — Test 1, initial diagnostic (before day 1)
 
-**Instructor-facing. Do not hand out.**
+**Instructor-facing. Never hand this out, and never hand out `tests/test1_diagnostic.ipynb`
+either — give participants `tests/participant/test1_diagnostic.ipynb`.**
 
-These tests exist to tell you whether the method is working, not to grade teachers.
-The second column is the point: what a wrong answer *tells you*.
+| | |
+|---|---|
+| **When** | Before day 1, as a separate sitting |
+| **Length** | 45–60 minutes |
+| **Total** | **44 points**, across 6 questions |
+| **Variants** | A/B/C per question — each participant gets **one**, assigned by the platform |
+| **Self-assessment** | 4 statements at the end, scored 1–5. **Not added to the total** |
 
-| Q | Expected | What a wrong answer tells you |
-|---|---|---|
-| 1 | Two `print()` calls with text in quotes | Missing quotes → they have not internalised that text needs them. Re-demonstrate on Day 7, briefly |
-| 2 | Four variables, four `type()` calls | Confusing `9` and `"9"` → Day 3 did not land. This *will* cause trouble at Day 22 (reading files) |
-| 3 | `print(int(answer) + 2)` → `9` | `"7" + 2` → they have not connected Day 3's `TypeError` to Day 4's `int()`. The most common failure at this stage |
-| 4 | `print(f"{student_name} has {student_grade} points")` | Used commas instead of an f-string → acceptable, but note it; f-strings are used in every later day |
-| 5 | `student_grade = student_grade + 1` | Wrote `student_grade = 7` → **the important miss.** They have not understood that `=` means "assign", not "equals". This blocks the accumulator on Day 11 |
-| 6 | One list, then `len()`, `[0]`, `[-1]` | Five separate variables → Day 6's second half did not land. Worth five minutes at the start of Day 7 |
-| 7 | `class_grades[2]` → `10` | `class_grades[3]` → counting from one. Extremely common and harmless *if caught*; it becomes `IndexError` everywhere later |
-| 8 | (a) `TypeError` (b) cannot add a number to text | Blank → they may be skipping error messages entirely. Ask directly; fear of red text is the single biggest brake on this audience |
+## What this test is for
 
-## How to read the results as a whole
+**It is not a Python exam.** Nobody has been taught anything yet. It measures baseline
+digital confidence, data reasoning, and how much support each person will need.
 
-- **Q3 and Q5 are the two that matter.** They are the ones later days depend on.
-- If **more than a third** of the group misses Q5, do not continue to Day 7 as written.
-  Spend the first fifteen minutes of Day 7 on `x = x + 1` with the register, and cut the
-  Extra tasks to make room.
-- If **most of the group** got Q6 right, the Day 6 discovery structure worked. That is
-  the first real evidence for or against the method (`RATIONALE.md` §5).
-- **Blank answers are data.** A blank Q8 means something different from a wrong Q8.
-  Record which questions were left blank, not just which were wrong.
+It also gives the programme something it would otherwise lack: **a before-measurement**.
+Everything after this is change, not just an endpoint — see `RATIONALE.md` §5.
 
-## What to record
+## Record two numbers per question, not one
 
-For `RATIONALE.md` §5, keep a simple count per question: correct / wrong / blank, and
-how many completed the whole test. Nothing more elaborate — a tally on paper is enough,
-and it is what the two-month decision will be made on.
+Alongside the score, record the **help level**, exactly as the test's own rules state:
+
+| Help level | Meaning |
+|---|---|
+| `3` | Worked it out independently |
+| `2` | Completed after one hint |
+| `1` | Completed with step-by-step help |
+| `0` | Did not finish |
+
+**The help level is more useful than the score on this test.** Two participants can both
+reach 30/44; the one who needed step-by-step help on four questions is a different
+teaching problem from the one who worked alone and ran out of time.
+
+## Question by question
+
+| Q | Points | Expected | What a weak answer tells you |
+|---|---|---|---|
+| 1 | 6 | They find the cell, change one value, run it | Cannot operate the editor at all. **This is the single most important signal in the test** — it predicts a hard day 1 and tells you who to sit near the front |
+| 2 | 8 | Reads a value out of a small table and applies the stated rule | Difficulty here is about reading structured data, not about code. Expect the register work on days 6–7 to need extra time |
+| 3 | 8 | Applies a threshold rule to three numbers by hand | This is conditional thinking with no Python in it. A participant who struggles here will struggle on days 8–9, and that is worth knowing six sessions early |
+| 4 | 6 | Separates text from whole number from decimal | Predicts trouble on day 3 and, much later, on day 22 when text from a file has to become a number |
+| 5 | 8 | Explains in their own words what a repeated instruction does | Measures whether the idea of repetition is already there. Strong answers here mean day 10 will land easily |
+| 6 | 8 | Notices that the data is inconsistent and asks a clarifying question | The most advanced thing on the test. Not noticing is entirely normal and costs nothing later |
+
+## How to read the cohort as a whole
+
+- **Q1 at help level 0 or 1 for several people** → add a second helper to day 1, or run an
+  optional setup clinic beforehand. Day 1 is the highest-risk session in the programme and
+  this is your advance warning.
+- **Q3 weak across the room** → do not shorten day 9. The `elif` ordering trap will need
+  the full session.
+- **A wide spread** → plan the pairing from day 3 deliberately, rather than letting it
+  happen.
+- **Everyone scoring high** → the cohort is stronger than the course assumes. Say so in
+  the report; it changes how the final result should be read.
+
+## What to keep for the final report
+
+Per participant: score per question, help level per question, total, and the four
+self-assessment numbers. The self-assessment is repeated nowhere else, so it is only
+useful if it is kept — the interesting comparison is **confidence before against capability
+after**.

@@ -320,12 +320,13 @@ def check_facts():
         "notebooks": len(list((ROOT / "notebooks").glob("*.ipynb"))),
         "solutions": len(list((ROOT / "solutions").glob("*.ipynb"))),
         "tests": len(list((ROOT / "tests").glob("*.ipynb"))),
+        "participant tests": len(list((ROOT / "tests" / "participant").glob("*.ipynb"))),
         "guides": len(list((ROOT / "guides").glob("*.md"))),
         "marking guides": len(list((ROOT / "tests").glob("mark*_guide.md"))),
         "project files": len(list((ROOT / "project" / "gradebook").glob("*.py"))),
     }
-    expected = {"notebooks": 19, "solutions": 18, "tests": 4, "guides": 5,
-                "marking guides": 4, "project files": 4}
+    expected = {"notebooks": 19, "solutions": 18, "tests": 3, "participant tests": 3,
+                "guides": 5, "marking guides": 3, "project files": 4}
     for name, want in expected.items():
         if counts[name] != want:
             problems.append(f"{name}: found {counts[name]}, dossier says {want}")
@@ -336,6 +337,21 @@ def check_facts():
     if len(grades) != 12 or sum(grades) != 78 or sum(grades) / len(grades) != 6.5:
         problems.append(f"sample class: {len(grades)} students, sum {sum(grades)}, "
                         f"average {sum(grades) / len(grades)}")
+
+    # The dossier quotes the point totals, so check them against the exams themselves.
+    for name, points in (("test1_diagnostic", 44), ("test2_midpoint", 50),
+                         ("test3_final_practical", 70)):
+        source = (ROOT / "src" / "tests" / f"{name}.py").read_text(encoding="utf-8")
+        scored = [int(m) for m in re.findall(r"\*\*Միավոր՝\*\*\s*(\d+)", source)]
+        # The final test's question 8 is reported separately and is not in the total.
+        total = sum(scored[:-1]) if name == "test3_final_practical" else sum(scored)
+        if total != points:
+            problems.append(f"{name}: questions total {total} points, dossier says {points}")
+
+    # No grader-only cell may survive into the participant copy.
+    for path in (ROOT / "tests" / "participant").glob("*.ipynb"):
+        if "Ուսուցչի նշում" in path.read_text(encoding="utf-8"):
+            problems.append(f"{path.name}: the rubric leaked into the participant copy")
 
     # Discovery days must still be the five the dossier names.
     for day in ("day06_class_register", "day10_for_loops", "day14_dictionaries",
@@ -351,7 +367,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "1.1"
+VERSION = "1.2"
 
 
 def build():
@@ -391,7 +407,7 @@ def build():
     d.table(
         ["", ""],
         [
-            ["Programme", "24 sessions × 50 minutes = **20 hours exactly**, three times a week over eight weeks"],
+            ["Programme", "24 sessions × 50 minutes = **20 hours exactly**, three times a week over eight weeks, plus three assessment sittings (~3½ hours)"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
             ["Group size", "Up to 16, one instructor"],
             ["Deliverable", "A runnable four-file Python program over the participant's own class data, demonstrated to a colleague"],
@@ -556,16 +572,16 @@ def build():
     )
 
     d.table(
-        ["Week", "Sessions", "What the participant can do by the end of it", "Ends with"],
+        ["Week", "Sessions", "What the participant can do by the end of it", "Assessment"],
         [
-            ["1", "1–3", "It runs on my laptop, and I know what a value is", ""],
-            ["2", "4–6", "I can name things, and keep a whole class in one list", "**Test 1**"],
+            ["1", "1–3", "It runs on my laptop, and I know what a value is", "*diagnostic sat before day 1*"],
+            ["2", "4–6", "I can name things, and keep a whole class in one list", ""],
             ["3", "7–9", "The computer can make decisions", ""],
-            ["4", "10–12", "One loop marks thirty students", "**Test 2**"],
+            ["4", "10–12", "One loop marks thirty students", "**Midpoint**"],
             ["5", "13–15", "I can find any student by name", ""],
-            ["6", "16–18", "I write a calculation once and use it everywhere", "**Test 3**"],
+            ["6", "16–18", "I write a calculation once and use it everywhere", ""],
             ["7", "19–21", "It is a program now, not a notebook", ""],
-            ["8", "22–24", "It has my class in it, it saves, and I showed it to someone", "**Test 4**"],
+            ["8", "22–24", "It has my class in it, it saves, and I showed it to someone", "**Final practical**"],
         ],
         [0.09, 0.13, 0.58, 0.20],
     )
@@ -767,27 +783,61 @@ def build():
 
     d.h2("Assessment")
     d.para(
-        "**Four take-home tests**, after days 6, 12, 18 and 24, covering the six sessions "
-        "before each. Handed out at the end of a session and collected at the start of the "
-        "next, so they consume no session time."
-    )
-    d.para(
-        "They are **not graded, and the participants are told so in writing** — they exist "
-        "to tell the instructor where to slow down. An honest blank is more useful than a "
-        "copied answer. Every question is a classroom task, never a puzzle; nothing "
-        "untaught appears, and every question has a skeleton rather than a blank cell."
-    )
-    d.para(
-        "Each test ships with an instructor marking guide whose **second column is the "
-        "point**: not whether the answer was right, but what a wrong answer tells you."
+        "**Three sittings**, designed jointly with our partner colleague. They are "
+        "**separate sittings, not session time** — the 24 teaching sessions remain 20 "
+        "hours exactly and the assessments add roughly 3½ hours."
     )
     d.table(
-        ["Test", "A wrong answer that changes what the instructor does next"],
+        ["", "Assessment", "When", "Length", "Points", "Covers"],
         [
-            ["1", "Writing `grade = 7` instead of `grade = grade + 1` means assignment has not landed. **If a third of the room misses this, day 7 does not start as written**"],
-            ["3", "Printing instead of returning a value means the four-file program is not yet reachable. **If the room fails this, day 19 is spent on `return` rather than consolidation**"],
+            ["1", "Initial diagnostic", "Before day 1", "45–60 min", "44", "Nothing — it measures the baseline"],
+            ["2", "Midpoint", "After day 12", "60–75 min", "50", "Days 6–12"],
+            ["3", "Final practical", "Day 24", "90–120 min", "70 + 10", "Days 14–24"],
         ],
-        [0.08, 0.92],
+        [0.04, 0.21, 0.14, 0.13, 0.11, 0.37],
+    )
+    d.para(
+        "**Each question has variants A, B and C**, equivalent in difficulty and points; "
+        "the exam platform gives each participant one. Every score is recorded with a "
+        "**help level** — independent, after one hint, with step-by-step help, or not "
+        "finished — which on the diagnostic carries more information than the score."
+    )
+    d.para(
+        "**Scores diagnose the programme, not the teachers**, and the participants are "
+        "told so in writing. They exist to show the instructor where to slow down and to "
+        "give the two-month decision something to stand on."
+    )
+    d.callout(
+        "Why the diagnostic matters more than it looks",
+        [
+            "It is sat **before anyone has been taught anything**, so it cannot be failed. "
+            "What it buys is a **before-measurement**: the programme can report *change* "
+            "rather than just an endpoint, and the help levels show how much of any result "
+            "came from support rather than from the course.",
+            "It is also an early warning. A participant who cannot run a single cell "
+            "unaided tells us to put extra help into day 1 — the riskiest session in the "
+            "programme — six weeks before it would otherwise show.",
+        ],
+    )
+    d.para(
+        "Each assessment ships an instructor marking guide whose **second column is the "
+        "point**: not whether the answer was right, but what a wrong answer tells you and "
+        "what to change next session. Three results change what happens:"
+    )
+    d.table(
+        ["Assessment", "A result that changes what the instructor does next"],
+        [
+            ["Diagnostic", "Several participants unable to run a cell unaided → a second helper on day 1, or a setup clinic beforehand"],
+            ["Midpoint", "**Still writing one block per student instead of a loop** → the clearest early evidence against the method, and it is recorded as such"],
+            ["Final", "Printing instead of returning a value → `return` never landed, and the four-file program rests on it"],
+        ],
+        [0.15, 0.85],
+    )
+    d.para(
+        "Two versions of every assessment are produced automatically — the grader's copy "
+        "with the rubric, and the participant's copy with the questions only — so the "
+        "rubric cannot be handed out by mistake.",
+        italic=True,
     )
 
     d.page_break()
@@ -805,9 +855,9 @@ def build():
     d.table(
         ["When", "The check", "Why it is the right one"],
         [
-            ["Test 1", "Do they write `grade = grade + 1` rather than the answer?", "The earliest signal that assignment has landed; everything later depends on it"],
-            ["Test 2", "Do they write a loop, or still index by hand?", "The first real evidence for or against the method"],
-            ["Test 3", "Do they understand `return`?", "If not, the four-file program is out of reach"],
+            ["Diagnostic", "Can they run a cell at all, and with how much help?", "**The baseline.** Without it the programme can only report an endpoint, not change"],
+            ["Midpoint", "Do they write a loop, or still index by hand?", "The first real evidence for or against the method"],
+            ["Final", "Do they return a value, or print it?", "If `return` never landed, the four-file program was out of reach"],
             ["**Day 21**", "**Does `python main.py` run?** Confirmed individually, per person", "Binary, unarguable, and the hard gate of the course"],
             ["Day 24", "Does a colleague run their program **from their notes alone**?", "Tests that the thing is real, not that it works on one desk"],
             ["Throughout", "Attendance across all 24 sessions", "Below a certain point, nothing else is interpretable"],
@@ -818,11 +868,12 @@ def build():
     d.h2("The one measurement that tests the theory")
     d.para(
         "**None of the checks above tests the actual bet**, because none is an algorithmic "
-        "problem — they measure whether the course ran well. So the final test ends with "
-        "one question that is different:"
+        "problem — they measure whether the course ran well. So the final practical ends "
+        "with one question that is different. It is the only question with no A/B/C "
+        "variants, and its 10 points are reported separately from the other 70:"
     )
     d.callout(
-        "Test 4, final question — the transfer question",
+        "Final practical, question 8 — the transfer question",
         [
             "*Given a class register, find the student whose grade is closest to the class "
             "average.*",
@@ -936,7 +987,7 @@ def build():
         ["Check", "Result"],
         [
             ["Session arithmetic", "Every agenda sums to exactly 50 minutes; 24 sessions total 1,200"],
-            ["Materials execute", "**41 notebooks** — 19 lessons, 18 solution sets, 4 assessments — run cell by cell, in order, from a clean start"],
+            ["Materials execute", "**43 notebooks** — 19 lessons, 18 solution sets and both versions of the 3 assessments — run cell by cell, in order, from a clean start"],
             ["Deliberate errors behave", "Every teaching cell designed to fail raises exactly the error it claims. One that silently starts working is treated as a defect"],
             ["Language and dependencies", "Explanations Armenian, code English, with nothing outside Python's standard library imported anywhere"],
             ["The finished program", "`python main.py` runs end to end; missing files, corrupt data and bad input each produce one actionable sentence, never a technical traceback"],
@@ -1021,7 +1072,8 @@ def build():
             ["Lesson notebooks (days 1–19)", "19", "Participant"],
             ["Written guides (days 20–24)", "5", "Participant"],
             ["Worked solutions", "18", "Participant, after each session"],
-            ["Take-home assessments, with marking guides", "4 + 4", "Participant / instructor"],
+            ["Assessments — grader's and participant versions", "3 × 2", "Participant / instructor"],
+            ["Assessment marking guides", "3", "Instructor only"],
             ["Reference program", "4 files", "Participant, from day 21"],
             ["Installation instructions, reference sheet, setup check", "3", "Participant"],
             ["Instructor notes, curriculum, build specification", "3", "Instructor / organiser"],
@@ -1032,7 +1084,7 @@ def build():
     d.para(
         "Materials are held in a version-controlled repository with four automated checks "
         "that must pass before any change is accepted: session arithmetic, execution of "
-        "all 41 notebooks, the language and dependency rules, and the finished program "
+        "all 43 notebooks, the language and dependency rules, and the finished program "
         "running end to end. Nothing is reported as complete on the strength of "
         "inspection alone."
     )

@@ -136,32 +136,57 @@ These are working adults meeting three times a week. Some will miss sessions.
 
 ---
 
-## 5b. The fortnightly tests
+## 5b. The three assessments
 
-Four take-home tests, after Days 6, 12, 18 and 24. Handed out at the end of the session,
-collected at the start of the next. **They do not use session time**, so the agendas are
-unaffected.
+**Three sittings, not four take-home tests** — the design agreed with our partner
+colleague. They are **separate sittings** and do not use session time.
 
-**Say what they are for, out loud, when you hand out the first one.** These are not exams
-and nobody is graded. They exist to tell *you* where to slow down — and, across the eight
-weeks, to tell the programme whether the method is working (`RATIONALE.md` §5). An honest
-blank is more useful than a copied answer, and the tests say so in writing.
+| Test | When | Length | Points |
+|---|---|---|---|
+| Initial diagnostic | **Before day 1** | 45–60 min | 44 |
+| Midpoint | **After day 12** | 60–75 min | 50 |
+| Final practical | **Day 24** | 90–120 min | 70 + 10 separate |
 
-Each test has a marking guide at `tests/markN_guide.md`. **Its second column is the
-point:** what a wrong answer tells you. Read that column before marking, not after.
+### Before each sitting
 
-Three results are worth watching specifically:
+> **Hand out `tests/participant/<name>.ipynb`, never `tests/<name>.ipynb`.**
+>
+> The second one is the grader's copy. It states what every question measures and what it
+> is worth. Giving it out by accident is the one irreversible mistake available here, so
+> the two are generated as separate files rather than by remembering to delete cells.
 
-| Test | Question | Why it matters |
+The platform assigns each participant **one** of variants A, B or C per question. They are
+equivalent in difficulty and points.
+
+### What to say when you hand out the first one
+
+Say it plainly: **these are not exams and nobody is being ranked.** The scores tell you
+where to slow down and tell the programme whether the method is working
+(`RATIONALE.md` §5). An honest blank is more useful than a copied answer, and the tests
+say so in writing.
+
+### Record two numbers per question
+
+Alongside the score, record the **help level** — `3` independent, `2` after one hint, `1`
+step-by-step, `0` did not finish. On the diagnostic this matters more than the score: two
+people can both reach 30/44, and the one who needed step-by-step help four times is a
+different teaching problem from the one who worked alone and ran out of time.
+
+### Three results that change what you do next
+
+| Test | Watch | If it goes wrong |
 |---|---|---|
-| 1 | Q5 (`x = x + 1`) | If a third of the room misses this, do not start Day 7 as written |
-| 2 | Q4 (writing a loop) | The first real evidence for or against the whole approach |
-| 3 | Q6, Q8, Q10 (`return`) | If these fail, spend Day 19 on `return` instead of consolidation |
+| Diagnostic | Q1 — can they run a cell at all? | Several at help level 0–1 → add a helper to day 1, or run a setup clinic first. This is your advance warning on the riskiest session |
+| Midpoint | **Q4 — did they write a loop?** | Still writing one block per student after twelve sessions is the strongest early evidence against the approach. Record it; do not explain it away |
+| Final | Q2 and Q3 — returning or printing? | Printing means `return` never landed, and the four-file project rests on it |
 
-**Test 4 carries the transfer question** — one small task, using only taught syntax, that
-the course never demonstrated. It is marked separately and is the closest thing the
-programme has to a measurement of its own hypothesis. `tests/mark4_guide.md` explains how
-to read it; the short version is that *a correct plan with incomplete code is a success*.
+### The diagnostic is also a planning tool
+
+It is sat before anyone has been taught anything, so it cannot be failed. Use the spread
+to plan the pairing from day 3, and keep the four self-assessment numbers — the
+interesting comparison at the end is **confidence before against capability after**.
+
+---
 
 ---
 

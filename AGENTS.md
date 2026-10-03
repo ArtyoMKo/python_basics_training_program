@@ -57,7 +57,7 @@ python tools/verify.py          # 3. verify    (nothing is done until this passe
 | | What it proves |
 |---|---|
 | agenda arithmetic | every agenda sums to 50; 24 days = 1,200 minutes |
-| notebooks execute | all 41 notebooks — lessons, solutions **and** tests — run cell by cell, in order, with `input()` stubbed and every deliberate-error cell raising exactly the error it claims |
+| notebooks execute | all 43 notebooks — lessons, solutions **and** both versions of each assessment — run cell by cell, in order, with `input()` stubbed and every deliberate-error cell raising exactly the error it claims |
 | style and language | the language rule, standard library only, excluded constructs, exercise sections present |
 | project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
 
@@ -68,10 +68,17 @@ python tools/verify.py          # 3. verify    (nothing is done until this passe
 #%% code                                a code cell      (English)
 #%% code expected-error: TypeError      this cell MUST raise TypeError
 #%% code interactive: 9; 6; quit        input() is fed these answers, in order
+#%% md teacher                          grader-only; dropped from the participant build
 ```
 
-The last two become **cell metadata**, never visible text. A participant must never see
-`# interactive` in their notebook.
+The first three become **cell metadata**, never visible text. A participant must never
+see `# interactive` in their notebook.
+
+**`teacher` is different: those cells are removed entirely** from
+`tests/participant/*.ipynb`. The assessments build twice — `tests/<name>.ipynb` for the
+grader, with the rubric and the points, and `tests/participant/<name>.ipynb` with
+questions only. Handing out the grader's copy would give away what each question measures
+and what it is worth.
 
 **The 18 solutions live in one source file**, `src/solutions_source.py`, split per day at
 build time — so a reviewer reads them in one pass instead of opening eighteen files.
@@ -200,7 +207,8 @@ src/                    ← EDIT HERE
   tests/                  the four test sources
 notebooks/              generated .ipynb — do not edit
 solutions/              generated .ipynb — do not edit
-tests/                  generated .ipynb + mark1–4_guide.md (hand-written, instructor only)
+tests/                  generated .ipynb (grader) + participant/ (generated)
+                        + mark1–3_guide.md and README.md (hand-written, instructor only)
 guides/                 Days 20–24, markdown, read beside the code  (Armenian)
 project/gradebook/      the finished reference program (4 files)
 partners/               generated .docx dossier for external partners — do not edit
@@ -223,6 +231,7 @@ tools/                  nbbuild.py, verify.py, the three checkers,
 | Committing notebooks with outputs | unreadable diffs, stale numbers | outputs stay cleared |
 | Changing the sample class casually | silently falsifies prose in several days | grep every quoted number, then rebuild the dossier |
 | Editing the `.docx` in `partners/` | overwritten on next build | edit `tools/build_partner_docx.py` |
+| Putting a rubric in a plain `#%% md` cell in an exam | it reaches the participant | mark it `#%% md teacher` |
 | Marking a deliberate-error cell as a bug | it is a teaching device | `expected-error:` cells must raise |
 
 ---

@@ -82,7 +82,7 @@ def main():
     # --- 1 and 2: imports and forbidden constructs, notebooks and project alike ---
     sources = sorted(NOTEBOOKS.glob("*.ipynb"))
     solutions = sorted((ROOT / "solutions").glob("*.ipynb"))
-    tests = sorted((ROOT / "tests").glob("*.ipynb"))
+    tests = sorted((ROOT / "tests").rglob("*.ipynb"))
     for path in sources + solutions + tests:
         for index, source, _ in code_cells(path):
             for module in re.findall(r"^\s*(?:import|from)\s+([\w.]+)", source, re.M):
@@ -119,24 +119,20 @@ def main():
         if not has_error and day not in NO_ERROR_CELL:
             problems.append(f"{path.name}: no break-it-on-purpose cell and not exempt")
 
-    # --- 5: identifiers must be English (Armenian only inside strings/comments) ---
-    armenian = re.compile(r"[԰-֏]")
-    for path in sources:
+    # --- 5: NOTHING inside a code cell may be Armenian (PLAN.md section 7.7).
+    # Not identifiers, not comments, not string values. Armenian lives in markdown only,
+    # including in the exams: the instruction is Armenian in the cell above, and the
+    # placeholder inside the cell matches the English the participant has typed all course.
+    armenian = re.compile(r"[\u0530-\u058F]")
+    for path in sources + solutions + tests:
         for index, source, meta in code_cells(path):
-            # A break-it-on-purpose cell is deliberately unparseable (an unterminated
-            # string, say), so stripping literals from it cannot work. Skip it.
-            if meta.get("expected_error"):
-                continue
-            # Strip strings and comments, then look for Armenian letters in what's left.
-            stripped = re.sub(r'"""[\s\S]*?"""', "", source)
-            stripped = re.sub(r'f?"[^"\n]*"', '""', stripped)
-            stripped = re.sub(r"f?'[^'\n]*'", "''", stripped)
-            stripped = re.sub(r"#.*", "", stripped)
-            if armenian.search(stripped):
-                bad = armenian.search(stripped)
-                context = stripped[max(0, bad.start() - 30):bad.start() + 30].strip()
+            match = armenian.search(source)
+            if match:
+                line_number = source[:match.start()].count("\n") + 1
+                snippet = source.splitlines()[line_number - 1].strip()
                 problems.append(
-                    f"{path.name} cell {index}: Armenian in an identifier -> {context!r}"
+                    f"{path.relative_to(ROOT)} cell {index} line {line_number}: "
+                    f"Armenian inside a code cell -> {snippet[:55]!r}"
                 )
 
     if problems:

@@ -212,8 +212,6 @@ register, which is true.
 **📦 By the end of today you have:** your class as a single list, the count computed
 rather than counted, and the same register written both ways in one notebook.
 
-> **Test 1 is handed out at the end of this session** (Days 1–6).
-
 ---
 
 ## Day 7 — Working with the register
@@ -311,7 +309,7 @@ Standard shape.
 **📦 By the end of today you have:** your own class average, computed by a loop, rounded
 to one decimal place.
 
-> **Test 2 is handed out at the end of Day 12** (Days 7–12).
+> **The midpoint test is sat after this week**, as a separate 60–75 minute sitting.
 
 ---
 
@@ -404,8 +402,6 @@ Standard shape.
 
 **📦 By the end of today you have:** a report card for every student, each with several
 grades.
-
-> **Test 3 is handed out at the end of Day 18** (Days 13–18).
 
 ---
 
@@ -598,8 +594,8 @@ Sixteen demos at 90 seconds is 24 minutes, which is why the group is capped at 1
 **📦 By the end of today you have:** a finished, documented program that a colleague
 successfully ran from your README alone, and a 90-second demo given out loud.
 
-> **Test 4 is handed out at the end of this session** (Days 19–24), and carries the
-> transfer question described in `RATIONALE.md` §5.
+> **The final practical is sat on this day**, as a separate 90–120 minute sitting. Its
+> last question is the transfer question described in `RATIONALE.md` §5.
 
 ---
 
@@ -618,30 +614,45 @@ Project: Days 22–24 (150 min / 2 h 30).
 
 ## Assessment
 
-Four take-home tests, one per fortnight. Handed out at the end of a session, collected at
-the start of the next. **They do not consume session time**, so every agenda above still
-sums to 50.
+**Three sittings**, designed with our partner colleague. They are **separate sittings,
+not session time** — the 24 teaching sessions remain 20 hours exactly, and the
+assessments add roughly 3½ hours on top.
 
-| Test | After day | Covers | Notebook |
-|---|---|---|---|
-| 1 | 6 | `print`, types, `input`, variables, f-strings, lists | `tests/test1_first_steps.ipynb` |
-| 2 | 12 | `if`/`elif`, `and`/`or`, `for`, `range`, totals, filtering | `tests/test2_decisions_and_loops.ipynb` |
-| 3 | 18 | `while`, dictionaries, reports, functions | `tests/test3_data_and_functions.ipynb` |
-| 4 | 24 | `return`, `.py` files, modules, files, the project | `tests/test4_the_program.ipynb` |
+| | Test | When | Length | Points | Covers |
+|---|---|---|---|---|---|
+| 1 | Initial diagnostic | **Before day 1** | 45–60 min | 44 | Nothing — it measures the baseline |
+| 2 | Midpoint | **After day 12** | 60–75 min | 50 | Days 6–12: lists, conditions, loops |
+| 3 | Final practical | **Day 24** | 90–120 min | 70 **+ 10 reported separately** | Days 14–24: functions, dictionaries, files, the project |
 
-Each ships a marking guide at `tests/markN_guide.md` giving the expected answer **and what
-a wrong answer tells the instructor**. The tests exist to show whether the method is
-working, not to grade teachers.
+- **Each question has variants A, B and C**, equivalent in difficulty and points. The
+  exam platform gives each participant **one**.
+- **Two versions of every test are generated**: `tests/<name>.ipynb` for the grader, with
+  the rubric, and `tests/participant/<name>.ipynb` with questions only. Hand out the
+  participant copy.
+- **Record a help level with every score** — `3` independent, `2` after one hint, `1`
+  with step-by-step help, `0` did not finish. On the diagnostic this is more informative
+  than the score itself.
+- **Scores diagnose the programme, not the teachers**, and participants are told so.
+- Each test ships a marking guide at `tests/markN_guide.md` giving what a wrong answer
+  tells the instructor, and what to change in the next session because of it.
+
+**Question 8 of the final test is the transfer question** — one small task using only
+taught syntax that the course never demonstrates. It is marked separately, never reported
+as a pass rate, and a correct plan with incomplete code counts as a success. See
+`RATIONALE.md` §5.
+
+**The diagnostic is what makes the experiment measurable.** Without a before-measurement
+the programme can only report an endpoint; with one it can report change.
 
 ## Week map
 
-| Week | Days | Arc | Ends with |
+| Week | Days | Arc | Assessment |
 |---|---|---|---|
-| 1 | 1–3 | It runs on my laptop, and I know what a value is | |
-| 2 | 4–6 | I can name things, and keep a whole class in one list | **Test 1** |
+| 1 | 1–3 | It runs on my laptop, and I know what a value is | *(diagnostic sat before day 1)* |
+| 2 | 4–6 | I can name things, and keep a whole class in one list | |
 | 3 | 7–9 | The computer can decide | |
-| 4 | 10–12 | One loop marks thirty students | **Test 2** |
+| 4 | 10–12 | One loop marks thirty students | **Midpoint test** |
 | 5 | 13–15 | I can find any student by name | |
 | 6 | 16–18 | I write the calculation once and use it everywhere | **Test 3** |
 | 7 | 19–21 | It is a program now, not a notebook | |
-| 8 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Test 4** |
+| 8 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** |

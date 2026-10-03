@@ -66,8 +66,9 @@ install software. Anaconda + VS Code — two installs on Day 1, nothing after. N
 accounts, no API keys, **no internet after Day 1**. **Cost: zero.**
 
 **Provided:** 19 notebooks, 5 guides, 18 solutions (handed out after each session so a
-missed day is recoverable), **4 fortnightly take-home tests with instructor marking
-guides**, `SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
+missed day is recoverable), **3 assessment sittings** — a diagnostic before day 1, a midpoint after day 12 and a
+final practical on day 24 — each in a grader's and a participant version, with
+instructor marking guides, `SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
 glossary, `check_setup.py`, a fictional 12-student sample class, and the finished
 reference program.
 

@@ -53,7 +53,7 @@ public_school_python/
 ├── check_setup.py          <- six checks, run on Day 1
 ├── notebooks/              <- Days 1-19, one per day  + sample_class.csv
 ├── solutions/              <- Days 2-19, handed out AFTER each session
-├── tests/                  <- 4 fortnightly tests + instructor marking guides
+├── tests/                  <- 3 assessments: grader's copy, participant copy, marking guides
 ├── guides/                 <- Days 20-24, markdown, read beside the code
 ├── project/gradebook/      <- the finished reference program
 ├── src/                    <- notebook SOURCES (see below)
@@ -88,8 +88,9 @@ refuses to write the file if any of them disagree. The build is idempotent, so
 `git status` after a rebuild shows exactly what you changed.
 
 Cell markers: `#%% md`, `#%% code`, `#%% code expected-error: TypeError`,
-`#%% code interactive: 9`. The last two become cell metadata, not text the participant
-sees.
+`#%% code interactive: 9`, and `#%% md teacher`. The last three become cell metadata, not
+text the participant sees — and `teacher` cells are dropped entirely from the participant
+copy of each assessment, so the rubric cannot be handed out by accident.
 
 ## Verification
 
@@ -98,7 +99,7 @@ sees.
 | | What it proves |
 |---|---|
 | agenda arithmetic | every agenda sums to 50; 24 days = 1,200 minutes |
-| notebooks execute | all 41 notebooks — lessons, solutions and tests — run cell by cell in order, with `input()` stubbed and every **break-it-on-purpose** cell raising exactly the error it claims. A demo that stops failing is a bug |
+| notebooks execute | all 43 notebooks — lessons, solutions and both versions of each assessment — run cell by cell in order, with `input()` stubbed and every **break-it-on-purpose** cell raising exactly the error it claims. A demo that stops failing is a bug |
 | style and language | no Armenian inside any code cell, standard library only, no excluded constructs |
 | project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
 
@@ -107,10 +108,10 @@ sees.
 | Check | Result |
 |---|---|
 | Agenda arithmetic | ✅ 8 agenda tables, 24 days, 1,200 minutes |
-| Notebook execution | ✅ 41 notebooks (19 lessons + 18 solutions + 4 tests), every cell, in order |
+| Notebook execution | ✅ 43 notebooks (19 lessons + 18 solutions + 3 assessments × 2 versions), every cell, in order |
 | Deliberate errors | ✅ 9 cells raise exactly the error they claim |
 | Solutions | ✅ 18 notebooks, every cell runs |
-| Tests | ✅ 4 tests + 4 marking guides; every cell runs |
+| Assessments | ✅ 3 sittings × 2 versions + 3 marking guides; every cell runs |
 | Project | ✅ `python main.py` end to end; 4 failure paths give one sentence each |
 | Style | ✅ stdlib only, no excluded constructs, every identifier English |
 | Language rule | ✅ no Armenian anywhere inside a code cell — verified by script |

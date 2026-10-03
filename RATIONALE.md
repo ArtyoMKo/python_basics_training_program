@@ -187,29 +187,37 @@ extra work:
 
 | When | The check | Why it is the right one |
 |---|---|---|
-| **Test 1** (after Day 6) | Q5: do they write `x = x + 1` rather than the answer? | The earliest signal that "assign" has landed; everything later needs it |
-| **Test 2** (after Day 12) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
-| **Test 3** (after Day 18) | Q6/Q8/Q10: do they understand `return`? | If not, the four-file project is not reachable |
+| **Diagnostic** (before Day 1) | Q1: can they run a cell at all, and at what help level? | **The baseline.** Without it we can only report an endpoint, not change |
+| **Midpoint** (after Day 12) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
+| **Final** (Day 24) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the four-file project was not reachable |
 | **Day 21** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
 | **Day 24** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
 | **Day 24** | Attendance across all 24 sessions | Below a certain point, nothing else is interpretable |
 
-The four tests are take-home, one per fortnight, and each ships an instructor marking guide
-whose second column is *what a wrong answer tells you*. They are not graded and the
-participants are told so: they exist to show where to slow down, and to give this decision
-something to stand on.
+**Three assessments**, designed with our partner colleague: a diagnostic before day 1, a
+midpoint after day 12, and a final practical on day 24. They are supervised sittings
+outside the 20 teaching hours, scored out of 44, 50 and 70, with a help level recorded
+beside every score.
+
+**Scoring them does not make them exams.** The scores diagnose the programme, not the
+teachers, and the materials say so. What scoring buys is the thing the earlier
+not-graded design could not give us: **a before-measurement**. We can now report change
+rather than an endpoint, and the diagnostic's help levels tell us how much of any result
+came from support rather than from the course.
 
 **The one measurement we have to add.** None of the above tests the actual bet, because
 none of them is an algorithmic problem. So:
 
-> **Test 4, question 8** is that measurement, and it is already written: *given a class
-> dictionary, find the student whose grade is closest to the class average.* It uses no
-> syntax the course did not teach, and the course never demonstrates it.
+> **Question 8 of the final practical** is that measurement, and it is already written:
+> *given a class register, find the student whose grade is closest to the class average.*
+> It uses no syntax the course did not teach, and the course never demonstrates it. It is
+> the same for every participant — the only question with no A/B/C variants — and its 10
+> points are reported separately from the other 70.
 >
 > The question asks them to **write their approach in plain words first**, then attempt the
 > code, and to say where they stopped if they could not finish.
 
-Four things get recorded, not one (`tests/mark4_guide.md`):
+Four things get recorded, not one (`tests/mark3_guide.md`):
 
 1. Did they write the plain-words plan at all?
 2. Was the plan a **correct approach**, even if the code failed?

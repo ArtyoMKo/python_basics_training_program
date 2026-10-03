@@ -1,31 +1,76 @@
-# Marking guide — Test 3 (Days 13–18)
+# Marking guide — Test 3, final practical (day 24)
 
-**Instructor-facing. Do not hand out.**
+**Instructor-facing. Hand out `tests/participant/test3_final_practical.ipynb`.**
 
-| Q | Expected | What a wrong answer tells you |
-|---|---|---|
-| 1 | `class_grades["Nare"]` | Looped to find it → works, but they have not seen that a dictionary removes the search. Mention it; do not mark it wrong |
-| 2 | Assignment, reassignment, `del` | Used `.append()` → they are mixing lists and dictionaries. Worth five minutes; it will break Day 22 |
-| 3 | `if "Vahe" in class_grades:` / `else:` | Program stops with `KeyError` → they did not guard the lookup. **This exact pattern is in `storage.py`**; flag it before Day 21 |
-| 4 | `for name, grade in class_grades.items():` | Used `.keys()` then looked up each value → acceptable; note it but do not correct in front of the room |
-| 5 | Counter with `if` inside an `.items()` loop | — |
-| 6 | `def average_of(grades):` … `return round(..., 1)` | Used `print` instead of `return` → **the important miss.** Day 18's whole point. The four-file project is impossible without it |
-| 7 | `def has_passed(grade): return grade >= PASS_MARK` | Wrote `if ...: return True else: return False` → correct, just longer. Do not mark down; mention the shorter form once |
-| 8 | Empty list, loop, `if`, `.append()`, `return` | Printed the list instead of returning it → same miss as Q6, and it confirms it |
-| 9 | Loop with `break` on `"quit"` and `.isdigit()` guard | Crashed on `"nine"` → the validation habit has not formed. It is in the project menu, so it will be met again |
-| 10 | "One prints and gives you nothing back; the other returns a value you can compare" | Cannot articulate it → re-teach before Day 20. **Do not start the transition until this is understood by most of the room** |
+| | |
+|---|---|
+| **When** | Day 24, as a separate sitting |
+| **Length** | 90–120 minutes |
+| **Total** | **70 points** across questions 1–7, **plus question 8 marked separately** |
+| **Covers** | Days 14–24: functions, `return`, dictionaries, files, the four-file program |
+| **Variants** | A/B/C for questions 1–7. **Question 8 is the same for everyone** |
 
-## How to read the results as a whole
+**This test is marked in two parts, and the second one matters more.**
 
-- **Q6, Q8 and Q10 are one question asked three ways:** do they understand `return`?
-  If the group fails all three, **Day 19 should be spent on `return`, not on
-  consolidation.** That is a legitimate and planned use of Day 19.
-- Q3 is the direct rehearsal for `storage.py`. A failure here predicts a hard Day 22.
-- This is the last test before the transition. It is the last cheap chance to find out
-  that something fundamental is missing.
+---
 
-## What to record
+## Part one — questions 1 to 7 (70 points)
 
-Per question: correct / wrong / blank, plus completion. Then one judgement in a sentence:
-**is this group ready for `.py` files?** If the honest answer is no, say so in the notes
-now — Day 21 is where that becomes visible to everyone, including them.
+| Q | Points | Expected | What a wrong answer tells you |
+|---|---|---|---|
+| 1 | 8 | Names which file holds `PASS_MARK`, which saves, and why the calculations file does not import the storage file | **The "why" is the one that matters.** If they can answer it, the four-file structure was understood rather than copied. If most cannot, the transition was mechanical and should be reported that way |
+| 2 | 12 | A function that computes **and returns** the average from a dictionary's values | Printing instead of returning means `return` never landed — the clearest single failure the course can produce, because the whole project rests on it |
+| 3 | 12 | A function that loops a dictionary, applies the pass mark, and **returns a list** | Printing the names instead of returning them is the same miss as Q2 and confirms it |
+| 4 | 10 | `line.split(",")`, then `int()` on the second part | Forgetting `int()` after eight weeks means the day 3–4 type lesson never fully closed. Record it honestly |
+| 5 | 8 | Notices the bad row and skips it without stopping the program | Letting the program crash means the validation habit did not form. It is in the project menu, so they have met it repeatedly |
+| 6 | 15 | A working feature with the calculation in the right file and the printing in another | The heaviest question. Putting everything in one place still earns most of the marks — the separation is the stretch |
+| 7 | 5 | Explains that without saving, changes vanish when the program closes | Short and almost always correct by day 24 |
+
+---
+
+## Part two — question 8, the transfer question (10 points, **reported separately**)
+
+> *Find the student whose grade is closest to the class average.*
+
+**This is the closest thing the programme has to a measurement of its own hypothesis**
+(`RATIONALE.md` §5). It uses no syntax the course did not teach, and the course never
+demonstrates it. The question asks for a plain-words plan **before** any code.
+
+**Do not add these 10 points to the 70.** Report them separately, and never as a pass rate.
+
+### Record four things, not one
+
+| Record | Why it matters |
+|---|---|
+| Did they write the plain-words plan at all? | Attempting a plan is itself evidence of a problem-solving posture |
+| Was the plan a **correct approach**, even if the code failed? | Separates "cannot think about the problem" from "cannot yet type it". Completely different findings |
+| Did the code work? | The weakest of the four signals, and the easiest to count |
+| **Where did they stop, in their own words?** | The most useful qualitative data in the entire programme |
+
+### How to interpret it
+
+| Pattern | What it means for the two-month decision |
+|---|---|
+| Plan correct, code works | The bet paid off: fluency freed attention for the problem |
+| **Plan correct, code incomplete** | **The most important result, and a positive one.** They can reason about a problem; the remaining gap is practice, which is what the next course provides |
+| Plan vague, code attempted anyway | Mechanical fluency without problem-solving — the central risk, realised |
+| Nothing attempted, or "we did not do this in class" | The strongest negative signal. The course taught recipes, not capability. **Record the exact wording** |
+
+> **A cohort that mostly produces the second pattern is a success**, even though most of
+> the code will not run. Marking it as "30% correct" would be the single most misleading
+> number this programme could publish.
+
+---
+
+## What goes to the review meeting
+
+Five numbers decide the two-month direction:
+
+1. Test 1 → test 3 change, per participant, with help levels
+2. Test 2 Q4 — how many wrote a loop
+3. Day 21 — how many left with a working `python main.py`
+4. Day 24 — how many programs a colleague ran unaided
+5. **Question 8, in the four columns above**, with the participants' own words
+
+Numbers 1–4 say whether the course ran well. **Number 5 says whether the theory was
+right.**
