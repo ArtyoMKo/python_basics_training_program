@@ -4,7 +4,7 @@ Execute every notebook cell, in order, and report what failed.
     python tools/run_all_notebooks.py            # all notebooks
     python tools/run_all_notebooks.py day07      # one
 
-Three course-specific rules, from PLAN.md section 11.2:
+Three course-specific rules, from docs/PLAN.md section 11.2:
 
 1. Each notebook runs in a FRESH namespace, cells in order. A cell that depends on a
    cell above it must work when the participant runs top to bottom.

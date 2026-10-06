@@ -16,7 +16,7 @@ programming background.** 24 sessions, 3 a week for 8 weeks, **delivered remotel
 groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
 participant running a four-file gradebook program over their own class list.
 
-> **⏳ Sessions are moving from 50 to 75 minutes.** Every agenda in `CURRICULUM.md` is
+> **⏳ Sessions are moving from 50 to 75 minutes.** Every agenda in `docs/CURRICULUM.md` is
 > still written to 50 and `check_times.py` still verifies against 50. The rebuild is
 > pending and is flagged in both files — **do not "fix" the 50s without doing the whole
 > rebuild**, or the arithmetic check will pass while the plans mean nothing.
@@ -31,12 +31,12 @@ It is not a library and has no users other than teachers in a classroom. "Workin
 | # | File | What it gives you |
 |---|---|---|
 | 1 | **this file** | the rules you must not break |
-| 2 | `PLAN.md` | the full build specification — §4 (discovery days), §5 (what is taught and excluded), §7 (notebook conventions) |
-| 3 | `CURRICULUM.md` | the 24-day map and every agenda |
-| 4 | `RATIONALE.md` | *why* the course is built this way, what it risks, and **§5a the rule it will be judged by** |
-| 5 | `ROADMAP.md` | the six-month arc — Part 1 is built, Part 2 is a vision |
+| 2 | `docs/PLAN.md` | the full build specification — §4 (discovery days), §5 (what is taught and excluded), §7 (notebook conventions) |
+| 3 | `docs/CURRICULUM.md` | the 24-day map and every agenda |
+| 4 | `docs/RATIONALE.md` | *why* the course is built this way, what it risks, and **§5a the rule it will be judged by** |
+| 5 | `docs/ROADMAP.md` | the six-month arc — Part 1 is built, Part 2 is a vision |
 
-`PLAN.md` wins any disagreement with this file. If you find a contradiction, fix it and
+`docs/PLAN.md` wins any disagreement with this file. If you find a contradiction, fix it and
 say so.
 
 ---
@@ -96,9 +96,9 @@ Cells there are marked `#%% day07 code`.
 
 | Where | Language |
 |---|---|
-| Markdown cells, callouts, exercise instructions, `guides/*.md`, `SETUP.md`, `CHEATSHEET.md` | **Armenian** |
+| Markdown cells, callouts, exercise instructions, `guides/*.md`, `handouts/SETUP.md`, `handouts/CHEATSHEET.md` | **Armenian** |
 | **Everything inside a code cell** — identifiers, comments, docstrings, string values, printed output | **English** |
-| `PLAN.md`, `CURRICULUM.md`, `RATIONALE.md`, `INSTRUCTOR_NOTES.md`, `tools/`, this file | English |
+| `docs/PLAN.md`, `docs/CURRICULUM.md`, `docs/RATIONALE.md`, `docs/INSTRUCTOR_NOTES.md`, `tools/`, this file | English |
 
 Example names are **transliterated Armenian**: `Ani`, `Davit`, `Nare`, `Aram`, `Mariam`,
 `Tigran`, `Lilit`, `Gor`, `Anahit`, `Hayk`, `Sona`, `Vahe`. Familiar data, copyable code.
@@ -119,7 +119,7 @@ it the long way, then hand them the tool that collapses it, inside one 50 minute
 | 22 | keep the register after closing it | retyping it | **files** |
 
 > **⏳ The notebooks still use the OLD order** (`day08_if_else`, `day10_for_loops`,
-> `day14_dictionaries`). `CURRICULUM.md` carries the agreed new one, where every data
+> `day14_dictionaries`). `docs/CURRICULUM.md` carries the agreed new one, where every data
 > type precedes conditions and loops. Renaming and rewriting them is pending work — do
 > not half-do it.
 
@@ -139,7 +139,7 @@ long way was there to make a point.
 | "Notice how awful that was." | *(a table comparing line counts, and nothing else)* |
 
 Before any stretch of repetitive typing, the notebook **promises the shortcut in writing
-and names when it arrives** (`PLAN.md` §4.3). Keeping that promise is what makes the long
+and names when it arrives** (`docs/PLAN.md` §4.3). Keeping that promise is what makes the long
 half acceptable.
 
 ### 4. Time is a hard ceiling.
@@ -154,7 +154,7 @@ Hands-on is ≥ 26 of 50. If content does not fit, **cut a topic — never compr
 No `pip`, no venv, no third-party imports — **including Anaconda's 300 bundled packages**.
 `pandas` would make Day 11 a one-liner and teach a teacher nothing about loops.
 
-Also excluded, deliberately (`PLAN.md` §5): classes, exceptions beyond one `try` in
+Also excluded, deliberately (`docs/PLAN.md` §5): classes, exceptions beyond one `try` in
 `main.py`, comprehensions, `lambda`, generators, recursion, regex, type hints, `async`,
 decorators, `*args`.
 
@@ -194,23 +194,33 @@ The sample class is engineered, and **prose throughout the course quotes these v
 ```
 
 **If you change `notebooks/sample_class.csv`, you must grep for every number that was true
-before** (`PLAN.md` §11.6). `6.5` in particular is quoted in Day 11 as the moment `float`
+before** (`docs/PLAN.md` §11.6). `6.5` in particular is quoted in Day 11 as the moment `float`
 stops being abstract.
 
 ---
 
+## Where things live, and how to refer to them
+
+Root holds **only** `README.md` and the agent files. Everything else is foldered.
+
+> **One rule that is easy to get backwards.** Participants receive a *flat folder* — a
+> notebook, a guide, `SETUP.md`, `CHEATSHEET.md`. So **participant-facing material
+> (`notebooks/`, `guides/`, `handouts/`) refers to files by bare name**, because that is
+> what the participant sees. Everything else — `docs/`, `tools/`, `tests/*_guide.md`,
+> this file — uses full repo paths.
+
 ## File map
 
 ```
-PLAN.md                 the build spec           ← the authority
-CURRICULUM.md           24 agendas, time math
-RATIONALE.md            why this method, the risk, the experiment   (for colleagues)
-OUTLINE.md              what the course is, short                   (for administration)
-INSTRUCTOR_NOTES.md     pre-flight, pacing, risks, what to cut
-SETUP.md                installation, Windows + macOS               (Armenian)
-CHEATSHEET.md           printable reference + bilingual glossary    (Armenian)
-ANNOUNCEMENT.md         recruitment text                            (Armenian)
-check_setup.py          six checks a participant runs on Day 1
+docs/PLAN.md            the build spec           ← the authority
+docs/CURRICULUM.md           24 agendas, time math
+docs/RATIONALE.md            why this method, the risk, the experiment   (for colleagues)
+docs/OUTLINE.md              what the course is, short                   (for administration)
+docs/INSTRUCTOR_NOTES.md     pre-flight, pacing, risks, what to cut
+handouts/SETUP.md                installation, Windows + macOS               (Armenian)
+handouts/CHEATSHEET.md           printable reference + bilingual glossary    (Armenian)
+docs/ANNOUNCEMENT.md         recruitment text                            (Armenian)
+handouts/check_setup.py          six checks a participant runs on Day 1
 
 src/                    ← EDIT HERE
   day01…day19.py          notebook sources
@@ -271,14 +281,14 @@ changed.
 
 ## Open items — do not report these as done
 
-Both are stated plainly in `README.md` and `INSTRUCTOR_NOTES.md`. **Do not quietly close
+Both are stated plainly in `README.md` and `docs/INSTRUCTOR_NOTES.md`. **Do not quietly close
 them.**
 
 1. **The Armenian terminology has not been reviewed by a native speaker.** Every Armenian
-   technical term must come from the glossary in `CHEATSHEET.md` §1 and nowhere else —
+   technical term must come from the glossary in `handouts/CHEATSHEET.md` §1 and nowhere else —
    that is what makes a later correction a find-and-replace rather than a re-read of
    nineteen files. Terms marked ⚠ are the least certain.
-2. **`SETUP.md` has never been tested on a clean machine.** `INSTRUCTOR_NOTES.md` §1 lists
+2. **`handouts/SETUP.md` has never been tested on a clean machine.** `docs/INSTRUCTOR_NOTES.md` §1 lists
    the three things to confirm; the riskiest is whether VS Code's built-in terminal opens
    with conda active on Windows.
 

@@ -541,7 +541,7 @@ cell is English.**
 | Element | Language |
 |---|---|
 | Markdown cells, callouts, exercise instructions, retrospectives | **Armenian** |
-| Guides (`guides/*.md`), `SETUP.md`, `CHEATSHEET.md`, `ANNOUNCEMENT.md` prose | **Armenian** |
+| Guides (`guides/*.md`), `handouts/SETUP.md`, `handouts/CHEATSHEET.md`, `ANNOUNCEMENT.md` prose | **Armenian** |
 | Keywords, built-ins, method names | English |
 | Variable and function names | English |
 | **Comments inside code cells** | **English** |
@@ -570,7 +570,7 @@ That is where the encoding argument is demonstrated and where it earns its place
 have a second job: teaching a participant to read an English error message. The explanation
 above each one is Armenian; the message it explains is not.
 
-**The bilingual glossary is still a deliverable.** `CHEATSHEET.md` §1 maps ~40 terms —
+**The bilingual glossary is still a deliverable.** `handouts/CHEATSHEET.md` §1 maps ~40 terms —
 *variable · փոփոխական*, *list · ցուցակ* — because the instructor and the markdown talk
 about these concepts in Armenian even though the code never does.
 
@@ -667,12 +667,12 @@ public_school_python/
 ├── README.md                   <- index; what this is; how to run it
 ├── OUTLINE.md                  <- 4-part outline: idea / skills / requirements / outcome
 ├── CURRICULUM.md               <- 24 day agendas, time math, deliverables
-├── SETUP.md                    <- Anaconda install, Windows AND macOS, screenshots-in-words
+├── handouts/SETUP.md                    <- Anaconda install, Windows AND macOS, screenshots-in-words
 ├── INSTRUCTOR_NOTES.md         <- pre-flight, pacing, what to cut, the risk register
-├── CHEATSHEET.md               <- printable, 4 pages; opens with the bilingual glossary (§7.7)
+├── handouts/CHEATSHEET.md               <- printable, 4 pages; opens with the bilingual glossary (§7.7)
 ├── RATIONALE.md                <- why this method, the risk, the experiment (for colleagues)
 ├── ANNOUNCEMENT.md             <- recruitment text, written for teachers
-├── check_setup.py              <- 6 checks, run on Day 1
+├── handouts/check_setup.py              <- 6 checks, run on Day 1
 ├── notebooks/                  <- GENERATED -- do not edit by hand
 │   ├── day01_first_program.ipynb … day19_return.ipynb             (19)
 │   └── sample_class.csv        <- the fictional 12-student class
@@ -772,15 +772,15 @@ in §5 stands, and `tools/check_style.py` enforces it by grepping every import.
 
 | | Answer |
 |---|---|
-| **The kernel picker.** Every notebook asks which Python to use; pick the wrong one and packages "aren't installed" | There is only **one** choice in the list — Anaconda's `base`. `SETUP.md` shows it in words, Day 1 and Day 2 have a red callout about it, and `check_setup.py` reports which Python is actually running |
-| **The built-in terminal may open without conda on it** (Windows PowerShell) | The Python extension activates the interpreter in new terminals by default, so this usually just works. If it doesn't: `SETUP.md`'s fallback is one line — set the default terminal to Command Prompt. Named in `INSTRUCTOR_NOTES.md` as a thing to test on a school laptop before Day 1 |
+| **The kernel picker.** Every notebook asks which Python to use; pick the wrong one and packages "aren't installed" | There is only **one** choice in the list — Anaconda's `base`. `handouts/SETUP.md` shows it in words, Day 1 and Day 2 have a red callout about it, and `handouts/check_setup.py` reports which Python is actually running |
+| **The built-in terminal may open without conda on it** (Windows PowerShell) | The Python extension activates the interpreter in new terminals by default, so this usually just works. If it doesn't: `handouts/SETUP.md`'s fallback is one line — set the default terminal to Command Prompt. Named in `INSTRUCTOR_NOTES.md` as a thing to test on a school laptop before Day 1 |
 
 **If VS Code is blocked by school IT**, the fallback is JupyterLab from Anaconda Navigator
 for Days 1–19 and pairing with a colleague for Days 20–24. Documented in
 `INSTRUCTOR_NOTES.md`, not in the participant materials — a fallback in the main text is a
 fork in the road for everyone.
 
-### 9.2 `SETUP.md` is a first-class deliverable here
+### 9.2 `handouts/SETUP.md` is a first-class deliverable here
 
 In the TUMO course setup is a 15-minute appendix because IT prepared the machines. Here it
 is Day 1's entire content and the largest single risk to the programme. It must:
@@ -789,7 +789,7 @@ is Day 1's entire content and the largest single risk to the programme. It must:
   participant should never read a step that is not for their machine.
 - Be **six steps**, numbered, with a ✅ check after each: install Anaconda → install
   VS Code → install the two extensions → make the `python_course` folder → open it in
-  VS Code → run `check_setup.py`.
+  VS Code → run `handouts/check_setup.py`.
 - Name what they will see on screen, in words, at every step — "a green button saying
   *Download*", "a box on the left with five icons; the top one looks like two sheets of
   paper".
@@ -801,7 +801,7 @@ is Day 1's entire content and the largest single risk to the programme. It must:
 - Have a fallback path for **no admin rights** — Anaconda and VS Code both install
   per-user ("Just Me") and usually succeed without admin. If they are blocked outright, the
   fallback is in `INSTRUCTOR_NOTES.md`, not here.
-- End with `check_setup.py` printing six green lines, run from inside VS Code on Day 1.
+- End with `handouts/check_setup.py` printing six green lines, run from inside VS Code on Day 1.
 - Be handed out **at least three days before** Day 1, with the note that trying it at home
   is welcome and failing at it is expected and is exactly what Day 1 is for.
 
@@ -813,7 +813,7 @@ is Day 1's entire content and the largest single risk to the programme. It must:
 
 | Day | Title | Phase | New idea | 📦 Deliverable |
 |---|---|---|---|---|
-| 1 | Install everything and run your first line | NB | JupyterLab in VS Code, a cell, Shift+Enter | `check_setup.py` green; a notebook printing their name |
+| 1 | Install everything and run your first line | NB | JupyterLab in VS Code, a cell, Shift+Enter | `handouts/check_setup.py` green; a notebook printing their name |
 | 2 | Printing properly | NB | `print`, quotes, comments | A four-line register header |
 | 3 | Four kinds of value | NB | `str` `int` `float` `bool`, `type()` | A cell showing each type and what `"2" + 2` does |
 | 4 | Changing type, and asking a question | NB | `int()`, `str()`, `input()` | A cell that takes a grade and prints it plus one |
@@ -892,23 +892,23 @@ caught after the sample class changes.
 
 ### 11.4 Every failure path gives one actionable sentence
 
-For `check_setup.py` and the project: Python not on PATH, wrong Python version, notebook
+For `handouts/check_setup.py` and the project: Python not on PATH, wrong Python version, notebook
 run out of order, missing data file, empty data file, a grade that is not a number, a
 non-existent student name. Each produces one sentence a teacher can act on. **A traceback
 is never acceptable as participant-facing output.**
 
 ### 11.5 The fresh-laptop test
 
-Before Day 1 is final: a machine that has never had Python on it, following `SETUP.md`
+Before Day 1 is final: a machine that has never had Python on it, following `handouts/SETUP.md`
 literally, with nothing else open. Once on Windows, once on macOS. Time it, and put the
 real number in `INSTRUCTOR_NOTES.md`.
 
 Three things to confirm specifically, because they are the ones that bite:
 
-1. VS Code offers **exactly one** kernel, and its name matches what `SETUP.md` says.
+1. VS Code offers **exactly one** kernel, and its name matches what `handouts/SETUP.md` says.
 2. `Ctrl+`` ` `` opens a terminal in which `python --version` works, with no conda
    activation typed by hand — **on Windows**.
-3. `check_setup.py` runs green from inside VS Code, not just from a terminal.
+3. `handouts/check_setup.py` runs green from inside VS Code, not just from a terminal.
 
 ### 11.6 Sweep for stale claims
 
@@ -921,13 +921,13 @@ every number and file name that was true before it.
 
 | Risk | Likelihood | Cost | Mitigation |
 |---|---|---|---|
-| **The ~1 GB Anaconda download** | Medium — lower than in a room, since each teacher downloads at home | Day 1 | `SETUP.md` sent 3 days early **with a reply required** confirming `check_setup.py` is green. No reply means not attempted |
+| **The ~1 GB Anaconda download** | Medium — lower than in a room, since each teacher downloads at home | Day 1 | `handouts/SETUP.md` sent 3 days early **with a reply required** confirming `handouts/check_setup.py` is green. No reply means not attempted |
 | **No instructor present to fix a stuck machine** | **High** — this is what remote delivery costs | Any session | All screens shared through hands-on work (Meet shows every participant's at once); check in on each person **by name**; groups capped at 8 so that is possible |
-| Not enough disk space (Anaconda needs ~5 GB) | Medium | Blocks one participant entirely | Stated in `SETUP.md` as a checkable number *before* they start; asked on the enrolment form |
-| No admin rights on school laptops | Medium | Blocks installation | Both installers offer a per-user ("Just Me") install; `SETUP.md` selects it explicitly. If blocked outright, the fallback is in `INSTRUCTOR_NOTES.md` |
-| **VS Code's kernel picker** — "Select Kernel", or packages that "aren't installed" | **High** | 10 min per person, repeatedly | There is only one kernel in the list. Red callout on Days 1 and 2; `check_setup.py` prints which Python is running; `INSTRUCTOR_NOTES.md` lists it as the #1 thing to check before answering any other question |
-| The VS Code terminal opens without conda on Windows | Medium | Day 20, for some people | Usually handled by the Python extension. One-line fallback in `SETUP.md`; must be tested on a real school laptop before Day 1 (§11.5) |
-| A participant also installs Python from python.org | Medium | Two Pythons, confusing errors | `SETUP.md` says plainly: Anaconda and VS Code, nothing else. `check_setup.py` reports which Python is running |
+| Not enough disk space (Anaconda needs ~5 GB) | Medium | Blocks one participant entirely | Stated in `handouts/SETUP.md` as a checkable number *before* they start; asked on the enrolment form |
+| No admin rights on school laptops | Medium | Blocks installation | Both installers offer a per-user ("Just Me") install; `handouts/SETUP.md` selects it explicitly. If blocked outright, the fallback is in `INSTRUCTOR_NOTES.md` |
+| **VS Code's kernel picker** — "Select Kernel", or packages that "aren't installed" | **High** | 10 min per person, repeatedly | There is only one kernel in the list. Red callout on Days 1 and 2; `handouts/check_setup.py` prints which Python is running; `INSTRUCTOR_NOTES.md` lists it as the #1 thing to check before answering any other question |
+| The VS Code terminal opens without conda on Windows | Medium | Day 20, for some people | Usually handled by the Python extension. One-line fallback in `handouts/SETUP.md`; must be tested on a real school laptop before Day 1 (§11.5) |
+| A participant also installs Python from python.org | Medium | Two Pythons, confusing errors | `handouts/SETUP.md` says plainly: Anaconda and VS Code, nothing else. `handouts/check_setup.py` reports which Python is running |
 | Mixed pace — some finish in 5 min, some not at all | Certain | Room stalls | Required vs Extra exercises; solutions handed out after each day; fast finishers paired with slow ones from Day 3 |
 | Missing a session (2 days apart, working adults) | High | Falls behind permanently | Every notebook is self-contained and re-declares what it needs; solutions published after each day; §13 catch-up rule |
 | **Real student data in the exercises** | Medium | A genuine privacy problem | Stated plainly on Day 5, *before* they choose their data: **first names or initials only, no surnames, no real grades, no ID numbers.** Repeated on Day 22 where they load a real file. The shipped sample class is fictional. |
@@ -1000,7 +1000,7 @@ adjectives, the definition of done — applies unchanged.
 | **D10** | Editor | **VS Code**, Days 1–24, notebooks and `.py` files in the same window | §9.1 |
 
 **Note on D9.** Because the glossary is reviewed after the notebooks are drafted, every
-Armenian term in every notebook must come from `CHEATSHEET.md`'s glossary table and nowhere
+Armenian term in every notebook must come from `handouts/CHEATSHEET.md`'s glossary table and nowhere
 else, and `tools/check_style.py` must verify that. That is what makes a late terminology
 correction a find-and-replace instead of a re-read of 19 files.
 
@@ -1015,9 +1015,9 @@ review closes — this is what keeps a wrong decision from propagating into 19 n
 |---|---|---|
 | **0 · Decisions** | All closed (§15); repository initialised with `.gitignore` | — |
 | **1 · Skeleton** | `CURRICULUM.md` (24 agendas, times verified), `OUTLINE.md`, `README.md`, the **bilingual glossary**, the sample class data | Is the day map right? Is the pain spiral right? **Is the Armenian terminology right?** Is anything taught that shouldn't be? |
-| **2 · Day 1 vertical slice** | `SETUP.md`, `check_setup.py`, `day01`, `day02`, `solutions/day02` | Is this the right level, tone, pace and length for a teacher who has never programmed — **and is the Armenian prose right?** **This is the most important review of the project.** Get it wrong here and 19 notebooks inherit it |
+| **2 · Day 1 vertical slice** | `handouts/SETUP.md`, `handouts/check_setup.py`, `day01`, `day02`, `solutions/day02` | Is this the right level, tone, pace and length for a teacher who has never programmed — **and is the Armenian prose right?** **This is the most important review of the project.** Get it wrong here and 19 notebooks inherit it |
 | **3 · Notebook phase** | Days 3–19 + solutions + Tests 1–3, in four batches (3–6, 7–10, 11–14, 15–19) | Per batch: is the task believable? Does the tool land in the same session? Does each day fit 50 minutes? Are there enough Extra tasks? |
-| **4 · Transition + project** | Guides 20–24, `project/gradebook/`, `CHEATSHEET.md` | Can a participant who followed the notebooks actually do this? |
+| **4 · Transition + project** | Guides 20–24, `project/gradebook/`, `handouts/CHEATSHEET.md` | Can a participant who followed the notebooks actually do this? |
 | **5 · Verification & handover** | All of §11 passing, `INSTRUCTOR_NOTES.md`, the fresh-laptop test results | Definition of done (§17) |
 
 Block 2 is deliberately small. Two notebooks is enough to argue about tone, density,
@@ -1044,8 +1044,8 @@ exercise size and the retrospective format — and cheap to throw away.
 - [ ] Nothing outside the standard library is imported anywhere — including Anaconda's own bundled packages
 - [ ] `project/gradebook/` runs end to end from a clean folder
 - [ ] Every failure path produces one actionable sentence; no participant-facing traceback
-- [ ] `check_setup.py` passes on a fresh Windows machine and a fresh macOS machine, timed
-- [ ] `SETUP.md` verified by following it literally on a machine with no Python (§11.5)
+- [ ] `handouts/check_setup.py` passes on a fresh Windows machine and a fresh macOS machine, timed
+- [ ] `handouts/SETUP.md` verified by following it literally on a machine with no Python (§11.5)
 - [ ] Every Armenian term matches the glossary — **verified by script**, not by eye
 - [ ] **No Armenian anywhere inside a code cell** — verified by script (§7.7)
 - [ ] The exclusion list in §5 holds — grep the notebooks for `class `, `lambda`, `import ` of anything third-party, and comprehensions

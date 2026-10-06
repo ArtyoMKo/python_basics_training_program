@@ -17,7 +17,7 @@ either — give participants `tests/participant/test1_diagnostic.ipynb`.**
 digital confidence, data reasoning, and how much support each person will need.
 
 It also gives the programme something it would otherwise lack: **a before-measurement**.
-Everything after this is change, not just an endpoint — see `RATIONALE.md` §5.
+Everything after this is change, not just an endpoint — see `docs/RATIONALE.md` §5.
 
 ## Record two numbers per question, not one
 

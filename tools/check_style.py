@@ -1,12 +1,12 @@
 """
-Enforce the rules in PLAN.md that a human reviewer would have to check by eye.
+Enforce the rules in docs/PLAN.md that a human reviewer would have to check by eye.
 
     python tools/check_style.py
 
 Checks, in order:
-  1. Nothing outside the standard library is imported anywhere (PLAN.md section 5).
+  1. Nothing outside the standard library is imported anywhere (docs/PLAN.md section 5).
   2. None of the excluded constructs appear in participant-facing code.
-  3. Every Armenian term used in a notebook comes from CHEATSHEET.md's glossary.
+  3. Every Armenian term used in a notebook comes from handouts/CHEATSHEET.md's glossary.
   4. Every notebook has the four retrospective sections.
   5. Every notebook has exactly one deliberate-error cell (days 6, 9, 15 excepted).
   6. Identifiers in code cells are English; example string values may be Armenian.
@@ -25,11 +25,11 @@ PROJECT = ROOT / "project" / "gradebook"
 # Anaconda ships 300 packages and none of them belong in a beginner's first program.
 ALLOWED_IMPORTS = {"pathlib", "sys", "settings", "grades", "storage"}
 
-# Constructs excluded by PLAN.md section 5. Each is a (regex, why) pair.
+# Constructs excluded by docs/PLAN.md section 5. Each is a (regex, why) pair.
 FORBIDDEN = [
     # Anchored to the start of a line so the words "class average" in a string
     # are not mistaken for a class definition.
-    (r"(?m)^\s*class\s+\w+\s*[(:]", "classes are excluded (PLAN.md section 5)"),
+    (r"(?m)^\s*class\s+\w+\s*[(:]", "classes are excluded (docs/PLAN.md section 5)"),
     (r"\blambda\b", "lambda is excluded"),
     (r"\bimport\s+(pandas|numpy|matplotlib|requests)", "third-party packages are excluded"),
     (r"(?m)^\s*yield\b", "generators are excluded"),
@@ -119,7 +119,7 @@ def main():
         if not has_error and day not in NO_ERROR_CELL:
             problems.append(f"{path.name}: no break-it-on-purpose cell and not exempt")
 
-    # --- 5: NOTHING inside a code cell may be Armenian (PLAN.md section 7.7).
+    # --- 5: NOTHING inside a code cell may be Armenian (docs/PLAN.md section 7.7).
     # Not identifiers, not comments, not string values. Armenian lives in markdown only,
     # including in the exams: the instruction is Armenian in the cell above, and the
     # placeholder inside the cell matches the English the participant has typed all course.

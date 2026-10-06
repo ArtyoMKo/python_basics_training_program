@@ -79,6 +79,20 @@ before enrolment than in week 3.
 
 ---
 
+## What must be said at enrolment, not later
+
+Two things change what a teacher is agreeing to, and both belong in the enrolment
+conversation rather than being discovered during the course:
+
+| | |
+|---|---|
+| **The last assessment decides who continues** | The first two are diagnostic and are not graded. **The third gates entry to Part 2.** People behave differently when they know this, so telling them afterwards would be both unfair and would spoil the result |
+| **There is a trial class with real pupils in March** | After Part 1. It is the point of the whole programme, and some teachers will find it the most daunting part. Saying so early gives them months to get used to the idea rather than three weeks |
+
+Both are in `docs/ANNOUNCEMENT.md` in Armenian, so a teacher reads them before applying.
+
+---
+
 ## What this questionnaire is for
 
 Remote delivery removes the single best mitigation an in-person course has: **an

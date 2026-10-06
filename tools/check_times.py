@@ -1,5 +1,5 @@
 """
-Verify the time arithmetic in CURRICULUM.md.
+Verify the time arithmetic in docs/CURRICULUM.md.
 
 Every agenda table must sum to exactly 50 minutes, and 24 days must total 1,200.
 Run this after every edit to the curriculum.
@@ -14,7 +14,7 @@ from pathlib import Path
 LESSON_MINUTES = 50
 TOTAL_DAYS = 24
 
-CURRICULUM = Path(__file__).resolve().parent.parent / "CURRICULUM.md"
+CURRICULUM = Path(__file__).resolve().parent.parent / "docs" / "CURRICULUM.md"
 
 # An agenda row has exactly three columns: | 3 | activity text | 12 |
 # The five-column day index at the top of the file deliberately does not match.
@@ -82,7 +82,7 @@ def main():
         problems.append(f"the day index totals {sum(minutes)}, not {TOTAL_DAYS * LESSON_MINUTES}")
 
     if problems:
-        print("❌ CURRICULUM.md time check failed:\n")
+        print("❌ docs/CURRICULUM.md time check failed:\n")
         for problem in problems:
             print(f"   {problem}")
         return 1

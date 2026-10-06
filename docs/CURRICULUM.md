@@ -124,14 +124,14 @@ which every participant made happen themselves.
 | # | Activity | Min |
 |---|---|---|
 | 1 | Welcome. A live demo of the finished program: it opens a class, prints who failed, saves the file. "In eight weeks this is yours, with your class in it" | 5 |
-| 2 | **Hands-on:** confirm the install done at home. Screen-share with anyone whose `check_setup.py` is not green | 15 |
+| 2 | **Hands-on:** confirm the install done at home. Screen-share with anyone whose `handouts/check_setup.py` is not green | 15 |
 | 3 | **Hands-on:** install VS Code, then its two extensions: Python and Jupyter | 10 |
 | 4 | **Hands-on:** make `Documents/python_course`, open it in VS Code, create a notebook, **select the kernel** | 10 |
-| 5 | **Hands-on:** `print("Hello")`, then their own name. Then run `check_setup.py` — six green lines | 8 |
+| 5 | **Hands-on:** `print("Hello")`, then their own name. Then run `handouts/check_setup.py` — six green lines | 8 |
 | 6 | Retrospective. What to do if it broke: nothing is wrong with you, and nothing is wrong with your laptop | 2 |
 | | **Total** | **50** |
 
-**📦 By the end of today you have:** `check_setup.py` printing six green lines, and a
+**📦 By the end of today you have:** `handouts/check_setup.py` printing six green lines, and a
 notebook of your own that prints your name.
 
 ---

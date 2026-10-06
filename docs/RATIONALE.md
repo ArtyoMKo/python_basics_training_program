@@ -272,6 +272,43 @@ The middle band is not a hedge. It is the most likely outcome of a first run of 
 and deciding in advance what we do with it prevents the result being argued into whichever
 camp someone already preferred.
 
+### The trial class — a second criterion, measuring something else
+
+**In March, after Part 1, each teacher takes a trial class with real pupils.**
+
+This matters more than it first appears, because **it does not measure the same thing as
+§5a**. "Can they code" and "can they teach it to a child" are different abilities, and a
+teacher can have either without the other:
+
+| | Can code | Cannot code |
+|---|---|---|
+| **Can teach it** | The outcome the programme exists for | Not possible for this material |
+| **Cannot teach it** | **The failure mode we would otherwise miss entirely** | Clear failure |
+
+The top-right cell is why the trial class is worth running. Nothing in the three
+assessments would detect a teacher who writes correct code and cannot explain it to a
+fifteen-year-old — and that teacher cannot deliver the state curriculum, which is the
+whole point of the programme.
+
+**It does not replace the coding criterion and must not be averaged with it.** Report the
+two separately:
+
+| | What it answers |
+|---|---|
+| §5a, from the assessments | Can they code? |
+| The trial class | Can they teach what they can code? |
+
+**What to record from the trial class.** Agree this before March, and keep it light — a
+first trial lesson by a nervous adult is not a performance review:
+
+- Did the lesson happen at all, and did it finish?
+- Did the pupils end up running code themselves, or did the teacher demonstrate throughout?
+- When a pupil hit an error, could the teacher read it and act on it **live**?
+- One sentence from the teacher: what surprised them?
+
+The third of these is the most diagnostic, and it is the one our own course drills from
+day 2 onward. If it holds up in front of a class, the method transferred.
+
 ### ⚠ The thresholds and the group size are in tension
 
 Groups are **4 to 8 teachers** (`OUTLINE.md`). At that size a percentage is a very coarse

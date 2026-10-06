@@ -22,7 +22,7 @@ python tools/nbbuild.py         # rebuild notebooks, solutions and tests
 
 ## 2. Armenian explains, English codes
 
-Markdown cells, guides and `SETUP.md` are **Armenian**. **Everything inside a code cell is
+Markdown cells, guides and `handouts/SETUP.md` are **Armenian**. **Everything inside a code cell is
 English** — identifiers, comments, docstrings and string values alike. Example names are
 transliterated: `Ani`, `Davit`, `Nare`.
 

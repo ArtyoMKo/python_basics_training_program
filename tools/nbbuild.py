@@ -3,7 +3,7 @@ Build notebooks/*.ipynb from the plain-text sources in src/.
 
 WHY THIS EXISTS. Nineteen notebooks are 19 large JSON files. Editing Armenian prose
 inside JSON string arrays is unreviewable and error-prone, and the participant-facing
-simplicity rule (PLAN.md section 0) says nothing about how we author the material. So the
+simplicity rule (docs/PLAN.md section 0) says nothing about how we author the material. So the
 source of truth is a readable text file per day, and the .ipynb is generated.
 
     python tools/nbbuild.py            # build everything: notebooks, solutions, tests

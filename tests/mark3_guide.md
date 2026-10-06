@@ -12,6 +12,17 @@
 
 **This test is marked in two parts, and the second one matters more.**
 
+> ### This assessment decides who continues to Part 2
+>
+> Unlike the first two, it has a consequence for the individual. The bar is
+> **a working `python main.py` at day 21 and at least half of the 70 points on questions
+> 1–7** (`docs/RATIONALE.md` §5a). **Question 8 does not count towards it.**
+>
+> Mark questions 1–7 with that in mind: this is the one place in the programme where
+> consistency between markers matters. Where a borderline answer could go either way,
+> **record why you decided**, because a teacher offered Part 1 again deserves a reason
+> better than a number.
+
 ---
 
 ## Part one — questions 1 to 7 (70 points)
@@ -33,7 +44,7 @@
 > *Find the student whose grade is closest to the class average.*
 
 **This is the closest thing the programme has to a measurement of its own hypothesis**
-(`RATIONALE.md` §5). It uses no syntax the course did not teach, and the course never
+(`docs/RATIONALE.md` §5). It uses no syntax the course did not teach, and the course never
 demonstrates it. The question asks for a plain-words plan **before** any code.
 
 **Do not add these 10 points to the 70.** Report them separately, and never as a pass rate.

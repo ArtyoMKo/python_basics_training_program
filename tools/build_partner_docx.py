@@ -305,14 +305,14 @@ def check_facts():
     """
     problems = []
 
-    curriculum = (ROOT / "CURRICULUM.md").read_text(encoding="utf-8")
+    curriculum = (ROOT / "docs" / "CURRICULUM.md").read_text(encoding="utf-8")
     index_rows = re.findall(r"^\|\s*(\d+)\s*\|[^|]+\|[^|]+\|[^|]+\|\s*(\d+)\s*\|\s*$",
                             curriculum, re.M)
     days = [int(n) for n, _ in index_rows]
     minutes = [int(m) for _, m in index_rows]
 
     if days != list(range(1, 25)):
-        problems.append(f"CURRICULUM.md lists days {days[:3]}…, not 1..24")
+        problems.append(f"docs/CURRICULUM.md lists days {days[:3]}…, not 1..24")
     if sum(minutes) != 1200:
         problems.append(f"total is {sum(minutes)} minutes, not 1200")
 
@@ -367,7 +367,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "1.4"
+VERSION = "1.5"
 
 
 def build():
@@ -413,7 +413,7 @@ def build():
             ["Group size", "**4–8 per group**, one instructor"],
             ["Deliverable", "A runnable four-file Python program over the participant's own class data, demonstrated to a colleague"],
             ["Cost", "**Zero.** All software is free; nothing touches a paid service or needs the internet after day one"],
-            ["Judged by", "**Can they code?** More than 90% = success, under 50% = failure (section 8)"],
+            ["Judged by", "**Can they code?** More than 90% = success, under 50% = failure (section 8) — plus a trial class with real pupils in March"],
             ["Status", "Part 1 materials complete and verified. **Not yet taught to a cohort.** Part 2 is a vision"],
             ["Version", f"{VERSION} — for partner review · {TODAY}"],
         ],
@@ -950,6 +950,49 @@ def build():
         ],
     )
 
+    d.h2("The trial class in March — a second criterion")
+    d.para(
+        "After Part 1, **each teacher takes a trial class with real pupils.** It measures "
+        "something none of the assessments can: **whether they can teach what they can "
+        "code.** Those are different abilities, and a teacher can have either without the "
+        "other."
+    )
+    d.para(
+        "Nothing in the three written assessments would detect a teacher who writes "
+        "correct code and cannot explain it to a fifteen-year-old — and that teacher "
+        "cannot deliver the state curriculum, which is what the whole programme is for. "
+        "**It is reported separately from the coding criterion and is not averaged with "
+        "it.**"
+    )
+    d.para(
+        "Four things are recorded, kept deliberately light because a first lesson taught "
+        "by a nervous adult is not a performance review: did the lesson happen and "
+        "finish; did the **pupils** run code themselves or did the teacher demonstrate "
+        "throughout; **could the teacher read a pupil's error message and act on it "
+        "live**; and one sentence from the teacher on what surprised them. The third is "
+        "the most diagnostic — it is the skill our course drills from day 2 onward, and "
+        "if it holds up in front of a class, the method transferred."
+    )
+
+    d.h2("The final assessment also decides who continues")
+    d.callout(
+        "A gate, announced in advance",
+        [
+            "Teachers meeting the \"can code\" bar continue to Part 2. Those who do not "
+            "are **offered Part 1 again**, rather than carried into material that assumes "
+            "fluency they do not have. The bar is the one defined above; the transfer "
+            "question does not gate.",
+            "**This makes the last assessment consequential for the individual, so it is "
+            "announced before the course starts** — in the recruitment text and at "
+            "enrolment. People behave differently when they know, and discovering it "
+            "afterwards would be unfair and would spoil the measurement.",
+            "Being filtered out is not a judgement on the teacher. At 20 hours, with mixed "
+            "laptops and a remote room, the likeliest reasons are time, equipment and "
+            "attendance — so **why** someone did not meet the bar is recorded, not just "
+            "that they did not.",
+        ],
+    )
+
     d.h2("The checkpoints along the way")
     d.para(
         "Three results during the course change what the instructor does next, and all "
@@ -1145,6 +1188,14 @@ def build():
     d.para(
         "The programme is deliberately framed as an experiment with a decision at the end, "
         "and both outcomes are useful."
+    )
+
+    d.h2("Between the parts — the trial class")
+    d.para(
+        "**March.** Each teacher teaches one lesson to real pupils, after Part 1 and "
+        "before any decision about Part 2. It is the only point in the programme that "
+        "tests the thing the programme exists for, and it informs the decision below "
+        "alongside the coding criterion."
     )
 
     d.h2("If it works — Part 2, four months")

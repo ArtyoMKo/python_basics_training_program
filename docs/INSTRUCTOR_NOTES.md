@@ -23,7 +23,7 @@ connection, in their own time — and the enrolment questionnaire (`ENROLMENT.md
 already found the ones who cannot.
 
 **Send the setup instructions at least three days early and ask for a reply confirming
-`check_setup.py` printed six green lines.** A teacher who has not replied has not tried.
+`handouts/check_setup.py` printed six green lines.** A teacher who has not replied has not tried.
 
 ### What gets worse
 
@@ -64,16 +64,16 @@ you get back for the colleague-runs-your-program test, which matters more.
 ### ⏳ Not yet verified — you must do this before the first cohort
 
 **The installation instructions have never been followed on a clean machine.** Run
-`SETUP.md` literally, once on a fresh Windows laptop and once on a fresh Mac, and time it.
+`handouts/SETUP.md` literally, once on a fresh Windows laptop and once on a fresh Mac, and time it.
 Put the real numbers in this file.
 
 Remotely, three things matter more than they would in a room, because you cannot reach
 over and fix them:
 
-1. VS Code offers **exactly one** kernel, and its name matches what `SETUP.md` says.
+1. VS Code offers **exactly one** kernel, and its name matches what `handouts/SETUP.md` says.
 2. `Ctrl+`` ` `` opens a terminal where `python --version` works with no conda activation
-   typed by hand — **on Windows**. If it does not, correct `SETUP.md` before day 1.
-3. `check_setup.py` runs green **from inside VS Code**, not just from a terminal — that is
+   typed by hand — **on Windows**. If it does not, correct `handouts/SETUP.md` before day 1.
+3. `handouts/check_setup.py` runs green **from inside VS Code**, not just from a terminal — that is
    how a participant will run it.
 
 Do this on a machine resembling what the questionnaire says the cohort actually has, not
@@ -85,8 +85,8 @@ VS Code asks which Python to use for every notebook. Pick wrong, and packages "a
 installed" even though they are.
 
 **Before answering any other question, ask: which kernel is selected?** Ten times out of
-ten in the first fortnight, that is the answer. `SETUP.md` step 6 and the Day 1 and Day 2
-red callouts cover it, and `check_setup.py` prints which Python is actually running.
+ten in the first fortnight, that is the answer. `handouts/SETUP.md` step 6 and the Day 1 and Day 2
+red callouts cover it, and `handouts/check_setup.py` prints which Python is actually running.
 
 Other frequent problems, in order of how often they occur:
 
@@ -223,6 +223,38 @@ interesting comparison at the end is **confidence before against capability afte
 
 ---
 
+## 5c. The trial class, in March
+
+After Part 1, **each teacher takes one trial class with real pupils.** It is the only
+point in the programme that tests what the programme is for.
+
+**Set expectations low and say so.** A first lesson taught by a nervous adult who learned
+to code eight weeks ago is not a performance review, and treating it as one will produce
+a worse lesson and a worse measurement. Tell them that in advance.
+
+### What to record
+
+Four things, agreed before March and kept light (`docs/RATIONALE.md` §5a):
+
+1. Did the lesson happen, and did it finish?
+2. Did the **pupils** end up running code themselves, or did the teacher demonstrate throughout?
+3. When a pupil hit an error, could the teacher **read it and act on it live**?
+4. One sentence from the teacher: what surprised them?
+
+**Number 3 is the most diagnostic.** Reading an error message is drilled from day 2 of our
+course onward, with one deliberate error in every session. If it holds up in front of a
+class — under pressure, on someone else's screen, with a child watching — the method
+transferred. If the teacher freezes, that is worth more than any test score.
+
+### What to avoid
+
+- **Do not script the lesson for them.** A lesson they did not plan tells us nothing.
+- **Do not send them in with the hardest topic.** Day 1–5 material is enough; the point is
+  the teaching, not the content.
+- **Do not let it become an inspection.** One observer, known to them, no panel.
+
+---
+
 ## 6. Privacy — say it on Day 5, before they choose their data
 
 From Day 5 the exercises ask for the participant's real class. The Day 5 notebook carries
@@ -257,13 +289,13 @@ full transition experience, which is the most valuable part of the course — so
 as a last resort and push the school's IT first.
 
 This fallback is deliberately **not** in the participant materials. A fork in the road
-printed in `SETUP.md` is a fork every participant has to think about.
+printed in `handouts/SETUP.md` is a fork every participant has to think about.
 
 ---
 
 ## 8. Armenian terminology — an open item
 
-⏳ **The glossary in `CHEATSHEET.md` §1 has not been reviewed by a native speaker.**
+⏳ **The glossary in `handouts/CHEATSHEET.md` §1 has not been reviewed by a native speaker.**
 
 Every Armenian technical term in all 19 notebooks comes from that table and nowhere else,
 and `tools/check_style.py` enforces it. That is what makes a correction a find-and-replace
@@ -278,7 +310,7 @@ school uses a different word, change the glossary and re-run the checker.
 
 | Day | They leave with |
 |---|---|
-| 1 | `check_setup.py` green, and their name printed in Armenian |
+| 1 | `handouts/check_setup.py` green, and their name printed in Armenian |
 | 6 | Their class as one list, written both ways, with the line counts compared |
 | 11 | The whole register marked in four lines, proved by adding students |
 | 8 | Their class as a dictionary, and a note of what went wrong with two lists |

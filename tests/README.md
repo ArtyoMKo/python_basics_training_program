@@ -29,8 +29,12 @@ be handed the rubric by accident. Never edit the `.ipynb` files.
 - **Record a help level with every score**: `3` independent, `2` after one hint,
   `1` with step-by-step help, `0` did not finish. On test 1 the help level is more
   informative than the score.
-- **Scores diagnose the programme, not the teachers.** They exist to show where to slow
-  down and whether the method is working. Participants are told this.
+- **The first two diagnose the programme, not the teachers.** They exist to show where to
+  slow down and whether the method is working. Participants are told this.
+- **The third is also a gate.** It decides who continues to Part 2, on the bar in
+  `docs/RATIONALE.md` §5a — a working `python main.py` at day 21 plus at least half of
+  questions 1–7. **Question 8 does not gate.** Participants are told this *before the
+  course starts*, not when the paper is handed out.
 - Only the course cheatsheet is open. No internet, no AI, no asking a neighbour.
 
 ## The marking guides
@@ -52,4 +56,4 @@ change what happens next:
 The transfer question: *find the student whose grade is closest to the class average.* No
 untaught syntax, never demonstrated. It is marked separately, never reported as a pass
 rate, and **a correct plan with incomplete code counts as a success**. See
-`mark3_guide.md` and `RATIONALE.md` §5.
+`mark3_guide.md` and `docs/RATIONALE.md` §5.

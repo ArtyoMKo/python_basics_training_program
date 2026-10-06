@@ -79,8 +79,8 @@ accounts, no API keys, **no internet after Day 1**. **Cost: zero.**
 **Provided:** 19 notebooks, 5 guides, 18 solutions (handed out after each session so a
 missed day is recoverable), **3 assessment sittings** — a diagnostic before day 1, a midpoint after day 13 and a
 final practical on day 24 — each in a grader's and a participant version, with
-instructor marking guides, `SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
-glossary, `check_setup.py`, a fictional 12-student sample class, and the finished
+instructor marking guides, `handouts/SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
+glossary, `handouts/check_setup.py`, a fictional 12-student sample class, and the finished
 reference program.
 
 Every notebook carries **three tiers of exercise** — Required, Extra and Challenge — so
@@ -89,8 +89,8 @@ somewhere to go.
 
 > **⚠️ One preparation item is not optional.** The Anaconda download is ~1 GB. Remotely
 > each teacher downloads at home, which removes the worst version of this risk — but it
-> also removes the instructor who could fix it. **`SETUP.md` goes out at least three days
-> early, and a reply is required** confirming `check_setup.py` printed six green lines.
+> also removes the instructor who could fix it. **`handouts/SETUP.md` goes out at least three days
+> early, and a reply is required** confirming `handouts/check_setup.py` printed six green lines.
 > No reply means it was not attempted.
 
 ## 4. Outcome

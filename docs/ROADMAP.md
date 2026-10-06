@@ -5,6 +5,7 @@
 | | | Length | Status |
 |---|---|---|---|
 | **Part 1** | Coding fluency — the mechanics, taught to automaticity | 2 months | **Built and verified.** Materials complete, not yet taught |
+| **Trial class** | Each teacher teaches real pupils, once | **March** | Planned |
 | **Part 2** | Depth, algorithms and design — what the fluency was for | 4 months | **Vision only.** Outlined below; not written |
 
 Part 2 is also where the programme finishes covering the school curriculum our teachers
@@ -15,6 +16,22 @@ The split is the whole argument of the programme. Part 1 deliberately removes ev
 algorithmic difficulty so that attention goes to the mechanics. Part 2 is where that
 investment is spent. Building Part 2 before Part 1 reports would be assuming the answer
 to the question Part 1 exists to ask (`RATIONALE.md` §5).
+
+---
+
+## Between the parts — the trial class, in March
+
+After Part 1 and before Part 2, **each teacher takes a trial class with real pupils.**
+
+It is the only point in the programme that tests the thing the programme actually exists
+for. Everything else measures whether a teacher can code; this measures whether they can
+**teach what they can code** — and a teacher can have either ability without the other.
+`docs/RATIONALE.md` §5a sets out what to record and why it is reported separately from
+the coding criterion rather than averaged with it.
+
+It is also the natural place for the second decision. **Part 2 entry is gated** on the
+final practical (below), but the trial class is what tells us whether the *programme*
+should continue in this shape at all.
 
 ---
 
@@ -40,6 +57,17 @@ middle band, Part 2 is deferred until Part 1 is adjusted and repeated.
 
 The ordering below is not arbitrary. Each stage depends on the one before it, and the
 first stage exists because Part 1 deliberately skipped it.
+
+### Who enters Part 2
+
+**The third assessment filters.** Teachers meeting the "can code" bar — a working
+`python main.py` at day 21, and at least half of questions 1–7 of the final practical —
+continue. Those who do not are offered Part 1 again rather than carried into material
+that assumes fluency they do not have.
+
+The transfer question does not gate; it measures problem-solving, which Part 1 does not
+teach. See `docs/RATIONALE.md` §5a, which also notes that this makes the final assessment
+consequential for the individual, so **it must be announced before the course starts**.
 
 ### Stage 1 — the theory we postponed
 
