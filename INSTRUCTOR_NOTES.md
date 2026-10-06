@@ -9,42 +9,75 @@ Read this before Day 1.
 
 ---
 
-## 1. Day 1 is the highest-risk hour of the programme
+## 1. Remote delivery — what it changes
 
-Everything else can be recovered from. A lost Day 1 costs confidence, and this audience
-arrives with very little of it.
+**The course is taught remotely, over Google Meet, in groups of 4–8.** Nobody is in a
+room. That changes three things, and they are the three things most likely to catch you
+out.
 
-| Scenario | Day 1 | Consequence |
-|---|---|---|
-| Most participants installed at home (expected, if `SETUP.md` went out 3 days early) | ~25 min | Day 1 runs as written, with time to spare |
-| Nobody installed anything | 50+ min | Day 1 is lost. 16 × 1 GB over school wifi will not finish |
+### What gets better
 
-**Send `SETUP.md` at least three days before Day 1**, with the sentence: *trying it at
-home is welcome, and failing at it is expected — that is what Day 1 is for.*
+The worst risk an in-person run would have had is **gone**: sixteen people downloading
+1 GB over one school connection on day 1. Each teacher now installs at home, on their own
+connection, in their own time — and the enrolment questionnaire (`ENROLMENT.md`) has
+already found the ones who cannot.
 
-### Mandatory kit
+**Send the setup instructions at least three days early and ask for a reply confirming
+`check_setup.py` printed six green lines.** A teacher who has not replied has not tried.
 
-- **A USB stick with the offline Anaconda installer for Windows and macOS**, plus the
-  VS Code installers. This is not optional. It is the difference between losing Day 1 and
-  not.
-- Both installers' file names written on the board.
-- `check_setup.py`, `sample_class.csv` and `day01_first_program.ipynb` on that same stick.
+### What gets worse
 
-### Not yet verified — you must do this
+**You cannot walk over and look at their screen.** Everything that was a thirty-second
+fix in a room is now a conversation, and a beginner often cannot describe what they are
+seeing well enough for you to diagnose it.
 
-⏳ **The fresh-laptop test has not been run.** Before Day 1, follow `SETUP.md` literally
-on a machine that has never had Python on it — **once on Windows, once on macOS** — and
-time it. Put the real number in this file.
+The substitute is **screen sharing, used constantly and asked for by name**:
 
-Three things to confirm specifically, because they are the ones that bite:
+- Google Meet can now show **every participant's shared screen at once**, with switching
+  between them. Use it. Ask the whole group to share at the start of hands-on work and
+  leave it up — that is the remote equivalent of walking between desks.
+- **Ask by name.** In a room you can see someone stuck and not typing. On a call you
+  cannot, and this audience will not interrupt to say so. With 4–8 people you can afford
+  to check in on each one in every hands-on block, and you should.
+- A teacher with **no webcam** loses you the other signal — the face that has given up.
+  Compensate by asking them to share screen more often than the others.
+
+### What has to be redesigned
+
+| In person | Remotely |
+|---|---|
+| Pair fast finishers with slower ones from day 3 | **Breakout rooms**, two or three at a time, for the exercise block |
+| Walk the room during exercises | All screens shared, switching between them |
+| "Swap laptops with your neighbour" on day 24 | **Send your folder to a colleague**; they run it from your README alone and report back on the call |
+| Confirm `python main.py` individually on day 21 | Same, but **each person shares their screen and runs it while you watch**. Do not accept "it works" |
+
+### Group size: 4 to 8
+
+**Fewer than 4** and there is no discussion — the session becomes a tutorial, and the
+habit of explaining to each other never forms. **More than 8** and remote teaching stops
+working: you cannot check in on everyone in a hands-on block, and the people who are
+quietly stuck stay quietly stuck.
+
+This also changes day 24's showcase: 8 × 90 seconds is 12 minutes, not 24. Use the time
+you get back for the colleague-runs-your-program test, which matters more.
+
+### ⏳ Not yet verified — you must do this before the first cohort
+
+**The installation instructions have never been followed on a clean machine.** Run
+`SETUP.md` literally, once on a fresh Windows laptop and once on a fresh Mac, and time it.
+Put the real numbers in this file.
+
+Remotely, three things matter more than they would in a room, because you cannot reach
+over and fix them:
 
 1. VS Code offers **exactly one** kernel, and its name matches what `SETUP.md` says.
-2. `Ctrl+`` ` `` opens a terminal where `python --version` works, with no conda activation
-   typed by hand — **on Windows**. If it does not, set the default terminal to Command
-   Prompt and correct `SETUP.md`.
-3. `check_setup.py` runs green from inside VS Code, not just from a terminal.
+2. `Ctrl+`` ` `` opens a terminal where `python --version` works with no conda activation
+   typed by hand — **on Windows**. If it does not, correct `SETUP.md` before day 1.
+3. `check_setup.py` runs green **from inside VS Code**, not just from a terminal — that is
+   how a participant will run it.
 
----
+Do this on a machine resembling what the questionnaire says the cohort actually has, not
+on a developer's laptop.
 
 ## 2. The kernel picker is the single most common problem
 
@@ -214,7 +247,7 @@ cannot leak a class list by accident.
 |---|---|
 | Software cost | **Zero.** Anaconda and VS Code are free |
 | API / account cost | **Zero.** Nothing in this course touches a network after Day 1 |
-| Group size | **≤ 16**, one instructor. Day 24's showcase is 16 × 90 s = 24 min, which fits |
+| Group size | **4–8**, one instructor. Day 24's showcase is 8 × 90 s = 12 min, leaving time for the colleague-runs-your-program test |
 | Machines | Participants' own or the school's. Mixed Windows and macOS |
 | Disk space needed | ~5 GB per machine. Ask on the enrolment form |
 

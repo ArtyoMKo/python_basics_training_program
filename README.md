@@ -6,8 +6,10 @@ background**, built to the rules in `PLAN.md` and the house style in
 
 | | |
 |---|---|
-| **Participants** | Public-school teachers, any subject. No prior programming. |
-| **Format** | 24 sessions × 50 minutes = **20 hours exactly**, 3 per week over 8 weeks |
+| **Participants** | Public-school teachers, any subject. No prior programming. **Groups of 4–8** |
+| **Delivery** | **Remote**, over Google Meet with screen sharing |
+| **Part** | Part 1 of six months. Part 2 is outlined in `ROADMAP.md` |
+| **Format** | 24 sessions, 3 per week over 8 weeks. **75 minutes each** — session plans are still written to 50 and are being rebuilt |
 | **Language** | **Armenian** explanations; **English** everything inside a code cell |
 | **Tools** | Anaconda (Python) + VS Code. Two installs on Day 1, nothing after |
 | **Dependencies** | **Standard library only.** No `pip`, no venv, no network, no accounts, no cost |
@@ -43,7 +45,9 @@ public_school_python/
 ├── AGENTS.md               <- contract for coding agents  ** agents read this first **
 ├── PLAN.md                 <- the build specification     ** humans read this first **
 ├── CURRICULUM.md           <- 24 day agendas, time math, deliverables
-├── RATIONALE.md            <- why this method, the risk, the experiment  ** for colleagues **
+├── RATIONALE.md            <- why this method, the risk, and the decision rule  ** for colleagues **
+├── ROADMAP.md              <- the six-month arc: Part 1 built, Part 2 outlined
+├── ENROLMENT.md            <- the questionnaire sent before a group is formed
 ├── OUTLINE.md              <- what the course is: 4-part outline, short
 ├── SETUP.md                <- installation, Windows and macOS   (Armenian)
 ├── CHEATSHEET.md           <- printable reference + the bilingual glossary  (Armenian)
@@ -116,6 +120,7 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 | Style | ✅ stdlib only, no excluded constructs, every identifier English |
 | Language rule | ✅ no Armenian anywhere inside a code cell — verified by script |
 | **Armenian terminology** | ⏳ **awaiting native-speaker review** (Decision D9) |
+| **75-minute agendas** | ⏳ **session plans still written to 50 minutes** — rebuild pending |
 | **Fresh-laptop install test** | ⏳ **not yet run** — see `INSTRUCTOR_NOTES.md` §1 |
 
 The last two are stated plainly rather than assumed. Neither can be verified from here.

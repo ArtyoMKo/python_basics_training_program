@@ -235,6 +235,68 @@ Set the target numbers together before Day 1. A target chosen afterwards is not 
 
 ---
 
+## 5a. The decision rule — agreed with colleagues
+
+**Part 1 succeeds or fails on one question: can they code?**
+
+### What "can code" means, operationally
+
+"Can code" has to be measurable or the criterion is unusable. A participant **can code**
+if, unaided, they can **write a working program using the constructs the course taught** —
+variables, conditions, lists, loops, dictionaries and functions.
+
+That is judged from two artefacts the course already produces, both of which are
+pass/fail and neither of which requires a new instrument:
+
+| Evidence | Where it comes from |
+|---|---|
+| They left **day 21** with a working `python main.py`, confirmed individually | The hard gate already built into the course |
+| They scored **at least half** of the 70 points on questions 1–7 of the final practical | Those questions require writing code unaided, from a blank cell |
+
+A participant meeting both **can code**. Meeting one but not the other is recorded as
+partial and counted in the middle band below — not rounded up.
+
+> Question 8, the transfer question, is **excluded** from this judgement. It measures
+> problem-solving, which Part 1 does not teach and does not claim. Including it would be
+> grading the course on something it deliberately left for Part 2.
+
+### The thresholds
+
+| Result | Meaning | What happens next |
+|---|---|---|
+| **More than 90% can code** | **Success** | Continue to Part 2 (`ROADMAP.md`) |
+| **50% to 90%** | **Inconclusive** | The method is not refuted and not proved. Adjust and repeat Part 1 with a second cohort before committing to Part 2 |
+| **Less than 50% can code** | **Failure** | Return to the conventional approach, informed by where it broke (§6) |
+
+The middle band is not a hedge. It is the most likely outcome of a first run of anything,
+and deciding in advance what we do with it prevents the result being argued into whichever
+camp someone already preferred.
+
+### ⚠ The thresholds and the group size are in tension
+
+Groups are **4 to 8 teachers** (`OUTLINE.md`). At that size a percentage is a very coarse
+instrument:
+
+| Group size | To reach "more than 90%" | "Less than 50%" means |
+|---|---|---|
+| 4 | **4 of 4** | 1 of 4 or fewer |
+| 6 | **6 of 6** | 2 of 6 or fewer |
+| 8 | **8 of 8** | 3 of 8 or fewer |
+
+**At every group size in our range, "more than 90%" means every single participant
+without exception.** One teacher whose laptop dies in week 6, or who leaves for reasons
+that have nothing to do with the course, moves the group out of "success" on their own.
+
+Two things follow, and we should agree both before the first cohort:
+
+1. **Judge the criterion across all cohorts pooled, not per group.** Four groups of six is
+   24 people, where a percentage means something. A single group of six is not a sample.
+2. **Record withdrawals separately from failures.** A teacher who left in week 2 because
+   their school reassigned them has not failed to learn to code, and counting them as such
+   would make the criterion measure staffing rather than teaching.
+
+Neither of these weakens the bar. They stop it from being decided by one broken laptop.
+
 ## 6. What happens after two months
 
 **If it works** — they can code, and the transfer test suggests problem-solving is now

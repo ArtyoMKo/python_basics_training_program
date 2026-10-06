@@ -11,10 +11,15 @@ keep in sync.
 
 ## What this repository is
 
-A **24-session Python course for Armenian public-school teachers with no programming
-background.** 24 × 50 minutes = 20 hours exactly. Materials are in Armenian; code is in
-English. The course ends with each participant running a four-file gradebook program over
-their own class list.
+**Part 1 of a six-month Python programme for Armenian public-school teachers with no
+programming background.** 24 sessions, 3 a week for 8 weeks, **delivered remotely** in
+groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
+participant running a four-file gradebook program over their own class list.
+
+> **⏳ Sessions are moving from 50 to 75 minutes.** Every agenda in `CURRICULUM.md` is
+> still written to 50 and `check_times.py` still verifies against 50. The rebuild is
+> pending and is flagged in both files — **do not "fix" the 50s without doing the whole
+> rebuild**, or the arithmetic check will pass while the plans mean nothing.
 
 It is not a library and has no users other than teachers in a classroom. "Working" means
 *a teacher can follow it in 50 minutes*, not *the code runs*.
@@ -28,7 +33,8 @@ It is not a library and has no users other than teachers in a classroom. "Workin
 | 1 | **this file** | the rules you must not break |
 | 2 | `PLAN.md` | the full build specification — §4 (discovery days), §5 (what is taught and excluded), §7 (notebook conventions) |
 | 3 | `CURRICULUM.md` | the 24-day map and every agenda |
-| 4 | `RATIONALE.md` | *why* the course is built this way, and what it is risking |
+| 4 | `RATIONALE.md` | *why* the course is built this way, what it risks, and **§5a the rule it will be judged by** |
+| 5 | `ROADMAP.md` | the six-month arc — Part 1 is built, Part 2 is a vision |
 
 `PLAN.md` wins any disagreement with this file. If you find a contradiction, fix it and
 say so.
@@ -159,7 +165,7 @@ Before adding anything to this list, answer: **which line of the final gradebook
 | **Լրացուցիչ** (Extra) | **3–4** | whoever finishes Required with 8 minutes left |
 | **Մարտահրավեր** (Challenge) | 1–2 | the fastest one or two in the room |
 
-In a room of sixteen adults, three or four finish early **every session**. Extra tasks are
+In a group of 4–8, at least one or two finish early **every session**. Extra tasks are
 not optional to write. They use only what has already been taught — wider, not further ahead.
 
 Never a blank cell: always a skeleton with a comment saying what goes where.

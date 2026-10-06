@@ -4,6 +4,21 @@
 
 Every agenda below sums to 50. The grand total is checked by `tools/check_times.py`.
 
+> ### ⏳ These agendas are being rebuilt to 75 minutes
+>
+> Sessions will run **75 minutes**, three times a week — decided after the colleagues'
+> meeting (`PLAN.md` §3). **The agendas below are still the 50-minute versions** and have
+> not yet been reworked.
+>
+> Read the minute counts as **proportions** until the rebuild lands. The extra 25 minutes
+> per session goes to hands-on work and to the second half of the discovery days, not to
+> more teaching: the 12-minute ceiling on explanation is unchanged.
+>
+> The day map, the topic order, the five discovery days and the deliverables are **not**
+> affected by the rebuild.
+
+> **Delivered remotely**, over Google Meet with screen sharing, in groups of **4–8**.
+
 | # | Day | Phase | What the participant opens | Min |
 |---|---|---|---|---|
 | 1 | Install everything and run your first line | Notebook | `notebooks/day01_first_program.ipynb` | 50 |
@@ -101,7 +116,7 @@ which every participant made happen themselves.
 | # | Activity | Min |
 |---|---|---|
 | 1 | Welcome. A live demo of the finished program: it opens a class, prints who failed, saves the file. "In eight weeks this is yours, with your class in it" | 5 |
-| 2 | **Hands-on:** install Anaconda — or check the one installed at home. Offline installers on the USB stick for anyone whose download fails | 15 |
+| 2 | **Hands-on:** confirm the install done at home. Screen-share with anyone whose `check_setup.py` is not green | 15 |
 | 3 | **Hands-on:** install VS Code, then its two extensions: Python and Jupyter | 10 |
 | 4 | **Hands-on:** make `Documents/python_course`, open it in VS Code, create a notebook, **select the kernel** | 10 |
 | 5 | **Hands-on:** `print("Hello")`, then their own name. Then run `check_setup.py` — six green lines | 8 |
@@ -585,7 +600,7 @@ Sixteen demos at 90 seconds is 24 minutes, which is why the group is capped at 1
 | # | Activity | Min |
 |---|---|---|
 | 1 | Recap | 3 |
-| 2 | **Hands-on:** write your `README.md`, then swap laptops with your neighbour and run theirs from their README alone | 12 |
+| 2 | **Hands-on:** write your `README.md`, then send your folder to a colleague, who runs it from your README alone | 12 |
 | 3 | **Showcase:** 90 seconds each — what your program does, one thing that broke on the way, one thing you would add next | 24 |
 | 4 | Where to go next: three things to learn after this course, and two not to bother with yet | 8 |
 | 5 | Close | 3 |

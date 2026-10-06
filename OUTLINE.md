@@ -1,10 +1,17 @@
 # Course Outline — Python from Zero, for School Teachers
 
-**20 hours** (24 sessions × 50 min) · **3 sessions/week, 8 weeks** · **16 participants**
-· public-school teachers, **any subject, no programming background**
+**Part 1 of a six-month programme** · 24 sessions · **3 sessions a week, 8 weeks** ·
+**groups of 4–8** · **delivered remotely** · public-school teachers, **any subject, no
+programming background**
 
-> Why we are teaching it this way, and what we are betting on, is in `RATIONALE.md`.
-> This document is only what the course *is*.
+> Why we are teaching it this way, and what we are betting on, is in `RATIONALE.md`,
+> including the decision rule this part will be judged by (§5a). The second part of the
+> programme is outlined in `ROADMAP.md`. This document is only what Part 1 *is*.
+
+> **Two things are still settling.** Sessions start at **75 minutes**; after the cohort
+> has adapted we may move to two a week, or to three of 50 minutes. And the tools are
+> **Anaconda, Jupyter and VS Code**, with Google Colab and Thonny under discussion as a
+> lighter alternative. Both are flagged where they appear below.
 
 ---
 
@@ -76,10 +83,11 @@ Every notebook carries **three tiers of exercise** — Required, Extra and Chall
 that the three or four participants who finish early in every session always have
 somewhere to go.
 
-> **⚠️ One preparation item is not optional.** The Anaconda download is ~1 GB. Sixteen
-> people downloading it at once on school wifi will cost a session. **A USB stick with
-> offline installers for both platforms is mandatory kit**, and `SETUP.md` goes out three
-> days in advance.
+> **⚠️ One preparation item is not optional.** The Anaconda download is ~1 GB. Remotely
+> each teacher downloads at home, which removes the worst version of this risk — but it
+> also removes the instructor who could fix it. **`SETUP.md` goes out at least three days
+> early, and a reply is required** confirming `check_setup.py` printed six green lines.
+> No reply means it was not attempted.
 
 ## 4. Outcome
 
@@ -100,5 +108,9 @@ saves.
 Day 23 one feature of their own design. Sixteen identical gradebooks would be a failed
 course.
 
-**The proof it is finished is not that it runs.** On Day 24 participants swap laptops and
-run each other's programs **from the README alone, without asking the author anything**.
+**The proof it is finished is not that it runs.** On Day 24 participants send their
+folder to a colleague, who runs it **from the README alone, without asking the author
+anything**.
+
+**Part 1 is judged on one question: can they code?** The threshold, and what counts as
+evidence, is in `RATIONALE.md` §5a.

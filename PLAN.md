@@ -72,11 +72,13 @@ point.
 | **Participants** | Public-school teachers. Any subject. |
 | **Prior programming** | **None assumed.** Not "basic Python" — none. Some will not know what a file extension is. |
 | **Prior computer use** | Everyday: email, a browser, Word, a school information system. Comfortable typing. |
-| **Machines** | **Their own or the school's laptops.** Mixed Windows and macOS. Possibly no admin rights. See §12 risks. |
+| **Delivery** | **Remote**, over Google Meet with screen sharing. Not on site. |
+| **Machines** | **Their own laptop**, which they must have for the whole course. Mixed Windows and macOS. Possibly no admin rights. Checked at enrolment (`ENROLMENT.md`). See §12 risks. |
 | **Language** | Materials in **Armenian**; code, keywords and identifiers in English (§7.7) |
-| **Format** | 24 sessions × 50 minutes = **1,200 minutes = 20 hours exactly** |
-| **Schedule** | 3 sessions per week × 8 weeks |
-| **Group size** | ≤ 16, one instructor |
+| **Format** | 24 sessions × **75 minutes** = 1,800 minutes = 30 hours. *Session plans are still written to 50 minutes — see the note below.* |
+| **Schedule** | 3 sessions per week × 8 weeks. After the cohort adapts, possibly 2 a week, or 3 of 50 minutes |
+| **Group size** | **4–8**, one instructor. Fewer than 4 and they cannot discuss; more than 8 and remote teaching stops working |
+| **Part** | Part 1 of 6 months. Part 2 is outlined in `ROADMAP.md` and runs only if Part 1 succeeds |
 | **Between sessions** | ~2 days. One optional 10-minute practice task per day; nothing required. |
 | **Final deliverable** | A working `python main.py` gradebook over the participant's own class list |
 
@@ -123,6 +125,20 @@ Day 21 is the split. **Neither may be cut** (§13).
 - Every day's agenda sums to **exactly 50**, verified by script (§11.1).
 - If content does not fit, **cut a topic**. Never compress one, never run over — these are
   working adults and 50 minutes is 50 minutes.
+
+> ### ⏳ Session length is changing, and the plans have not caught up
+>
+> Sessions will run **75 minutes**, decided after the colleagues' meeting. **Every agenda
+> in `CURRICULUM.md` is still written to 50 minutes** and `check_times.py` still verifies
+> against 50.
+>
+> Rebuilding the 24 agendas to 75 minutes is the next piece of work. The extra 25 minutes
+> per session is **not** for more teaching — the 12-minute ceiling stands — it goes to
+> hands-on work and to the second half of the discovery days, which is where the method
+> actually lives.
+>
+> Until that rebuild happens, **treat the minute counts below as proportions, not
+> absolutes**.
 
 ### The standard 50-minute shape
 
@@ -458,9 +474,9 @@ student_01 = "Anna"
 | **Լրացուցիչ** (Extra) | **3–4** | The participant who finished Required with 8 minutes left |
 | **Մարտահրավեր** (Challenge) | 1–2 | The fastest one or two in the room |
 
-- **Every notebook ships at least three Extra tasks.** In a room of sixteen adults, three
-  or four will finish Required work early in every single session. "Help your neighbour"
-  is a fine answer once; it is not a plan for eight weeks. Running out of work is how a
+- **Every notebook ships at least three Extra tasks.** In a group of 4–8, at least one
+  or two will finish Required work early in every single session. "Help someone else" is
+  a fine answer once; it is not a plan for eight weeks. Running out of work is how a
   competent participant concludes the course is beneath them.
 - Extra tasks use **only what the course has already taught** — they are wider, not
   further ahead. A Challenge may combine two earlier days.
@@ -889,7 +905,8 @@ every number and file name that was true before it.
 
 | Risk | Likelihood | Cost | Mitigation |
 |---|---|---|---|
-| **The ~1 GB Anaconda download on school wifi** | **High** | Day 1, for everyone at once | `SETUP.md` sent 3 days early so most arrive installed; **a USB stick with the offline installers for both platforms is mandatory kit**; 16 simultaneous downloads is the single most likely way to lose Day 1 |
+| **The ~1 GB Anaconda download** | Medium — lower than in a room, since each teacher downloads at home | Day 1 | `SETUP.md` sent 3 days early **with a reply required** confirming `check_setup.py` is green. No reply means not attempted |
+| **No instructor present to fix a stuck machine** | **High** — this is what remote delivery costs | Any session | All screens shared through hands-on work (Meet shows every participant's at once); check in on each person **by name**; groups capped at 8 so that is possible |
 | Not enough disk space (Anaconda needs ~5 GB) | Medium | Blocks one participant entirely | Stated in `SETUP.md` as a checkable number *before* they start; asked on the enrolment form |
 | No admin rights on school laptops | Medium | Blocks installation | Both installers offer a per-user ("Just Me") install; `SETUP.md` selects it explicitly. If blocked outright, the fallback is in `INSTRUCTOR_NOTES.md` |
 | **VS Code's kernel picker** — "Select Kernel", or packages that "aren't installed" | **High** | 10 min per person, repeatedly | There is only one kernel in the list. Red callout on Days 1 and 2; `check_setup.py` prints which Python is running; `INSTRUCTOR_NOTES.md` lists it as the #1 thing to check before answering any other question |
@@ -957,7 +974,10 @@ adjectives, the definition of done — applies unchanged.
 | **D3** | Grading scale | **1–10, pass mark 4**, written once as `PASS_MARK = 4` from Day 9 | §6.2, §8 |
 | **D4** | Where participants keep their work | Their own laptop, one folder: `Documents/python_course/`. Same folder all 24 days | §9.2 |
 | **D5** | Practice between sessions | Yes — one ~10-minute task per day, **explicitly optional**, and the next day never assumes it was done | §7, §3 |
-| **D6** | Group size | **≤ 16, one instructor.** Day 24's showcase is 16 × 90 s = 24 min, which fits the 50 | §2, §10 |
+| **D6** | Group size | **4–8, one instructor.** Fewer than 4 and they cannot discuss; more than 8 and the instructor cannot check on everyone remotely | §2, §12 |
+| **D11** | Delivery | **Remote**, over Google Meet with screen sharing. Each teacher needs their own laptop and a connection that holds a 75-minute call | §2, §12, `ENROLMENT.md` |
+| **D12** | Session length | **75 minutes**, 3 a week. May become 2 a week or 3 × 50 after the cohort adapts. **Agendas not yet rebuilt** | §3 |
+| **D13** | Success criterion | **>90% can code** = success · **<50%** = failure · between = adjust and repeat | `RATIONALE.md` §5a |
 | **D7** | Recruitment document | `ANNOUNCEMENT.md`, written **for teachers**. A one-page summary for school administration only if asked for | §9 |
 | **D8** | Version control | Own repository: `git@github.com:AIrtyoMKo/python_basics_training_program.git` | §9.3 |
 | **D9** | Armenian terminology review | The glossary is produced in Block 1 and **reviewed by you later**; the build continues meanwhile. Terminology is confined to the glossary file so a later change is one edit plus a scripted sweep, not a rewrite | §7.7, §11.6 |

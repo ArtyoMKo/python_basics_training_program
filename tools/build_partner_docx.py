@@ -367,7 +367,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "1.2"
+VERSION = "1.3"
 
 
 def build():
@@ -407,12 +407,14 @@ def build():
     d.table(
         ["", ""],
         [
-            ["Programme", "24 sessions × 50 minutes = **20 hours exactly**, three times a week over eight weeks, plus three assessment sittings (~3½ hours)"],
+            ["Programme", "**Part 1 of six months.** 24 sessions of 75 minutes, three times a week over eight weeks, plus three assessment sittings"],
+            ["Delivery", "**Remote**, over Google Meet with screen sharing"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
-            ["Group size", "Up to 16, one instructor"],
+            ["Group size", "**4–8 per group**, one instructor"],
             ["Deliverable", "A runnable four-file Python program over the participant's own class data, demonstrated to a colleague"],
             ["Cost", "**Zero.** All software is free; nothing touches a paid service or needs the internet after day one"],
-            ["Status", "Materials complete and verified. **Not yet taught to a cohort**"],
+            ["Judged by", "**Can they code?** More than 90% = success, under 50% = failure (section 8)"],
+            ["Status", "Part 1 materials complete and verified. **Not yet taught to a cohort.** Part 2 is a vision"],
             ["Version", f"{VERSION} — for partner review · {TODAY}"],
         ],
         [0.17, 0.83],
@@ -436,10 +438,12 @@ def build():
     d.h1("Executive summary")
 
     d.para(
-        "A 20-hour introductory programming course for public-school teachers who have "
-        "never written a line of code. Every participant finishes with a small program "
-        "they wrote themselves and can use: a gradebook that opens their own class list, "
-        "shows who has passed, calculates the average, and saves changes back to a file."
+        "**Part 1 of a six-month programme** for public-school teachers who have never "
+        "written a line of code. Twenty-four sessions, three a week for eight weeks, "
+        "**taught remotely in groups of four to eight**. Every participant finishes with "
+        "a small program they wrote themselves and can use: a gradebook that opens their "
+        "own class list, shows who has passed, calculates the average, and saves changes "
+        "back to a file."
     )
     d.para(
         "The programme is deliberately unusual. Two years of conventional teaching has not "
@@ -454,8 +458,10 @@ def build():
         "What we are asking you to evaluate",
         [
             "**A two-month experiment with a decision at the end, not a finished "
-            "methodology.** Section 8 sets out what we will measure; section 11 what we "
-            "will do with either result.",
+            "methodology.** Part 1 is built; the four months that follow it are a vision "
+            "that runs only if Part 1 succeeds (section 12).",
+            "Part 1 is judged on one question — **can they code?** The threshold is agreed "
+            "and is in section 8.",
         ],
         fill=BAND_FILL,
     )
@@ -549,15 +555,14 @@ def build():
         [0.28, 0.72],
     )
 
-    d.h2("Other design decisions")
-    d.table(
-        ["Decision", "Reason"],
-        [
-            ["**Every example is a classroom**", "Students, grades, attendance, averages, report lines. No abstract placeholders, no puzzles. A participant should see their Tuesday morning in any line"],
-            ["**Armenian explains, English codes**", "A teacher who names a variable in Armenian writes valid Python and can then read no other Python, search for no answer online, and copy no example ever again. Example names are transliterated, so the data stays familiar while the code stays portable"],
-            ["**One deliberate error per session**", "Each notebook has one cell *meant* to fail, read together afterwards. Beginners lose more time to fear of red text than to any concept in the course"],
-        ],
-        [0.26, 0.74],
+    d.para(
+        "Three smaller decisions follow from the same thinking. **Every example is a "
+        "classroom** — students, grades, attendance, report lines — so a participant sees "
+        "their Tuesday morning in any line of the course. **Armenian explains and English "
+        "codes**: a teacher who names a variable in Armenian writes valid Python and can "
+        "then read no other Python, search for no answer online and copy no example ever "
+        "again. And **every session contains one deliberate error**, read together, "
+        "because beginners lose more time to fear of red text than to any concept here."
     )
 
     d.page_break()
@@ -566,9 +571,22 @@ def build():
     d.h1("Schedule")
 
     d.para(
-        "**24 sessions × 50 minutes = 1,200 minutes = 20 hours exactly**, three times a "
-        "week over eight weeks. Every agenda is planned to the minute and the arithmetic "
-        "is verified by script, not by eye."
+        "**24 sessions, three times a week over eight weeks.** Sessions run **75 minutes**. "
+        "Every agenda is planned to the minute and the arithmetic is verified by script, "
+        "not by eye."
+    )
+    d.callout(
+        "Two decisions still settling",
+        [
+            "**Session length.** We start at 75 minutes three times a week. Once the "
+            "cohort has adapted we may move to two sessions a week, or to three of 50 "
+            "minutes. The detailed session plans are currently written to 50 minutes and "
+            "are being rebuilt to 75; the day map, topic order and deliverables are "
+            "unaffected.",
+            "**Tools.** Anaconda, Jupyter and VS Code, with Google Colab and Thonny under "
+            "discussion as a lighter alternative that would remove the installation "
+            "problem entirely. Current materials assume Anaconda and VS Code.",
+        ],
     )
 
     d.table(
@@ -594,28 +612,42 @@ def build():
 
     d.h2("The shape of a session")
     d.para(
-        "Teaching never exceeds **12 minutes in one block**; hands-on work is never less "
-        "than 26 of the 50 minutes."
-    )
-    d.table(
-        ["Standard session (14 of the 24)", "Min", "Discovery session (days 6, 10, 14, 17, 22)", "Min"],
-        [
-            ["Recap, and the question left last time", "5", "Recap", "5"],
-            ["**Teach:** the new idea — ends with something running", "12", "**Teach:** today's task, and the only way we can do it so far", "7"],
-            ["**Run together:** the example cells, one at a time", "15", "**Do it the long way:** the real task, most of it supplied", "13"],
-            ["**Do it yourself:** the exercises", "15", "**Teach:** the tool that shortens it", "9"],
-            ["Retrospective", "3", "**Do the same task again** with the tool, and compare", "13"],
-            ["", "", "Retrospective", "3"],
-            ["**Total**", "**50**", "**Total**", "**50**"],
-        ],
-        [0.36, 0.08, 0.48, 0.08],
-        size=9,
+        "Two shapes are used. A **standard session** is a recap, twelve minutes of "
+        "teaching, the notebook's examples run together, the exercises, then a short "
+        "retrospective. A **discovery session** splits the teaching in two — seven minutes "
+        "introducing the task, the long way done by hand, nine minutes introducing the "
+        "tool, then the same task again with it, and a comparison."
     )
     d.para(
-        "Teaching totals 16 minutes on a discovery day, but **split into blocks of 7 and "
-        "9** — neither approaches the ceiling, and the second lands on a participant who "
-        "now wants it.",
-        italic=True,
+        "Teaching never exceeds **12 minutes in one block**, and that ceiling does not "
+        "move when sessions lengthen: **the extra 25 minutes goes to hands-on work** and "
+        "to the second half of the discovery days, which is where the method lives. "
+        "Hands-on is never less than half of a session."
+    )
+
+    d.h2("Remote delivery")
+    d.para(
+        "The course is taught over **Google Meet with screen sharing**, in groups of "
+        "**four to eight**. Fewer than four and there is no discussion; more than eight "
+        "and the instructor cannot check on everyone during hands-on work, so the people "
+        "who are quietly stuck stay stuck."
+    )
+    d.table(
+        ["Remote delivery", "Effect"],
+        [
+            ["**Removes the worst day-one risk**", "In a room, sixteen people downloading 1 GB over one school connection would have cost a session. Each teacher now installs at home, on their own connection, before day one"],
+            ["**Removes the best mitigation**", "An instructor cannot walk over and look at a screen. Everything that was a thirty-second fix becomes a conversation with a beginner who often cannot describe what they are seeing"],
+            ["The substitute", "Google Meet can now display **every participant's shared screen at once**, with switching between them. Screens stay shared through hands-on work — the remote equivalent of walking between desks — and with 4–8 people the instructor checks in on each one by name"],
+            ["Requires of each teacher", "Their own laptop for the whole course, and a connection that holds a 75-minute video call with screen sharing. A webcam is wanted but not required"],
+        ],
+        [0.26, 0.74],
+    )
+    d.para(
+        "Every requirement is asked on an **enrolment questionnaire before a group is "
+        "formed** — days available, connection, webcam, familiarity with video calls, "
+        "known technical problems, and the laptop's memory and free disk. Several of the "
+        "answers decide whether a teacher can take part at all, and acting on them early "
+        "is what replaces the instructor's physical presence.",
     )
 
     d.h2("Between sessions")
@@ -726,12 +758,12 @@ def build():
         "· dictionaries · functions and `return` · reading and writing files · modules and "
         "running a program from a terminal."
     )
-    d.para("**Habits that outlast the syntax** — what we most want to survive the course:")
-    d.bullets([
-        "If a number appears more than once, give it a name. If code appears more than once, give it a name.",
-        "When a result is wrong, ask *which half* is wrong before changing anything.",
-        "An error message is a sentence telling you what to fix, not a judgement.",
-    ])
+    d.para(
+        "**Habits that outlast the syntax**, and what we most want to survive the course: "
+        "if a number or a piece of code appears more than once, give it a name; when a "
+        "result is wrong, ask *which half* is wrong before changing anything; and an error "
+        "message is a sentence telling you what to fix, not a judgement."
+    )
 
     d.callout(
         "What this course does not produce",
@@ -751,29 +783,24 @@ def build():
 
     d.h2("What is deliberately excluded")
     d.para(
-        "The exclusion list matters as much as the syllabus. Each item would cost roughly "
-        "fifteen minutes and buy a teacher nothing in the program they are going to write."
-    )
-    d.table(
-        ["Excluded", "Why"],
-        [
-            ["Classes and objects; recursion", "Nothing in a four-file gradebook needs them"],
-            ["Comprehensions, `lambda`, generators", "Shorter to write, much harder to read for someone eight weeks into programming"],
-            ["Error handling beyond one safeguard", "Exactly one `try` sits at the outermost edge, so an unexpected failure shows a sentence rather than ten lines of red text"],
-            ["Package installation, virtual environments", "Removes the most common way a beginner's setup breaks between sessions"],
-            ["Regular expressions, type hints, decorators, web frameworks, databases", "Not reachable in 20 hours, and not needed"],
-        ],
-        [0.33, 0.67],
+        "The exclusion list matters as much as the syllabus. **Classes, recursion, "
+        "comprehensions, `lambda`, generators, regular expressions, type hints, "
+        "decorators, web frameworks and databases are all out**, along with package "
+        "installation and virtual environments — which removes the most common way a "
+        "beginner's setup breaks between sessions. Error handling is one safeguard at the "
+        "outermost edge of the finished program, so an unexpected failure shows a sentence "
+        "rather than ten lines of red text."
     )
     d.para(
-        "Before anything is added back, one question has to be answered: **which line of "
-        "the finished gradebook needs it?**",
-        italic=True,
+        "Each would cost roughly fifteen minutes and buy a teacher nothing in the program "
+        "they are going to write. Most of them are Part 2's material. Before anything is "
+        "added back, one question has to be answered: **which line of the finished "
+        "gradebook needs it?**"
     )
 
     d.h2("Differentiation within a session")
     d.para(
-        "In a room of sixteen adults, three or four finish early in **every** session, so "
+        "In a group of four to eight, at least one or two finish early in **every** session, so "
         "each notebook carries three tiers: **3–4 required tasks** sized so nobody leaves "
         "with unfinished work, **3–4 extra tasks** for whoever has eight minutes to spare, "
         "and **1–2 challenges** for the fastest. Extra tasks use only what has already "
@@ -845,24 +872,69 @@ def build():
     # ------------------------------------------------------- 8. measuring success
     d.h1("How success will be measured")
 
+    d.h2("The decision rule")
     d.para(
-        "An experiment nobody can evaluate is just a change of plan. **These checkpoints "
-        "should be agreed before the first session**, not argued about afterwards. Most "
-        "need no extra work, because the course already produces artefacts that are "
-        "objectively checkable."
+        "**Part 1 succeeds or fails on one question: can they code?** The threshold was "
+        "agreed with colleagues and is set before the first session rather than after it."
+    )
+    d.table(
+        ["Result", "Meaning", "What happens next"],
+        [
+            ["**More than 90%** can code", "**Success**", "Continue to Part 2 (section 12)"],
+            ["50% to 90%", "Inconclusive", "The method is neither proved nor refuted. Adjust and repeat Part 1 with a second cohort before committing to Part 2"],
+            ["**Less than 50%** can code", "**Failure**", "Return to the conventional approach, informed by where it broke"],
+        ],
+        [0.22, 0.16, 0.62],
+    )
+    d.para(
+        "The middle band is not a hedge. It is the most likely outcome of a first run of "
+        "anything, and deciding in advance what we do with it stops the result being "
+        "argued into whichever camp someone already preferred."
     )
 
-    d.table(
-        ["When", "The check", "Why it is the right one"],
+    d.h3("What \"can code\" means, in a way that can be counted")
+    d.para(
+        "A participant **can code** if, unaided, they can write a working program using "
+        "the constructs the course taught — variables, conditions, lists, loops, "
+        "dictionaries and functions. That is judged from two artefacts the course already "
+        "produces, both pass or fail:"
+    )
+    d.bullets([
+        "They left **day 21** with a working `python main.py`, confirmed individually while sharing their screen.",
+        "They scored **at least half** of the 70 points on questions 1–7 of the final practical, which require writing code from a blank cell.",
+    ])
+    d.para(
+        "Meeting both counts. Meeting one counts as partial and falls in the middle band — "
+        "it is not rounded up. **The transfer question is excluded** from this judgement: "
+        "it measures problem-solving, which Part 1 does not teach and does not claim."
+    )
+
+    d.callout(
+        "⚠ One thing we would ask you to agree before the first cohort",
         [
-            ["Diagnostic", "Can they run a cell at all, and with how much help?", "**The baseline.** Without it the programme can only report an endpoint, not change"],
-            ["Midpoint", "Do they write a loop, or still index by hand?", "The first real evidence for or against the method"],
-            ["Final", "Do they return a value, or print it?", "If `return` never landed, the four-file program was out of reach"],
-            ["**Day 21**", "**Does `python main.py` run?** Confirmed individually, per person", "Binary, unarguable, and the hard gate of the course"],
-            ["Day 24", "Does a colleague run their program **from their notes alone**?", "Tests that the thing is real, not that it works on one desk"],
-            ["Throughout", "Attendance across all 24 sessions", "Below a certain point, nothing else is interpretable"],
+            "Groups are four to eight. **At every size in that range, \"more than 90%\" "
+            "means every single participant without exception** — 6 of 6, 8 of 8. One "
+            "teacher whose laptop dies in week six moves the group out of success on "
+            "their own.",
+            "So we propose two things: **judge the criterion across all cohorts pooled**, "
+            "not per group — four groups of six is 24 people, where a percentage means "
+            "something — and **record withdrawals separately from failures**, since a "
+            "teacher reassigned by their school in week two has not failed to learn to "
+            "code.",
+            "Neither weakens the bar. They stop it being decided by one broken laptop.",
         ],
-        [0.11, 0.37, 0.52],
+    )
+
+    d.h2("The checkpoints along the way")
+    d.para(
+        "Three results during the course change what the instructor does next, and all "
+        "come from artefacts the course already produces. **The diagnostic**: can they run "
+        "a cell at all, and with how much help — the baseline, without which we could "
+        "report an endpoint but not change. **The midpoint test**: do they write a loop, "
+        "or still repeat themselves — the first real evidence for or against the method. "
+        "**Day 21**: does `python main.py` run, confirmed individually while they share "
+        "their screen. Attendance is recorded throughout, because below a certain point "
+        "nothing else is interpretable."
     )
 
     d.h2("The one measurement that tests the theory")
@@ -940,7 +1012,8 @@ def build():
     d.table(
         ["Risk", "Likelihood", "Mitigation"],
         [
-            ["**The ~1 GB software download on school wifi.** Sixteen people downloading at once will cost a session", "High", "Setup instructions sent three days early so most arrive installed; **a USB stick with offline installers for both platforms is mandatory kit**"],
+            ["**The ~1 GB software download.** Much lower risk remotely — each teacher downloads at home rather than all at once on one connection", "Medium", "Setup instructions sent three days early, **with a reply required** confirming the setup check is green. No reply means it was not attempted"],
+            ["**No instructor in the room.** Everything that would have been a thirty-second fix becomes a conversation with a beginner who cannot describe what they are seeing", "High", "All screens shared through hands-on work, with Meet showing every participant at once; each person checked on by name; groups capped at eight so that is possible"],
             ["Laptops that block software installation, or lack the ~5 GB needed", "Medium", "Confirmed with schools, and asked on the enrolment form, before anyone is admitted. A browser-based fallback exists for sessions 1–19, but that participant cannot do days 20–24 fully"],
             ["The editor's interpreter picker — the most common beginner failure", "High", "Only one choice is ever present; a red callout on days 1 and 2; the setup script reports which Python is actually running"],
             ["Missed sessions — three a week for eight weeks, on top of a teaching job", "High", "Every session is self-contained; worked solutions published after each one; day 19 is a catch-up session with nothing new in it"],
@@ -968,31 +1041,49 @@ def build():
     d.table(
         ["", ""],
         [
-            ["Per participant", "A Windows or macOS laptop — their own or the school's — with about **5 GB free** and permission to install software"],
-            ["Software", "**Anaconda** and **VS Code**, both free. Two installations on day one and nothing afterwards; the course uses only Python's standard library"],
-            ["Network", "Day one only. **Every session after that runs with the wifi switched off**"],
+            ["Per participant", "**Their own laptop for the whole course** — Windows or macOS, about **5 GB free**, and permission to install software"],
+            ["Connection", "Good enough for a **75-minute video call with screen sharing**, three times a week. This is the one requirement that most often needs solving before a teacher can start"],
+            ["Webcam", "Wanted, not required. Without one the instructor loses the clearest signal that someone is stuck"],
+            ["Software", "**Anaconda** and **VS Code**, both free. Two installations before day one and nothing afterwards; the course uses only Python's standard library"],
             ["Not needed", "No GPU, no server, no accounts, no API keys, no paid service of any kind"],
-            ["Room and staffing", "Seats for up to 16 with power, a projector, and one instructor"],
-            ["**Cost**", "**Zero.** The only material cost is instructor time, the room, and a USB stick of offline installers"],
+            ["Staffing", "One instructor per group of 4–8"],
+            ["**Cost**", "**Zero.** The only material cost is instructor time"],
         ],
         [0.21, 0.79],
     )
 
+    d.h2("Screening before a group is formed")
+    d.para(
+        "Because the course is remote, the requirements above are **asked and acted on "
+        "before enrolment**, not discovered in week one. Every teacher answers six "
+        "questions: how many days a week they can commit, whether their connection is "
+        "sufficient, whether they have a webcam, whether they can use Zoom or Google Meet, "
+        "any technical problem worth knowing about, and their laptop's memory and free "
+        "disk space."
+    )
+    d.para(
+        "The answers decide group composition — teachers who can commit two days a week "
+        "cannot be mixed with those committing three — and they surface the cases that "
+        "need solving first: a locked-down school laptop, a shared family machine, a "
+        "connection that will not hold a call. **This screening is what replaces the "
+        "instructor's physical presence**, and it is the single cheapest risk reduction "
+        "available to a remote course."
+    )
+
     d.h2("Verified by automated checks")
     d.para(
-        "**All materials are written.** The following are checked by scripts that run "
-        "against them, not by inspection, and all currently pass."
+        "**All Part 1 materials are written.** Four scripts run against them, and all "
+        "currently pass: every session agenda sums exactly to its stated length; **all 43 "
+        "notebooks** — lessons, worked solutions and both versions of each assessment — "
+        "execute cell by cell, in order, from a clean start; the language and dependency "
+        "rules hold, with nothing outside Python's standard library imported anywhere; and "
+        "the finished program runs end to end, with missing files, corrupt data and bad "
+        "input each producing one actionable sentence rather than a technical traceback."
     )
-    d.table(
-        ["Check", "Result"],
-        [
-            ["Session arithmetic", "Every agenda sums to exactly 50 minutes; 24 sessions total 1,200"],
-            ["Materials execute", "**43 notebooks** — 19 lessons, 18 solution sets and both versions of the 3 assessments — run cell by cell, in order, from a clean start"],
-            ["Deliberate errors behave", "Every teaching cell designed to fail raises exactly the error it claims. One that silently starts working is treated as a defect"],
-            ["Language and dependencies", "Explanations Armenian, code English, with nothing outside Python's standard library imported anywhere"],
-            ["The finished program", "`python main.py` runs end to end; missing files, corrupt data and bad input each produce one actionable sentence, never a technical traceback"],
-        ],
-        [0.26, 0.74],
+    d.para(
+        "Every teaching cell designed to fail still raises exactly the error it claims. "
+        "One that silently starts working is treated as a defect.",
+        italic=True,
     )
 
     d.h2("Not yet verified — stated plainly")
@@ -1002,6 +1093,8 @@ def build():
             ["**The Armenian terminology has not been reviewed by a native-speaker teacher**", "Every term is drawn from a single glossary, so a correction is one edit plus an automated sweep rather than a rewrite of nineteen files. Terms we are least sure of are already marked"],
             ["**The installation instructions have never been followed on a clean machine**", "Run once on a fresh Windows laptop and once on a fresh Mac, and timed, before the first session"],
             ["**Nothing has been taught to a real cohort**", "Every estimate of pacing here is a design estimate. The first cohort will find things we did not"],
+            ["**The session plans are still written to 50 minutes**", "Sessions will run 75. The day map, topic order, discovery days and deliverables are unaffected; the per-session agendas are being rebuilt, with the extra time going to hands-on work"],
+            ["**The toolchain may change**", "Anaconda and VS Code are assumed throughout. Google Colab and Thonny are under discussion as a lighter alternative that would remove the installation problem — and with it the largest remaining delivery risk"],
         ],
         [0.34, 0.66],
     )
@@ -1029,14 +1122,35 @@ def build():
         "and both outcomes are useful."
     )
 
-    d.h2("If it works")
+    d.h2("If it works — Part 2, four months")
     d.para(
-        "If participants can code, and the transfer question suggests problem-solving is "
-        "now within reach, we continue with the same method into object-oriented "
-        "programming and more advanced material — and **go back to add the theory that "
-        "was deliberately skipped**, now that there is practice for it to attach to. The "
-        "theory is not cancelled; it is postponed until it can stick. Then real "
-        "algorithmic work, which is where we wanted to be two years ago."
+        "Part 2 is **outlined, not written**. Building it before Part 1 reports would be "
+        "assuming the answer to the question Part 1 exists to ask. The ordering below is "
+        "not arbitrary: each stage depends on the one before it, and the first exists "
+        "because Part 1 deliberately skipped it."
+    )
+    d.table(
+        ["Stage", "", "Why here"],
+        [
+            ["1", "**The theory we postponed** — parameters in depth, scope, nested loops and conditions, choosing between data structures, reading other people's code", "Part 1 taught constructs as tools that solved a problem; it never explained how they work underneath. **This stage is itself a test of the programme's claim** — if theory now lands easily on top of eight weeks of practice, the sequencing was right"],
+            ["2", "**Algorithmic tasks and problem-solving** — problems with no given method; writing the approach in words before the code", "The thing Part 1 was clearing the ground for. With the mechanics automatic, the whole of a participant's attention is free for the problem"],
+            ["3", "**Bigger projects** — several times the size of Part 1's, built over weeks rather than sessions", "Where structure starts to matter, and where a program becomes too big to hold in your head"],
+            ["4", "**Objects and classes**", "Deliberately late. Classes solve a problem a participant only *feels* once their programs are big enough to have it — which is why this follows stage 3 rather than preceding it"],
+            ["5", "**Recursion and harder techniques**", "Needs the fluency of the stages before it to be readable at all"],
+        ],
+        [0.06, 0.40, 0.54],
+        size=9,
+    )
+    d.callout(
+        "The honest uncertainty in Part 2",
+        [
+            "**Whether our method carries over is unproven.** \"Do it the long way, then "
+            "get the tool\" works for concrete mechanics, where the long way is tedious "
+            "but obvious. Algorithmic thinking may need a different shape entirely.",
+            "We would rather expect to discover that in stage 2 than assume it now. "
+            "Part 1's assessments measure mechanics; **measuring problem-solving will need "
+            "a different instrument**, and designing it is part of Part 2's work.",
+        ],
     )
 
     d.h2("If it does not work")
