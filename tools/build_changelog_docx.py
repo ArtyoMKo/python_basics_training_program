@@ -375,210 +375,120 @@ def check_facts():
 
 TODAY = "6 October 2026"
 CURRENT = "1.8"
-
-# What the partner already has: the last version issued on Friday 2 October.
 BASELINE = "1.1"
 BASELINE_DATE = "Friday 2 October"
 
 
 def build():
+    """
+    One page, in plain language, for a reader who is not a programmer.
+
+    Rules this page is written to:
+      - no technical vocabulary at all, and no code formatting
+      - say what each change MEANS, not what moved in the document
+      - no section numbers or cross-references; a reader here is not holding the dossier
+    """
     d = Dossier()
     doc = d.document
 
-    # ---------------------------------------------------------------- cover
-    for _ in range(3):
-        doc.add_paragraph()
-
     title = doc.add_paragraph()
-    run = title.add_run("Programme dossier")
-    run.font.size = Pt(30)
+    title.paragraph_format.space_after = Pt(1)
+    run = title.add_run("What has changed in the teacher training programme")
+    run.font.size = Pt(18)
     run.bold = True
     run.font.color.rgb = NAVY
 
-    subtitle = doc.add_paragraph()
-    run = subtitle.add_run("What changed since the version you have")
-    run.font.size = Pt(14.5)
+    sub = doc.add_paragraph()
+    sub.paragraph_format.space_after = Pt(10)
+    run = sub.add_run(
+        f"A summary of the changes made since {BASELINE_DATE} · prepared for Fast Foundation"
+    )
+    run.font.size = Pt(10.5)
     run.font.color.rgb = GREY
-    bottom_rule(subtitle, size=12)
-
-    doc.add_paragraph()
-    d.table(
-        ["", ""],
-        [
-            ["Accompanies", "**Python from Zero — Programme dossier**"],
-            ["The version you have", f"**{BASELINE}**, issued {BASELINE_DATE}"],
-            ["The version enclosed", f"**{CURRENT}**, {TODAY}"],
-            ["Covers", f"Everything that changed between the two"],
-            ["Prepared for", "Fast Foundation"],
-            ["Date", TODAY],
-        ],
-        [0.18, 0.82],
-    )
-
-    d.callout(
-        "How to use this",
-        [
-            f"You last saw **version {BASELINE}**, from {BASELINE_DATE}. The dossier is "
-            f"now at **version {CURRENT}**. **§1 is the short answer** — four things "
-            "changed that affect how the programme should be judged, not merely what it "
-            "contains.",
-            "**§2 lists each intermediate version**, newest first, if you want the detail.",
-            "**Every version number appears on the dossier's cover and in its footer**, so "
-            "you can always tell which one you are holding.",
-        ],
-    )
-
-    d.page_break()
-
-    # ------------------------------------------------------- 1. the big picture
-    d.h1("The short answer")
+    bottom_rule(sub, size=10)
 
     d.para(
-        f"Four things changed between version {BASELINE} and version {CURRENT}. They are "
-        "stated on their own because each affects **how the programme should be judged**, "
-        "not merely what it contains."
+        "This is a programme that teaches school teachers to write computer programs, so "
+        "that they can then teach the subject to their pupils. The changes since the "
+        "version you were sent fall into three groups, below. **Nothing has been cancelled "
+        "or cut** — the programme is now longer, taught in smaller groups, and measured "
+        "far more carefully.",
+        size=10.5,
     )
 
+    # ----------------------------------------------------- how it is organised
+    d.h2("How the programme is organised")
     d.table(
-        ["", f"Version {BASELINE} — what you have", f"Version {CURRENT} — enclosed"],
+        ["", "Before", "Now", "Why"],
         [
-            ["**Shape**", "One 20-hour course, 50-minute sessions, groups of up to 16, taught on site", "**Two parts — Part 1 teaches coding skills over 2 months; Part 2 covers algorithmic tasks and theory over 4.** 75-minute sessions, 30 hours, groups of 4–8, **taught remotely**"],
-            ["**Assessment**", "Four take-home tests, deliberately not graded", "**Three supervised sittings** designed with our partner colleague — a diagnostic **before** the course, a midpoint, and a final practical. Scored, with A/B/C variants"],
-            ["**How it is judged**", "Checkpoints, with target numbers left to agree", "**An explicit decision rule**: more than 90% can code = success, under 50% = failure, and the band between defined in advance. Plus a **trial class with real pupils in March**"],
-            ["**Relationship to the state curriculum**", "Not addressed", "**Mapped topic by topic** against order 1875 of 09.09.2026, with every gap named and assigned to a part"],
+            ["**Length**", "One course", "**Two parts: 2 months, then 4 months**", "The first part teaches teachers to write code. The second teaches them to solve problems with it. They are different skills, and the second only makes sense once the first is in place"],
+            ["**Lessons**", "50 minutes, 20 hours in total", "**75 minutes, 30 hours in total**", "The extra time is all spent on teachers practising at the keyboard, not on more explaining"],
+            ["**Class size**", "Up to 16 teachers", "**4 to 8 teachers**", "Fewer than four and they cannot discuss anything with each other. More than eight and the trainer cannot keep an eye on everyone"],
+            ["**Where**", "In a classroom", "**Online**, by video call", "Teachers join from home or school. This removes some problems and creates others, both described in the full document"],
         ],
-        [0.17, 0.35, 0.48],
+        [0.11, 0.17, 0.26, 0.46],
         size=9,
     )
 
-    d.callout(
-        "The one change we would most like you to notice",
+    # ---------------------------------------------------- how it is measured
+    d.h2("How we will know whether it worked")
+    d.para(
+        "This is the part that changed most, and it is the part worth your attention. "
+        "The earlier version could not actually say what success would look like.",
+        size=10,
+    )
+    d.table(
+        ["", ""],
         [
-            f"**Version {BASELINE} could not say what success meant.** It listed "
-            "checkpoints and said the numbers should be agreed before the first session.",
-            f"**Version {CURRENT} states the rule**, defines \"can code\" so it can be counted "
-            "from artefacts the course already produces, and names the one measurement "
-            "that tests the programme's own assumption rather than whether it ran "
-            "smoothly. That is in §8 of the dossier.",
+            ["**A clear pass mark for the programme**", "If **more than 90%** of teachers can write working programs by the end, the approach worked and we continue. If **fewer than half** can, it did not, and we go back to the old way of teaching. Anything in between means we adjust and try once more. **These numbers are agreed now, before we start**, so the result cannot be argued about afterwards"],
+            ["**A test before the course begins**", "Teachers sit a short assessment on day one, before being taught anything. Nobody can fail it. It tells us where each teacher is starting from — so at the end we can report **how much they improved**, not just where they ended up"],
+            ["**Teaching a real class in March**", "After the first part, every teacher teaches one lesson to real pupils. This answers a question no written test can: being able to write a program and being able to **teach** it are different abilities, and a teacher who has one without the other would otherwise go unnoticed"],
+            ["**Three proper exams instead of four homework tasks**", "Supervised and marked, each with three equivalent versions so that neighbours cannot copy. The last one decides who continues to the second part — and teachers are told this **before** they enrol, not afterwards"],
+        ],
+        [0.26, 0.74],
+        size=9,
+    )
+
+    # ------------------------------------------------- the official curriculum
+    d.h2("Fitting the official school curriculum")
+    d.para(
+        "The programme has been checked against the state curriculum for Computer Science "
+        "in Python, approved in September. Every one of its topics has been matched to the "
+        "part of our programme that prepares teachers for it, and the few that were "
+        "missing have been added or scheduled. **A teacher finishing the first part will "
+        "be ready to teach the whole of the first school year.**",
+        size=10,
+    )
+
+    # --------------------------------------------------------------- unchanged
+    d.h2("What has not changed")
+    d.para(
+        "The reasoning behind the programme, and our honesty about its risks. We still say "
+        "plainly that the approach may not work — it is possible to produce teachers who "
+        "can type out programs and still cannot solve problems with them. We also still "
+        "list the three things we have not yet been able to check: the Armenian wording "
+        "has not been reviewed by a teacher, the setup instructions have not been tried on "
+        "a clean computer, and nothing has been taught to a real group yet.",
+        size=10,
+    )
+
+    d.callout(
+        "In one sentence",
+        [
+            "**The programme is now longer, taught in smaller groups online, split into two "
+            "parts, and — most importantly — it now has an agreed definition of success "
+            "that we committed to before starting.**",
         ],
         fill=BAND_FILL,
     )
 
-    # ----------------------------------------------------------- 2. by version
-    d.h1("Version by version")
-    d.para("Newest first. Read down to the version you last saw.", italic=True)
-
-    d.h2("Versions 1.7 and 1.8 — 6 October")
-    d.para("**Clarity, and three corrections.**")
-    d.bullets([
-        "**Corrected the hours.** One sentence still said the 24 sessions were 20 hours; they are **30** (24 × 75 minutes). And the status section still listed *\"session plans are still written to 50 minutes\"* as outstanding — that work is finished, so the item is gone.",
-        "**Fixed an ambiguity you may have hit:** earlier versions said *\"Part 1 of six months\"*, which reads as though Part 1 itself lasts six months. Every document now states plainly that **Part 1 is 2 months and Part 2 is 4**, and says what each part teaches.",
-        "**Corrected the Part 2 plan.** The stage table still showed an older order — recursion after classes — and omitted libraries entirely. It now matches the roadmap: theory, **recursion**, algorithmic tasks, bigger projects, classes and inheritance, libraries and environments.",
-        "Added a structure table to the cover and to the opening section, so the two-part shape cannot be missed.",
-    ])
-
-    d.h2("Version 1.6 — 6 October")
-    d.para("**Session length confirmed at 75 minutes.**")
-    d.bullets([
-        "Sessions are **75 minutes**, three times a week: 24 × 75 = **30 hours**. Earlier versions described the plan as 75 minutes while the detailed session plans were still written to 50; those plans have now been rebuilt, so the figures agree.",
-        "The extra 25 minutes per session went **entirely to hands-on work** — the 12-minute ceiling on explanation did not move. A standard session is now 71% hands-on, up from 60%.",
-    ])
-
-    d.h2("Version 1.5 — 6 October")
-    d.para("**The trial class, and the final assessment as a gate.**")
-    d.bullets([
-        "**Added the trial class in March**, as a *second* criterion. It measures whether a teacher can **teach** what they can code — a different ability from coding, and the one nothing else in the programme would detect.",
-        "**The final assessment now decides who continues to Part 2.** Stated with the consequence that follows: because it is consequential for the individual, it is announced **before the course starts**, in the recruitment text and at enrolment, rather than sprung afterwards.",
-    ])
-
-    d.h2("Version 1.4 — 6 October")
-    d.para("**Aligned with the state curriculum.**")
-    d.bullets([
-        "**New section mapping the programme against «ԱԲ սերունդ»: Computer Science in Python**, order 1875 of 09.09.2026 — all 24 pupil topics and 193 hours, and which part of our programme covers each.",
-        "Reordered the course so that **every data type precedes conditions and loops**. Dictionaries moved from day 14 to day 8; the discovery days are now 6, 8, 11, 17 and 22.",
-        "**Added tuples and sets**, because the state curriculum teaches them in the pupils' first semester. Shown and compared, not drilled.",
-        "Recorded the two orderings where we diverge from the state document deliberately, and why.",
-    ])
-
-    d.h2("Version 1.3 — 6 October")
-    d.para("**Remote delivery, smaller groups, and the decision rule.**")
-    d.bullets([
-        "**The course is taught remotely**, over video with screen sharing. Added what that changes: it removes the worst first-day risk, and removes the best mitigation — an instructor who can walk over and look at a screen.",
-        "**Groups are 4–8**, not up to 16. Fewer than four and there is no discussion; more than eight and the instructor cannot check on everyone remotely.",
-        "**Added the decision rule** — the success and failure thresholds, and what \"can code\" means in countable terms.",
-        "**Added Part 2** as a four-month plan, and flagged the risk inside it: whether our method carries over to algorithmic thinking is unproven.",
-        "Added the enrolment screening that replaces the instructor's physical presence.",
-    ])
-
-    d.h2("Version 1.2 — 3 October")
-    d.para("**Three assessments instead of four.**")
-    d.bullets([
-        "Adopted the assessment design from our partner colleague: **a diagnostic before day 1, a midpoint, and a final practical**, replacing four take-home tests.",
-        "The diagnostic is the significant addition — it gives a **before-measurement**, so the programme can report *change* rather than only an endpoint.",
-        "Added the transfer question to the final assessment, marked separately and never reported as a pass rate.",
-    ])
-
-    d.h2(f"Version {BASELINE} — 2 October  (the version you have)")
-    d.para(
-        "Shortened by about a third at your request, from 6,081 words to 4,660. Repetition "
-        "was removed rather than content: a milestone table that duplicated the "
-        "curriculum, a materials list that duplicated the appendix, and two overlapping "
-        "fact tables. Nothing needed to judge the programme was cut.",
-        italic=True,
-    )
-
-    d.page_break()
-
-    # --------------------------------------------------------- 3. what has not
-    d.h1("What has not changed")
-
-    d.para(
-        "Worth stating, because it is the part of the programme we would least like to see "
-        "quietly drift:"
-    )
-    d.bullets([
-        "**The diagnosis.** Two years of conventional teaching did not produce teachers who can write a program; our reading is that the bottleneck is coding fluency, not missing theory.",
-        "**The method.** A real classroom task, done the long way with what they already know, and the tool that collapses it arriving **in the same session**.",
-        "**The honesty about risk.** Every version has said, in the same words, that the core assumption may simply be wrong — that it is possible to produce teachers who type Python fluently and still cannot solve a problem with it.",
-        "**The three unverified items**, still named in §10: the Armenian terminology has not been reviewed by a native speaker, the installation instructions have not been followed on a clean machine, and nothing has been taught to a cohort.",
-    ])
-
-    d.h2("How these figures were produced")
-    d.para(
-        "This log is generated from the programme repository rather than written from "
-        "memory. The version numbers come from the dossier's own generator, and the word "
-        "and section counts below are measured from the built files. Each dossier version "
-        "is also checked against the repository as it is built — day count, total minutes, "
-        "material counts, the sample-class figures — and the build is refused if any of "
-        "them disagree."
-    )
-    d.table(
-        ["Version", "Date", "Words", "Tables", "Sections"],
-        [
-            ["**1.1**", "**2 Oct**", "**4,660**", "28", "12"],
-            ["1.2", "3 Oct", "4,905", "30", "12"],
-            ["1.3", "6 Oct", "6,064", "31", "12"],
-            ["1.4", "6 Oct", "6,260", "32", "12"],
-            ["1.5", "6 Oct", "6,661", "33", "12"],
-            ["1.6", "6 Oct", "6,652", "33", "12"],
-            ["**1.7**", "6 Oct", "**6,832**", "33", "12"],
-        ],
-        [0.18, 0.16, 0.22, 0.22, 0.22],
-    )
-    d.para(
-        f"The row in bold is the version you have. The document grew after {BASELINE} "
-        "because each later version added material you asked for — the decision rule, remote delivery, the state-curriculum mapping, Part 2 "
-        "and the trial class. Older material was trimmed to make room, which is why the "
-        "section count has stayed at twelve.",
-        italic=True,
-    )
-
     closing = doc.add_paragraph()
+    closing.paragraph_format.space_before = Pt(4)
     bottom_rule(closing)
     d.para(
-        f"Change log for Programme dossier v{CURRENT} · {TODAY} · Prepared for Fast "
-        "Foundation. Generated from the programme repository.",
-        size=9, colour=GREY,
+        f"Summary of changes to the programme document, version {BASELINE} → {CURRENT} · "
+        f"{TODAY}. The full document accompanies this page if you would like the detail.",
+        size=8.5, colour=GREY,
     )
 
     return d

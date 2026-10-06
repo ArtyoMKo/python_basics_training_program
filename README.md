@@ -101,10 +101,11 @@ python tools/build_partner_docx.py      # -> partners/..._Programme_Dossier.docx
 python tools/build_changelog_docx.py    # -> partners/..._Change_Log.docx
 ```
 
-The change log tells a partner what moved since the version they already have. Its
-baseline is set by `BASELINE_COMMIT` in the generator, and **its claims about that older
-version are read back from git**, not written from memory — a change log that describes
-the past from memory is exactly how one misleads.
+The change log is a **single page in plain language for a non-technical reader** — what
+changed, and why it matters, with no programming vocabulary at all. Its baseline is set by
+`BASELINE_COMMIT` in the generator, and **its claims about that older version are read
+back from git**, not written from memory: a change log that describes the past from memory
+is exactly how one misleads.
 
 It **restates** facts rather than linking to them, so it is the one document that can
 drift. The build verifies every figure it quotes against the repository — day count,
