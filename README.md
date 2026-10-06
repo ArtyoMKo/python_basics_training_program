@@ -8,8 +8,8 @@ background**, built to the rules in `docs/PLAN.md` and the house style in
 |---|---|
 | **Participants** | Public-school teachers, any subject. No prior programming. **Groups of 4–8** |
 | **Delivery** | **Remote**, over Google Meet with screen sharing |
-| **Part** | Part 1 of six months. Part 2 is outlined in `docs/ROADMAP.md` |
-| **Format** | 24 sessions × 75 minutes = **30 hours exactly**, 3 per week over 8 weeks |
+| **Structure** | **Two parts.** **Part 1 — coding skills — 2 months** (this repository). **Part 2 — algorithmic tasks and theory — 4 months**, outlined in `docs/ROADMAP.md`, runs only if Part 1 succeeds |
+| **Format (Part 1)** | 24 sessions × 75 minutes = **30 hours exactly**, 3 per week over 8 weeks ≈ **2 months** |
 | **Language** | **Armenian** explanations; **English** everything inside a code cell |
 | **Tools** | Anaconda (Python) + VS Code. Two installs on Day 1, nothing after |
 | **Dependencies** | **Standard library only.** No `pip`, no venv, no network, no accounts, no cost |

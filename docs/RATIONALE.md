@@ -10,6 +10,17 @@ building it this way, what we are betting on, and what we are risking.
 
 ---
 
+## The programme in two parts
+
+| | | |
+|---|---|---|
+| **Part 1** | Coding fluency — the mechanics, with no algorithmic difficulty at all | **2 months** |
+| **Part 2** | Depth, algorithms, classes and libraries — what the fluency was for | **4 months** |
+
+**Part 2 runs only if Part 1 meets the criterion in §5a.** The split is the whole argument
+of this document: §2 says why the mechanics come first, and `ROADMAP.md` says what Part 2
+would contain.
+
 ## The short version
 
 We have been trying to teach these teachers for **two years, without the results we

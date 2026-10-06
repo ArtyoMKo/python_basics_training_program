@@ -2,6 +2,11 @@
 
 Read this before Day 1.
 
+> **This is Part 1 of a two-part programme: Part 1 is 2 months, Part 2 is 4 months.** Part 2
+> is outlined in `ROADMAP.md` and runs only if Part 1 meets the criterion in
+> `RATIONALE.md` §5a.
+
+
 > **Vocabulary, because the word collides.** In this course the **participants are
 > teachers**. So: *participant* = the person taking the course; *student* = a child in
 > the participant's own class, i.e. the data in every example; *instructor* = you.

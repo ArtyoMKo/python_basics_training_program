@@ -1,12 +1,14 @@
 # Roadmap — the six-month arc
 
+**The programme is six months, in two parts: Part 1 is 2 months, Part 2 is 4 months.**
+
 **Part 1 is built. Part 2 is a vision, and it only runs if Part 1 succeeds.**
 
 | | | Length | Status |
 |---|---|---|---|
-| **Part 1** | Coding fluency — the mechanics, taught to automaticity | 2 months | **Built and verified.** Materials complete, not yet taught |
+| **Part 1** | **Coding skills** — writing working code to automaticity, with **no algorithmic difficulty at all** | **2 months** — 24 sessions × 75 min = 30 h | **Built and verified.** Materials complete, not yet taught |
 | **Trial class** | Each teacher teaches real pupils, once | **March** | Planned |
-| **Part 2** | Depth, algorithms and design — what the fluency was for | 4 months | **Vision only.** Outlined below; not written |
+| **Part 2** | **Algorithmic tasks and the theory Part 1 postponed**, then bigger projects, classes and libraries | **4 months** — six stages | **Vision only.** Outlined below; not written |
 
 Part 2 is also where the programme finishes covering the school curriculum our teachers
 must deliver. `docs/GOVERNMENT_ASSIGNMENT.md` maps every one of its 24 topics to the part

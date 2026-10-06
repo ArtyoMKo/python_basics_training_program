@@ -78,7 +78,7 @@ point.
 | **Format** | 24 sessions × **75 minutes** = 1,800 minutes = **30 hours exactly** |
 | **Schedule** | 3 sessions per week × 8 weeks. After the cohort adapts, possibly 2 a week, or 3 of 50 minutes |
 | **Group size** | **4–8**, one instructor. Fewer than 4 and they cannot discuss; more than 8 and remote teaching stops working |
-| **Part** | Part 1 of 6 months. Part 2 is outlined in `ROADMAP.md` and runs only if Part 1 succeeds |
+| **Part** | **Part 1 of two.** Part 1 is **2 months** (this specification); Part 2 is **4 months**, outlined in `ROADMAP.md`, and runs only if Part 1 succeeds |
 | **Between sessions** | ~2 days. One optional 10-minute practice task per day; nothing required. |
 | **Final deliverable** | A working `python main.py` gradebook over the participant's own class list |
 

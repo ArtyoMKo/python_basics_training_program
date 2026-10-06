@@ -1,6 +1,13 @@
 # Course Outline — Python from Zero, for School Teachers
 
-**Part 1 of a six-month programme** · 24 sessions · **3 sessions a week, 8 weeks** ·
+**The programme has two parts. This document describes Part 1.**
+
+| | What it teaches | How long |
+|---|---|---|
+| **Part 1** | **Coding skills** — writing working code, with no algorithmic difficulty | **2 months** |
+| **Part 2** | **Algorithmic tasks and the theory** Part 1 postponed | **4 months** |
+
+**Part 1:** 24 sessions · **3 a week over 8 weeks** · 75 minutes each = **30 hours** ·
 **groups of 4–8** · **delivered remotely** · public-school teachers, **any subject, no
 programming background**
 

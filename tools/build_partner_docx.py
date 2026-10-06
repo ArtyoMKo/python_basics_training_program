@@ -367,7 +367,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "1.6"
+VERSION = "1.7"
 
 
 def build():
@@ -407,7 +407,8 @@ def build():
     d.table(
         ["", ""],
         [
-            ["Programme", "**Part 1 of six months.** 24 sessions × 75 minutes = **30 hours**, three times a week over eight weeks, plus three assessment sittings"],
+            ["Structure", "**Two parts.** **Part 1 — coding skills — 2 months.** **Part 2 — algorithmic tasks and theory — 4 months**, and only if Part 1 succeeds. **This dossier describes Part 1.**"],
+            ["Part 1 format", "24 sessions × 75 minutes = **30 hours**, three times a week over eight weeks, plus three assessment sittings"],
             ["Delivery", "**Remote**, over Google Meet with screen sharing"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
             ["Group size", "**4–8 per group**, one instructor"],
@@ -438,8 +439,10 @@ def build():
     d.h1("Executive summary")
 
     d.para(
-        "**Part 1 of a six-month programme** for public-school teachers who have never "
-        "written a line of code. Twenty-four sessions, three a week for eight weeks, "
+        "A programme for public-school teachers who have never written a line of code, "
+        "**in two parts: Part 1 teaches coding skills over two months; Part 2 covers "
+        "algorithmic tasks and the theory Part 1 postponed, over four.** This dossier "
+        "describes **Part 1**: twenty-four sessions, three a week for eight weeks, "
         "**taught remotely in groups of four to eight**. Every participant finishes with "
         "a small program they wrote themselves and can use: a gradebook that opens their "
         "own class list, shows who has passed, calculates the average, and saves changes "
@@ -457,9 +460,9 @@ def build():
     d.callout(
         "What we are asking you to evaluate",
         [
-            "**A two-month experiment with a decision at the end, not a finished "
-            "methodology.** Part 1 is built; the four months that follow it are a vision "
-            "that runs only if Part 1 succeeds (section 12).",
+            "**Part 1 is a two-month experiment with a decision at the end, not a "
+            "finished methodology.** It is built and verified. **Part 2 — the four months "
+            "that follow — is a vision that runs only if Part 1 succeeds** (section 12).",
             "Part 1 is judged on one question — **can they code?** The threshold is agreed "
             "and is in section 8.",
         ],
@@ -1206,14 +1209,21 @@ def build():
     d.table(
         ["Stage", "", "Why here"],
         [
-            ["1", "**The theory we postponed** — parameters in depth, scope, nested loops and conditions, choosing between data structures, reading other people's code", "Part 1 taught constructs as tools that solved a problem; it never explained how they work underneath. **This stage is itself a test of the programme's claim** — if theory now lands easily on top of eight weeks of practice, the sequencing was right"],
-            ["2", "**Algorithmic tasks and problem-solving** — problems with no given method; writing the approach in words before the code", "The thing Part 1 was clearing the ground for. With the mechanics automatic, the whole of a participant's attention is free for the problem"],
-            ["3", "**Bigger projects** — several times the size of Part 1's, built over weeks rather than sessions", "Where structure starts to matter, and where a program becomes too big to hold in your head"],
-            ["4", "**Objects and classes**", "Deliberately late. Classes solve a problem a participant only *feels* once their programs are big enough to have it — which is why this follows stage 3 rather than preceding it"],
-            ["5", "**Recursion and harder techniques**", "Needs the fluency of the stages before it to be readable at all"],
+            ["1", "**The theory we postponed** — parameters in depth, `*args`/`**kwargs`, scope, comprehensions and `lambda`, nested loops and conditions, choosing between data structures, reading other people's code", "Part 1 taught constructs as tools that solved a problem; it never explained how they work underneath. **This stage is itself a test of the programme's claim** — if theory now lands easily on top of two months of practice, the sequencing was right. State curriculum topic 16"],
+            ["2", "**Recursion**", "Placed here for the same reason the state curriculum places it immediately after advanced functions: it is a fact about functions before it is a technique. **Before classes**, as the state curriculum has it. Topic 17"],
+            ["3", "**Algorithmic tasks and problem-solving** — problems with no given method; writing the approach in words before the code", "The thing Part 1 was clearing the ground for. With the mechanics automatic, the whole of a participant's attention is free for the problem"],
+            ["4", "**Bigger projects** — several times the size of Part 1's, built over weeks rather than sessions", "Where structure starts to matter, and where a program becomes too big to hold in your head"],
+            ["5", "**Objects and classes**, including inheritance", "Deliberately late. Classes solve a problem a participant only *feels* once their programs are big enough to have it — which is why this follows stage 4. Topics 18–19"],
+            ["6", "**Libraries and environments** — `pip`, NumPy, Matplotlib, pandas, Colab and Kaggle", "Together the largest block in the state curriculum, and the bridge into the Artificial Intelligence subject beside Python. **This stage deliberately breaks Part 1's standard-library-only rule**, which has done its job by then. Topics 15 and 21"],
         ],
         [0.06, 0.40, 0.54],
         size=9,
+    )
+    d.para(
+        "**Git and version control** (state curriculum topic 23) stays out of scope and is "
+        "revisited once Part 1 reports: if the cohort arrives at Part 2 comfortably, git "
+        "and the remaining tooling go in; if not, the time is better spent elsewhere.",
+        italic=True,
     )
     d.callout(
         "The honest uncertainty in Part 2",

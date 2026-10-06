@@ -11,9 +11,15 @@ keep in sync.
 
 ## What this repository is
 
-**Part 1 of a six-month Python programme for Armenian public-school teachers with no
-programming background.** 24 sessions, 3 a week for 8 weeks, **delivered remotely** in
-groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
+**A six-month Python programme for Armenian public-school teachers with no programming
+background, in two parts.**
+
+| | | |
+|---|---|---|
+| **Part 1** | **coding skills** — writing working code, no algorithmic difficulty | **2 months**, 24 sessions. **This repository** |
+| **Part 2** | **algorithmic tasks and the theory Part 1 postponed**, then classes and libraries | **4 months**. Outlined in `docs/ROADMAP.md`, not written |
+
+Part 1 is 24 sessions, 3 a week for 8 weeks, **delivered remotely** in groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
 participant running a four-file gradebook program over their own class list.
 
 Sessions are **75 minutes**: 24 × 75 = 1,800 minutes = 30 hours, verified by

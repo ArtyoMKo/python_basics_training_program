@@ -1,6 +1,11 @@
 # Curriculum — Python from Zero, for School Teachers
 
-**24 days × 75 minutes = 1,800 minutes = 30 hours exactly.**
+**Part 1 of two. 24 days × 75 minutes = 1,800 minutes = 30 hours exactly.**
+
+> **This is Part 1 of a two-part programme: Part 1 is 2 months, Part 2 is 4 months.** Part 2
+> is outlined in `ROADMAP.md` and runs only if Part 1 meets the criterion in
+> `RATIONALE.md` §5a.
+
 
 Every agenda below sums to 75. The grand total is checked by `tools/check_times.py`.
 
