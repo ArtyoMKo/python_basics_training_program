@@ -235,7 +235,7 @@ tests/                  generated .ipynb (grader) + participant/ (generated)
                         + mark1–3_guide.md and README.md (hand-written, instructor only)
 guides/                 Days 20–24, markdown, read beside the code  (Armenian)
 project/gradebook/      the finished reference program (4 files)
-partners/               generated .docx dossier for external partners — do not edit
+partners/               generated .docx dossier and change log — do not edit
 tools/                  nbbuild.py, verify.py, the three checkers,
                         build_partner_docx.py
 ```
@@ -269,6 +269,7 @@ python tools/nbbuild.py day10        # rebuild one notebook
 python tools/verify.py               # all four checks — nothing is done until this passes
 
 python tools/build_partner_docx.py   # regenerate the partner dossier (.docx)
+python tools/build_changelog_docx.py # regenerate the partner change log (.docx)
 
 # the individual checkers, if you want one in isolation
 python tools/check_times.py

@@ -367,7 +367,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "1.7"
+VERSION = "1.8"
 
 
 def build():
@@ -837,7 +837,7 @@ def build():
     d.h2("Assessment")
     d.para(
         "**Three sittings**, designed jointly with our partner colleague. They are "
-        "**separate sittings, not session time** — the 24 teaching sessions remain 20 "
+        "**separate sittings, not session time** — the 24 teaching sessions remain 30 "
         "hours exactly and the assessments add roughly 3½ hours."
     )
     d.table(
@@ -1162,7 +1162,6 @@ def build():
             ["**The Armenian terminology has not been reviewed by a native-speaker teacher**", "Every term is drawn from a single glossary, so a correction is one edit plus an automated sweep rather than a rewrite of nineteen files. Terms we are least sure of are already marked"],
             ["**The installation instructions have never been followed on a clean machine**", "Run once on a fresh Windows laptop and once on a fresh Mac, and timed, before the first session"],
             ["**Nothing has been taught to a real cohort**", "Every estimate of pacing here is a design estimate. The first cohort will find things we did not"],
-            ["**The session plans are still written to 50 minutes**", "Sessions will run 75. The day map, topic order, discovery days and deliverables are unaffected; the per-session agendas are being rebuilt, with the extra time going to hands-on work"],
             ["**The toolchain may change**", "Anaconda and VS Code are assumed throughout. Google Colab and Thonny are under discussion as a lighter alternative that would remove the installation problem — and with it the largest remaining delivery risk"],
         ],
         [0.34, 0.66],
