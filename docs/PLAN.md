@@ -75,7 +75,7 @@ point.
 | **Delivery** | **Remote**, over Google Meet with screen sharing. Not on site. |
 | **Machines** | **Their own laptop**, which they must have for the whole course. Mixed Windows and macOS. Possibly no admin rights. Checked at enrolment (`ENROLMENT.md`). See §12 risks. |
 | **Language** | Materials in **Armenian**; code, keywords and identifiers in English (§7.7) |
-| **Format** | 24 sessions × **75 minutes** = 1,800 minutes = 30 hours. *Session plans are still written to 50 minutes — see the note below.* |
+| **Format** | 24 sessions × **75 minutes** = 1,800 minutes = **30 hours exactly** |
 | **Schedule** | 3 sessions per week × 8 weeks. After the cohort adapts, possibly 2 a week, or 3 of 50 minutes |
 | **Group size** | **4–8**, one instructor. Fewer than 4 and they cannot discuss; more than 8 and remote teaching stops working |
 | **Part** | Part 1 of 6 months. Part 2 is outlined in `ROADMAP.md` and runs only if Part 1 succeeds |
@@ -121,26 +121,12 @@ Day 21 is the split. **Neither may be cut** (§13).
 
 ### Time budget
 
-- 24 × 50 = **1,200 minutes**. Hard ceiling.
-- Every day's agenda sums to **exactly 50**, verified by script (§11.1).
+- 24 × 75 = **1,800 minutes**. Hard ceiling.
+- Every day's agenda sums to **exactly 75**, verified by script (§11.1).
 - If content does not fit, **cut a topic**. Never compress one, never run over — these are
-  working adults and 50 minutes is 50 minutes.
+  working adults and 75 minutes is 75 minutes.
 
-> ### ⏳ Session length is changing, and the plans have not caught up
->
-> Sessions will run **75 minutes**, decided after the colleagues' meeting. **Every agenda
-> in `CURRICULUM.md` is still written to 50 minutes** and `check_times.py` still verifies
-> against 50.
->
-> Rebuilding the 24 agendas to 75 minutes is the next piece of work. The extra 25 minutes
-> per session is **not** for more teaching — the 12-minute ceiling stands — it goes to
-> hands-on work and to the second half of the discovery days, which is where the method
-> actually lives.
->
-> Until that rebuild happens, **treat the minute counts below as proportions, not
-> absolutes**.
-
-### The standard 50-minute shape
+### The standard 75-minute shape
 
 Every day in the notebook phase uses this agenda unless stated otherwise:
 
@@ -148,12 +134,12 @@ Every day in the notebook phase uses this agenda unless stated otherwise:
 |---|---|---|
 | 1 | Recap, and last time's retrospective question | 5 |
 | 2 | **Teach:** the new idea — ends with something running | 12 |
-| 3 | **Run together:** the notebook's example cells, cell by cell | 15 |
-| 4 | **Do it yourself:** the exercises | 15 |
-| 5 | Retrospective: where we got to, what breaks next | 3 |
-| | **Total** | **50** |
+| 3 | **Run together:** the notebook's example cells, cell by cell | 20 |
+| 4 | **Do it yourself:** the exercises — Required, then Extra | 33 |
+| 5 | Retrospective: where we got to, what comes next | 5 |
+| | **Total** | **75** |
 
-**Hands-on is 30 of 50 minutes — 60%.** That is the floor, not the target. Activity 2 is
+**Hands-on is 53 of 75 minutes — 71%.** That is the floor, not the target. Activity 2 is
 capped at 12 minutes and may never exceed 15 in any variant agenda. This is the rule the
 review should check first: *if a day talks for more than 15 minutes, it is wrong.*
 
@@ -166,15 +152,14 @@ use this instead:
 |---|---|---|
 | 1 | Recap | 5 |
 | 2 | **Teach:** today's task, and the only way we can do it so far | 7 |
-| 3 | **Do it the long way:** the real task, with shipped boilerplate | 13 |
+| 3 | **Do it the long way:** the real task, with shipped boilerplate | 22 |
 | 4 | **Teach:** the tool that shortens it | 9 |
-| 5 | **Do the same task again**, with the tool. Compare | 13 |
-| 6 | Retrospective | 3 |
-| | **Total** | **50** |
+| 5 | **Do the same task again**, with the tool. Compare | 27 |
+| 6 | Retrospective | 5 |
+| | **Total** | **75** |
 
 Teaching is 16 minutes but **split into two blocks of 7 and 9** — neither approaches the
-15-minute ceiling, and the second one lands on a participant who now wants it. Hands-on
-is 26 of 50.
+15-minute ceiling, and the second one lands on a participant who now wants it. Hands-on is 49 of 75.
 
 Days 1, 20, 21, 23 and 24 have bespoke agendas (installation, the transition, the build
 day and the showcase). Each still sums to 50.
@@ -578,7 +563,7 @@ about these concepts in Armenian even though the code never does.
 
 **Three assessments, designed with our partner colleague**, replacing an earlier design
 of four take-home tests. They are **separate sittings, not session time**: the 24 teaching
-sessions stay at 20 hours exactly and the assessments add roughly 3½ hours.
+sessions stay at 30 hours exactly and the assessments add roughly 3½ hours.
 
 | Test | When | Length | Points | Covers |
 |---|---|---|---|---|
@@ -839,11 +824,11 @@ is Day 1's entire content and the largest single risk to the programme. It must:
 | 24 | Finish and show | PR | README, the fresh-laptop test, demoing | A 90-second demo; a README a colleague can follow |
 
 ```
-Notebook phase   Days  1–19   950 min   15 h 50
-Transition       Days 20–21   100 min    1 h 40
-Project          Days 22–24   150 min    2 h 30
-                            ----------------------
-                             1,200 min  = 20 h  ✓
+Notebook phase   Days  1–19   1,425 min   23 h 45
+Transition       Days 20–21     150 min    2 h 30
+Project          Days 22–24     225 min    3 h 45
+                            ------------------------
+                               1,800 min  = 30 h  ✓
 ```
 
 **Assessments** before Day 1, after Day 13 and on Day 24 (§7.8) — separate sittings, so the agendas are unaffected.
@@ -868,7 +853,7 @@ Non-negotiable, per `METHODOLOGY.md` §9. Nothing is reported complete until the
 ### 11.1 Time arithmetic, by script
 
 `tools/check_times.py` parses every agenda table in `CURRICULUM.md`, asserts each sums to
-50 and the grand total is 1,200. Re-run after **every** curriculum edit.
+75 and the grand total is 1,800. Re-run after **every** curriculum edit.
 
 ### 11.2 Execute every notebook cell, in order
 
@@ -1016,7 +1001,7 @@ review closes — this is what keeps a wrong decision from propagating into 19 n
 | **0 · Decisions** | All closed (§15); repository initialised with `.gitignore` | — |
 | **1 · Skeleton** | `CURRICULUM.md` (24 agendas, times verified), `OUTLINE.md`, `README.md`, the **bilingual glossary**, the sample class data | Is the day map right? Is the pain spiral right? **Is the Armenian terminology right?** Is anything taught that shouldn't be? |
 | **2 · Day 1 vertical slice** | `handouts/SETUP.md`, `handouts/check_setup.py`, `day01`, `day02`, `solutions/day02` | Is this the right level, tone, pace and length for a teacher who has never programmed — **and is the Armenian prose right?** **This is the most important review of the project.** Get it wrong here and 19 notebooks inherit it |
-| **3 · Notebook phase** | Days 3–19 + solutions + Tests 1–3, in four batches (3–6, 7–10, 11–14, 15–19) | Per batch: is the task believable? Does the tool land in the same session? Does each day fit 50 minutes? Are there enough Extra tasks? |
+| **3 · Notebook phase** | Days 3–19 + solutions + Tests 1–3, in four batches (3–6, 7–10, 11–14, 15–19) | Per batch: is the task believable? Does the tool land in the same session? Does each day fit 75 minutes? Are there enough Extra tasks? |
 | **4 · Transition + project** | Guides 20–24, `project/gradebook/`, `handouts/CHEATSHEET.md` | Can a participant who followed the notebooks actually do this? |
 | **5 · Verification & handover** | All of §11 passing, `INSTRUCTOR_NOTES.md`, the fresh-laptop test results | Definition of done (§17) |
 
@@ -1027,7 +1012,7 @@ exercise size and the retrospective format — and cheap to throw away.
 
 ## 17. Definition of done
 
-- [ ] Every day's agenda sums to exactly 50, and the total to 1,200 — **verified by script**
+- [ ] Every day's agenda sums to exactly 75, and the total to 1,800 — **verified by script**
 - [ ] Every day has a concrete deliverable and participant-facing material
 - [ ] Every notebook cell executes in order, with `input()` stubbed
 - [ ] Every deliberate-failure cell raises the exact error it claims

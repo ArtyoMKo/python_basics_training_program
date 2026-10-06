@@ -20,7 +20,7 @@ print(class_grades[0] + class_grades[1] + class_grades[2])
 
 #%% code
 # Challenge 10 - the whole register, one index at a time.
-# Ten students, ten lines. Day 10 turns this into four.
+# Ten students, ten lines. Day 11 turns this into four.
 
 print(f"{student_names[0]}: {class_grades[0]}")
 print(f"{student_names[1]}: {class_grades[1]}")

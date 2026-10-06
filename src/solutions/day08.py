@@ -1,39 +1,45 @@
 #%% md
-# Օր 8 — Լուծումներ
+# Օր 9 — Լուծումներ
 
 #%% code
-# Exercises 1, 2 and 3
+# Exercises 3, 4 and 5 - the class as a dictionary
 
-PASS_MARK = 4
+class_grades = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3, "Mariam": 8}
 
-student_name = "Ani"
-grade = 9
+print(class_grades["Ani"])
+print(class_grades["Nare"])
 
-if grade == 10:
-    print(f"{student_name}: excellent")
-elif grade >= PASS_MARK:
-    print(f"{student_name}: passed")
+class_grades["Tigran"] = 5          # add
+class_grades["Aram"] = 4            # correct
+del class_grades["Davit"]           # remove
+
+print(class_grades)
+
+#%% code
+# Exercise 6 and Extra 7 - a safe lookup
+
+looking_for = "Davit"
+
+if looking_for in class_grades:
+    print(f"{looking_for}: {class_grades[looking_for]}")
 else:
-    print(f"{student_name}: failed")
+    print("no such student in this class")
 
 #%% code
-# Extra 7 - compare two grades
+# Extra 10 - a repeated key keeps only the LAST value
 
-first_grade = 9
-second_grade = 6
-
-if first_grade > second_grade:
-    print("the first one is higher")
-else:
-    print("the second one is higher or equal")
+print({"Ani": 9, "Ani": 10})
 
 #%% code
-# Challenge 11 - a condition inside a condition
+# Challenge 12 - build a dictionary from two lists.
+# This is exactly what day 22 does when reading a file.
 
-student_names = ["Ani", "Davit"]
-student_name = "Ani"
-grade = 10
+student_names = ["Ani", "Davit", "Nare"]
+grade_values = [9, 6, 10]
 
-if student_name in student_names:
-    if grade == 10:
-        print(f"{student_name} is in the class and has a perfect grade")
+class_grades = {}
+
+for position in range(len(student_names)):
+    class_grades[student_names[position]] = grade_values[position]
+
+print(class_grades)

@@ -1,7 +1,7 @@
 #%% md
-# Օր 14 — Գտնել մեկ աշակերտի
+# Օր 8 — Գտնել մեկ աշակերտի
 
-### Python զրոյից · Օր 14-ը 24-ից
+### Python զրոյից · Օր 8-ը 24-ից
 
 Ծնողը զանգում է և հարցնում՝ **«Արամի միավորը քանի՞սն է»**։
 
@@ -18,9 +18,10 @@
 <div style="border-left: 6px solid #06c; background: #f2f7ff; padding: 12px 16px; margin: 12px 0;">
 <h3 style="color:#06c; margin-top:0;">🔄 Որտեղ էինք մնացել</h3>
 <p style="color:#06c; margin-bottom:0;">
-Մատյանը՝ երկու ցուցակ։<br/>
-<code>student_names[position]</code> և <code>class_grades[position]</code> —
-կապված են միայն հերթականությամբ։
+Մատյանը՝ երկու ցուցակ՝ <code>student_names</code> և <code>class_grades</code>։<br/>
+<code>student_names[0]</code> — ինդեքսով հասնում ենք մեկ արժեքի։ Հաշվարկը զրոյից է։
+<br/><br/>
+<b>Ցիկլեր դեռ չգիտենք</b> — այսօր ամեն ինչ անում ենք ձեռքով, ինդեքսով։
 </p>
 </div>
 
@@ -44,18 +45,17 @@ class_grades = [9, 6, 10, 3]
 print(f"{student_names[3]}'s grade is {class_grades[3]}")
 
 #%% md
-Դա նշանակում է, որ ամեն անգամ պետք է հաշվես, թե որերորդն է աշակերտը։ Կարող ենք
-դա անել ցիկլով՝ 12-րդ օրվա ձևով։
+Դա նշանակում է, որ **ամեն անգամ պետք է իմանաս, թե որերորդն է աշակերտը**։
+
+Արամը չորրորդն է, ուրեմն նրա ինդեքսը 3 է։ Հաշվում ենք ձեռքով՝ 0, 1, 2, 3։
 
 #%% code
-looking_for = "Aram"
-
-for position in range(len(student_names)):
-    if student_names[position] == looking_for:
-        print(f"{looking_for}: {class_grades[position]}")
+# Aram is the fourth name, so his index is 3. Count by hand: 0, 1, 2, 3.
+print(f"Aram: {class_grades[3]}")
 
 #%% md
-Աշխատում է։ Հինգ տող՝ մեկ հարցի պատասխանելու համար։
+Աշխատում է։ Բայց նկատի՛ր, թե ինչ արեցինք. **մենք ձեռքով հաշվեցինք**, որ Արամը
+չորրորդն է։ Երեսուն աշակերտի դեպքում դա ամեն անգամ հաշվել է պետք։
 
 #%% md
 <div style="border-left: 6px solid #900; background: #fff4f4; padding: 12px 16px; margin: 12px 0;">
@@ -66,16 +66,13 @@ for position in range(len(student_names)):
 </div>
 
 #%% code
-# Exercise 1 - look up three students by name
+# Exercise 1 - look up three students by hand, counting the index yourself
 
 student_names = ["Ani", "Davit", "Nare", "Aram"]
 class_grades = [9, 6, 10, 3]
 
-looking_for = "Nare"
-
-for position in range(len(student_names)):
-    if student_names[position] == looking_for:
-        print(f"{looking_for}: {class_grades[position]}")
+# Nare is the third name, so index 2.
+print(f"Nare: {class_grades[2]}")
 
 #%% md
 ### Իսկ հիմա մի բան, որ տեղի է ունենում իրական կյանքում
@@ -85,14 +82,11 @@ for position in range(len(student_names)):
 Բայց շտապում ես և **մոռանում ես հանել նրա միավորը մյուս ցուցակից**։
 
 #%% code
-student_names = ["Ani", "Nare", "Aram"]
-class_grades = [9, 6, 10, 3]
+student_names = ["Ani", "Nare", "Aram"]      # Davit is gone
+class_grades = [9, 6, 10, 3]                 # ...but his grade is still here
 
-looking_for = "Aram"
-
-for position in range(len(student_names)):
-    if student_names[position] == looking_for:
-        print(f"{looking_for}: {class_grades[position]}")
+# Aram is now the THIRD name, so index 2.
+print(f"Aram: {class_grades[2]}")
 
 #%% md
 **Արամը հանկարծ ստացավ 10։** Իր 3-ի փոխարեն։
@@ -114,15 +108,16 @@ for position in range(len(student_names)):
 </div>
 
 #%% code
-# Exercise 2 - remove one name only, then look up
+# Exercise 2 - remove one name only, then look three students up by hand
 
 student_names = ["Ani", "Davit", "Nare", "Aram"]
 class_grades = [9, 6, 10, 3]
 
 student_names.remove("Ani")
 
-for position in range(len(student_names)):
-    print(f"{student_names[position]}: {class_grades[position]}")
+print(f"{student_names[0]}: {class_grades[0]}")
+print(f"{student_names[1]}: {class_grades[1]}")
+print(f"{student_names[2]}: {class_grades[2]}")
 
 #%% md
 ## Բ մաս: Բառարան
@@ -307,23 +302,24 @@ else:
 <div style="border-left: 6px solid #06c; background: #f2f7ff; padding: 12px 16px; margin: 12px 0;">
 <h3 style="color:#06c; margin-top:0;">🧗 Մարտահրավեր</h3>
 <p style="color:#06c; margin-bottom:0;">
-<b>12.</b> Վերցրո՛ւ երկու ցուցակ և <b>ծրագրով</b> սարքի՛ր դրանցից բառարան։
-Հուշում՝ ցիկլ <code>range(len(...))</code>-ով, և ներսում՝
-<code>class_grades[student_names[position]] = ...</code><br/><br/>
-Սա ուղիղ այն է, ինչ 22-րդ օրը ֆայլից կարդալիս անելու ենք։
+<b>12.</b> Վերցրո՛ւ քո դասարանի երկու ցուցակը և ձեռքով սարքի՛ր դրանցից բառարան՝
+տող առ տող։ Հինգ աշակերտի համար դա հինգ տող է։<br/><br/>
+Հետո մտածի՛ր. իսկ եթե դասարանում 300 աշակերտ լիներ։ <b>11-րդ օրը կսովորենք մի ձև,
+որը այս հինգ տողը դարձնում է երկու</b>՝ անկախ աշակերտների թվից։
 </p>
 </div>
 
 #%% code
-# Challenge 12 - build a dictionary from two lists
+# Challenge 12 - build the dictionary by hand, one line per student
 
 student_names = ["Ani", "Davit", "Nare"]
 grade_values = [9, 6, 10]
 
 class_grades = {}
 
-for position in range(len(student_names)):
-    class_grades[student_names[position]] = grade_values[position]
+class_grades[student_names[0]] = grade_values[0]
+class_grades[student_names[1]] = grade_values[1]
+class_grades[student_names[2]] = grade_values[2]
 
 print(class_grades)
 
@@ -338,9 +334,11 @@ print(class_grades)
 
 ## Հաջորդ անգամ
 
-Հիմա գիտենք, թե ինչպես գտնել **մեկ** աշակերտի միավորը։ Հաջորդ դասին ցիկլ ենք գրելու
-բառարանի վրայով և տպելու ենք **ամբողջ մատյանը** — և կտեսնենք, որ 10-րդ և 12-րդ օրվա
-բոլոր ցիկլերը դառնում են ավելի կարճ։
+Մատյանը պատրաստ է՝ անունն ու միավորը այլևս չեն կարող իրարից անջատվել։
+
+Հաջորդ երկու դասին կսովորենք, թե ինչպես ծրագիրը կարող է **որոշում ընդունել** —
+«անցա՞վ, թե՞ չանցավ»։ Իսկ **11-րդ օրը** այդ որոշումը կկիրառենք ամբողջ դասարանի վրա
+միանգամից՝ չորս տողով։
 
 ## Երկու րոպե ինքնուրույն (ըստ ցանկության)
 

@@ -163,7 +163,7 @@ print(class_grades[0] + class_grades[1] + class_grades[2])
 
 #%% day06 code
 # Challenge 10 - the whole register, one index at a time.
-# Ten students, ten lines. Day 10 turns this into four.
+# Ten students, ten lines. Day 11 turns this into four.
 
 print(f"{student_names[0]}: {class_grades[0]}")
 print(f"{student_names[1]}: {class_grades[1]}")
@@ -213,10 +213,10 @@ half = len(student_names) // 2
 print("group 1:", student_names[0:half])
 print("group 2:", student_names[half:])
 
-#%% day08 md
-# Օր 8 — Լուծումներ
+#%% day09 md
+# Օր 10 — Լուծումներ
 
-#%% day08 code
+#%% day09 code
 # Exercises 1, 2 and 3
 
 PASS_MARK = 4
@@ -231,7 +231,7 @@ elif grade >= PASS_MARK:
 else:
     print(f"{student_name}: failed")
 
-#%% day08 code
+#%% day09 code
 # Extra 7 - compare two grades
 
 first_grade = 9
@@ -242,7 +242,7 @@ if first_grade > second_grade:
 else:
     print("the second one is higher or equal")
 
-#%% day08 code
+#%% day09 code
 # Challenge 11 - a condition inside a condition
 
 student_names = ["Ani", "Davit"]
@@ -253,10 +253,10 @@ if student_name in student_names:
     if grade == 10:
         print(f"{student_name} is in the class and has a perfect grade")
 
-#%% day09 md
-# Օր 9 — Լուծումներ
+#%% day10 md
+# Օր 11 — Լուծումներ
 
-#%% day09 code
+#%% day10 code
 # Exercises 1 and 2 - four bands, tested on four grades
 
 for grade in [10, 8, 5, 2]:
@@ -269,7 +269,7 @@ for grade in [10, 8, 5, 2]:
     else:
         print(grade, "- unsatisfactory")
 
-#%% day09 code
+#%% day10 code
 # Exercise 3 - a rule with and
 
 grade = 8
@@ -280,7 +280,7 @@ if grade >= 4 and attendance >= 80:
 else:
     print("certificate not granted")
 
-#%% day09 code
+#%% day10 code
 # Extra 5 - not (grade >= 4) and grade < 4 are the same thing
 
 grade = 3
@@ -288,7 +288,7 @@ grade = 3
 print(not (grade >= 4))
 print(grade < 4)
 
-#%% day09 code
+#%% day10 code
 # Challenge 10 - the real certificate rule, three conditions
 
 grade = 8
@@ -300,10 +300,10 @@ if grade >= 4 and attendance >= 80 and behaviour_ok:
 else:
     print("certificate not granted")
 
-#%% day10 md
-# Օր 10 — Լուծումներ
+#%% day11 md
+# Օր 12 — Լուծումներ
 
-#%% day10 code
+#%% day11 code
 # Exercises 3, 4 and 5 - everything with a loop
 
 PASS_MARK = 4
@@ -322,7 +322,7 @@ for grade in class_grades:
     else:
         print(grade, "- failed")
 
-#%% day10 code
+#%% day11 code
 # Exercise 6 - the whole register in four lines
 
 for position in range(len(student_names)):
@@ -331,7 +331,7 @@ for position in range(len(student_names)):
     else:
         print(f"{student_names[position]}: failed")
 
-#%% day10 code
+#%% day11 code
 # Extra 11 - after the loop, the variable keeps the LAST value it had
 
 for student_name in student_names:
@@ -339,16 +339,16 @@ for student_name in student_names:
 
 print("after the loop:", student_name)
 
-#%% day10 code
+#%% day11 code
 # Challenge 12 - a numbered register. position starts at 0, so add 1.
 
 for position in range(len(student_names)):
     print(f"{position + 1}. {student_names[position]}: {class_grades[position]}")
 
-#%% day11 md
-# Օր 11 — Լուծումներ
+#%% day12 md
+# Օր 13 — Լուծումներ
 
-#%% day11 code
+#%% day12 code
 # Exercises 1 and 2 - total and average
 
 class_grades = [9, 6, 10, 3, 8, 5, 8, 4, 9, 2, 8, 6]
@@ -360,7 +360,7 @@ for grade in class_grades:
 print(f"Total:   {total}")
 print(f"Average: {total / len(class_grades):.1f}")
 
-#%% day11 code
+#%% day12 code
 # Exercise 4 - how many have 10
 
 how_many = 0
@@ -371,7 +371,7 @@ for grade in class_grades:
 
 print(how_many)
 
-#%% day11 code
+#%% day12 code
 # Extra 6 and 7 - percentage passed, and the average of those who passed
 
 PASS_MARK = 4
@@ -387,7 +387,7 @@ for grade in class_grades:
 print(f"passed: {passed_count / len(class_grades) * 100:.0f}%")
 print(f"their average: {passed_total / passed_count:.1f}")
 
-#%% day11 code
+#%% day12 code
 # Challenge 10 - a text chart
 
 for mark in range(10, 0, -1):
@@ -397,10 +397,10 @@ for mark in range(10, 0, -1):
             how_many = how_many + 1
     print(f"{mark:>2}: {'*' * how_many}")
 
-#%% day12 md
-# Օր 12 — Լուծումներ
+#%% day13 md
+# Օր 16 — Լուծումներ
 
-#%% day12 code
+#%% day13 code
 # Exercises 1, 2, 3 and 4 - all together
 
 PASS_MARK = 4
@@ -428,7 +428,7 @@ for position in range(len(class_grades)):
 
 print(f"highest: {student_names[best_position]} ({class_grades[best_position]})")
 
-#%% day12 code
+#%% day13 code
 # Extra 5 - the lowest. Same shape, < instead of >.
 
 worst_position = 0
@@ -438,7 +438,7 @@ for position in range(len(class_grades)):
 
 print(f"lowest: {student_names[worst_position]} ({class_grades[worst_position]})")
 
-#%% day12 code
+#%% day13 code
 # Challenge 11 - the student closest to the average.
 # abs() removes the minus sign, so a distance is never negative.
 
@@ -454,13 +454,13 @@ for position in range(len(class_grades)):
 
 print(f"average {average:.1f}, closest: {student_names[closest_position]}")
 
-#%% day13 md
-# Օր 13 — Լուծումներ
+#%% day16 md
+# Օր 15 — Լուծումներ
 
 `input()`-ի փոխարեն ցուցակ է օգտագործված, որպեսզի կարողանաս գործարկել։
 Քո տետրում `input()`-ը պետք է մնա։
 
-#%% day13 code
+#%% day16 code
 # Exercises 1-4 - the full loop with every check
 
 answers = ["9", "nine", "15", "6", "quit"]      # what the teacher would type
@@ -489,10 +489,10 @@ for grade in class_grades:
     total = total + grade
 print(f"average: {total / len(class_grades):.1f}")
 
-#%% day14 md
-# Օր 14 — Լուծումներ
+#%% day08 md
+# Օր 9 — Լուծումներ
 
-#%% day14 code
+#%% day08 code
 # Exercises 3, 4 and 5 - the class as a dictionary
 
 class_grades = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3, "Mariam": 8}
@@ -506,7 +506,7 @@ del class_grades["Davit"]           # remove
 
 print(class_grades)
 
-#%% day14 code
+#%% day08 code
 # Exercise 6 and Extra 7 - a safe lookup
 
 looking_for = "Davit"
@@ -516,12 +516,12 @@ if looking_for in class_grades:
 else:
     print("no such student in this class")
 
-#%% day14 code
+#%% day08 code
 # Extra 10 - a repeated key keeps only the LAST value
 
 print({"Ani": 9, "Ani": 10})
 
-#%% day14 code
+#%% day08 code
 # Challenge 12 - build a dictionary from two lists.
 # This is exactly what day 22 does when reading a file.
 
@@ -535,10 +535,10 @@ for position in range(len(student_names)):
 
 print(class_grades)
 
-#%% day15 md
-# Օր 15 — Լուծումներ
+#%% day14 md
+# Օր 8 — Լուծումներ
 
-#%% day15 code
+#%% day14 code
 # Exercises 1-4 - the full register from a dictionary
 
 PASS_MARK = 4
@@ -565,7 +565,7 @@ print(f"students: {len(class_grades)}")
 print(f"average:  {total / len(class_grades):.1f}")
 print(f"failing:  {failing}")
 
-#%% day15 code
+#%% day14 code
 # Extra 8 - a numbered register needs a counter before the loop
 
 number = 1
@@ -574,14 +574,14 @@ for student_name, grade in class_grades.items():
     print(f"{number}. {student_name:<10} {grade:>3}")
     number = number + 1
 
-#%% day15 code
+#%% day14 code
 # Extra 10 - names starting with A. student_name[0] is the first letter.
 
 for student_name, grade in class_grades.items():
     if student_name[0] == "A":
         print(student_name)
 
-#%% day15 code
+#%% day14 code
 # Challenge 11 - sorted by grade, high to low
 
 for mark in range(10, 0, -1):
@@ -589,10 +589,10 @@ for mark in range(10, 0, -1):
         if grade == mark:
             print(f"{student_name:<10} {grade:>3}")
 
-#%% day16 md
-# Օր 16 — Լուծումներ
+#%% day15 md
+# Օր 14 — Լուծումներ
 
-#%% day16 code
+#%% day15 code
 # Exercises 1-5 - report cards with several grades each
 
 PASS_MARK = 4
@@ -621,7 +621,7 @@ for student_name, grades in class_grades.items():
 
     print(f"{student_name:<10} {str(grades):<16} {student_average:.1f}   {result}")
 
-#%% day16 code
+#%% day15 code
 # Extra 8 - each student's best grade
 
 for student_name, grades in class_grades.items():
@@ -631,7 +631,7 @@ for student_name, grades in class_grades.items():
             highest = grade
     print(f"{student_name}: best {highest}")
 
-#%% day16 code
+#%% day15 code
 # Extra 11 - an empty list makes the average divide by zero.
 # Guard it before dividing.
 
@@ -642,7 +642,7 @@ if not grades:
 else:
     print(sum(grades) / len(grades))
 
-#%% day16 code
+#%% day15 code
 # Challenge 12 - who improved the most. :+d shows the plus sign.
 
 for student_name, grades in class_grades.items():

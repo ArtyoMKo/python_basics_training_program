@@ -1,45 +1,53 @@
 #%% md
-# Օր 14 — Լուծումներ
+# Օր 8 — Լուծումներ
 
 #%% code
-# Exercises 3, 4 and 5 - the class as a dictionary
+# Exercises 1-4 - the full register from a dictionary
 
-class_grades = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3, "Mariam": 8}
+PASS_MARK = 4
 
-print(class_grades["Ani"])
-print(class_grades["Nare"])
+class_grades = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3,
+                "Mariam": 8, "Tigran": 5, "Lilit": 8, "Gor": 4}
 
-class_grades["Tigran"] = 5          # add
-class_grades["Aram"] = 4            # correct
-del class_grades["Davit"]           # remove
+total = 0
+failing = 0
 
-print(class_grades)
+print("=== REGISTER ===")
 
-#%% code
-# Exercise 6 and Extra 7 - a safe lookup
+for student_name, grade in class_grades.items():
+    if grade >= PASS_MARK:
+        result = "passed"
+    else:
+        result = "failed"
+        failing = failing + 1
+    total = total + grade
+    print(f"{student_name:<10} {grade:>3}   {result}")
 
-looking_for = "Davit"
-
-if looking_for in class_grades:
-    print(f"{looking_for}: {class_grades[looking_for]}")
-else:
-    print("no such student in this class")
-
-#%% code
-# Extra 10 - a repeated key keeps only the LAST value
-
-print({"Ani": 9, "Ani": 10})
+print()
+print(f"students: {len(class_grades)}")
+print(f"average:  {total / len(class_grades):.1f}")
+print(f"failing:  {failing}")
 
 #%% code
-# Challenge 12 - build a dictionary from two lists.
-# This is exactly what day 22 does when reading a file.
+# Extra 8 - a numbered register needs a counter before the loop
 
-student_names = ["Ani", "Davit", "Nare"]
-grade_values = [9, 6, 10]
+number = 1
 
-class_grades = {}
+for student_name, grade in class_grades.items():
+    print(f"{number}. {student_name:<10} {grade:>3}")
+    number = number + 1
 
-for position in range(len(student_names)):
-    class_grades[student_names[position]] = grade_values[position]
+#%% code
+# Extra 10 - names starting with A. student_name[0] is the first letter.
 
-print(class_grades)
+for student_name, grade in class_grades.items():
+    if student_name[0] == "A":
+        print(student_name)
+
+#%% code
+# Challenge 11 - sorted by grade, high to low
+
+for mark in range(10, 0, -1):
+    for student_name, grade in class_grades.items():
+        if grade == mark:
+            print(f"{student_name:<10} {grade:>3}")

@@ -153,7 +153,7 @@ before the long half starts, and by never framing the work as an ordeal — but 
 participant who leaves on Day 6 thinking "I typed for twenty minutes" rather than "I
 learned what a list is for" is a real failure mode, and it will happen to somebody.
 
-**Twenty hours is not much.** Eight weeks, 50 minutes at a time, for working teachers.
+**Thirty hours is not much.** Eight weeks, 75 minutes at a time, for working teachers.
 The scope is deliberately narrow, and narrow means things are missing.
 
 **Attendance.** Three sessions a week for eight weeks, on top of a teaching job. Every
@@ -370,7 +370,7 @@ Two items are openly unverified and named as such in the materials:
 
 1. **Is the diagnosis right?** Is "they cannot code" really the bottleneck, or are we
    fixing the wrong thing?
-2. **Is 20 hours enough** to produce the fluency the bet depends on?
+2. **Is 30 hours enough** to produce the fluency the bet depends on?
 3. **What should the success numbers be?** (§5) — agreed in advance.
 4. **Will Days 6 and 9 be accepted or resented?** Anyone who knows this audience better
    than we do should say so before we run it, not after.

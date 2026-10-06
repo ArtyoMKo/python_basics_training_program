@@ -9,7 +9,7 @@ background**, built to the rules in `docs/PLAN.md` and the house style in
 | **Participants** | Public-school teachers, any subject. No prior programming. **Groups of 4–8** |
 | **Delivery** | **Remote**, over Google Meet with screen sharing |
 | **Part** | Part 1 of six months. Part 2 is outlined in `docs/ROADMAP.md` |
-| **Format** | 24 sessions, 3 per week over 8 weeks. **75 minutes each** — session plans are still written to 50 and are being rebuilt |
+| **Format** | 24 sessions × 75 minutes = **30 hours exactly**, 3 per week over 8 weeks |
 | **Language** | **Armenian** explanations; **English** everything inside a code cell |
 | **Tools** | Anaconda (Python) + VS Code. Two installs on Day 1, nothing after |
 | **Dependencies** | **Standard library only.** No `pip`, no venv, no network, no accounts, no cost |
@@ -117,7 +117,7 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 
 | | What it proves |
 |---|---|
-| agenda arithmetic | every agenda sums to 50; 24 days = 1,200 minutes |
+| agenda arithmetic | every agenda sums to 75; 24 days = 1,800 minutes |
 | notebooks execute | all 43 notebooks — lessons, solutions and both versions of each assessment — run cell by cell in order, with `input()` stubbed and every **break-it-on-purpose** cell raising exactly the error it claims. A demo that stops failing is a bug |
 | style and language | no Armenian inside any code cell, standard library only, no excluded constructs |
 | project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
@@ -126,7 +126,7 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 
 | Check | Result |
 |---|---|
-| Agenda arithmetic | ✅ 8 agenda tables, 24 days, 1,200 minutes |
+| Agenda arithmetic | ✅ 12 agenda tables, 24 days, 1,800 minutes = 30 hours |
 | Notebook execution | ✅ 43 notebooks (19 lessons + 18 solutions + 3 assessments × 2 versions), every cell, in order |
 | Deliberate errors | ✅ 9 cells raise exactly the error they claim |
 | Solutions | ✅ 18 notebooks, every cell runs |
@@ -135,8 +135,8 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 | Style | ✅ stdlib only, no excluded constructs, every identifier English |
 | Language rule | ✅ no Armenian anywhere inside a code cell — verified by script |
 | **Armenian terminology** | ⏳ **awaiting native-speaker review** (Decision D9) |
-| **75-minute agendas** | ⏳ **session plans still written to 50 minutes** — rebuild pending |
-| **New topic order** | ⏳ **docs updated, `notebooks/` not yet** — data types now precede conditions and loops |
+| Session length | ✅ 24 × 75 min = **30 hours**, every agenda verified |
+| Topic order | ✅ materials rebuilt — data types precede conditions and loops |
 | **Fresh-laptop install test** | ⏳ **not yet run** — see `docs/INSTRUCTOR_NOTES.md` §1 |
 
 The last two are stated plainly rather than assumed. Neither can be verified from here.

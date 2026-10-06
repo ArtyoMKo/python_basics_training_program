@@ -1,59 +1,38 @@
 # Curriculum — Python from Zero, for School Teachers
 
-**24 days × 50 minutes = 1,200 minutes = 20 hours exactly.**
+**24 days × 75 minutes = 1,800 minutes = 30 hours exactly.**
 
-Every agenda below sums to 50. The grand total is checked by `tools/check_times.py`.
-
-> ### ⏳ Two rebuilds are pending — read this before using the detail below
->
-> **1. The topic order above is the agreed one; the notebooks have not caught up.**
-> Data types now come before conditions and loops, which moves dictionaries from day 14
-> to day 8 and shifts everything between. The files named in the table are the *target*
-> names. Until the rebuild lands, `notebooks/` still holds the old order
-> (`day08_if_else`, `day10_for_loops`, `day14_dictionaries` …).
->
-> **2. These agendas are being rebuilt to 75 minutes**
->
-> Sessions will run **75 minutes**, three times a week — decided after the colleagues'
-> meeting (`PLAN.md` §3). **The agendas below are still the 50-minute versions** and have
-> not yet been reworked.
->
-> Read the minute counts as **proportions** until the rebuild lands. The extra 25 minutes
-> per session goes to hands-on work and to the second half of the discovery days, not to
-> more teaching: the 12-minute ceiling on explanation is unchanged.
->
-> The deliverables and the five discovery days are **not** affected by either rebuild —
-> only their day numbers move.
+Every agenda below sums to 75. The grand total is checked by `tools/check_times.py`.
 
 > **Delivered remotely**, over Google Meet with screen sharing, in groups of **4–8**.
 
 | # | Day | Phase | What the participant opens | Min |
 |---|---|---|---|---|
-| 1 | Install everything and run your first line | Notebook | `notebooks/day01_first_program.ipynb` | 50 |
-| 2 | Printing properly | Notebook | `notebooks/day02_printing.ipynb` | 50 |
-| 3 | Four kinds of value | Notebook | `notebooks/day03_types.ipynb` | 50 |
-| 4 | Changing type, and asking a question | Notebook | `notebooks/day04_convert_input.ipynb` | 50 |
-| 5 | Giving a value a name | Notebook | `notebooks/day05_variables.ipynb` | 50 |
-| 6 | **A register for the whole class** | **Discovery** | `notebooks/day06_class_register.ipynb` | 50 |
-| 7 | Working with the register, and two near-relatives | Notebook | `notebooks/day07_list_methods.ipynb` | 50 |
-| 8 | **Finding one student** | **Discovery** | `notebooks/day08_dictionaries.ipynb` | 50 |
-| 9 | The first decision | Notebook | `notebooks/day09_if_else.ipynb` | 50 |
-| 10 | More than two outcomes | Notebook | `notebooks/day10_elif_and_or.ipynb` | 50 |
-| 11 | **Marking the whole class** | **Discovery** | `notebooks/day11_for_loops.ipynb` | 50 |
-| 12 | Counting and totalling | Notebook | `notebooks/day12_range_totals.ipynb` | 50 |
-| 13 | Loops that decide | Notebook | `notebooks/day13_loops_and_ifs.ipynb` | 50 |
-| 14 | Reports from the register | Notebook | `notebooks/day14_dict_reports.ipynb` | 50 |
-| 15 | Several grades per student | Notebook | `notebooks/day15_dict_of_lists.ipynb` | 50 |
-| 16 | Entering grades one by one | Notebook | `notebooks/day16_while.ipynb` | 50 |
-| 17 | **An average on every card** | **Discovery** | `notebooks/day17_functions.ipynb` | 50 |
-| 18 | Sending an answer back | Notebook | `notebooks/day18_return.ipynb` | 50 |
-| 19 | The register, assembled | Notebook | `notebooks/day19_assembled.ipynb` | 50 |
-| 20 | Leaving the notebook | **Transition** | `guides/day20_leaving_the_notebook.md` | 50 |
-| 21 | Four files that each do one thing | **Transition** | `guides/day21_four_files.md` | 50 |
-| 22 | **Keeping it after you close it** | **Discovery** | `guides/day22_your_own_class.md` | 50 |
-| 23 | Make it yours | Project | `guides/day23_make_it_yours.md` | 50 |
-| 24 | Finish and show | Project | `guides/day24_finish_and_show.md` | 50 |
-| | | | **Total** | **1,200 min = 20 h** |
+| 1 | Install everything and run your first line | Notebook | `notebooks/day01_first_program.ipynb` | 75 |
+| 2 | Printing properly | Notebook | `notebooks/day02_printing.ipynb` | 75 |
+| 3 | Four kinds of value | Notebook | `notebooks/day03_types.ipynb` | 75 |
+| 4 | Changing type, and asking a question | Notebook | `notebooks/day04_convert_input.ipynb` | 75 |
+| 5 | Giving a value a name | Notebook | `notebooks/day05_variables.ipynb` | 75 |
+| 6 | **A register for the whole class** | **Discovery** | `notebooks/day06_class_register.ipynb` | 75 |
+| 7 | Working with the register, and two near-relatives | Notebook | `notebooks/day07_list_methods.ipynb` | 75 |
+| 8 | **Finding one student** | **Discovery** | `notebooks/day08_dictionaries.ipynb` | 75 |
+| 9 | The first decision | Notebook | `notebooks/day09_if_else.ipynb` | 75 |
+| 10 | More than two outcomes | Notebook | `notebooks/day10_elif_and_or.ipynb` | 75 |
+| 11 | **Marking the whole class** | **Discovery** | `notebooks/day11_for_loops.ipynb` | 75 |
+| 12 | Counting and totalling | Notebook | `notebooks/day12_range_totals.ipynb` | 75 |
+| 13 | Loops that decide | Notebook | `notebooks/day13_loops_and_ifs.ipynb` | 75 |
+| 14 | Reports from the register | Notebook | `notebooks/day14_dict_reports.ipynb` | 75 |
+| 15 | Several grades per student | Notebook | `notebooks/day15_dict_of_lists.ipynb` | 75 |
+| 16 | Entering grades one by one | Notebook | `notebooks/day16_while.ipynb` | 75 |
+| 17 | **An average on every card** | **Discovery** | `notebooks/day17_functions.ipynb` | 75 |
+| 18 | Sending an answer back | Notebook | `notebooks/day18_return.ipynb` | 75 |
+| 19 | The register, assembled | Notebook | `notebooks/day19_assembled.ipynb` | 75 |
+| 20 | Leaving the notebook | **Transition** | `guides/day20_leaving_the_notebook.md` | 75 |
+| 21 | Four files that each do one thing | **Transition** | `guides/day21_four_files.md` | 75 |
+| 22 | **Keeping it after you close it** | **Discovery** | `guides/day22_your_own_class.md` | 75 |
+| 23 | Make it yours | Project | `guides/day23_make_it_yours.md` | 75 |
+| 24 | Finish and show | Project | `guides/day24_finish_and_show.md` | 75 |
+| | | | **Total** | **1,800 min = 30 h** |
 
 > **Nineteen notebooks, then five markdown guides.** Days 1–19 are exploration and a
 > notebook is the right tool. Day 20 *is* leaving the notebook, so handing out a notebook
@@ -81,10 +60,10 @@ Every agenda below sums to 50. The grand total is checked by `tools/check_times.
 |---|---|---|
 | 1 | Recap, and last time's retrospective question | 5 |
 | 2 | **Teach:** the new idea — ends with something running | 12 |
-| 3 | **Run together:** the notebook's example cells, cell by cell | 15 |
-| 4 | **Do it yourself:** the exercises | 15 |
-| 5 | Retrospective: where we got to, what comes next | 3 |
-| | **Total** | **50** |
+| 3 | **Run together:** the notebook's example cells, cell by cell | 20 |
+| 4 | **Do it yourself:** the exercises — Required, then Extra | 33 |
+| 5 | Retrospective: where we got to, what comes next | 5 |
+| | **Total** | **75** |
 
 **Discovery day** — Days 6, 8, 11, 17, 22, where a tool arrives to shorten work done in
 the same session:
@@ -93,11 +72,11 @@ the same session:
 |---|---|---|
 | 1 | Recap | 5 |
 | 2 | **Teach:** today's task, and the only way we can do it so far | 7 |
-| 3 | **Do it the long way:** the real task, with most of it shipped | 13 |
+| 3 | **Do it the long way:** the real task, with most of it shipped | 22 |
 | 4 | **Teach:** the tool that shortens it | 9 |
-| 5 | **Do the same task again**, with the tool. Compare the two | 13 |
-| 6 | Retrospective | 3 |
-| | **Total** | **50** |
+| 5 | **Do the same task again**, with the tool. Compare the two | 27 |
+| 6 | Retrospective | 5 |
+| | **Total** | **75** |
 
 Teaching never exceeds 12 minutes in one block. Hands-on is 30 of 50 on a standard day,
 26 of 50 on a discovery day.
@@ -123,13 +102,13 @@ which every participant made happen themselves.
 
 | # | Activity | Min |
 |---|---|---|
-| 1 | Welcome. A live demo of the finished program: it opens a class, prints who failed, saves the file. "In eight weeks this is yours, with your class in it" | 5 |
-| 2 | **Hands-on:** confirm the install done at home. Screen-share with anyone whose `handouts/check_setup.py` is not green | 15 |
-| 3 | **Hands-on:** install VS Code, then its two extensions: Python and Jupyter | 10 |
-| 4 | **Hands-on:** make `Documents/python_course`, open it in VS Code, create a notebook, **select the kernel** | 10 |
-| 5 | **Hands-on:** `print("Hello")`, then their own name. Then run `handouts/check_setup.py` — six green lines | 8 |
-| 6 | Retrospective. What to do if it broke: nothing is wrong with you, and nothing is wrong with your laptop | 2 |
-| | **Total** | **50** |
+| 1 | Welcome. A live demo of the finished program: it opens a class, prints who failed, saves the file. "In eight weeks this is yours, with your class in it" | 6 |
+| 2 | **Hands-on:** confirm the install done at home. Screen-share with anyone whose `handouts/check_setup.py` is not green | 20 |
+| 3 | **Hands-on:** install VS Code, then its two extensions: Python and Jupyter | 12 |
+| 4 | **Hands-on:** make `Documents/python_course`, open it in VS Code, create a notebook, **select the kernel** | 15 |
+| 5 | **Hands-on:** `print("Hello")`, then their own name. Then run `handouts/check_setup.py` — six green lines | 17 |
+| 6 | Retrospective. What to do if it broke: nothing is wrong with you, and nothing is wrong with your laptop | 5 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** `handouts/check_setup.py` printing six green lines, and a
 notebook of your own that prints your name.
@@ -226,11 +205,11 @@ register, which is true.
 |---|---|---|
 | 1 | Recap: variables and f-strings | 5 |
 | 2 | **Teach:** today we build a register for the whole class. With what we know, that means one variable per student. *And: after the break we will learn something that makes this much shorter* | 7 |
-| 3 | **Do it:** twenty students are shipped; add five of your own, then apply the new scores | 13 |
+| 3 | **Do it:** twenty students are shipped; add five of your own, then apply the new scores | 22 |
 | 4 | **Teach:** one name for many values — the list. `[ ]`, `len()`, counting from zero | 9 |
-| 5 | **Do the same again:** the whole register as one list. Put the two versions side by side and count the lines | 13 |
-| 6 | Retrospective | 3 |
-| | **Total** | **50** |
+| 5 | **Do the same again:** the whole register as one list. Put the two versions side by side and count the lines | 27 |
+| 6 | Retrospective | 5 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** your class as a single list, the count computed
 rather than counted, and the same register written both ways in one notebook.
@@ -281,11 +260,11 @@ position disappears.
 |---|---|---|
 | 1 | Recap: the register, as two lists | 5 |
 | 2 | **Teach:** looking up one student means matching positions across two lists. *After the break, a way to store them so that position never matters* | 7 |
-| 3 | **Do it:** look up three students by position, by hand. Then remove one student from the names list only, and watch every later answer go wrong with no error | 13 |
+| 3 | **Do it:** look up three students by position, by hand. Then remove one student from the names list only, and watch every later answer go wrong with no error | 22 |
 | 4 | **Teach:** the dictionary — `name → grade` | 9 |
-| 5 | **Do the same again:** the register as one dictionary. Remove a student and confirm nothing else shifts | 13 |
-| 6 | Retrospective | 3 |
-| | **Total** | **50** |
+| 5 | **Do the same again:** the register as one dictionary. Remove a student and confirm nothing else shifts | 27 |
+| 6 | Retrospective | 5 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** your class as a dictionary of `name → grade`, and a
 written note of what went wrong with two lists.
@@ -343,11 +322,11 @@ the whole thing becomes four lines that work for any class size.
 |---|---|---|
 | 1 | Recap: `if`/`else` and the register list | 5 |
 | 2 | **Teach:** today we mark the whole class. So far that means one block per student. *After the break, something that does it in four lines* | 7 |
-| 3 | **Do it:** fifteen blocks are shipped; extend them, then change the pass mark everywhere | 13 |
+| 3 | **Do it:** fifteen blocks are shipped; extend them, then change the pass mark everywhere | 22 |
 | 4 | **Teach:** `for` — do the same thing to every item | 9 |
-| 5 | **Do the same again:** the whole register marked with one loop. Add five students and change nothing | 13 |
-| 6 | Retrospective | 3 |
-| | **Total** | **50** |
+| 5 | **Do the same again:** the whole register marked with one loop. Add five students and change nothing | 27 |
+| 6 | Retrospective | 5 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** the whole register marked in four lines, proved by
 adding students without touching the loop.
@@ -455,11 +434,11 @@ function arrives and the fix becomes one edit.
 |---|---|---|
 | 1 | Recap: the report card from Day 16 | 5 |
 | 2 | **Teach:** the average is needed in four places on this card. So far that means writing it four times. *After the break, a way to write it once* | 7 |
-| 3 | **Do it:** four copies, working. Then the head teacher asks for two decimal places — change all four | 13 |
+| 3 | **Do it:** four copies, working. Then the head teacher asks for two decimal places — change all four | 22 |
 | 4 | **Teach:** `def` — giving a piece of code a name. Defining is not calling | 9 |
-| 5 | **Do the same again:** one function, four calls. Change the rounding in one place and watch all four move | 13 |
-| 6 | Retrospective | 3 |
-| | **Total** | **50** |
+| 5 | **Do the same again:** one function, four calls. Change the rounding in one place and watch all four move | 27 |
+| 6 | Retrospective | 5 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** the average calculation as a function, called four
 times, with a formatting change proved in one edit.
@@ -516,12 +495,12 @@ rest of the course:** `cd` and `python file.py`.
 | # | Activity | Min |
 |---|---|---|
 | 1 | Recap: yesterday's assembled notebook, on screen | 5 |
-| 2 | **Teach:** why leave the notebook. A notebook is a workbench; you hand someone the thing, not the bench | 8 |
-| 3 | **Hands-on:** create `grades.py`, move the functions in, save | 12 |
-| 4 | **Hands-on:** open the terminal inside VS Code. `cd`, then `python grades.py`. It prints nothing — and that is correct | 12 |
-| 5 | **Teach + hands-on:** `if __name__ == "__main__":`. Now it prints | 10 |
-| 6 | Retrospective | 3 |
-| | **Total** | **50** |
+| 2 | **Teach:** why leave the notebook. A notebook is a workbench; you hand someone the thing, not the bench | 10 |
+| 3 | **Hands-on:** create `grades.py`, move the functions in, save | 18 |
+| 4 | **Hands-on:** open the terminal inside VS Code. `cd`, then `python grades.py`. It prints nothing — and that is correct | 18 |
+| 5 | **Teach + hands-on:** `if __name__ == "__main__":`. Now it prints | 18 |
+| 6 | Retrospective | 6 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** `python grades.py` running in a terminal and printing
 your class average — no notebook involved.
@@ -540,12 +519,12 @@ number that might change, in one place.
 | # | Activity | Min |
 |---|---|---|
 | 1 | Recap: `python grades.py` still runs for everyone. Confirm before changing anything | 5 |
-| 2 | **Teach:** four files, one job each, drawn on the board with the arrows between them | 10 |
-| 3 | **Hands-on:** `settings.py` — every number in one place. Run it: it does nothing, and that is correct. Then `storage.py` | 12 |
-| 4 | **Hands-on:** `grades.py` — yesterday's file, now importing `settings` | 8 |
-| 5 | **Hands-on:** `main.py` — ask, calculate, print. **Run `python main.py` for the first time** | 12 |
-| 6 | Retrospective. **The instructor confirms `python main.py` individually for every participant before they leave** | 3 |
-| | **Total** | **50** |
+| 2 | **Teach:** four files, one job each, drawn on screen with the arrows between them | 12 |
+| 3 | **Hands-on:** `settings.py` — every number in one place. Run it: it does nothing, and that is correct. Then `storage.py` | 18 |
+| 4 | **Hands-on:** `grades.py` — yesterday's file, now importing `settings` | 12 |
+| 5 | **Hands-on:** `main.py` — ask, calculate, print. **Run `python main.py` for the first time** | 22 |
+| 6 | Retrospective. **The instructor confirms `python main.py` individually for every participant, on a shared screen, before they leave** | 6 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** **a working `python main.py`** — a real program of
 four files, run from a terminal. Confirmed individually for every participant.
@@ -572,11 +551,11 @@ class file will have Armenian names in it.
 |---|---|---|
 | 1 | Recap: `python main.py` runs for everyone | 5 |
 | 2 | **Teach:** the class lives inside the code, so every change means editing the program. *After the break, a way to keep it outside* | 7 |
-| 3 | **Do it:** add three students by editing the code. Then close, reopen, and add them again | 13 |
+| 3 | **Do it:** add three students by editing the code. Then close, reopen, and add them again | 22 |
 | 4 | **Teach:** reading and writing a file — `read_text`, `write_text`, `split(",")`, and why `encoding="utf-8"` matters for your own class | 9 |
-| 5 | **Do the same again:** `data/my_class.csv` with **your own class**. Add a student through the menu, save, reopen, confirm it is still there | 13 |
-| 6 | Retrospective | 3 |
-| | **Total** | **50** |
+| 5 | **Do the same again:** `data/my_class.csv` with **your own class**. Add a student through the menu, save, reopen, confirm it is still there | 27 |
+| 6 | Retrospective | 5 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** your own class — first names or initials only — in
 `data/my_class.csv`, loaded by your program and saved back after a change.
@@ -595,10 +574,10 @@ taught. Sixteen identical gradebooks would be a failed course.
 | # | Activity | Min |
 |---|---|---|
 | 1 | Recap: everyone's `python main.py` runs on their own class | 5 |
-| 2 | **Teach:** four features you could add, and the one question that decides where the code goes — does it calculate, or does it talk to the human? | 10 |
-| 3 | **Hands-on:** build the one you chose. The instructor circulates; nobody is given code | 30 |
-| 4 | Retrospective: what you chose and why | 5 |
-| | **Total** | **50** |
+| 2 | **Teach:** four features you could add, and the one question that decides where the code goes — does it calculate, or does it talk to the human? | 12 |
+| 3 | **Hands-on:** build the one you chose. The instructor moves between shared screens; nobody is given code | 50 |
+| 4 | Retrospective: what you chose and why | 8 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** one feature of your own design, working, in the right
 file.
@@ -617,11 +596,12 @@ Sixteen demos at 90 seconds is 24 minutes, which is why the group is capped at 1
 | # | Activity | Min |
 |---|---|---|
 | 1 | Recap | 3 |
-| 2 | **Hands-on:** write your `README.md`, then send your folder to a colleague, who runs it from your README alone | 12 |
-| 3 | **Showcase:** 90 seconds each — what your program does, one thing that broke on the way, one thing you would add next | 24 |
-| 4 | Where to go next: three things to learn after this course, and two not to bother with yet | 8 |
-| 5 | Close | 3 |
-| | **Total** | **50** |
+| 2 | **Hands-on:** write your `README.md` | 15 |
+| 3 | **Hands-on:** send your folder to a colleague, who runs it **from your README alone** and reports back on the call | 20 |
+| 4 | **Showcase:** 90 seconds each — what your program does, one thing that broke on the way, one thing you would add next | 20 |
+| 5 | Where to go next: three things to learn after this course, and two not to bother with yet | 12 |
+| 6 | Close, and what happens in March | 5 |
+| | **Total** | **75** |
 
 **📦 By the end of today you have:** a finished, documented program that a colleague
 successfully ran from your README alone, and a 90-second demo given out loud.
@@ -634,20 +614,20 @@ successfully ran from your README alone, and a 90-second demo given out loud.
 ## Time check
 
 ```
-Days  1- 6   300      Days 13-18   300
-Days  7-12   300      Days 19-24   300
+Days  1- 6   450      Days 13-18   450
+Days  7-12   450      Days 19-24   450
                     ---------------------
-                      1,200 minutes  =  20 hours  ✓
+                      1,800 minutes  =  30 hours  ✓
 ```
 
-Notebook phase: Days 1–19 (950 min / 15 h 50).
-Transition: Days 20–21 (100 min / 1 h 40).
-Project: Days 22–24 (150 min / 2 h 30).
+Notebook phase: Days 1–19 (1,425 min / 23 h 45).
+Transition: Days 20–21 (150 min / 2 h 30).
+Project: Days 22–24 (225 min / 3 h 45).
 
 ## Assessment
 
 **Three sittings**, designed with our partner colleague. They are **separate sittings,
-not session time** — the 24 teaching sessions remain 20 hours exactly, and the
+not session time** — the 24 teaching sessions remain 30 hours exactly, and the
 assessments add roughly 3½ hours on top.
 
 | | Test | When | Length | Points | Covers |

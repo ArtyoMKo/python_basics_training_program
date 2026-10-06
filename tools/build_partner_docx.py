@@ -313,8 +313,8 @@ def check_facts():
 
     if days != list(range(1, 25)):
         problems.append(f"docs/CURRICULUM.md lists days {days[:3]}…, not 1..24")
-    if sum(minutes) != 1200:
-        problems.append(f"total is {sum(minutes)} minutes, not 1200")
+    if sum(minutes) != 1800:
+        problems.append(f"total is {sum(minutes)} minutes, not 1800")
 
     counts = {
         "notebooks": len(list((ROOT / "notebooks").glob("*.ipynb"))),
@@ -354,7 +354,7 @@ def check_facts():
             problems.append(f"{path.name}: the rubric leaked into the participant copy")
 
     # Discovery days must still be the five the dossier names.
-    for day in ("day06_class_register", "day10_for_loops", "day14_dictionaries",
+    for day in ("day06_class_register", "day08_dictionaries", "day11_for_loops",
                 "day17_functions"):
         if not (ROOT / "notebooks" / f"{day}.ipynb").exists():
             problems.append(f"missing discovery notebook {day}")
@@ -367,7 +367,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "1.5"
+VERSION = "1.6"
 
 
 def build():
@@ -407,7 +407,7 @@ def build():
     d.table(
         ["", ""],
         [
-            ["Programme", "**Part 1 of six months.** 24 sessions of 75 minutes, three times a week over eight weeks, plus three assessment sittings"],
+            ["Programme", "**Part 1 of six months.** 24 sessions × 75 minutes = **30 hours**, three times a week over eight weeks, plus three assessment sittings"],
             ["Delivery", "**Remote**, over Google Meet with screen sharing"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
             ["Group size", "**4–8 per group**, one instructor"],
@@ -576,13 +576,11 @@ def build():
         "not by eye."
     )
     d.callout(
-        "Two decisions still settling",
+        "One decision still settling",
         [
-            "**Session length.** We start at 75 minutes three times a week. Once the "
-            "cohort has adapted we may move to two sessions a week, or to three of 50 "
-            "minutes. The detailed session plans are currently written to 50 minutes and "
-            "are being rebuilt to 75; the day map, topic order and deliverables are "
-            "unaffected.",
+            "**Session length.** Sessions run 75 minutes, three times a week — 24 × 75 "
+            "= 30 hours. Once the cohort has adapted we may move to two a week, or to "
+            "three of 50 minutes; the day map and deliverables would not change.",
             "**Tools.** Anaconda, Jupyter and VS Code, with Google Colab and Thonny under "
             "discussion as a lighter alternative that would remove the installation "
             "problem entirely. Current materials assume Anaconda and VS Code.",
@@ -986,7 +984,7 @@ def build():
             "announced before the course starts** — in the recruitment text and at "
             "enrolment. People behave differently when they know, and discovering it "
             "afterwards would be unfair and would spoil the measurement.",
-            "Being filtered out is not a judgement on the teacher. At 20 hours, with mixed "
+            "Being filtered out is not a judgement on the teacher. At 30 hours, with mixed "
             "laptops and a remote room, the likeliest reasons are time, equipment and "
             "attendance — so **why** someone did not meet the bar is recorded, not just "
             "that they did not.",
@@ -1065,8 +1063,8 @@ def build():
         ["Risk", "What we do about it"],
         [
             ["**The core assumption may simply be wrong.** We are betting that coding fluency transfers — that someone who can code mechanically will find algorithmic problems learnable later. That is plausible and unproven. It is possible to produce teachers who type Python fluently and still cannot solve a problem with it", "We measure it directly (section 8) rather than assuming it. If it happens, the programme failed, and no amount of the course being pleasant changes that"],
-            ["**Participants may not accept it.** Adults judge a course by how substantial it feels, and one that explains little and asks for a lot of typing can read as shallow. The first half of each discovery session is deliberately laborious", "Every discovery day resolves inside the same 50 minutes; the shortcut is promised in writing before the long half starts; the work is never framed as an ordeal. A participant who leaves day 6 thinking \"I typed for twenty minutes\" rather than \"I learned what a list is for\" is a genuine failure, and it will happen to somebody"],
-            ["**Twenty hours is not much**, in 50-minute pieces, for working teachers", "The scope is deliberately narrow and the exclusion list is explicit. Narrow means things are missing, by design"],
+            ["**Participants may not accept it.** Adults judge a course by how substantial it feels, and one that explains little and asks for a lot of typing can read as shallow. The first half of each discovery session is deliberately laborious", "Every discovery day resolves inside the same 75 minutes; the shortcut is promised in writing before the long half starts; the work is never framed as an ordeal. A participant who leaves day 6 thinking \"I typed for twenty minutes\" rather than \"I learned what a list is for\" is a genuine failure, and it will happen to somebody"],
+            ["**Thirty hours is not much**, in 75-minute pieces, for working teachers", "The scope is deliberately narrow and the exclusion list is explicit. Narrow means things are missing, by design"],
         ],
         [0.46, 0.54],
         size=9,
@@ -1175,7 +1173,7 @@ def build():
     d.h2("What we would find most useful from you")
     d.numbered([
         "**Is the diagnosis right?** Is \"they cannot code\" really the bottleneck, or are we fixing the wrong thing?",
-        "**Is 20 hours enough** to produce the fluency the approach depends on?",
+        "**Is 30 hours enough** to produce the fluency the approach depends on?",
         "**What should the success numbers be?** Agreed before the first session.",
         "**Will the discovery sessions be accepted or resented?** Anyone who knows this audience better than we do should say so before we run it, not after.",
     ])
@@ -1237,7 +1235,7 @@ def build():
     d.table(
         ["Where it broke", "What that tells us"],
         [
-            ["At the mechanics — they still cannot code after 20 hours", "The time budget is wrong, not the theory. A longer course on the same method"],
+            ["At the mechanics — they still cannot code after 30 hours", "The time budget is wrong, not the theory. A longer course on the same method"],
             ["At acceptance — they disliked the method and left", "The theory is untested; the delivery needs rethinking"],
             ["At transfer — they can code but cannot solve problems", "The central assumption is wrong. This is the finding that would change our direction"],
         ],

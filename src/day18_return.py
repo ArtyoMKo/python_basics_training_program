@@ -84,7 +84,7 @@ print(has_passed(2))
 Այստեղ `else` պետք չէ. եթե պայմանը ճիշտ է, `return True`-ն արդեն ավարտել է ֆունկցիան։
 
 Բայց այս ֆունկցիան իրականում ավելի կարճ է գրվում, որովհետև `grade >= 4`-ը **արդեն**
-`True` կամ `False` է — դա 8-րդ օրվա դասն էր։
+`True` կամ `False` է — դա 9-րդ օրվա դասն էր։
 
 #%% code
 def has_passed(grade):
@@ -176,7 +176,7 @@ print("failing:", failing_students(class_grades))
 print("did Ani pass?", has_passed(class_grades["Ani"]))
 
 #%% md
-> `class_grades.values()` — տալիս է միայն արժեքները՝ 15-րդ օրվանից։ `list(...)`-ը
+> `class_grades.values()` — տալիս է միայն արժեքները՝ 14-րդ օրվանից։ `list(...)`-ը
 > դրանք դարձնում է ցուցակ, որպեսզի `average_of`-ը կարողանա աշխատել։
 
 Եվ հիմա՝ ամբողջ մատյանը, չորս ֆունկցիայով։

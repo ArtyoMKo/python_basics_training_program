@@ -16,13 +16,11 @@ programming background.** 24 sessions, 3 a week for 8 weeks, **delivered remotel
 groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
 participant running a four-file gradebook program over their own class list.
 
-> **⏳ Sessions are moving from 50 to 75 minutes.** Every agenda in `docs/CURRICULUM.md` is
-> still written to 50 and `check_times.py` still verifies against 50. The rebuild is
-> pending and is flagged in both files — **do not "fix" the 50s without doing the whole
-> rebuild**, or the arithmetic check will pass while the plans mean nothing.
+Sessions are **75 minutes**: 24 × 75 = 1,800 minutes = 30 hours, verified by
+`check_times.py`.
 
 It is not a library and has no users other than teachers in a classroom. "Working" means
-*a teacher can follow it in 50 minutes*, not *the code runs*.
+*a teacher can follow it in 75 minutes*, not *the code runs*.
 
 ---
 
@@ -62,7 +60,7 @@ python tools/verify.py          # 3. verify    (nothing is done until this passe
 
 | | What it proves |
 |---|---|
-| agenda arithmetic | every agenda sums to 50; 24 days = 1,200 minutes |
+| agenda arithmetic | every agenda sums to 75; 24 days = 1,800 minutes |
 | notebooks execute | all 43 notebooks — lessons, solutions **and** both versions of each assessment — run cell by cell, in order, with `input()` stubbed and every deliberate-error cell raising exactly the error it claims |
 | style and language | the language rule, standard library only, excluded constructs, exercise sections present |
 | project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
@@ -108,7 +106,7 @@ Example names are **transliterated Armenian**: `Ani`, `Davit`, `Nare`, `Aram`, `
 ### 2. A laborious task and its replacement happen in the SAME session.
 
 Five **discovery days** — 6, 8, 11, 17, 22 — each give a real task, let participants solve
-it the long way, then hand them the tool that collapses it, inside one 50 minutes.
+it the long way, then hand them the tool that collapses it, inside one 75 minutes.
 
 | Day | Task | Long way | Tool, same day |
 |---|---|---|---|
@@ -118,10 +116,9 @@ it the long way, then hand them the tool that collapses it, inside one 50 minute
 | 17 | an average on every report card | the same 6 lines, 4 times | **functions** |
 | 22 | keep the register after closing it | retyping it | **files** |
 
-> **⏳ The notebooks still use the OLD order** (`day08_if_else`, `day10_for_loops`,
-> `day14_dictionaries`). `docs/CURRICULUM.md` carries the agreed new one, where every data
-> type precedes conditions and loops. Renaming and rewriting them is pending work — do
-> not half-do it.
+**Every data type comes before conditions and loops.** Day 8's long half uses **no
+loops** — students are looked up by hand, by position, which is what makes the drift
+visible.
 
 **Never split one across two sessions.** Ending a session after the long way and before
 the short way is the worst outcome this design can produce. If a day runs long, cut its
@@ -144,8 +141,8 @@ half acceptable.
 
 ### 4. Time is a hard ceiling.
 
-Every agenda sums to **exactly 50**. Teaching never exceeds **12 minutes** in one block.
-Hands-on is ≥ 26 of 50. If content does not fit, **cut a topic — never compress one**.
+Every agenda sums to **exactly 75**. Teaching never exceeds **12 minutes** in one block.
+Hands-on is ≥ 49 of 75. If content does not fit, **cut a topic — never compress one**.
 
 *Enforced by `check_times.py`.*
 

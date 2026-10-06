@@ -1,59 +1,34 @@
 #%% md
-# Օր 16 — Լուծումներ
+# Օր 15 — Լուծումներ
+
+`input()`-ի փոխարեն ցուցակ է օգտագործված, որպեսզի կարողանաս գործարկել։
+Քո տետրում `input()`-ը պետք է մնա։
 
 #%% code
-# Exercises 1-5 - report cards with several grades each
+# Exercises 1-4 - the full loop with every check
 
-PASS_MARK = 4
+answers = ["9", "nine", "15", "6", "quit"]      # what the teacher would type
+class_grades = []
 
-class_grades = {
-    "Ani": [9, 10, 8],
-    "Davit": [6, 5, 7],
-    "Nare": [10, 10, 9],
-    "Aram": [3, 4, 2],
-}
+for answer in answers:
+    if answer == "quit":
+        break
 
-class_grades["Ani"].append(7)
+    if not answer.isdigit():
+        print(f"'{answer}' is not a number.")
+        continue
 
-print("=== REPORT CARDS ===")
+    grade = int(answer)
 
-for student_name, grades in class_grades.items():
-    total = 0
-    for grade in grades:
-        total = total + grade
-    student_average = total / len(grades)
+    if grade < 1 or grade > 10:
+        print(f"{grade} must be between 1 and 10.")
+        continue
 
-    if student_average >= PASS_MARK:
-        result = "passed"
-    else:
-        result = "failed"
+    class_grades.append(grade)
 
-    print(f"{student_name:<10} {str(grades):<16} {student_average:.1f}   {result}")
+print(f"collected {len(class_grades)}: {class_grades}")
 
-#%% code
-# Extra 8 - each student's best grade
-
-for student_name, grades in class_grades.items():
-    highest = grades[0]
-    for grade in grades:
-        if grade > highest:
-            highest = grade
-    print(f"{student_name}: best {highest}")
-
-#%% code
-# Extra 11 - an empty list makes the average divide by zero.
-# Guard it before dividing.
-
-grades = []
-
-if not grades:
-    print("no grades yet")
-else:
-    print(sum(grades) / len(grades))
-
-#%% code
-# Challenge 12 - who improved the most. :+d shows the plus sign.
-
-for student_name, grades in class_grades.items():
-    improvement = grades[-1] - grades[0]
-    print(f"{student_name}: {improvement:+d}")
+total = 0
+for grade in class_grades:
+    total = total + grade
+print(f"average: {total / len(class_grades):.1f}")

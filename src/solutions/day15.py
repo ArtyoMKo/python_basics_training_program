@@ -1,53 +1,59 @@
 #%% md
-# Օր 15 — Լուծումներ
+# Օր 14 — Լուծումներ
 
 #%% code
-# Exercises 1-4 - the full register from a dictionary
+# Exercises 1-5 - report cards with several grades each
 
 PASS_MARK = 4
 
-class_grades = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3,
-                "Mariam": 8, "Tigran": 5, "Lilit": 8, "Gor": 4}
+class_grades = {
+    "Ani": [9, 10, 8],
+    "Davit": [6, 5, 7],
+    "Nare": [10, 10, 9],
+    "Aram": [3, 4, 2],
+}
 
-total = 0
-failing = 0
+class_grades["Ani"].append(7)
 
-print("=== REGISTER ===")
+print("=== REPORT CARDS ===")
 
-for student_name, grade in class_grades.items():
-    if grade >= PASS_MARK:
+for student_name, grades in class_grades.items():
+    total = 0
+    for grade in grades:
+        total = total + grade
+    student_average = total / len(grades)
+
+    if student_average >= PASS_MARK:
         result = "passed"
     else:
         result = "failed"
-        failing = failing + 1
-    total = total + grade
-    print(f"{student_name:<10} {grade:>3}   {result}")
 
-print()
-print(f"students: {len(class_grades)}")
-print(f"average:  {total / len(class_grades):.1f}")
-print(f"failing:  {failing}")
+    print(f"{student_name:<10} {str(grades):<16} {student_average:.1f}   {result}")
 
 #%% code
-# Extra 8 - a numbered register needs a counter before the loop
+# Extra 8 - each student's best grade
 
-number = 1
-
-for student_name, grade in class_grades.items():
-    print(f"{number}. {student_name:<10} {grade:>3}")
-    number = number + 1
-
-#%% code
-# Extra 10 - names starting with A. student_name[0] is the first letter.
-
-for student_name, grade in class_grades.items():
-    if student_name[0] == "A":
-        print(student_name)
+for student_name, grades in class_grades.items():
+    highest = grades[0]
+    for grade in grades:
+        if grade > highest:
+            highest = grade
+    print(f"{student_name}: best {highest}")
 
 #%% code
-# Challenge 11 - sorted by grade, high to low
+# Extra 11 - an empty list makes the average divide by zero.
+# Guard it before dividing.
 
-for mark in range(10, 0, -1):
-    for student_name, grade in class_grades.items():
-        if grade == mark:
-            print(f"{student_name:<10} {grade:>3}")
+grades = []
+
+if not grades:
+    print("no grades yet")
+else:
+    print(sum(grades) / len(grades))
+
+#%% code
+# Challenge 12 - who improved the most. :+d shows the plus sign.
+
+for student_name, grades in class_grades.items():
+    improvement = grades[-1] - grades[0]
+    print(f"{student_name}: {improvement:+d}")

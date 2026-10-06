@@ -1,44 +1,46 @@
 #%% md
-# Օր 10 — Լուծումներ
+# Օր 11 — Լուծումներ
 
 #%% code
-# Exercises 3, 4 and 5 - everything with a loop
+# Exercises 1 and 2 - four bands, tested on four grades
 
-PASS_MARK = 4
-
-student_names = ["Ani", "Davit", "Nare", "Aram", "Mariam"]
-class_grades = [9, 6, 10, 3, 8]
-
-for student_name in student_names:
-    print(student_name)
-
-print()
-
-for grade in class_grades:
-    if grade >= PASS_MARK:
-        print(grade, "- passed")
+for grade in [10, 8, 5, 2]:
+    if grade >= 9:
+        print(grade, "- excellent")
+    elif grade >= 7:
+        print(grade, "- good")
+    elif grade >= 4:
+        print(grade, "- satisfactory")
     else:
-        print(grade, "- failed")
+        print(grade, "- unsatisfactory")
 
 #%% code
-# Exercise 6 - the whole register in four lines
+# Exercise 3 - a rule with and
 
-for position in range(len(student_names)):
-    if class_grades[position] >= PASS_MARK:
-        print(f"{student_names[position]}: passed")
-    else:
-        print(f"{student_names[position]}: failed")
+grade = 8
+attendance = 90
 
-#%% code
-# Extra 11 - after the loop, the variable keeps the LAST value it had
-
-for student_name in student_names:
-    pass
-
-print("after the loop:", student_name)
+if grade >= 4 and attendance >= 80:
+    print("certificate granted")
+else:
+    print("certificate not granted")
 
 #%% code
-# Challenge 12 - a numbered register. position starts at 0, so add 1.
+# Extra 5 - not (grade >= 4) and grade < 4 are the same thing
 
-for position in range(len(student_names)):
-    print(f"{position + 1}. {student_names[position]}: {class_grades[position]}")
+grade = 3
+
+print(not (grade >= 4))
+print(grade < 4)
+
+#%% code
+# Challenge 10 - the real certificate rule, three conditions
+
+grade = 8
+attendance = 90
+behaviour_ok = True
+
+if grade >= 4 and attendance >= 80 and behaviour_ok:
+    print("certificate granted")
+else:
+    print("certificate not granted")
