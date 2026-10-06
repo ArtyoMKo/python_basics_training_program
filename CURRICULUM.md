@@ -4,7 +4,15 @@
 
 Every agenda below sums to 50. The grand total is checked by `tools/check_times.py`.
 
-> ### ⏳ These agendas are being rebuilt to 75 minutes
+> ### ⏳ Two rebuilds are pending — read this before using the detail below
+>
+> **1. The topic order above is the agreed one; the notebooks have not caught up.**
+> Data types now come before conditions and loops, which moves dictionaries from day 14
+> to day 8 and shifts everything between. The files named in the table are the *target*
+> names. Until the rebuild lands, `notebooks/` still holds the old order
+> (`day08_if_else`, `day10_for_loops`, `day14_dictionaries` …).
+>
+> **2. These agendas are being rebuilt to 75 minutes**
 >
 > Sessions will run **75 minutes**, three times a week — decided after the colleagues'
 > meeting (`PLAN.md` §3). **The agendas below are still the 50-minute versions** and have
@@ -14,8 +22,8 @@ Every agenda below sums to 50. The grand total is checked by `tools/check_times.
 > per session goes to hands-on work and to the second half of the discovery days, not to
 > more teaching: the 12-minute ceiling on explanation is unchanged.
 >
-> The day map, the topic order, the five discovery days and the deliverables are **not**
-> affected by the rebuild.
+> The deliverables and the five discovery days are **not** affected by either rebuild —
+> only their day numbers move.
 
 > **Delivered remotely**, over Google Meet with screen sharing, in groups of **4–8**.
 
@@ -27,16 +35,16 @@ Every agenda below sums to 50. The grand total is checked by `tools/check_times.
 | 4 | Changing type, and asking a question | Notebook | `notebooks/day04_convert_input.ipynb` | 50 |
 | 5 | Giving a value a name | Notebook | `notebooks/day05_variables.ipynb` | 50 |
 | 6 | **A register for the whole class** | **Discovery** | `notebooks/day06_class_register.ipynb` | 50 |
-| 7 | Working with the register | Notebook | `notebooks/day07_list_methods.ipynb` | 50 |
-| 8 | The first decision | Notebook | `notebooks/day08_if_else.ipynb` | 50 |
-| 9 | More than two outcomes | Notebook | `notebooks/day09_elif_and_or.ipynb` | 50 |
-| 10 | **Marking the whole class** | **Discovery** | `notebooks/day10_for_loops.ipynb` | 50 |
-| 11 | Counting and totalling | Notebook | `notebooks/day11_range_totals.ipynb` | 50 |
-| 12 | Loops that decide | Notebook | `notebooks/day12_loops_and_ifs.ipynb` | 50 |
-| 13 | Entering grades one by one | Notebook | `notebooks/day13_while.ipynb` | 50 |
-| 14 | **Finding one student** | **Discovery** | `notebooks/day14_dictionaries.ipynb` | 50 |
-| 15 | Reports from the register | Notebook | `notebooks/day15_dict_reports.ipynb` | 50 |
-| 16 | Several grades per student | Notebook | `notebooks/day16_dict_of_lists.ipynb` | 50 |
+| 7 | Working with the register, and two near-relatives | Notebook | `notebooks/day07_list_methods.ipynb` | 50 |
+| 8 | **Finding one student** | **Discovery** | `notebooks/day08_dictionaries.ipynb` | 50 |
+| 9 | The first decision | Notebook | `notebooks/day09_if_else.ipynb` | 50 |
+| 10 | More than two outcomes | Notebook | `notebooks/day10_elif_and_or.ipynb` | 50 |
+| 11 | **Marking the whole class** | **Discovery** | `notebooks/day11_for_loops.ipynb` | 50 |
+| 12 | Counting and totalling | Notebook | `notebooks/day12_range_totals.ipynb` | 50 |
+| 13 | Loops that decide | Notebook | `notebooks/day13_loops_and_ifs.ipynb` | 50 |
+| 14 | Reports from the register | Notebook | `notebooks/day14_dict_reports.ipynb` | 50 |
+| 15 | Several grades per student | Notebook | `notebooks/day15_dict_of_lists.ipynb` | 50 |
+| 16 | Entering grades one by one | Notebook | `notebooks/day16_while.ipynb` | 50 |
 | 17 | **An average on every card** | **Discovery** | `notebooks/day17_functions.ipynb` | 50 |
 | 18 | Sending an answer back | Notebook | `notebooks/day18_return.ipynb` | 50 |
 | 19 | The register, assembled | Notebook | `notebooks/day19_assembled.ipynb` | 50 |
@@ -60,7 +68,7 @@ Every agenda below sums to 50. The grand total is checked by `tools/check_times.
 > code stays copyable. See `PLAN.md` §7.7.
 
 > **The grading scale is 1–10 and the pass mark is 4**, written once as `PASS_MARK = 4`
-> from Day 8. Participants change it to their own school's value, and that edit is an
+> from Day 9. Participants change it to their own school's value, and that edit is an
 > exercise.
 
 ---
@@ -78,7 +86,7 @@ Every agenda below sums to 50. The grand total is checked by `tools/check_times.
 | 5 | Retrospective: where we got to, what comes next | 3 |
 | | **Total** | **50** |
 
-**Discovery day** — Days 6, 10, 14, 17, 22, where a tool arrives to shorten work done in
+**Discovery day** — Days 6, 8, 11, 17, 22, where a tool arrives to shorten work done in
 the same session:
 
 | # | Activity | Min |
@@ -229,33 +237,70 @@ rather than counted, and the same register written both ways in one notebook.
 
 ---
 
-## Day 7 — Working with the register
+## Day 7 — Working with the register, and two near-relatives
 
-**Concepts:** a list can change · slices
+**Concepts:** a list can change · slices · tuples and sets as near-relatives
 
-**Tools & Skills:** `.append()` · `.remove()` · `in` · `.sort()` · `[0:3]`
+**Tools & Skills:** `.append()` · `.remove()` · `in` · `.sort()` · `[0:3]` · `( )` and
+`{ }` · when a thing should not be changeable
 
 A class list is a thing that changes: a student arrives, a student leaves, you want the
-names in order. Printing them one index at a time is still awkward, and the notebook says
-so plainly and names Day 10.
+names in order. The second half introduces **tuples and sets** briefly — a tuple as a list
+that cannot change, a set as a list with no duplicates — because the school curriculum
+teaches them and a teacher will meet them in their first semester. **They are shown and
+compared, not drilled**; nothing later in the course depends on them.
 
 Standard shape.
 
 **📦 By the end of today you have:** your own class as a list, sorted, with one student
-added and one removed.
+added and one removed — plus the same names as a tuple and as a set, and one sentence on
+what each is for.
 
 ---
 
-## Day 8 — The first decision
+## Day 8 — Finding one student  ⟵ *discovery*
+
+**Concepts:** dictionaries · key and value
+
+**Tools & Skills:** two parallel lists and their failure mode · `{ }` ·
+`class_grades["Ani"]` · adding and updating · reading a `KeyError`
+
+> **No loops are used in this session.** The long half looks students up **by position,
+> by hand** — `student_names[3]` and `class_grades[3]` — which is exactly what makes the
+> drift visible. Loops arrive on Day 11, and arrive more useful because there is now a
+> dictionary to loop over.
+
+**The real task:** a parent asks what Aram's score is. Find one student by name.
+
+With two lists, that means finding the position in one and reading the same position in
+the other. It works — until a student leaves one list and not the other, and every answer
+after that is silently wrong. **In the same session** the dictionary arrives and the
+position disappears.
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: the register, as two lists | 5 |
+| 2 | **Teach:** looking up one student means matching positions across two lists. *After the break, a way to store them so that position never matters* | 7 |
+| 3 | **Do it:** look up three students by position, by hand. Then remove one student from the names list only, and watch every later answer go wrong with no error | 13 |
+| 4 | **Teach:** the dictionary — `name → grade` | 9 |
+| 5 | **Do the same again:** the register as one dictionary. Remove a student and confirm nothing else shifts | 13 |
+| 6 | Retrospective | 3 |
+| | **Total** | **50** |
+
+**📦 By the end of today you have:** your class as a dictionary of `name → grade`, and a
+written note of what went wrong with two lists.
+
+---
+
+## Day 9 — The first decision
 
 **Concepts:** `if` / `else` · comparison · indentation is not decoration
 
 **Tools & Skills:** `>` `<` `>=` `<=` `==` `!=` · the colon · four spaces · reading a
 `SyntaxError` from a missing colon and an `IndentationError`
 
-The first time the program does something different depending on the data. `PASS_MARK`
-is introduced here as a named value, so the number that matters lives in one place from
-the beginning.
+The first time the program does something different depending on the data. `PASS_MARK` is introduced here as a named value, so the number that matters lives in one
+place from the beginning.
 
 Standard shape.
 
@@ -264,7 +309,7 @@ using your own school's pass mark.
 
 ---
 
-## Day 9 — More than two outcomes
+## Day 10 — More than two outcomes
 
 **Concepts:** `elif` · `and` · `or` · `not`
 
@@ -281,7 +326,7 @@ your own that uses `and` or `or`.
 
 ---
 
-## Day 10 — Marking the whole class  ⟵ *discovery*
+## Day 11 — Marking the whole class  ⟵ *discovery*
 
 **Concepts:** the `for` loop · the loop variable
 
@@ -309,7 +354,7 @@ adding students without touching the loop.
 
 ---
 
-## Day 11 — Counting and totalling
+## Day 12 — Counting and totalling
 
 **Concepts:** an accumulator · `range()` · integer versus decimal
 
@@ -324,11 +369,9 @@ Standard shape.
 **📦 By the end of today you have:** your own class average, computed by a loop, rounded
 to one decimal place.
 
-> **The midpoint test is sat after this week**, as a separate 60–75 minute sitting.
-
 ---
 
-## Day 12 — Loops that decide
+## Day 13 — Loops that decide
 
 **Concepts:** a loop with an `if` inside it · building a new list while looping
 
@@ -341,9 +384,43 @@ Standard shape.
 **📦 By the end of today you have:** for your own class — who failed, how many passed, and
 the highest grade, each computed by a loop.
 
+> **The midpoint test is sat after this session**, as a separate 60–75 minute sitting
+> covering Days 6–13.
+
 ---
 
-## Day 13 — Entering grades one by one
+## Day 14 — Reports from the register
+
+**Concepts:** looping over a dictionary
+
+**Tools & Skills:** `.items()` · two loop variables at once · aligning columns
+
+Everything from Days 11–13 rewritten against the dictionary, and shorter each time.
+
+Standard shape.
+
+**📦 By the end of today you have:** a printed register line per student, straight from
+the dictionary, with columns that line up.
+
+---
+
+## Day 15 — Several grades per student
+
+**Concepts:** a value that is itself a list
+
+**Tools & Skills:** a dictionary of lists · `class_grades["Ani"].append(8)` · two nested
+loops, once
+
+A real register holds more than one grade per student.
+
+Standard shape.
+
+**📦 By the end of today you have:** a report card for every student, each with several
+grades.
+
+---
+
+## Day 16 — Entering grades one by one
 
 **Concepts:** `while` · a loop that does not know how many times it will run
 
@@ -357,66 +434,6 @@ Standard shape.
 
 **📦 By the end of today you have:** a loop that collects grades until you type `quit`,
 and refuses anything that is not a number between 1 and 10.
-
----
-
-## Day 14 — Finding one student  ⟵ *discovery*
-
-**Concepts:** dictionaries · key and value
-
-**Tools & Skills:** two parallel lists and their failure mode · `{ }` ·
-`class_grades["Ani"]` · adding and updating · reading a `KeyError`
-
-**The real task:** a parent asks what Aram's score is. Find one student by name.
-
-With two lists, that means finding the position in one and reading the same position in
-the other. It works — until a student leaves one list and not the other, and every answer
-after that is silently wrong. **In the same session** the dictionary arrives and the
-position disappears.
-
-| # | Activity | Min |
-|---|---|---|
-| 1 | Recap: the register, as two lists | 5 |
-| 2 | **Teach:** looking up one student means matching positions across two lists. *After the break, a way to store them so that position never matters* | 7 |
-| 3 | **Do it:** look up three students by position. Then remove one student from the names list only, and watch every later answer go wrong with no error | 13 |
-| 4 | **Teach:** the dictionary — `name → grade` | 9 |
-| 5 | **Do the same again:** the register as one dictionary. Remove a student and confirm nothing else shifts | 13 |
-| 6 | Retrospective | 3 |
-| | **Total** | **50** |
-
-**📦 By the end of today you have:** your class as a dictionary of `name → grade`, and a
-written note of what went wrong with two lists.
-
----
-
-## Day 15 — Reports from the register
-
-**Concepts:** looping over a dictionary
-
-**Tools & Skills:** `.items()` · two loop variables at once · aligning columns
-
-Everything from Days 10–12 rewritten against the dictionary, and shorter each time.
-
-Standard shape.
-
-**📦 By the end of today you have:** a printed register line per student, straight from
-the dictionary, with columns that line up.
-
----
-
-## Day 16 — Several grades per student
-
-**Concepts:** a value that is itself a list
-
-**Tools & Skills:** a dictionary of lists · `class_grades["Ani"].append(8)` · two nested
-loops, once
-
-A real register holds more than one grade per student.
-
-Standard shape.
-
-**📦 By the end of today you have:** a report card for every student, each with several
-grades.
 
 ---
 
@@ -517,7 +534,7 @@ your class average — no notebook involved.
 
 **Tools & Skills:** `import settings` · running a program made of several files
 
-The pivot of the course. `settings.py` is Day 8's `PASS_MARK` made structural: every
+The pivot of the course. `settings.py` is Day 9's `PASS_MARK` made structural: every
 number that might change, in one place.
 
 | # | Activity | Min |
@@ -636,8 +653,8 @@ assessments add roughly 3½ hours on top.
 | | Test | When | Length | Points | Covers |
 |---|---|---|---|---|---|
 | 1 | Initial diagnostic | **Before day 1** | 45–60 min | 44 | Nothing — it measures the baseline |
-| 2 | Midpoint | **After day 12** | 60–75 min | 50 | Days 6–12: lists, conditions, loops |
-| 3 | Final practical | **Day 24** | 90–120 min | 70 **+ 10 reported separately** | Days 14–24: functions, dictionaries, files, the project |
+| 2 | Midpoint | **After day 13** | 60–75 min | 50 | Days 6–13: lists, tuples, sets, dictionaries, conditions, loops, totals, filtering |
+| 3 | Final practical | **Day 24** | 90–120 min | 70 **+ 10 reported separately** | Days 14–24: reports, functions, files, the project |
 
 - **Each question has variants A, B and C**, equivalent in difficulty and points. The
   exam platform gives each participant **one**.

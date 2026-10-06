@@ -29,8 +29,8 @@ The method is **do it the long way, then learn the short way — in the same ses
 | Day | The real task | The long way they do it first | The tool, same day |
 |---|---|---|---|
 | 6 | A register for the whole class | one variable per student | **lists** |
-| 10 | Mark the whole class pass/fail | one `if` block per student | **`for` loops** |
-| 14 | Find one student's grade by name | two parallel lists and a position | **dictionaries** |
+| 8 | Find one student's grade by name | two parallel lists, read by hand | **dictionaries** |
+| 11 | Mark the whole class pass/fail | one `if` block per student | **`for` loops** |
 | 17 | An average on every report card | the same 6 lines, 4 times | **functions** |
 | 22 | Keep the register after closing it | retyping it every time | **files** |
 
@@ -52,9 +52,13 @@ ever again. The ten English words are taught instead.
 
 ## 2. Skills developed
 
-**Programming** — `print` · four types · `input()` · variables and f-strings ·
-`if`/`elif`/`else` · lists · `for` and `range` · `while` · dictionaries · functions and
-`return` · reading and writing files · modules and running a program from a terminal.
+**Programming** — `print` · four types · `input()` · variables and f-strings · lists ·
+**tuples and sets** · dictionaries · `if`/`elif`/`else` · `for` and `range` · `while` ·
+functions and `return` · reading and writing files · modules and running a program from a
+terminal.
+
+Part 1 covers topics 1–15 of the 24 in the state curriculum our teachers must deliver
+(`docs/GOVERNMENT_ASSIGNMENT.md`); `ROADMAP.md` shows where the rest lands.
 
 **Habits that outlast the syntax**
 - If a number appears more than once, give it a name
@@ -73,7 +77,7 @@ install software. Anaconda + VS Code — two installs on Day 1, nothing after. N
 accounts, no API keys, **no internet after Day 1**. **Cost: zero.**
 
 **Provided:** 19 notebooks, 5 guides, 18 solutions (handed out after each session so a
-missed day is recoverable), **3 assessment sittings** — a diagnostic before day 1, a midpoint after day 12 and a
+missed day is recoverable), **3 assessment sittings** — a diagnostic before day 1, a midpoint after day 13 and a
 final practical on day 24 — each in a grader's and a participant version, with
 instructor marking guides, `SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
 glossary, `check_setup.py`, a fictional 12-student sample class, and the finished

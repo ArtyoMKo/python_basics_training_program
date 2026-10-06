@@ -23,8 +23,8 @@ Teachers are given a real classroom task, solve it with what they already know, 
 | Day | The task | The long way | The tool, same day |
 |---|---|---|---|
 | 6 | A register for the whole class | one variable per student | **lists** |
-| 10 | Mark the whole class | one `if` block per student | **`for` loops** |
-| 14 | Find one student's grade | two parallel lists and a position | **dictionaries** |
+| 8 | Find one student's grade | two parallel lists, read by hand | **dictionaries** |
+| 11 | Mark the whole class | one `if` block per student | **`for` loops** |
 | 17 | An average on every report card | the same six lines, four times | **functions** |
 | 22 | Keep the register after closing | retyping it every time | **files** |
 
@@ -48,6 +48,7 @@ public_school_python/
 ├── RATIONALE.md            <- why this method, the risk, and the decision rule  ** for colleagues **
 ├── ROADMAP.md              <- the six-month arc: Part 1 built, Part 2 outlined
 ├── ENROLMENT.md            <- the questionnaire sent before a group is formed
+├── docs/GOVERNMENT_ASSIGNMENT.md  <- the state curriculum we must prepare teachers for
 ├── OUTLINE.md              <- what the course is: 4-part outline, short
 ├── SETUP.md                <- installation, Windows and macOS   (Armenian)
 ├── CHEATSHEET.md           <- printable reference + the bilingual glossary  (Armenian)
@@ -121,6 +122,7 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 | Language rule | ✅ no Armenian anywhere inside a code cell — verified by script |
 | **Armenian terminology** | ⏳ **awaiting native-speaker review** (Decision D9) |
 | **75-minute agendas** | ⏳ **session plans still written to 50 minutes** — rebuild pending |
+| **New topic order** | ⏳ **docs updated, `notebooks/` not yet** — data types now precede conditions and loops |
 | **Fresh-laptop install test** | ⏳ **not yet run** — see `INSTRUCTOR_NOTES.md` §1 |
 
 The last two are stated plainly rather than assumed. Neither can be verified from here.

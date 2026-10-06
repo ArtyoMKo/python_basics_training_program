@@ -101,12 +101,12 @@ Other frequent problems, in order of how often they occur:
 
 ## 3. The five discovery days are the course. Never split one.
 
-**Days 6, 10, 14, 17 and 22** each give participants a real task, let them solve it the
+**Days 6, 8, 11, 17 and 22** each give participants a real task, let them solve it the
 long way with what they know, and then — **in the same fifty minutes** — hand them the tool
 that collapses it.
 
 **The single most important rule in this document: never let a discovery day end at the
-halfway point.** If Day 10 is running long, cut its Extra tasks. Cut the Challenge. Cut the
+halfway point.** If Day 11 is running long, cut its Extra tasks. Cut the Challenge. Cut the
 recap. Do *not* stop after the fifteen `if` blocks and promise the loop on Thursday. A
 session that ends after the long way and before the short way is the worst outcome this
 design can produce, and with working adults it is the one that loses people.
@@ -138,14 +138,14 @@ stop, so nobody will tell you when you are over.
 
 **If you run out of time, cut — never compress.** In this order:
 
-1. **Day 13 (`while` loops).** The only genuinely removable day. The project's menu ships
+1. **Day 16 (`while` loops).** The only genuinely removable day. The project's menu ships
    written; explain it in two minutes on Day 21.
-2. **Day 16's dict-of-lists** (several grades per student). The project works with one.
+2. **Day 15's dict-of-lists** (several grades per student). The project works with one.
 3. **Day 19's consolidation**, if the room is already ahead — but see §5, it is also the
    catch-up day.
 4. **Day 23's own-feature work.** It can become optional homework.
 
-**Never cut:** the five discovery days (6, 10, 14, 17, 22) — each is a concept *and* its
+**Never cut:** the five discovery days (6, 8, 11, 17, 22) — each is a concept *and* its
 motivation in one session, so cutting one costs both. Nor Days 20–21 (the transition) or
 Day 24 (finishing something is the point).
 
@@ -177,7 +177,7 @@ colleague. They are **separate sittings** and do not use session time.
 | Test | When | Length | Points |
 |---|---|---|---|
 | Initial diagnostic | **Before day 1** | 45–60 min | 44 |
-| Midpoint | **After day 12** | 60–75 min | 50 |
+| Midpoint | **After day 13** | 60–75 min | 50 |
 | Final practical | **Day 24** | 90–120 min | 70 + 10 separate |
 
 ### Before each sitting
@@ -210,7 +210,7 @@ different teaching problem from the one who worked alone and ran out of time.
 | Test | Watch | If it goes wrong |
 |---|---|---|
 | Diagnostic | Q1 — can they run a cell at all? | Several at help level 0–1 → add a helper to day 1, or run a setup clinic first. This is your advance warning on the riskiest session |
-| Midpoint | **Q4 — did they write a loop?** | Still writing one block per student after twelve sessions is the strongest early evidence against the approach. Record it; do not explain it away |
+| Midpoint | **Q4 — did they write a loop?** | Still writing one block per student after thirteen sessions is the strongest early evidence against the approach. Record it; do not explain it away |
 | Final | Q2 and Q3 — returning or printing? | Printing means `return` never landed, and the four-file project rests on it |
 
 ### The diagnostic is also a planning tool
@@ -280,8 +280,8 @@ school uses a different word, change the glossary and re-run the checker.
 |---|---|
 | 1 | `check_setup.py` green, and their name printed in Armenian |
 | 6 | Their class as one list, written both ways, with the line counts compared |
-| 10 | The whole register marked in four lines, proved by adding students |
-| 14 | Their class as a dictionary, and a note of what went wrong with two lists |
+| 11 | The whole register marked in four lines, proved by adding students |
+| 8 | Their class as a dictionary, and a note of what went wrong with two lists |
 | 17 | The average as a function, with a formatting change proved in one edit |
 | 19 | The complete register program working in one notebook |
 | **21** | **A working `python main.py` — confirm this individually, for every person, before they leave** |

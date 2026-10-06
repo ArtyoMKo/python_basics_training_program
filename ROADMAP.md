@@ -7,6 +7,10 @@
 | **Part 1** | Coding fluency — the mechanics, taught to automaticity | 2 months | **Built and verified.** Materials complete, not yet taught |
 | **Part 2** | Depth, algorithms and design — what the fluency was for | 4 months | **Vision only.** Outlined below; not written |
 
+Part 2 is also where the programme finishes covering the school curriculum our teachers
+must deliver. `docs/GOVERNMENT_ASSIGNMENT.md` maps every one of its 24 topics to the part
+that covers it.
+
 The split is the whole argument of the programme. Part 1 deliberately removes every
 algorithmic difficulty so that attention goes to the mechanics. Part 2 is where that
 investment is spent. Building Part 2 before Part 1 reports would be assuming the answer
@@ -43,13 +47,17 @@ The first thing Part 2 does is **go back**. Part 1 taught constructs as tools th
 a problem the participant had just met; it did not explain how they work underneath. Now
 there is practice for the theory to attach to.
 
-- **Functions properly** — parameters in depth: positional against keyword, default values
-  and when they bite, returning several values, what scope means and why a name inside a
-  function is not the one outside
-- **Loops and conditions in depth** — nesting, loops over loops, `break` and `continue`
-  in combination, when a `while` is the right answer and when it is a mistake
-- **Data structures in depth** — lists of dictionaries, dictionaries of lists, choosing
-  between them deliberately rather than by habit
+This stage maps onto the school curriculum's **topic 16, Խորացված ֆունկցիաներ** (15 pupil
+hours), which Part 1 deliberately skipped:
+
+- **Functions properly** — positional, keyword and default arguments; `*args` and
+  `**kwargs`; returning several values with tuple unpacking; what scope means and why a
+  name inside a function is not the one outside
+- **Shorter forms** — list comprehensions and one-line `if-else`; **`lambda`**
+- **Loops and conditions in depth** — nesting, `break` and `continue` in combination,
+  when a `while` is right and when it is a mistake
+- **Data structures in depth** — lists of dictionaries, dictionaries of lists, 2-D lists,
+  mutability and references; choosing deliberately rather than by habit
 - **Reading other people's code**, which Part 1 never asks for
 
 > **This stage is the test of the programme's central claim.** If the theory now lands
@@ -57,7 +65,20 @@ there is practice for the theory to attach to.
 > it was two years ago, it was not — and that is worth knowing in month three rather than
 > month six.
 
-### Stage 2 — algorithmic tasks and problem-solving
+### Stage 2 — recursion
+
+Curriculum **topic 17** (15 pupil hours), and placed here for the same reason the school
+plan places it immediately after advanced functions: it is a fact about functions before
+it is a technique.
+
+- The idea of a function calling itself; base case and recursive case
+- Factorial and Fibonacci; **the call stack** and Python's recursion limit
+- Recursion against loops — readability and cost, and when each is the honest choice
+
+**Recursion comes before classes**, following the school curriculum and the decision taken
+with colleagues.
+
+### Stage 3 — algorithmic tasks and problem-solving
 
 **The thing Part 1 was clearing the ground for.** With the mechanics automatic, the whole
 of a participant's attention is available for the problem.
@@ -69,7 +90,7 @@ of a participant's attention is available for the problem.
 - Breaking a problem into steps that each fit in a function
 - More than one correct solution, and comparing them
 
-### Stage 3 — bigger projects
+### Stage 4 — bigger projects
 
 Part 1's project is four files and about 150 lines. Part 2's should be several times that,
 built over weeks rather than three sessions.
@@ -79,20 +100,37 @@ built over weeks rather than three sessions.
 - When a program is big enough that structure starts to matter
 - Testing your own work; keeping it working while you change it
 
-### Stage 4 — objects and classes
+### Stage 5 — objects and classes
 
-Deliberately late. Classes solve a problem a participant only *feels* once their programs
-are big enough to have the problem — which is why they come after stage 3, not before it.
+Curriculum **topics 18–19** (22 pupil hours), and deliberately late. Classes solve a
+problem a participant only *feels* once their programs are big enough to have it — which
+is why they follow stage 4, not precede it.
 
-- What a class is, arriving the same way everything in Part 1 arrived: as the fix for
-  something that has become awkward
-- Attributes and methods; a `Student` object instead of parallel dictionaries
+- Class and object, `__init__`, attributes and methods, `self`
+- A `Student` object instead of parallel dictionaries
+- **Inheritance**, method overriding and polymorphism
 - When a class is the right answer and when a function is
 
-### Stage 5 — recursion and harder techniques
+### Stage 6 — libraries and environments
 
-- Recursion, and why it is natural for some problems and perverse for others
-- Techniques that need the fluency of stages 1–4 to be readable at all
+Curriculum **topics 15 and 21** — together the largest block in the school plan (38 pupil
+hours), and the bridge into the Artificial Intelligence subject that sits alongside Python
+in the «ԱԲ սերունդ» programme.
+
+- `pip`, `requirements.txt`, and what a virtual environment is for
+- **NumPy** arrays and **Matplotlib** plotting; then **pandas**
+- Working in **Google Colab** and Jupyter; Kaggle and Anaconda as environments
+- What `sklearn`, `pytorch` and `tensorflow` are for, without teaching them
+
+> **This stage breaks Part 1's standard-library-only rule, and should.** That rule exists
+> to protect beginners from installation problems while they are learning to code. By
+> Part 2 they can code, and the rule has done its job.
+
+### Not scheduled — git and version control
+
+Curriculum **topic 23** (6 pupil hours). **Out of scope for now.** It is revisited after
+Part 1 reports: if the cohort arrives at Part 2 comfortably, git, environments and the
+remaining tooling go in; if they do not, the time is better spent elsewhere.
 
 ---
 

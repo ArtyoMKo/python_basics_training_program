@@ -367,7 +367,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "1.3"
+VERSION = "1.4"
 
 
 def build():
@@ -522,8 +522,8 @@ def build():
         ["Day", "The real task", "The long way they do it first", "The tool, same session"],
         [
             ["6", "A register for the whole class", "One variable per student", "**Lists**"],
-            ["10", "Mark the whole class pass or fail", "One `if` block per student", "**`for` loops**"],
-            ["14", "Find one student's grade by name", "Two parallel lists and a position", "**Dictionaries**"],
+            ["8", "Find one student's grade by name", "Two parallel lists, read by hand", "**Dictionaries**"],
+            ["11", "Mark the whole class pass or fail", "One `if` block per student", "**`for` loops**"],
             ["17", "An average on every report card", "The same six lines, four times", "**Functions**"],
             ["22", "Keep the register after closing it", "Retyping it every time", "**Files**"],
         ],
@@ -680,16 +680,16 @@ def build():
             ["4", "", "Changing type, and asking a question", "A cell that takes a grade and prints it plus one"],
             ["5", "", "Giving a value a name", "One student's row printed from named values"],
             ["6", "**D**", "**A register for the whole class**", "Their class as one list, written both ways and compared"],
-            ["7", "", "Working with the register", "A sorted class list, one student added and one removed"],
-            ["8", "", "The first decision", "Pass or fail, on their own school's pass mark"],
-            ["9", "", "More than two outcomes", "A grade sorted into four named bands"],
-            ["10", "**D**", "**Marking the whole class**", "The whole register marked, in four lines"],
-            ["11", "", "Counting and totalling", "Their own class average, computed"],
-            ["12", "", "Loops that decide", "Who failed, how many passed, the highest grade"],
-            ["13", "", "Entering grades one by one", "A loop that collects grades until told to stop"],
-            ["14", "**D**", "**Finding one student**", "Their class as name-to-grade, and a note on what went wrong before"],
-            ["15", "", "Reports from the register", "A printed register line per student, columns aligned"],
-            ["16", "", "Several grades per student", "A report card per student with three grades each"],
+            ["7", "", "Working with the register, and two near-relatives", "A sorted class list, plus the same names as a tuple and a set"],
+            ["8", "**D**", "**Finding one student**", "Their class as name-to-grade, and a note on what went wrong before"],
+            ["9", "", "The first decision", "Pass or fail, on their own school's pass mark"],
+            ["10", "", "More than two outcomes", "A grade sorted into four named bands"],
+            ["11", "**D**", "**Marking the whole class**", "The whole register marked, in four lines"],
+            ["12", "", "Counting and totalling", "Their own class average, computed"],
+            ["13", "", "Loops that decide", "Who failed, how many passed, the highest grade"],
+            ["14", "", "Reports from the register", "A printed register line per student, columns aligned"],
+            ["15", "", "Several grades per student", "A report card per student with three grades each"],
+            ["16", "", "Entering grades one by one", "A loop that collects grades until told to stop"],
             ["17", "**D**", "**An average on every card**", "The calculation written once, called four times"],
             ["18", "", "Sending an answer back", "Four working grade functions that return values"],
             ["19", "", "The register, assembled  *(no new syntax)*", "The complete register program in one notebook"],
@@ -708,6 +708,31 @@ def build():
         "Day 19 doubles as the catch-up session — nothing new arrives, so anyone who has "
         "fallen behind has a session to recover in.",
         size=9.5, italic=True,
+    )
+
+    d.h2("Alignment with the state curriculum")
+    d.para(
+        "Our teachers must be able to deliver **«ԱԲ սերունդ»: Computer Science in "
+        "Python**, approved by order 1875 of 09.09.2026 — a 24-topic, 193-hour curriculum "
+        "for pupils in grades 10 and 11. Our programme is not a compressed copy of it; it "
+        "is the preparation that makes delivering it possible."
+    )
+    d.table(
+        ["State curriculum", "Pupil hours", "Covered by"],
+        [
+            ["Grade 10 · S1 — fundamentals (topics 1–12)", "60", "**Part 1**, days 1–11"],
+            ["Grade 10 · S2 — intermediate (topics 13–17)", "65", "**Part 1** for functions and files; **Part 2** for advanced functions and recursion"],
+            ["Grade 11 · S1 — classes and inheritance (18–20)", "30", "**Part 2**, stage 5"],
+            ["Grade 11 · S2 — libraries, debugging, git (21–24)", "38", "**Part 2**, stage 6. Git remains out of scope pending Part 1's result"],
+        ],
+        [0.44, 0.14, 0.42],
+    )
+    d.para(
+        "**A teacher finishing Part 1 can deliver grade 10 semester 1 outright**, and most "
+        "of semester 2. Two orderings differ from the state document deliberately: we "
+        "teach conditions before loops, and every data type before both, because our "
+        "discovery sequence depends on having something worth looping over. **Recursion "
+        "stays before classes**, as the state curriculum has it."
     )
 
     d.page_break()
@@ -818,7 +843,7 @@ def build():
         ["", "Assessment", "When", "Length", "Points", "Covers"],
         [
             ["1", "Initial diagnostic", "Before day 1", "45–60 min", "44", "Nothing — it measures the baseline"],
-            ["2", "Midpoint", "After day 12", "60–75 min", "50", "Days 6–12"],
+            ["2", "Midpoint", "After day 13", "60–75 min", "50", "Days 6–13"],
             ["3", "Final practical", "Day 24", "90–120 min", "70 + 10", "Days 14–24"],
         ],
         [0.04, 0.21, 0.14, 0.13, 0.11, 0.37],

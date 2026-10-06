@@ -5,7 +5,7 @@ Three sittings, designed with our partner colleague and integrated into the cour
 | | Test | When | Length | Points | Covers |
 |---|---|---|---|---|---|
 | 1 | Initial diagnostic | **Before day 1** | 45–60 min | 44 | Nothing — it measures the baseline |
-| 2 | Midpoint | **After day 12** | 60–75 min | 50 | Days 6–12: lists, conditions, loops |
+| 2 | Midpoint | **After day 13** | 60–75 min | 50 | Days 6–13: data types, conditions, loops |
 | 3 | Final practical | **Day 24** | 90–120 min | 70 **+ 10 reported separately** | Days 14–24: functions, dictionaries, files, the project |
 
 **These are separate sittings, not session time.** The 24 teaching sessions remain 20

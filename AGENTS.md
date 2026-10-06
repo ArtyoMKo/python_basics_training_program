@@ -107,16 +107,21 @@ Example names are **transliterated Armenian**: `Ani`, `Davit`, `Nare`, `Aram`, `
 
 ### 2. A laborious task and its replacement happen in the SAME session.
 
-Five **discovery days** — 6, 10, 14, 17, 22 — each give a real task, let participants solve
+Five **discovery days** — 6, 8, 11, 17, 22 — each give a real task, let participants solve
 it the long way, then hand them the tool that collapses it, inside one 50 minutes.
 
 | Day | Task | Long way | Tool, same day |
 |---|---|---|---|
 | 6 | a register for the whole class | one variable per student | **lists** |
-| 10 | mark the whole class | one `if` block per student | **`for` loops** |
-| 14 | find one student by name | two parallel lists | **dictionaries** |
+| 8 | find one student by name | two parallel lists, read by hand | **dictionaries** |
+| 11 | mark the whole class | one `if` block per student | **`for` loops** |
 | 17 | an average on every report card | the same 6 lines, 4 times | **functions** |
 | 22 | keep the register after closing it | retyping it | **files** |
+
+> **⏳ The notebooks still use the OLD order** (`day08_if_else`, `day10_for_loops`,
+> `day14_dictionaries`). `CURRICULUM.md` carries the agreed new one, where every data
+> type precedes conditions and loops. Renaming and rewriting them is pending work — do
+> not half-do it.
 
 **Never split one across two sessions.** Ending a session after the long way and before
 the short way is the worst outcome this design can produce. If a day runs long, cut its

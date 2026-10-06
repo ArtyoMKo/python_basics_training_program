@@ -195,7 +195,7 @@ extra work:
 | **Day 24** | Attendance across all 24 sessions | Below a certain point, nothing else is interpretable |
 
 **Three assessments**, designed with our partner colleague: a diagnostic before day 1, a
-midpoint after day 12, and a final practical on day 24. They are supervised sittings
+midpoint after day 13, and a final practical on day 24. They are supervised sittings
 outside the 20 teaching hours, scored out of 44, 50 and 70, with a help level recorded
 beside every score.
 

@@ -159,7 +159,7 @@ review should check first: *if a day talks for more than 15 minutes, it is wrong
 
 ### The discovery shape
 
-Days 6, 10, 14, 17 and 22 — where a tool arrives to replace work done the same session —
+Days 6, 8, 11, 17 and 22 — where a tool arrives to replace work done the same session —
 use this instead:
 
 | # | Activity | Min |
@@ -201,10 +201,17 @@ session**. This table is the course; build against it.
 | Day | The real task they are given | The laborious way they do it first | The tool that arrives, same day |
 |---|---|---|---|
 | **6** | Build a register that holds the whole class | One variable per student, ~30 of them | **Lists** |
-| **10** | Mark the whole class pass/fail | One `if`/`else` block per student | **`for` loops** |
-| **14** | Look up one student's grade by name | Two parallel lists and a position counter | **Dictionaries** |
+| **8** | Look up one student's grade by name | Two parallel lists, read **by hand, by position** | **Dictionaries** |
+| **11** | Mark the whole class pass/fail | One `if`/`else` block per student | **`for` loops** |
 | **17** | Put an average on every report card | The same six lines written four times | **Functions** |
 | **22** | Keep the register after closing the program | Retyping it every time | **Files** |
+
+**All four data types come before conditions and loops** (days 6–8), following the
+decision taken with colleagues. It diverges from the school curriculum's own order, which
+teaches loops and conditions first — but our discovery sequence depends on having
+something worth looping over, and a loop over a dictionary is more useful than a loop over
+nothing. Day 8's long half therefore uses **no loops at all**: students are looked up by
+position, by hand, which is exactly what makes the drift visible.
 | **20–21** | Give the program to a colleague | Explaining which cells to run in what order | **`.py` files and the terminal** |
 
 ### 4.1 Same session, always
@@ -305,12 +312,21 @@ functions`) is preserved exactly, with collections interleaved as the relief.
 ### Not taught — and this list is as important as the one above
 
 Classes and objects · exceptions beyond one `try`/`except` in `main.py` · list
-comprehensions (cheatsheet only, never required, never in shipped code) · `lambda`,
-`map`, `filter` · generators · recursion · tuples and sets as concepts · `pip`, virtual
-environments, third-party packages · regular expressions · type hints · `async` · `git` ·
-testing frameworks · databases · anything with a decorator · `*args` / `**kwargs` ·
-`enumerate` **as a concept** (it appears twice, as a copyable recipe for numbering a
-printed list, and is never examined).
+comprehensions · `lambda`, `map`, `filter` · generators · recursion · `*args` /
+`**kwargs` · `pip`, virtual environments, third-party packages · regular expressions ·
+type hints · `async` · **git** · testing frameworks · databases · anything with a
+decorator · `enumerate` **as a concept** (it appears twice, as a copyable recipe, and is
+never examined).
+
+**Tuples and sets are taught**, briefly, on Day 7. The state curriculum places them in
+the pupils' first semester (topic 11), so a teacher meets them immediately. They are
+shown and compared with lists, **not drilled**, and nothing later in this course depends
+on them.
+
+**Most of the list above is Part 2's material, not permanently excluded.** Comprehensions,
+`lambda`, `*args`/`**kwargs` and recursion are state-curriculum topics 16–17; libraries
+and environments are topics 15 and 21; git is topic 23. `docs/GOVERNMENT_ASSIGNMENT.md`
+maps all 24 topics to the part that covers them, and `ROADMAP.md` says when.
 
 **Tuple unpacking is used without the word.** `for name, grade in grades.items():` is
 taught as "two names at once, because each entry has two parts". A teacher does not need
@@ -567,7 +583,7 @@ sessions stay at 20 hours exactly and the assessments add roughly 3½ hours.
 | Test | When | Length | Points | Covers |
 |---|---|---|---|---|
 | `test1_diagnostic` | **Before day 1** | 45–60 min | 44 | nothing — the baseline |
-| `test2_midpoint` | **After day 12** | 60–75 min | 50 | days 6–12 |
+| `test2_midpoint` | **After day 13** | 60–75 min | 50 | days 6–13 |
 | `test3_final_practical` | **Day 24** | 90–120 min | 70 + 10 separate | days 14–24 |
 
 Rules that make them worth setting:
@@ -830,7 +846,7 @@ Project          Days 22–24   150 min    2 h 30
                              1,200 min  = 20 h  ✓
 ```
 
-**Assessments** before Day 1, after Day 12 and on Day 24 (§7.8) — separate sittings, so the agendas are unaffected.
+**Assessments** before Day 1, after Day 13 and on Day 24 (§7.8) — separate sittings, so the agendas are unaffected.
 
 ### Week map (3 sessions/week × 8 weeks)
 
@@ -838,9 +854,9 @@ Project          Days 22–24   150 min    2 h 30
 |---|---|---|---|
 | 1 | 1–3 | It runs on my laptop, and I know what a value is | *(diagnostic sat before day 1)* |
 | 2 | 4–6 | I can name things, and keep a whole class in one list | |
-| 3 | 7–9 | The computer can decide | |
-| 4 | 10–12 | One loop marks thirty students | **Midpoint** |
-| 5 | 13–15 | I can find any student by name | |
+| 3 | 7–9 | Every data type I need, and I can find one student | |
+| 4 | 10–12 | Conditions, then one loop marks thirty students | |
+| 5 | 13–15 | I can compute and report on the whole class | **Midpoint** (after day 13) |
 | 6 | 16–18 | I write the calculation once and use it everywhere | |
 | 7 | 19–21 | It is a program now, not a notebook | |
 | 8 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** |
@@ -931,11 +947,11 @@ Cut, never compress. In this order:
 3. Day 19's consolidation day, if the room is already ahead.
 4. Day 23's own-feature work — it can become optional homework.
 
-**Never cut:** the five discovery days (6, 10, 14, 17, 22) — each is a concept *and* its
+**Never cut:** the five discovery days (6, 8, 11, 17, 22) — each is a concept *and* its
 motivation in one session, so cutting one costs both. Nor Days 20–21 (the transition) or
 Day 24 (finishing something is the point).
 
-**Never split a discovery day across two sessions.** If Day 10 runs out of time, cut its
+**Never split a discovery day across two sessions.** If Day 11 runs out of time, cut its
 Extra tasks — never its second half. A session that ends after the long way and before the
 short way is the single worst outcome the design can produce.
 
