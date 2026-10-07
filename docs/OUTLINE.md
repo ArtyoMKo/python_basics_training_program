@@ -64,7 +64,7 @@ ever again. The ten English words are taught instead.
 functions and `return` · reading and writing files · modules and running a program from a
 terminal.
 
-Part 1 covers topics 1–15 of the 24 in the state curriculum our teachers must deliver
+Part 1 covers topics 1–14 of the 24 in the state curriculum our teachers must deliver
 (`docs/GOVERNMENT_ASSIGNMENT.md`); `ROADMAP.md` shows where the rest lands.
 
 **Habits that outlast the syntax**

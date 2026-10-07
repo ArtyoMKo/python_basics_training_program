@@ -131,14 +131,14 @@ protect it.
 
 ## 4. Timing
 
-Every day's agenda is in `CURRICULUM.md` and sums to exactly 50 minutes, verified by
-script. The standard shape is 5 recap / **12 teach** / 15 run together / 15 exercises /
-3 retrospective.
+Every day's agenda is in `CURRICULUM.md` and sums to exactly 75 minutes, verified by
+script. The standard shape is 5 recap / **12 teach** / 20 run together / 33 exercises /
+5 retrospective.
 
 > **The rule to hold yourself to: if you have been talking for more than 15 minutes, you
 > are behind and the lesson is already worse.**
 
-Hands-on is 30 of 50 minutes. That is a floor. These are adults who will not ask you to
+Hands-on is at least 49 of 75 minutes. That is a floor. These are adults who will not ask you to
 stop, so nobody will tell you when you are over.
 
 **If you run out of time, cut — never compress.** In this order:

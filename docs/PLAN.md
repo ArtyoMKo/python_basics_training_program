@@ -50,7 +50,7 @@ works, that they can remember on a Tuesday, without notes.
 ## 1. The course in one paragraph
 
 Public-school teachers, with no programming background, learn Python from installing it to
-writing a small program they actually use. Twenty-four 50-minute sessions over two months.
+writing a small program they actually use. Twenty-four 75-minute sessions over two months.
 Every example is about a classroom — students, grades, attendance, averages, reports —
 and the course ends with each participant running a gradebook program over their own
 (anonymised) class list, from a terminal, on their own laptop.
@@ -88,7 +88,7 @@ point.
 |---|---|---|
 | 13–18, already program | Adults, never programmed | Python **is** the subject, not the medium |
 | 16 identical lab Macs prepared by IT | Mixed personal Windows/Mac laptops | Installation is Day 1's entire content, and is the single biggest risk |
-| 120-minute lessons | **50-minute** lessons | One idea per session, and the agenda has no slack |
+| 120-minute lessons | **75-minute** lessons | One idea per session, and the agenda has no slack |
 | External paid API, keys, vendor abstraction | **Standard library only** | No `pip`, no venv, no `requirements.txt`, no keys, no network, no cost |
 | Materials in English for English-schooled teens | **Armenian prose, English code** | A beginner cannot learn a spoken language and a programming language at once |
 | Fast students get an extra challenge | Fear, not boredom, is the failure mode | Every session must be completable by the slowest person; extras are genuinely optional |
@@ -115,7 +115,7 @@ This applies to file names too: instructor-facing notes are `INSTRUCTOR_NOTES.md
 | **Transition** | 20–21 | VS Code, `.py` files, terminal | Reorganise working code into a real program |
 | **Project** | 22–24 | VS Code + terminal | Own data, own feature, finish and show |
 
-Two days for the transition rather than the methodology's one, because 50 minutes cannot
+Two days for the transition rather than the methodology’s one, because 75 minutes cannot
 hold both "here is what a `.py` file is" and "here are four modules". Day 20 is one file;
 Day 21 is the split. **Neither may be cut** (§13).
 
@@ -201,7 +201,7 @@ position, by hand, which is exactly what makes the drift visible.
 
 ### 4.1 Same session, always
 
-**The laborious version and its replacement happen in the same 50 minutes.** A participant
+**The laborious version and its replacement happen in the same 75 minutes.** A participant
 never goes home having only done the slow thing. They go home having done the slow thing
 *and* seen it collapse.
 
@@ -631,7 +631,7 @@ main.py        Ask the teacher what they want, and print. (does no calculating o
 
 **Four, not five.** An earlier draft had a separate `report.py` for printing. Printing is
 two `print()` calls in a loop and does not need its own file; folding it into `main.py`
-removes a file, an import and five minutes of explanation from a 50-minute day. This is
+removes a file, an import and five minutes of explanation from a 75-minute day. This is
 §0 applied.
 
 **Dependency arrows point one way:** `main` → `grades`, `storage` → `settings`.
@@ -949,11 +949,11 @@ day's recap callout, must be enough. Build each notebook so this is true.
 
 | # | Methodology says | Here | Why |
 |---|---|---|---|
-| O1 | Transition is exactly one lesson | Two (Days 20–21) | 50-minute sessions; one cannot hold both "what a `.py` file is" and a five-module split |
+| O1 | Transition is exactly one lesson | Two (Days 20–21) | 75-minute sessions; one cannot hold both "what a `.py` file is" and a five-module split |
 | O2 | Provider-agnostic pattern is the architectural spine (§7) | **Dropped entirely** | No external service exists in this course. Its replacement as the "one clean abstraction" is `settings.py` — one place for every number — which is the Day 9 lesson made structural |
 | O3 | "Age-appropriate complexity: students already program" | Absolute beginners | Python is the subject, not the medium; §5's exclusion list is far longer |
 | O4 | Python is not taught; a cheatsheet is handed out | Python **is** the course; the cheatsheet is a printable summary that grows with it | Inverted audience |
-| O5 | 1–2 exercise callouts per lesson | 3–5 short ones | 50-minute sessions need smaller units of work |
+| O5 | 1–2 exercise callouts per lesson | 3–5 short ones | 75-minute sessions need smaller units of work |
 | O6 | "🌍 Where you'll see this in the real world" | "🏫 In your classroom" | The real world in question is a school |
 | O7 | Stub the external API (§9.2) | Stub `input()`; assert deliberate errors | Same discipline, different external dependency |
 | O8 | `TEACHER_NOTES.md` | `INSTRUCTOR_NOTES.md` | "Teacher" means the participant here |
@@ -977,7 +977,7 @@ adjectives, the definition of done — applies unchanged.
 | **D5** | Practice between sessions | Yes — one ~10-minute task per day, **explicitly optional**, and the next day never assumes it was done | §7, §3 |
 | **D6** | Group size | **4–8, one instructor.** Fewer than 4 and they cannot discuss; more than 8 and the instructor cannot check on everyone remotely | §2, §12 |
 | **D11** | Delivery | **Remote**, over Google Meet with screen sharing. Each teacher needs their own laptop and a connection that holds a 75-minute call | §2, §12, `ENROLMENT.md` |
-| **D12** | Session length | **75 minutes**, 3 a week. May become 2 a week or 3 × 50 after the cohort adapts. **Agendas not yet rebuilt** | §3 |
+| **D12** | Session length | **75 minutes**, 3 a week. May become 2 a week or 3 × 50 after the cohort adapts. Agendas rebuilt to 75 and verified | §3 |
 | **D13** | Success criterion | **>90% can code** = success · **<50%** = failure · between = adjust and repeat | `RATIONALE.md` §5a |
 | **D7** | Recruitment document | `ANNOUNCEMENT.md`, written **for teachers**. A one-page summary for school administration only if asked for | §9 |
 | **D8** | Version control | Own repository: `git@github.com:AIrtyoMKo/python_basics_training_program.git` | §9.3 |

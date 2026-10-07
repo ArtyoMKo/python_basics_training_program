@@ -83,8 +83,8 @@ the same session:
 | 6 | Retrospective | 5 |
 | | **Total** | **75** |
 
-Teaching never exceeds 12 minutes in one block. Hands-on is 30 of 50 on a standard day,
-26 of 50 on a discovery day.
+Teaching never exceeds 12 minutes in one block. Hands-on is 53 of 75 on a standard day,
+49 of 75 on a discovery day.
 
 > **Never split a discovery day.** If it runs long, cut the Extra tasks — never the
 > second half. Ending a session after the long way and before the short way is the worst
@@ -667,9 +667,9 @@ the programme can only report an endpoint; with one it can report change.
 |---|---|---|---|
 | 1 | 1–3 | It runs on my laptop, and I know what a value is | *(diagnostic sat before day 1)* |
 | 2 | 4–6 | I can name things, and keep a whole class in one list | |
-| 3 | 7–9 | The computer can decide | |
-| 4 | 10–12 | One loop marks thirty students | **Midpoint test** |
-| 5 | 13–15 | I can find any student by name | |
-| 6 | 16–18 | I write the calculation once and use it everywhere | **Test 3** |
+| 3 | 7–9 | Every data type I need, and I can find one student | |
+| 4 | 10–12 | Conditions, then one loop marks thirty students | |
+| 5 | 13–15 | I can compute and report on the whole class | **Midpoint**, sat after day 13 |
+| 6 | 16–18 | I write the calculation once and use it everywhere | |
 | 7 | 19–21 | It is a program now, not a notebook | |
-| 8 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** |
+| 8 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical**, sat on day 24 |

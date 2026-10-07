@@ -199,7 +199,7 @@ extra work:
 | When | The check | Why it is the right one |
 |---|---|---|
 | **Diagnostic** (before Day 1) | Q1: can they run a cell at all, and at what help level? | **The baseline.** Without it we can only report an endpoint, not change |
-| **Midpoint** (after Day 12) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
+| **Midpoint** (after Day 13) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
 | **Final** (Day 24) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the four-file project was not reachable |
 | **Day 21** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
 | **Day 24** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |

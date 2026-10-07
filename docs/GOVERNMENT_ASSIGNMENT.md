@@ -124,9 +124,10 @@ is the format any material we hand to the ministry would be expected to match:
 
 ## 6. What this means for our programme
 
-**Our Part 1 covers the pupils' topics 1–15**, compressed from ~125 pupil-hours into
-roughly 30 teacher-hours. A teacher finishing Part 1 can teach grade 10 semester 1
-outright, and most of semester 2.
+**Our Part 1 covers the pupils' topics 1–14, plus the `import` half of topic 15**,
+compressed from ~118 pupil-hours into roughly 30 teacher-hours. A teacher finishing Part 1
+can teach **grade 10 semester 1 outright**, and the first two topics of semester 2
+(functions and files).
 
 Deliberate divergences, agreed and recorded:
 
@@ -138,12 +139,43 @@ Deliberate divergences, agreed and recorded:
 | OOP | grade 11 | Part 2 | Same relative position |
 | Depth | full theory of each construct | the 20% that yields 80% | Teachers need to teach it, and they get the depth in Part 2 |
 
-Known gaps against the document, with where they land:
+## 7. Coverage audit — topic by topic
 
-| Topic | Gap | Plan |
-|---|---|---|
-| 11 — tuples and sets | Was excluded | **Added to Part 1**, lightly |
-| 15, 21 — libraries and environments | NumPy, Matplotlib, pandas, pip, venv | **Part 2** |
-| 16 — comprehensions, `lambda`, `*args` | On our exclusion list for Part 1 | **Part 2** |
-| 23 — git | Excluded | **Out of scope for now.** Revisited for Part 2 depending on Part 1's result |
-| 22 — debugging as a topic | We teach it continuously instead | Deliberate; no action |
+Checked against the built materials (`src/`, `guides/`, `project/`) on **2026-10-07**, by
+searching for the specific constructs each topic names. ✅ taught · ◐ partly · ○ not yet.
+
+| # | Topic | Part 1 | Named outcomes we do **not** yet teach |
+|---|---|---|---|
+| 1 | Ներածություն | ✅ | |
+| 2 | Շարահյուսություն | ✅ | |
+| 3 | Մուտքեր, ելքեր | ✅ | |
+| 4 | Փոփոխականներ | ✅ | |
+| 5 | Տիպեր, տողեր | ◐ | `ord()`/`chr()` and the ASCII idea; string **slicing** (we slice lists, never strings) |
+| 6 | Թվային օպերատորներ | ◐ | `**`; compound assignment `+=`; `pow`, `divmod`; operator **precedence** as a stated rule |
+| 7 | Տրամաբանական օպերատորներ | ✅ | truth tables are used but never drawn as tables |
+| 8 | Ցիկլեր | ✅ | |
+| 9 | Պայմաններ | ✅ | |
+| 10 | Զանգված list | ◐ | `insert`, `reverse`, `.index()`; **2-D lists** (only via dict-of-lists); **mutability and references** (`list2 = list1`) |
+| 11 | Tuple, set | ◐ | **tuple unpacking**; reference vs copy |
+| 12 | Բառարաններ | ◐ | **`.get()` for safe access**; the `dict()` constructor |
+| 13 | Ֆունկցիաներ | ◐ | **local and global** scope, and the `global` keyword |
+| 14 | Ֆայլեր | ◐ | **`open()` and `with open()`**, the file modes, and `read / readline / readlines / write / writelines`. We teach `pathlib`'s `read_text` / `write_text` instead — simpler, but *not what the pupils' curriculum names* |
+| 15 | Մոդուլներ \| Colab | ◐ | `pip`, `requirements.txt`, NumPy, Matplotlib, Colab. We teach `import` of our own modules (day 21) and work in Jupyter throughout |
+| 16–24 | | ○ | Part 2 — see `ROADMAP.md` |
+
+### What to do about the gaps
+
+Most are one cell each and could be added as **Extra tasks**, which cost no agenda time
+because they are only reached by participants who finish early. Three are not:
+
+1. **Topic 14 — `with open()`.** The widest gap, because a teacher must demonstrate the
+   syntax the pupils' book uses. `pathlib` was chosen for simplicity (`PLAN.md` §0) and
+   that choice still looks right for *learning*; but day 22 should show `with open()`
+   once, side by side, so the teacher has seen it.
+2. **Topic 13 — local and global scope.** Deferred to Part 2 stage 1 on purpose. Worth
+   stating explicitly rather than leaving it to look like an oversight.
+3. **Topic 10/11 — mutability and references.** Genuinely hard, and the curriculum puts
+   it in grade 10. It is the one gap that is not cheap to close.
+
+**None of these change Part 1's structure or its 30 hours.** They are additions to
+existing days, and each one needs a decision before it is written.
