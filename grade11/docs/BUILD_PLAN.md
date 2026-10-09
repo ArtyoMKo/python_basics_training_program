@@ -120,7 +120,7 @@ form: **which line of the final school report tool needs it?**
 | **12** | Participant-facing documents | `handouts/SETUP.md`, `CHEATSHEET.md`, `docs/ANNOUNCEMENT.md`, `docs/ENROLMENT.md` | ✅ done |
 | **13** | Colleague-facing documents | `docs/RATIONALE.md`, `docs/OUTLINE.md`, `docs/INSTRUCTOR_NOTES.md`, `docs/ROADMAP.md` | ✅ done |
 | **14** | Full verification; coverage audit against `../shared/GOVERNMENT_ASSIGNMENT.md` | green `verify.py`, the audit in `../shared/GOVERNMENT_ASSIGNMENT.md` §8 | ✅ done |
-| **15** | Partner document covering both courses | `grade10/partners/` — dossier v2.0 and change log | ✅ done |
+| **15** | Partner document covering both courses | `../partners/` — dossier v3.0 and change log, built from `../tools/` | ✅ done |
 
 ### Rules for working through them
 

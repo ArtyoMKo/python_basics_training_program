@@ -6,7 +6,7 @@ hours exactly, and add roughly 3½ hours on top.
 | | Test | When | Length | Points |
 |---|---|---|---|---|
 | 1 | `test1_diagnostic` | **Before session 1** | 45–60 min | 40 |
-| 2 | `test2_midpoint` | **After topic 11** | 60–75 min | 50 |
+| 2 | `test2_midpoint` | **After session 8** (topics 2–11) | 60–75 min | 50 |
 | 3 | `test3_final_practical` | **Session 16** | 90–120 min | 70 **+ 10 reported separately** |
 
 ## Two builds of every test

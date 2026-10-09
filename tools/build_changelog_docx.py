@@ -33,6 +33,8 @@ from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
 ROOT = Path(__file__).resolve().parent.parent
+TEN = ROOT / "grade10"
+ELEVEN = ROOT / "grade11"
 OUT = ROOT / "partners" / "Programme_Dossier_Change_Log.docx"
 
 INK = RGBColor(0x1A, 0x1A, 0x1A)
@@ -376,8 +378,8 @@ def check_facts():
 
 # -------------------------------------------------------------------------- content
 
-TODAY = "10 October 2026"
-CURRENT = "2.2"
+TODAY = "11 October 2026"
+CURRENT = "3.0"
 BASELINE = "1.1"
 BASELINE_DATE = "Friday 2 October"
 
@@ -426,7 +428,13 @@ def build():
         "The version you were sent prepared a teacher to teach **one school year**. Since "
         "then a **second course has been written and checked**, which prepares the same "
         "teacher to teach **the following year**. It is the same length and the same "
-        "shape: two months, three lessons a week, small groups, online.",
+        "shape: two months, two lessons a week, small groups, online.",
+        size=10.5,
+    )
+    d.para(
+        "**The enclosed document now describes both courses in the same detail** — each "
+        "with its own curriculum, schedule, assessment and finished program. Earlier "
+        "versions covered the first course in full and the second in a single page.",
         size=10.5,
     )
     d.table(

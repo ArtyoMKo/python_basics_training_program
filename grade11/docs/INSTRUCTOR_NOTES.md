@@ -82,7 +82,7 @@ of line counts. Saying it aloud turns a discovery into a lecture.
 | | Test | When | Length | Points |
 |---|---|---|---|---|
 | 1 | Initial diagnostic | **Before session 1** | 45–60 min | 40 |
-| 2 | Midpoint | **After topic 11** | 60–75 min | 50 |
+| 2 | Midpoint | **After session 8** (topics 2–11) | 60–75 min | 50 |
 | 3 | Final practical | **Session 16** | 90–120 min | 70 + 10 separate |
 
 **Record a help level with every score** — `3` independent, `2` after one hint, `1`
@@ -96,7 +96,7 @@ rubric in it.
 | | Question | If it is weak |
 |---|---|---|
 | Diagnostic | **Q1 — did they write a loop?** | Extend session 1 and run a loop clinic before topic 2. Do not carry on as planned |
-| Midpoint | **Q4 — did they write a working `__init__`?** | **Do not start topic 12.** Add a revision session on topics 6–8 |
+| Midpoint | **Q4 — did they write a working `__init__`?** | **Do not start session 9.** Add a revision session on topics 6–8 |
 
 Each guide — `tests/mark1_guide.md` and so on — says what every wrong answer means.
 

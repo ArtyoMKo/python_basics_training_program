@@ -67,7 +67,6 @@ public_school_python/
 ├── guides/                 <- Topics 20-24, markdown, read beside the code
 ├── tests/                  <- 3 assessments: grader's copy, participant/, marking guides
 ├── project/gradebook/      <- the finished reference program
-├── partners/               <- the .docx programme dossier for external partners
 ├── src/                    <- notebook SOURCES, the thing you edit
 └── tools/                  <- builder, verifier and the three checkers
 ```
@@ -97,8 +96,8 @@ python tools/verify.py      # four checks; nothing is done until this passes
 The partner dossier is generated too:
 
 ```bash
-python tools/build_partner_docx.py      # -> partners/..._Programme_Dossier.docx
-python tools/build_changelog_docx.py    # -> partners/..._Change_Log.docx
+# The partner dossier covers BOTH courses and is built from the repository root:
+#   cd .. && python tools/build_partner_docx.py
 ```
 
 The change log is a **single page in plain language for a non-technical reader** — what

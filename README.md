@@ -9,6 +9,7 @@ curriculum **«ԱԲ սերունդ» — ՀԱՄԱԿԱՐԳՉԱՅԻՆ ԳԻՏՈՒԹ
 | **[`grade10/`](grade10/README.md)** | **Grade 10** | 1–14 | **Built and verified.** Not yet taught |
 | **[`grade11/`](grade11/README.md)** | **Grade 11** | 15–22, 24 | **Built and verified.** Not yet taught |
 | [`shared/`](shared/GOVERNMENT_ASSIGNMENT.md) | the curriculum both answer to | all 24 | reference |
+| [`partners/`](partners/) | the dossier and change log for external partners, covering **both** courses | — | generated |
 
 Each course is **16 sessions × 120 minutes = 32 hours**, two a week over eight weeks,
 delivered remotely in groups of 4–8. Materials are in Armenian; code is in English.
@@ -40,7 +41,9 @@ variables and loops.
 Each course folder is self-contained — its own `AGENTS.md`, `docs/`, `src/` and `tools/`.
 
 ```bash
-cd grade10 && python tools/verify.py     # or grade11
+cd grade10 && python tools/verify.py     # or grade11 — proves one course's material runs
+python tools/check_docs.py               # from the root — proves the DOCUMENTS agree
+python tools/build_partner_docx.py       # from the root — rebuilds the partner dossier
 ```
 
 > **Read the `AGENTS.md` inside the course folder you are changing.** The two courses share

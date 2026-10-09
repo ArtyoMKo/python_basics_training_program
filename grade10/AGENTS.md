@@ -235,7 +235,8 @@ tests/                  generated .ipynb (grader) + participant/ (generated)
                         + mark1–3_guide.md and README.md (hand-written, instructor only)
 guides/                 topics 20–24, markdown, read beside the code  (Armenian)
 project/gradebook/      the finished reference program (4 files)
-partners/               generated .docx dossier and change log — do not edit
+../partners/            generated .docx dossier and change log, covering BOTH
+                        courses — built from ../tools/, never edited by hand
 tools/                  nbbuild.py, verify.py, the three checkers,
                         build_partner_docx.py
 ```
@@ -254,7 +255,7 @@ tools/                  nbbuild.py, verify.py, the three checkers,
 | Planting a problem to solve next session | breaks rule 2 | resolve it in the same notebook |
 | Committing notebooks with outputs | unreadable diffs, stale numbers | outputs stay cleared |
 | Changing the sample class casually | silently falsifies prose in several days | grep every quoted number, then rebuild the dossier |
-| Editing the `.docx` in `partners/` | overwritten on next build | edit `tools/build_partner_docx.py` |
+| Editing the `.docx` in `../partners/` | overwritten on next build | edit `../tools/build_partner_docx.py` |
 | Putting a rubric in a plain `#%% md` cell in an exam | it reaches the participant | mark it `#%% md teacher` |
 | Marking a deliberate-error cell as a bug | it is a teaching device | `expected-error:` cells must raise |
 

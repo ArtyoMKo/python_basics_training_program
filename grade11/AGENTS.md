@@ -5,7 +5,7 @@
 The repository root's `AGENTS.md` lists the seven rules both courses share. This file
 holds what is true *only* here. Where they disagree, this file wins inside `grade11/`.
 
-`docs/PLAN.md` is the build specification and wins any disagreement with this file.
+`docs/BUILD_PLAN.md` is the build specification and wins any disagreement with this file.
 `docs/BUILD_PLAN.md` is the step board — read it to find out what is built and what is not.
 
 ---
@@ -48,7 +48,7 @@ participant installs anything to follow the course. `pip`, `requirements.txt` an
 environments are *taught as a topic* on topic 20, against one small package — the only
 session that needs internet.
 
-Still excluded, deliberately (`docs/PLAN.md` §5): decorators · generators · `@property` ·
+Still excluded, deliberately (`docs/BUILD_PLAN.md` §2): decorators · generators · `@property` ·
 `dataclasses` · multiple inheritance · abstract base classes · custom exception classes ·
 `sklearn`, `pytorch`, `tensorflow` (**named once in session 16, never used**) · regex · type
 hints · `async` · testing frameworks · databases · **git** · factorial, Fibonacci, the

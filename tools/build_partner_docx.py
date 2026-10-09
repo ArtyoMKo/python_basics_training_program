@@ -26,6 +26,8 @@ from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
 ROOT = Path(__file__).resolve().parent.parent
+TEN = ROOT / "grade10"
+ELEVEN = ROOT / "grade11"
 OUT = ROOT / "partners" / "Python_from_Zero_Programme_Dossier.docx"
 
 INK = RGBColor(0x1A, 0x1A, 0x1A)
@@ -305,7 +307,7 @@ def check_facts():
     """
     problems = []
 
-    curriculum = (ROOT / "docs" / "CURRICULUM.md").read_text(encoding="utf-8")
+    curriculum = (TEN / "docs" / "CURRICULUM.md").read_text(encoding="utf-8")
     index_rows = re.findall(r"^\|\s*(\d+)\s*\|[^|]+\|[^|]+\|[^|]+\|\s*(\d+)\s*\|\s*$",
                             curriculum, re.M)
     days = [int(n) for n, _ in index_rows]
@@ -316,8 +318,8 @@ def check_facts():
     if sum(minutes) != 1920:
         problems.append(f"total is {sum(minutes)} minutes, not 1920")
 
-    # The grade-11 course is a sibling folder; section 12 quotes its figures.
-    eleven = ROOT.parent / "grade11"
+    # The grade-11 course is a sibling folder; section 11 quotes its figures.
+    eleven = ELEVEN
     if eleven.exists():
         eleven_days = re.findall(
             r"^\|\s*(\d+)\s*\|[^|]+\|[^|]+\|[^|]+\|\s*(\d+)\s*\|\s*$",
@@ -333,20 +335,37 @@ def check_facts():
             (eleven / "docs" / "CURRICULUM.md").read_text(encoding="utf-8")))
         if discovery != 7:
             problems.append(f"grade11 has {discovery} discovery days, not the 7 quoted")
-        eleven_project = len(list((eleven / "project" / "school_report").glob("*.py")))
+        eleven_project = len(list((ELEVEN / "project" / "school_report").glob("*.py")))
         if eleven_project != 5:
             problems.append(f"grade11 project has {eleven_project} files, not the 5 quoted")
     else:
-        problems.append("grade11/ is missing but section 12 describes it")
+        problems.append("grade11/ is missing but section 11 describes it")
+
+    # Claims added for the grade-11 part of this document.
+    if ELEVEN.exists():
+        eleven_counts = {
+            "notebooks": len(list((ELEVEN / "notebooks").glob("*.ipynb"))),
+            "solutions": len(list((ELEVEN / "solutions").glob("*.ipynb"))),
+            "guides": len(list((ELEVEN / "guides").glob("*.md"))),
+        }
+        for label, expected in [("notebooks", 21), ("solutions", 21), ("guides", 3)]:
+            if eleven_counts[label] != expected:
+                problems.append(f"grade11 has {eleven_counts[label]} {label}, "
+                                f"not the {expected} quoted in the appendix")
+        eleven_curriculum = (ELEVEN / "docs" / "CURRICULUM.md").read_text(encoding="utf-8")
+        for moment in ["**After session 8**", "**Session 16**", "**Before session 1**"]:
+            if moment not in eleven_curriculum:
+                problems.append(f"grade11 CURRICULUM no longer says {moment} — the "
+                                "assessment table in this document quotes it")
 
     counts = {
-        "notebooks": len(list((ROOT / "notebooks").glob("*.ipynb"))),
-        "solutions": len(list((ROOT / "solutions").glob("*.ipynb"))),
-        "tests": len(list((ROOT / "tests").glob("*.ipynb"))),
-        "participant tests": len(list((ROOT / "tests" / "participant").glob("*.ipynb"))),
-        "guides": len(list((ROOT / "guides").glob("*.md"))),
-        "marking guides": len(list((ROOT / "tests").glob("mark*_guide.md"))),
-        "project files": len(list((ROOT / "project" / "gradebook").glob("*.py"))),
+        "notebooks": len(list((TEN / "notebooks").glob("*.ipynb"))),
+        "solutions": len(list((TEN / "solutions").glob("*.ipynb"))),
+        "tests": len(list((TEN / "tests").glob("*.ipynb"))),
+        "participant tests": len(list((TEN / "tests" / "participant").glob("*.ipynb"))),
+        "guides": len(list((TEN / "guides").glob("*.md"))),
+        "marking guides": len(list((TEN / "tests").glob("mark*_guide.md"))),
+        "project files": len(list((TEN / "project" / "gradebook").glob("*.py"))),
     }
     expected = {"notebooks": 19, "solutions": 18, "tests": 3, "participant tests": 3,
                 "guides": 5, "marking guides": 3, "project files": 4}
@@ -355,7 +374,7 @@ def check_facts():
             problems.append(f"{name}: found {counts[name]}, dossier says {want}")
 
     # The sample class is quoted in the dossier and in the course prose.
-    sample = (ROOT / "notebooks" / "sample_class.csv").read_text(encoding="utf-8")
+    sample = (TEN / "notebooks" / "sample_class.csv").read_text(encoding="utf-8")
     grades = [int(line.split(",")[1]) for line in sample.strip().splitlines()[1:]]
     if len(grades) != 12 or sum(grades) != 78 or sum(grades) / len(grades) != 6.5:
         problems.append(f"sample class: {len(grades)} students, sum {sum(grades)}, "
@@ -364,7 +383,7 @@ def check_facts():
     # The dossier quotes the point totals, so check them against the exams themselves.
     for name, points in (("test1_diagnostic", 44), ("test2_midpoint", 50),
                          ("test3_final_practical", 70)):
-        source = (ROOT / "src" / "tests" / f"{name}.py").read_text(encoding="utf-8")
+        source = (TEN / "src" / "tests" / f"{name}.py").read_text(encoding="utf-8")
         scored = [int(m) for m in re.findall(r"\*\*Միավոր՝\*\*\s*(\d+)", source)]
         # The final test's question 8 is reported separately and is not in the total.
         total = sum(scored[:-1]) if name == "test3_final_practical" else sum(scored)
@@ -372,16 +391,16 @@ def check_facts():
             problems.append(f"{name}: questions total {total} points, dossier says {points}")
 
     # No grader-only cell may survive into the participant copy.
-    for path in (ROOT / "tests" / "participant").glob("*.ipynb"):
+    for path in (TEN / "tests" / "participant").glob("*.ipynb"):
         if "Ուսուցչի նշում" in path.read_text(encoding="utf-8"):
             problems.append(f"{path.name}: the rubric leaked into the participant copy")
 
     # Discovery days must still be the five the dossier names.
     for day in ("day06_class_register", "day08_dictionaries", "day11_for_loops",
                 "day17_functions"):
-        if not (ROOT / "notebooks" / f"{day}.ipynb").exists():
+        if not (TEN / "notebooks" / f"{day}.ipynb").exists():
             problems.append(f"missing discovery notebook {day}")
-    if not (ROOT / "guides" / "day22_your_own_class.md").exists():
+    if not (TEN / "guides" / "day22_your_own_class.md").exists():
         problems.append("missing discovery guide day22_your_own_class.md")
 
     return problems
@@ -390,7 +409,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "2.2"
+VERSION = "3.0"
 
 
 # Phrases from the three-a-week schedule. This document restates its figures in prose
@@ -461,7 +480,7 @@ def build():
     d.table(
         ["", ""],
         [
-            ["Structure", "**Two courses, one per school grade.** Each is a **practical Part 1 of 2 months** and a **theoretical Part 2 of 4 months** that runs only if its Part 1 succeeds. **This dossier describes the grade-10 course's Part 1**; the grade-11 course is summarised in section 12."],
+            ["Structure", "**Two courses, one per school grade.** Each is a **practical Part 1 of 2 months** and a **theoretical Part 2 of 4 months** that runs only if its Part 1 succeeds. **Sections 1–10 describe the grade-10 course's Part 1; section 11 describes the grade-11 course's Part 1.** Both are built and verified."],
             ["Part 1 format", "16 sessions × 120 minutes = **32 hours**, **twice a week** over eight weeks, plus homework between sessions and three assessment sittings"],
             ["Delivery", "**Remote**, over Google Meet with screen sharing"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
@@ -478,8 +497,13 @@ def build():
     d.callout(
         "How to read this",
         [
-            "Sections 3–6 answer what you asked: the method, the schedule, the curriculum "
-            "and the expected results.",
+            "**Sections 1–10 describe the grade-10 course** — the method, the schedule, "
+            "the curriculum, the expected results and the assessment. The method is "
+            "shared by both courses, so section 3 is worth reading whichever one "
+            "interests you.",
+            "**Section 11 is the grade-11 course in full** — its own curriculum, "
+            "schedule, assessment and deliverable, and what it assumes a teacher already "
+            "knows on its first day.",
             "Section 8 sets out how the programme will be judged, including the one "
             "measurement that tests its central assumption.",
             "Section 9 states the risks plainly, including how this could fail. We would "
@@ -497,7 +521,7 @@ def build():
         "**It is now two courses — one preparing a teacher for grade 10, one for grade "
         "11 — and each is a practical Part 1 of two months followed by a theoretical "
         "Part 2 of four.** This dossier describes the **grade-10 course's Part 1**; "
-        "section 12 summarises the second course, which is also built. Part 1 is "
+        "**section 11 is the grade-11 course in full**, which is also built. Part 1 is "
         "sixteen sessions of two hours, twice a week for eight weeks, "
         "**taught remotely in groups of four to eight**. Every participant finishes with "
         "a small program they wrote themselves and can use: a gradebook that opens their "
@@ -719,18 +743,20 @@ def build():
     d.page_break()
 
     # ------------------------------------------------------------- 5. curriculum
-    d.h1("Curriculum — the twenty-four sessions")
+    d.h1("Curriculum — the grade-10 course")
 
     d.para(
         "Topics are taught in the order a beginner can absorb them: printing, types, "
         "variables, conditions, loops, functions. Lists and dictionaries are placed where "
         "they solve a problem the participant has just met, rather than where a textbook "
-        "would put them. **D** marks a discovery day, **T** the transition to real files, "
+        "would put them. The course teaches **24 topics across 16 two-hour sessions**: a "
+        "topic is one notebook and one idea, a session is two hours in a room. "
+        "**D** marks a discovery session, **T** the transition to real files, "
         "**P** the project phase."
     )
 
     d.table(
-        ["Day", "", "Session", "What the participant has at the end"],
+        ["Topic", "", "Title", "What the participant has at the end"],
         [
             ["1", "", "Install everything and run your first line", "Six green setup checks, and a line printed by a machine they set up themselves"],
             ["2", "", "Printing properly", "A four-line class register header"],
@@ -761,10 +787,10 @@ def build():
         size=8.5,
     )
     d.para(
-        "Days 1–19 use Jupyter notebooks; days 20–24 use plain Python files with a written "
-        "guide beside them, because by then the participants are running a terminal. "
-        "Day 19 doubles as the catch-up session — nothing new arrives, so anyone who has "
-        "fallen behind has a session to recover in.",
+        "Topics 1–19 use Jupyter notebooks; topics 20–24 use plain Python files with a "
+        "written guide beside them, because by then the participants are running a "
+        "terminal. Topic 19 doubles as the catch-up — nothing new arrives, so anyone who "
+        "has fallen behind has time to recover.",
         size=9.5, italic=True,
     )
 
@@ -778,7 +804,7 @@ def build():
     d.table(
         ["State curriculum", "Pupil hours", "Covered by"],
         [
-            ["Grade 10 · S1 — fundamentals (topics 1–12)", "60", "**Part 1**, days 1–11"],
+            ["Grade 10 · S1 — fundamentals (topics 1–12)", "60", "**the grade-10 course**, topics 1–11"],
             ["Grade 10 · S2 — intermediate (topics 13–17)", "65", "**Part 1** for functions and files; **Part 2** for advanced functions and recursion"],
             ["Grade 11 · S1 — classes and inheritance (18–20)", "30", "**Part 2**, stage 5"],
             ["Grade 11 · S2 — libraries, debugging, git (21–24)", "38", "**Part 2**, stage 6. Git remains out of scope pending Part 1's result"],
@@ -1240,7 +1266,7 @@ def build():
     d.page_break()
 
     # ------------------------------------------------------- 11. decision point
-    d.h1("The second course — preparing teachers for grade 11")
+    d.h1("The grade-11 course")
 
     d.para(
         "Since this dossier was last issued, a **second course has been built and "
@@ -1292,6 +1318,112 @@ def build():
             "apart from that topic.",
         ],
         fill=BAND_FILL,
+    )
+
+    d.h2("The grade-11 curriculum")
+
+    d.para(
+        "The same shape as the first course: **24 topics across 16 two-hour sessions**. "
+        "Seven of the sixteen are discovery sessions, marked **D** — two more than the "
+        "first course, because almost everything here is a tool that replaces work the "
+        "participant has just done by hand."
+    )
+
+    d.table(
+        ["Topic", "", "Title", "What the participant has at the end"],
+        [
+            ["1", "", "The school, and what we are going to build", "The school's real file open, and its average computed with what they already knew"],
+            ["2", "", "Functions that bend", "One report function called six ways, with defaults and named arguments"],
+            ["3", "", "Sending back more than one answer", "One pass over the register returning three figures at once"],
+            ["4", "**D**", "**Six reports, six loops**", "Six lists the head teacher asked for, each on one line instead of four"],
+            ["5", "", "Choosing while you build", "A register labelled pass/fail in one line, and sorted by a rule of their own"],
+            ["6", "**D**", "**A student is more than a grade**", "A Student class, after a misspelled dictionary key failed silently thirty lines away"],
+            ["7", "", "The calculation moves inside", "`student.average()` — the data and the thing that calculates it travelling together"],
+            ["8", "", "A class full of students", "A SchoolClass holding Student objects, and a School holding classes"],
+            ["9", "**D**", "**Teachers as well as students**", "Person, Student and Teacher — the shared part written once, after copying it twice"],
+            ["10", "", "One loop, many kinds", "One loop printing the right line for every kind of person, with no `if` in it"],
+            ["11", "", "The register, rewritten  *(no new syntax)*", "The first course's gradebook rebuilt with objects, side by side with the old one"],
+            ["12", "**D**", "**The term's statistics**", "Mean, spread and extremes in four lines, after writing the spread formula out by hand"],
+            ["13", "", "Whole arrays at once", "Every grade changed at once, and failing marks selected without a loop"],
+            ["14", "**D**", "**Show the head teacher**", "A real chart saved as a file, after drawing one with asterisks"],
+            ["15", "", "The four charts a school asks for", "Bar, histogram, line and grouped bar — and which question each answers"],
+            ["16", "**D**", "**The school's own file**", "The file read correctly in one line, after twenty-two lines got it wrong"],
+            ["17", "", "Filter, group, describe", "Averages per class and per subject, without naming the classes in the code"],
+            ["18", "", "The term report", "File in, statistics and two charts out — all three libraries in one workflow"],
+            ["19", "**D**", "**How deep does it go?**", "One recursive function that works at any depth, after loops ran out of levels"],
+            ["20", "", "Where code comes from", "`pip`, `requirements.txt`, environments and Colab — the only session needing internet"],
+            ["21", "", "Wrong, with no error", "A silent wrong answer found with a debugger, not by rereading"],
+            ["22", "T", "Five files that each do one thing", "**A working `python main.py`**, confirmed individually"],
+            ["23", "P", "Make it yours", "Their own school's data in, and one feature of their own design"],
+            ["24", "P", "Finish and show", "A colleague runs their program from their notes alone"],
+        ],
+        [0.05, 0.05, 0.37, 0.53],
+        size=8.5,
+    )
+
+    d.h2("The grade-11 schedule")
+
+    d.para(
+        "Identical in shape to the first course — two sessions a week for eight weeks, "
+        "sixteen sessions of two hours, 32 hours in total, with homework between sessions "
+        "drawn from tasks the notebooks already carry."
+    )
+
+    d.table(
+        ["Week", "Sessions", "Topics", "What the participant can do by the end of it", "Assessment"],
+        [
+            ["1", "1–2", "1–3", "My functions bend to what is asked of them", "*diagnostic sat before session 1*"],
+            ["2", "3–4", "4–5", "One line instead of six", ""],
+            ["3", "5–6", "6–8", "A student is a thing, and the school is objects", ""],
+            ["4", "7–8", "9–11", "They share what they have in common", "**Midpoint**"],
+            ["5", "9–10", "12–15", "I can measure a term and draw it", ""],
+            ["6", "11–12", "16–18", "The school's own file goes in, a report comes out", ""],
+            ["7", "13–14", "19–21", "Any depth, and I can find out why it is wrong", ""],
+            ["8", "15–16", "22–24", "It runs on my school's data, and I showed it", "**Final practical**"],
+        ],
+        [0.08, 0.12, 0.11, 0.49, 0.20],
+        size=9,
+    )
+
+    d.h2("How the grade-11 course is assessed")
+
+    d.para(
+        "Three sittings, on the same principle as the first course: the first two measure "
+        "the programme, the third decides who continues."
+    )
+
+    d.table(
+        ["", "Sitting", "When", "Length", "Points", "What it covers"],
+        [
+            ["1", "Initial diagnostic", "Before session 1", "45–60 min", "40", "**What the first course actually produced** — nothing from this one"],
+            ["2", "Midpoint", "After session 8", "60–75 min", "50", "Topics 2–11: functions, comprehensions, classes, inheritance"],
+            ["3", "Final practical", "Session 16", "90–120 min", "70 + 10", "Topics 12–24: libraries, charts, data, recursion, the project"],
+        ],
+        [0.04, 0.17, 0.15, 0.12, 0.10, 0.42],
+        size=9,
+    )
+
+    d.callout(
+        "Two things worth your attention in that table",
+        [
+            "**The diagnostic measures the first course, not this one.** It is the only "
+            "point at which we find out what the grade-10 programme actually produced, "
+            "taken before the second course can affect the answer. Its marking guide "
+            "includes the option of sending a cohort back to repeat the first course.",
+            "**The midpoint is a go/no-go on objects.** Whether a participant can write a "
+            "working class decides whether the libraries half of the course can start at "
+            "all. If the cohort fails it, the instruction is to spend a session on "
+            "revision rather than press on.",
+        ],
+    )
+
+    d.h2("What a grade-11 participant finishes with")
+
+    d.para(
+        "A five-file Python program — settings, people, loading, charts and an entry "
+        "point — that reads **their own school's grade file**, prints the term's "
+        "statistics by class and by subject, lists the pupils who need attention, and "
+        "saves two charts as image files that can go straight into a report."
     )
 
     d.h2("Three gaps we are naming rather than hiding")
@@ -1391,26 +1523,30 @@ def build():
         "against the materials when this document is generated."
     )
     d.table(
-        ["Material", "Count", "Audience"],
+        ["Material", "Grade 10", "Grade 11", "Audience"],
         [
-            ["Lesson notebooks (days 1–19)", "19", "Participant"],
-            ["Written guides (days 20–24)", "5", "Participant"],
-            ["Worked solutions", "18", "Participant, after each session"],
-            ["Assessments — grader's and participant versions", "3 × 2", "Participant / instructor"],
-            ["Assessment marking guides", "3", "Instructor only"],
-            ["Reference program", "4 files", "Participant, from day 21"],
-            ["Installation instructions, reference sheet, setup check", "3", "Participant"],
-            ["Instructor notes, curriculum, build specification", "3", "Instructor / organiser"],
-            ["Recruitment announcement", "1", "Prospective participants"],
+            ["Lesson notebooks", "19", "21", "Participant"],
+            ["Written guides", "5", "3", "Participant"],
+            ["Worked solutions", "18", "21", "Participant, after each session"],
+            ["Assessments — grader's and participant versions", "3 × 2", "3 × 2", "Participant / instructor"],
+            ["Assessment marking guides", "3", "3", "Instructor only"],
+            ["Reference program", "4 files", "5 files", "Participant, from the transition session"],
+            ["Installation instructions, reference sheet, setup check", "3", "3", "Participant"],
+            ["Instructor notes, curriculum, build specification", "3", "3", "Instructor / organiser"],
+            ["Recruitment announcement, enrolment guidance", "2", "2", "Prospective participants"],
+            ["**Notebooks that must execute before any change is accepted**", "**43**", "**48**", "— automated"],
         ],
-        [0.47, 0.13, 0.40],
+        [0.40, 0.11, 0.11, 0.38],
+        size=9,
     )
     d.para(
-        "Materials are held in a version-controlled repository with four automated checks "
-        "that must pass before any change is accepted: session arithmetic, execution of "
-        "all 43 notebooks, the language and dependency rules, and the finished program "
-        "running end to end. Nothing is reported as complete on the strength of "
-        "inspection alone."
+        "Each course is held in the same version-controlled repository, and each has its "
+        "own automated checks that must pass before a change is accepted: session "
+        "arithmetic, execution of every notebook in order, the language and dependency "
+        "rules, and the finished program running end to end. A further check runs across "
+        "both courses and this document, confirming that every figure restated in more "
+        "than one place still agrees. **Nothing is reported as complete on the strength "
+        "of inspection alone.**"
     )
 
     closing = doc.add_paragraph()

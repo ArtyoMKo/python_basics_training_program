@@ -113,7 +113,8 @@ NumPy's arrays after NumPy, the four charts after Matplotlib.
 | | **Total** | **120** |
 
 > **The discovery arc gets 76 of those minutes. On the old schedule the arc was 65** —
-> blocks 2 to 5 of a 75-minute discovery day. So the arc gained eleven minutes; it was
+> blocks 2 to 5 of a discovery session on the old three-a-week schedule. So the arc
+> gained eleven minutes; it was
 > not compressed.
 >
 > **What the second topic loses is real, and is stated here rather than buried.** It had
