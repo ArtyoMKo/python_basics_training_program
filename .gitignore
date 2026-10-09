@@ -13,3 +13,7 @@ __pycache__/
 # Participants' own class lists - never commit real student data
 project/gradebook/data/my_class.csv
 **/my_class.csv
+
+# Charts the grade-11 notebooks write while running
+grade11/notebooks/*.png
+grade11/project/school_report/output/

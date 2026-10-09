@@ -177,8 +177,11 @@ after it has already worked**, never before.
 ## Day 11 — The register, rewritten
 
 *Standard shape.* No new syntax. The grade-10 gradebook, rebuilt with `Person`,
-`Student`, `Teacher` and `SchoolClass`, side by side with the dictionary version. The
-consolidation session for the whole object block, and the last one before the midpoint.
+`Student`, `Teacher` and `SchoolClass`, side by side with the dictionary version.
+
+> **The consolidation session for the whole object block, and the last before the
+> midpoint**, which is sat after this day. The block boundary is deliberate: everything
+> the midpoint asks about has been taught by now, and nothing after it is a library.
 
 ## Day 12 — The term's statistics  ⟵ *discovery*
 
@@ -210,8 +213,11 @@ writing the loop at all.
 
 ## Day 15 — The four charts a school asks for
 
-*Standard shape.* Bar for subject averages, line for a term's progress, histogram for the
-spread of one class, and a grouped bar comparing three classes.
+*Standard shape.* Bar for subject averages, histogram for the spread of one class, a line
+for the grade distribution, and a grouped bar comparing three classes across five subjects.
+
+> The sample school holds one term, not several, so there is no honest progress-over-time
+> chart to draw from it. A line chart that invented one would teach the wrong habit.
 
 > **The sample data is transliterated — `11A`, not `11Ա`** — the same decision grade 10
 > made when it named its students `Ani` rather than `Անի`, so the language rule holds
@@ -323,8 +329,8 @@ session time** — the 24 teaching sessions remain 30 hours exactly.
 | | Test | When | Length | Covers |
 |---|---|---|---|---|
 | 1 | Initial diagnostic | **Before day 1** | 45–60 min | What the grade-10 course left them with. Nothing from this course |
-| 2 | Midpoint | **After day 14** | 60–75 min | Days 2–14: functions, comprehensions, classes, inheritance |
-| 3 | Final practical | **Day 24** | 90–120 min | Days 15–24: libraries, charts, data, the project |
+| 2 | Midpoint | **After day 11** | 60–75 min | Days 2–11: functions, comprehensions, classes, inheritance |
+| 3 | Final practical | **Day 24** | 90–120 min | Days 12–24: libraries, charts, data, recursion, the project |
 
 - **Each question has variants A, B and C**, equivalent in difficulty.
 - **Two versions of every test are generated** — `tests/<name>.ipynb` for the grader, with
@@ -343,8 +349,8 @@ of what the first course actually produced, taken before this one can affect it.
 | 1 | 1–3 | My functions bend to what is asked of them | *(diagnostic sat before day 1)* |
 | 2 | 4–6 | One line instead of six, and a student is a thing | |
 | 3 | 7–9 | The school is objects, and they share what they have in common | |
-| 4 | 10–12 | One loop for every kind of person, and figures in four lines | |
-| 5 | 13–15 | I can measure a term and draw it | **Midpoint**, sat after day 14 |
+| 4 | 10–12 | One loop for every kind of person, and figures in four lines | **Midpoint**, sat after day 11 |
+| 5 | 13–15 | I can measure a term and draw it | |
 | 6 | 16–18 | The school's own file goes in, a report comes out | |
 | 7 | 19–21 | Any depth, and I can find out why it is wrong | |
 | 8 | 22–24 | It is a program now, it runs on my school, and I showed it | **Final practical**, sat on day 24 |

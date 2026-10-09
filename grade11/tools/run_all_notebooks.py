@@ -17,8 +17,14 @@ Three course-specific rules, from docs/PLAN.md section 11.2:
 import builtins
 import io
 import json
+import os
 import sys
 import traceback
+
+# Matplotlib must never try to open a window: this runs headless, in CI and on a laptop
+# with no display. Set before any cell imports it -- the backend is chosen at import time.
+# Participants are unaffected: in Jupyter the notebook's own inline backend wins.
+os.environ.setdefault("MPLBACKEND", "Agg")
 from contextlib import redirect_stdout
 from pathlib import Path
 

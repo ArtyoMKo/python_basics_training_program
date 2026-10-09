@@ -1,0 +1,15 @@
+TERM REPORT
+========================================
+Students:          36
+Grades recorded:   180
+School average:    7.0
+Failing grades:    18
+Students at risk:  12
+
+Subject averages
+----------------------------------------
+  Physics          6.28
+  Armenian         6.92
+  Mathematics      7.03
+  History          7.22
+  Informatics      7.56
