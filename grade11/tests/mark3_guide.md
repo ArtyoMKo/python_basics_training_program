@@ -1,6 +1,6 @@
 # Marking guide — the final practical
 
-**Sat in session 16. 70 points over seven questions, plus a separately reported eighth.**
+**Sat in session 18. 70 points over seven questions, plus a separately reported eighth.**
 
 This is the sitting that decides whether a participant can teach grade 11.
 

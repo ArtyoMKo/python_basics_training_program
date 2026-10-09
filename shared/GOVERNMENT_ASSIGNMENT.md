@@ -177,7 +177,7 @@ because they are only reached by participants who finish early. Three are not:
 3. **Topic 10/11 — mutability and references.** Genuinely hard, and the curriculum puts
    it in grade 10. It is the one gap that is not cheap to close.
 
-**None of these change Part 1's structure or its 32 hours.** They are additions to
+**None of these change Part 1's structure or its 22 h 30.** They are additions to
 existing days, and each one needs a decision before it is written.
 
 ---
@@ -196,7 +196,7 @@ Checked against the built materials (`grade11/src/`, `guides/`, `project/`) on
 | 18 | Դասեր (Class) | 12 | ✅ | topics 6–8, 11 — `class`, `__init__`, `self`, methods, `__str__`, objects inside objects |
 | 19 | Ժառանգականություն | 10 | ✅ | topics 9–11 — `class X(Y)`, `super()`, overriding, polymorphism |
 | 20 | Մոդուլներ և կրկնություն | 8 | ✅ | topics 20, 22 — the three kinds of `import`, our own modules, the five-file split |
-| 21 | Գրադարաններ և միջավայրեր | 23 | ◐ | topics 12–18, 20 — **numpy, matplotlib and pandas properly.** `sklearn`, `pytorch`, `tensorflow`, Kaggle, Docker and Hugging Face are **named once in session 16 and never used** |
+| 21 | Գրադարաններ և միջավայրեր | 23 | ◐ | topics 12–18, 20 — **numpy, matplotlib and pandas properly.** `sklearn`, `pytorch`, `tensorflow`, Kaggle, Docker and Hugging Face are **named once in session 18 and never used** |
 | 22 | Սխալների հանգուցալուծում | 7 | ✅ | session 14, and every day's error reading — tracebacks, `assert`, breakpoints, the silent wrong answer |
 | 23 | Տարբերակի կառավարում (git) | 6 | ○ | **Not taught, by decision.** Taken up once the rest of the subject is secure |
 | 24 | Ամփոփում | 2 | ✅ | topic 24 |
@@ -207,7 +207,7 @@ Checked against the built materials (`grade11/src/`, `guides/`, `project/`) on
    Part 2. A grade-11 teacher can demonstrate a recursive function and explain why it
    stops. They cannot yet reason about the call stack or complexity.
 2. **Topic 21's long tail.** The document names six libraries and five environments. Three
-   libraries are taught to the point of use; the rest are named in session 16 with what each
+   libraries are taught to the point of use; the rest are named in session 18 with what each
    one is and why a grade-11 teacher does not need it — because pupils will ask, and
    "that is difficult" is the wrong answer.
 3. **Topic 23, git.** Out of scope for now. `grade11/docs/ROADMAP.md` says where it

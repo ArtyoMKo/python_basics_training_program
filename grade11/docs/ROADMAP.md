@@ -6,7 +6,7 @@
 
 | | What it is | Length | Status |
 |---|---|---|---|
-| **Part 1** | **Coding skills** — writing working code with classes, libraries and real data, with the algorithmic difficulty deliberately removed | **2 months** — 16 sessions × 120 min = 32 h | **Built and verified.** Not yet taught |
+| **Part 1** | **Coding skills** — writing working code with classes, libraries and real data, with the algorithmic difficulty deliberately removed | **2 months** — 18 sessions × 120 min = 32 h | **Built and verified.** Not yet taught |
 | **Part 2** | **Algorithmic work and the theory Part 1 postponed** | **4 months** — five stages | **Vision only.** Outlined below; not written |
 
 The split is the same argument the grade-10 course makes, one level up. Part 1 removes

@@ -19,7 +19,7 @@ has finished the grade-10 course and prepares them to teach **grade 11** — sta
 | | |
 |---|---|
 | **Entry** | the grade-10 course, and **nothing beyond it** |
-| **Shape** | 16 sessions × 120 min = **32 hours** · 2 a week × 8 weeks · remote · groups of 4–8 |
+| **Shape** | 18 sessions × 75 min = **22 h 30** · 2 a week × 9 weeks · remote · groups of 4–8 |
 | **Spine** | one class in dictionaries → **the whole school**, as objects, with statistics and charts |
 | **Excluded** | git (topic 23, deferred) · algorithmic recursion, which is Part 2 |
 
@@ -50,7 +50,7 @@ session that needs internet.
 
 Still excluded, deliberately (`docs/BUILD_PLAN.md` §2): decorators · generators · `@property` ·
 `dataclasses` · multiple inheritance · abstract base classes · custom exception classes ·
-`sklearn`, `pytorch`, `tensorflow` (**named once in session 16, never used**) · regex · type
+`sklearn`, `pytorch`, `tensorflow` (**named once in session 18, never used**) · regex · type
 hints · `async` · testing frameworks · databases · **git** · factorial, Fibonacci, the
 call stack and complexity, which are **Part 2**.
 

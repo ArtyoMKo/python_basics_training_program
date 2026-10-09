@@ -6,7 +6,7 @@
 
 | | | Length | Status |
 |---|---|---|---|
-| **Part 1** | **Coding skills** — writing working code to automaticity, with **no algorithmic difficulty at all** | **2 months** — 16 sessions × 120 min = 32 h | **Built and verified.** Materials complete, not yet taught |
+| **Part 1** | **Coding skills** — writing working code to automaticity, with **no algorithmic difficulty at all** | **2 months** — 18 sessions × 120 min = 32 h | **Built and verified.** Materials complete, not yet taught |
 | **Trial class** | Each teacher teaches real pupils, once | **March** | Planned |
 | **Part 2** | **Algorithmic tasks and the theory Part 1 postponed**, then bigger projects, classes and libraries | **4 months** — six stages | **Vision only.** Outlined below; not written |
 
@@ -39,7 +39,7 @@ should continue in this shape at all.
 
 ## Part 1 — coding fluency (built)
 
-Two months, 16 sessions. Teachers who have never programmed finish with a four-file
+Two months, 18 sessions. Teachers who have never programmed finish with a four-file
 gradebook program running over their own class data. Full detail in `CURRICULUM.md`;
 the method is in `RATIONALE.md` §3.
 
@@ -91,7 +91,7 @@ hours), which Part 1 deliberately skipped:
 - **Reading other people's code**, which Part 1 never asks for
 
 > **This stage is the test of the programme's central claim.** If the theory now lands
-> easily on top of eight weeks of practice, the sequencing was right. If it is as hard as
+> easily on top of nine weeks of practice, the sequencing was right. If it is as hard as
 > it was two years ago, it was not — and that is worth knowing in month three rather than
 > month six.
 

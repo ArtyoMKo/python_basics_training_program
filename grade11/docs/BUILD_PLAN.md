@@ -28,7 +28,7 @@ half of grade 10's second semester the first course did not reach.
 |---|---|
 | **Entry** | the grade-10 course, and nothing else |
 | **State topics** | **15, 16, 17, 18, 19, 20, 21, 22, 24** — not 23 (git), deferred |
-| **Shape** | 16 sessions × 120 min = 32 hours · 2 a week × 8 weeks · remote · groups of 4–8 |
+| **Shape** | 18 sessions × 120 min = 22 h 30 · 2 a week × 9 weeks · remote · groups of 4–8 |
 | **Exit** | a teacher can write and explain a class, read a library's output, and produce a report with statistics and a chart from their school's own data |
 
 **Part 2 of this course** — algorithmic recursion, complexity, algorithm design, bigger
@@ -42,7 +42,7 @@ projects — is a vision in `ROADMAP.md`, not built, and runs only if Part 1 suc
 | **This course** | topics 15–22, 24 ≈ **110** | 32 | **3.7 : 1** |
 
 The same ratio as a course that works on paper. That is the whole argument for believing
-32 hours is enough — not that the material is easier, because it is not.
+22 h 30 is enough — not that the material is easier, because it is not.
 
 ---
 
@@ -92,7 +92,7 @@ keeps the grade-10 promise — *the course runs with the wifi off* — true for 
 
 decorators · generators · context managers of their own · `@property` · `dataclasses` ·
 multiple inheritance · abstract base classes · `__slots__` · custom exception classes ·
-`sklearn`, `pytorch`, `tensorflow` (**named once in session 16 and never used**) · regex ·
+`sklearn`, `pytorch`, `tensorflow` (**named once in session 18 and never used**) · regex ·
 type hints · `async` · testing frameworks · databases · **git** (topic 23, deferred by
 decision) · algorithmic recursion — factorial, Fibonacci, the call stack, complexity —
 which is **Part 2**, not this course.

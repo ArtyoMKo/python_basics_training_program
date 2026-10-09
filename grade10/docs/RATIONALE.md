@@ -166,7 +166,7 @@ learned what a list is for" is a real failure mode, and it will happen to somebo
 **Thirty-two hours is not much.** Eight weeks, two hours at a time, for working teachers.
 The scope is deliberately narrow, and narrow means things are missing.
 
-**Attendance.** Three sessions a week for eight weeks, on top of a teaching job. Every
+**Attendance.** Three sessions a week for nine weeks, on top of a teaching job. Every
 session is built to be self-contained and solutions go out afterwards, but people will
 still drop out.
 
@@ -201,11 +201,11 @@ extra work:
 | **Midpoint** (after topic 13) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
 | **Final** (Topic 24) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the four-file project was not reachable |
 | **session 14** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
-| **Session 16** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
-| **Session 16** | Attendance across all 16 sessions | Below a certain point, nothing else is interpretable |
+| **Session 18** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
+| **Session 18** | Attendance across all 18 sessions | Below a certain point, nothing else is interpretable |
 
 **Three assessments**, designed with our partner colleague: a diagnostic before session 1, a
-midpoint after session 9, and a final practical in session 16. They are supervised sittings
+midpoint after session 10, and a final practical in session 18. They are supervised sittings
 outside the 32 teaching hours, scored out of 44, 50 and 70, with a help level recorded
 beside every score.
 
@@ -380,7 +380,7 @@ Two items are openly unverified and named as such in the materials:
 
 1. **Is the diagnosis right?** Is "they cannot code" really the bottleneck, or are we
    fixing the wrong thing?
-2. **Is 32 hours enough** to produce the fluency the bet depends on?
+2. **Is 22 h 30 enough** to produce the fluency the bet depends on?
 3. **What should the success numbers be?** (§5) — agreed in advance.
 4. **Will Topics 6 and 9 be accepted or resented?** Anyone who knows this audience better
    than we do should say so before we run it, not after.

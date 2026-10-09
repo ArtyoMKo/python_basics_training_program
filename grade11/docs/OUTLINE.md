@@ -10,11 +10,11 @@ prepares them to teach **grade 11** of the state curriculum «ԱԲ սերուն�
 
 | | |
 |---|---|
-| **Length** | 16 sessions × 120 minutes = **32 hours**, two a week over eight weeks |
+| **Length** | 18 sessions × 75 minutes = **22 hours 30 minutes**, two a week over nine weeks |
 | **Delivery** | Remote, over Google Meet with screen sharing, in groups of **4–8** |
 | **Entry** | Our grade-10 course. Nothing beyond it is assumed |
 | **Cost** | **Zero.** No accounts, no API keys, no licences. One session needs internet; the other 23 do not |
-| **Assessment** | Three sittings — a diagnostic before session 1, a midpoint after topic 11, a final practical in session 16 |
+| **Assessment** | Three sittings — a diagnostic before session 1, a midpoint after topic 11, a final practical in session 18 |
 
 ## What a teacher can do at the end
 
@@ -46,7 +46,7 @@ the whole subject except topic 23.
 ## How it teaches
 
 **A real task, done the laborious way, and then the tool that collapses it — inside the
-same session.** Seven of the 16 sessions are built this way. A participant is never
+same session.** Seven of the 18 sessions are built this way. A participant is never
 told that the long way exists to make a point; they are given a task a teacher actually
 has, and the shortcut is promised in writing before the long stretch begins.
 
@@ -67,5 +67,5 @@ deviation formula has just been written out by hand.
 ## Status
 
 **Built and verified. Not yet taught to a cohort.** Every notebook executes, every agenda
-sums to 120 minutes, and the reference project runs end to end — checked by script on
+sums to 75 minutes, and the reference project runs end to end — checked by script on
 every change.

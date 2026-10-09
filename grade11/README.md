@@ -8,7 +8,7 @@ finished the [grade-10 course](../grade10/README.md) and prepares them to teach 
 | | |
 |---|---|
 | **Entry** | the grade-10 course, and nothing beyond it |
-| **Format (Part 1)** | 16 sessions × 120 minutes = **32 hours**, 2 per week over 8 weeks ≈ **2 months** |
+| **Format (Part 1)** | 18 sessions × 75 minutes = **22 hours 30 minutes**, 2 per week over 9 weeks ≈ **2 months** |
 | **Delivery** | remote, over Google Meet, in groups of **4–8** |
 | **Language** | Armenian explains · English codes |
 | **Tools** | Anaconda, VS Code, Jupyter — **nothing to install**, and no network for 23 of 24 days |
@@ -53,7 +53,7 @@ grade11/
 ├── AGENTS.md                 the contract for anyone changing this course
 ├── docs/
 │   ├── BUILD_PLAN.md         the step board — what is built and what is not
-│   ├── CURRICULUM.md         16 sessions, 24 topics, every agenda, the time arithmetic
+│   ├── CURRICULUM.md         18 sessions, 24 topics, every agenda, the time arithmetic
 │   ├── OUTLINE.md            what the course is, short            (for administration)
 │   ├── RATIONALE.md          why it is built this way, and the risk  (for colleagues)
 │   ├── INSTRUCTOR_NOTES.md   pre-flight, pacing, what to cut
@@ -80,7 +80,7 @@ python tools/verify.py       # nothing is done until this passes
 
 | | What it proves |
 |---|---|
-| agenda arithmetic | every agenda sums to 120; 16 sessions = 1,920 minutes |
+| agenda arithmetic | every agenda sums to 75; 18 sessions = 1,350 minutes |
 | notebooks execute | all 48 — lessons, solutions and both builds of each exam — run cell by cell, with `input()` stubbed and every deliberate-error cell raising exactly what it claims |
 | style and language | the language rule, the three allowed libraries, excluded constructs, exercise sections present |
 | the sample school | the engineered figures the course prose quotes |

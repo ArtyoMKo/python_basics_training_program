@@ -19,8 +19,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 COURSES = ["grade10", "grade11"]
 
-SESSIONS = 16
-MINUTES = 120
+SESSIONS = 18
+MINUTES = 75
 TOTAL = SESSIONS * MINUTES          # 1,920
 HOURS = TOTAL // 60                 # 32
 TOPICS = 24
@@ -76,12 +76,14 @@ def check_session_map(course):
 # ------------------------------------------------------- figures restated in prose
 def check_figures(course):
     stale = {
-        r"\b24 sessions\b": "24 sessions (now 16)",
-        r"\b30 hours\b": "30 hours (now 32)",
-        r"\b20 hours\b": "20 hours (now 32)",
+        r"\b24 sessions\b": "24 sessions (now 18)",
+        r"\b16 sessions\b": "16 sessions (now 18)",
+        r"\b120 minutes\b": "120 minutes (now 75)",
+        r"120-minute": "120-minute (now 75)",
+        r"\b32 hours\b": "32 hours (now 22 h 30)",
+        r"1,920": "1,920 minutes (now 1,350)",
+        r"\b30 hours\b": "30 hours (now 22 h 30)",
         r"1,800": "1,800 minutes (now 1,920)",
-        r"\b75 minutes\b": "75 minutes (now 120)",
-        r"75-minute": "75-minute (now 120)",
         r"three a week": "three a week (now two)",
         r"three times a week": "three times a week (now twice)",
         r"fifty minutes": "fifty minutes",
@@ -91,7 +93,9 @@ def check_figures(course):
             continue
         text = path.read_text(encoding="utf-8")
         # An exam runs 60-75 minutes. That is a duration, not a session length.
-        text = text.replace("60–75 min", "").replace("60-75 min", "")
+        for duration in ("60–75 min", "60-75 min", "90–120 min", "90-120 min",
+                         "90–120 minutes", "45–60 min"):
+            text = text.replace(duration, "")
         for pattern, why in stale.items():
             if re.search(pattern, text):
                 fail(str(path.relative_to(ROOT)), f"still says {why}")
@@ -136,10 +140,11 @@ def check_assessment(course):
             if f"session {session}" not in text and f"After session {session}" not in text:
                 fail(f"{course}/{rel}", f"does not place the midpoint after session {session}")
 
+    final = f"session {SESSIONS}"
     for rel in ["tests/README.md", "tests/mark3_guide.md"]:
         text = read(course, *rel.split("/"))
-        if text and "session 16" not in text.lower():
-            fail(f"{course}/{rel}", "does not place the final practical in session 16")
+        if text and final not in text.lower():
+            fail(f"{course}/{rel}", f"does not place the final practical in {final}")
 
 
 # -------------------------------------------------------- links point at real files
@@ -222,7 +227,7 @@ def main():
 
     print(f"✅ both session maps: {SESSIONS} sessions × {MINUTES} min = {TOTAL} min = {HOURS} h")
     print(f"✅ all {TOPICS} topics covered exactly once, in both courses")
-    print("✅ no three-a-week figures left in any document")
+    print(f"✅ no figures from an earlier schedule left in any document")
     print("✅ assessment timing agrees across curriculum, guides and instructor notes")
     print("✅ every file path quoted in a document exists")
     print("✅ the partner dossier covers both courses — curriculum, schedule, assessment")

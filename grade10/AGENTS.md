@@ -16,13 +16,13 @@ background, in two parts.**
 
 | | | |
 |---|---|---|
-| **Part 1** | **coding skills** — writing working code, no algorithmic difficulty | **2 months**, 16 sessions. **This repository** |
+| **Part 1** | **coding skills** — writing working code, no algorithmic difficulty | **2 months**, 18 sessions. **This repository** |
 | **Part 2** | **algorithmic tasks and the theory Part 1 postponed**, then classes and libraries | **4 months**. Outlined in `docs/ROADMAP.md`, not written |
 
-Part 1 is 16 sessions, 2 a week for 8 weeks, **delivered remotely** in groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
+Part 1 is 18 sessions, 2 a week for 9 weeks, **delivered remotely** in groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
 participant running a four-file gradebook program over their own class list.
 
-Sessions are **120 minutes**: 16 × 120 = 1,920 minutes = 32 hours, verified by
+Sessions are **75 minutes**: 18 × 75 = 1,350 minutes = 22 h 30, verified by
 `check_times.py`.
 
 It is not a library and has no users other than teachers in a classroom. "Working" means
@@ -66,7 +66,7 @@ python tools/verify.py          # 3. verify    (nothing is done until this passe
 
 | | What it proves |
 |---|---|
-| agenda arithmetic | every agenda sums to 120; 16 sessions = 1,920 minutes |
+| agenda arithmetic | every agenda sums to 75; 18 sessions = 1,350 minutes |
 | notebooks execute | all 43 notebooks — lessons, solutions **and** both versions of each assessment — run cell by cell, in order, with `input()` stubbed and every deliberate-error cell raising exactly the error it claims |
 | style and language | the language rule, standard library only, excluded constructs, exercise sections present |
 | project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
@@ -147,8 +147,8 @@ half acceptable.
 
 ### 4. Time is a hard ceiling.
 
-Every agenda sums to **exactly 120**. Teaching never exceeds **12 minutes** in one block.
-Hands-on is ≥ 82 of 120. If content does not fit, **cut a topic — never compress one**.
+Every agenda sums to **exactly 75**. Teaching never exceeds **12 minutes** in one block.
+Hands-on is ≥ 41 of 75. If content does not fit, **cut a topic — never compress one**.
 
 *Enforced by `check_times.py`.*
 

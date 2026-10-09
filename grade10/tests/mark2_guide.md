@@ -1,4 +1,4 @@
-# Marking guide — Test 2, midpoint (after session 9)
+# Marking guide — Test 2, midpoint (after session 10)
 
 **Instructor-facing. Hand out `tests/participant/test2_midpoint.ipynb`.**
 

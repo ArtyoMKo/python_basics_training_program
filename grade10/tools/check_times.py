@@ -1,7 +1,7 @@
 """
 Verify the time arithmetic in docs/CURRICULUM.md.
 
-Every agenda table must sum to exactly 120 minutes, and 16 sessions must total 1,920.
+Every agenda table must sum to exactly 75 minutes, and 18 sessions must total 1,350.
 Run this after every edit to the curriculum.
 
     python tools/check_times.py
@@ -11,8 +11,8 @@ import re
 import sys
 from pathlib import Path
 
-LESSON_MINUTES = 120
-TOTAL_SESSIONS = 16
+LESSON_MINUTES = 75
+TOTAL_SESSIONS = 18
 
 CURRICULUM = Path(__file__).resolve().parent.parent / "docs" / "CURRICULUM.md"
 
@@ -68,7 +68,7 @@ def main():
                 f"sums to {total}, not {LESSON_MINUTES}  [{listed}]"
             )
 
-    # The session index: 16 rows, each 120 minutes.
+    # The session index: 18 rows, each 75 minutes.
     index = [INDEX_ROW.match(line) for line in lines]
     index = [m for m in index if m]
     numbers = [int(m.group(1)) for m in index]

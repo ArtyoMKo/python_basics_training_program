@@ -24,7 +24,7 @@ answer the question a pupil actually asks: *why would I bother?*
 
 ## 2. The method, and the one rule that makes it work
 
-Seven of the 16 sessions are **discovery days**. Each gives a real task, lets the
+Seven of the 18 sessions are **discovery days**. Each gives a real task, lets the
 participant solve it the long way, and then hands them the tool that collapses it.
 
 **All of that happens inside one session.** Never across two.
@@ -51,7 +51,7 @@ Two rules protect it:
 |---|---|
 | decorators, generators, `@property`, `dataclasses` | Not in the pupils' curriculum. Each costs a session and buys a teacher nothing |
 | multiple inheritance, abstract base classes | Not in the pupils' curriculum, and actively harmful at this level |
-| `sklearn`, `PyTorch`, `TensorFlow` | **Named once in session 16, never used.** Topic 21 lists them; a grade-11 teacher does not need them, and topic 24 says so in words they can repeat to a pupil |
+| `sklearn`, `PyTorch`, `TensorFlow` | **Named once in session 18, never used.** Topic 21 lists them; a grade-11 teacher does not need them, and topic 24 says so in words they can repeat to a pupil |
 | **factorial, Fibonacci, the call stack, complexity** | Recursion's *algorithmic* side. Part 2's material. The style checker fails a build that mentions either name |
 | **git** | State topic 23. Deferred by decision until the rest of the subject is secure |
 

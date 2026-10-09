@@ -17,7 +17,7 @@ says so explicitly and gives the reason. Overrides are collected in §14.
 |---|---|---|
 | **Language** | Armenian prose, English code | §7.7 |
 | **Python** | Anaconda, `base` environment, never activated by hand | §9.1 |
-| **Editor** | **VS Code, from session 1 to session 16. One tool, all course.** | §9.1 |
+| **Editor** | **VS Code, from session 1 to session 18. One tool, all course.** | §9.1 |
 | **Grades** | 1–10 scale, pass mark 4 | §6.2 |
 | **Repository** | `git@github.com:AIrtyoMKo/python_basics_training_program.git` | §9.3 |
 
@@ -31,7 +31,7 @@ engineering. Concretely, this course has:
 
 | One | Not |
 |---|---|
-| One editor — VS Code — from session 1 to session 16 | Jupyter in a browser, then an editor later |
+| One editor — VS Code — from session 1 to session 18 | Jupyter in a browser, then an editor later |
 | One Python — Anaconda's `base` | venv, conda environments, activation steps |
 | One terminal — the one inside VS Code | Anaconda Prompt, PowerShell, Terminal.app |
 | One folder — `python_course/` in Documents | A folder per day, a folder per phase |
@@ -50,7 +50,7 @@ works, that they can remember on a Tuesday, without notes.
 ## 1. The course in one paragraph
 
 Public-school teachers, with no programming background, learn Python from installing it to
-writing a small program they actually use. Sixteen 120-minute sessions over two months.
+writing a small program they actually use. Eighteen 75-minute sessions over nine weeks.
 Every example is about a classroom — students, grades, attendance, averages, reports —
 and the course ends with each participant running a gradebook program over their own
 (anonymised) class list, from a terminal, on their own laptop.
@@ -75,8 +75,8 @@ point.
 | **Delivery** | **Remote**, over Google Meet with screen sharing. Not on site. |
 | **Machines** | **Their own laptop**, which they must have for the whole course. Mixed Windows and macOS. Possibly no admin rights. Checked at enrolment (`ENROLMENT.md`). See §12 risks. |
 | **Language** | Materials in **Armenian**; code, keywords and identifiers in English (§7.7) |
-| **Format** | 16 sessions × **120 minutes** = 1,920 minutes = **32 hours** |
-| **Schedule** | 2 sessions per week × 8 weeks. After the cohort adapts, possibly 2 a week, or 3 of 50 minutes |
+| **Format** | 18 sessions × **75 minutes** = 1,350 minutes = **22 h 30** |
+| **Schedule** | 2 sessions per week × 9 weeks. After the cohort adapts, possibly 2 a week, or 3 of 50 minutes |
 | **Group size** | **4–8**, one instructor. Fewer than 4 and they cannot discuss; more than 8 and remote teaching stops working |
 | **Part** | **Part 1 of two.** Part 1 is **2 months** (this specification); Part 2 is **4 months**, outlined in `ROADMAP.md`, and runs only if Part 1 succeeds |
 | **Between sessions** | ~2 days. One optional 10-minute practice task per day; nothing required. |
@@ -88,7 +88,7 @@ point.
 |---|---|---|
 | 13–18, already program | Adults, never programmed | Python **is** the subject, not the medium |
 | 16 identical lab Macs prepared by IT | Mixed personal Windows/Mac laptops | Installation is session 1's entire content, and is the single biggest risk |
-| 120-minute lessons, twice a week | **120-minute sessions, twice a week** | The same shape — but ours holds **two topics**, not one, and the agenda has no slack |
+| Lessons of two hours | **Sessions of 75 minutes, twice a week** | Half the length, and six of the eighteen hold two topics — so the agenda has no slack at all |
 | External paid API, keys, vendor abstraction | **Standard library only** | No `pip`, no venv, no `requirements.txt`, no keys, no network, no cost |
 | Materials in English for English-schooled teens | **Armenian prose, English code** | A beginner cannot learn a spoken language and a programming language at once |
 | Fast students get an extra challenge | Fear, not boredom, is the failure mode | Every session must be completable by the slowest person; extras are genuinely optional |
@@ -121,14 +121,14 @@ session 14 is the split. **Neither may be cut** (§13).
 
 ### Time budget
 
-- 16 × 120 = **1,920 minutes**. Hard ceiling.
+- 16 × 120 = **1,350 minutes**. Hard ceiling.
 - Every session's agenda sums to **exactly 120**, verified by script (§11.1).
 - If content does not fit, **cut a topic**. Never compress one, never run over — these are
   working adults and two hours is two hours.
 
 ### The four session shapes
 
-The course teaches **24 topics across 16 sessions**. A topic is one notebook and one
+The course teaches **24 topics across 18 sessions**. A topic is one notebook and one
 idea; a session is two hours in a room. The shapes are in `CURRICULUM.md`; in summary:
 
 | Shape | Holds | Hands-on |
@@ -484,7 +484,7 @@ student_01 = "Anna"
 
 - **Every notebook ships at least three Extra tasks.** In a group of 4–8, at least one
   or two will finish Required work early in every single session. "Help someone else" is
-  a fine answer once; it is not a plan for eight weeks. Running out of work is how a
+  a fine answer once; it is not a plan for nine weeks. Running out of work is how a
   competent participant concludes the course is beneath them.
 - Extra tasks use **only what the course has already taught** — they are wider, not
   further ahead. A Challenge may combine two earlier days.
@@ -570,13 +570,13 @@ about these concepts in Armenian even though the code never does.
 
 **Three assessments, designed with our partner colleague**, replacing an earlier design
 of four take-home tests. They are **separate sittings, not session time**: the 24 teaching
-sessions stay at 32 hours exactly and the assessments add roughly 3½ hours.
+sessions stay at 22 h 30 exactly and the assessments add roughly 3½ hours.
 
 | Test | When | Length | Points | Covers |
 |---|---|---|---|---|
 | `test1_diagnostic` | **Before session 1** | 45–60 min | 44 | nothing — the baseline |
-| `test2_midpoint` | **After session 9** | 60–75 min | 50 | topics 6–13 |
-| `test3_final_practical` | **Session 16** | 90–120 min | 70 + 10 separate | topics 14–24 |
+| `test2_midpoint` | **After session 10** | 60–75 min | 50 | topics 6–13 |
+| `test3_final_practical` | **Session 18** | 90–120 min | 70 + 10 separate | topics 14–24 |
 
 Rules that make them worth setting:
 
@@ -638,7 +638,7 @@ main.py        Ask the teacher what they want, and print. (does no calculating o
 
 **Four, not five.** An earlier draft had a separate `report.py` for printing. Printing is
 two `print()` calls in a loop and does not need its own file; folding it into `main.py`
-removes a file, an import and five minutes of explanation from a 120-minute session. This is
+removes a file, an import and five minutes of explanation from a 75-minute session. This is
 §0 applied.
 
 **Dependency arrows point one way:** `main` → `grades`, `storage` → `settings`.
@@ -831,17 +831,17 @@ is session 1's entire content and the largest single risk to the programme. It m
 | 24 | Finish and show | PR | README, the fresh-laptop test, demoing | A 90-second demo; a README a colleague can follow |
 
 ```
-Notebook phase   Sessions  1–13   topics  1–19   1,560 min   26 h
-Transition       Session      14   topics 20–21     120 min    2 h
-Project          Sessions 15–16   topics 22–24     240 min    4 h
+Notebook phase   Sessions  1–15   topics  1–19   1,125 min   18 h 45
+Transition       Session      16   topics 20–21      75 min    1 h 15
+Project          Sessions 17–18   topics 22–24     150 min    2 h 30
                                              ------------------------
-                                                 1,920 min  = 32 h  ✓
+                                                 1,350 min  = 22 h 30  ✓
 ```
 
-**Assessments** before session 1, after session 9 and in session 16 (§7.8) — separate
+**Assessments** before session 1, after session 10 and in session 18 (§7.8) — separate
 sittings, so the agendas are unaffected.
 
-### Week map (2 sessions/week × 8 weeks)
+### Week map (2 sessions/week × 9 weeks)
 
 | Week | Sessions | Topics | Arc | Assessment |
 |---|---|---|---|---|
@@ -849,7 +849,7 @@ sittings, so the agendas are unaffected.
 | 2 | 3–4 | 5–6 | I can name things, and keep a whole class in one list | |
 | 3 | 5–6 | 7–8 | Every data type I need, and I can find one student | |
 | 4 | 7–8 | 9–11 | Conditions, then one loop marks thirty students | |
-| 5 | 9–10 | 12–15 | I can compute and report on the whole class | **Midpoint** (after session 9) |
+| 5 | 9–10 | 12–15 | I can compute and report on the whole class | **Midpoint** (after session 10) |
 | 6 | 11–12 | 16–17 | I write the calculation once and use it everywhere | |
 | 7 | 13–14 | 18–21 | It is a program now, not a notebook | |
 | 8 | 15–16 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** |
@@ -861,7 +861,7 @@ Non-negotiable, per `METHODOLOGY.md` §9. Nothing is reported complete until the
 ### 11.1 Time arithmetic, by script
 
 `tools/check_times.py` parses every agenda table in `CURRICULUM.md`, asserts each sums to
-120 and the grand total is 1,920. Re-run after **every** curriculum edit.
+75 and the grand total is 1,350. Re-run after **every** curriculum edit.
 
 ### 11.2 Execute every notebook cell, in order
 
@@ -942,7 +942,7 @@ Cut, never compress. In this order:
 
 **Never cut:** the five discovery days (6, 8, 11, 17, 22) — each is a concept *and* its
 motivation in one session, so cutting one costs both. Nor topics 20–21 (the transition) or
-session 16 (finishing something is the point).
+session 18 (finishing something is the point).
 
 **Never split a discovery day across two sessions.** If topic 11 runs out of time, cut its
 Extra tasks — never its second half. A session that ends after the long way and before the
@@ -957,11 +957,11 @@ day's recap callout, must be enough. Build each notebook so this is true.
 
 | # | Methodology says | Here | Why |
 |---|---|---|---|
-| O1 | Transition is exactly one lesson | Two (topics 20–21) | 120-minute sessions; one cannot hold both "what a `.py` file is" and a five-module split |
+| O1 | Transition is exactly one lesson | Two (topics 20–21) | 75-minute sessions; one cannot hold both "what a `.py` file is" and a five-module split |
 | O2 | Provider-agnostic pattern is the architectural spine (§7) | **Dropped entirely** | No external service exists in this course. Its replacement as the "one clean abstraction" is `settings.py` — one place for every number — which is the topic 9 lesson made structural |
 | O3 | "Age-appropriate complexity: students already program" | Absolute beginners | Python is the subject, not the medium; §5's exclusion list is far longer |
 | O4 | Python is not taught; a cheatsheet is handed out | Python **is** the course; the cheatsheet is a printable summary that grows with it | Inverted audience |
-| O5 | 1–2 exercise callouts per lesson | 3–5 short ones | 120-minute sessions need smaller units of work |
+| O5 | 1–2 exercise callouts per lesson | 3–5 short ones | 75-minute sessions need smaller units of work |
 | O6 | "🌍 Where you'll see this in the real world" | "🏫 In your classroom" | The real world in question is a school |
 | O7 | Stub the external API (§9.2) | Stub `input()`; assert deliberate errors | Same discipline, different external dependency |
 | O8 | `TEACHER_NOTES.md` | `INSTRUCTOR_NOTES.md` | "Teacher" means the participant here |
@@ -984,8 +984,8 @@ adjectives, the definition of done — applies unchanged.
 | **D4** | Where participants keep their work | Their own laptop, one folder: `Documents/python_course/`. Same folder all 24 days | §9.2 |
 | **D5** | Practice between sessions | **Homework**, introduced with the two-a-week schedule (D12). It is the Extra tier the notebooks already carry — never new work — and the next session's recap block checks it. Required tasks are homework only by overflow | §7.3, `CURRICULUM.md` Homework |
 | **D6** | Group size | **4–8, one instructor.** Fewer than 4 and they cannot discuss; more than 8 and the instructor cannot check on everyone remotely | §2, §12 |
-| **D11** | Delivery | **Remote**, over Google Meet with screen sharing. Each teacher needs their own laptop and a connection that holds a 120-minute call | §2, §12, `ENROLMENT.md` |
-| **D12** | Session length | **120 minutes, 2 a week** — 16 sessions over 8 weeks, 32 hours. Replaces 24 × 75 × 3 a week. The third weekly touchpoint is replaced by homework, which is the Extra tier that no longer fits in the room (`CURRICULUM.md`, Homework) | §3 |
+| **D11** | Delivery | **Remote**, over Google Meet with screen sharing. Each teacher needs their own laptop and a connection that holds a 75-minute call | §2, §12, `ENROLMENT.md` |
+| **D12** | Session length | **75 minutes, 2 a week** — 18 sessions over 9 weeks, 22 h 30. Replaces 24 × 75 × 3 a week. The third weekly touchpoint is replaced by homework, which is the Extra tier that no longer fits in the room (`CURRICULUM.md`, Homework) | §3 |
 | **D13** | Success criterion | **>90% can code** = success · **<50%** = failure · between = adjust and repeat | `RATIONALE.md` §5a |
 | **D7** | Recruitment document | `ANNOUNCEMENT.md`, written **for teachers**. A one-page summary for school administration only if asked for | §9 |
 | **D8** | Version control | Own repository: `git@github.com:AIrtyoMKo/python_basics_training_program.git` | §9.3 |
@@ -1009,7 +1009,7 @@ review closes — this is what keeps a wrong decision from propagating into 19 n
 | **0 · Decisions** | All closed (§15); repository initialised with `.gitignore` | — |
 | **1 · Skeleton** | `CURRICULUM.md` (24 agendas, times verified), `OUTLINE.md`, `README.md`, the **bilingual glossary**, the sample class data | Is the day map right? Is the pain spiral right? **Is the Armenian terminology right?** Is anything taught that shouldn't be? |
 | **2 · session 1 vertical slice** | `handouts/SETUP.md`, `handouts/check_setup.py`, `day01`, `day02`, `solutions/day02` | Is this the right level, tone, pace and length for a teacher who has never programmed — **and is the Armenian prose right?** **This is the most important review of the project.** Get it wrong here and 19 notebooks inherit it |
-| **3 · Notebook phase** | Topics 3–19 + solutions + Tests 1–3, in four batches (3–6, 7–10, 11–14, 15–19) | Per batch: is the task believable? Does the tool land in the same session? Does each session fit 120 minutes? Are there enough Extra tasks to carry the homework? |
+| **3 · Notebook phase** | Topics 3–19 + solutions + Tests 1–3, in four batches (3–6, 7–10, 11–14, 15–19) | Per batch: is the task believable? Does the tool land in the same session? Does each session fit 75 minutes? Are there enough Extra tasks to carry the homework? |
 | **4 · Transition + project** | Guides 20–24, `project/gradebook/`, `handouts/CHEATSHEET.md` | Can a participant who followed the notebooks actually do this? |
 | **5 · Verification & handover** | All of §11 passing, `INSTRUCTOR_NOTES.md`, the fresh-laptop test results | Definition of done (§17) |
 
@@ -1020,7 +1020,7 @@ exercise size and the retrospective format — and cheap to throw away.
 
 ## 17. Definition of done
 
-- [ ] Every session's agenda sums to exactly 120, and the total to 1,920 — **verified by script**
+- [ ] Every session's agenda sums to exactly 75, and the total to 1,350 — **verified by script**
 - [ ] Every day has a concrete deliverable and participant-facing material
 - [ ] Every notebook cell executes in order, with `input()` stubbed
 - [ ] Every deliberate-failure cell raises the exact error it claims

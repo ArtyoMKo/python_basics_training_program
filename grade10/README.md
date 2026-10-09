@@ -9,7 +9,7 @@ background**, built to the rules in `docs/PLAN.md` and the house style in
 | **Participants** | Public-school teachers, any subject. No prior programming. **Groups of 4–8** |
 | **Delivery** | **Remote**, over Google Meet with screen sharing |
 | **Structure** | **Two parts.** **Part 1 — coding skills — 2 months** (this repository). **Part 2 — algorithmic tasks and theory — 4 months**, outlined in `docs/ROADMAP.md`, runs only if Part 1 succeeds |
-| **Format (Part 1)** | 16 sessions × 120 minutes = **32 hours**, 2 per week over 8 weeks ≈ **2 months** |
+| **Format (Part 1)** | 18 sessions × 75 minutes = **22 hours 30 minutes**, 2 per week over 9 weeks ≈ **2 months** |
 | **Language** | **Armenian** explanations; **English** everything inside a code cell |
 | **Tools** | Anaconda (Python) + VS Code. Two installs on session 1, nothing after |
 | **Dependencies** | **Standard library only.** No `pip`, no venv, no network, no accounts, no cost |
@@ -48,7 +48,7 @@ public_school_python/
 │
 ├── docs/                   <- all programme documentation
 │   ├── PLAN.md                 the build specification   ** humans read this first **
-│   ├── CURRICULUM.md           16 sessions, 24 topics, agendas, time math
+│   ├── CURRICULUM.md           18 sessions, 24 topics, agendas, time math
 │   ├── RATIONALE.md            why this method, the risk, and the decision rule
 │   ├── ROADMAP.md              the six-month arc: Part 1 built, Part 2 outlined
 │   ├── OUTLINE.md              what the course is, short
@@ -123,7 +123,7 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 
 | | What it proves |
 |---|---|
-| agenda arithmetic | every agenda sums to 120; 16 sessions = 1,920 minutes |
+| agenda arithmetic | every agenda sums to 75; 18 sessions = 1,350 minutes |
 | notebooks execute | all 43 notebooks — lessons, solutions and both versions of each assessment — run cell by cell in order, with `input()` stubbed and every **break-it-on-purpose** cell raising exactly the error it claims. A demo that stops failing is a bug |
 | style and language | no Armenian inside any code cell, standard library only, no excluded constructs |
 | project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
@@ -132,7 +132,7 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 
 | Check | Result |
 |---|---|
-| Agenda arithmetic | ✅ 11 agenda tables, 16 sessions, 1,920 minutes = 32 hours |
+| Agenda arithmetic | ✅ 11 agenda tables, 18 sessions, 1,350 minutes = 22 h 30 |
 | Notebook execution | ✅ 43 notebooks (19 lessons + 18 solutions + 3 assessments × 2 versions), every cell, in order |
 | Deliberate errors | ✅ 9 cells raise exactly the error they claim |
 | Solutions | ✅ 18 notebooks, every cell runs |
@@ -141,7 +141,7 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 | Style | ✅ stdlib only, no excluded constructs, every identifier English |
 | Language rule | ✅ no Armenian anywhere inside a code cell — verified by script |
 | **Armenian terminology** | ⏳ **awaiting native-speaker review** (Decision D9) |
-| Session length | ✅ 16 × 120 min = **32 hours**, every agenda verified |
+| Session length | ✅ 16 × 120 min = **22 h 30**, every agenda verified |
 | Topic order | ✅ materials rebuilt — data types precede conditions and loops |
 | **Fresh-laptop install test** | ⏳ **not yet run** — see `docs/INSTRUCTOR_NOTES.md` §1 |
 

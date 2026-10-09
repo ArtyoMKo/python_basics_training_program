@@ -196,7 +196,7 @@ for student_name, grades in class_grades.items():
 <div style="border-left: 6px solid #747; background: #f8f6fb; padding: 12px 16px; margin: 12px 0;">
 <h3 style="color:#747; margin-top:0;">🏠 Տնային</h3>
 <p style="color:#747; margin-bottom:0;">
-Այս նոթատետրի <b>Պարտադիր</b> առաջադրանքները, որ չհասցրիր, ապա <b>Լրացուցիչ</b>-ը։<br/><br/>
+Այս նոթատետրի <b>Լրացուցիչ</b> առաջադրանքները։<br/><br/>
 <b>Նոր բան չկա</b> — ամեն առաջադրանք այս նոթատետրից է, և օգտագործում է միայն այն,
 ինչ այսօր սովորեցինք։<br/>
 Հաջորդ նիստը սկսվում է դրանց ստուգումով։

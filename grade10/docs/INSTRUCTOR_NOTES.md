@@ -53,7 +53,7 @@ The substitute is **screen sharing, used constantly and asked for by name**:
 |---|---|
 | Pair fast finishers with slower ones from topic 3 | **Breakout rooms**, two or three at a time, for the exercise block |
 | Walk the room during exercises | All screens shared, switching between them |
-| "Swap laptops with your neighbour" in session 16 | **Send your folder to a colleague**; they run it from your README alone and report back on the call |
+| "Swap laptops with your neighbour" in session 18 | **Send your folder to a colleague**; they run it from your README alone and report back on the call |
 | Confirm `python main.py` individually on session 14 | Same, but **each person shares their screen and runs it while you watch**. Do not accept "it works" |
 
 ### Group size: 4 to 8
@@ -131,14 +131,14 @@ protect it.
 
 ## 4. Timing
 
-Every day's agenda is in `CURRICULUM.md` and sums to exactly 120 minutes, verified by
+Every day's agenda is in `CURRICULUM.md` and sums to exactly 75 minutes, verified by
 script. The standard shape is 5 recap / **12 teach** / 20 run together / 33 exercises /
 5 retrospective.
 
 > **The rule to hold yourself to: if you have been talking for more than 15 minutes, you
 > are behind and the lesson is already worse.**
 
-Hands-on is at least 82 of 120 minutes. That is a floor. These are adults who will not ask you to
+Hands-on is at least 41 of 75 minutes. That is a floor. These are adults who will not ask you to
 stop, so nobody will tell you when you are over.
 
 **If you run out of time, cut — never compress.** In this order:
@@ -152,7 +152,7 @@ stop, so nobody will tell you when you are over.
 
 **Never cut:** the five discovery days (6, 8, 11, 17, 22) — each is a concept *and* its
 motivation in one session, so cutting one costs both. Nor topics 20–21 (the transition) or
-session 16 (finishing something is the point).
+session 18 (finishing something is the point).
 
 ---
 
@@ -182,8 +182,8 @@ colleague. They are **separate sittings** and do not use session time.
 | Test | When | Length | Points |
 |---|---|---|---|
 | Initial diagnostic | **Before session 1** | 45–60 min | 44 |
-| Midpoint | **After session 9** | 60–75 min | 50 |
-| Final practical | **Session 16** | 90–120 min | 70 + 10 separate |
+| Midpoint | **After session 10** | 60–75 min | 50 |
+| Final practical | **Session 18** | 90–120 min | 70 + 10 separate |
 
 ### Before each sitting
 
@@ -234,7 +234,7 @@ After Part 1, **each teacher takes one trial class with real pupils.** It is the
 point in the programme that tests what the programme is for.
 
 **Set expectations low and say so.** A first lesson taught by a nervous adult who learned
-to code eight weeks ago is not a performance review, and treating it as one will produce
+to code nine weeks ago is not a performance review, and treating it as one will produce
 a worse lesson and a worse measurement. Tell them that in advance.
 
 ### What to record

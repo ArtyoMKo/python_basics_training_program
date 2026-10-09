@@ -1,11 +1,11 @@
-# Marking guide — Test 3, final practical (session 16)
+# Marking guide — Test 3, final practical (session 18)
 
 **Instructor-facing. Hand out `tests/participant/test3_final_practical.ipynb`.**
 
 | | |
 |---|---|
 | **When** | Topic 24, as a separate sitting |
-| **Length** | 90–120 minutes |
+| **Length** | 90–75 minutes |
 | **Total** | **70 points** across questions 1–7, **plus question 8 marked separately** |
 | **Covers** | topics 14–24: functions, `return`, dictionaries, files, the four-file program |
 | **Variants** | A/B/C for questions 1–7. **Question 8 is the same for everyone** |
@@ -32,7 +32,7 @@
 | 1 | 8 | Names which file holds `PASS_MARK`, which saves, and why the calculations file does not import the storage file | **The "why" is the one that matters.** If they can answer it, the four-file structure was understood rather than copied. If most cannot, the transition was mechanical and should be reported that way |
 | 2 | 12 | A function that computes **and returns** the average from a dictionary's values | Printing instead of returning means `return` never landed — the clearest single failure the course can produce, because the whole project rests on it |
 | 3 | 12 | A function that loops a dictionary, applies the pass mark, and **returns a list** | Printing the names instead of returning them is the same miss as Q2 and confirms it |
-| 4 | 10 | `line.split(",")`, then `int()` on the second part | Forgetting `int()` after eight weeks means the topic 3–4 type lesson never fully closed. Record it honestly |
+| 4 | 10 | `line.split(",")`, then `int()` on the second part | Forgetting `int()` after nine weeks means the topic 3–4 type lesson never fully closed. Record it honestly |
 | 5 | 8 | Notices the bad row and skips it without stopping the program | Letting the program crash means the validation habit did not form. It is in the project menu, so they have met it repeatedly |
 | 6 | 15 | A working feature with the calculation in the right file and the printing in another | The heaviest question. Putting everything in one place still earns most of the marks — the separation is the stretch |
 | 7 | 5 | Explains that without saving, changes vanish when the program closes | Short and almost always correct by topic 24 |

@@ -22,7 +22,7 @@
 
 ## 2. Timing
 
-Every session's agenda is in `CURRICULUM.md` and sums to exactly **120 minutes**,
+Every session's agenda is in `CURRICULUM.md` and sums to exactly **75 minutes**,
 verified by script. There are five shapes, plus bespoke agendas for sessions 1, 15 and 16:
 
 | | Paired | Single | Discovery | Discovery + |
@@ -83,7 +83,7 @@ of line counts. Saying it aloud turns a discovery into a lecture.
 |---|---|---|---|---|
 | 1 | Initial diagnostic | **Before session 1** | 45–60 min | 40 |
 | 2 | Midpoint | **After session 8** (topics 2–11) | 60–75 min | 50 |
-| 3 | Final practical | **Session 16** | 90–120 min | 70 + 10 separate |
+| 3 | Final practical | **Session 18** | 90–120 min | 70 + 10 separate |
 
 **Record a help level with every score** — `3` independent, `2` after one hint, `1`
 step-by-step, `0` did not finish. On the diagnostic this matters more than the score.
@@ -119,7 +119,7 @@ Part 2 — and they are told that in advance, at enrolment, not afterwards.
 | | |
 |---|---|
 | **Screen sharing is the whole lesson** | Yours for the teach blocks, theirs for the hands-on |
-| **Ask people to share, do not wait for volunteers** | Rotate through everyone across the eight weeks |
+| **Ask people to share, do not wait for volunteers** | Rotate through everyone across the nine weeks |
 | **Watch for silence** | In a group of 4–8, a participant who has not spoken in two sessions is stuck, not quiet |
 | **The chat is for code** | Paste every command you type. Some will have missed it on screen |
 | **Record nothing without asking** | And if anyone objects, do not record |

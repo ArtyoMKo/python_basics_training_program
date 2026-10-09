@@ -11,7 +11,7 @@ curriculum **«ԱԲ սերունդ» — ՀԱՄԱԿԱՐԳՉԱՅԻՆ ԳԻՏՈՒԹ
 | [`shared/`](shared/GOVERNMENT_ASSIGNMENT.md) | the curriculum both answer to | all 24 | reference |
 | [`partners/`](partners/) | the dossier and change log for external partners, covering **both** courses | — | generated |
 
-Each course is **16 sessions × 120 minutes = 32 hours**, two a week over eight weeks,
+Each course is **18 sessions × 75 minutes = 22 h 30**, two a week over nine weeks,
 delivered remotely in groups of 4–8. Materials are in Armenian; code is in English.
 
 ## The two halves of each course
@@ -21,7 +21,7 @@ never mixed:
 
 | | What it is | Length |
 |---|---|---|
-| **Part 1** | **Writing working code**, with the algorithmic difficulty deliberately removed. Mechanics to automaticity | 2 months — the 16 sessions above |
+| **Part 1** | **Writing working code**, with the algorithmic difficulty deliberately removed. Mechanics to automaticity | 2 months — the 18 sessions above |
 | **Part 2** | **The theory Part 1 postponed, and algorithmic problems** | Outlined in each course's `docs/ROADMAP.md`; not written |
 
 Part 2 of either course runs only if its Part 1 meets the success criterion

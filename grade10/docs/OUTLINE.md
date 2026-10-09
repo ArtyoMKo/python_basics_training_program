@@ -7,7 +7,7 @@
 | **Part 1** | **Coding skills** — writing working code, with no algorithmic difficulty | **2 months** |
 | **Part 2** | **Algorithmic tasks and the theory** Part 1 postponed | **4 months** |
 
-**Part 1:** 16 sessions · **2 a week over 8 weeks** · 120 minutes each = **32 hours** ·
+**Part 1:** 18 sessions · **2 a week over 9 weeks** · 75 minutes each = **22 h 30** ·
 **groups of 4–8** · **delivered remotely** · public-school teachers, **any subject, no
 programming background**
 
@@ -15,7 +15,7 @@ programming background**
 > including the decision rule this part will be judged by (§5a). The second part of the
 > programme is outlined in `ROADMAP.md`. This document is only what Part 1 *is*.
 
-> **Two things are still settling.** Sessions start at **120 minutes**; after the cohort
+> **Two things are still settling.** Sessions start at **75 minutes**; after the cohort
 > has adapted we may move to two a week, or to three of 50 minutes. And the tools are
 > **Anaconda, Jupyter and VS Code**, with Google Colab and Thonny under discussion as a
 > lighter alternative. Both are flagged where they appear below.
@@ -84,8 +84,8 @@ install software. Anaconda + VS Code — two installs on session 1, nothing afte
 accounts, no API keys, **no internet after session 1**. **Cost: zero.**
 
 **Provided:** 19 notebooks, 5 guides, 18 solutions (handed out after each session so a
-missed day is recoverable), **3 assessment sittings** — a diagnostic before session 1, a midpoint after session 9 and a
-final practical in session 16 — each in a grader's and a participant version, with
+missed day is recoverable), **3 assessment sittings** — a diagnostic before session 1, a midpoint after session 10 and a
+final practical in session 18 — each in a grader's and a participant version, with
 instructor marking guides, `handouts/SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
 glossary, `handouts/check_setup.py`, a fictional 12-student sample class, and the finished
 reference program.

@@ -78,7 +78,7 @@ Four things. All of them are easier to say now than to explain later.
 ## Group size
 
 **4–8, one instructor.** Fewer than four and there is no discussion; more than eight and
-the instructor cannot check everyone's screen in a 120-minute remote session.
+the instructor cannot check everyone's screen in a 75-minute remote session.
 
 > **This interacts with the success criterion.** A threshold of ">90% can code" in a group
 > of six means one person failing puts the cohort in the middle band. Pool results across
