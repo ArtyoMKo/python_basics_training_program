@@ -35,7 +35,24 @@ in practice, and `BUILD_PLAN.md` for what is built.
 Seven discovery sessions — **3, 5, 7, 9, 10, 11, 13**. Each resolves its own difficulty
 inside its own session. **Never split one.**
 
-## The five agenda shapes
+## The state curriculum, by session
+
+| State topic | Pupil hours | Topics here | Sessions |
+|---|---|---|---|
+| 16 — Խորացված ֆունկցիաներ | 15 | 2, 3, 4, 5 | 1–4 |
+| 18 — Դասեր (Class) | 12 | 6, 7, 8, 11 | 5, 6, 8 |
+| 19 — Ժառանգականություն | 10 | 9, 10, 11 | 7, 8 |
+| 15 — Մոդուլների ներածություն \| Colab | 15 | 1, 12, 14, 20 | 1, 9, 10, 14 |
+| 21 — Գրադարաններ և միջավայրեր | 23 | 12–18, 20 | 9–12, 14 |
+| 20 — Մոդուլներ և կրկնություն | 8 | 20, 22 | 14, 15 |
+| 17 — Ռեկուրսիա | 15 | 19 | 13 — **mechanics only**; the algorithms are Part 2 |
+| 22 — Սխալների հանգուցալուծում | 7 | 21, and every topic's error reading | 14 |
+| 24 — Ամփոփում | 2 | 24 | 16 |
+| 23 — Git | 6 | — | **not taught** — deferred by decision |
+
+The full audit, construct by construct, is in `../shared/GOVERNMENT_ASSIGNMENT.md` §8.
+
+## The agenda shapes
 
 All five sum to 120.
 
@@ -69,7 +86,7 @@ All five sum to 120.
 
 | # | Block | Min |
 |---|---|---|
-| 1 | Recap | 6 |
+| 1 | Recap, and last session's homework | 6 |
 | 2 | **Teach:** today's task, and the only way we can do it so far | 10 |
 | 3 | **Do it the long way:** the real task, with most of it shipped | 32 |
 | 4 | **Teach:** the tool that shortens it | 12 |
@@ -84,27 +101,40 @@ NumPy's arrays after NumPy, the four charts after Matplotlib.
 
 | # | Block | Min |
 |---|---|---|
-| 1 | Recap | 5 |
+| 1 | Recap, and last session's homework | 5 |
 | 2 | **Teach:** today's task, and the only way we can do it so far | 8 |
 | 3 | **Do it the long way** | 25 |
 | 4 | **Teach:** the tool that shortens it | 10 |
-| 5 | **Do the same task again**, with the tool | 35 |
+| 5 | **Do the same task again**, with the tool | 33 |
 | 6 | **Teach:** the same tool, wider | 10 |
-| 7 | **Do it yourself:** the second notebook's Required tasks | 22 |
-| 8 | Retrospective, and what to finish at home | 5 |
+| 7 | **Run together:** the second notebook's example cells | 12 |
+| 8 | **Do it yourself:** the second notebook's Required tasks | 12 |
+| 9 | Retrospective, and what to finish at home | 5 |
 | | **Total** | **120** |
 
-> **The discovery arc gets 78 of those minutes — three more than it had on the old
-> schedule, not fewer.** What moves to homework is the second notebook's Extra tier, and
-> only that.
+> **The discovery arc gets 76 of those minutes. On the old schedule the arc was 65** —
+> blocks 2 to 5 of a 75-minute discovery day. So the arc gained eleven minutes; it was
+> not compressed.
+>
+> **What the second topic loses is real, and is stated here rather than buried.** It had
+> 65 minutes as a standalone day and has 34 here: the guided walkthrough of its example
+> cells survives at 12 minutes, and the rest of its Required tier moves to homework
+> along with its Extra tier. That is the price of keeping two discovery arcs whole in a
+> sixteen-session course, and it is paid by the two topics — 13 and 15 — that are the
+> *same tool applied wider*, never by a topic that introduces something new.
 
 ### Transition and project — sessions 15 and 16
 
 Given in full below; they do not follow a shape.
 
-Teaching never exceeds **12 minutes** in one block. Hands-on is **83 of 120** on a paired
-session, **92** on a single, **82** on a discovery session and **82** on a discovery +
-consolidation — never below 68%.
+### Setup, transition and project — sessions 1, 15 and 16
+
+Given in full below; they do not follow a shape.
+
+Teaching never exceeds **12 minutes** in one block — a paired session is two blocks of
+12, not one of 24. Hands-on is **83 of 120** on a paired session, **92** on a single,
+**82** on a discovery session, **82** on a discovery + consolidation and **81** on
+session 1, whose first half is an installation check. Never below 67%.
 
 > **Never split a discovery session.** If it runs long, cut the Extra tasks — never the
 > second half.
@@ -119,12 +149,13 @@ consolidation — never below 68%.
 |---|---|---|
 | 1 | Welcome back. A live demo of the finished tool: it reads the school's file, prints the term's statistics, and saves a chart | 8 |
 | 2 | **Hands-on:** `python check_setup.py` — six green lines, including `numpy`, `matplotlib` and `pandas`. Screen-share with anyone who is not green | 16 |
-| 3 | Recap of the grade-10 gradebook, running, on screen. **This is the thing we are going to outgrow.** Then what the school actually asks for | 14 |
-| 4 | **Hands-on:** open `school.csv`, read it with what they already know, print the first rows and the school average | 22 |
-| 5 | **Teach:** default arguments, then keyword arguments | 12 |
-| 6 | **Run together:** topic 2's cells, including the deliberate `TypeError` | 18 |
-| 7 | **Do it yourself:** topic 2's Required tasks | 25 |
-| 8 | Retrospective. The promise: **everything hard in this course arrives because you needed it first** | 5 |
+| 3 | Recap of the grade-10 gradebook, running, on screen. **This is the thing we are going to outgrow** | 8 |
+| 4 | **Teach:** what the school actually asks for — three classes, five subjects, a term of grades | 6 |
+| 5 | **Hands-on:** open `school.csv`, read it with what they already know, print the first rows and the school average | 22 |
+| 6 | **Teach:** default arguments, then keyword arguments | 12 |
+| 7 | **Run together:** topic 2's cells, including the deliberate `TypeError` | 18 |
+| 8 | **Do it yourself:** topic 2's Required tasks | 25 |
+| 9 | Retrospective. The promise: **everything hard in this course arrives because you needed it first** | 5 |
 | | **Total** | **120** |
 
 ### Session 3 — Six reports, six loops · *topic 4 · discovery*
@@ -219,7 +250,7 @@ consolidation — never below 68%.
 
 | # | Activity | Min |
 |---|---|---|
-| 1 | Recap: everything the notebook can now do, on screen | 6 |
+| 1 | Recap, and last session's homework: everything the notebook can now do | 6 |
 | 2 | **Teach:** five files, one job each, drawn on screen with the arrows between them | 12 |
 | 3 | **Hands-on:** `settings.py`, then `people.py` — the classes, moved out of the notebook | 28 |
 | 4 | **Hands-on:** `loading.py`, with the checks that refuse a bad file | 24 |
@@ -394,16 +425,19 @@ notebooks and little more.
 
 | Session shape | What is set | Roughly |
 |---|---|---|
-| **Paired** | finish the Required tasks you did not reach, then the Extra tier of both notebooks | 30–40 min |
+| **Setup** (session 1) | the second notebook's Required tasks not reached in the room | 20–30 min |
+| **Paired** | the Required tasks of **either** notebook you did not reach, then the Extra tier of the **second** notebook only | 30–45 min |
 | **Single** | nothing. The Extra tier is done **in the session** | — |
 | **Discovery** | the Extra tier of that notebook | 20–30 min |
-| **Discovery + consolidation** | the Extra tier of the **second** notebook only | 25–35 min |
+| **Discovery + consolidation** | the **second** notebook only: the Required tasks not reached in the room, then its Extra tier | 35–45 min |
 | **Transition, project** | nothing. Both are hands-on throughout | — |
 
 Rules this follows:
 
 - **No task was written for homework.** Every one already existed and a three-a-week
   schedule had time for it in the room.
+- **A paired session sets one Extra tier, not two.** Ten tasks cold is an evening's work
+  and not what this schedule intends.
 - **Required tasks are never homework by design** — only by overflow, and the next
   session's first block is where they are checked.
 - **Nothing new is introduced at home.** Homework uses only what the session taught.

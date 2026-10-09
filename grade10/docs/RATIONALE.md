@@ -129,8 +129,7 @@ The same thing happens five times:
 **The relief comes in the same session. Always.** An earlier draft of this course planted
 a problem on Topic 6 and solved it on Topic 10. That is good structure on paper and bad
 teaching in practice: adults who spend an evening on tedious work and go home with no
-resolution do not come back. The long way and its replacement are now always fifty minutes
-apart, never four sessions.
+resolution do not come back. The long way and its replacement are now always one session apart, never four sessions.
 
 **The tedium is never named.** A participant is never told they are doing something in
 order to suffer, or that the long way was there to make a point. They are building a class
@@ -159,7 +158,7 @@ and no amount of the course being pleasant changes that.
 feels. A course that explains little and asks them to type a lot can read as shallow, or
 as not respecting their time. The discovery days are the sharpest version of this risk:
 the first half of those sessions is deliberately laborious. We mitigate it by resolving
-every one of them within the same fifty minutes, by promising the shortcut in writing
+every one of them within the same session, by promising the shortcut in writing
 before the long half starts, and by never framing the work as an ordeal — but a
 participant who leaves on Topic 6 thinking "I typed for twenty minutes" rather than "I
 learned what a list is for" is a real failure mode, and it will happen to somebody.
@@ -207,7 +206,7 @@ extra work:
 
 **Three assessments**, designed with our partner colleague: a diagnostic before session 1, a
 midpoint after session 9, and a final practical in session 16. They are supervised sittings
-outside the 20 teaching hours, scored out of 44, 50 and 70, with a help level recorded
+outside the 32 teaching hours, scored out of 44, 50 and 70, with a help level recorded
 beside every score.
 
 **Scoring them does not make them exams.** The scores diagnose the programme, not the

@@ -79,9 +79,9 @@ The source format is identical to grade 10's:
 
 ---
 
-## The seven discovery days
+## The seven discovery topics
 
-Days **4, 6, 9, 12, 14, 16, 19**. Each gives a real task, lets participants do it the long
+**Topics 4, 6, 9, 12, 14, 16, 19** — sessions 3, 5, 7, 9, 10, 11, 13. Each gives a real task, lets participants do it the long
 way, then hands them the tool that collapses it — **inside one session, never across
 two.**
 
@@ -90,7 +90,7 @@ two.**
 | 4 | six reports, six filters | the same 5-line loop, six times | **comprehensions** |
 | 6 | a student is now nine fields | a dict per student, and a typo is silent | **classes** |
 | 9 | teachers as well as students | copy the whole Student class and edit it | **inheritance** |
-| 12 | the term's statistics | mean, spread and extremes by loop, over 600 numbers | **NumPy** |
+| 12 | the term's statistics | mean, spread and extremes by loop, over 180 numbers | **NumPy** |
 | 14 | show the head teacher | a bar chart drawn with `print()` and asterisks | **Matplotlib** |
 | 16 | the school's own CSV | 40 lines of `split(",")` and `try` | **pandas** |
 | 19 | a school of unknown depth | a loop for each level, and one level too few | **recursion** |

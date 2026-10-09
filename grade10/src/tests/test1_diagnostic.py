@@ -1,7 +1,7 @@
 #%% md
 # Նախնական ախտորոշիչ թեստ
 
-Python զրոյից · ExamPlatform/Colab տարբերակ · 45–60 րոպե
+Python զրոյից · 1-ին նիստից առաջ · ExamPlatform/Colab տարբերակ · 45–60 րոպե
 
 #%% md teacher
 ## Օգտագործման կարգ

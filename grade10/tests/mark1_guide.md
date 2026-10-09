@@ -48,7 +48,7 @@ teaching problem from the one who worked alone and ran out of time.
 ## How to read the cohort as a whole
 
 - **Q1 at help level 0 or 1 for several people** → add a second helper to session 1, or run an
-  optional setup clinic beforehand. session 1 is the highest-risk session in the programme and
+  optional setup clinic beforehand. Session 1 is the highest-risk session in the programme and
   this is your advance warning.
 - **Q3 weak across the room** → do not shorten topic 9. The `elif` ordering trap will need
   the full session.

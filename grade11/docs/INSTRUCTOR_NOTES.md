@@ -22,22 +22,25 @@
 
 ## 2. Timing
 
-Every day's agenda is in `CURRICULUM.md` and sums to exactly **120 minutes**, verified by
-script. Two shapes:
+Every session's agenda is in `CURRICULUM.md` and sums to exactly **120 minutes**,
+verified by script. There are five shapes, plus bespoke agendas for sessions 1, 15 and 16:
 
-| | Standard day | Discovery day |
-|---|---|---|
-| Recap | 5 | 5 |
-| Teach | **12** | 7, then 9 |
-| Hands-on | 20 + 33 | 22 + 27 |
-| Retrospective | 5 | 5 |
+| | Paired | Single | Discovery | Discovery + |
+|---|---|---|---|---|
+| Recap | 8 | 8 | 6 | 5 |
+| Teach | **12**, then **12** | **12** | 10, then 12 | 8, then 10, then 10 |
+| Hands-on | 18 + 22 + 18 + 25 | 25 + 35 + 32 | 32 + 50 | 25 + 33 + 12 + 12 |
+| Retrospective | 5 | 8 | 10 | 5 |
+| **Hands-on** | **83** | **92** | **82** | **82** |
 
-**Hands-on is at least 49 of 75.** That is a floor.
+**Hands-on is never below 82 of 120.** That is a floor.
+
+> **A paired session is two teach blocks of 12, not one of 24.** The cap is per block.
 
 > **The rule to hold yourself to: if you have been talking for more than 12 minutes, you
 > are behind and the lesson is already worse.**
 
-### What to cut when a day runs long
+### What to cut when a session runs long
 
 1. **Extra tasks** — always first, every time
 2. **The last Required exercise** — it is placed last for this reason
@@ -45,9 +48,9 @@ script. Two shapes:
 
 ---
 
-## 3. The seven discovery days
+## 3. The seven discovery topics
 
-Days **4, 6, 9, 12, 14, 16, 19**. These are the ones that need the most care.
+**Topics 4, 6, 9, 12, 14, 16, 19** — sessions 3, 5, 7, 9, 10, 11, 13. These are the ones that need the most care.
 
 | What goes wrong | What to do |
 |---|---|
@@ -68,7 +71,7 @@ of line counts. Saying it aloud turns a discovery into a lecture.
 | **9** | `super().__init__()` is forgotten by almost everyone | The `AttributeError` cell is there for this. Run it together, slowly |
 | **12** | The first import of something we did not write | If an import fails here, the setup check was not done. Have a backup: Colab, from topic 20's material, brought forward |
 | **16** | pandas does in one line what topic 16 spent 22 lines on | Some participants find this deflating rather than freeing. Say explicitly that the 22 lines were how you learn what the one line does |
-| **20** | **The only session needing internet**, and the only one with no laborious half | If the network fails, swap it with session 14 and run it later. Nothing depends on it until topic 24 |
+| **20** | **The only topic needing internet**, and the only one with no laborious half | Topic 20 shares session 14 with topic 21. **If the network fails, teach topic 21 first and topic 20 second**, and if it is still down, carry topic 20 into session 15's recap or set it as reading. Nothing depends on it until topic 24 |
 | **21** | Debugging is hard to teach remotely | Do it on **your** screen, with a bug you introduce live. Do not ask them to watch their own |
 | **22** | Five files at once | Confirm `python main.py` **individually, for every participant, on a shared screen, before anybody leaves** |
 
@@ -129,5 +132,5 @@ Part 2 — and they are told that in advance, at enrolment, not afterwards.
 |---|---|
 | Software | **Zero.** Anaconda and VS Code, already installed |
 | Installation | **None** — all three libraries ship with Anaconda |
-| Network | **One session of 24** |
+| Network | **One session of 16** |
 | Instructor time | 32 contact hours, plus ~3½ hours of assessment |

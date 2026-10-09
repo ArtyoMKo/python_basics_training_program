@@ -377,7 +377,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "10 October 2026"
-CURRENT = "2.1"
+CURRENT = "2.2"
 BASELINE = "1.1"
 BASELINE_DATE = "Friday 2 October"
 

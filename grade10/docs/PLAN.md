@@ -152,19 +152,24 @@ use this instead:
 
 | # | Activity | Min |
 |---|---|---|
-| 1 | Recap | 5 |
-| 2 | **Teach:** today's task, and the only way we can do it so far | 7 |
-| 3 | **Do it the long way:** the real task, with shipped boilerplate | 22 |
-| 4 | **Teach:** the tool that shortens it | 9 |
-| 5 | **Do the same task again**, with the tool. Compare | 27 |
-| 6 | Retrospective | 5 |
-| | **Total** | **75** |
+| 1 | Recap, and last session's homework | 6 |
+| 2 | **Teach:** today's task, and the only way we can do it so far | 10 |
+| 3 | **Do it the long way:** the real task, with shipped boilerplate | 32 |
+| 4 | **Teach:** the tool that shortens it | 12 |
+| 5 | **Do the same task again**, with the tool. Compare | 50 |
+| 6 | Retrospective | 10 |
+| | **Total** | **120** |
 
-Teaching is 16 minutes but **split into two blocks of 7 and 9** — neither approaches the
-15-minute ceiling, and the second one lands on a participant who now wants it. Hands-on is 49 of 75.
+Teaching is 22 minutes but **split into two blocks of 10 and 12** — neither reaches the
+12-minute cap, and the second lands on a participant who now wants it. Hands-on is 82 of
+120.
 
-Topics 1, 20, 21, 23 and 24 have bespoke agendas (installation, the transition, the build
-day and the showcase). Each still sums to 50.
+> **Both halves grew when the schedule changed.** The long half went 22 → 32 and the
+> short half 27 → 50, so the arc was lengthened, not squeezed into a longer session.
+
+Sessions 1, 14 and 16 have bespoke agendas (installation, the transition, and the build
+plus showcase). Each still sums to 120, and every one is written out in full in
+`CURRICULUM.md`.
 
 ### Per-day deliverable
 
@@ -977,7 +982,7 @@ adjectives, the definition of done — applies unchanged.
 | **D2** | Python distribution | **Anaconda**, `base` environment, never activated by hand | §9.1 |
 | **D3** | Grading scale | **1–10, pass mark 4**, written once as `PASS_MARK = 4` from topic 9 | §6.2, §8 |
 | **D4** | Where participants keep their work | Their own laptop, one folder: `Documents/python_course/`. Same folder all 24 days | §9.2 |
-| **D5** | Practice between sessions | Yes — one ~10-minute task per day, **explicitly optional**, and the next day never assumes it was done | §7, §3 |
+| **D5** | Practice between sessions | **Homework**, introduced with the two-a-week schedule (D12). It is the Extra tier the notebooks already carry — never new work — and the next session's recap block checks it. Required tasks are homework only by overflow | §7.3, `CURRICULUM.md` Homework |
 | **D6** | Group size | **4–8, one instructor.** Fewer than 4 and they cannot discuss; more than 8 and the instructor cannot check on everyone remotely | §2, §12 |
 | **D11** | Delivery | **Remote**, over Google Meet with screen sharing. Each teacher needs their own laptop and a connection that holds a 120-minute call | §2, §12, `ENROLMENT.md` |
 | **D12** | Session length | **120 minutes, 2 a week** — 16 sessions over 8 weeks, 32 hours. Replaces 24 × 75 × 3 a week. The third weekly touchpoint is replaced by homework, which is the Extra tier that no longer fits in the room (`CURRICULUM.md`, Homework) | §3 |

@@ -282,7 +282,7 @@ plt.rcParams["font.family"] = "Arial Unicode MS"
 
 Եթե չօգնեց՝ փորձի՛ր `"DejaVu Sans"` կամ քո համակարգչում եղած այլ տառատեսակ։
 
-**Սա պետք կգա 23-րդ թեման**, երբ բեռնես քո դպրոցի իսկական ֆայլը։
+**Սա պետք կգա 23-րդ թեմայում**, երբ բեռնես քո դպրոցի իսկական ֆայլը։
 
 #%% code
 # Keep the names in a list here, pasted from the markdown above.

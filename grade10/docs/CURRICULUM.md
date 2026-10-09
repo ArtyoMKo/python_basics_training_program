@@ -65,7 +65,7 @@ Every session is one of these. All four sum to 120.
 
 | # | Block | Min |
 |---|---|---|
-| 1 | Recap | 6 |
+| 1 | Recap, and last session's homework | 6 |
 | 2 | **Teach:** today's task, and the only way we can do it so far | 10 |
 | 3 | **Do it the long way:** the real task, with most of it shipped | 32 |
 | 4 | **Teach:** the tool that shortens it | 12 |
@@ -158,7 +158,7 @@ The highest-risk two hours of the programme. The reward at the end is small and 
 
 | # | Activity | Min |
 |---|---|---|
-| 1 | Recap: the assembled notebook, on screen | 5 |
+| 1 | Recap, and last session's homework: the assembled notebook, on screen | 5 |
 | 2 | **Teach:** why leave the notebook. A notebook is a workbench; you hand someone the thing, not the bench | 12 |
 | 3 | **Hands-on:** create `grades.py`, move the functions in, save | 18 |
 | 4 | **Hands-on:** open the terminal inside VS Code. `cd`, then `python grades.py`. It prints nothing — and that is correct. Then `if __name__ == "__main__":` | 16 |
@@ -648,10 +648,16 @@ notebooks and little more.
 
 | Session shape | What is set | Roughly |
 |---|---|---|
-| **Paired** | finish the Required tasks you did not reach, then the Extra tier of both notebooks | 30–40 min |
+| **Setup** (session 1) | the second notebook's Required tasks not reached in the room | 20–30 min |
+| **Paired** | the Required tasks of **either** notebook you did not reach, then the Extra tier of the **second** notebook only | 30–45 min |
 | **Single** | nothing. The Extra tier is done **in the session** | — |
 | **Discovery** | the Extra tier of that notebook | 20–30 min |
 | **Transition, project** | nothing. Both are hands-on throughout | — |
+
+> **Why the second notebook only.** A paired session sets up to six Extra tasks, not
+> twelve. `PLAN.md` §7.3 sizes an Extra task for a participant who finished Required
+> with eight minutes left; a dozen of them, cold, is an evening's work and not what this
+> schedule intends. The first notebook's Extra tier stays available and is never set.
 
 Rules this follows:
 

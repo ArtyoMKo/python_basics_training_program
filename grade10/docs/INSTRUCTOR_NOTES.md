@@ -107,7 +107,7 @@ Other frequent problems, in order of how often they occur:
 ## 3. The five discovery days are the course. Never split one.
 
 **Topics 6, 8, 11, 17 and 22** each give participants a real task, let them solve it the
-long way with what they know, and then — **in the same fifty minutes** — hand them the tool
+long way with what they know, and then — **in the same session** — hand them the tool
 that collapses it.
 
 **The single most important rule in this document: never let a discovery day end at the
@@ -158,7 +158,7 @@ session 16 (finishing something is the point).
 
 ## 5. Mixed pace, and the two-day gap
 
-These are working adults meeting three times a week. Some will miss sessions.
+These are working adults meeting twice a week. Some will miss sessions.
 
 - **Hand out `solutions/dayNN.ipynb` after each session, not with the notebook.** A
   participant who misses a day needs to catch up alone, and this is the artefact that
@@ -215,7 +215,7 @@ different teaching problem from the one who worked alone and ran out of time.
 | Test | Watch | If it goes wrong |
 |---|---|---|
 | Diagnostic | Q1 — can they run a cell at all? | Several at help level 0–1 → add a helper to session 1, or run a setup clinic first. This is your advance warning on the riskiest session |
-| Midpoint | **Q4 — did they write a loop?** | Still writing one block per student after thirteen sessions is the strongest early evidence against the approach. Record it; do not explain it away |
+| Midpoint | **Q4 — did they write a loop?** | Still writing one block per student after nine sessions is the strongest early evidence against the approach. Record it; do not explain it away |
 | Final | Q2 and Q3 — returning or printing? | Printing means `return` never landed, and the four-file project rests on it |
 
 ### The diagnostic is also a planning tool
@@ -325,5 +325,5 @@ school uses a different word, change the glossary and re-run the checker.
 | 22 | Their own class in `data/my_class.csv`, loaded and saved back |
 | 24 | A README a colleague successfully ran from, and a 90-second demo |
 
-**session 14 is the one to be strict about.** Do not let anyone leave that session without
+**Session 14 is the one to be strict about.** Do not let anyone leave that session without
 `python main.py` running. Everything after it assumes that it does.

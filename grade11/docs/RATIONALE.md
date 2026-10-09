@@ -27,7 +27,7 @@ answer the question a pupil actually asks: *why would I bother?*
 Seven of the 16 sessions are **discovery days**. Each gives a real task, lets the
 participant solve it the long way, and then hands them the tool that collapses it.
 
-**All of that happens inside one 75-minute session.** Never across two.
+**All of that happens inside one session.** Never across two.
 
 > Ending a session after the long way and before the short way is the worst outcome this
 > design can produce. A participant goes home having spent an hour on something tedious,

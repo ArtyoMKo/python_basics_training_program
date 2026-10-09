@@ -28,7 +28,7 @@ half of grade 10's second semester the first course did not reach.
 |---|---|
 | **Entry** | the grade-10 course, and nothing else |
 | **State topics** | **15, 16, 17, 18, 19, 20, 21, 22, 24** — not 23 (git), deferred |
-| **Shape** | 16 sessions × 120 min = 32 hours · 3 a week × 8 weeks · remote · groups of 4–8 |
+| **Shape** | 16 sessions × 120 min = 32 hours · 2 a week × 8 weeks · remote · groups of 4–8 |
 | **Exit** | a teacher can write and explain a class, read a library's output, and produce a report with statistics and a chart from their school's own data |
 
 **Part 2 of this course** — algorithmic recursion, complexity, algorithm design, bigger
@@ -62,7 +62,7 @@ one class, dictionaries        ← what they bring from grade 10
    ├─ the same filter loop, written six times            → comprehensions
    ├─ a student is now 9 fields, and a typo is silent    → CLASSES
    ├─ Teacher needs everything Student has, plus more    → INHERITANCE
-   ├─ statistics over 600 numbers, by loop               → NUMPY
+   ├─ statistics over 180 numbers, by loop               → NUMPY
    ├─ a bar chart drawn with print() and asterisks       → MATPLOTLIB
    ├─ the school's CSV parsed by hand, 40 lines          → PANDAS
    └─ a structure whose depth you do not know in advance → RECURSION
@@ -83,10 +83,10 @@ deliberate:
 | **No classes.** `class` fails the style check | **Classes are the centre of the course** — topics 9–14 | State topics 18 and 19, 22 pupil-hours |
 
 **`pip install` still requires a decision, and the answer is: not to follow the course.**
-Anaconda ships `numpy`, `matplotlib` and `pandas` already, so nothing in topics 1–20 needs
+Anaconda ships `numpy`, `matplotlib` and `pandas` already, so nothing in topics 1–19 needs
 the network. `pip`, `requirements.txt` and environments are **taught as a topic** on day
 21, against one small package, and that is the only session that needs internet. This
-keeps the grade-10 promise — *the course runs with the wifi off* — true for 23 of 24 days.
+keeps the grade-10 promise — *the course runs with the wifi off* — true for 23 of 24 topics.
 
 **Still excluded, and this list is load-bearing:**
 

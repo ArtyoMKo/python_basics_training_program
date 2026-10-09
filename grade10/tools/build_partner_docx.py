@@ -390,7 +390,38 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "2.1"
+VERSION = "2.2"
+
+
+# Phrases from the three-a-week schedule. This document restates its figures in prose
+# rather than linking to them, and a half-finished sweep is exactly how a partner ends
+# up holding two different schedules in one file.
+STALE_SCHEDULE = [
+    "75 minutes", "75-minute", "three a week", "three times a week",
+    "24 sessions", "30 hours", "1,800 minutes", "Day 24", "before day 1",
+]
+
+
+def docx_text(path):
+    """All visible text of a .docx, so the finished file can be checked rather than the
+    script that wrote it."""
+    import xml.etree.ElementTree as ET
+    import zipfile
+
+    namespace = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+    with zipfile.ZipFile(path) as archive:
+        root = ET.fromstring(archive.read("word/document.xml"))
+    return " ".join(node.text or "" for node in root.iter(f"{namespace}t"))
+
+
+def check_built_document(path):
+    """Fail if the finished .docx still carries the old schedule anywhere in it."""
+    found = []
+    text = docx_text(path)
+    for phrase in STALE_SCHEDULE:
+        if phrase.lower() in text.lower():
+            found.append(phrase)
+    return found
 
 
 def build():
@@ -609,7 +640,7 @@ def build():
             "**Session length.** Sessions run 120 minutes, twice a week — 16 × 120 "
             "= 32 hours, and the practice that no longer fits in the room is set as "
             "homework drawn from tasks the notebooks already carry. Once the cohort has adapted we may move to "
-            "three of 50 minutes; the day map and deliverables would not change.",
+            "three of eighty minutes; the topic map and deliverables would not change.",
             "**Tools.** Anaconda, Jupyter and VS Code, with Google Colab and Thonny under "
             "discussion as a lighter alternative that would remove the installation "
             "problem entirely. Current materials assume Anaconda and VS Code.",
@@ -617,21 +648,21 @@ def build():
     )
 
     d.table(
-        ["Week", "Sessions", "What the participant can do by the end of it", "Assessment"],
+        ["Week", "Sessions", "Topics", "What the participant can do by the end of it", "Assessment"],
         [
-            ["1", "1–3", "It runs on my laptop, and I know what a value is", "*diagnostic sat before day 1*"],
-            ["2", "4–6", "I can name things, and keep a whole class in one list", ""],
-            ["3", "7–9", "The computer can make decisions", ""],
-            ["4", "10–12", "One loop marks thirty students", "**Midpoint**"],
-            ["5", "13–15", "I can find any student by name", ""],
-            ["6", "16–18", "I write a calculation once and use it everywhere", ""],
-            ["7", "19–21", "It is a program now, not a notebook", ""],
-            ["8", "22–24", "It has my class in it, it saves, and I showed it to someone", "**Final practical**"],
+            ["1", "1–2", "1–4", "It runs on my laptop, and I know what a value is", "*diagnostic sat before session 1*"],
+            ["2", "3–4", "5–6", "I can name things, and keep a whole class in one list", ""],
+            ["3", "5–6", "7–8", "Every data type I need, and I can find one student", ""],
+            ["4", "7–8", "9–11", "Conditions, then one loop marks thirty students", ""],
+            ["5", "9–10", "12–15", "I can compute and report on the whole class", "**Midpoint**"],
+            ["6", "11–12", "16–17", "I write a calculation once and use it everywhere", ""],
+            ["7", "13–14", "18–21", "It is a program now, not a notebook", ""],
+            ["8", "15–16", "22–24", "It has my class in it, it saves, and I showed it to someone", "**Final practical**"],
         ],
-        [0.09, 0.13, 0.58, 0.20],
+        [0.08, 0.12, 0.11, 0.49, 0.20],
     )
     d.para(
-        "**Week 4 is the centre of the course** — where the first two discovery days pay "
+        "**Week 4 is the centre of the course** — where the first two discovery sessions pay "
         "off and a loop first does thirty students' work. If the calendar slips, that week "
         "is protected.",
         italic=True,
@@ -665,7 +696,7 @@ def build():
             ["**Removes the worst day-one risk**", "In a room, sixteen people downloading 1 GB over one school connection would have cost a session. Each teacher now installs at home, on their own connection, before day one"],
             ["**Removes the best mitigation**", "An instructor cannot walk over and look at a screen. Everything that was a thirty-second fix becomes a conversation with a beginner who often cannot describe what they are seeing"],
             ["The substitute", "Google Meet can now display **every participant's shared screen at once**, with switching between them. Screens stay shared through hands-on work — the remote equivalent of walking between desks — and with 4–8 people the instructor checks in on each one by name"],
-            ["Requires of each teacher", "Their own laptop for the whole course, and a connection that holds a 75-minute video call with screen sharing. A webcam is wanted but not required"],
+            ["Requires of each teacher", "Their own laptop for the whole course, and a connection that holds a two-hour video call with screen sharing. A webcam is wanted but not required"],
         ],
         [0.26, 0.74],
     )
@@ -798,7 +829,7 @@ def build():
             ["Day 10", "The whole register marked in four lines, proved by adding students without touching the loop"],
             ["Day 17", "A calculation written once and used in four places, with a change proved in a single edit"],
             ["**Day 21**", "**A working `python main.py` — confirmed individually, per person, before they leave the room.** Everything after this day assumes it"],
-            ["Day 24", "A documented program a colleague ran unaided, and a 90-second demonstration given aloud"],
+            ["Session 16", "A documented program a colleague ran unaided, and a 90-second demonstration given aloud"],
         ],
         [0.17, 0.83],
     )
@@ -863,15 +894,15 @@ def build():
     d.h2("Assessment")
     d.para(
         "**Three sittings**, designed jointly with our partner colleague. They are "
-        "**separate sittings, not session time** — the 24 teaching sessions remain 30 "
+        "**separate sittings, not session time** — the 16 teaching sessions remain 32 "
         "hours exactly and the assessments add roughly 3½ hours."
     )
     d.table(
         ["", "Assessment", "When", "Length", "Points", "Covers"],
         [
-            ["1", "Initial diagnostic", "Before day 1", "45–60 min", "44", "Nothing — it measures the baseline"],
+            ["1", "Initial diagnostic", "Before session 1", "45–60 min", "44", "Nothing — it measures the baseline"],
             ["2", "Midpoint", "After session 9", "60–75 min", "50", "Topics 6–13"],
-            ["3", "Final practical", "Day 24", "90–120 min", "70 + 10", "Days 14–24"],
+            ["3", "Final practical", "Session 16", "90–120 min", "70 + 10", "Topics 14–24"],
         ],
         [0.04, 0.21, 0.14, 0.13, 0.11, 0.37],
     )
@@ -1111,7 +1142,7 @@ def build():
             ["**No instructor in the room.** Everything that would have been a thirty-second fix becomes a conversation with a beginner who cannot describe what they are seeing", "High", "All screens shared through hands-on work, with Meet showing every participant at once; each person checked on by name; groups capped at eight so that is possible"],
             ["Laptops that block software installation, or lack the ~5 GB needed", "Medium", "Confirmed with schools, and asked on the enrolment form, before anyone is admitted. A browser-based fallback exists for sessions 1–19, but that participant cannot do days 20–24 fully"],
             ["The editor's interpreter picker — the most common beginner failure", "High", "Only one choice is ever present; a red callout on days 1 and 2; the setup script reports which Python is actually running"],
-            ["Missed sessions — twice a week for eight weeks, on top of a teaching job", "High", "Every topic is self-contained; worked solutions published after each session; topic 19 is a catch-up with nothing new in it. **A missed two-hour session now costs more than a missed 75-minute one did** — the recap block at the start of each session exists for it"],
+            ["Missed sessions — twice a week for eight weeks, on top of a teaching job", "High", "Every topic is self-contained; worked solutions published after each session; topic 19 is a catch-up with nothing new in it. **A missed session now costs more than it did on the old three-a-week schedule** — it is two hours and two topics, not one — and the recap block at the start of every session exists for it"],
         ],
         [0.42, 0.13, 0.45],
         size=9,
@@ -1201,7 +1232,7 @@ def build():
     d.h2("What we would find most useful from you")
     d.numbered([
         "**Is the diagnosis right?** Is \"they cannot code\" really the bottleneck, or are we fixing the wrong thing?",
-        "**Is 30 hours enough** to produce the fluency the approach depends on?",
+        "**Is 32 hours enough** to produce the fluency the approach depends on?",
         "**What should the success numbers be?** Agreed before the first session.",
         "**Will the discovery sessions be accepted or resented?** Anyone who knows this audience better than we do should say so before we run it, not after.",
     ])
@@ -1215,7 +1246,7 @@ def build():
         "Since this dossier was last issued, a **second course has been built and "
         "verified**. It takes a teacher who has finished the course described above and "
         "prepares them to teach **grade 11**. It is the same length, the same shape and "
-        "the same method: twenty-four sessions of seventy-five minutes, three a week for "
+        "the same method: sixteen sessions of two hours, twice a week for "
         "eight weeks, delivered remotely in groups of four to eight."
     )
 
@@ -1227,7 +1258,7 @@ def build():
             ["Spine", "one class, in dictionaries", "**the whole school**, as objects with statistics and charts"],
             ["Teaches", "print, types, variables, lists, dictionaries, conditions, loops, functions, files", "**classes, inheritance, NumPy, Matplotlib, pandas, recursion, debugging**"],
             ["Deliverable", "a four-file gradebook over the teacher's own class", "a **five-file report tool** over the teacher's own school file, with charts"],
-            ["Discovery sessions", "5 of 24", "**7 of 24**"],
+            ["Discovery sessions", "5 of 16", "**7 of 16**"],
             ["Status", "built and verified", "**built and verified**"],
         ],
         [0.16, 0.42, 0.42],
@@ -1340,7 +1371,7 @@ def build():
     d.table(
         ["Where it broke", "What that tells us"],
         [
-            ["At the mechanics — they still cannot code after 30 hours", "The time budget is wrong, not the theory. A longer course on the same method"],
+            ["At the mechanics — they still cannot code after 32 hours", "The time budget is wrong, not the theory. A longer course on the same method"],
             ["At acceptance — they disliked the method and left", "The theory is untested; the delivery needs rethinking"],
             ["At transfer — they can code but cannot solve problems", "The central assumption is wrong. This is the finding that would change our direction"],
         ],
@@ -1406,6 +1437,15 @@ def main():
     dossier = build()
     dossier.save(OUT)
     print("✅ facts verified against the repository")
+    stale = check_built_document(OUT)
+    if stale:
+        print("❌ the built dossier still carries the old schedule:\n")
+        for phrase in stale:
+            print(f"   {phrase!r}")
+        print("\n   Fix the content in this script before shipping.")
+        return 1
+
+    print("✅ no three-a-week schedule figures left in the built document")
     print(f"✅ {OUT.relative_to(ROOT)} ({OUT.stat().st_size / 1024:.0f} KB)")
     return 0
 

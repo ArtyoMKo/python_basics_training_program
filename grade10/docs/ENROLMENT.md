@@ -18,7 +18,7 @@ The questions as sent are in Armenian; the right-hand column is for us.
 
 | # | Question (as sent) | What the answer decides |
 |---|---|---|
-| 1 | Քանի՞ օր ես պատրաստ հատկացնել Python-ի դասերին՝ **2, թե՞ 3**։ | **Which group they join.** The two answers cannot be mixed in one group — they produce different schedules |
+| 1 | Քանի՞ օր ես պատրաստ հատկացնել Python-ի դասերին՝ **2**։ | **Which group they join.** The two answers cannot be mixed in one group — they produce different schedules |
 | 2 | Ինտերնետ կապդ բավարա՞ր է տեսազանգի համար։ | **Gating.** A video call with screen sharing for 120 minutes, twice a week, is the floor. If the answer is no, this has to be solved before they start, not during week 1 |
 | 3 | Ունե՞ս վեբ-տեսախցիկ։ | Not gating, but it changes how we teach them. See below |
 | 4 | Կարո՞ղ ես օգտվել Zoom-ից կամ Google Meet-ից։ | **Gating in practice.** "No" usually means "I have never tried", which is a 20-minute fix before session 1 — but only if we know |
@@ -33,7 +33,7 @@ The questions as sent are in Armenian; the right-hand column is for us.
 
 **Groups must be homogeneous on this.** A teacher who can give two days cannot be in a
 three-day group; they will fall a session behind every week. If both answers are common,
-run two groups rather than compromising on one schedule.
+move the group's two slots rather than compromising on the schedule.
 
 ### Question 2 — internet
 

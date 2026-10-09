@@ -1,6 +1,6 @@
 # Marking guide — the midpoint
 
-**Sat after topic 11. 50 points. Six questions, covering topics 2–11.**
+**Sat after session 8. 50 points. Six questions, covering topics 2–11.**
 
 The block boundary is deliberate: everything this test asks about has been taught, and
 nothing after it is a library. It is the decision point for whether the libraries block

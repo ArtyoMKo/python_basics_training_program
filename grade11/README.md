@@ -53,7 +53,7 @@ grade11/
 ├── AGENTS.md                 the contract for anyone changing this course
 ├── docs/
 │   ├── BUILD_PLAN.md         the step board — what is built and what is not
-│   ├── CURRICULUM.md         24 days, every agenda, the time arithmetic
+│   ├── CURRICULUM.md         16 sessions, 24 topics, every agenda, the time arithmetic
 │   ├── OUTLINE.md            what the course is, short            (for administration)
 │   ├── RATIONALE.md          why it is built this way, and the risk  (for colleagues)
 │   ├── INSTRUCTOR_NOTES.md   pre-flight, pacing, what to cut

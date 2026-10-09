@@ -1,4 +1,4 @@
-# Marking guide — Test 3, final practical (topic 24)
+# Marking guide — Test 3, final practical (session 16)
 
 **Instructor-facing. Hand out `tests/participant/test3_final_practical.ipynb`.**
 

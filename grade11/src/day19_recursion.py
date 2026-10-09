@@ -471,5 +471,5 @@ print("limit:", sys.getrecursionlimit())
 Երեք գրադարան ներմուծեցինք՝ numpy, matplotlib, pandas։ Բայց որտեղի՞ց են դրանք
 եկել, և ի՞նչ անել, երբ պետք է չորրորդը։
 
-Վաղը՝ `pip`, `requirements.txt`, միջավայրեր, և Google Colab։
+Հաջորդ նիստում՝ `pip`, `requirements.txt`, միջավայրեր, և Google Colab։
 **Միակ դասն է, որին ինտերնետ է պետք։**
