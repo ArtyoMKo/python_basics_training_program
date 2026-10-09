@@ -72,7 +72,7 @@ point.
 | **Participants** | Public-school teachers. Any subject. |
 | **Prior programming** | **None assumed.** Not "basic Python" — none. Some will not know what a file extension is. |
 | **Prior computer use** | Everyday: email, a browser, Word, a school information system. Comfortable typing. |
-| **Delivery** | **Remote**, over Google Meet with screen sharing. Not on site. |
+| **Delivery** | **Fully remote** — every session, over Google Meet with screen sharing. No session is on site, at any point in the course |
 | **Machines** | **Their own laptop**, which they must have for the whole course. Mixed Windows and macOS. Possibly no admin rights. Checked at enrolment (`ENROLMENT.md`). See §12 risks. |
 | **Language** | Materials in **Armenian**; code, keywords and identifiers in English (§7.7) |
 | **Format** | 18 sessions × **75 minutes** = 1,350 minutes = **22 h 30** |

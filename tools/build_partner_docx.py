@@ -409,7 +409,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "3.1"
+VERSION = "3.2"
 
 
 # Phrases from the three-a-week schedule. This document restates its figures in prose
@@ -487,7 +487,7 @@ def build():
         [
             ["Structure", "**Two courses, one per school grade.** Each is a **practical Part 1 of 2 months** and a **theoretical Part 2 of 4 months** that runs only if its Part 1 succeeds. **Sections 1–10 describe the grade-10 course's Part 1; section 11 describes the grade-11 course's Part 1.** Both are built and verified."],
             ["Part 1 format", "18 sessions × 75 minutes = **22½ hours**, **twice a week** over nine weeks, plus homework between sessions and three assessment sittings"],
-            ["Delivery", "**Remote**, over Google Meet with screen sharing"],
+            ["Delivery", "**Fully remote**, over Google Meet with screen sharing. No session is held on site, in either course"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
             ["Group size", "**4–8 per group**, one instructor"],
             ["Deliverable", "A runnable four-file Python program over the participant's own class data, demonstrated to a colleague"],
@@ -669,8 +669,8 @@ def build():
             "**Session length.** Sessions run 75 minutes, twice a week — 18 × 75 "
             "= 22½ hours. **This is the lowest contact time the programme has used**, and the "
             "practice that no longer fits is set as homework — on the three sessions that "
-            "cover two topics that means the **Required** tier of both notebooks, 45–60 "
-            "minutes. Nothing new is ever introduced at home: every task is already in "
+            "cover two topics that means the **Required** tier of both notebooks, 30–40 "
+            "minutes, and the Extra tier is not asked for on top. Nothing new is ever introduced at home: every task is already in "
             "the notebook. Teachers are told this at enrolment, not in week three. It is "
             "homework drawn from tasks the notebooks already carry. Once the cohort has adapted we may move to "
             "three of eighty minutes; the topic map and deliverables would not change.",

@@ -160,7 +160,7 @@ searching for the specific constructs each topic names. ✅ taught · ◐ partly
 | 12 | Բառարաններ | ◐ | **`.get()` for safe access**; the `dict()` constructor |
 | 13 | Ֆունկցիաներ | ◐ | **local and global** scope, and the `global` keyword |
 | 14 | Ֆայլեր | ◐ | **`open()` and `with open()`**, the file modes, and `read / readline / readlines / write / writelines`. We teach `pathlib`'s `read_text` / `write_text` instead — simpler, but *not what the pupils' curriculum names* |
-| 15 | Մոդուլներ \| Colab | ◐ | `pip`, `requirements.txt`, NumPy, Matplotlib, Colab. We teach `import` of our own modules (session 14) and work in Jupyter throughout |
+| 15 | Մոդուլներ \| Colab | ◐ | `pip`, `requirements.txt`, NumPy, Matplotlib, Colab. We teach `import` of our own modules (topics 20–21, session 16) and work in Jupyter throughout |
 | 16–24 | | ○ | **the grade-11 course** — see §8 |
 
 ### What to do about the gaps

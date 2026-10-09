@@ -107,7 +107,7 @@ to answer rather than guess at.
 
 **Homework is required on this schedule.** Two 75-minute sessions a week cannot hold 24
 topics and their practice, so on the sessions that cover two topics the Required tier of
-both notebooks goes home — 45–60 minutes. Everywhere else it is the Extra tier, 15–30
+both notebooks goes home — 30–40 minutes. Everywhere else it is the Extra tier, 15–30
 minutes. **Nothing new is introduced at home**, and the next session opens by checking it.
 
 A participant who does no homework will not finish. That is a fair thing to say at

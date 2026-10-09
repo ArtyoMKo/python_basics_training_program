@@ -163,9 +163,9 @@ three-a-week schedule. Nothing was cut from the course; the practice moved.
 
 | Session shape | What goes home | Roughly |
 |---|---|---|
-| Single | the Extra tier | 15–25 min |
+| Single | the Extra tier | 15–20 min |
 | Discovery | the Extra tier | 20–30 min |
-| **Paired** | **the Required tier of both notebooks**, then Extra | **45–60 min** |
+| **Paired** | **the Required tier of both notebooks**, then Extra | **30–40 min** |
 | Setup, transition, project | nothing, or the second notebook's Required | 0–30 min |
 
 - **Nothing new is ever introduced at home.** Every task is already in the notebook and
@@ -202,7 +202,7 @@ colleague. They are **separate sittings** and do not use session time.
 
 | Test | When | Length | Points |
 |---|---|---|---|
-| Initial diagnostic | **Before session 1** | 45–60 min | 44 |
+| Initial diagnostic | **Before session 1** | 30–40 min | 44 |
 | Midpoint | **After session 10** | 60–75 min | 50 |
 | Final practical | **Session 18** | 90–120 min | 70 + 10 separate |
 

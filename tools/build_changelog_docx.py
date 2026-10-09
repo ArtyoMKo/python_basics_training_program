@@ -359,6 +359,8 @@ def check_facts():
         ("the diagnostic assessment", "Initial diagnostic", False, True),
         ("75-minute sessions", "75 minutes", False, True),
         ("22½ hours", "22½ hours", False, True),
+        ("18 sessions", "18 sessions", False, True),
+        ("fully remote delivery", "Fully remote", False, True),
         ("groups of 4–8", "4–8", False, True),
     ]
     for label, needle, want_then, want_now in CLAIMS:
@@ -378,8 +380,8 @@ def check_facts():
 
 # -------------------------------------------------------------------------- content
 
-TODAY = "12 October 2026"
-CURRENT = "3.1"
+TODAY = "13 October 2026"
+CURRENT = "3.2"
 BASELINE = "1.1"
 BASELINE_DATE = "Friday 2 October"
 
@@ -468,15 +470,41 @@ def build():
         [
             ["**Shape**", "One course", "**Two courses, one per school year**", "Each one prepares a teacher for the year they will actually be teaching"],
             ["**Each course**", "—", "**A practical part of 2 months, then a thinking part of 4**", "The first part teaches teachers to write code. The second teaches them to solve problems with it. They are different skills, and the second only makes sense once the first is in place"],
-            ["**Lessons**", "50 minutes, three a week, 20 hours in total", "**75 minutes, twice a week, 22½ hours in total**", "Two evenings a week instead of three, which is what teachers asked for. The practice that no longer fits in the room is set as homework — and every piece of it is a task the materials already contained"],
+            ["**Lessons**", "50 minutes, three a week, 20 hours in total", "**75 minutes, twice a week — 18 sessions, 22½ hours in total**", "Two evenings a week instead of three, which is what teachers asked for. The practice that no longer fits in the room is set as homework — and every piece of it is a task the materials already contained"],
             ["**Class size**", "Up to 16 teachers", "**4 to 8 teachers**", "Fewer than four and they cannot discuss anything with each other. More than eight and the trainer cannot keep an eye on everyone"],
-            ["**Where**", "In a classroom", "**Online**, by video call", "Teachers join from home or school. This removes some problems and creates others, both described in the full document"],
+            ["**Where**", "In a classroom", "**Fully online**, by video call", "Every session in both courses, without exception. Teachers join from home or school. This removes some problems and creates others, both described in the full document"],
         ],
         [0.11, 0.17, 0.26, 0.46],
         size=9,
     )
 
     # ---------------------------------------------------- how it is measured
+    d.h2("Homework — this is new, and teachers are told before they enrol")
+
+    d.para(
+        "Two evenings a week instead of three means less time together: **22½ hours in "
+        "the room, against 30 on the original plan**. Nothing was removed from the "
+        "course. What no longer fits is done at home.",
+        size=10.5,
+    )
+    d.table(
+        ["After a session that covered…", "What is done at home", "How long"],
+        [
+            ["one topic *(twelve of the eighteen)*", "the optional extra questions", "**15–20 minutes**"],
+            ["two topics *(six of the eighteen)*", "the main questions for both", "**30–40 minutes**"],
+            ["the two practical build sessions", "nothing", "—"],
+        ],
+        [0.38, 0.38, 0.24],
+        size=9,
+    )
+    d.para(
+        "**Nothing new is ever set at home.** Every question is already printed in the "
+        "same workbook the session used, in the same form as the questions done "
+        "together, and the next session begins by going through them. **Teachers are "
+        "told this before they agree to join**, not after they have started.",
+        size=10.5,
+    )
+
     d.h2("How we will know whether it worked")
     d.para(
         "This is the part that changed most, and it is the part worth your attention. "

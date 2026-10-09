@@ -1,7 +1,7 @@
 # Curriculum — the grade-11 course
 
-**18 sessions × 75 minutes = 22 hours 30 minutes.** Two a week over nine weeks. Remote,
-in groups of 4–8. Arithmetic verified by `tools/check_times.py`.
+**18 sessions × 75 minutes = 22 hours 30 minutes.** Two a week over nine weeks. **Fully remote** — every
+session, without exception — in groups of 4–8. Arithmetic verified by `tools/check_times.py`.
 
 Entry is the grade-10 course and nothing beyond it. See `AGENTS.md` for what that means
 in practice, and `BUILD_PLAN.md` for what is built.
@@ -306,19 +306,22 @@ reaches in the room.
 
 | Session shape | What is set | Roughly |
 |---|---|---|
-| **Single** | the Extra tier, if Required was finished in the room | 15–25 min |
-| **Discovery** | the Extra tier of that notebook | 20–30 min |
-| **Paired** | **the Required tier of both notebooks**, then as much Extra as time allows | 45–60 min |
-| **Setup** (session 1) | topic 2's Required tier | 20–30 min |
+| **Single** | the Extra tier, if Required was finished in the room | 15–20 min |
+| **Discovery** | the Extra tier of that notebook | 15–20 min |
+| **Paired** | the **Required** tier of both notebooks — and nothing else | 30–40 min |
+| **Setup** (session 1) | topic 2's Required tier | 15–20 min |
 | **Transition, project** | nothing. Both are hands-on throughout | — |
 
-Rules this follows:
+**Homework is the same work as the session, in the same place.** It is never a different
+kind of task, never a longer one, and never a new idea:
 
-- **No task was written for homework.** Every one already existed and a three-a-week
-  schedule had time for it in the room.
-- **A paired session's Required tier is homework by design, not by overflow.**
-- **Nothing new is introduced at home.** Homework uses only what the session taught.
-- **The next session's recap block is where it is checked.**
+- Every task is **already printed in the notebook** the session used, in the same three
+  tiers, with the same skeleton-and-comment shape as the tasks done in the room.
+- **The Extra tier is never set on top of the Required tier.** On a paired session the
+  Required tier is the whole of it; Extra stays available and is not asked for.
+- **No Challenge task is ever homework.**
+- **Nothing new is introduced at home.** Homework uses only what that session taught.
+- **The next session opens by checking it**, and every agenda has that block.
 
 > **A participant who does no homework will not finish this version of the course.**
 > **Say so at enrolment**, not in week three.
@@ -330,7 +333,7 @@ Rules this follows:
 
 | | Test | When | Length | Covers |
 |---|---|---|---|---|
-| 1 | Initial diagnostic | **Before session 1** | 45–60 min | What the grade-10 course left them with. Nothing from this course |
+| 1 | Initial diagnostic | **Before session 1** | 30–40 min | What the grade-10 course left them with. Nothing from this course |
 | 2 | Midpoint | **After session 8** | 60–75 min | Topics 2–11: functions, comprehensions, classes, inheritance |
 | 3 | Final practical | **Session 18** | 90–120 min | Topics 12–24: libraries, charts, data, recursion, the project |
 
