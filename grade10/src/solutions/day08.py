@@ -1,5 +1,5 @@
 #%% md
-# Օր 9 — Լուծումներ
+# Թեմա 9 — Լուծումներ
 
 #%% code
 # Exercises 3, 4 and 5 - the class as a dictionary

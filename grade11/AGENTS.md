@@ -19,11 +19,11 @@ has finished the grade-10 course and prepares them to teach **grade 11** — sta
 | | |
 |---|---|
 | **Entry** | the grade-10 course, and **nothing beyond it** |
-| **Shape** | 24 sessions × 75 min = **30 hours** · 3 a week × 8 weeks · remote · groups of 4–8 |
+| **Shape** | 16 sessions × 120 min = **32 hours** · 2 a week × 8 weeks · remote · groups of 4–8 |
 | **Spine** | one class in dictionaries → **the whole school**, as objects, with statistics and charts |
 | **Excluded** | git (topic 23, deferred) · algorithmic recursion, which is Part 2 |
 
-### What a participant knows on day 1, and what they do not
+### What a participant knows on session 1, and what they do not
 
 They can write a `for` loop, a dictionary, a function with `return`, read and write a
 file, and run a four-file program. **They have never seen a class, an object, a library,
@@ -41,16 +41,16 @@ from zero, practically, exactly as the grade-10 course teaches variables and loo
 | Grade 10 | **Here** |
 |---|---|
 | Standard library only | **`numpy`, `matplotlib`, `pandas` — the three Anaconda already ships. Nothing else** |
-| `class` fails the style check | **Classes are the centre of the course**, days 6–11 |
+| `class` fails the style check | **Classes are the centre of the course**, topics 6–11 |
 
-**Nothing in days 1–19 needs the network.** Anaconda bundles all three libraries, so no
+**Nothing in topics 1–19 needs the network.** Anaconda bundles all three libraries, so no
 participant installs anything to follow the course. `pip`, `requirements.txt` and
-environments are *taught as a topic* on day 20, against one small package — the only
+environments are *taught as a topic* on topic 20, against one small package — the only
 session that needs internet.
 
 Still excluded, deliberately (`docs/PLAN.md` §5): decorators · generators · `@property` ·
 `dataclasses` · multiple inheritance · abstract base classes · custom exception classes ·
-`sklearn`, `pytorch`, `tensorflow` (**named once on day 24, never used**) · regex · type
+`sklearn`, `pytorch`, `tensorflow` (**named once in session 16, never used**) · regex · type
 hints · `async` · testing frameworks · databases · **git** · factorial, Fibonacci, the
 call stack and complexity, which are **Part 2**.
 
@@ -82,7 +82,7 @@ The source format is identical to grade 10's:
 ## The seven discovery days
 
 Days **4, 6, 9, 12, 14, 16, 19**. Each gives a real task, lets participants do it the long
-way, then hands them the tool that collapses it — **inside one 75 minutes, never across
+way, then hands them the tool that collapses it — **inside one session, never across
 two.**
 
 | Day | Task | Long way | Tool, same day |
@@ -118,7 +118,7 @@ class averages     11A 6.98      11B 6.33       11C 7.68
 `data/school.csv` is **generated** — `python tools/make_school.py` rebuilds it, and
 `--check` fails if it no longer matches the figures above. `verify.py` runs that check, so
 a silent drift is impossible. The file deliberately contains **a header, one blank line
-and one field with a comma inside it**, because day 16's long half must break on all three.
+and one field with a comma inside it**, because topic 16's long half must break on all three.
 
 ---
 
@@ -128,9 +128,9 @@ and one field with a comma inside it**, because day 16's long half must break on
 |---|---|
 | Assuming grade-10 fluency the course did not produce | teach every new syntax as new |
 | `import sklearn`, `seaborn`, `scipy`, anything beyond the three | the three Anaconda ships, nothing else |
-| A `pip install` needed before day 20 | days 1–19 run with the wifi off |
+| A `pip install` needed before topic 20 | topics 1–19 run with the wifi off |
 | Teaching recursion with factorial or Fibonacci | recursion here walks a real nested school; the algorithms are Part 2 |
-| A class introduced before the dict version has failed | day 6's long half must break first, visibly |
+| A class introduced before the dict version has failed | topic 6's long half must break first, visibly |
 | Writing "now you see how slow that was" | compare line counts in a table, and say nothing |
 | An Armenian class name in a code cell | **transliterate**: `11A`, not `11Ա` — the same decision grade 10 made for `Ani` |
 | Editing a `.ipynb` | edit `src/`, run `nbbuild.py` |

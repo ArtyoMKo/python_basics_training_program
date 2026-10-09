@@ -19,9 +19,9 @@ The questions as sent are in Armenian; the right-hand column is for us.
 | # | Question (as sent) | What the answer decides |
 |---|---|---|
 | 1 | Քանի՞ օր ես պատրաստ հատկացնել Python-ի դասերին՝ **2, թե՞ 3**։ | **Which group they join.** The two answers cannot be mixed in one group — they produce different schedules |
-| 2 | Ինտերնետ կապդ բավարա՞ր է տեսազանգի համար։ | **Gating.** A video call with screen sharing for 75 minutes, three times a week, is the floor. If the answer is no, this has to be solved before they start, not during week 1 |
+| 2 | Ինտերնետ կապդ բավարա՞ր է տեսազանգի համար։ | **Gating.** A video call with screen sharing for 120 minutes, twice a week, is the floor. If the answer is no, this has to be solved before they start, not during week 1 |
 | 3 | Ունե՞ս վեբ-տեսախցիկ։ | Not gating, but it changes how we teach them. See below |
-| 4 | Կարո՞ղ ես օգտվել Zoom-ից կամ Google Meet-ից։ | **Gating in practice.** "No" usually means "I have never tried", which is a 20-minute fix before day 1 — but only if we know |
+| 4 | Կարո՞ղ ես օգտվել Zoom-ից կամ Google Meet-ից։ | **Gating in practice.** "No" usually means "I have never tried", which is a 20-minute fix before session 1 — but only if we know |
 | 5 | Ունե՞ս որևէ տեխնիկական խնդիր, որի մասին արժե իմանալ։ | The open question. **The most useful one on the form**, because it catches what we did not think to ask |
 | 6 | Քո նոութբուքի մոդելը և հնարավորությունները՝ օպերատիվ հիշողություն (RAM) և ազատ տեղ սկավառակի վրա։ | **Gating.** Anaconda needs about 5 GB free and 8 GB RAM is comfortable. This is the answer that most often requires action |
 
@@ -38,7 +38,7 @@ run two groups rather than compromising on one schedule.
 ### Question 2 — internet
 
 The honest test is not "do you have internet" but **"can you hold a video call with
-screen sharing for 75 minutes"**. Ask it that way in the follow-up if the answer is vague.
+screen sharing for two hours"**. Ask it that way in the follow-up if the answer is vague.
 
 A teacher on an unstable connection is the hardest case in a remote course: they miss the
 explanation, not just the room. If it cannot be fixed, consider whether they can attend
@@ -56,7 +56,7 @@ often**, and check in on them by name rather than waiting for a question.
 ### Question 4 — Zoom or Google Meet
 
 Almost always answered "no" by people who simply have not used it. Treat a "no" as a
-booking for a **ten-minute call before day 1** to install it and practise screen sharing
+booking for a **ten-minute call before session 1** to install it and practise screen sharing
 once. That call also doubles as the connection test for question 2.
 
 ### Question 5 — any technical problem
@@ -72,9 +72,9 @@ before enrolment than in week 3.
 
 | Finding | What to do |
 |---|---|
-| Less than ~5 GB free disk | Fixable: ask them to clear space before day 1, with help if needed |
+| Less than ~5 GB free disk | Fixable: ask them to clear space before session 1, with help if needed |
 | Less than 8 GB RAM | Workable but slower. Expect Anaconda to take longer to start; warn them so they do not think it has frozen |
-| No administrator rights | **The serious one.** Both installers offer a per-user install, which usually works; test it with them before day 1 rather than discovering it live |
+| No administrator rights | **The serious one.** Both installers offer a per-user install, which usually works; test it with them before session 1 rather than discovering it live |
 | A tablet or Chromebook, not a laptop | Anaconda will not install. This is the case where the browser-based fallback is the only option, and it costs them the final sessions (see `INSTRUCTOR_NOTES.md`) |
 
 ---

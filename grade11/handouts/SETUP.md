@@ -50,7 +50,7 @@ Checking your setup for the grade 11 course
 ✅ writing files                this folder is writable
 ✅ drawing a chart              a chart was drawn and saved
 ----------------------------------------------------
-✅ All six are green. You are ready for day 1.
+✅ All six are green. You are ready for session 1.
 ```
 
 ---

@@ -39,7 +39,7 @@ FORBIDDEN = [
 ]
 
 # The retrospective sections every notebook must carry.
-REQUIRED_SECTIONS = ["## Ինչի հասանք", "## Հաջորդ անգամ"]
+REQUIRED_SECTIONS = ["## Ինչի հասանք", "## Ի՞նչ է գալիս հետո"]
 
 # Days that deliberately have no break-it-on-purpose cell, and why.
 NO_ERROR_CELL = {

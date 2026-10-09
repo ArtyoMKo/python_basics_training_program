@@ -16,17 +16,17 @@ background, in two parts.**
 
 | | | |
 |---|---|---|
-| **Part 1** | **coding skills** — writing working code, no algorithmic difficulty | **2 months**, 24 sessions. **This repository** |
+| **Part 1** | **coding skills** — writing working code, no algorithmic difficulty | **2 months**, 16 sessions. **This repository** |
 | **Part 2** | **algorithmic tasks and the theory Part 1 postponed**, then classes and libraries | **4 months**. Outlined in `docs/ROADMAP.md`, not written |
 
-Part 1 is 24 sessions, 3 a week for 8 weeks, **delivered remotely** in groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
+Part 1 is 16 sessions, 2 a week for 8 weeks, **delivered remotely** in groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
 participant running a four-file gradebook program over their own class list.
 
-Sessions are **75 minutes**: 24 × 75 = 1,800 minutes = 30 hours, verified by
+Sessions are **120 minutes**: 16 × 120 = 1,920 minutes = 32 hours, verified by
 `check_times.py`.
 
 It is not a library and has no users other than teachers in a classroom. "Working" means
-*a teacher can follow it in 75 minutes*, not *the code runs*.
+*a teacher can follow it in one session*, not *the code runs*.
 
 ---
 
@@ -66,7 +66,7 @@ python tools/verify.py          # 3. verify    (nothing is done until this passe
 
 | | What it proves |
 |---|---|
-| agenda arithmetic | every agenda sums to 75; 24 days = 1,800 minutes |
+| agenda arithmetic | every agenda sums to 120; 16 sessions = 1,920 minutes |
 | notebooks execute | all 43 notebooks — lessons, solutions **and** both versions of each assessment — run cell by cell, in order, with `input()` stubbed and every deliberate-error cell raising exactly the error it claims |
 | style and language | the language rule, standard library only, excluded constructs, exercise sections present |
 | project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
@@ -112,7 +112,7 @@ Example names are **transliterated Armenian**: `Ani`, `Davit`, `Nare`, `Aram`, `
 ### 2. A laborious task and its replacement happen in the SAME session.
 
 Five **discovery days** — 6, 8, 11, 17, 22 — each give a real task, let participants solve
-it the long way, then hand them the tool that collapses it, inside one 75 minutes.
+it the long way, then hand them the tool that collapses it, inside one session.
 
 | Day | Task | Long way | Tool, same day |
 |---|---|---|---|
@@ -122,7 +122,7 @@ it the long way, then hand them the tool that collapses it, inside one 75 minute
 | 17 | an average on every report card | the same 6 lines, 4 times | **functions** |
 | 22 | keep the register after closing it | retyping it | **files** |
 
-**Every data type comes before conditions and loops.** Day 8's long half uses **no
+**Every data type comes before conditions and loops.** Topic 8's long half uses **no
 loops** — students are looked up by hand, by position, which is what makes the drift
 visible.
 
@@ -147,15 +147,15 @@ half acceptable.
 
 ### 4. Time is a hard ceiling.
 
-Every agenda sums to **exactly 75**. Teaching never exceeds **12 minutes** in one block.
-Hands-on is ≥ 49 of 75. If content does not fit, **cut a topic — never compress one**.
+Every agenda sums to **exactly 120**. Teaching never exceeds **12 minutes** in one block.
+Hands-on is ≥ 82 of 120. If content does not fit, **cut a topic — never compress one**.
 
 *Enforced by `check_times.py`.*
 
 ### 5. Standard library only.
 
 No `pip`, no venv, no third-party imports — **including Anaconda's 300 bundled packages**.
-`pandas` would make Day 11 a one-liner and teach a teacher nothing about loops.
+`pandas` would make topic 11 a one-liner and teach a teacher nothing about loops.
 
 Also excluded, deliberately (`docs/PLAN.md` §5): classes, exceptions beyond one `try` in
 `main.py`, comprehensions, `lambda`, generators, recursion, regex, type hints, `async`,
@@ -183,7 +183,7 @@ Never a blank cell: always a skeleton with a comment saying what goes where.
 Students, grades, attendance, averages, report lines. **No `foo`, no `x = 5`, no shopping
 baskets, no fizzbuzz.** A participant should see their Tuesday morning in any cell.
 
-The grading scale is **1–10, pass mark 4**, written once as `PASS_MARK = 4` from Day 8.
+The grading scale is **1–10, pass mark 4**, written once as `PASS_MARK = 4` from Topic 8.
 
 ---
 
@@ -197,7 +197,7 @@ The sample class is engineered, and **prose throughout the course quotes these v
 ```
 
 **If you change `notebooks/sample_class.csv`, you must grep for every number that was true
-before** (`docs/PLAN.md` §11.6). `6.5` in particular is quoted in Day 11 as the moment `float`
+before** (`docs/PLAN.md` §11.6). `6.5` in particular is quoted in topic 11 as the moment `float`
 stops being abstract.
 
 ---
@@ -223,7 +223,7 @@ docs/INSTRUCTOR_NOTES.md     pre-flight, pacing, risks, what to cut
 handouts/SETUP.md                installation, Windows + macOS               (Armenian)
 handouts/CHEATSHEET.md           printable reference + bilingual glossary    (Armenian)
 docs/ANNOUNCEMENT.md         recruitment text                            (Armenian)
-handouts/check_setup.py          six checks a participant runs on Day 1
+handouts/check_setup.py          six checks a participant runs on session 1
 
 src/                    ← EDIT HERE
   day01…day19.py          notebook sources
@@ -233,7 +233,7 @@ notebooks/              generated .ipynb — do not edit
 solutions/              generated .ipynb — do not edit
 tests/                  generated .ipynb (grader) + participant/ (generated)
                         + mark1–3_guide.md and README.md (hand-written, instructor only)
-guides/                 Days 20–24, markdown, read beside the code  (Armenian)
+guides/                 topics 20–24, markdown, read beside the code  (Armenian)
 project/gradebook/      the finished reference program (4 files)
 partners/               generated .docx dossier and change log — do not edit
 tools/                  nbbuild.py, verify.py, the three checkers,

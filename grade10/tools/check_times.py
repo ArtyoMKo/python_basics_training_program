@@ -1,7 +1,7 @@
 """
 Verify the time arithmetic in docs/CURRICULUM.md.
 
-Every agenda table must sum to exactly 75 minutes, and 24 days must total 1,800.
+Every agenda table must sum to exactly 120 minutes, and 16 sessions must total 1,920.
 Run this after every edit to the curriculum.
 
     python tools/check_times.py
@@ -11,16 +11,16 @@ import re
 import sys
 from pathlib import Path
 
-LESSON_MINUTES = 75
-TOTAL_DAYS = 24
+LESSON_MINUTES = 120
+TOTAL_SESSIONS = 16
 
 CURRICULUM = Path(__file__).resolve().parent.parent / "docs" / "CURRICULUM.md"
 
 # An agenda row has exactly three columns: | 3 | activity text | 12 |
-# The five-column day index at the top of the file deliberately does not match.
+# The five-column session index at the top of the file deliberately does not match.
 AGENDA_ROW = re.compile(r"^\|\s*(\d+)\s*\|\s*([^|]+?)\s*\|\s*(\d+)\s*\|\s*$")
 
-# A day index row: | 7 | title | phase | file | 50 |
+# A session index row: | 7 | title | topics | shape | 120 |
 INDEX_ROW = re.compile(r"^\|\s*(\d+)\s*\|[^|]+\|[^|]+\|[^|]+\|\s*(\d+)\s*\|\s*$")
 
 
@@ -68,18 +68,18 @@ def main():
                 f"sums to {total}, not {LESSON_MINUTES}  [{listed}]"
             )
 
-    # The day index: 24 rows, each 75 minutes.
+    # The session index: 16 rows, each 120 minutes.
     index = [INDEX_ROW.match(line) for line in lines]
     index = [m for m in index if m]
     numbers = [int(m.group(1)) for m in index]
     minutes = [int(m.group(2)) for m in index]
 
-    if numbers != list(range(1, TOTAL_DAYS + 1)):
-        problems.append(f"the day index lists {numbers}, not 1..{TOTAL_DAYS}")
+    if numbers != list(range(1, TOTAL_SESSIONS + 1)):
+        problems.append(f"the session index lists {numbers}, not 1..{TOTAL_SESSIONS}")
     if any(m != LESSON_MINUTES for m in minutes):
-        problems.append(f"the day index has a day that is not {LESSON_MINUTES} minutes")
-    if sum(minutes) != TOTAL_DAYS * LESSON_MINUTES:
-        problems.append(f"the day index totals {sum(minutes)}, not {TOTAL_DAYS * LESSON_MINUTES}")
+        problems.append(f"the session index has a session that is not {LESSON_MINUTES} minutes")
+    if sum(minutes) != TOTAL_SESSIONS * LESSON_MINUTES:
+        problems.append(f"the session index totals {sum(minutes)}, not {TOTAL_SESSIONS * LESSON_MINUTES}")
 
     if problems:
         print("❌ docs/CURRICULUM.md time check failed:\n")
@@ -88,7 +88,7 @@ def main():
         return 1
 
     print(f"✅ {agendas} agenda tables, each summing to {LESSON_MINUTES}")
-    print(f"✅ {len(numbers)} days listed, {sum(minutes)} minutes "
+    print(f"✅ {len(numbers)} sessions listed, {sum(minutes)} minutes "
           f"= {sum(minutes) // 60} hours")
     return 0
 

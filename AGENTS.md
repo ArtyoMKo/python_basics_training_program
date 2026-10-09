@@ -25,7 +25,7 @@ These hold everywhere, and a change to any of them belongs in both courses:
 2. **A laborious task and its replacement happen in the SAME session.** Never split one.
 3. **The tedium is never named.** A participant is never told they are suffering to make a
    point. The notebook promises the shortcut in writing before the long stretch begins.
-4. **Every agenda sums to exactly 75 minutes.** Teaching never exceeds 12 minutes in one
+4. **Every agenda sums to exactly 120 minutes.** Teaching never exceeds 12 minutes in one
    block. If content does not fit, cut a topic — never compress one.
 5. **Three exercise tiers in every notebook** — Պարտադիր 3–4, Լրացուցիչ 3–4, Մարտահրավեր 1–2.
 6. **Every example is a classroom.** No `foo`, no `x = 5`, no fizzbuzz.

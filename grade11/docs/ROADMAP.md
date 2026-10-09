@@ -6,7 +6,7 @@
 
 | | What it is | Length | Status |
 |---|---|---|---|
-| **Part 1** | **Coding skills** — writing working code with classes, libraries and real data, with the algorithmic difficulty deliberately removed | **2 months** — 24 sessions × 75 min = 30 h | **Built and verified.** Not yet taught |
+| **Part 1** | **Coding skills** — writing working code with classes, libraries and real data, with the algorithmic difficulty deliberately removed | **2 months** — 16 sessions × 120 min = 32 h | **Built and verified.** Not yet taught |
 | **Part 2** | **Algorithmic work and the theory Part 1 postponed** | **4 months** — five stages | **Vision only.** Outlined below; not written |
 
 The split is the same argument the grade-10 course makes, one level up. Part 1 removes
@@ -71,7 +71,7 @@ entirely. We should expect to find that out rather than assume it.
 
 Big-O as something a teacher can feel rather than recite: a loop over 36 students, then
 3,000, then 300,000. Where pandas stops helping and why. Built on measurements they take
-themselves, as on day 21's timing exercises.
+themselves, as on session 14's timing exercises.
 
 ### Stage 4 — bigger projects
 

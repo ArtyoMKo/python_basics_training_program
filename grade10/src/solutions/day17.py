@@ -1,5 +1,5 @@
 #%% md
-# Օր 17 — Լուծումներ
+# Թեմա 17 — Լուծումներ
 
 #%% code
 # Exercises 2, 4 and 5 - the function, used everywhere

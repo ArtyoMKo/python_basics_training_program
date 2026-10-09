@@ -1,6 +1,6 @@
 # Instructor notes — the grade-11 course
 
-**Read this before day 1.**
+**Read this before session 1.**
 
 ---
 
@@ -8,13 +8,13 @@
 
 | | |
 |---|---|
-| **The diagnostic is sat before day 1** | Mark it the same day. It changes how day 1 runs — see `tests/mark1_guide.md` |
+| **The diagnostic is sat before session 1** | Mark it the same day. It changes how session 1 runs — see `tests/mark1_guide.md` |
 | **Every participant has run `check_setup.py`** and replied | Six green lines. **Do not start without the reply**; a silent participant is a broken install |
-| **You have run day 1 yourself**, on a machine that is not yours | Especially the three imports |
+| **You have run session 1 yourself**, on a machine that is not yours | Especially the three imports |
 | **The Google Meet link is sent**, with screen sharing tested | Ten-minute call with anyone who has not shared a screen before |
 | **`school.csv` is sent** and participants have opened it | It sits beside the notebook, under that exact name |
 
-> **The riskiest moment in this course is not day 1.** It is day 12, when the first
+> **The riskiest moment in this course is not session 1.** It is topic 12, when the first
 > library import happens. If Anaconda is incomplete on somebody's machine you want to know
 > in week one, not week five — which is why `check_setup.py` imports all three.
 
@@ -22,7 +22,7 @@
 
 ## 2. Timing
 
-Every day's agenda is in `CURRICULUM.md` and sums to exactly **75 minutes**, verified by
+Every day's agenda is in `CURRICULUM.md` and sums to exactly **120 minutes**, verified by
 script. Two shapes:
 
 | | Standard day | Discovery day |
@@ -66,9 +66,9 @@ of line counts. Saying it aloud turns a discovery into a lecture.
 |---|---|---|
 | **6** | Classes. The single hardest idea in the course | The long half **must fail visibly** before the class arrives. If nobody's dictionary breaks, slow down and make it break |
 | **9** | `super().__init__()` is forgotten by almost everyone | The `AttributeError` cell is there for this. Run it together, slowly |
-| **12** | The first import of something we did not write | If an import fails here, the setup check was not done. Have a backup: Colab, from day 20's material, brought forward |
-| **16** | pandas does in one line what day 16 spent 22 lines on | Some participants find this deflating rather than freeing. Say explicitly that the 22 lines were how you learn what the one line does |
-| **20** | **The only session needing internet**, and the only one with no laborious half | If the network fails, swap it with day 21 and run it later. Nothing depends on it until day 24 |
+| **12** | The first import of something we did not write | If an import fails here, the setup check was not done. Have a backup: Colab, from topic 20's material, brought forward |
+| **16** | pandas does in one line what topic 16 spent 22 lines on | Some participants find this deflating rather than freeing. Say explicitly that the 22 lines were how you learn what the one line does |
+| **20** | **The only session needing internet**, and the only one with no laborious half | If the network fails, swap it with session 14 and run it later. Nothing depends on it until topic 24 |
 | **21** | Debugging is hard to teach remotely | Do it on **your** screen, with a bug you introduce live. Do not ask them to watch their own |
 | **22** | Five files at once | Confirm `python main.py` **individually, for every participant, on a shared screen, before anybody leaves** |
 
@@ -78,9 +78,9 @@ of line counts. Saying it aloud turns a discovery into a lecture.
 
 | | Test | When | Length | Points |
 |---|---|---|---|---|
-| 1 | Initial diagnostic | **Before day 1** | 45–60 min | 40 |
-| 2 | Midpoint | **After day 11** | 60–75 min | 50 |
-| 3 | Final practical | **Day 24** | 90–120 min | 70 + 10 separate |
+| 1 | Initial diagnostic | **Before session 1** | 45–60 min | 40 |
+| 2 | Midpoint | **After topic 11** | 60–75 min | 50 |
+| 3 | Final practical | **Session 16** | 90–120 min | 70 + 10 separate |
 
 **Record a help level with every score** — `3` independent, `2` after one hint, `1`
 step-by-step, `0` did not finish. On the diagnostic this matters more than the score.
@@ -92,8 +92,8 @@ rubric in it.
 
 | | Question | If it is weak |
 |---|---|---|
-| Diagnostic | **Q1 — did they write a loop?** | Extend day 1 and run a loop clinic before day 2. Do not carry on as planned |
-| Midpoint | **Q4 — did they write a working `__init__`?** | **Do not start day 12.** Add a revision session on days 6–8 |
+| Diagnostic | **Q1 — did they write a loop?** | Extend session 1 and run a loop clinic before topic 2. Do not carry on as planned |
+| Midpoint | **Q4 — did they write a working `__init__`?** | **Do not start topic 12.** Add a revision session on topics 6–8 |
 
 Each guide — `tests/mark1_guide.md` and so on — says what every wrong answer means.
 
@@ -130,4 +130,4 @@ Part 2 — and they are told that in advance, at enrolment, not afterwards.
 | Software | **Zero.** Anaconda and VS Code, already installed |
 | Installation | **None** — all three libraries ship with Anaconda |
 | Network | **One session of 24** |
-| Instructor time | 30 contact hours, plus ~3½ hours of assessment |
+| Instructor time | 32 contact hours, plus ~3½ hours of assessment |

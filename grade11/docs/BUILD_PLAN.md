@@ -28,7 +28,7 @@ half of grade 10's second semester the first course did not reach.
 |---|---|
 | **Entry** | the grade-10 course, and nothing else |
 | **State topics** | **15, 16, 17, 18, 19, 20, 21, 22, 24** — not 23 (git), deferred |
-| **Shape** | 24 sessions × 75 min = 30 hours · 3 a week × 8 weeks · remote · groups of 4–8 |
+| **Shape** | 16 sessions × 120 min = 32 hours · 3 a week × 8 weeks · remote · groups of 4–8 |
 | **Exit** | a teacher can write and explain a class, read a library's output, and produce a report with statistics and a chart from their school's own data |
 
 **Part 2 of this course** — algorithmic recursion, complexity, algorithm design, bigger
@@ -38,11 +38,11 @@ projects — is a vision in `ROADMAP.md`, not built, and runs only if Part 1 suc
 
 | | Pupil hours | Teacher hours | Ratio |
 |---|---|---|---|
-| Grade-10 course | topics 1–14 ≈ 118 | 30 | 3.9 : 1 |
-| **This course** | topics 15–22, 24 ≈ **110** | 30 | **3.7 : 1** |
+| Grade-10 course | topics 1–14 ≈ 118 | 32 | 3.9 : 1 |
+| **This course** | topics 15–22, 24 ≈ **110** | 32 | **3.7 : 1** |
 
 The same ratio as a course that works on paper. That is the whole argument for believing
-30 hours is enough — not that the material is easier, because it is not.
+32 hours is enough — not that the material is easier, because it is not.
 
 ---
 
@@ -80,10 +80,10 @@ deliberate:
 | Grade 10 | Here | Why |
 |---|---|---|
 | **Standard library only.** No third-party import, ever | **Anaconda's bundled packages**: `numpy`, `matplotlib`, `pandas`. Nothing else | They are state topics 15, 20 and 21. A teacher must demonstrate them |
-| **No classes.** `class` fails the style check | **Classes are the centre of the course** — days 9–14 | State topics 18 and 19, 22 pupil-hours |
+| **No classes.** `class` fails the style check | **Classes are the centre of the course** — topics 9–14 | State topics 18 and 19, 22 pupil-hours |
 
 **`pip install` still requires a decision, and the answer is: not to follow the course.**
-Anaconda ships `numpy`, `matplotlib` and `pandas` already, so nothing in days 1–20 needs
+Anaconda ships `numpy`, `matplotlib` and `pandas` already, so nothing in topics 1–20 needs
 the network. `pip`, `requirements.txt` and environments are **taught as a topic** on day
 21, against one small package, and that is the only session that needs internet. This
 keeps the grade-10 promise — *the course runs with the wifi off* — true for 23 of 24 days.
@@ -92,7 +92,7 @@ keeps the grade-10 promise — *the course runs with the wifi off* — true for 
 
 decorators · generators · context managers of their own · `@property` · `dataclasses` ·
 multiple inheritance · abstract base classes · `__slots__` · custom exception classes ·
-`sklearn`, `pytorch`, `tensorflow` (**named once on day 24 and never used**) · regex ·
+`sklearn`, `pytorch`, `tensorflow` (**named once in session 16 and never used**) · regex ·
 type hints · `async` · testing frameworks · databases · **git** (topic 23, deferred by
 decision) · algorithmic recursion — factorial, Fibonacci, the call stack, complexity —
 which is **Part 2**, not this course.
@@ -110,10 +110,10 @@ form: **which line of the final school report tool needs it?**
 | **2** | **This plan**, the course contract, and the full day map with agendas | `BUILD_PLAN.md`, `AGENTS.md`, `CURRICULUM.md` | ✅ done |
 | **3** | Tooling: copy `tools/` from grade 10 and invert the two rules in `check_style.py`; new sample data | `tools/*.py` | ✅ done |
 | **4** | The sample school — engineered numbers that prose may quote, as `6.5` is quoted in grade 10 | `data/school.csv`, numbers table in `AGENTS.md` | ✅ done |
-| **5** | Days 1–8 sources — setup, functions, comprehensions | `src/day01…day08.py` | ✅ done |
-| **6** | Days 9–14 sources — classes and inheritance | `src/day09…day14.py` | ✅ done |
-| **7** | Days 15–21 sources — NumPy, Matplotlib, pandas, environments | `src/day15…day21.py` | ✅ done |
-| **8** | Days 22–24 — recursion, debugging, the project | `guides/day22…day24.md` | ✅ done |
+| **5** | topics 1–8 sources — setup, functions, comprehensions | `src/day01…day08.py` | ✅ done |
+| **6** | topics 9–14 sources — classes and inheritance | `src/day09…day14.py` | ✅ done |
+| **7** | topics 15–21 sources — NumPy, Matplotlib, pandas, environments | `src/day15…day21.py` | ✅ done |
+| **8** | topics 22–24 — recursion, debugging, the project | `guides/day22…day24.md` | ✅ done |
 | **9** | Solutions, all in one reviewable file | `src/solutions_source.py` | ✅ done |
 | **10** | Three assessment sittings, grader and participant builds | `src/tests/*.py`, `tests/mark*_guide.md` | ✅ done |
 | **11** | The reference project — the school report tool | `project/school_report/` | ✅ done |

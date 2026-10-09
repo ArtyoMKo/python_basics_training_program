@@ -160,7 +160,7 @@ searching for the specific constructs each topic names. ✅ taught · ◐ partly
 | 12 | Բառարաններ | ◐ | **`.get()` for safe access**; the `dict()` constructor |
 | 13 | Ֆունկցիաներ | ◐ | **local and global** scope, and the `global` keyword |
 | 14 | Ֆայլեր | ◐ | **`open()` and `with open()`**, the file modes, and `read / readline / readlines / write / writelines`. We teach `pathlib`'s `read_text` / `write_text` instead — simpler, but *not what the pupils' curriculum names* |
-| 15 | Մոդուլներ \| Colab | ◐ | `pip`, `requirements.txt`, NumPy, Matplotlib, Colab. We teach `import` of our own modules (day 21) and work in Jupyter throughout |
+| 15 | Մոդուլներ \| Colab | ◐ | `pip`, `requirements.txt`, NumPy, Matplotlib, Colab. We teach `import` of our own modules (session 14) and work in Jupyter throughout |
 | 16–24 | | ○ | **the grade-11 course** — see §8 |
 
 ### What to do about the gaps
@@ -170,14 +170,14 @@ because they are only reached by participants who finish early. Three are not:
 
 1. **Topic 14 — `with open()`.** The widest gap, because a teacher must demonstrate the
    syntax the pupils' book uses. `pathlib` was chosen for simplicity (`PLAN.md` §0) and
-   that choice still looks right for *learning*; but day 22 should show `with open()`
+   that choice still looks right for *learning*; but topic 22 should show `with open()`
    once, side by side, so the teacher has seen it.
 2. **Topic 13 — local and global scope.** Deferred to Part 2 stage 1 on purpose. Worth
    stating explicitly rather than leaving it to look like an oversight.
 3. **Topic 10/11 — mutability and references.** Genuinely hard, and the curriculum puts
    it in grade 10. It is the one gap that is not cheap to close.
 
-**None of these change Part 1's structure or its 30 hours.** They are additions to
+**None of these change Part 1's structure or its 32 hours.** They are additions to
 existing days, and each one needs a decision before it is written.
 
 ---
@@ -190,16 +190,16 @@ Checked against the built materials (`grade11/src/`, `guides/`, `project/`) on
 
 | # | Topic | Pupil hrs | Grade 11 | Where, and what is left out |
 |---|---|---|---|---|
-| 15 | Մոդուլների ներածություն \| Colab | 15 | ✅ | days 1, 12, 14, 20 — `pip`, `requirements.txt`, NumPy, Matplotlib, Colab, environments |
-| 16 | Խորացված ֆունկցիաներ | 15 | ✅ | days 2–5 — defaults, keyword arguments, `*args`, multiple return, comprehensions, one-line `if`/`else`, `lambda` |
-| 17 | Ռեկուրսիա | 15 | ◐ | day 19 — **mechanics only.** Base case, self-call, `RecursionError`, depth-independence. **Factorial, Fibonacci, the call stack and complexity are Part 2 by decision**, and `check_style.py` fails a build that names either function |
-| 18 | Դասեր (Class) | 12 | ✅ | days 6–8, 11 — `class`, `__init__`, `self`, methods, `__str__`, objects inside objects |
-| 19 | Ժառանգականություն | 10 | ✅ | days 9–11 — `class X(Y)`, `super()`, overriding, polymorphism |
-| 20 | Մոդուլներ և կրկնություն | 8 | ✅ | days 20, 22 — the three kinds of `import`, our own modules, the five-file split |
-| 21 | Գրադարաններ և միջավայրեր | 23 | ◐ | days 12–18, 20 — **numpy, matplotlib and pandas properly.** `sklearn`, `pytorch`, `tensorflow`, Kaggle, Docker and Hugging Face are **named once on day 24 and never used** |
-| 22 | Սխալների հանգուցալուծում | 7 | ✅ | day 21, and every day's error reading — tracebacks, `assert`, breakpoints, the silent wrong answer |
+| 15 | Մոդուլների ներածություն \| Colab | 15 | ✅ | topics 1, 12, 14, 20 — `pip`, `requirements.txt`, NumPy, Matplotlib, Colab, environments |
+| 16 | Խորացված ֆունկցիաներ | 15 | ✅ | topics 2–5 — defaults, keyword arguments, `*args`, multiple return, comprehensions, one-line `if`/`else`, `lambda` |
+| 17 | Ռեկուրսիա | 15 | ◐ | topic 19 — **mechanics only.** Base case, self-call, `RecursionError`, depth-independence. **Factorial, Fibonacci, the call stack and complexity are Part 2 by decision**, and `check_style.py` fails a build that names either function |
+| 18 | Դասեր (Class) | 12 | ✅ | topics 6–8, 11 — `class`, `__init__`, `self`, methods, `__str__`, objects inside objects |
+| 19 | Ժառանգականություն | 10 | ✅ | topics 9–11 — `class X(Y)`, `super()`, overriding, polymorphism |
+| 20 | Մոդուլներ և կրկնություն | 8 | ✅ | topics 20, 22 — the three kinds of `import`, our own modules, the five-file split |
+| 21 | Գրադարաններ և միջավայրեր | 23 | ◐ | topics 12–18, 20 — **numpy, matplotlib and pandas properly.** `sklearn`, `pytorch`, `tensorflow`, Kaggle, Docker and Hugging Face are **named once in session 16 and never used** |
+| 22 | Սխալների հանգուցալուծում | 7 | ✅ | session 14, and every day's error reading — tracebacks, `assert`, breakpoints, the silent wrong answer |
 | 23 | Տարբերակի կառավարում (git) | 6 | ○ | **Not taught, by decision.** Taken up once the rest of the subject is secure |
-| 24 | Ամփոփում | 2 | ✅ | day 24 |
+| 24 | Ամփոփում | 2 | ✅ | topic 24 |
 
 ### The three deliberate gaps
 
@@ -207,7 +207,7 @@ Checked against the built materials (`grade11/src/`, `guides/`, `project/`) on
    Part 2. A grade-11 teacher can demonstrate a recursive function and explain why it
    stops. They cannot yet reason about the call stack or complexity.
 2. **Topic 21's long tail.** The document names six libraries and five environments. Three
-   libraries are taught to the point of use; the rest are named on day 24 with what each
+   libraries are taught to the point of use; the rest are named in session 16 with what each
    one is and why a grade-11 teacher does not need it — because pupils will ask, and
    "that is difficult" is the wrong answer.
 3. **Topic 23, git.** Out of scope for now. `grade11/docs/ROADMAP.md` says where it
@@ -223,4 +223,4 @@ Checked against the built materials (`grade11/src/`, `guides/`, `project/`) on
 | Grade 11 · S2 | 21–24 | **grade-11 course**, except topic 23 |
 
 **A teacher who completes both courses can deliver the whole subject except topic 23.**
-That is 187 of the curriculum's 193 pupil-hours, in 60 teacher-hours.
+That is 187 of the curriculum's 193 pupil-hours, in 64 teacher-hours.

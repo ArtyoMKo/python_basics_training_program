@@ -1,5 +1,5 @@
 #%% md
-# Օր 20 — Լուծումներ
+# Թեմա 20 — Լուծումներ
 
 #%% code
 import importlib.metadata as metadata

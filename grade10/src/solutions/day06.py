@@ -1,5 +1,5 @@
 #%% md
-# Օր 6 — Լուծումներ
+# Թեմա 6 — Լուծումներ
 
 #%% code
 # Exercises 3 and 4 - the whole class in two lists

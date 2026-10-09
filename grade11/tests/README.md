@@ -1,13 +1,13 @@
 # Assessments — the grade-11 course
 
-Three sittings. They are **separate from the 24 teaching sessions**, which remain 30
+Three sittings. They are **separate from the 16 teaching sessions**, which remain 30
 hours exactly, and add roughly 3½ hours on top.
 
 | | Test | When | Length | Points |
 |---|---|---|---|---|
-| 1 | `test1_diagnostic` | **Before day 1** | 45–60 min | 40 |
-| 2 | `test2_midpoint` | **After day 11** | 60–75 min | 50 |
-| 3 | `test3_final_practical` | **Day 24** | 90–120 min | 70 **+ 10 reported separately** |
+| 1 | `test1_diagnostic` | **Before session 1** | 45–60 min | 40 |
+| 2 | `test2_midpoint` | **After topic 11** | 60–75 min | 50 |
+| 3 | `test3_final_practical` | **Session 16** | 90–120 min | 70 **+ 10 reported separately** |
 
 ## Two builds of every test
 

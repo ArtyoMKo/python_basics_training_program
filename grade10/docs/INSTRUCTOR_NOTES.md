@@ -1,6 +1,6 @@
 # Instructor notes
 
-Read this before Day 1.
+Read this before session 1.
 
 > **This is Part 1 of a two-part programme: Part 1 is 2 months, Part 2 is 4 months.** Part 2
 > is outlined in `ROADMAP.md` and runs only if Part 1 meets the criterion in
@@ -23,7 +23,7 @@ out.
 ### What gets better
 
 The worst risk an in-person run would have had is **gone**: sixteen people downloading
-1 GB over one school connection on day 1. Each teacher now installs at home, on their own
+1 GB over one school connection on session 1. Each teacher now installs at home, on their own
 connection, in their own time — and the enrolment questionnaire (`ENROLMENT.md`) has
 already found the ones who cannot.
 
@@ -51,10 +51,10 @@ The substitute is **screen sharing, used constantly and asked for by name**:
 
 | In person | Remotely |
 |---|---|
-| Pair fast finishers with slower ones from day 3 | **Breakout rooms**, two or three at a time, for the exercise block |
+| Pair fast finishers with slower ones from topic 3 | **Breakout rooms**, two or three at a time, for the exercise block |
 | Walk the room during exercises | All screens shared, switching between them |
-| "Swap laptops with your neighbour" on day 24 | **Send your folder to a colleague**; they run it from your README alone and report back on the call |
-| Confirm `python main.py` individually on day 21 | Same, but **each person shares their screen and runs it while you watch**. Do not accept "it works" |
+| "Swap laptops with your neighbour" in session 16 | **Send your folder to a colleague**; they run it from your README alone and report back on the call |
+| Confirm `python main.py` individually on session 14 | Same, but **each person shares their screen and runs it while you watch**. Do not accept "it works" |
 
 ### Group size: 4 to 8
 
@@ -63,7 +63,7 @@ habit of explaining to each other never forms. **More than 8** and remote teachi
 working: you cannot check in on everyone in a hands-on block, and the people who are
 quietly stuck stay quietly stuck.
 
-This also changes day 24's showcase: 8 × 90 seconds is 12 minutes, not 24. Use the time
+This also changes topic 24's showcase: 8 × 90 seconds is 12 minutes, not 24. Use the time
 you get back for the colleague-runs-your-program test, which matters more.
 
 ### ⏳ Not yet verified — you must do this before the first cohort
@@ -77,7 +77,7 @@ over and fix them:
 
 1. VS Code offers **exactly one** kernel, and its name matches what `handouts/SETUP.md` says.
 2. `Ctrl+`` ` `` opens a terminal where `python --version` works with no conda activation
-   typed by hand — **on Windows**. If it does not, correct `handouts/SETUP.md` before day 1.
+   typed by hand — **on Windows**. If it does not, correct `handouts/SETUP.md` before session 1.
 3. `handouts/check_setup.py` runs green **from inside VS Code**, not just from a terminal — that is
    how a participant will run it.
 
@@ -90,7 +90,7 @@ VS Code asks which Python to use for every notebook. Pick wrong, and packages "a
 installed" even though they are.
 
 **Before answering any other question, ask: which kernel is selected?** Ten times out of
-ten in the first fortnight, that is the answer. `handouts/SETUP.md` step 6 and the Day 1 and Day 2
+ten in the first fortnight, that is the answer. `handouts/SETUP.md` step 6 and the session 1 and topic 2
 red callouts cover it, and `handouts/check_setup.py` prints which Python is actually running.
 
 Other frequent problems, in order of how often they occur:
@@ -99,19 +99,19 @@ Other frequent problems, in order of how often they occur:
 |---|---|---|
 | `NameError` | A cell above was not run | Run → Run All Above |
 | `IndentationError` | Tab/space mix, or a missing four spaces | Retype the line; do not copy it |
-| Nothing prints in a `.py` file (Day 20+) | They expect notebook behaviour | Everything you want to see needs `print()` |
-| `FileNotFoundError` (Day 21+) | Wrong folder, or `data/` misplaced | `python_course` must be the opened folder |
+| Nothing prints in a `.py` file (Topic 20+) | They expect notebook behaviour | Everything you want to see needs `print()` |
+| `FileNotFoundError` (session 14+) | Wrong folder, or `data/` misplaced | `python_course` must be the opened folder |
 
 ---
 
 ## 3. The five discovery days are the course. Never split one.
 
-**Days 6, 8, 11, 17 and 22** each give participants a real task, let them solve it the
+**Topics 6, 8, 11, 17 and 22** each give participants a real task, let them solve it the
 long way with what they know, and then — **in the same fifty minutes** — hand them the tool
 that collapses it.
 
 **The single most important rule in this document: never let a discovery day end at the
-halfway point.** If Day 11 is running long, cut its Extra tasks. Cut the Challenge. Cut the
+halfway point.** If topic 11 is running long, cut its Extra tasks. Cut the Challenge. Cut the
 recap. Do *not* stop after the fifteen `if` blocks and promise the loop on Thursday. A
 session that ends after the long way and before the short way is the worst outcome this
 design can produce, and with working adults it is the one that loses people.
@@ -126,33 +126,33 @@ use. "Now you see how bad that was" undoes the whole effect: it turns work they 
 do into a trick played on them. The notebooks compare the two versions with a table of line
 counts and nothing else. Do the same out loud.
 
-**Week 4 (Days 10–12) is the emotional centre of the course.** If the schedule slips,
+**Week 4 (topics 10–12) is the emotional centre of the course.** If the schedule slips,
 protect it.
 
 ## 4. Timing
 
-Every day's agenda is in `CURRICULUM.md` and sums to exactly 75 minutes, verified by
+Every day's agenda is in `CURRICULUM.md` and sums to exactly 120 minutes, verified by
 script. The standard shape is 5 recap / **12 teach** / 20 run together / 33 exercises /
 5 retrospective.
 
 > **The rule to hold yourself to: if you have been talking for more than 15 minutes, you
 > are behind and the lesson is already worse.**
 
-Hands-on is at least 49 of 75 minutes. That is a floor. These are adults who will not ask you to
+Hands-on is at least 82 of 120 minutes. That is a floor. These are adults who will not ask you to
 stop, so nobody will tell you when you are over.
 
 **If you run out of time, cut — never compress.** In this order:
 
-1. **Day 16 (`while` loops).** The only genuinely removable day. The project's menu ships
-   written; explain it in two minutes on Day 21.
-2. **Day 15's dict-of-lists** (several grades per student). The project works with one.
-3. **Day 19's consolidation**, if the room is already ahead — but see §5, it is also the
+1. **Topic 16 (`while` loops).** The only genuinely removable day. The project's menu ships
+   written; explain it in two minutes on session 14.
+2. **Topic 15's dict-of-lists** (several grades per student). The project works with one.
+3. **Topic 19's consolidation**, if the room is already ahead — but see §5, it is also the
    catch-up day.
-4. **Day 23's own-feature work.** It can become optional homework.
+4. **Topic 23's own-feature work.** It can become optional homework.
 
 **Never cut:** the five discovery days (6, 8, 11, 17, 22) — each is a concept *and* its
-motivation in one session, so cutting one costs both. Nor Days 20–21 (the transition) or
-Day 24 (finishing something is the point).
+motivation in one session, so cutting one costs both. Nor topics 20–21 (the transition) or
+session 16 (finishing something is the point).
 
 ---
 
@@ -166,7 +166,7 @@ These are working adults meeting three times a week. Some will miss sessions.
   variables still existing.
 - **Exercises are marked Required or Extra.** Required ones fit the 15 minutes. Nobody
   should ever leave with Required work unfinished.
-- **Pair fast finishers with slower ones from Day 3.** Explaining is the best available
+- **Pair fast finishers with slower ones from Topic 3.** Explaining is the best available
   use of a fast participant, and it costs you nothing.
 - **The practice task at the end of each notebook is optional and the next day never
   assumes it was done.** Say that out loud in week 1, or half the room will arrive
@@ -181,9 +181,9 @@ colleague. They are **separate sittings** and do not use session time.
 
 | Test | When | Length | Points |
 |---|---|---|---|
-| Initial diagnostic | **Before day 1** | 45–60 min | 44 |
-| Midpoint | **After day 13** | 60–75 min | 50 |
-| Final practical | **Day 24** | 90–120 min | 70 + 10 separate |
+| Initial diagnostic | **Before session 1** | 45–60 min | 44 |
+| Midpoint | **After session 9** | 60–75 min | 50 |
+| Final practical | **Session 16** | 90–120 min | 70 + 10 separate |
 
 ### Before each sitting
 
@@ -214,14 +214,14 @@ different teaching problem from the one who worked alone and ran out of time.
 
 | Test | Watch | If it goes wrong |
 |---|---|---|
-| Diagnostic | Q1 — can they run a cell at all? | Several at help level 0–1 → add a helper to day 1, or run a setup clinic first. This is your advance warning on the riskiest session |
+| Diagnostic | Q1 — can they run a cell at all? | Several at help level 0–1 → add a helper to session 1, or run a setup clinic first. This is your advance warning on the riskiest session |
 | Midpoint | **Q4 — did they write a loop?** | Still writing one block per student after thirteen sessions is the strongest early evidence against the approach. Record it; do not explain it away |
 | Final | Q2 and Q3 — returning or printing? | Printing means `return` never landed, and the four-file project rests on it |
 
 ### The diagnostic is also a planning tool
 
 It is sat before anyone has been taught anything, so it cannot be failed. Use the spread
-to plan the pairing from day 3, and keep the four self-assessment numbers — the
+to plan the pairing from topic 3, and keep the four self-assessment numbers — the
 interesting comparison at the end is **confidence before against capability after**.
 
 ---
@@ -246,7 +246,7 @@ Four things, agreed before March and kept light (`docs/RATIONALE.md` §5a):
 3. When a pupil hit an error, could the teacher **read it and act on it live**?
 4. One sentence from the teacher: what surprised them?
 
-**Number 3 is the most diagnostic.** Reading an error message is drilled from day 2 of our
+**Number 3 is the most diagnostic.** Reading an error message is drilled from topic 2 of our
 course onward, with one deliberate error in every session. If it holds up in front of a
 class — under pressure, on someone else's screen, with a child watching — the method
 transferred. If the teacher freezes, that is worth more than any test score.
@@ -254,16 +254,16 @@ transferred. If the teacher freezes, that is worth more than any test score.
 ### What to avoid
 
 - **Do not script the lesson for them.** A lesson they did not plan tells us nothing.
-- **Do not send them in with the hardest topic.** Day 1–5 material is enough; the point is
+- **Do not send them in with the hardest topic.** session 1–5 material is enough; the point is
   the teaching, not the content.
 - **Do not let it become an inspection.** One observer, known to them, no panel.
 
 ---
 
-## 6. Privacy — say it on Day 5, before they choose their data
+## 6. Privacy — say it on Topic 5, before they choose their data
 
-From Day 5 the exercises ask for the participant's real class. The Day 5 notebook carries
-a red callout, and Day 22 repeats it where they create a real file.
+From Topic 5 the exercises ask for the participant's real class. The Topic 5 notebook carries
+a red callout, and Topic 22 repeats it where they create a real file.
 
 Say it once, plainly, when you set that first exercise:
 
@@ -283,13 +283,13 @@ cannot leak a class list by accident.
 | | |
 |---|---|
 | Software cost | **Zero.** Anaconda and VS Code are free |
-| API / account cost | **Zero.** Nothing in this course touches a network after Day 1 |
-| Group size | **4–8**, one instructor. Day 24's showcase is 8 × 90 s = 12 min, leaving time for the colleague-runs-your-program test |
+| API / account cost | **Zero.** Nothing in this course touches a network after session 1 |
+| Group size | **4–8**, one instructor. Topic 24's showcase is 8 × 90 s = 12 min, leaving time for the colleague-runs-your-program test |
 | Machines | Participants' own or the school's. Mixed Windows and macOS |
 | Disk space needed | ~5 GB per machine. Ask on the enrolment form |
 
 **If a school laptop blocks installation outright**, the fallback is Google Colab for
-Days 1–19 and pairing with a colleague for Days 20–24. That participant will not get the
+topics 1–19 and pairing with a colleague for topics 20–24. That participant will not get the
 full transition experience, which is the most valuable part of the course — so treat it
 as a last resort and push the school's IT first.
 
@@ -325,5 +325,5 @@ school uses a different word, change the glossary and re-run the checker.
 | 22 | Their own class in `data/my_class.csv`, loaded and saved back |
 | 24 | A README a colleague successfully ran from, and a 90-second demo |
 
-**Day 21 is the one to be strict about.** Do not let anyone leave that session without
+**session 14 is the one to be strict about.** Do not let anyone leave that session without
 `python main.py` running. Everything after it assumes that it does.

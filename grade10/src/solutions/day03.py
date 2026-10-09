@@ -1,5 +1,5 @@
 #%% md
-# Օր 3 — Լուծումներ
+# Թեմա 3 — Լուծումներ
 
 #%% code
 # Exercises 1 and 2 - four types, checked

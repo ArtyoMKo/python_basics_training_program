@@ -311,10 +311,10 @@ def check_facts():
     days = [int(n) for n, _ in index_rows]
     minutes = [int(m) for _, m in index_rows]
 
-    if days != list(range(1, 25)):
-        problems.append(f"docs/CURRICULUM.md lists days {days[:3]}…, not 1..24")
-    if sum(minutes) != 1800:
-        problems.append(f"total is {sum(minutes)} minutes, not 1800")
+    if days != list(range(1, 17)):
+        problems.append(f"docs/CURRICULUM.md lists sessions {days[:3]}…, not 1..16")
+    if sum(minutes) != 1920:
+        problems.append(f"total is {sum(minutes)} minutes, not 1920")
 
     # The grade-11 course is a sibling folder; section 12 quotes its figures.
     eleven = ROOT.parent / "grade11"
@@ -322,12 +322,15 @@ def check_facts():
         eleven_days = re.findall(
             r"^\|\s*(\d+)\s*\|[^|]+\|[^|]+\|[^|]+\|\s*(\d+)\s*\|\s*$",
             (eleven / "docs" / "CURRICULUM.md").read_text(encoding="utf-8"), re.M)
-        if [int(n) for n, _ in eleven_days] != list(range(1, 25)):
-            problems.append("grade11 CURRICULUM.md does not list days 1..24")
-        if sum(int(m) for _, m in eleven_days) != 1800:
-            problems.append("grade11 total is not 1800 minutes")
-        discovery = (eleven / "docs" / "CURRICULUM.md").read_text(
-            encoding="utf-8").count("| **Discovery** |")
+        if [int(n) for n, _ in eleven_days] != list(range(1, 17)):
+            problems.append("grade11 CURRICULUM.md does not list sessions 1..16")
+        if sum(int(m) for _, m in eleven_days) != 1920:
+            problems.append("grade11 total is not 1920 minutes")
+        # Count only session-map rows, not the word wherever it appears: a row is
+        # "| n | title | topics | shape | 120 |" and the shape holds "Discovery".
+        discovery = len(re.findall(
+            r"(?m)^\|\s*\d+\s*\|[^|]*\|[^|]*\|[^|]*Discovery[^|]*\|\s*120\s*\|$",
+            (eleven / "docs" / "CURRICULUM.md").read_text(encoding="utf-8")))
         if discovery != 7:
             problems.append(f"grade11 has {discovery} discovery days, not the 7 quoted")
         eleven_project = len(list((eleven / "project" / "school_report").glob("*.py")))
@@ -387,7 +390,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "2.0"
+VERSION = "2.1"
 
 
 def build():
@@ -428,7 +431,7 @@ def build():
         ["", ""],
         [
             ["Structure", "**Two courses, one per school grade.** Each is a **practical Part 1 of 2 months** and a **theoretical Part 2 of 4 months** that runs only if its Part 1 succeeds. **This dossier describes the grade-10 course's Part 1**; the grade-11 course is summarised in section 12."],
-            ["Part 1 format", "24 sessions × 75 minutes = **30 hours**, three times a week over eight weeks, plus three assessment sittings"],
+            ["Part 1 format", "16 sessions × 120 minutes = **32 hours**, **twice a week** over eight weeks, plus homework between sessions and three assessment sittings"],
             ["Delivery", "**Remote**, over Google Meet with screen sharing"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
             ["Group size", "**4–8 per group**, one instructor"],
@@ -464,7 +467,7 @@ def build():
         "11 — and each is a practical Part 1 of two months followed by a theoretical "
         "Part 2 of four.** This dossier describes the **grade-10 course's Part 1**; "
         "section 12 summarises the second course, which is also built. Part 1 is "
-        "twenty-four sessions, three a week for eight weeks, "
+        "sixteen sessions of two hours, twice a week for eight weeks, "
         "**taught remotely in groups of four to eight**. Every participant finishes with "
         "a small program they wrote themselves and can use: a gradebook that opens their "
         "own class list, shows who has passed, calculates the average, and saves changes "
@@ -596,15 +599,16 @@ def build():
     d.h1("Schedule")
 
     d.para(
-        "**24 sessions, three times a week over eight weeks.** Sessions run **75 minutes**. "
+        "**16 sessions, twice a week over eight weeks.** Sessions run **two hours**. "
         "Every agenda is planned to the minute and the arithmetic is verified by script, "
         "not by eye."
     )
     d.callout(
         "One decision still settling",
         [
-            "**Session length.** Sessions run 75 minutes, three times a week — 24 × 75 "
-            "= 30 hours. Once the cohort has adapted we may move to two a week, or to "
+            "**Session length.** Sessions run 120 minutes, twice a week — 16 × 120 "
+            "= 32 hours, and the practice that no longer fits in the room is set as "
+            "homework drawn from tasks the notebooks already carry. Once the cohort has adapted we may move to "
             "three of 50 minutes; the day map and deliverables would not change.",
             "**Tools.** Anaconda, Jupyter and VS Code, with Google Colab and Thonny under "
             "discussion as a lighter alternative that would remove the installation "
@@ -866,7 +870,7 @@ def build():
         ["", "Assessment", "When", "Length", "Points", "Covers"],
         [
             ["1", "Initial diagnostic", "Before day 1", "45–60 min", "44", "Nothing — it measures the baseline"],
-            ["2", "Midpoint", "After day 13", "60–75 min", "50", "Days 6–13"],
+            ["2", "Midpoint", "After session 9", "60–75 min", "50", "Topics 6–13"],
             ["3", "Final practical", "Day 24", "90–120 min", "70 + 10", "Days 14–24"],
         ],
         [0.04, 0.21, 0.14, 0.13, 0.11, 0.37],
@@ -1009,7 +1013,7 @@ def build():
             "announced before the course starts** — in the recruitment text and at "
             "enrolment. People behave differently when they know, and discovering it "
             "afterwards would be unfair and would spoil the measurement.",
-            "Being filtered out is not a judgement on the teacher. At 30 hours, with mixed "
+            "Being filtered out is not a judgement on the teacher. At 32 hours, with mixed "
             "laptops and a remote room, the likeliest reasons are time, equipment and "
             "attendance — so **why** someone did not meet the bar is recorded, not just "
             "that they did not.",
@@ -1088,8 +1092,8 @@ def build():
         ["Risk", "What we do about it"],
         [
             ["**The core assumption may simply be wrong.** We are betting that coding fluency transfers — that someone who can code mechanically will find algorithmic problems learnable later. That is plausible and unproven. It is possible to produce teachers who type Python fluently and still cannot solve a problem with it", "We measure it directly (section 8) rather than assuming it. If it happens, the programme failed, and no amount of the course being pleasant changes that"],
-            ["**Participants may not accept it.** Adults judge a course by how substantial it feels, and one that explains little and asks for a lot of typing can read as shallow. The first half of each discovery session is deliberately laborious", "Every discovery day resolves inside the same 75 minutes; the shortcut is promised in writing before the long half starts; the work is never framed as an ordeal. A participant who leaves day 6 thinking \"I typed for twenty minutes\" rather than \"I learned what a list is for\" is a genuine failure, and it will happen to somebody"],
-            ["**Thirty hours is not much**, in 75-minute pieces, for working teachers", "The scope is deliberately narrow and the exclusion list is explicit. Narrow means things are missing, by design"],
+            ["**Participants may not accept it.** Adults judge a course by how substantial it feels, and one that explains little and asks for a lot of typing can read as shallow. The first half of each discovery session is deliberately laborious", "Every discovery day resolves inside the same session; the shortcut is promised in writing before the long half starts; the work is never framed as an ordeal. A participant who leaves topic 6 thinking \"I typed for twenty minutes\" rather than \"I learned what a list is for\" is a genuine failure, and it will happen to somebody"],
+            ["**Thirty-two hours is not much**, in two-hour pieces, for working teachers", "The scope is deliberately narrow and the exclusion list is explicit. Narrow means things are missing, by design"],
         ],
         [0.46, 0.54],
         size=9,
@@ -1107,7 +1111,7 @@ def build():
             ["**No instructor in the room.** Everything that would have been a thirty-second fix becomes a conversation with a beginner who cannot describe what they are seeing", "High", "All screens shared through hands-on work, with Meet showing every participant at once; each person checked on by name; groups capped at eight so that is possible"],
             ["Laptops that block software installation, or lack the ~5 GB needed", "Medium", "Confirmed with schools, and asked on the enrolment form, before anyone is admitted. A browser-based fallback exists for sessions 1–19, but that participant cannot do days 20–24 fully"],
             ["The editor's interpreter picker — the most common beginner failure", "High", "Only one choice is ever present; a red callout on days 1 and 2; the setup script reports which Python is actually running"],
-            ["Missed sessions — three a week for eight weeks, on top of a teaching job", "High", "Every session is self-contained; worked solutions published after each one; day 19 is a catch-up session with nothing new in it"],
+            ["Missed sessions — twice a week for eight weeks, on top of a teaching job", "High", "Every topic is self-contained; worked solutions published after each session; topic 19 is a catch-up with nothing new in it. **A missed two-hour session now costs more than a missed 75-minute one did** — the recap block at the start of each session exists for it"],
         ],
         [0.42, 0.13, 0.45],
         size=9,
@@ -1133,7 +1137,7 @@ def build():
         ["", ""],
         [
             ["Per participant", "**Their own laptop for the whole course** — Windows or macOS, about **5 GB free**, and permission to install software"],
-            ["Connection", "Good enough for a **75-minute video call with screen sharing**, three times a week. This is the one requirement that most often needs solving before a teacher can start"],
+            ["Connection", "Good enough for a **two-hour video call with screen sharing**, twice a week. This is the one requirement that most often needs solving before a teacher can start"],
             ["Webcam", "Wanted, not required. Without one the instructor loses the clearest signal that someone is stuck"],
             ["Software", "**Anaconda** and **VS Code**, both free. Two installations before day one and nothing afterwards; the course uses only Python's standard library"],
             ["Not needed", "No GPU, no server, no accounts, no API keys, no paid service of any kind"],

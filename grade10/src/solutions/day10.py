@@ -1,5 +1,5 @@
 #%% md
-# Օր 11 — Լուծումներ
+# Թեմա 11 — Լուծումներ
 
 #%% code
 # Exercises 1 and 2 - four bands, tested on four grades

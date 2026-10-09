@@ -9,13 +9,13 @@ Who to admit, what to ask them, and what to tell them before they say yes.
 **They completed our grade-10 course.**
 
 Not "have programmed before". Not "are confident with computers". This course is built on
-exactly what that course produced, and on nothing else — and the diagnostic before day 1
+exactly what that course produced, and on nothing else — and the diagnostic before session 1
 is there to check that it actually produced it.
 
 ### Somebody who did not take the grade-10 course
 
 **Do not admit them on the strength of other experience.** The problem is not that they
-know too little; it is that this course's day 2 assumes a specific set of habits — a
+know too little; it is that this course's topic 2 assumes a specific set of habits — a
 `for` loop over a dictionary, `return` rather than `print`, reading a traceback — built
 in a specific order.
 
@@ -30,7 +30,7 @@ Asked by message before the first session. All six matter; none is a test.
 | # | Question | What it is really for |
 |---|---|---|
 | 1 | Կարո՞ղ ես հիմա բացել քո 10-րդ դասարանի ծրագիրը և գործարկել այն։ | **The real entry check.** "No, I deleted it" is fine. "I never got it running" is a conversation |
-| 2 | Ո՞ր օրն էր ամենադժվարը առաջին դասընթացում։ | Tells you where this group is fragile. If three people say "functions", day 2 needs more time |
+| 2 | Ո՞ր օրն էր ամենադժվարը առաջին դասընթացում։ | Tells you where this group is fragile. If three people say "functions", topic 2 needs more time |
 | 3 | Քո համակարգիչը նո՞ւյնն է, ինչ առաջին դասընթացում։ | A new machine means a fresh install, and that is a ten-minute call now rather than a lost first session |
 | 4 | Կարո՞ղ ես էկրան կիսել Google Meet-ում։ | **Gating in practice.** Half the course is watching each other's screens |
 | 5 | Քանի՞ դաս ես բաց թողնելու հաջորդ երկու ամսում։ | More than four of 24 and they will not finish. Say so kindly, now |
@@ -78,7 +78,7 @@ Four things. All of them are easier to say now than to explain later.
 ## Group size
 
 **4–8, one instructor.** Fewer than four and there is no discussion; more than eight and
-the instructor cannot check everyone's screen in a 75-minute remote session.
+the instructor cannot check everyone's screen in a 120-minute remote session.
 
 > **This interacts with the success criterion.** A threshold of ">90% can code" in a group
 > of six means one person failing puts the cohort in the middle band. Pool results across

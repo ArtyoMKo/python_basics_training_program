@@ -355,8 +355,8 @@ def check_facts():
         ("the state curriculum", "ԱԲ սերունդ", False, True),
         ("remote delivery", "Remote", False, True),
         ("the diagnostic assessment", "Initial diagnostic", False, True),
-        ("75-minute sessions", "75 minutes", False, True),
-        ("30 hours", "30 hours", False, True),
+        ("two-hour sessions", "two hours", False, True),
+        ("32 hours", "32 hours", False, True),
         ("groups of 4–8", "4–8", False, True),
     ]
     for label, needle, want_then, want_now in CLAIMS:
@@ -376,8 +376,8 @@ def check_facts():
 
 # -------------------------------------------------------------------------- content
 
-TODAY = "9 October 2026"
-CURRENT = "2.0"
+TODAY = "10 October 2026"
+CURRENT = "2.1"
 BASELINE = "1.1"
 BASELINE_DATE = "Friday 2 October"
 
@@ -460,7 +460,7 @@ def build():
         [
             ["**Shape**", "One course", "**Two courses, one per school year**", "Each one prepares a teacher for the year they will actually be teaching"],
             ["**Each course**", "—", "**A practical part of 2 months, then a thinking part of 4**", "The first part teaches teachers to write code. The second teaches them to solve problems with it. They are different skills, and the second only makes sense once the first is in place"],
-            ["**Lessons**", "50 minutes, 20 hours in total", "**75 minutes, 30 hours in total**", "The extra time is all spent on teachers practising at the keyboard, not on more explaining"],
+            ["**Lessons**", "50 minutes, three a week, 20 hours in total", "**Two hours, twice a week, 32 hours in total**", "More time in total, and fewer interruptions to a teacher's week. The practice that no longer fits in the room is set as homework — and every piece of it is a task the materials already contained"],
             ["**Class size**", "Up to 16 teachers", "**4 to 8 teachers**", "Fewer than four and they cannot discuss anything with each other. More than eight and the trainer cannot keep an eye on everyone"],
             ["**Where**", "In a classroom", "**Online**, by video call", "Teachers join from home or school. This removes some problems and creates others, both described in the full document"],
         ],

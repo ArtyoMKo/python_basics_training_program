@@ -1,5 +1,5 @@
 #%% md
-# Օր 12 — Լուծումներ
+# Թեմա 12 — Լուծումներ
 
 #%% code
 # Exercises 3, 4 and 5 - everything with a loop

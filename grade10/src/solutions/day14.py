@@ -1,5 +1,5 @@
 #%% md
-# Օր 8 — Լուծումներ
+# Թեմա 8 — Լուծումներ
 
 #%% code
 # Exercises 1-4 - the full register from a dictionary

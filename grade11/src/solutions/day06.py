@@ -1,5 +1,5 @@
 #%% md
-# Օր 6 — Լուծումներ
+# Թեմա 6 — Լուծումներ
 
 #%% code
 SUBJECT_NAMES = ["Mathematics", "Physics", "Armenian", "History", "Informatics"]

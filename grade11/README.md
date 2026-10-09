@@ -8,13 +8,13 @@ finished the [grade-10 course](../grade10/README.md) and prepares them to teach 
 | | |
 |---|---|
 | **Entry** | the grade-10 course, and nothing beyond it |
-| **Format (Part 1)** | 24 sessions × 75 minutes = **30 hours exactly**, 3 per week over 8 weeks ≈ **2 months** |
+| **Format (Part 1)** | 16 sessions × 120 minutes = **32 hours**, 2 per week over 8 weeks ≈ **2 months** |
 | **Delivery** | remote, over Google Meet, in groups of **4–8** |
 | **Language** | Armenian explains · English codes |
 | **Tools** | Anaconda, VS Code, Jupyter — **nothing to install**, and no network for 23 of 24 days |
 | **Final deliverable** | a five-file program that reads the teacher's own school file and produces a term report with charts |
 
-## What a participant does not know on day 1
+## What a participant does not know on session 1
 
 They can write a `for` loop, a dictionary and a function, and can run a four-file program.
 **They have never seen a class, an object, a library, a comprehension or a keyword
@@ -43,7 +43,7 @@ because the previous way stopped working, in the same session, never the next.
 | standard library only | **`numpy`, `matplotlib`, `pandas`** | state topics 15, 20 and 21 — a teacher has to demonstrate them, and Anaconda already ships all three |
 | `class` fails the style check | **classes are the centre of the course** | state topics 18 and 19, 22 pupil-hours |
 
-`pip` is **taught as a topic on day 20**, not required to follow the course. Days 1–19 run
+`pip` is **taught as a topic on topic 20**, not required to follow the course. topics 1–19 run
 with the wifi off.
 
 ## Where things are
@@ -63,7 +63,7 @@ grade11/
 ├── handouts/                 SETUP.md · CHEATSHEET.md · check_setup.py   (Armenian)
 ├── src/                      ← EDIT HERE. day01…day21, solutions_source, tests/
 ├── notebooks/ solutions/ tests/    generated — never edit a .ipynb
-├── guides/                   days 22–24, markdown                 (Armenian)
+├── guides/                   topics 22–24, markdown                 (Armenian)
 ├── project/school_report/    the finished five-file program
 ├── data/school.csv           generated and engineered
 └── tools/                    nbbuild · verify · the three checkers · make_school
@@ -80,7 +80,7 @@ python tools/verify.py       # nothing is done until this passes
 
 | | What it proves |
 |---|---|
-| agenda arithmetic | every agenda sums to 75; 24 days = 1,800 minutes |
+| agenda arithmetic | every agenda sums to 120; 16 sessions = 1,920 minutes |
 | notebooks execute | all 48 — lessons, solutions and both builds of each exam — run cell by cell, with `input()` stubbed and every deliberate-error cell raising exactly what it claims |
 | style and language | the language rule, the three allowed libraries, excluded constructs, exercise sections present |
 | the sample school | the engineered figures the course prose quotes |

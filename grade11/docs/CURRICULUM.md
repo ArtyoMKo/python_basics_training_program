@@ -1,219 +1,321 @@
 # Curriculum — the grade-11 course
 
-24 sessions × 75 minutes = **30 hours**. Three a week over eight weeks. Remote, in groups
+**16 sessions × 120 minutes = 32 hours.** Two a week over eight weeks. Remote, in groups
 of 4–8. Arithmetic verified by `tools/check_times.py`.
 
 Entry is the grade-10 course and nothing beyond it. See `AGENTS.md` for what that means
-in practice, and `BUILD_PLAN.md` for what is built so far.
+in practice, and `BUILD_PLAN.md` for what is built.
 
-## The day map
+> **The course teaches 24 topics across 16 sessions.** A topic is one notebook and one
+> idea. A session is two hours in a room. Most sessions hold two topics; the discovery
+> sessions hold one — or one plus the topic that consolidates it, which is never the
+> discovery arc itself.
 
-| # | Title | Shape | File | Min |
+## The session map
+
+| # | Session | Topics | Shape | Min |
 |---|---|---|---|---|
-| 1 | The school, and what we are going to build | Notebook | `notebooks/day01_setup_and_school.ipynb` | 75 |
-| 2 | Functions that bend | Notebook | `notebooks/day02_default_arguments.ipynb` | 75 |
-| 3 | Sending back more than one answer | Notebook | `notebooks/day03_many_returns.ipynb` | 75 |
-| 4 | **Six reports, six loops** | **Discovery** | `notebooks/day04_comprehensions.ipynb` | 75 |
-| 5 | Choosing while you build | Notebook | `notebooks/day05_choosing_while_building.ipynb` | 75 |
-| 6 | **A student is more than a grade** | **Discovery** | `notebooks/day06_classes.ipynb` | 75 |
-| 7 | The calculation moves inside | Notebook | `notebooks/day07_methods.ipynb` | 75 |
-| 8 | A class full of students | Notebook | `notebooks/day08_objects_in_objects.ipynb` | 75 |
-| 9 | **Teachers as well as students** | **Discovery** | `notebooks/day09_inheritance.ipynb` | 75 |
-| 10 | One loop, many kinds | Notebook | `notebooks/day10_overriding.ipynb` | 75 |
-| 11 | The register, rewritten | Notebook | `notebooks/day11_school_with_objects.ipynb` | 75 |
-| 12 | **The term's statistics** | **Discovery** | `notebooks/day12_numpy.ipynb` | 75 |
-| 13 | Whole arrays at once | Notebook | `notebooks/day13_numpy_arrays.ipynb` | 75 |
-| 14 | **Show the head teacher** | **Discovery** | `notebooks/day14_matplotlib.ipynb` | 75 |
-| 15 | The four charts a school asks for | Notebook | `notebooks/day15_charts.ipynb` | 75 |
-| 16 | **The school's own file** | **Discovery** | `notebooks/day16_pandas.ipynb` | 75 |
-| 17 | Filter, group, describe | Notebook | `notebooks/day17_pandas_groups.ipynb` | 75 |
-| 18 | The term report | Notebook | `notebooks/day18_term_report.ipynb` | 75 |
-| 19 | **How deep does it go?** | **Discovery** | `notebooks/day19_recursion.ipynb` | 75 |
-| 20 | Where code comes from | Notebook | `notebooks/day20_packages.ipynb` | 75 |
-| 21 | Wrong, with no error | Notebook | `notebooks/day21_debugging.ipynb` | 75 |
-| 22 | **Five files that each do one thing** | **Transition** | `guides/day22_five_files.md` | 75 |
-| 23 | Make it yours | Project | `guides/day23_make_it_yours.md` | 75 |
-| 24 | Finish and show | Project | `guides/day24_finish_and_show.md` | 75 |
+| 1 | The school, and functions that bend | 1–2 | Setup | 120 |
+| 2 | Sending back more than one answer | 3 | Single | 120 |
+| 3 | **Six reports, six loops** | 4 | **Discovery** | 120 |
+| 4 | Choosing while you build | 5 | Single | 120 |
+| 5 | **A student is more than a grade** | 6 | **Discovery** | 120 |
+| 6 | The calculation moves inside, and a class full of students | 7–8 | Paired | 120 |
+| 7 | **Teachers as well as students** | 9 | **Discovery** | 120 |
+| 8 | One loop many kinds, and the register rewritten | 10–11 | Paired | 120 |
+| 9 | **The term's statistics**, then whole arrays at once | 12–13 | **Discovery +** | 120 |
+| 10 | **Show the head teacher**, then the four charts | 14–15 | **Discovery +** | 120 |
+| 11 | **The school's own file** | 16 | **Discovery** | 120 |
+| 12 | Filter, group, describe — and the term report | 17–18 | Paired | 120 |
+| 13 | **How deep does it go?** | 19 | **Discovery** | 120 |
+| 14 | Where code comes from, and wrong with no error | 20–21 | Paired | 120 |
+| 15 | Five files that each do one thing | 22 | Transition | 120 |
+| 16 | Make it yours, and show it | 23–24 | Project | 120 |
 
-Seven discovery days — **4, 6, 9, 12, 14, 16, 19**. Each resolves its own difficulty in
-its own session. **Never split one.**
+Seven discovery sessions — **3, 5, 7, 9, 10, 11, 13**. Each resolves its own difficulty
+inside its own session. **Never split one.**
 
-## The state curriculum, by day
+## The five agenda shapes
 
-| State topic | Pupil hours | Days here |
-|---|---|---|
-| 16 — Խորացված ֆունկցիաներ | 15 | 2, 3, 4, 5 |
-| 18 — Դասեր (Class) | 12 | 6, 7, 8, 11 |
-| 19 — Ժառանգականություն | 10 | 9, 10, 11 |
-| 15 — Մոդուլների ներածություն \| Colab | 15 | 1, 12, 14, 20 |
-| 21 — Գրադարաններ և միջավայրեր | 23 | 12, 13, 14, 15, 16, 17, 18, 20 |
-| 20 — Մոդուլներ և կրկնություն | 8 | 20, 22 |
-| 17 — Ռեկուրսիա | 15 | 19 — **mechanics only**; the algorithms are Part 2 |
-| 22 — Սխալների հանգուցալուծում | 7 | 21, and every day's error reading |
-| 24 — Ամփոփում | 2 | 24 |
-| 23 — Git | 6 | **not taught** — deferred by decision |
+All five sum to 120.
 
-## The two agenda shapes
-
-Every day is one of these two. Both sum to 75.
-
-### Standard day
+### Paired session — two topics
 
 | # | Block | Min |
 |---|---|---|
-| 1 | Recap, and last time's retrospective question | 5 |
-| 2 | **Teach:** the new idea — ends with something running | 12 |
-| 3 | **Run together:** the notebook's example cells, cell by cell | 20 |
-| 4 | **Do it yourself:** the exercises — Required, then Extra | 33 |
-| 5 | Retrospective: where we got to, what comes next | 5 |
-| | **Total** | **75** |
+| 1 | Recap, and last session's homework | 8 |
+| 2 | **Teach:** the first idea — ends with something running | 12 |
+| 3 | **Run together:** the first notebook's example cells | 18 |
+| 4 | **Do it yourself:** the first notebook's Required tasks | 22 |
+| 5 | **Teach:** the second idea | 12 |
+| 6 | **Run together:** the second notebook's example cells | 18 |
+| 7 | **Do it yourself:** the second notebook's Required tasks | 25 |
+| 8 | Retrospective, and what to finish at home | 5 |
+| | **Total** | **120** |
 
-### Discovery day
+### Single session — one topic, in depth
+
+| # | Block | Min |
+|---|---|---|
+| 1 | Recap, and last session's homework | 8 |
+| 2 | **Teach:** the new idea | 12 |
+| 3 | **Run together:** the notebook's example cells, cell by cell | 25 |
+| 4 | **Do it yourself:** Required | 35 |
+| 5 | **Do it yourself:** Extra — in the session, not at home | 32 |
+| 6 | Retrospective | 8 |
+| | **Total** | **120** |
+
+### Discovery session — one topic, one arc
+
+| # | Block | Min |
+|---|---|---|
+| 1 | Recap | 6 |
+| 2 | **Teach:** today's task, and the only way we can do it so far | 10 |
+| 3 | **Do it the long way:** the real task, with most of it shipped | 32 |
+| 4 | **Teach:** the tool that shortens it | 12 |
+| 5 | **Do the same task again**, with the tool. Compare the two | 50 |
+| 6 | Retrospective | 10 |
+| | **Total** | **120** |
+
+### Discovery + consolidation — sessions 9 and 10
+
+Used **only** where the topic that follows a discovery is that same tool applied wider:
+NumPy's arrays after NumPy, the four charts after Matplotlib.
 
 | # | Block | Min |
 |---|---|---|
 | 1 | Recap | 5 |
-| 2 | **Teach:** today's task, and the only way we can do it so far | 7 |
-| 3 | **Do it the long way:** the real task, with most of it shipped | 22 |
-| 4 | **Teach:** the tool that shortens it | 9 |
-| 5 | **Do the same task again**, with the tool. Compare the two | 27 |
-| 6 | Retrospective | 5 |
-| | **Total** | **75** |
+| 2 | **Teach:** today's task, and the only way we can do it so far | 8 |
+| 3 | **Do it the long way** | 25 |
+| 4 | **Teach:** the tool that shortens it | 10 |
+| 5 | **Do the same task again**, with the tool | 35 |
+| 6 | **Teach:** the same tool, wider | 10 |
+| 7 | **Do it yourself:** the second notebook's Required tasks | 22 |
+| 8 | Retrospective, and what to finish at home | 5 |
+| | **Total** | **120** |
 
-Teaching never exceeds 12 minutes in one block. Hands-on is 53 of 75 on a standard day,
-49 of 75 on a discovery day.
+> **The discovery arc gets 78 of those minutes — three more than it had on the old
+> schedule, not fewer.** What moves to homework is the second notebook's Extra tier, and
+> only that.
 
-> **Never split a discovery day.** If it runs long, cut the Extra tasks — never the
-> second half. Ending a session after the long way and before the short way is the worst
-> outcome this design can produce.
+### Transition and project — sessions 15 and 16
+
+Given in full below; they do not follow a shape.
+
+Teaching never exceeds **12 minutes** in one block. Hands-on is **83 of 120** on a paired
+session, **92** on a single, **82** on a discovery session and **82** on a discovery +
+consolidation — never below 68%.
+
+> **Never split a discovery session.** If it runs long, cut the Extra tasks — never the
+> second half.
 
 ---
 
-## Day 1 — The school, and what we are going to build
+## Session agendas that differ from the shapes
+
+### Session 1 — The school, and functions that bend · *topics 1–2*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Welcome back. A live demo of the finished tool: it reads the school's file, prints the term's statistics, and saves a chart | 8 |
+| 2 | **Hands-on:** `python check_setup.py` — six green lines, including `numpy`, `matplotlib` and `pandas`. Screen-share with anyone who is not green | 16 |
+| 3 | Recap of the grade-10 gradebook, running, on screen. **This is the thing we are going to outgrow.** Then what the school actually asks for | 14 |
+| 4 | **Hands-on:** open `school.csv`, read it with what they already know, print the first rows and the school average | 22 |
+| 5 | **Teach:** default arguments, then keyword arguments | 12 |
+| 6 | **Run together:** topic 2's cells, including the deliberate `TypeError` | 18 |
+| 7 | **Do it yourself:** topic 2's Required tasks | 25 |
+| 8 | Retrospective. The promise: **everything hard in this course arrives because you needed it first** | 5 |
+| | **Total** | **120** |
+
+### Session 3 — Six reports, six loops · *topic 4 · discovery*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: functions with defaults, and returning two things | 6 |
+| 2 | **Teach:** the head teacher wants six lists from one register. With what we know, that is one loop each. *After the break, a way to write each of them on one line* | 10 |
+| 3 | **Do it:** three of the six loops are shipped; write the other three. Then the pass mark changes and all six must be edited | 32 |
+| 4 | **Teach:** the list comprehension — `[s for s in students if …]`, read right to left | 12 |
+| 5 | **Do the same again:** all six, as comprehensions. Put the two versions side by side and count the lines | 50 |
+| 6 | Retrospective | 10 |
+| | **Total** | **120** |
+
+### Session 5 — A student is more than a grade · *topic 6 · discovery*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: the register as a dictionary | 6 |
+| 2 | **Teach:** a student is now a name, a class, five subject grades, attendance and a note. With what we know, that is a dictionary per student. *After the break, a way to describe a student once and make thirty-six of them* | 10 |
+| 3 | **Do it:** build four students as dictionaries. Then misspell one key — and watch it fail silently, with no error, three functions later | 32 |
+| 4 | **Teach:** `class Student`, `__init__`, `self`, attributes. Defining is not creating | 12 |
+| 5 | **Do the same again:** `Student` objects. Misspell the same thing and read the error that now appears immediately | 50 |
+| 6 | Retrospective | 10 |
+| | **Total** | **120** |
+
+### Session 7 — Teachers as well as students · *topic 9 · discovery*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: `Student`, and `SchoolClass` holding a list of them | 6 |
+| 2 | **Teach:** the school has teachers too. They have a name, a class and a phone number, like a student — and a subject and a salary, which a student has not. *After the break, a way to say "everything a person has, plus"* | 10 |
+| 3 | **Do it:** copy the whole `Student` class, rename it `Teacher`, edit it. Then a surname rule changes and both classes need the same edit | 32 |
+| 4 | **Teach:** `class Teacher(Person)` — what is inherited, and `super().__init__()` | 12 |
+| 5 | **Do the same again:** `Person`, then `Student(Person)` and `Teacher(Person)`. Make the surname change **once** and watch both move | 50 |
+| 6 | Retrospective | 10 |
+| | **Total** | **120** |
+
+### Session 9 — The term's statistics, then whole arrays · *topics 12–13 · discovery +*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: the school, as objects | 5 |
+| 2 | **Teach:** the ministry wants the term's figures — mean, highest, lowest, and how spread out the grades are. That is 180 numbers, five subjects, three classes. *After the break, a tool that does all four in four lines* | 8 |
+| 3 | **Do it:** mean and extremes by loop, which works. Then the spread, by hand, which is where it stops being reasonable | 25 |
+| 4 | **Teach:** `import numpy as np`, the array, and `.mean() .min() .max() .std()` | 10 |
+| 5 | **Do the same again:** every figure, per subject and per class. Compare the two versions. **The first `import` of something we did not write** | 35 |
+| 6 | **Teach:** the same tool, wider — whole-array arithmetic, boolean masks, `axis` | 10 |
+| 7 | **Do it yourself:** topic 13's Required tasks | 22 |
+| 8 | Retrospective, and what to finish at home | 5 |
+| | **Total** | **120** |
+
+### Session 10 — Show the head teacher, then the four charts · *topics 14–15 · discovery +*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: arrays, and statistics in one line | 5 |
+| 2 | **Teach:** the figures have to be shown at a staff meeting, not read out. *After the break, a tool that draws them* | 8 |
+| 3 | **Do it:** a bar chart with `print()` and asterisks, scaled by hand. It works, and it cannot go in a report | 25 |
+| 4 | **Teach:** `import matplotlib.pyplot as plt`, `plt.bar()`, labels, `plt.savefig()` | 10 |
+| 5 | **Do the same again:** the same chart, drawn. Then save it as a PNG and open the file | 35 |
+| 6 | **Teach:** the other three charts — histogram, line, grouped bar — and when each is the right one | 10 |
+| 7 | **Do it yourself:** topic 15's Required tasks | 22 |
+| 8 | Retrospective, and what to finish at home | 5 |
+| | **Total** | **120** |
+
+### Session 11 — The school's own file · *topic 16 · discovery*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: charts, saved to disk | 6 |
+| 2 | **Teach:** the school's real file has 180 rows, a header, a blank line and a comma inside one field. *After the break, a tool that reads it in one line* | 10 |
+| 3 | **Do it:** parse it with `split(",")`. Handle the header, the blank, then the quoted note — and find the row that is still wrong | 32 |
+| 4 | **Teach:** `import pandas as pd`, `pd.read_csv()`, `.head()`, `.shape`, `.columns` | 12 |
+| 5 | **Do the same again:** one line, and the same five checks. Compare | 50 |
+| 6 | Retrospective | 10 |
+| | **Total** | **120** |
+
+### Session 13 — How deep does it go? · *topic 19 · discovery*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: the term report, from file to chart | 6 |
+| 2 | **Teach:** the ministry's file nests — school, then streams, then classes, then groups — and not every branch goes the same depth. We need every student in it. *After the break, a way to write that once* | 10 |
+| 3 | **Do it:** a loop inside a loop inside a loop. It works — until the file arrives with one level more | 32 |
+| 4 | **Teach:** a function that calls itself. The base case first, always. Why the depth no longer appears in the code | 12 |
+| 5 | **Do the same again:** one recursive function, any depth. Then add a level to the file and change nothing | 50 |
+| 6 | Retrospective. **Factorial and Fibonacci are not mentioned. They are Part 2** | 10 |
+| | **Total** | **120** |
+
+### Session 15 — Five files that each do one thing · *topic 22 · transition*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: everything the notebook can now do, on screen | 6 |
+| 2 | **Teach:** five files, one job each, drawn on screen with the arrows between them | 12 |
+| 3 | **Hands-on:** `settings.py`, then `people.py` — the classes, moved out of the notebook | 28 |
+| 4 | **Hands-on:** `loading.py`, with the checks that refuse a bad file | 24 |
+| 5 | **Hands-on:** `charts.py` | 20 |
+| 6 | **Hands-on:** `main.py`. **Run `python main.py` for the first time** | 22 |
+| 7 | Retrospective. **The instructor confirms `python main.py` individually for every participant, on a shared screen, before they leave** | 8 |
+| | **Total** | **120** |
+
+### Session 16 — Make it yours, and show it · *topics 23–24 · project*
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap: everyone's `python main.py` runs on the sample school | 3 |
+| 2 | **Hands-on:** your own school's file in, and the font fix if the names do not render | 20 |
+| 3 | **Teach:** four features you could add, and the one question that decides which file the code goes in | 12 |
+| 4 | **Hands-on:** build the one you chose. The instructor moves between shared screens; nobody is given code | 30 |
+| 5 | **Hands-on:** write your `README.md` and `requirements.txt`, then send your folder to a colleague who runs it **from your README alone** | 25 |
+| 6 | **Showcase:** 90 seconds each — your chart, one thing that broke, one thing you would add | 18 |
+| 7 | The libraries we only name, where to go next, and what Part 2 would be | 12 |
+| | **Total** | **120** |
+
+---
+
+# The 24 topics
+
+## Topic 1 — The school, and what we are going to build
 
 The one session that is mostly not programming. They already have Anaconda and VS Code
 from the grade-10 course, so there is no installation — but **three libraries must be
-proved present before day 12**, and this is where that happens.
+proved present before session 9**, and this is where that happens.
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Welcome back. A live demo of the finished tool: it reads the school's file, prints the term's statistics, and saves a chart. "In eight weeks this is yours, with your school in it" | 8 |
-| 2 | **Hands-on:** `python check_setup.py` — six green lines, including `numpy`, `matplotlib` and `pandas`. Screen-share with anyone who is not green | 18 |
-| 3 | Recap of the grade-10 gradebook, running, on screen. **This is the thing we are going to outgrow** | 10 |
-| 4 | **Teach:** what the school actually asks for — three classes, five subjects, a term of grades. Why the dictionary version will not stretch that far | 10 |
-| 5 | **Hands-on:** open `data/school.csv`, read it with what they already know, print the first five rows | 24 |
-| 6 | Retrospective. What is coming, and the promise: **everything hard in this course arrives because you needed it first** | 5 |
+## Topic 2 — Functions that bend
 
-## Day 2 — Functions that bend
-
-*Standard shape.* Default arguments, then keyword arguments. One function that prints a
+Default arguments, then keyword arguments. One function that prints a
 report line, called six ways. `*args` is shown **once**, named, and not drilled —
 state topic 16 requires a teacher to recognise it.
 
-## Day 3 — Sending back more than one answer
+## Topic 3 — Sending back more than one answer
 
-*Standard shape.* `return a, b`, and unpacking it on the other side. The grade-10 course
+`return a, b`, and unpacking it on the other side. The grade-10 course
 used `for name, grade in grades.items():` without the word "tuple"; today the word
 arrives, and so does the reason it works.
 
-## Day 4 — Six reports, six loops  ⟵ *discovery*
+## Topic 4 — Six reports, six loops  ⟵ *discovery*
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap: functions with defaults, and returning two things | 5 |
-| 2 | **Teach:** the head teacher wants six lists — passing, failing, top five, each subject. With what we know, that is one loop each. *After the break, a way to write each of them on one line* | 7 |
-| 3 | **Do it:** three of the six loops are shipped; write the other three. Then the pass mark changes and all six must be edited | 22 |
-| 4 | **Teach:** the list comprehension — `[s for s in students if …]`, read right to left | 9 |
-| 5 | **Do the same again:** all six, as comprehensions. Put the two versions side by side and count the lines | 27 |
-| 6 | Retrospective | 5 |
+## Topic 5 — Choosing while you build
 
-## Day 5 — Choosing while you build
-
-*Standard shape.* A comprehension with a condition, the one-line `if`/`else` inside one,
+A comprehension with a condition, the one-line `if`/`else` inside one,
 and a dictionary comprehension once. `lambda` arrives **only** as a sort key —
 `sorted(students, key=lambda s: s.average)` — which is the single place a teacher will
 meet it in the pupils' material.
 
-## Day 6 — A student is more than a grade  ⟵ *discovery*
+## Topic 6 — A student is more than a grade  ⟵ *discovery*
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap: the register as a dictionary, from the grade-10 course | 5 |
-| 2 | **Teach:** a student is now a name, a class, five subject grades, attendance and a note. With what we know, that is a dictionary per student. *After the break, a way to describe a student once and make thirty-six of them* | 7 |
-| 3 | **Do it:** build four students as dictionaries. Then misspell one key — and watch it fail silently, with no error, three functions later | 22 |
-| 4 | **Teach:** `class Student`, `__init__`, `self`, attributes. Defining is not creating | 9 |
-| 5 | **Do the same again:** `Student` objects. Misspell the same thing and read the `AttributeError` that now appears immediately | 27 |
-| 6 | Retrospective | 5 |
+## Topic 7 — The calculation moves inside
 
-## Day 7 — The calculation moves inside
-
-*Standard shape.* Methods. The average, the pass/fail decision and the report line were
+Methods. The average, the pass/fail decision and the report line were
 loose functions taking a dictionary; they become `student.average()`,
 `student.has_passed()`, `student.report_line()`. The data and the thing that calculates it
 now travel together.
 
-## Day 8 — A class full of students
+## Topic 8 — A class full of students
 
-*Standard shape.* `SchoolClass` holds a list of `Student` objects. Objects inside objects,
+`SchoolClass` holds a list of `Student` objects. Objects inside objects,
 and a method that loops over them. The school's three classes exist by the end of the hour.
 
-## Day 9 — Teachers as well as students  ⟵ *discovery*
+## Topic 9 — Teachers as well as students  ⟵ *discovery*
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap: `Student`, and `SchoolClass` holding a list of them | 5 |
-| 2 | **Teach:** the school has teachers too. They have a name, a class and a phone number, like a student — and a subject and a salary, which a student has not. *After the break, a way to say "everything a person has, plus"* | 7 |
-| 3 | **Do it:** copy the whole `Student` class, rename it `Teacher`, edit it. Then a surname rule changes and both classes need the same edit | 22 |
-| 4 | **Teach:** `class Teacher(Person)` — what is inherited, and `super().__init__()` | 9 |
-| 5 | **Do the same again:** `Person`, then `Student(Person)` and `Teacher(Person)`. Make the surname change **once** and watch both move | 27 |
-| 6 | Retrospective | 5 |
+## Topic 10 — One loop, many kinds
 
-## Day 10 — One loop, many kinds
-
-*Standard shape.* Overriding a method, and why one loop over a list of mixed `Person`s
+Overriding a method, and why one loop over a list of mixed `Person`s
 prints the right line for each without a single `if`. Polymorphism is **named at the end,
 after it has already worked**, never before.
 
-## Day 11 — The register, rewritten
+## Topic 11 — The register, rewritten
 
-*Standard shape.* No new syntax. The grade-10 gradebook, rebuilt with `Person`,
+No new syntax. The grade-10 gradebook, rebuilt with `Person`,
 `Student`, `Teacher` and `SchoolClass`, side by side with the dictionary version.
 
 > **The consolidation session for the whole object block, and the last before the
 > midpoint**, which is sat after this day. The block boundary is deliberate: everything
 > the midpoint asks about has been taught by now, and nothing after it is a library.
 
-## Day 12 — The term's statistics  ⟵ *discovery*
+## Topic 12 — The term's statistics  ⟵ *discovery*
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap: the school, as objects | 5 |
-| 2 | **Teach:** the ministry wants the term's figures — mean, highest, lowest, and how spread out the grades are, per subject and per class. That is 600 numbers. *After the break, a tool that does all four in four lines* | 7 |
-| 3 | **Do it:** mean and extremes by loop, which works. Then the spread, by hand, which is where it stops being reasonable | 22 |
-| 4 | **Teach:** `import numpy as np`, the array, and `.mean() .min() .max() .std()` | 9 |
-| 5 | **Do the same again:** every figure, per subject and per class. Compare the two versions | 27 |
-| 6 | Retrospective. **The first `import` of something we did not write** | 5 |
+## Topic 13 — Whole arrays at once
 
-## Day 13 — Whole arrays at once
-
-*Standard shape.* Creating arrays, indexing and slicing them, arithmetic on a whole array
+Creating arrays, indexing and slicing them, arithmetic on a whole array
 at once, and a boolean mask — `grades[grades < PASS_MARK]`. The moment a teacher stops
 writing the loop at all.
 
-## Day 14 — Show the head teacher  ⟵ *discovery*
+## Topic 14 — Show the head teacher  ⟵ *discovery*
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap: arrays, and statistics in one line | 5 |
-| 2 | **Teach:** the figures have to be shown at a staff meeting, not read out. *After the break, a tool that draws them* | 7 |
-| 3 | **Do it:** a bar chart with `print()` and asterisks, scaled by hand. It works, and it cannot go in a report | 22 |
-| 4 | **Teach:** `import matplotlib.pyplot as plt`, `plt.bar()`, labels, `plt.savefig()` | 9 |
-| 5 | **Do the same again:** the same chart, drawn. Then save it as a PNG and open the file | 27 |
-| 6 | Retrospective | 5 |
+## Topic 15 — The four charts a school asks for
 
-## Day 15 — The four charts a school asks for
-
-*Standard shape.* Bar for subject averages, histogram for the spread of one class, a line
+Bar for subject averages, histogram for the spread of one class, a line
 for the grade distribution, and a grouped bar comparing three classes across five subjects.
 
 > The sample school holds one term, not several, so there is no honest progress-over-time
@@ -223,114 +325,101 @@ for the grade distribution, and a grouped bar comparing three classes across fiv
 > made when it named its students `Ani` rather than `Անի`, so the language rule holds
 > everywhere without an exception.
 >
-> **The Armenian font problem is still taught here**, because on day 23 participants load
+> **The Armenian font problem is still taught here**, because on topic 23 participants load
 > *their own* school's file and the names in it will be Armenian. The session shows the
 > missing-glyph box, and the one line that fixes it, against a name typed in the markdown
 > and pasted in by the participant — never shipped inside a code cell.
 
-## Day 16 — The school's own file  ⟵ *discovery*
+## Topic 16 — The school's own file  ⟵ *discovery*
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap: charts, saved to disk | 5 |
-| 2 | **Teach:** the school's real file has 180 rows, a header, blank lines and two commas inside a name field. *After the break, a tool that reads it in one line* | 7 |
-| 3 | **Do it:** parse it with `split(",")`. Handle the header, the blanks, then the quoted name — and find the row that is still wrong | 22 |
-| 4 | **Teach:** `import pandas as pd`, `pd.read_csv()`, `.head()`, `.shape`, `.columns` | 9 |
-| 5 | **Do the same again:** one line, and the same five checks. Compare | 27 |
-| 6 | Retrospective | 5 |
+## Topic 17 — Filter, group, describe
 
-## Day 17 — Filter, group, describe
-
-*Standard shape.* Selecting a column, filtering rows by a condition, `.groupby()` for
+Selecting a column, filtering rows by a condition, `.groupby()` for
 per-class and per-subject figures, and `.describe()`. The dataframe is not taught as a
 data structure — it is taught as **the register, which you already understand**.
 
-## Day 18 — The term report
+## Topic 18 — The term report
 
-*Standard shape.* No new library. pandas and Matplotlib together: read the file, group it,
+No new library. pandas and Matplotlib together: read the file, group it,
 chart the result, save both the table and the picture. The session that proves the two
 tools are one workflow.
 
-## Day 19 — How deep does it go?  ⟵ *discovery*
+## Topic 19 — How deep does it go?  ⟵ *discovery*
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap: the term report, from file to chart | 5 |
-| 2 | **Teach:** the ministry's file nests — school, then streams, then classes, then groups, and not every branch goes the same depth. We need every student in it. *After the break, a way to write that once* | 7 |
-| 3 | **Do it:** a loop inside a loop inside a loop. It works — until the file arrives with one level more | 22 |
-| 4 | **Teach:** a function that calls itself. The base case first, always. Why the depth no longer appears in the code | 9 |
-| 5 | **Do the same again:** one recursive function, any depth. Then add a level to the file and change nothing | 27 |
-| 6 | Retrospective. **Factorial and Fibonacci are not mentioned. They are Part 2** | 5 |
+## Topic 20 — Where code comes from
 
-## Day 20 — Where code comes from
-
-*Standard shape.* `import` properly: our own modules, the standard library, and the three
+`import` properly: our own modules, the standard library, and the three
 installed ones. Then `pip`, `requirements.txt` and what a virtual environment is for —
 against one small package, installed live. **The only session that needs internet.**
 Google Colab is shown at the end, because the pupils' curriculum names it sixteen times.
 
-## Day 21 — Wrong, with no error
+## Topic 21 — Wrong, with no error
 
-*Standard shape.* Debugging as its own topic — state topic 22. Reading a traceback from
+Debugging as its own topic — state topic 22. Reading a traceback from
 the bottom up, VS Code's debugger, a breakpoint, stepping, and inspecting a variable
 mid-run. The worked example is a function that returns a wrong average, silently.
 
-## Day 22 — Five files that each do one thing  ⟵ *transition*
+## Topic 22 — Five files that each do one thing  ⟵ *transition*
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap: everything the notebook can now do, on screen | 5 |
-| 2 | **Teach:** five files, one job each, drawn on screen with the arrows between them | 12 |
-| 3 | **Hands-on:** `settings.py` and `people.py` — the classes, moved out of the notebook | 18 |
-| 4 | **Hands-on:** `loading.py` (pandas) and `charts.py` (Matplotlib) | 18 |
-| 5 | **Hands-on:** `main.py`. **Run `python main.py` for the first time** | 16 |
-| 6 | Retrospective. **The instructor confirms `python main.py` individually for every participant, on a shared screen, before they leave** | 6 |
+## Topic 23 — Make it yours
 
-## Day 23 — Make it yours
+## Topic 24 — Finish and show
 
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap: everyone's `python main.py` runs on the sample school | 5 |
-| 2 | **Teach:** four features you could add, and the one question that decides which file the code goes in | 12 |
-| 3 | **Hands-on:** your own school's data in, and build the feature you chose. The instructor moves between shared screens; nobody is given code | 50 |
-| 4 | Retrospective: what you chose and why | 8 |
-
-## Day 24 — Finish and show
-
-| # | Block | Min |
-|---|---|---|
-| 1 | Recap | 3 |
-| 2 | **Hands-on:** write your `README.md` and your `requirements.txt` | 15 |
-| 3 | **Hands-on:** send your folder to a colleague, who runs it **from your README alone** and reports back on the call | 18 |
-| 4 | **Showcase:** 90 seconds each — your chart, one thing that broke, one thing you would add | 20 |
-| 5 | The libraries we only name: `sklearn`, `pytorch`, `tensorflow`. What they are, why they are in the pupils' topic 21, and why you do not need them to teach it | 12 |
-| 6 | Close, and what Part 2 would be | 7 |
+---
 
 ---
 
 ## Time check
 
 ```
-Days  1- 6   450      Days 13-18   450
-Days  7-12   450      Days 19-24   450
-                    ---------------------
-                      1,800 minutes  =  30 hours  ✓
+Sessions  1- 4   480      Sessions  9-12   480
+Sessions  5- 8   480      Sessions 13-16   480
+                        ---------------------
+                          1,920 minutes  =  32 hours  ✓
 ```
 
-Notebook phase: Days 1–21 (1,575 min / 26 h 15).
-Transition: Day 22 (75 min).
-Project: Days 23–24 (150 min / 2 h 30).
+Notebook phase: sessions 1–14, topics 1–21 (1,680 min / 28 h).
+Transition: session 15, topic 22 (120 min).
+Project: session 16, topics 23–24 (120 min).
+
+> **The move from three 120-minute sessions a week to two of 120 added two hours of
+> contact time**, not removed any. What it removed is the third touchpoint in a week —
+> and that is what homework replaces.
+
+## Homework
+
+**Homework is the practice that did not fit, not new work.** Every notebook already
+carries ten tasks in three tiers; a paired session reaches the Required tier of both
+notebooks and little more.
+
+| Session shape | What is set | Roughly |
+|---|---|---|
+| **Paired** | finish the Required tasks you did not reach, then the Extra tier of both notebooks | 30–40 min |
+| **Single** | nothing. The Extra tier is done **in the session** | — |
+| **Discovery** | the Extra tier of that notebook | 20–30 min |
+| **Discovery + consolidation** | the Extra tier of the **second** notebook only | 25–35 min |
+| **Transition, project** | nothing. Both are hands-on throughout | — |
+
+Rules this follows:
+
+- **No task was written for homework.** Every one already existed and a three-a-week
+  schedule had time for it in the room.
+- **Required tasks are never homework by design** — only by overflow, and the next
+  session's first block is where they are checked.
+- **Nothing new is introduced at home.** Homework uses only what the session taught.
+- **A participant who does no homework still finishes the course.** They will be slower,
+  and the instructor will see it in the recap block.
 
 ## Assessment
 
-**Three sittings**, mirroring the grade-10 course. They are **separate sittings, not
-session time** — the 24 teaching sessions remain 30 hours exactly.
+**Three sittings.** They are **separate from the 16 teaching sessions**, which remain 32
+hours exactly.
 
 | | Test | When | Length | Covers |
 |---|---|---|---|---|
-| 1 | Initial diagnostic | **Before day 1** | 45–60 min | What the grade-10 course left them with. Nothing from this course |
-| 2 | Midpoint | **After day 11** | 60–75 min | Days 2–11: functions, comprehensions, classes, inheritance |
-| 3 | Final practical | **Day 24** | 90–120 min | Days 12–24: libraries, charts, data, recursion, the project |
+| 1 | Initial diagnostic | **Before session 1** | 45–60 min | What the grade-10 course left them with. Nothing from this course |
+| 2 | Midpoint | **After session 8** | 60–75 min | Topics 2–11: functions, comprehensions, classes, inheritance |
+| 3 | Final practical | **Session 16** | 90–120 min | Topics 12–24: libraries, charts, data, recursion, the project |
 
 - **Each question has variants A, B and C**, equivalent in difficulty.
 - **Two versions of every test are generated** — `tests/<name>.ipynb` for the grader, with
@@ -344,13 +433,13 @@ of what the first course actually produced, taken before this one can affect it.
 
 ## Week map
 
-| Week | Days | Arc | Assessment |
-|---|---|---|---|
-| 1 | 1–3 | My functions bend to what is asked of them | *(diagnostic sat before day 1)* |
-| 2 | 4–6 | One line instead of six, and a student is a thing | |
-| 3 | 7–9 | The school is objects, and they share what they have in common | |
-| 4 | 10–12 | One loop for every kind of person, and figures in four lines | **Midpoint**, sat after day 11 |
-| 5 | 13–15 | I can measure a term and draw it | |
-| 6 | 16–18 | The school's own file goes in, a report comes out | |
-| 7 | 19–21 | Any depth, and I can find out why it is wrong | |
-| 8 | 22–24 | It is a program now, it runs on my school, and I showed it | **Final practical**, sat on day 24 |
+| Week | Sessions | Topics | Arc | Assessment |
+|---|---|---|---|---|
+| 1 | 1–2 | 1–3 | My functions bend to what is asked of them | *(diagnostic sat before session 1)* |
+| 2 | 3–4 | 4–5 | One line instead of six | |
+| 3 | 5–6 | 6–8 | A student is a thing, and the school is objects | |
+| 4 | 7–8 | 9–11 | They share what they have in common | **Midpoint**, sat after session 8 |
+| 5 | 9–10 | 12–15 | I can measure a term and draw it | |
+| 6 | 11–12 | 16–18 | The school's own file goes in, a report comes out | |
+| 7 | 13–14 | 19–21 | Any depth, and I can find out why it is wrong | |
+| 8 | 15–16 | 22–24 | It is a program now, it runs on my school, and I showed it | **Final practical**, sat in session 16 |

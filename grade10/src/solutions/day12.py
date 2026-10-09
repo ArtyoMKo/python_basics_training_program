@@ -1,5 +1,5 @@
 #%% md
-# Օր 13 — Լուծումներ
+# Թեմա 13 — Լուծումներ
 
 #%% code
 # Exercises 1 and 2 - total and average

@@ -1,5 +1,5 @@
 #%% md
-# Օր 14 — Լուծումներ
+# Թեմա 14 — Լուծումներ
 
 #%% code
 # Exercises 1-5 - report cards with several grades each

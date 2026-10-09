@@ -101,9 +101,9 @@ The last step is **not in this course**. That is the next one, if this works.
 
 This is the part that is easiest to misunderstand, so here is the actual mechanism.
 
-**Day 6.** Participants are told: *a teacher needs somewhere to keep the whole class —
+**Topic 6.** Participants are told: *a teacher needs somewhere to keep the whole class —
 every name, every score — so the program can work with all of them.* That is a real task
-and it is given as one. With what they know on Day 6, it means one variable per student.
+and it is given as one. With what they know on Topic 6, it means one variable per student.
 The notebook ships twenty already written; they add a few of their own and update the
 scores. It works, and it takes a while.
 
@@ -127,7 +127,7 @@ The same thing happens five times:
 ### Two rules that make it work, and are easy to get wrong
 
 **The relief comes in the same session. Always.** An earlier draft of this course planted
-a problem on Day 6 and solved it on Day 10. That is good structure on paper and bad
+a problem on Topic 6 and solved it on Topic 10. That is good structure on paper and bad
 teaching in practice: adults who spend an evening on tedious work and go home with no
 resolution do not come back. The long way and its replacement are now always fifty minutes
 apart, never four sessions.
@@ -161,10 +161,10 @@ as not respecting their time. The discovery days are the sharpest version of thi
 the first half of those sessions is deliberately laborious. We mitigate it by resolving
 every one of them within the same fifty minutes, by promising the shortcut in writing
 before the long half starts, and by never framing the work as an ordeal — but a
-participant who leaves on Day 6 thinking "I typed for twenty minutes" rather than "I
+participant who leaves on Topic 6 thinking "I typed for twenty minutes" rather than "I
 learned what a list is for" is a real failure mode, and it will happen to somebody.
 
-**Thirty hours is not much.** Eight weeks, 75 minutes at a time, for working teachers.
+**Thirty-two hours is not much.** Eight weeks, two hours at a time, for working teachers.
 The scope is deliberately narrow, and narrow means things are missing.
 
 **Attendance.** Three sessions a week for eight weeks, on top of a teaching job. Every
@@ -191,22 +191,22 @@ with an argument behind it.
 ## 5. How we will know
 
 An experiment we cannot evaluate is just a change of plan. **These checkpoints should be
-agreed before Day 1**, not argued about afterwards.
+agreed before session 1**, not argued about afterwards.
 
 The course already produces objectively checkable artefacts, so most of this needs no
 extra work:
 
 | When | The check | Why it is the right one |
 |---|---|---|
-| **Diagnostic** (before Day 1) | Q1: can they run a cell at all, and at what help level? | **The baseline.** Without it we can only report an endpoint, not change |
-| **Midpoint** (after Day 13) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
-| **Final** (Day 24) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the four-file project was not reachable |
-| **Day 21** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
-| **Day 24** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
-| **Day 24** | Attendance across all 24 sessions | Below a certain point, nothing else is interpretable |
+| **Diagnostic** (before session 1) | Q1: can they run a cell at all, and at what help level? | **The baseline.** Without it we can only report an endpoint, not change |
+| **Midpoint** (after topic 13) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
+| **Final** (Topic 24) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the four-file project was not reachable |
+| **session 14** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
+| **Session 16** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
+| **Session 16** | Attendance across all 16 sessions | Below a certain point, nothing else is interpretable |
 
-**Three assessments**, designed with our partner colleague: a diagnostic before day 1, a
-midpoint after day 13, and a final practical on day 24. They are supervised sittings
+**Three assessments**, designed with our partner colleague: a diagnostic before session 1, a
+midpoint after session 9, and a final practical in session 16. They are supervised sittings
 outside the 20 teaching hours, scored out of 44, 50 and 70, with a help level recorded
 beside every score.
 
@@ -242,7 +242,7 @@ provide. Do not report question 8 as a pass rate.
 That is the experiment. Everything else measures whether the course ran well; **this
 measures whether the theory was right.**
 
-Set the target numbers together before Day 1. A target chosen afterwards is not a target.
+Set the target numbers together before session 1. A target chosen afterwards is not a target.
 
 ---
 
@@ -261,7 +261,7 @@ pass/fail and neither of which requires a new instrument:
 
 | Evidence | Where it comes from |
 |---|---|
-| They left **day 21** with a working `python main.py`, confirmed individually | The hard gate already built into the course |
+| They left **session 14** with a working `python main.py`, confirmed individually | The hard gate already built into the course |
 | They scored **at least half** of the 70 points on questions 1–7 of the final practical | Those questions require writing code unaided, from a blank cell |
 
 A participant meeting both **can code**. Meeting one but not the other is recorded as
@@ -318,7 +318,7 @@ first trial lesson by a nervous adult is not a performance review:
 - One sentence from the teacher: what surprised them?
 
 The third of these is the most diagnostic, and it is the one our own course drills from
-day 2 onward. If it holds up in front of a class, the method transferred.
+topic 2 onward. If it holds up in front of a class, the method transferred.
 
 ### ⚠ The thresholds and the group size are in tension
 
@@ -381,7 +381,7 @@ Two items are openly unverified and named as such in the materials:
 
 1. **Is the diagnosis right?** Is "they cannot code" really the bottleneck, or are we
    fixing the wrong thing?
-2. **Is 30 hours enough** to produce the fluency the bet depends on?
+2. **Is 32 hours enough** to produce the fluency the bet depends on?
 3. **What should the success numbers be?** (§5) — agreed in advance.
-4. **Will Days 6 and 9 be accepted or resented?** Anyone who knows this audience better
+4. **Will Topics 6 and 9 be accepted or resented?** Anyone who knows this audience better
    than we do should say so before we run it, not after.

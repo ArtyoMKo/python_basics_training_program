@@ -7,7 +7,7 @@
 | **Part 1** | **Coding skills** — writing working code, with no algorithmic difficulty | **2 months** |
 | **Part 2** | **Algorithmic tasks and the theory** Part 1 postponed | **4 months** |
 
-**Part 1:** 24 sessions · **3 a week over 8 weeks** · 75 minutes each = **30 hours** ·
+**Part 1:** 16 sessions · **2 a week over 8 weeks** · 120 minutes each = **32 hours** ·
 **groups of 4–8** · **delivered remotely** · public-school teachers, **any subject, no
 programming background**
 
@@ -15,7 +15,7 @@ programming background**
 > including the decision rule this part will be judged by (§5a). The second part of the
 > programme is outlined in `ROADMAP.md`. This document is only what Part 1 *is*.
 
-> **Two things are still settling.** Sessions start at **75 minutes**; after the cohort
+> **Two things are still settling.** Sessions start at **120 minutes**; after the cohort
 > has adapted we may move to two a week, or to three of 50 minutes. And the tools are
 > **Anaconda, Jupyter and VS Code**, with Google Colab and Thonny under discussion as a
 > lighter alternative. Both are flagged where they appear below.
@@ -80,12 +80,12 @@ Each would cost 15 minutes and buy a teacher nothing in the program they are goi
 ## 3. What is required
 
 **Per participant:** a Windows or macOS laptop with **~5 GB free** and permission to
-install software. Anaconda + VS Code — two installs on Day 1, nothing after. No GPU, no
-accounts, no API keys, **no internet after Day 1**. **Cost: zero.**
+install software. Anaconda + VS Code — two installs on session 1, nothing after. No GPU, no
+accounts, no API keys, **no internet after session 1**. **Cost: zero.**
 
 **Provided:** 19 notebooks, 5 guides, 18 solutions (handed out after each session so a
-missed day is recoverable), **3 assessment sittings** — a diagnostic before day 1, a midpoint after day 13 and a
-final practical on day 24 — each in a grader's and a participant version, with
+missed day is recoverable), **3 assessment sittings** — a diagnostic before session 1, a midpoint after session 9 and a
+final practical in session 16 — each in a grader's and a participant version, with
 instructor marking guides, `handouts/SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
 glossary, `handouts/check_setup.py`, a fictional 12-student sample class, and the finished
 reference program.
@@ -116,10 +116,10 @@ data/my_class.csv
 saves.
 
 **Every participant's program is different** — their own subject, class, pass mark, and on
-Day 23 one feature of their own design. Sixteen identical gradebooks would be a failed
+Topic 23 one feature of their own design. Sixteen identical gradebooks would be a failed
 course.
 
-**The proof it is finished is not that it runs.** On Day 24 participants send their
+**The proof it is finished is not that it runs.** On Topic 24 participants send their
 folder to a colleague, who runs it **from the README alone, without asking the author
 anything**.
 

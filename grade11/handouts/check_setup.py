@@ -74,11 +74,11 @@ def main():
 
     print("-" * 52)
     if all(results):
-        print(f"{OK} All six are green. You are ready for day 1.")
+        print(f"{OK} All six are green. You are ready for session 1.")
         return 0
 
     print(f"{BAD} {results.count(False)} of 6 need attention -- see the lines above.")
-    print("   Send a screenshot of this output to your instructor before day 1.")
+    print("   Send a screenshot of this output to your instructor before session 1.")
     return 1
 
 

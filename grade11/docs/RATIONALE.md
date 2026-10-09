@@ -24,7 +24,7 @@ answer the question a pupil actually asks: *why would I bother?*
 
 ## 2. The method, and the one rule that makes it work
 
-Seven of the 24 sessions are **discovery days**. Each gives a real task, lets the
+Seven of the 16 sessions are **discovery days**. Each gives a real task, lets the
 participant solve it the long way, and then hands them the tool that collapses it.
 
 **All of that happens inside one 75-minute session.** Never across two.
@@ -51,7 +51,7 @@ Two rules protect it:
 |---|---|
 | decorators, generators, `@property`, `dataclasses` | Not in the pupils' curriculum. Each costs a session and buys a teacher nothing |
 | multiple inheritance, abstract base classes | Not in the pupils' curriculum, and actively harmful at this level |
-| `sklearn`, `PyTorch`, `TensorFlow` | **Named once on day 24, never used.** Topic 21 lists them; a grade-11 teacher does not need them, and day 24 says so in words they can repeat to a pupil |
+| `sklearn`, `PyTorch`, `TensorFlow` | **Named once in session 16, never used.** Topic 21 lists them; a grade-11 teacher does not need them, and topic 24 says so in words they can repeat to a pupil |
 | **factorial, Fibonacci, the call stack, complexity** | Recursion's *algorithmic* side. Part 2's material. The style checker fails a build that mentions either name |
 | **git** | State topic 23. Deferred by decision until the rest of the subject is secure |
 
@@ -65,16 +65,16 @@ needs it?
 Two rules invert, and both inversions are the point.
 
 **Classes are the centre, not forbidden.** The grade-10 course fails a build containing
-the word `class`. Here, days 6 to 11 are about nothing else. Topics 18 and 19 are 22
+the word `class`. Here, topics 6 to 11 are about nothing else. Topics 18 and 19 are 22
 pupil-hours.
 
 **Three libraries are allowed.** The grade-10 course allows no third-party import at all,
-because `pandas` would make its day 11 a one-liner and teach nothing about loops. Here,
+because `pandas` would make its topic 11 a one-liner and teach nothing about loops. Here,
 NumPy, Matplotlib and pandas are state topics 15, 20 and 21, and a teacher has to
 demonstrate them.
 
-**But the order is preserved.** Day 12 writes the standard deviation formula out by hand
-before `numpy.std()` appears. Day 16 spends twenty-two lines parsing a CSV before
+**But the order is preserved.** Topic 12 writes the standard deviation formula out by hand
+before `numpy.std()` appears. Topic 16 spends twenty-two lines parsing a CSV before
 `pd.read_csv()` appears. The library arrives as relief from work already done, not as a
 way to avoid understanding.
 
@@ -127,11 +127,11 @@ Stated honestly, because we will have to judge it fairly in two months.
 
 **The entry assumption may be wrong.** This course assumes a teacher arrives able to
 write a loop and a function. If the grade-10 course did not produce that, everything from
-day 2 is built on sand. **The diagnostic exists to find that out before day 1**, and its
+topic 2 is built on sand. **The diagnostic exists to find that out before session 1**, and its
 marking guide says what to do — including the option of repeating the grade-10 course
 instead of starting this one.
 
-**Objects may not land in six days.** Days 6 to 11 are 7.5 hours for what the pupils'
+**Objects may not land in six days.** Topics 6 to 11 are 7.5 hours for what the pupils'
 curriculum gives 22. If question 4 of the midpoint comes back weak, the libraries block
 cannot start, and we lose a session to revision. That is budgeted for and it is cheaper
 than pressing on.
@@ -142,8 +142,8 @@ that a teacher who has *used* each one on their own school's data can teach the 
 version, which is shallower than ours.
 
 **The method may not transfer.** Discovery works when there is a long way to do first.
-By day 20 — packages and environments — there is no laborious version to replace; it is
-ordinary explanation. Days 20 and 21 are the weakest in the course by this measure, and
+By topic 20 — packages and environments — there is no laborious version to replace; it is
+ordinary explanation. Topics 20 and 21 are the weakest in the course by this measure, and
 we should watch them.
 
 **Nobody has taught this.** Not one session has been delivered to a cohort. Every claim

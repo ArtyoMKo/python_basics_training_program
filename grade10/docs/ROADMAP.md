@@ -6,7 +6,7 @@
 
 | | | Length | Status |
 |---|---|---|---|
-| **Part 1** | **Coding skills** — writing working code to automaticity, with **no algorithmic difficulty at all** | **2 months** — 24 sessions × 75 min = 30 h | **Built and verified.** Materials complete, not yet taught |
+| **Part 1** | **Coding skills** — writing working code to automaticity, with **no algorithmic difficulty at all** | **2 months** — 16 sessions × 120 min = 32 h | **Built and verified.** Materials complete, not yet taught |
 | **Trial class** | Each teacher teaches real pupils, once | **March** | Planned |
 | **Part 2** | **Algorithmic tasks and the theory Part 1 postponed**, then bigger projects, classes and libraries | **4 months** — six stages | **Vision only.** Outlined below; not written |
 
@@ -39,7 +39,7 @@ should continue in this shape at all.
 
 ## Part 1 — coding fluency (built)
 
-Two months, 24 sessions. Teachers who have never programmed finish with a four-file
+Two months, 16 sessions. Teachers who have never programmed finish with a four-file
 gradebook program running over their own class data. Full detail in `CURRICULUM.md`;
 the method is in `RATIONALE.md` §3.
 
@@ -63,7 +63,7 @@ first stage exists because Part 1 deliberately skipped it.
 ### Who enters Part 2
 
 **The third assessment filters.** Teachers meeting the "can code" bar — a working
-`python main.py` at day 21, and at least half of questions 1–7 of the final practical —
+`python main.py` at session 14, and at least half of questions 1–7 of the final practical —
 continue. Those who do not are offered Part 1 again rather than carried into material
 that assumes fluency they do not have.
 

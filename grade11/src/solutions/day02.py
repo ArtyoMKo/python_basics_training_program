@@ -1,5 +1,5 @@
 #%% md
-# Օր 2 — Լուծումներ
+# Թեմա 2 — Լուծումներ
 
 #%% code
 # Required 1 - a default for the rounding

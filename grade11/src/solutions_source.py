@@ -1,5 +1,5 @@
 #%% day01 md
-# Օր 1 — Լուծումներ
+# Թեմա 1 — Լուծումներ
 
 Այս լուծումները **մեկ հնարավոր տարբերակն** են։ Եթե քոնը այլ է, բայց աշխատում է —
 քոնը նույնպես ճիշտ է։
@@ -67,7 +67,7 @@ for line in lines[1:]:
 print(len(at_risk), "students at risk")
 
 #%% day02 md
-# Օր 2 — Լուծումներ
+# Թեմա 2 — Լուծումներ
 
 #%% day02 code
 # Required 1 - a default for the rounding
@@ -141,7 +141,7 @@ print(add_student("Ani"))
 print(add_student("Davit"))
 
 #%% day03 md
-# Օր 3 — Լուծումներ
+# Թեմա 3 — Լուծումներ
 
 #%% day03 code
 register = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3, "Mariam": 8, "Hayk": 2}
@@ -222,7 +222,7 @@ first, second = second, first
 print(first, second)
 
 #%% day04 md
-# Օր 4 — Լուծումներ
+# Թեմա 4 — Լուծումներ
 
 #%% day04 code
 register = {
@@ -273,7 +273,7 @@ unique = sorted(set(names_11b))
 print(len(unique))
 
 #%% day05 md
-# Օր 5 — Լուծումներ
+# Թեմա 5 — Լուծումներ
 
 #%% day05 code
 register = {
@@ -326,7 +326,7 @@ for grade in sorted(by_grade):
     print(grade, by_grade[grade])
 
 #%% day06 md
-# Օր 6 — Լուծումներ
+# Թեմա 6 — Լուծումներ
 
 #%% day06 code
 SUBJECT_NAMES = ["Mathematics", "Physics", "Armenian", "History", "Informatics"]
@@ -403,7 +403,7 @@ print(len(school), "students")
 print(school[0].name, school[0].grades)
 
 #%% day07 md
-# Օր 7 — Լուծումներ
+# Թեմա 7 — Լուծումներ
 
 #%% day07 code
 SUBJECT_NAMES = ["Mathematics", "Physics", "Armenian", "History", "Informatics"]
@@ -469,7 +469,7 @@ print(ani.better_than(davit))
 print_group([davit, ani])
 
 #%% day08 md
-# Օր 8 — Լուծումներ
+# Թեմա 8 — Լուծումներ
 
 #%% day08 code
 PASS_MARK = 4
@@ -542,7 +542,7 @@ print(eleven_a.find("Someone Else"))
 eleven_a.report()
 
 #%% day09 md
-# Օր 9 — Լուծումներ
+# Թեմա 9 — Լուծումներ
 
 #%% day09 code
 class Person:
@@ -617,7 +617,7 @@ for person in [ani, tigran, mother, head]:
     print(f"{person.name:<22} Person? {isinstance(person, Person)}")
 
 #%% day10 md
-# Օր 10 — Լուծումներ
+# Թեմա 10 — Լուծումներ
 
 #%% day10 code
 class Person:
@@ -707,7 +707,7 @@ print(counts)
 print([p.can_vote() for p in everyone])
 
 #%% day11 md
-# Օր 11 — Լուծումներ
+# Թեմա 11 — Լուծումներ
 
 #%% day11 code
 PASS_MARK = 4
@@ -825,7 +825,7 @@ print("average: ", round(school.average(), 2))
 print("at risk: ", len(school.at_risk()))
 
 #%% day12 md
-# Օր 12 — Լուծումներ
+# Թեմա 12 — Լուծումներ
 
 #%% day12 code
 import numpy as np
@@ -875,7 +875,7 @@ print("highest mark:", grades[position], "-", rows[position][1],
       "in", rows[position][2])
 
 #%% day13 md
-# Օր 13 — Լուծումներ
+# Թեմա 13 — Լուծումներ
 
 #%% day13 code
 import numpy as np
@@ -921,7 +921,7 @@ print("per student:", np.round(table.mean(axis=1), 2)[:5])
 print("per subject:", np.round(table.mean(axis=0), 2))
 
 #%% day14 md
-# Օր 14 — Լուծումներ
+# Թեմա 14 — Լուծումներ
 
 #%% day14 code
 import numpy as np
@@ -995,7 +995,7 @@ plt.close()
 print("saved subjects_labelled.png")
 
 #%% day15 md
-# Օր 15 — Լուծումներ
+# Թեմա 15 — Լուծումներ
 
 #%% day15 code
 import numpy as np
@@ -1077,7 +1077,7 @@ plt.close()
 print("saved term_report.png")
 
 #%% day16 md
-# Օր 16 — Լուծումներ
+# Թեմա 16 — Լուծումներ
 
 #%% day16 code
 import pandas as pd
@@ -1125,7 +1125,7 @@ print()
 print(data[data["note"].notna()][["student", "note"]].to_string())
 
 #%% day17 md
-# Օր 17 — Լուծումներ
+# Թեմա 17 — Լուծումներ
 
 #%% day17 code
 import pandas as pd
@@ -1167,7 +1167,7 @@ print(spread.sort_values(ascending=False))
 print("most uneven:", spread.idxmax())
 
 #%% day18 md
-# Օր 18 — Լուծումներ
+# Թեմա 18 — Լուծումներ
 
 #%% day18 code
 import pandas as pd
@@ -1244,7 +1244,7 @@ def build_report(path):
 build_report("school.csv")
 
 #%% day19 md
-# Օր 19 — Լուծումներ
+# Թեմա 19 — Լուծումներ
 
 #%% day19 code
 school = {
@@ -1366,7 +1366,7 @@ def count_with_queue(school):
 print(count_with_queue(school))
 
 #%% day20 md
-# Օր 20 — Լուծումներ
+# Թեմա 20 — Լուծումներ
 
 #%% day20 code
 import importlib.metadata as metadata
@@ -1415,7 +1415,7 @@ for name in names:
     print(f"{name:<12} {kind}")
 
 #%% day21 md
-# Օր 21 — Լուծումներ
+# Թեմա 21 — Լուծումներ
 
 #%% day21 code
 import pandas as pd

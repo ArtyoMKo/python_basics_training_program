@@ -1,7 +1,7 @@
 #%% md
-# Օր 17 — Զտել, խմբավորել, նկարագրել
+# Թեմա 17 — Զտել, խմբավորել, նկարագրել
 
-### Python 11-րդ դասարանի համար · Օր 17-ը 24-ից
+### Python 11-րդ դասարանի համար · Թեմա 17-ը 24-ից
 
 Երեկ ֆայլը բացվեց մեկ տողով։ Այսօր՝ երեք գործողություն, որոնք ծածկում են
 դպրոցի հարցերի մեծ մասը։
@@ -113,7 +113,7 @@ table = data.pivot_table(index="class", columns="subject", values="grade",
 print(table)
 
 #%% md
-Սա ուղիղ այն աղյուսակն է, որ 13-րդ օրը կառուցում էինք NumPy-ով՝ ցիկլերով։
+Սա ուղիղ այն աղյուսակն է, որ 13-րդ թեման կառուցում էինք NumPy-ով՝ ցիկլերով։
 
 #%% code
 print("highest cell:", table.max().max())
@@ -139,7 +139,7 @@ print("saved pivot_chart.png")
 #%% md
 <div style="border-left: 6px solid #f71; background: #fff8f2; padding: 12px 16px; margin: 12px 0;">
 <p style="color:#f71; margin:0;">
-📌 <b>Համեմատի՛ր 15-րդ օրվա Գ մասի հետ։</b> Այնտեղ խմբավորված սյուները պահանջում
+📌 <b>Համեմատի՛ր 15-րդ թեմայի Գ մասի հետ։</b> Այնտեղ խմբավորված սյուները պահանջում
 էին <code>np.arange</code>, <code>width</code>, տեղաշարժ և <code>xticks</code> —
 ինը տող։<br/><br/>
 Այստեղ՝ <code>table.T.plot(kind="bar")</code>։ <b>Քանի որ տվյալն արդեն աղյուսակ է։</b><br/>
@@ -255,6 +255,17 @@ data = pd.read_csv("school.csv")
 # ...
 
 #%% md
+<div style="border-left: 6px solid #747; background: #f8f6fb; padding: 12px 16px; margin: 12px 0;">
+<h3 style="color:#747; margin-top:0;">🏠 Տնային</h3>
+<p style="color:#747; margin-bottom:0;">
+Այս նոթատետրի <b>Լրացուցիչ</b> առաջադրանքները, և ցանկացած <b>Պարտադիր</b>, որ չհասցրիր։<br/><br/>
+<b>Նոր բան չկա</b> — ամեն առաջադրանք այս նոթատետրից է, և օգտագործում է միայն այն,
+ինչ այսօր սովորեցինք։<br/>
+Հաջորդ նիստը սկսվում է դրանց ստուգումով։
+</p>
+</div>
+
+#%% md
 ## Ինչի հասանք
 
 - `data.groupby("class")["grade"].mean()` — խմբերը **ինքն է գտնում**
@@ -264,7 +275,7 @@ data = pd.read_csv("school.csv")
 - `pivot_table(index=..., columns=..., values=...)` — աղյուսակ երկու չափումով
 - `table.T.plot(kind="bar")` — ինը տող Matplotlib-ի փոխարեն մեկ տող
 
-## Հաջորդ անգամ
+## Ի՞նչ է գալիս հետո
 
 Նոր գրադարան չի լինի։ Վերցնելու ենք այն ամենը, ինչ ունենք — pandas, NumPy,
 Matplotlib — և սարքելու ենք **կիսամյակի ամբողջական հաշվետվությունը**՝ ֆայլից

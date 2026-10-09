@@ -1,5 +1,5 @@
 #%% day02 md
-# Օր 2 — Լուծումներ
+# Թեմա 2 — Լուծումներ
 
 Այս լուծումները **մեկ հնարավոր տարբերակն** են։ Եթե քոնը այլ է, բայց աշխատում է —
 քոնը նույնպես ճիշտ է։
@@ -27,7 +27,7 @@ print("Davit    6")
 print("Mariam   8")
 
 #%% day03 md
-# Օր 3 — Լուծումներ
+# Թեմա 3 — Լուծումներ
 
 #%% day03 code
 # Exercises 1 and 2 - four types, checked
@@ -67,7 +67,7 @@ print(10 // 3)      # how many whole 3s fit into 10
 print(10 % 3)       # what is left over
 
 #%% day04 md
-# Օր 4 — Լուծումներ
+# Թեմա 4 — Լուծումներ
 
 `input()`-ի փոխարեն արժեքները ուղիղ գրված են, որպեսզի կարողանաս գործարկել առանց
 պատասխանելու։ Քո տետրում `input()`-ը պետք է մնա։
@@ -101,7 +101,7 @@ print(str(9) + str(1))
 print(9 + 1)
 
 #%% day05 md
-# Օր 5 — Լուծումներ
+# Թեմա 5 — Լուծումներ
 
 #%% day05 code
 # Exercises 1, 2 and 3
@@ -142,7 +142,7 @@ print(f"{student_2_name}: {student_2_grade}")
 print(f"{student_3_name}: {student_3_grade}")
 
 #%% day06 md
-# Օր 6 — Լուծումներ
+# Թեմա 6 — Լուծումներ
 
 #%% day06 code
 # Exercises 3 and 4 - the whole class in two lists
@@ -170,7 +170,7 @@ print(f"{student_names[1]}: {class_grades[1]}")
 print(f"{student_names[2]}: {class_grades[2]}")
 
 #%% day07 md
-# Օր 7 — Լուծումներ
+# Թեմա 7 — Լուծումներ
 
 #%% day07 code
 # Exercises 1, 2, 3 and 4
@@ -214,7 +214,7 @@ print("group 1:", student_names[0:half])
 print("group 2:", student_names[half:])
 
 #%% day09 md
-# Օր 10 — Լուծումներ
+# Թեմա 10 — Լուծումներ
 
 #%% day09 code
 # Exercises 1, 2 and 3
@@ -254,7 +254,7 @@ if student_name in student_names:
         print(f"{student_name} is in the class and has a perfect grade")
 
 #%% day10 md
-# Օր 11 — Լուծումներ
+# Թեմա 11 — Լուծումներ
 
 #%% day10 code
 # Exercises 1 and 2 - four bands, tested on four grades
@@ -301,7 +301,7 @@ else:
     print("certificate not granted")
 
 #%% day11 md
-# Օր 12 — Լուծումներ
+# Թեմա 12 — Լուծումներ
 
 #%% day11 code
 # Exercises 3, 4 and 5 - everything with a loop
@@ -346,7 +346,7 @@ for position in range(len(student_names)):
     print(f"{position + 1}. {student_names[position]}: {class_grades[position]}")
 
 #%% day12 md
-# Օր 13 — Լուծումներ
+# Թեմա 13 — Լուծումներ
 
 #%% day12 code
 # Exercises 1 and 2 - total and average
@@ -398,7 +398,7 @@ for mark in range(10, 0, -1):
     print(f"{mark:>2}: {'*' * how_many}")
 
 #%% day13 md
-# Օր 16 — Լուծումներ
+# Թեմա 16 — Լուծումներ
 
 #%% day13 code
 # Exercises 1, 2, 3 and 4 - all together
@@ -455,7 +455,7 @@ for position in range(len(class_grades)):
 print(f"average {average:.1f}, closest: {student_names[closest_position]}")
 
 #%% day16 md
-# Օր 15 — Լուծումներ
+# Թեմա 15 — Լուծումներ
 
 `input()`-ի փոխարեն ցուցակ է օգտագործված, որպեսզի կարողանաս գործարկել։
 Քո տետրում `input()`-ը պետք է մնա։
@@ -490,7 +490,7 @@ for grade in class_grades:
 print(f"average: {total / len(class_grades):.1f}")
 
 #%% day08 md
-# Օր 9 — Լուծումներ
+# Թեմա 9 — Լուծումներ
 
 #%% day08 code
 # Exercises 3, 4 and 5 - the class as a dictionary
@@ -536,7 +536,7 @@ for position in range(len(student_names)):
 print(class_grades)
 
 #%% day14 md
-# Օր 8 — Լուծումներ
+# Թեմա 8 — Լուծումներ
 
 #%% day14 code
 # Exercises 1-4 - the full register from a dictionary
@@ -590,7 +590,7 @@ for mark in range(10, 0, -1):
             print(f"{student_name:<10} {grade:>3}")
 
 #%% day15 md
-# Օր 14 — Լուծումներ
+# Թեմա 14 — Լուծումներ
 
 #%% day15 code
 # Exercises 1-5 - report cards with several grades each
@@ -650,7 +650,7 @@ for student_name, grades in class_grades.items():
     print(f"{student_name}: {improvement:+d}")
 
 #%% day17 md
-# Օր 17 — Լուծումներ
+# Թեմա 17 — Լուծումներ
 
 #%% day17 code
 # Exercises 2, 4 and 5 - the function, used everywhere
@@ -729,9 +729,9 @@ def class_report(class_grades):
 class_report(class_grades)
 
 #%% day18 md
-# Օր 18 — Լուծումներ
+# Թեմա 18 — Լուծումներ
 
-**Պահի՛ր այս տետրը։** 20-րդ օրը այս ֆունկցիաները տեղափոխվում են `grades.py` ֆայլ։
+**Պահի՛ր այս տետրը։** 20-րդ թեման այս ֆունկցիաները տեղափոխվում են `grades.py` ֆայլ։
 
 #%% day18 code
 # Exercises 1-4 - the four-function toolkit
@@ -844,9 +844,9 @@ def class_summary(class_grades):
 print(class_summary(my_class))
 
 #%% day19 md
-# Օր 19 — Լուծումներ
+# Թեմա 19 — Լուծումներ
 
-**Սա ամբողջական ծրագիրն է։** 20-րդ և 21-րդ օրերին այն բաժանվում է չորս ֆայլի։
+**Սա ամբողջական ծրագիրն է։** 20-րդ և 21-րդ թեմաներին այն բաժանվում է չորս ֆայլի։
 
 #%% day19 code
 # The whole assembled register program

@@ -1,6 +1,6 @@
 # Marking guide — the final practical
 
-**Sat on day 24. 70 points over seven questions, plus a separately reported eighth.**
+**Sat in session 16. 70 points over seven questions, plus a separately reported eighth.**
 
 This is the sitting that decides whether a participant can teach grade 11.
 
@@ -20,7 +20,7 @@ This is the sitting that decides whether a participant can teach grade 11.
 
 A participant counts as "can code" when **both** hold:
 
-1. **`python main.py` runs on their own data** — confirmed individually on day 23, on a
+1. **`python main.py` runs on their own data** — confirmed individually on topic 23, on a
    shared screen, not self-reported
 2. **At least 35 of 70** on questions 1–7
 
@@ -50,7 +50,7 @@ against.
 | What you see | What it means |
 |---|---|
 | **Q4 and Q5 strong, Q6 and Q7 weak** | The libraries landed; the thinking did not. **This is the expected shape** and is precisely what Part 2 exists to address. Record it; do not treat it as failure |
-| **Q5 weak, Q1–Q3 strong** | pandas is being used as a spreadsheet, not joined to the objects. Revisit day 16 at the start of Part 2 |
+| **Q5 weak, Q1–Q3 strong** | pandas is being used as a spreadsheet, not joined to the objects. Revisit topic 16 at the start of Part 2 |
 | **Q4 missing a title or `savefig`** | Minus 3 each. Charts that cannot leave the notebook are not charts a school can use |
 | **Q7 blank across the group** | One day on debugging was not enough. A finding about the programme — record it for the next cohort |
 | **Q6 answered with loops** | 3 points. The question is about recursion, and the loop answer is the thing recursion replaces |

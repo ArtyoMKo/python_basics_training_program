@@ -1,5 +1,5 @@
 #%% md
-# Օր 3 — Լուծումներ
+# Թեմա 3 — Լուծումներ
 
 #%% code
 register = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3, "Mariam": 8, "Hayk": 2}

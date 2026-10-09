@@ -17,7 +17,7 @@ says so explicitly and gives the reason. Overrides are collected in §14.
 |---|---|---|
 | **Language** | Armenian prose, English code | §7.7 |
 | **Python** | Anaconda, `base` environment, never activated by hand | §9.1 |
-| **Editor** | **VS Code, from Day 1 to Day 24. One tool, all course.** | §9.1 |
+| **Editor** | **VS Code, from session 1 to session 16. One tool, all course.** | §9.1 |
 | **Grades** | 1–10 scale, pass mark 4 | §6.2 |
 | **Repository** | `git@github.com:AIrtyoMKo/python_basics_training_program.git` | §9.3 |
 
@@ -31,14 +31,14 @@ engineering. Concretely, this course has:
 
 | One | Not |
 |---|---|
-| One editor — VS Code — from Day 1 to Day 24 | Jupyter in a browser, then an editor later |
+| One editor — VS Code — from session 1 to session 16 | Jupyter in a browser, then an editor later |
 | One Python — Anaconda's `base` | venv, conda environments, activation steps |
 | One terminal — the one inside VS Code | Anaconda Prompt, PowerShell, Terminal.app |
 | One folder — `python_course/` in Documents | A folder per day, a folder per phase |
 | One idea per day, named in the file name | Two related things "while we're here" |
 | One new built-in per concept | The three ways Python can do it |
 | Four files in the final project | Five, or a package |
-| Zero installs after Day 1 | `pip install` anything, ever |
+| Zero installs after session 1 | `pip install` anything, ever |
 | One language per place — Armenian explains, English codes | Armenian inside a code cell |
 
 **When reviewing any artefact, the first question is: what can be removed?** A teacher who
@@ -50,7 +50,7 @@ works, that they can remember on a Tuesday, without notes.
 ## 1. The course in one paragraph
 
 Public-school teachers, with no programming background, learn Python from installing it to
-writing a small program they actually use. Twenty-four 75-minute sessions over two months.
+writing a small program they actually use. Sixteen 120-minute sessions over two months.
 Every example is about a classroom — students, grades, attendance, averages, reports —
 and the course ends with each participant running a gradebook program over their own
 (anonymised) class list, from a terminal, on their own laptop.
@@ -75,8 +75,8 @@ point.
 | **Delivery** | **Remote**, over Google Meet with screen sharing. Not on site. |
 | **Machines** | **Their own laptop**, which they must have for the whole course. Mixed Windows and macOS. Possibly no admin rights. Checked at enrolment (`ENROLMENT.md`). See §12 risks. |
 | **Language** | Materials in **Armenian**; code, keywords and identifiers in English (§7.7) |
-| **Format** | 24 sessions × **75 minutes** = 1,800 minutes = **30 hours exactly** |
-| **Schedule** | 3 sessions per week × 8 weeks. After the cohort adapts, possibly 2 a week, or 3 of 50 minutes |
+| **Format** | 16 sessions × **120 minutes** = 1,920 minutes = **32 hours** |
+| **Schedule** | 2 sessions per week × 8 weeks. After the cohort adapts, possibly 2 a week, or 3 of 50 minutes |
 | **Group size** | **4–8**, one instructor. Fewer than 4 and they cannot discuss; more than 8 and remote teaching stops working |
 | **Part** | **Part 1 of two.** Part 1 is **2 months** (this specification); Part 2 is **4 months**, outlined in `ROADMAP.md`, and runs only if Part 1 succeeds |
 | **Between sessions** | ~2 days. One optional 10-minute practice task per day; nothing required. |
@@ -87,8 +87,8 @@ point.
 | TUMO workshop | This course | Consequence |
 |---|---|---|
 | 13–18, already program | Adults, never programmed | Python **is** the subject, not the medium |
-| 16 identical lab Macs prepared by IT | Mixed personal Windows/Mac laptops | Installation is Day 1's entire content, and is the single biggest risk |
-| 120-minute lessons | **75-minute** lessons | One idea per session, and the agenda has no slack |
+| 16 identical lab Macs prepared by IT | Mixed personal Windows/Mac laptops | Installation is session 1's entire content, and is the single biggest risk |
+| 120-minute lessons, twice a week | **120-minute sessions, twice a week** | The same shape — but ours holds **two topics**, not one, and the agenda has no slack |
 | External paid API, keys, vendor abstraction | **Standard library only** | No `pip`, no venv, no `requirements.txt`, no keys, no network, no cost |
 | Materials in English for English-schooled teens | **Armenian prose, English code** | A beginner cannot learn a spoken language and a programming language at once |
 | Fast students get an extra challenge | Fear, not boredom, is the failure mode | Every session must be completable by the slowest person; extras are genuinely optional |
@@ -115,37 +115,39 @@ This applies to file names too: instructor-facing notes are `INSTRUCTOR_NOTES.md
 | **Transition** | 20–21 | VS Code, `.py` files, terminal | Reorganise working code into a real program |
 | **Project** | 22–24 | VS Code + terminal | Own data, own feature, finish and show |
 
-Two days for the transition rather than the methodology’s one, because 75 minutes cannot
-hold both "here is what a `.py` file is" and "here are four modules". Day 20 is one file;
-Day 21 is the split. **Neither may be cut** (§13).
+Two topics for the transition rather than the methodology’s one, because one block cannot
+hold both "here is what a `.py` file is" and "here are four modules". Topic 20 is one file;
+session 14 is the split. **Neither may be cut** (§13).
 
 ### Time budget
 
-- 24 × 75 = **1,800 minutes**. Hard ceiling.
-- Every day's agenda sums to **exactly 75**, verified by script (§11.1).
+- 16 × 120 = **1,920 minutes**. Hard ceiling.
+- Every session's agenda sums to **exactly 120**, verified by script (§11.1).
 - If content does not fit, **cut a topic**. Never compress one, never run over — these are
-  working adults and 75 minutes is 75 minutes.
+  working adults and two hours is two hours.
 
-### The standard 75-minute shape
+### The four session shapes
 
-Every day in the notebook phase uses this agenda unless stated otherwise:
+The course teaches **24 topics across 16 sessions**. A topic is one notebook and one
+idea; a session is two hours in a room. The shapes are in `CURRICULUM.md`; in summary:
 
-| # | Activity | Min |
+| Shape | Holds | Hands-on |
 |---|---|---|
-| 1 | Recap, and last time's retrospective question | 5 |
-| 2 | **Teach:** the new idea — ends with something running | 12 |
-| 3 | **Run together:** the notebook's example cells, cell by cell | 20 |
-| 4 | **Do it yourself:** the exercises — Required, then Extra | 33 |
-| 5 | Retrospective: where we got to, what comes next | 5 |
-| | **Total** | **75** |
+| **Paired** | two topics | 83 of 120 |
+| **Single** | one topic, with its Extra tier done in the room | 92 of 120 |
+| **Discovery** | one topic, one arc, never split | 82 of 120 |
+| **Transition / project** | their own agendas | throughout |
 
-**Hands-on is 53 of 75 minutes — 71%.** That is the floor, not the target. Activity 2 is
-capped at 12 minutes and may never exceed 15 in any variant agenda. This is the rule the
-review should check first: *if a day talks for more than 15 minutes, it is wrong.*
+**Hands-on is never below 68%.** Teaching is capped at 12 minutes in one block and may
+never exceed 15 in any variant agenda. This is the rule the review should check first:
+*if a block talks for more than 15 minutes, it is wrong.*
+
+**A paired session teaches two ideas with a practice block after each**, so the 12-minute
+cap still binds — it is two blocks of 12, not one of 24.
 
 ### The discovery shape
 
-Days 6, 8, 11, 17 and 22 — where a tool arrives to replace work done the same session —
+Topics 6, 8, 11, 17 and 22 — where a tool arrives to replace work done the same session —
 use this instead:
 
 | # | Activity | Min |
@@ -161,7 +163,7 @@ use this instead:
 Teaching is 16 minutes but **split into two blocks of 7 and 9** — neither approaches the
 15-minute ceiling, and the second one lands on a participant who now wants it. Hands-on is 49 of 75.
 
-Days 1, 20, 21, 23 and 24 have bespoke agendas (installation, the transition, the build
+Topics 1, 20, 21, 23 and 24 have bespoke agendas (installation, the transition, the build
 day and the showcase). Each still sums to 50.
 
 ### Per-day deliverable
@@ -191,17 +193,17 @@ session**. This table is the course; build against it.
 | **17** | Put an average on every report card | The same six lines written four times | **Functions** |
 | **22** | Keep the register after closing the program | Retyping it every time | **Files** |
 
-**All four data types come before conditions and loops** (days 6–8), following the
+**All four data types come before conditions and loops** (topics 6–8), following the
 decision taken with colleagues. It diverges from the school curriculum's own order, which
 teaches loops and conditions first — but our discovery sequence depends on having
 something worth looping over, and a loop over a dictionary is more useful than a loop over
-nothing. Day 8's long half therefore uses **no loops at all**: students are looked up by
+nothing. Topic 8's long half therefore uses **no loops at all**: students are looked up by
 position, by hand, which is exactly what makes the drift visible.
 | **20–21** | Give the program to a colleague | Explaining which cells to run in what order | **`.py` files and the terminal** |
 
 ### 4.1 Same session, always
 
-**The laborious version and its replacement happen in the same 75 minutes.** A participant
+**The laborious version and its replacement happen in the same session.** A participant
 never goes home having only done the slow thing. They go home having done the slow thing
 *and* seen it collapse.
 
@@ -249,7 +251,7 @@ twenty minutes away types the long version willingly; one who does not starts wo
 whether the course knows what it is doing.
 
 Where minor friction does cross a session boundary — printing a list item by item on
-Day 7, say — the same reassurance names the day: *"Day 10 makes this three lines."*
+Topic 7, say — the same reassurance names the day: *"Topic 10 makes this three lines."*
 
 ### 4.4 Sizing the laborious half
 
@@ -303,7 +305,7 @@ type hints · `async` · **git** · testing frameworks · databases · anything 
 decorator · `enumerate` **as a concept** (it appears twice, as a copyable recipe, and is
 never examined).
 
-**Tuples and sets are taught**, briefly, on Day 7. The state curriculum places them in
+**Tuples and sets are taught**, briefly, on Topic 7. The state curriculum places them in
 the pupils' first semester (topic 11), so a teacher meets them immediately. They are
 shown and compared with lists, **not drilled**, and nothing later in this course depends
 on them.
@@ -343,18 +345,18 @@ participant should be able to look at any cell in any notebook and see their Tue
 morning in it.
 
 The shipped sample class is **fictional** and small (12 students). Participants swap in
-their own from Day 22 — see the privacy rule in §12.
+their own from Topic 22 — see the privacy rule in §12.
 
 **The grading scale is 1–10, and the pass mark is 4.** Fixed, everywhere, in every cell.
-It is written **once**, as `PASS_MARK = 4`, from Day 9 onward, and lives in `settings.py`
+It is written **once**, as `PASS_MARK = 4`, from topic 9 onward, and lives in `settings.py`
 in the project. Two rules follow from it:
 
-- Nothing in shipped code writes `4` as a bare number after Day 9. The whole point of
-  Day 9 is that the number lives in one place.
-- Grades are **whole numbers** in every example until Day 13, where an average produces
-  `7.6` and `float` stops being an abstract idea from Day 3.
+- Nothing in shipped code writes `4` as a bare number after topic 9. The whole point of
+  topic 9 is that the number lives in one place.
+- Grades are **whole numbers** in every example until topic 13, where an average produces
+  `7.6` and `float` stops being an abstract idea from Topic 3.
 
-Participants change `PASS_MARK` to their own school's value on Day 9 if it differs, and
+Participants change `PASS_MARK` to their own school's value on topic 9 if it differs, and
 that edit is itself the exercise.
 
 ### 6.3 One idea per day, and it is named in the file name
@@ -385,15 +387,15 @@ Rota, so each common error is met deliberately at least once:
 
 | Error | Broken on purpose in |
 |---|---|
-| `SyntaxError` (missing quote, missing bracket, missing `:`) | Days 2, 7 |
-| `NameError` | Day 5 |
-| `TypeError` (`"2" + 2`) | Day 3 |
-| `ValueError` (`int("nine")`) | Day 4 |
-| `IndentationError` | Day 7 |
-| `IndexError` | Day 10 |
-| `KeyError` | Day 16 |
-| `FileNotFoundError` | Day 22 |
-| `ModuleNotFoundError` / wrong folder | Day 20 |
+| `SyntaxError` (missing quote, missing bracket, missing `:`) | Topics 2, 7 |
+| `NameError` | Topic 5 |
+| `TypeError` (`"2" + 2`) | Topic 3 |
+| `ValueError` (`int("nine")`) | Topic 4 |
+| `IndentationError` | Topic 7 |
+| `IndexError` | Topic 10 |
+| `KeyError` | Topic 16 |
+| `FileNotFoundError` | Topic 22 |
+| `ModuleNotFoundError` / wrong folder | Topic 20 |
 
 Each is followed by a short markdown cell with the same three-part shape: **what the
 message says · what it actually means · the two most likely causes.**
@@ -407,13 +409,13 @@ counter-intuitive.
 
 ### 6.7 Every participant's output is different
 
-From Day 5 onward every exercise uses **their own** subject, class size and pass mark.
+From Topic 5 onward every exercise uses **their own** subject, class size and pass mark.
 Sixteen identical gradebooks is a failed course. The shipped sample exists so that nobody
 is blocked, not so that everybody uses it.
 
 ### 6.8 Nothing requires the internet
 
-After Day 1, every notebook runs with the wifi off. No API keys, no accounts, no
+After session 1, every notebook runs with the wifi off. No API keys, no accounts, no
 downloads, no `pip install`. This is a deliberate architectural decision (§14, override O2)
 and it removes the failure mode that costs the TUMO course its riskiest hour.
 
@@ -428,8 +430,8 @@ and it removes the failure mode that costs the TUMO course its riskiest hour.
 ```
 1.  Title block            # Day N — Title  /  ### Python from Zero · Day N of 24
                            two-sentence intro, then "## TODAY:" with 3–4 bullets
-2.  Recap callout          blue 🔄 — what we had at the end of last time (Day 2+)
-3.  Kernel/how-to-run box  red — Days 1 and 2 only
+2.  Recap callout          blue 🔄 — what we had at the end of last time (topic 2+)
+3.  Kernel/how-to-run box  red — Topics 1 and 2 only
 4.  …alternating           short markdown explainer → one small code cell
 5.  "🧨 Let's break it"    the deliberate error cell (§6.5) + its explanation
 6.  ## 🎯 Exercises        3–5, worked first item each (§7.3)
@@ -451,7 +453,7 @@ Sections 7–9 together are the **retrospective** and are mandatory on every not
 | New built-in functions per day | ≤ 4 | |
 
 A bare variable name on the last line to display it is used constantly, and is explained
-once, on Day 5, as a notebook trick rather than Python.
+once, on Topic 5, as a notebook trick rather than Python.
 
 ### 7.3 Exercise format
 
@@ -510,7 +512,7 @@ addition and one change:
 `input()` blocks a notebook and cannot be executed headlessly, which fights the
 verification discipline (§11.2). Rules:
 
-- Taught on Day 4, used in exercises on Days 4, 15 and in the project.
+- Taught on Topic 4, used in exercises on Topics 4, 15 and in the project.
 - **Any cell containing `input()` is tagged `interactive` in its source marker**, so the
   verification runner can feed it a scripted answer. The tag becomes **cell metadata**,
   never a visible comment — a participant should not see `# interactive` in their notebook.
@@ -548,7 +550,7 @@ Latin script: `Ani`, `Davit`, `Nare`, `Aram`, `Mariam`, `Tigran`, `Lilit`, `Gor`
 plain ASCII.
 
 **`encoding="utf-8"` keeps its motivation.** The shipped sample data is Latin, but on
-Day 22 participants type their *own* class list, and many will use Armenian names there.
+Topic 22 participants type their *own* class list, and many will use Armenian names there.
 That is where the encoding argument is demonstrated and where it earns its place.
 
 **Error messages are English and always will be.** §6.5's deliberate-error cells therefore
@@ -563,13 +565,13 @@ about these concepts in Armenian even though the code never does.
 
 **Three assessments, designed with our partner colleague**, replacing an earlier design
 of four take-home tests. They are **separate sittings, not session time**: the 24 teaching
-sessions stay at 30 hours exactly and the assessments add roughly 3½ hours.
+sessions stay at 32 hours exactly and the assessments add roughly 3½ hours.
 
 | Test | When | Length | Points | Covers |
 |---|---|---|---|---|
-| `test1_diagnostic` | **Before day 1** | 45–60 min | 44 | nothing — the baseline |
-| `test2_midpoint` | **After day 13** | 60–75 min | 50 | days 6–13 |
-| `test3_final_practical` | **Day 24** | 90–120 min | 70 + 10 separate | days 14–24 |
+| `test1_diagnostic` | **Before session 1** | 45–60 min | 44 | nothing — the baseline |
+| `test2_midpoint` | **After session 9** | 60–75 min | 50 | topics 6–13 |
+| `test3_final_practical` | **Session 16** | 90–120 min | 70 + 10 separate | topics 14–24 |
 
 Rules that make them worth setting:
 
@@ -593,7 +595,7 @@ Rules that make them worth setting:
 
 **The diagnostic is what makes the experiment measurable.** Without a before-measurement
 the programme can only report an endpoint; with one it reports change. It is also an
-early warning: a participant who cannot run a cell at help level 3 predicts a hard day 1.
+early warning: a participant who cannot run a cell at help level 3 predicts a hard session 1.
 
 **Question 8 of the final test carries the transfer question** — one small task using
 only taught syntax that the course never demonstrates, marked separately and never
@@ -615,7 +617,7 @@ reported as a pass rate (§ `RATIONALE.md` 5).
 | Comment density, notebooks | One comment above each code cell saying **why**; inline comments only on the line that surprises |
 | Comment density, `project/` | `settings.py` ~50% (it is a teaching surface); other modules 15–25% |
 | Docstrings | One line, plain language, in every project function: `"""Return the average of a list of grades."""` |
-| `try` / `except` | Exactly one, in `main.py`, around the menu loop. Nowhere else. Day 22's `FileNotFoundError` is handled with an `if` on whether the file exists, not an exception. |
+| `try` / `except` | Exactly one, in `main.py`, around the menu loop. Nowhere else. Topic 22's `FileNotFoundError` is handled with an `if` on whether the file exists, not an exception. |
 | Emoji in output | `✅` and `❌` in check scripts only; never inside teaching code |
 
 ### The project's four files
@@ -623,7 +625,7 @@ reported as a pass rate (§ `RATIONALE.md` 5).
 Each explainable in one sentence, stated in the project README as a table:
 
 ```
-settings.py    Every number you might want to change.     (no logic — the Day 9 lesson, as a file)
+settings.py    Every number you might want to change.     (no logic — the topic 9 lesson, as a file)
 storage.py     Load the class from a file, save it back.  (knows nothing about grades)
 grades.py      The calculations: average, highest, pass.  (knows nothing about files)
 main.py        Ask the teacher what they want, and print. (does no calculating of its own)
@@ -631,14 +633,14 @@ main.py        Ask the teacher what they want, and print. (does no calculating o
 
 **Four, not five.** An earlier draft had a separate `report.py` for printing. Printing is
 two `print()` calls in a loop and does not need its own file; folding it into `main.py`
-removes a file, an import and five minutes of explanation from a 75-minute day. This is
+removes a file, an import and five minutes of explanation from a 120-minute session. This is
 §0 applied.
 
 **Dependency arrows point one way:** `main` → `grades`, `storage` → `settings`.
-`grades.py` must not import `storage.py`. The reason is stated to participants in Day 21's
+`grades.py` must not import `storage.py`. The reason is stated to participants in session 14's
 guide: *you can test your average calculation without having a file at all.*
 
-`settings.py` is the pedagogical payoff of Day 9 — one place to change the pass mark —
+`settings.py` is the pedagogical payoff of topic 9 — one place to change the pass mark —
 and the plan should keep that connection explicit in both the guide and the file's own
 comments.
 
@@ -657,7 +659,7 @@ public_school_python/
 ├── handouts/CHEATSHEET.md               <- printable, 4 pages; opens with the bilingual glossary (§7.7)
 ├── RATIONALE.md                <- why this method, the risk, the experiment (for colleagues)
 ├── ANNOUNCEMENT.md             <- recruitment text, written for teachers
-├── handouts/check_setup.py              <- 6 checks, run on Day 1
+├── handouts/check_setup.py              <- 6 checks, run on session 1
 ├── notebooks/                  <- GENERATED -- do not edit by hand
 │   ├── day01_first_program.ipynb … day19_return.ipynb             (19)
 │   └── sample_class.csv        <- the fictional 12-student class
@@ -717,24 +719,24 @@ cannot accidentally commit a real class list (§12).
 and, once the sample class changes, actively misleading. The verification runner (§11.2)
 regenerates them; nothing depends on a stored output.
 
-**Format follows phase**, per the methodology: notebooks for Days 1–19, markdown guides
-for Days 20–24 because participants are editing `.py` files with the guide open in VS Code's
-preview pane beside them. Day 20 gets no notebook **on purpose** — the lesson is leaving the
+**Format follows phase**, per the methodology: notebooks for topics 1–19, markdown guides
+for topics 20–24 because participants are editing `.py` files with the guide open in VS Code's
+preview pane beside them. Topic 20 gets no notebook **on purpose** — the lesson is leaving the
 notebook.
 
 ### 9.1 The toolchain — Anaconda for Python, VS Code for everything else
 
-**Two installs on Day 1, and nothing ever again.**
+**Two installs on session 1, and nothing ever again.**
 
 | What | Which | Used for |
 |---|---|---|
-| Python | **Anaconda**, `base` environment | Days 1–24. Never activated by hand, never a second environment |
-| Editor | **VS Code** + two extensions (Python, Jupyter) | Days 1–24. Notebooks *and* `.py` files, in the same window |
-| Terminal | **VS Code's built-in terminal** (`Ctrl+`` ` ``) | Days 20–24 |
+| Python | **Anaconda**, `base` environment | topics 1–24. Never activated by hand, never a second environment |
+| Editor | **VS Code** + two extensions (Python, Jupyter) | topics 1–24. Notebooks *and* `.py` files, in the same window |
+| Terminal | **VS Code's built-in terminal** (`Ctrl+`` ` ``) | topics 20–24 |
 
 **One editor for the whole course is the simplification that matters most.** VS Code opens
-`.ipynb` files natively, so Days 1–19 happen in it; Days 20–24 open a `.py` file in the
-same window, in the same folder, with the same sidebar. **Day 20 therefore introduces two
+`.ipynb` files natively, so topics 1–19 happen in it; topics 20–24 open a `.py` file in the
+same window, in the same folder, with the same sidebar. **Topic 20 therefore introduces two
 new things — a `.py` file and a terminal — instead of three.** Participants never learn a
 second program's menus, and never wonder which tool they were supposed to be in.
 
@@ -750,25 +752,25 @@ it removes the failure that opens every session of the TUMO course with "but it 
 time".
 
 **Anaconda's 300 bundled packages are not a licence to use them.** `pandas` would make
-Day 13 a one-liner and teach a teacher nothing about loops. The standard-library-only rule
+topic 13 a one-liner and teach a teacher nothing about loops. The standard-library-only rule
 in §5 stands, and `tools/check_style.py` enforces it by grepping every import.
 
 **The two things VS Code will do to us, and the answer to each:**
 
 | | Answer |
 |---|---|
-| **The kernel picker.** Every notebook asks which Python to use; pick the wrong one and packages "aren't installed" | There is only **one** choice in the list — Anaconda's `base`. `handouts/SETUP.md` shows it in words, Day 1 and Day 2 have a red callout about it, and `handouts/check_setup.py` reports which Python is actually running |
-| **The built-in terminal may open without conda on it** (Windows PowerShell) | The Python extension activates the interpreter in new terminals by default, so this usually just works. If it doesn't: `handouts/SETUP.md`'s fallback is one line — set the default terminal to Command Prompt. Named in `INSTRUCTOR_NOTES.md` as a thing to test on a school laptop before Day 1 |
+| **The kernel picker.** Every notebook asks which Python to use; pick the wrong one and packages "aren't installed" | There is only **one** choice in the list — Anaconda's `base`. `handouts/SETUP.md` shows it in words, session 1 and topic 2 have a red callout about it, and `handouts/check_setup.py` reports which Python is actually running |
+| **The built-in terminal may open without conda on it** (Windows PowerShell) | The Python extension activates the interpreter in new terminals by default, so this usually just works. If it doesn't: `handouts/SETUP.md`'s fallback is one line — set the default terminal to Command Prompt. Named in `INSTRUCTOR_NOTES.md` as a thing to test on a school laptop before session 1 |
 
 **If VS Code is blocked by school IT**, the fallback is JupyterLab from Anaconda Navigator
-for Days 1–19 and pairing with a colleague for Days 20–24. Documented in
+for topics 1–19 and pairing with a colleague for topics 20–24. Documented in
 `INSTRUCTOR_NOTES.md`, not in the participant materials — a fallback in the main text is a
 fork in the road for everyone.
 
 ### 9.2 `handouts/SETUP.md` is a first-class deliverable here
 
 In the TUMO course setup is a 15-minute appendix because IT prepared the machines. Here it
-is Day 1's entire content and the largest single risk to the programme. It must:
+is session 1's entire content and the largest single risk to the programme. It must:
 
 - Cover **Windows and macOS** in separate, complete, non-interleaved sections. A
   participant should never read a step that is not for their machine.
@@ -786,9 +788,9 @@ is Day 1's entire content and the largest single risk to the programme. It must:
 - Have a fallback path for **no admin rights** — Anaconda and VS Code both install
   per-user ("Just Me") and usually succeed without admin. If they are blocked outright, the
   fallback is in `INSTRUCTOR_NOTES.md`, not here.
-- End with `handouts/check_setup.py` printing six green lines, run from inside VS Code on Day 1.
-- Be handed out **at least three days before** Day 1, with the note that trying it at home
-  is welcome and failing at it is expected and is exactly what Day 1 is for.
+- End with `handouts/check_setup.py` printing six green lines, run from inside VS Code on session 1.
+- Be handed out **at least three days before** session 1, with the note that trying it at home
+  is welcome and failing at it is expected and is exactly what session 1 is for.
 
 ---
 
@@ -824,27 +826,28 @@ is Day 1's entire content and the largest single risk to the programme. It must:
 | 24 | Finish and show | PR | README, the fresh-laptop test, demoing | A 90-second demo; a README a colleague can follow |
 
 ```
-Notebook phase   Days  1–19   1,425 min   23 h 45
-Transition       Days 20–21     150 min    2 h 30
-Project          Days 22–24     225 min    3 h 45
-                            ------------------------
-                               1,800 min  = 30 h  ✓
+Notebook phase   Sessions  1–13   topics  1–19   1,560 min   26 h
+Transition       Session      14   topics 20–21     120 min    2 h
+Project          Sessions 15–16   topics 22–24     240 min    4 h
+                                             ------------------------
+                                                 1,920 min  = 32 h  ✓
 ```
 
-**Assessments** before Day 1, after Day 13 and on Day 24 (§7.8) — separate sittings, so the agendas are unaffected.
+**Assessments** before session 1, after session 9 and in session 16 (§7.8) — separate
+sittings, so the agendas are unaffected.
 
-### Week map (3 sessions/week × 8 weeks)
+### Week map (2 sessions/week × 8 weeks)
 
-| Week | Days | Arc | Assessment |
-|---|---|---|---|
-| 1 | 1–3 | It runs on my laptop, and I know what a value is | *(diagnostic sat before day 1)* |
-| 2 | 4–6 | I can name things, and keep a whole class in one list | |
-| 3 | 7–9 | Every data type I need, and I can find one student | |
-| 4 | 10–12 | Conditions, then one loop marks thirty students | |
-| 5 | 13–15 | I can compute and report on the whole class | **Midpoint** (after day 13) |
-| 6 | 16–18 | I write the calculation once and use it everywhere | |
-| 7 | 19–21 | It is a program now, not a notebook | |
-| 8 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** |
+| Week | Sessions | Topics | Arc | Assessment |
+|---|---|---|---|---|
+| 1 | 1–2 | 1–4 | It runs on my laptop, and I know what a value is | *(diagnostic sat before session 1)* |
+| 2 | 3–4 | 5–6 | I can name things, and keep a whole class in one list | |
+| 3 | 5–6 | 7–8 | Every data type I need, and I can find one student | |
+| 4 | 7–8 | 9–11 | Conditions, then one loop marks thirty students | |
+| 5 | 9–10 | 12–15 | I can compute and report on the whole class | **Midpoint** (after session 9) |
+| 6 | 11–12 | 16–17 | I write the calculation once and use it everywhere | |
+| 7 | 13–14 | 18–21 | It is a program now, not a notebook | |
+| 8 | 15–16 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** |
 
 ## 11. Verification discipline
 
@@ -853,7 +856,7 @@ Non-negotiable, per `METHODOLOGY.md` §9. Nothing is reported complete until the
 ### 11.1 Time arithmetic, by script
 
 `tools/check_times.py` parses every agenda table in `CURRICULUM.md`, asserts each sums to
-75 and the grand total is 1,800. Re-run after **every** curriculum edit.
+120 and the grand total is 1,920. Re-run after **every** curriculum edit.
 
 ### 11.2 Execute every notebook cell, in order
 
@@ -884,7 +887,7 @@ is never acceptable as participant-facing output.**
 
 ### 11.5 The fresh-laptop test
 
-Before Day 1 is final: a machine that has never had Python on it, following `handouts/SETUP.md`
+Before session 1 is final: a machine that has never had Python on it, following `handouts/SETUP.md`
 literally, with nothing else open. Once on Windows, once on macOS. Time it, and put the
 real number in `INSTRUCTOR_NOTES.md`.
 
@@ -906,17 +909,17 @@ every number and file name that was true before it.
 
 | Risk | Likelihood | Cost | Mitigation |
 |---|---|---|---|
-| **The ~1 GB Anaconda download** | Medium — lower than in a room, since each teacher downloads at home | Day 1 | `handouts/SETUP.md` sent 3 days early **with a reply required** confirming `handouts/check_setup.py` is green. No reply means not attempted |
+| **The ~1 GB Anaconda download** | Medium — lower than in a room, since each teacher downloads at home | session 1 | `handouts/SETUP.md` sent 3 days early **with a reply required** confirming `handouts/check_setup.py` is green. No reply means not attempted |
 | **No instructor present to fix a stuck machine** | **High** — this is what remote delivery costs | Any session | All screens shared through hands-on work (Meet shows every participant's at once); check in on each person **by name**; groups capped at 8 so that is possible |
 | Not enough disk space (Anaconda needs ~5 GB) | Medium | Blocks one participant entirely | Stated in `handouts/SETUP.md` as a checkable number *before* they start; asked on the enrolment form |
 | No admin rights on school laptops | Medium | Blocks installation | Both installers offer a per-user ("Just Me") install; `handouts/SETUP.md` selects it explicitly. If blocked outright, the fallback is in `INSTRUCTOR_NOTES.md` |
-| **VS Code's kernel picker** — "Select Kernel", or packages that "aren't installed" | **High** | 10 min per person, repeatedly | There is only one kernel in the list. Red callout on Days 1 and 2; `handouts/check_setup.py` prints which Python is running; `INSTRUCTOR_NOTES.md` lists it as the #1 thing to check before answering any other question |
-| The VS Code terminal opens without conda on Windows | Medium | Day 20, for some people | Usually handled by the Python extension. One-line fallback in `handouts/SETUP.md`; must be tested on a real school laptop before Day 1 (§11.5) |
+| **VS Code's kernel picker** — "Select Kernel", or packages that "aren't installed" | **High** | 10 min per person, repeatedly | There is only one kernel in the list. Red callout on Topics 1 and 2; `handouts/check_setup.py` prints which Python is running; `INSTRUCTOR_NOTES.md` lists it as the #1 thing to check before answering any other question |
+| The VS Code terminal opens without conda on Windows | Medium | Topic 20, for some people | Usually handled by the Python extension. One-line fallback in `handouts/SETUP.md`; must be tested on a real school laptop before session 1 (§11.5) |
 | A participant also installs Python from python.org | Medium | Two Pythons, confusing errors | `handouts/SETUP.md` says plainly: Anaconda and VS Code, nothing else. `handouts/check_setup.py` reports which Python is running |
-| Mixed pace — some finish in 5 min, some not at all | Certain | Room stalls | Required vs Extra exercises; solutions handed out after each day; fast finishers paired with slow ones from Day 3 |
+| Mixed pace — some finish in 5 min, some not at all | Certain | Room stalls | Required vs Extra exercises; solutions handed out after each day; fast finishers paired with slow ones from Topic 3 |
 | Missing a session (2 days apart, working adults) | High | Falls behind permanently | Every notebook is self-contained and re-declares what it needs; solutions published after each day; §13 catch-up rule |
-| **Real student data in the exercises** | Medium | A genuine privacy problem | Stated plainly on Day 5, *before* they choose their data: **first names or initials only, no surnames, no real grades, no ID numbers.** Repeated on Day 22 where they load a real file. The shipped sample class is fictional. |
-| Fear of the terminal at Day 20 | High | Loses the transition | Day 20 does exactly two things in a terminal: `cd` and `python file.py`. Nothing else, all course. |
+| **Real student data in the exercises** | Medium | A genuine privacy problem | Stated plainly on Topic 5, *before* they choose their data: **first names or initials only, no surnames, no real grades, no ID numbers.** Repeated on Topic 22 where they load a real file. The shipped sample class is fictional. |
+| Fear of the terminal at Topic 20 | High | Loses the transition | Topic 20 does exactly two things in a terminal: `cd` and `python file.py`. Nothing else, all course. |
 | Instructor talks past 15 minutes | High | The course stops being practical | The agenda is printed in `INSTRUCTOR_NOTES.md` with the cap stated per day |
 | **Inconsistent Armenian terminology across 19 notebooks** | High if unmanaged | Quiet, cumulative confusion | The glossary (§7.7) is fixed in Build Block 1, reviewed by a native speaker in Block 2, and `tools/check_style.py` greps for off-glossary terms |
 
@@ -926,17 +929,17 @@ every number and file name that was true before it.
 
 Cut, never compress. In this order:
 
-1. Day 13 `while` loops — the project menu ships written and can be explained in two
-   minutes on Day 21. This is the one genuinely removable day.
-2. Day 16's dict-of-lists (several grades per student) — the project works with one grade.
-3. Day 19's consolidation day, if the room is already ahead.
-4. Day 23's own-feature work — it can become optional homework.
+1. topic 13 `while` loops — the project menu ships written and can be explained in two
+   minutes on session 14. This is the one genuinely removable day.
+2. Topic 16's dict-of-lists (several grades per student) — the project works with one grade.
+3. Topic 19's consolidation day, if the room is already ahead.
+4. Topic 23's own-feature work — it can become optional homework.
 
 **Never cut:** the five discovery days (6, 8, 11, 17, 22) — each is a concept *and* its
-motivation in one session, so cutting one costs both. Nor Days 20–21 (the transition) or
-Day 24 (finishing something is the point).
+motivation in one session, so cutting one costs both. Nor topics 20–21 (the transition) or
+session 16 (finishing something is the point).
 
-**Never split a discovery day across two sessions.** If Day 11 runs out of time, cut its
+**Never split a discovery day across two sessions.** If topic 11 runs out of time, cut its
 Extra tasks — never its second half. A session that ends after the long way and before the
 short way is the single worst outcome the design can produce.
 
@@ -949,11 +952,11 @@ day's recap callout, must be enough. Build each notebook so this is true.
 
 | # | Methodology says | Here | Why |
 |---|---|---|---|
-| O1 | Transition is exactly one lesson | Two (Days 20–21) | 75-minute sessions; one cannot hold both "what a `.py` file is" and a five-module split |
-| O2 | Provider-agnostic pattern is the architectural spine (§7) | **Dropped entirely** | No external service exists in this course. Its replacement as the "one clean abstraction" is `settings.py` — one place for every number — which is the Day 9 lesson made structural |
+| O1 | Transition is exactly one lesson | Two (topics 20–21) | 120-minute sessions; one cannot hold both "what a `.py` file is" and a five-module split |
+| O2 | Provider-agnostic pattern is the architectural spine (§7) | **Dropped entirely** | No external service exists in this course. Its replacement as the "one clean abstraction" is `settings.py` — one place for every number — which is the topic 9 lesson made structural |
 | O3 | "Age-appropriate complexity: students already program" | Absolute beginners | Python is the subject, not the medium; §5's exclusion list is far longer |
 | O4 | Python is not taught; a cheatsheet is handed out | Python **is** the course; the cheatsheet is a printable summary that grows with it | Inverted audience |
-| O5 | 1–2 exercise callouts per lesson | 3–5 short ones | 75-minute sessions need smaller units of work |
+| O5 | 1–2 exercise callouts per lesson | 3–5 short ones | 120-minute sessions need smaller units of work |
 | O6 | "🌍 Where you'll see this in the real world" | "🏫 In your classroom" | The real world in question is a school |
 | O7 | Stub the external API (§9.2) | Stub `input()`; assert deliberate errors | Same discipline, different external dependency |
 | O8 | `TEACHER_NOTES.md` | `INSTRUCTOR_NOTES.md` | "Teacher" means the participant here |
@@ -972,17 +975,17 @@ adjectives, the definition of done — applies unchanged.
 |---|---|---|---|
 | **D1** | Language of materials | Armenian prose, comments and string values; English identifiers and keywords | §2, §7.7 |
 | **D2** | Python distribution | **Anaconda**, `base` environment, never activated by hand | §9.1 |
-| **D3** | Grading scale | **1–10, pass mark 4**, written once as `PASS_MARK = 4` from Day 9 | §6.2, §8 |
+| **D3** | Grading scale | **1–10, pass mark 4**, written once as `PASS_MARK = 4` from topic 9 | §6.2, §8 |
 | **D4** | Where participants keep their work | Their own laptop, one folder: `Documents/python_course/`. Same folder all 24 days | §9.2 |
 | **D5** | Practice between sessions | Yes — one ~10-minute task per day, **explicitly optional**, and the next day never assumes it was done | §7, §3 |
 | **D6** | Group size | **4–8, one instructor.** Fewer than 4 and they cannot discuss; more than 8 and the instructor cannot check on everyone remotely | §2, §12 |
-| **D11** | Delivery | **Remote**, over Google Meet with screen sharing. Each teacher needs their own laptop and a connection that holds a 75-minute call | §2, §12, `ENROLMENT.md` |
-| **D12** | Session length | **75 minutes**, 3 a week. May become 2 a week or 3 × 50 after the cohort adapts. Agendas rebuilt to 75 and verified | §3 |
+| **D11** | Delivery | **Remote**, over Google Meet with screen sharing. Each teacher needs their own laptop and a connection that holds a 120-minute call | §2, §12, `ENROLMENT.md` |
+| **D12** | Session length | **120 minutes, 2 a week** — 16 sessions over 8 weeks, 32 hours. Replaces 24 × 75 × 3 a week. The third weekly touchpoint is replaced by homework, which is the Extra tier that no longer fits in the room (`CURRICULUM.md`, Homework) | §3 |
 | **D13** | Success criterion | **>90% can code** = success · **<50%** = failure · between = adjust and repeat | `RATIONALE.md` §5a |
 | **D7** | Recruitment document | `ANNOUNCEMENT.md`, written **for teachers**. A one-page summary for school administration only if asked for | §9 |
 | **D8** | Version control | Own repository: `git@github.com:AIrtyoMKo/python_basics_training_program.git` | §9.3 |
 | **D9** | Armenian terminology review | The glossary is produced in Block 1 and **reviewed by you later**; the build continues meanwhile. Terminology is confined to the glossary file so a later change is one edit plus a scripted sweep, not a rewrite | §7.7, §11.6 |
-| **D10** | Editor | **VS Code**, Days 1–24, notebooks and `.py` files in the same window | §9.1 |
+| **D10** | Editor | **VS Code**, topics 1–24, notebooks and `.py` files in the same window | §9.1 |
 
 **Note on D9.** Because the glossary is reviewed after the notebooks are drafted, every
 Armenian term in every notebook must come from `handouts/CHEATSHEET.md`'s glossary table and nowhere
@@ -1000,8 +1003,8 @@ review closes — this is what keeps a wrong decision from propagating into 19 n
 |---|---|---|
 | **0 · Decisions** | All closed (§15); repository initialised with `.gitignore` | — |
 | **1 · Skeleton** | `CURRICULUM.md` (24 agendas, times verified), `OUTLINE.md`, `README.md`, the **bilingual glossary**, the sample class data | Is the day map right? Is the pain spiral right? **Is the Armenian terminology right?** Is anything taught that shouldn't be? |
-| **2 · Day 1 vertical slice** | `handouts/SETUP.md`, `handouts/check_setup.py`, `day01`, `day02`, `solutions/day02` | Is this the right level, tone, pace and length for a teacher who has never programmed — **and is the Armenian prose right?** **This is the most important review of the project.** Get it wrong here and 19 notebooks inherit it |
-| **3 · Notebook phase** | Days 3–19 + solutions + Tests 1–3, in four batches (3–6, 7–10, 11–14, 15–19) | Per batch: is the task believable? Does the tool land in the same session? Does each day fit 75 minutes? Are there enough Extra tasks? |
+| **2 · session 1 vertical slice** | `handouts/SETUP.md`, `handouts/check_setup.py`, `day01`, `day02`, `solutions/day02` | Is this the right level, tone, pace and length for a teacher who has never programmed — **and is the Armenian prose right?** **This is the most important review of the project.** Get it wrong here and 19 notebooks inherit it |
+| **3 · Notebook phase** | Topics 3–19 + solutions + Tests 1–3, in four batches (3–6, 7–10, 11–14, 15–19) | Per batch: is the task believable? Does the tool land in the same session? Does each session fit 120 minutes? Are there enough Extra tasks to carry the homework? |
 | **4 · Transition + project** | Guides 20–24, `project/gradebook/`, `handouts/CHEATSHEET.md` | Can a participant who followed the notebooks actually do this? |
 | **5 · Verification & handover** | All of §11 passing, `INSTRUCTOR_NOTES.md`, the fresh-laptop test results | Definition of done (§17) |
 
@@ -1012,7 +1015,7 @@ exercise size and the retrospective format — and cheap to throw away.
 
 ## 17. Definition of done
 
-- [ ] Every day's agenda sums to exactly 75, and the total to 1,800 — **verified by script**
+- [ ] Every session's agenda sums to exactly 120, and the total to 1,920 — **verified by script**
 - [ ] Every day has a concrete deliverable and participant-facing material
 - [ ] Every notebook cell executes in order, with `input()` stubbed
 - [ ] Every deliberate-failure cell raises the exact error it claims
@@ -1025,7 +1028,7 @@ exercise size and the retrospective format — and cheap to throw away.
 - [ ] Every stretch of repetitive work is preceded by the forward reassurance (§4.3)
 - [ ] All three assessments, both versions, and their marking guides exist and run
 - [ ] No `teacher` cell leaks into `tests/participant/`
-- [ ] No notebook after Day 1 needs the internet
+- [ ] No notebook after session 1 needs the internet
 - [ ] Nothing outside the standard library is imported anywhere — including Anaconda's own bundled packages
 - [ ] `project/gradebook/` runs end to end from a clean folder
 - [ ] Every failure path produces one actionable sentence; no participant-facing traceback
