@@ -310,7 +310,7 @@ on them.
 
 **Most of the list above is Part 2's material, not permanently excluded.** Comprehensions,
 `lambda`, `*args`/`**kwargs` and recursion are state-curriculum topics 16–17; libraries
-and environments are topics 15 and 21; git is topic 23. `docs/GOVERNMENT_ASSIGNMENT.md`
+and environments are topics 15 and 21; git is topic 23. `../shared/GOVERNMENT_ASSIGNMENT.md`
 maps all 24 topics to the part that covers them, and `ROADMAP.md` says when.
 
 **Tuple unpacking is used without the word.** `for name, grade in grades.items():` is

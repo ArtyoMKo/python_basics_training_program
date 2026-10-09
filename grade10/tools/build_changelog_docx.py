@@ -306,6 +306,9 @@ class Dossier:
 
 BASELINE_COMMIT = "abe1c32"      # the v1.1 build, Friday 2 October
 DOSSIER = "partners/Python_from_Zero_Programme_Dossier.docx"
+# The baseline predates the grade10/ + grade11/ split, so inside that commit the
+# dossier still sits at the repository root. Keep both spellings.
+BASELINE_DOSSIER = "partners/Python_from_Zero_Programme_Dossier.docx"
 
 
 def docx_text(data):
@@ -330,7 +333,7 @@ def check_facts():
     problems = []
 
     try:
-        old = subprocess.run(["git", "show", f"{BASELINE_COMMIT}:{DOSSIER}"],
+        old = subprocess.run(["git", "show", f"{BASELINE_COMMIT}:{BASELINE_DOSSIER}"],
                              cwd=ROOT, capture_output=True, check=True).stdout
     except subprocess.CalledProcessError:
         return [f"cannot read the baseline dossier from commit {BASELINE_COMMIT}"]

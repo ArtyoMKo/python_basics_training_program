@@ -1,300 +1,46 @@
-# AGENTS.md — contract for coding agents working on this repository
+# AGENTS.md — repository root
 
-**Read this before changing anything. It is short on purpose; everything here is a rule
-that is cheap to break by accident and expensive to fix.**
+This repository holds **two courses**, each self-contained:
 
-This file is the single source of truth for agents. `CLAUDE.md`, `.cursorrules` and
-`.cursor/rules/` all point here and contain no rules of their own, so there is nothing to
-keep in sync.
-
----
-
-## What this repository is
-
-**A six-month Python programme for Armenian public-school teachers with no programming
-background, in two parts.**
-
-| | | |
+| Folder | Course | Its contract |
 |---|---|---|
-| **Part 1** | **coding skills** — writing working code, no algorithmic difficulty | **2 months**, 24 sessions. **This repository** |
-| **Part 2** | **algorithmic tasks and the theory Part 1 postponed**, then classes and libraries | **4 months**. Outlined in `docs/ROADMAP.md`, not written |
+| `grade10/` | prepares teachers for **grade 10** — state topics 1–14 | `grade10/AGENTS.md` |
+| `grade11/` | prepares teachers for **grade 11** — state topics 15–22, 24 | `grade11/AGENTS.md` |
+| `shared/` | the state curriculum both answer to | `shared/GOVERNMENT_ASSIGNMENT.md` |
 
-Part 1 is 24 sessions, 3 a week for 8 weeks, **delivered remotely** in groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
-participant running a four-file gradebook program over their own class list.
-
-Sessions are **75 minutes**: 24 × 75 = 1,800 minutes = 30 hours, verified by
-`check_times.py`.
-
-It is not a library and has no users other than teachers in a classroom. "Working" means
-*a teacher can follow it in 75 minutes*, not *the code runs*.
-
----
-
-## Read in this order
-
-| # | File | What it gives you |
-|---|---|---|
-| 1 | **this file** | the rules you must not break |
-| 2 | `docs/PLAN.md` | the full build specification — §4 (discovery days), §5 (what is taught and excluded), §7 (notebook conventions) |
-| 3 | `docs/CURRICULUM.md` | the 24-day map and every agenda |
-| 4 | `docs/RATIONALE.md` | *why* the course is built this way, what it risks, and **§5a the rule it will be judged by** |
-| 5 | `docs/ROADMAP.md` | the six-month arc — Part 1 is built, Part 2 is a vision |
-
-`docs/PLAN.md` wins any disagreement with this file. If you find a contradiction, fix it and
-say so.
-
----
-
-## The build loop — get this wrong and your work is lost
-
-> ### ⛔ `notebooks/`, `solutions/` and `tests/` are GENERATED. Never edit a `.ipynb`.
+> ### ⛔ Read the `AGENTS.md` of the course you are changing. It is the authority there.
 >
-> They are rebuilt from `src/` and your edits will be silently overwritten.
+> The two share a method and nothing else. A rule from one is **not** a rule in the other —
+> `grade10/` forbids classes and third-party imports; `grade11/` teaches both.
 
-**Two commands. That is the whole workflow.**
+Never change a file in one course because of something you read in the other. If a change
+belongs in both, make it twice and say so.
 
-```bash
-vim src/day10_for_loops.py      # 1. edit the SOURCE
+## What is the same in both
 
-python tools/nbbuild.py         # 2. rebuild   (notebooks + solutions + tests)
-python tools/verify.py          # 3. verify    (nothing is done until this passes)
-```
+These hold everywhere, and a change to any of them belongs in both courses:
 
-`python tools/nbbuild.py day10` rebuilds one notebook when you are iterating.
+1. **Armenian explains, English codes.** Markdown, guides and handouts in Armenian; every
+   identifier, comment, docstring, string and printed line in English.
+2. **A laborious task and its replacement happen in the SAME session.** Never split one.
+3. **The tedium is never named.** A participant is never told they are suffering to make a
+   point. The notebook promises the shortcut in writing before the long stretch begins.
+4. **Every agenda sums to exactly 75 minutes.** Teaching never exceeds 12 minutes in one
+   block. If content does not fit, cut a topic — never compress one.
+5. **Three exercise tiers in every notebook** — Պարտադիր 3–4, Լրացուցիչ 3–4, Մարտահրավեր 1–2.
+6. **Every example is a classroom.** No `foo`, no `x = 5`, no fizzbuzz.
+7. **`notebooks/`, `solutions/` and `tests/` are generated from `src/`.** Never edit a
+   `.ipynb`.
 
-`verify.py` runs four checks and prints what failed:
-
-| | What it proves |
-|---|---|
-| agenda arithmetic | every agenda sums to 75; 24 days = 1,800 minutes |
-| notebooks execute | all 43 notebooks — lessons, solutions **and** both versions of each assessment — run cell by cell, in order, with `input()` stubbed and every deliberate-error cell raising exactly the error it claims |
-| style and language | the language rule, standard library only, excluded constructs, exercise sections present |
-| project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
-
-### The source format
-
-```
-#%% md                                  a markdown cell  (Armenian)
-#%% code                                a code cell      (English)
-#%% code expected-error: TypeError      this cell MUST raise TypeError
-#%% code interactive: 9; 6; quit        input() is fed these answers, in order
-#%% md teacher                          grader-only; dropped from the participant build
-```
-
-The first three become **cell metadata**, never visible text. A participant must never
-see `# interactive` in their notebook.
-
-**`teacher` is different: those cells are removed entirely** from
-`tests/participant/*.ipynb`. The assessments build twice — `tests/<name>.ipynb` for the
-grader, with the rubric and the points, and `tests/participant/<name>.ipynb` with
-questions only. Handing out the grader's copy would give away what each question measures
-and what it is worth.
-
-**The 18 solutions live in one source file**, `src/solutions_source.py`, split per day at
-build time — so a reviewer reads them in one pass instead of opening eighteen files.
-Cells there are marked `#%% day07 code`.
-
-## The seven rules
-
-### 1. Armenian explains. English codes. No exceptions.
-
-| Where | Language |
-|---|---|
-| Markdown cells, callouts, exercise instructions, `guides/*.md`, `handouts/SETUP.md`, `handouts/CHEATSHEET.md` | **Armenian** |
-| **Everything inside a code cell** — identifiers, comments, docstrings, string values, printed output | **English** |
-| `docs/PLAN.md`, `docs/CURRICULUM.md`, `docs/RATIONALE.md`, `docs/INSTRUCTOR_NOTES.md`, `tools/`, this file | English |
-
-Example names are **transliterated Armenian**: `Ani`, `Davit`, `Nare`, `Aram`, `Mariam`,
-`Tigran`, `Lilit`, `Gor`, `Anahit`, `Hayk`, `Sona`, `Vahe`. Familiar data, copyable code.
-
-*Enforced by `check_style.py`: zero Armenian characters inside any code cell.*
-
-### 2. A laborious task and its replacement happen in the SAME session.
-
-Five **discovery days** — 6, 8, 11, 17, 22 — each give a real task, let participants solve
-it the long way, then hand them the tool that collapses it, inside one 75 minutes.
-
-| Day | Task | Long way | Tool, same day |
-|---|---|---|---|
-| 6 | a register for the whole class | one variable per student | **lists** |
-| 8 | find one student by name | two parallel lists, read by hand | **dictionaries** |
-| 11 | mark the whole class | one `if` block per student | **`for` loops** |
-| 17 | an average on every report card | the same 6 lines, 4 times | **functions** |
-| 22 | keep the register after closing it | retyping it | **files** |
-
-**Every data type comes before conditions and loops.** Day 8's long half uses **no
-loops** — students are looked up by hand, by position, which is what makes the drift
-visible.
-
-**Never split one across two sessions.** Ending a session after the long way and before
-the short way is the worst outcome this design can produce. If a day runs long, cut its
-Extra tasks — never its second half.
-
-### 3. The task is real. The tedium is never named.
-
-A participant is **never** told they are doing something in order to suffer, or that the
-long way was there to make a point.
-
-| ❌ Never write | ✅ Write |
-|---|---|
-| "Today is a pain day." | "Today we build a register for the whole class." |
-| "Write 30 variables so you feel how bad it is." | "We need somewhere to keep each student's name and score." |
-| "Notice how awful that was." | *(a table comparing line counts, and nothing else)* |
-
-Before any stretch of repetitive typing, the notebook **promises the shortcut in writing
-and names when it arrives** (`docs/PLAN.md` §4.3). Keeping that promise is what makes the long
-half acceptable.
-
-### 4. Time is a hard ceiling.
-
-Every agenda sums to **exactly 75**. Teaching never exceeds **12 minutes** in one block.
-Hands-on is ≥ 49 of 75. If content does not fit, **cut a topic — never compress one**.
-
-*Enforced by `check_times.py`.*
-
-### 5. Standard library only.
-
-No `pip`, no venv, no third-party imports — **including Anaconda's 300 bundled packages**.
-`pandas` would make Day 11 a one-liner and teach a teacher nothing about loops.
-
-Also excluded, deliberately (`docs/PLAN.md` §5): classes, exceptions beyond one `try` in
-`main.py`, comprehensions, `lambda`, generators, recursion, regex, type hints, `async`,
-decorators, `*args`.
-
-Before adding anything to this list, answer: **which line of the final gradebook needs it?**
-
-*Enforced by `check_style.py`.*
-
-### 6. Three exercise tiers, every notebook.
-
-| Tier | Count | For |
-|---|---|---|
-| **Պարտադիր** (Required) | 3–4 | everyone, inside the allotted minutes |
-| **Լրացուցիչ** (Extra) | **3–4** | whoever finishes Required with 8 minutes left |
-| **Մարտահրավեր** (Challenge) | 1–2 | the fastest one or two in the room |
-
-In a group of 4–8, at least one or two finish early **every session**. Extra tasks are
-not optional to write. They use only what has already been taught — wider, not further ahead.
-
-Never a blank cell: always a skeleton with a comment saying what goes where.
-
-### 7. Every example is a classroom.
-
-Students, grades, attendance, averages, report lines. **No `foo`, no `x = 5`, no shopping
-baskets, no fizzbuzz.** A participant should see their Tuesday morning in any cell.
-
-The grading scale is **1–10, pass mark 4**, written once as `PASS_MARK = 4` from Day 8.
-
----
-
-## Numbers that are load-bearing
-
-The sample class is engineered, and **prose throughout the course quotes these values**:
-
-```
-12 students · grades sum to 78 · average exactly 6.5
-2 failing (Aram 3, Hayk 2) · highest Nare 10 · 10 pass
-```
-
-**If you change `notebooks/sample_class.csv`, you must grep for every number that was true
-before** (`docs/PLAN.md` §11.6). `6.5` in particular is quoted in Day 11 as the moment `float`
-stops being abstract.
-
----
-
-## Where things live, and how to refer to them
-
-Root holds **only** `README.md` and the agent files. Everything else is foldered.
-
-> **One rule that is easy to get backwards.** Participants receive a *flat folder* — a
-> notebook, a guide, `SETUP.md`, `CHEATSHEET.md`. So **participant-facing material
-> (`notebooks/`, `guides/`, `handouts/`) refers to files by bare name**, because that is
-> what the participant sees. Everything else — `docs/`, `tools/`, `tests/*_guide.md`,
-> this file — uses full repo paths.
-
-## File map
-
-```
-docs/PLAN.md            the build spec           ← the authority
-docs/CURRICULUM.md           24 agendas, time math
-docs/RATIONALE.md            why this method, the risk, the experiment   (for colleagues)
-docs/OUTLINE.md              what the course is, short                   (for administration)
-docs/INSTRUCTOR_NOTES.md     pre-flight, pacing, risks, what to cut
-handouts/SETUP.md                installation, Windows + macOS               (Armenian)
-handouts/CHEATSHEET.md           printable reference + bilingual glossary    (Armenian)
-docs/ANNOUNCEMENT.md         recruitment text                            (Armenian)
-handouts/check_setup.py          six checks a participant runs on Day 1
-
-src/                    ← EDIT HERE
-  day01…day19.py          notebook sources
-  solutions_source.py     all 18 solutions in one reviewable file
-  tests/                  the four test sources
-notebooks/              generated .ipynb — do not edit
-solutions/              generated .ipynb — do not edit
-tests/                  generated .ipynb (grader) + participant/ (generated)
-                        + mark1–3_guide.md and README.md (hand-written, instructor only)
-guides/                 Days 20–24, markdown, read beside the code  (Armenian)
-project/gradebook/      the finished reference program (4 files)
-partners/               generated .docx dossier and change log — do not edit
-tools/                  nbbuild.py, verify.py, the three checkers,
-                        build_partner_docx.py
-```
-
----
-
-## Mistakes specific to this repository
-
-| Mistake | What happens | Instead |
-|---|---|---|
-| Editing a `.ipynb` directly | silently overwritten on next build | edit `src/`, run `nbbuild.py` |
-| Armenian in a code comment or string | `check_style.py` fails | Armenian in markdown only |
-| Adding a topic without removing one | an agenda stops summing to 50 | cut something; say what you cut |
-| Importing `pandas`/`numpy` "just for this" | `check_style.py` fails | standard library only |
-| Writing "now you see how slow that was" | breaks rule 3 | compare line counts in a table |
-| Planting a problem to solve next session | breaks rule 2 | resolve it in the same notebook |
-| Committing notebooks with outputs | unreadable diffs, stale numbers | outputs stay cleared |
-| Changing the sample class casually | silently falsifies prose in several days | grep every quoted number, then rebuild the dossier |
-| Editing the `.docx` in `partners/` | overwritten on next build | edit `tools/build_partner_docx.py` |
-| Putting a rubric in a plain `#%% md` cell in an exam | it reaches the participant | mark it `#%% md teacher` |
-| Marking a deliberate-error cell as a bug | it is a teaching device | `expected-error:` cells must raise |
-
----
-
-## Commands
+## The build loop, in either course
 
 ```bash
-python tools/nbbuild.py              # rebuild everything from src/
-python tools/nbbuild.py day10        # rebuild one notebook
-
-python tools/verify.py               # all four checks — nothing is done until this passes
-
-python tools/build_partner_docx.py   # regenerate the partner dossier (.docx)
-python tools/build_changelog_docx.py # regenerate the partner change log (.docx)
-
-# the individual checkers, if you want one in isolation
-python tools/check_times.py
-python tools/run_all_notebooks.py    # add a day name to run just one
-python tools/check_style.py
-
-cd project/gradebook && python main.py    # drive the finished program by hand
+cd grade10                      # or grade11
+python tools/nbbuild.py         # rebuild notebooks, solutions and tests from src/
+python tools/verify.py          # nothing is done until this passes
 ```
 
-The build is **idempotent**: running `nbbuild.py` on an unchanged `src/` leaves every
-generated file byte-identical, so `git status` after a rebuild tells you exactly what you
-changed.
-
-## Open items — do not report these as done
-
-Both are stated plainly in `README.md` and `docs/INSTRUCTOR_NOTES.md`. **Do not quietly close
-them.**
-
-1. **The Armenian terminology has not been reviewed by a native speaker.** Every Armenian
-   technical term must come from the glossary in `handouts/CHEATSHEET.md` §1 and nowhere else —
-   that is what makes a later correction a find-and-replace rather than a re-read of
-   nineteen files. Terms marked ⚠ are the least certain.
-2. **`handouts/SETUP.md` has never been tested on a clean machine.** `docs/INSTRUCTOR_NOTES.md` §1 lists
-   the three things to confirm; the riskiest is whether VS Code's built-in terminal opens
-   with conda active on Windows.
-
-Anything else you cannot verify, **say so plainly and give the command to verify it**.
-Do not report completion on unexecuted material.
+Each course has its own copy of `tools/`. They are deliberately duplicated rather than
+shared: the checkers encode course-specific rules — `grade10/` fails a build that contains
+the word `class`, `grade11/` requires it — and a shared tool with a configuration file
+would be more moving parts, not fewer (`grade10/docs/PLAN.md` §0).

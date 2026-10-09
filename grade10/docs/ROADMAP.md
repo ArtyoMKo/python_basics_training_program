@@ -11,7 +11,7 @@
 | **Part 2** | **Algorithmic tasks and the theory Part 1 postponed**, then bigger projects, classes and libraries | **4 months** — six stages | **Vision only.** Outlined below; not written |
 
 Part 2 is also where the programme finishes covering the school curriculum our teachers
-must deliver. `docs/GOVERNMENT_ASSIGNMENT.md` maps every one of its 24 topics to the part
+must deliver. `../shared/GOVERNMENT_ASSIGNMENT.md` maps every one of its 24 topics to the part
 that covers it.
 
 The split is the whole argument of the programme. Part 1 deliberately removes every

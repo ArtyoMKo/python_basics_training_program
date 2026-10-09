@@ -65,7 +65,7 @@ functions and `return` · reading and writing files · modules and running a pro
 terminal.
 
 Part 1 covers topics 1–14 of the 24 in the state curriculum our teachers must deliver
-(`docs/GOVERNMENT_ASSIGNMENT.md`); `ROADMAP.md` shows where the rest lands.
+(`../shared/GOVERNMENT_ASSIGNMENT.md`); `ROADMAP.md` shows where the rest lands.
 
 **Habits that outlast the syntax**
 - If a number appears more than once, give it a name

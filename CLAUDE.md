@@ -1,17 +1,19 @@
 # CLAUDE.md
 
-**Read `AGENTS.md` at the repository root before changing anything.** It is the complete
-contract for agents working here, and it is the single source of truth — this file
-deliberately contains no rules of its own, so the two cannot drift apart.
+**Read `AGENTS.md` at the repository root, then the `AGENTS.md` inside the course folder
+you are changing.** They are the complete contract; this file deliberately contains no
+rules of its own so they cannot drift apart.
 
-The one thing worth repeating here, because it silently destroys work:
+This repository holds two courses — `grade10/` and `grade11/` — which share a method and
+not their rules. A rule from one is not a rule in the other.
+
+The one thing worth repeating, because it silently destroys work:
 
 > **`notebooks/`, `solutions/` and `tests/` are generated from `src/`.**
 > Never edit a `.ipynb`.
 
-The whole workflow is two commands:
-
 ```bash
-python tools/nbbuild.py     # rebuild notebooks, solutions and tests from src/
-python tools/verify.py      # four checks; nothing is done until this passes
+cd grade10                   # or grade11
+python tools/nbbuild.py      # rebuild notebooks, solutions and tests from src/
+python tools/verify.py       # nothing is done until this passes
 ```

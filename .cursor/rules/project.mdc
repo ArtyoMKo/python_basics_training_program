@@ -1,40 +1,22 @@
 ---
-description: Course-wide contract for the teacher Python course. Read AGENTS.md first.
-globs:
+description: Repository contract
 alwaysApply: true
 ---
 
-# Read AGENTS.md first
+Read AGENTS.md at the repository root, then the AGENTS.md inside the course folder
+you are changing. They are the complete contract; this file deliberately contains no
+rules of its own so they cannot drift apart.
 
-`AGENTS.md` at the repository root is the complete contract for agents working here, and
-the single source of truth. **Open it before making any change.** This rule file carries
-only the three things that are expensive to discover by failing.
+This repository holds two courses — grade10/ and grade11/ — which share a method and
+not their rules. A rule from one is not a rule in the other.
 
-## 1. The notebooks are generated
+The one thing worth repeating, because it silently destroys work:
 
-`notebooks/`, `solutions/` and `tests/` are built from `src/`. **Editing a `.ipynb`
-silently loses your work** on the next build.
+  notebooks/, solutions/ and tests/ are generated from src/.
+  Never edit a .ipynb.
 
-```bash
-vim src/day10_for_loops.py      # edit the source
-python tools/nbbuild.py         # rebuild notebooks, solutions and tests
-```
+bash
+cd grade10                   # or grade11
+python tools/nbbuild.py      # rebuild notebooks, solutions and tests from src/
+python tools/verify.py       # nothing is done until this passes
 
-## 2. Armenian explains, English codes
-
-Markdown cells, guides and `handouts/SETUP.md` are **Armenian**. **Everything inside a code cell is
-English** — identifiers, comments, docstrings and string values alike. Example names are
-transliterated: `Ani`, `Davit`, `Nare`.
-
-## 3. Nothing is done until these pass
-
-```bash
-python tools/verify.py
-```
-
-Four checks: agenda arithmetic, all 41 notebooks executing in order, the language rule,
-and `python main.py` end to end.
-
-Everything else — the same-session discovery structure, the rule that the tedium is never
-named, the exercise tiers, the excluded constructs, the load-bearing numbers in the sample
-class — is in `AGENTS.md`. Read it.
