@@ -7,7 +7,7 @@ curriculum **«ԱԲ սերունդ» — ՀԱՄԱԿԱՐԳՉԱՅԻՆ ԳԻՏՈՒԹ
 | | Prepares a teacher for | State topics | Status |
 |---|---|---|---|
 | **[`grade10/`](grade10/README.md)** | **Grade 10** | 1–14 | **Built and verified.** Not yet taught |
-| **[`grade11/`](grade11/README.md)** | **Grade 11** | 15–22, 24 | **In build** |
+| **[`grade11/`](grade11/README.md)** | **Grade 11** | 15–22, 24 | **Built and verified.** Not yet taught |
 | [`shared/`](shared/GOVERNMENT_ASSIGNMENT.md) | the curriculum both answer to | all 24 | reference |
 
 Each course is **24 sessions × 75 minutes = 30 hours**, three a week over eight weeks,

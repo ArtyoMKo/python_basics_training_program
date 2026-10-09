@@ -1,6 +1,9 @@
 # Build plan — the grade-11 course
 
-**Status board for the agent building this course.** It exists so that a session that
+**Status board for the agent building this course.**
+
+> **Part 1 is complete and verified as of 2026-10-09.** The only step left open is 15,
+> the partner document, which covers both courses and is written once for the pair. It exists so that a session that
 loses its context can pick up exactly where the last one stopped. Update the Status column
 as each step completes; never mark a step done before `tools/verify.py` passes.
 
@@ -102,19 +105,19 @@ form: **which line of the final school report tool needs it?**
 | # | Step | Produces | Status |
 |---|---|---|---|
 | **1** | Repository split into `grade10/` + `grade11/` + `shared/`; grade 10 re-verified in its new home | root `README.md`, `AGENTS.md`, this tree | ✅ done |
-| **2** | **This plan**, the course contract, and the full day map with agendas | `BUILD_PLAN.md`, `AGENTS.md`, `CURRICULUM.md` | ✅ done — `PLAN.md` outstanding |
+| **2** | **This plan**, the course contract, and the full day map with agendas | `BUILD_PLAN.md`, `AGENTS.md`, `CURRICULUM.md` | ✅ done |
 | **3** | Tooling: copy `tools/` from grade 10 and invert the two rules in `check_style.py`; new sample data | `tools/*.py` | ✅ done |
 | **4** | The sample school — engineered numbers that prose may quote, as `6.5` is quoted in grade 10 | `data/school.csv`, numbers table in `AGENTS.md` | ✅ done |
-| **5** | Days 1–8 sources — setup, functions, comprehensions | `src/day01…day08.py` | ⏳ day 1 built and verified; 2–8 outstanding |
-| **6** | Days 9–14 sources — classes and inheritance | `src/day09…day14.py` | ☐ |
-| **7** | Days 15–21 sources — NumPy, Matplotlib, pandas, environments | `src/day15…day21.py` | ☐ |
-| **8** | Days 22–24 — recursion, debugging, the project | `src/day22.py`, `guides/day23…day24.md` | ☐ |
-| **9** | Solutions, all in one reviewable file | `src/solutions_source.py` | ☐ |
-| **10** | Three assessment sittings, grader and participant builds | `src/tests/*.py`, `tests/mark*_guide.md` | ☐ |
-| **11** | The reference project — the school report tool | `project/school_report/` | ☐ |
-| **12** | Participant-facing documents | `handouts/SETUP.md`, `CHEATSHEET.md`, `docs/ANNOUNCEMENT.md`, `docs/ENROLMENT.md` | ☐ |
-| **13** | Colleague-facing documents | `docs/RATIONALE.md`, `docs/OUTLINE.md`, `docs/INSTRUCTOR_NOTES.md`, `docs/ROADMAP.md` | ☐ |
-| **14** | Full verification; coverage audit against `../shared/GOVERNMENT_ASSIGNMENT.md` | green `verify.py`, a §7-style audit table | ☐ |
+| **5** | Days 1–8 sources — setup, functions, comprehensions | `src/day01…day08.py` | ✅ done |
+| **6** | Days 9–14 sources — classes and inheritance | `src/day09…day14.py` | ✅ done |
+| **7** | Days 15–21 sources — NumPy, Matplotlib, pandas, environments | `src/day15…day21.py` | ✅ done |
+| **8** | Days 22–24 — recursion, debugging, the project | `guides/day22…day24.md` | ✅ done |
+| **9** | Solutions, all in one reviewable file | `src/solutions_source.py` | ✅ done |
+| **10** | Three assessment sittings, grader and participant builds | `src/tests/*.py`, `tests/mark*_guide.md` | ✅ done |
+| **11** | The reference project — the school report tool | `project/school_report/` | ✅ done |
+| **12** | Participant-facing documents | `handouts/SETUP.md`, `CHEATSHEET.md`, `docs/ANNOUNCEMENT.md`, `docs/ENROLMENT.md` | ✅ done |
+| **13** | Colleague-facing documents | `docs/RATIONALE.md`, `docs/OUTLINE.md`, `docs/INSTRUCTOR_NOTES.md`, `docs/ROADMAP.md` | ✅ done |
+| **14** | Full verification; coverage audit against `../shared/GOVERNMENT_ASSIGNMENT.md` | green `verify.py`, the audit in `../shared/GOVERNMENT_ASSIGNMENT.md` §8 | ✅ done |
 | **15** | Partner document covering both courses | `partners/` | ☐ |
 
 ### Rules for working through them
