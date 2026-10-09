@@ -163,10 +163,11 @@ before the long half starts, and by never framing the work as an ordeal — but 
 participant who leaves on Topic 6 thinking "I typed for twenty minutes" rather than "I
 learned what a list is for" is a real failure mode, and it will happen to somebody.
 
-**Thirty-two hours is not much.** Eight weeks, two hours at a time, for working teachers.
+**Twenty-two and a half hours is not much.** Nine weeks, 75 minutes at a time, for
+working teachers — and more of the practice is at home than on any earlier schedule.
 The scope is deliberately narrow, and narrow means things are missing.
 
-**Attendance.** Three sessions a week for nine weeks, on top of a teaching job. Every
+**Attendance.** Two sessions a week for nine weeks, on top of a teaching job. Every
 session is built to be self-contained and solutions go out afterwards, but people will
 still drop out.
 
@@ -200,13 +201,13 @@ extra work:
 | **Diagnostic** (before session 1) | Q1: can they run a cell at all, and at what help level? | **The baseline.** Without it we can only report an endpoint, not change |
 | **Midpoint** (after topic 13) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
 | **Final** (Topic 24) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the four-file project was not reachable |
-| **session 14** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
+| **session 16** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
 | **Session 18** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
 | **Session 18** | Attendance across all 18 sessions | Below a certain point, nothing else is interpretable |
 
 **Three assessments**, designed with our partner colleague: a diagnostic before session 1, a
 midpoint after session 10, and a final practical in session 18. They are supervised sittings
-outside the 32 teaching hours, scored out of 44, 50 and 70, with a help level recorded
+outside the 22½ teaching hours, scored out of 44, 50 and 70, with a help level recorded
 beside every score.
 
 **Scoring them does not make them exams.** The scores diagnose the programme, not the
@@ -260,7 +261,7 @@ pass/fail and neither of which requires a new instrument:
 
 | Evidence | Where it comes from |
 |---|---|
-| They left **session 14** with a working `python main.py`, confirmed individually | The hard gate already built into the course |
+| They left **session 16** with a working `python main.py`, confirmed individually | The hard gate already built into the course |
 | They scored **at least half** of the 70 points on questions 1–7 of the final practical | Those questions require writing code unaided, from a blank cell |
 
 A participant meeting both **can code**. Meeting one but not the other is recorded as

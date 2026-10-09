@@ -125,7 +125,7 @@ is the format any material we hand to the ministry would be expected to match:
 ## 6. What this means for our programme
 
 **Our Part 1 covers the pupils' topics 1–14, plus the `import` half of topic 15**,
-compressed from ~118 pupil-hours into roughly 30 teacher-hours. A teacher finishing Part 1
+compressed from ~118 pupil-hours into roughly 22½ teacher-hours. A teacher finishing Part 1
 can teach **grade 10 semester 1 outright**, and the first two topics of semester 2
 (functions and files).
 
@@ -197,7 +197,7 @@ Checked against the built materials (`grade11/src/`, `guides/`, `project/`) on
 | 19 | Ժառանգականություն | 10 | ✅ | topics 9–11 — `class X(Y)`, `super()`, overriding, polymorphism |
 | 20 | Մոդուլներ և կրկնություն | 8 | ✅ | topics 20, 22 — the three kinds of `import`, our own modules, the five-file split |
 | 21 | Գրադարաններ և միջավայրեր | 23 | ◐ | topics 12–18, 20 — **numpy, matplotlib and pandas properly.** `sklearn`, `pytorch`, `tensorflow`, Kaggle, Docker and Hugging Face are **named once in session 18 and never used** |
-| 22 | Սխալների հանգուցալուծում | 7 | ✅ | session 14, and every day's error reading — tracebacks, `assert`, breakpoints, the silent wrong answer |
+| 22 | Սխալների հանգուցալուծում | 7 | ✅ | session 16, and every topic's error reading — tracebacks, `assert`, breakpoints, the silent wrong answer |
 | 23 | Տարբերակի կառավարում (git) | 6 | ○ | **Not taught, by decision.** Taken up once the rest of the subject is secure |
 | 24 | Ամփոփում | 2 | ✅ | topic 24 |
 
@@ -223,4 +223,4 @@ Checked against the built materials (`grade11/src/`, `guides/`, `project/`) on
 | Grade 11 · S2 | 21–24 | **grade-11 course**, except topic 23 |
 
 **A teacher who completes both courses can deliver the whole subject except topic 23.**
-That is 187 of the curriculum's 193 pupil-hours, in 64 teacher-hours.
+That is 187 of the curriculum's 193 pupil-hours, in 45 teacher-hours.

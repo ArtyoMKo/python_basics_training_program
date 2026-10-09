@@ -8,7 +8,7 @@ Three sittings, designed with our partner colleague and integrated into the cour
 | 2 | Midpoint | **After session 10** | 60–75 min | 50 | Topics 6–13: data types, conditions, loops |
 | 3 | Final practical | **Session 18** | 90–120 min | 70 **+ 10 reported separately** | topics 14–24: functions, dictionaries, files, the project |
 
-**These are separate sittings, not session time.** The 18 teaching sessions remain 20
+**These are separate sittings, not session time.** The 18 teaching sessions remain 22½
 hours exactly; the assessments add roughly 3½ hours on top.
 
 ## Two versions of every test — hand out the right one
@@ -32,7 +32,7 @@ be handed the rubric by accident. Never edit the `.ipynb` files.
 - **The first two diagnose the programme, not the teachers.** They exist to show where to
   slow down and whether the method is working. Participants are told this.
 - **The third is also a gate.** It decides who continues to Part 2, on the bar in
-  `docs/RATIONALE.md` §5a — a working `python main.py` at session 14 plus at least half of
+  `docs/RATIONALE.md` §5a — a working `python main.py` at session 16 plus at least half of
   questions 1–7. **Question 8 does not gate.** Participants are told this *before the
   course starts*, not when the paper is handed out.
 - Only the course cheatsheet is open. No internet, no AI, no asking a neighbour.

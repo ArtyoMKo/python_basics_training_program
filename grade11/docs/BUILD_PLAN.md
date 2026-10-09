@@ -28,7 +28,7 @@ half of grade 10's second semester the first course did not reach.
 |---|---|
 | **Entry** | the grade-10 course, and nothing else |
 | **State topics** | **15, 16, 17, 18, 19, 20, 21, 22, 24** — not 23 (git), deferred |
-| **Shape** | 18 sessions × 120 min = 22 h 30 · 2 a week × 9 weeks · remote · groups of 4–8 |
+| **Shape** | 18 sessions × 75 min = 22 h 30 · 2 a week × 9 weeks · remote · groups of 4–8 |
 | **Exit** | a teacher can write and explain a class, read a library's output, and produce a report with statistics and a chart from their school's own data |
 
 **Part 2 of this course** — algorithmic recursion, complexity, algorithm design, bigger

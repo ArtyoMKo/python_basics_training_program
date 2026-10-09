@@ -1,6 +1,6 @@
 # Assessments — the grade-11 course
 
-Three sittings. They are **separate from the 18 teaching sessions**, which remain 30
+Three sittings. They are **separate from the 18 teaching sessions**, which remain 22½
 hours exactly, and add roughly 3½ hours on top.
 
 | | Test | When | Length | Points |

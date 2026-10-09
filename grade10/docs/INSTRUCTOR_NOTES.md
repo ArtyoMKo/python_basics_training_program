@@ -54,7 +54,7 @@ The substitute is **screen sharing, used constantly and asked for by name**:
 | Pair fast finishers with slower ones from topic 3 | **Breakout rooms**, two or three at a time, for the exercise block |
 | Walk the room during exercises | All screens shared, switching between them |
 | "Swap laptops with your neighbour" in session 18 | **Send your folder to a colleague**; they run it from your README alone and report back on the call |
-| Confirm `python main.py` individually on session 14 | Same, but **each person shares their screen and runs it while you watch**. Do not accept "it works" |
+| Confirm `python main.py` individually on session 16 | Same, but **each person shares their screen and runs it while you watch**. Do not accept "it works" |
 
 ### Group size: 4 to 8
 
@@ -100,7 +100,7 @@ Other frequent problems, in order of how often they occur:
 | `NameError` | A cell above was not run | Run → Run All Above |
 | `IndentationError` | Tab/space mix, or a missing four spaces | Retype the line; do not copy it |
 | Nothing prints in a `.py` file (Topic 20+) | They expect notebook behaviour | Everything you want to see needs `print()` |
-| `FileNotFoundError` (session 14+) | Wrong folder, or `data/` misplaced | `python_course` must be the opened folder |
+| `FileNotFoundError` (session 16+) | Wrong folder, or `data/` misplaced | `python_course` must be the opened folder |
 
 ---
 
@@ -144,7 +144,7 @@ stop, so nobody will tell you when you are over.
 **If you run out of time, cut — never compress.** In this order:
 
 1. **Topic 16 (`while` loops).** The only genuinely removable day. The project's menu ships
-   written; explain it in two minutes on session 14.
+   written; explain it in two minutes on session 16.
 2. **Topic 15's dict-of-lists** (several grades per student). The project works with one.
 3. **Topic 19's consolidation**, if the room is already ahead — but see §5, it is also the
    catch-up day.
@@ -155,6 +155,27 @@ motivation in one session, so cutting one costs both. Nor topics 20–21 (the tr
 session 18 (finishing something is the point).
 
 ---
+
+## Homework — required on this schedule, and you must say so
+
+Two sessions a week of 75 minutes is **22½ contact hours**, against 30 on the original
+three-a-week schedule. Nothing was cut from the course; the practice moved.
+
+| Session shape | What goes home | Roughly |
+|---|---|---|
+| Single | the Extra tier | 15–25 min |
+| Discovery | the Extra tier | 20–30 min |
+| **Paired** | **the Required tier of both notebooks**, then Extra | **45–60 min** |
+| Setup, transition, project | nothing, or the second notebook's Required | 0–30 min |
+
+- **Nothing new is ever introduced at home.** Every task is already in the notebook and
+  uses only what the session taught.
+- **Every agenda opens with a recap block, and that is where homework is checked.** If you
+  skip it, the paired sessions stop working within a fortnight.
+- **Say in week 1 that homework is required**, and that a participant who does none will
+  not finish. They were told at enrolment; hearing it again from you makes it real.
+- A participant falling behind on homework is the **earliest** signal you get. Act on it
+  in week 2, not week 6.
 
 ## 5. Mixed pace, and the two-day gap
 
@@ -168,9 +189,9 @@ These are working adults meeting twice a week. Some will miss sessions.
   should ever leave with Required work unfinished.
 - **Pair fast finishers with slower ones from Topic 3.** Explaining is the best available
   use of a fast participant, and it costs you nothing.
-- **The practice task at the end of each notebook is optional and the next day never
-  assumes it was done.** Say that out loud in week 1, or half the room will arrive
-  anxious.
+- **Homework is required on this schedule**, and the next session's recap block checks
+  it. Say that out loud in week 1 — they were told at enrolment, and hearing it from you
+  makes it real. See the Homework section below for what each shape sets.
 
 ---
 
@@ -325,5 +346,5 @@ school uses a different word, change the glossary and re-run the checker.
 | 22 | Their own class in `data/my_class.csv`, loaded and saved back |
 | 24 | A README a colleague successfully ran from, and a 90-second demo |
 
-**Session 14 is the one to be strict about.** Do not let anyone leave that session without
+**Session 16 is the one to be strict about.** Do not let anyone leave that session without
 `python main.py` running. Everything after it assumes that it does.

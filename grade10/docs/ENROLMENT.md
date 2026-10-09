@@ -29,16 +29,11 @@ The questions as sent are in Armenian; the right-hand column is for us.
 
 ## How to read the answers
 
-### Question 1 — days per week
-
-**Groups must be homogeneous on this.** A teacher who can give two days cannot be in a
-three-day group; they will fall a session behind every week. If both answers are common,
-move the group's two slots rather than compromising on the schedule.
 
 ### Question 2 — internet
 
 The honest test is not "do you have internet" but **"can you hold a video call with
-screen sharing for two hours"**. Ask it that way in the follow-up if the answer is vague.
+screen sharing for 75 minutes"**. Ask it that way in the follow-up if the answer is vague.
 
 A teacher on an unstable connection is the hardest case in a remote course: they miss the
 explanation, not just the room. If it cannot be fixed, consider whether they can attend
@@ -106,3 +101,14 @@ formed rather than after.
 **Keep the answers.** When the programme reports its result (`RATIONALE.md` §5), the
 question "did the people who struggled have worse equipment?" is one we should be able
 to answer rather than guess at.
+
+
+## Homework — say this before they agree
+
+**Homework is required on this schedule.** Two 75-minute sessions a week cannot hold 24
+topics and their practice, so on the sessions that cover two topics the Required tier of
+both notebooks goes home — 45–60 minutes. Everywhere else it is the Extra tier, 15–30
+minutes. **Nothing new is introduced at home**, and the next session opens by checking it.
+
+A participant who does no homework will not finish. That is a fair thing to say at
+enrolment and an unfair thing to discover in week three.

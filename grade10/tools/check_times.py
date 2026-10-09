@@ -88,8 +88,9 @@ def main():
         return 1
 
     print(f"✅ {agendas} agenda tables, each summing to {LESSON_MINUTES}")
-    print(f"✅ {len(numbers)} sessions listed, {sum(minutes)} minutes "
-          f"= {sum(minutes) // 60} hours")
+    hours, remainder = divmod(sum(minutes), 60)
+    duration = f"{hours} h {remainder:02d}" if remainder else f"{hours} hours"
+    print(f"✅ {len(numbers)} sessions listed, {sum(minutes)} minutes = {duration}")
     return 0
 
 

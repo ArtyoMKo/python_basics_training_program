@@ -21,8 +21,9 @@ COURSES = ["grade10", "grade11"]
 
 SESSIONS = 18
 MINUTES = 75
-TOTAL = SESSIONS * MINUTES          # 1,920
-HOURS = TOTAL // 60                 # 32
+TOTAL = SESSIONS * MINUTES
+HOURS, REMAINDER = divmod(TOTAL, 60)
+DURATION = f"{HOURS} h {REMAINDER:02d}" if REMAINDER else f"{HOURS} h"
 TOPICS = 24
 DISCOVERY = {"grade10": 5, "grade11": 7}
 
@@ -75,29 +76,88 @@ def check_session_map(course):
 
 # ------------------------------------------------------- figures restated in prose
 def check_figures(course):
-    stale = {
-        r"\b24 sessions\b": "24 sessions (now 18)",
-        r"\b16 sessions\b": "16 sessions (now 18)",
-        r"\b120 minutes\b": "120 minutes (now 75)",
-        r"120-minute": "120-minute (now 75)",
-        r"\b32 hours\b": "32 hours (now 22 h 30)",
-        r"1,920": "1,920 minutes (now 1,350)",
-        r"\b30 hours\b": "30 hours (now 22 h 30)",
-        r"1,800": "1,800 minutes (now 1,920)",
-        r"three a week": "three a week (now two)",
-        r"three times a week": "three times a week (now twice)",
-        r"fifty minutes": "fifty minutes",
-    }
-    for path in sorted((ROOT / course).rglob("*.md")):
-        if any(part in path.parts for part in ("notebooks", "solutions", "participant")):
-            continue
+    """Figures from a schedule this programme no longer runs.
+
+    Three schedules have been used: 24 x 75 three a week, 16 x 120 twice a week, and now
+    18 x 75 twice a week. Every one left figures behind in prose, and the ones that
+    survive longest are the ones a plain search misses -- abbreviated ("120 min", "32 h"),
+    wrapped across a line, written in Armenian, or sitting in a .py source rather than a
+    document. All four cases are covered here.
+    """
+    stale = [
+        # English, in every spelling that has actually appeared
+        (r"\b24 sessions\b", "24 sessions"),
+        (r"\b16 sessions\b", "16 sessions"),
+        (r"\b120 min(?:ute)?s?\b", "120 minutes"),
+        (r"120-minute", "120-minute"),
+        (r"\btwo-hour\b", "two-hour"),
+        (r"\b30 hours?\b", "30 hours"),
+        (r"\b32 hours?\b", "32 hours"),
+        (r"\b32 h\b", "32 h"),
+        (r"\b32 contact hours\b", "32 contact hours"),
+        (r"\b20 hours?\b", "20 hours"),
+        (r"\b64 teacher-hours\b", "64 teacher-hours"),
+        (r"\bsixty teacher-hours\b", "sixty teacher-hours"),
+        (r"1,800", "1,800 minutes"),
+        (r"1,920", "1,920 minutes"),
+        (r"\bof 120\b", "a figure out of 120"),
+        (r"three a week", "three a week"),
+        (r"three times a week", "three times a week"),
+        (r"\beight weeks\b", "eight weeks"),
+        (r"\b8 weeks\b", "8 weeks"),
+        (r"fifty minutes", "fifty minutes"),
+        (r"\b24-session\b", "24-session"),
+        (r"\b16 × 120\b|\b16 x 120\b", "16 × 120"),
+        (r"sums to (?:exactly )?120", "an agenda summing to 120"),
+        (r"\btwo hours\b", "two hours"),
+        (r"Three sessions a week", "three sessions a week"),
+        (r"never below 68%", "a 68% hands-on floor"),
+        (r"may never exceed \*\*15\*\* minutes|exceed 15 minutes", "a 15-minute teaching cap"),
+        (r"90–75|90-75", "a broken exam duration (90–75)"),
+        (r"Discovery \+", "the Discovery+ shape, which no longer exists"),
+        # Armenian -- the participant-facing material is written in it
+        (r"Ութ շաբաթ", "ութ շաբաթ (eight weeks)"),
+        (r"ութ շաբաթ", "ութ շաբաթ (eight weeks)"),
+        (r"մեկ նիստը՝ \*\*2 ժամ\*\*", "2 ժամ (two-hour sessions)"),
+        (r"Դասընթացում 16-ն է", "16 sessions, in the glossary"),
+        (r"քսանչորս օր", "քսանչորս օր (twenty-four days)"),
+        (r"Ընդմիջումից հետո", "'after the break' — no agenda has a break block at 75 min"),
+        (r"Այս նիստի առաջին կեսին", "'in the first half of this session' — from the 120-minute pairing"),
+        (r"\bԵրեկ\b", "Երեկ (yesterday)"),
+        (r"\bերեկ\b", "երեկ (yesterday)"),
+        (r"\bվաղվանից\b", "վաղվանից (from tomorrow)"),
+        (r"8 շաբաթ", "8 շաբաթ (eight weeks)"),
+        (r"24 դաս", "24 դաս (twenty-four lessons)"),
+        (r"24 օրը", "24 օրը (all twenty-four days)"),
+        (r"Քսանչորս օր", "Քսանչորս օր (twenty-four days)"),
+        (r"տասնինը օրը", "տասնինը օրը (nineteen days)"),
+        (r"Ոչ պարտադիր", "homework described as optional"),
+    ]
+
+    # Exam durations are not session lengths and must survive untouched.
+    durations = ["60–75 min", "60-75 min", "90–120 min", "90-120 min",
+                 "90–120 minutes", "45–60 min", "45-60 min", "60–75 րոպե",
+                 "90–120 րոպե", "45–60 րոպե"]
+
+    skip = ("notebooks", "solutions", "participant", "__pycache__")
+    targets = [p for p in (ROOT / course).rglob("*.md") if not any(s in p.parts for s in skip)]
+    targets += [p for p in (ROOT / course).rglob("*.py") if not any(s in p.parts for s in skip)]
+    targets += [p for p in (ROOT / "shared").glob("*.md")]
+    targets += [p for p in (ROOT / "tools").glob("*.py")]
+
+    for path in targets:
         text = path.read_text(encoding="utf-8")
-        # An exam runs 60-75 minutes. That is a duration, not a session length.
-        for duration in ("60–75 min", "60-75 min", "90–120 min", "90-120 min",
-                         "90–120 minutes", "45–60 min"):
+        if path.name in ("check_docs.py", "build_partner_docx.py", "build_changelog_docx.py"):
+            continue            # these name the stale figures on purpose, to detect them
+        for duration in durations:
             text = text.replace(duration, "")
-        for pattern, why in stale.items():
-            if re.search(pattern, text):
+        # A line may cite an earlier schedule on purpose -- a comparison, or the record
+        # of what changed. Those are marked <!--history--> and are not drift.
+        text = "\n".join(line for line in text.split("\n") if "<!--history-->" not in line)
+        # Collapse newlines so a phrase broken across two lines is still found.
+        flat = re.sub(r"\s+", " ", text)
+        for pattern, why in stale:
+            if re.search(pattern, flat):
                 fail(str(path.relative_to(ROOT)), f"still says {why}")
 
 
@@ -146,6 +206,15 @@ def check_assessment(course):
         if text and final not in text.lower():
             fail(f"{course}/{rel}", f"does not place the final practical in {final}")
 
+    # The exam sources are what a participant actually reads, so check them too.
+    exams = {"test2_midpoint": f"{session}-րդ նիստից հետո",
+             "test3_final_practical": f"{SESSIONS}-րդ նիստ"}
+    for name, expected in exams.items():
+        text = read(course, "src", "tests", f"{name}.py")
+        if text and expected not in text:
+            fail(f"{course}/src/tests/{name}.py",
+                 f"its header does not say {expected!r} — this ships to participants")
+
 
 # -------------------------------------------------------- links point at real files
 def check_links(course):
@@ -169,6 +238,24 @@ def check_links(course):
                 continue
             if not target.exists():
                 fail(str(path.relative_to(ROOT)), f"points at {match}, which does not exist")
+
+
+def check_homework_is_disclosed(course):
+    """Homework is load-bearing on this schedule, so it must be said before enrolment.
+
+    A paired session sets the Required tier of two notebooks. If the recruitment text or
+    the enrolment guidance still calls practice optional, a teacher agrees to a course
+    that is not the one they will be asked to do.
+    """
+    for rel in ["docs/ANNOUNCEMENT.md", "docs/ENROLMENT.md", "docs/INSTRUCTOR_NOTES.md"]:
+        text = read(course, *rel.split("/"))
+        if text is None:
+            continue
+        lowered = text.lower()
+        if "տնային" not in text and "homework" not in lowered:
+            fail(f"{course}/{rel}", "never mentions homework, which is now required")
+        if "ոչ պարտադիր" in lowered or "optional and the next" in lowered:
+            fail(f"{course}/{rel}", "still describes homework as optional")
 
 
 def check_partner_documents():
@@ -210,6 +297,7 @@ def main():
         check_inventory(course)
         check_assessment(course)
         check_links(course)
+        check_homework_is_disclosed(course)
 
     # Shared documents
     shared = read("shared", "GOVERNMENT_ASSIGNMENT.md") or ""
@@ -225,12 +313,13 @@ def main():
             print(f"   {problem}")
         return 1
 
-    print(f"✅ both session maps: {SESSIONS} sessions × {MINUTES} min = {TOTAL} min = {HOURS} h")
+    print(f"✅ both session maps: {SESSIONS} sessions × {MINUTES} min = {TOTAL} min = {DURATION}")
     print(f"✅ all {TOPICS} topics covered exactly once, in both courses")
-    print(f"✅ no figures from an earlier schedule left in any document")
+    print("✅ no figures from an earlier schedule, in any document, source or exam")
     print("✅ assessment timing agrees across curriculum, guides and instructor notes")
     print("✅ every file path quoted in a document exists")
     print("✅ the partner dossier covers both courses — curriculum, schedule, assessment")
+    print("✅ homework is disclosed as required in both courses' enrolment material")
     return 0
 
 

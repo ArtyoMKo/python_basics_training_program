@@ -33,7 +33,7 @@ Asked by message before the first session. All six matter; none is a test.
 | 2 | Ո՞ր օրն էր ամենադժվարը առաջին դասընթացում։ | Tells you where this group is fragile. If three people say "functions", topic 2 needs more time |
 | 3 | Քո համակարգիչը նո՞ւյնն է, ինչ առաջին դասընթացում։ | A new machine means a fresh install, and that is a ten-minute call now rather than a lost first session |
 | 4 | Կարո՞ղ ես էկրան կիսել Google Meet-ում։ | **Gating in practice.** Half the course is watching each other's screens |
-| 5 | Քանի՞ դաս ես բաց թողնելու հաջորդ երկու ամսում։ | More than four of 24 and they will not finish. Say so kindly, now |
+| 5 | Քանի՞ դաս ես բաց թողնելու հաջորդ երկու ամսում։ | More than three of 18 and they will not finish. Say so kindly, now |
 | 6 | Սեպտեմբերին 11-րդ դասարա՞ն ես դասավանդելու։ | Not gating, but it changes their motivation and yours |
 
 ### Before anybody says yes
@@ -51,6 +51,7 @@ Four things. All of them are easier to say now than to explain later.
 |---|---|
 | **This is harder than the first course** | Classes and libraries are a different kind of difficulty from loops. Saying so sets the right expectation; discovering it in week two does not |
 | **The last assessment decides who continues** | The first two are diagnostic. **The third gates entry to Part 2.** People behave differently knowing this, so telling them afterwards would be unfair and would spoil the result |
+| **Homework is required, and it is 45–60 minutes after some sessions** | Two 75-minute sessions a week cannot hold 24 topics and their practice. On the sessions that cover two topics, the Required tier of both notebooks goes home. **Nothing new is introduced at home** — every task is already in the notebook. Say this before they agree, not in week three |
 | **Missing a session is recoverable; missing four is not** | Every notebook is self-contained and the solutions are published. But the discovery days do not read well alone |
 | **In September they teach this** | The whole thing is pointed at that. It is also the best reason anyone has to finish |
 

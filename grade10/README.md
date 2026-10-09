@@ -1,6 +1,6 @@
 # Python from Zero — a course for school teachers
 
-A 24-session introduction to Python for public-school teachers with **no programming
+An 18-session introduction to Python for public-school teachers with **no programming
 background**, built to the rules in `docs/PLAN.md` and the house style in
 `../tumo_month_workshop/METHODOLOGY.md`.
 
@@ -141,7 +141,7 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 | Style | ✅ stdlib only, no excluded constructs, every identifier English |
 | Language rule | ✅ no Armenian anywhere inside a code cell — verified by script |
 | **Armenian terminology** | ⏳ **awaiting native-speaker review** (Decision D9) |
-| Session length | ✅ 16 × 120 min = **22 h 30**, every agenda verified |
+| Session length | ✅ 18 × 75 min = **22 h 30**, every agenda verified |
 | Topic order | ✅ materials rebuilt — data types precede conditions and loops |
 | **Fresh-laptop install test** | ⏳ **not yet run** — see `docs/INSTRUCTOR_NOTES.md` §1 |
 

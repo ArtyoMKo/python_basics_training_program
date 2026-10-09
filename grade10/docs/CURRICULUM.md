@@ -77,8 +77,9 @@ All three sum to 75.
 > **The paired session is the compromise this schedule forces, and it is stated here
 > rather than hidden.** Hands-on is **41 of 75** against 53 on a single session: the
 > participant follows two notebooks in the room and does most of the typing afterwards.
-> Six of the eighteen sessions are built this way, and **none of them is a discovery
-> session** — the arcs always keep their full 75 minutes.
+> **Three** sessions use this agenda — 8, 10 and 15 — and three more hold two topics under a
+> bespoke agenda that is more hands-on. None of the six is a discovery
+> session — the arcs always keep their full 75 minutes.
 
 Teaching never exceeds **12 minutes** in one block; a paired session is two blocks of 12,
 not one of 24. Hands-on is **53 of 75** on a single session, **49** on a discovery
@@ -106,7 +107,7 @@ The highest-risk session of the programme. The reward at the end is small and re
 | 7 | Retrospective. What to do if it broke: nothing is wrong with you, and nothing is wrong with your laptop | 5 |
 | | **Total** | **75** |
 
-### Session 18 — Leaving the notebook, and four files · *topics 20–21 · transition*
+### Session 16 — Leaving the notebook, and four files · *topics 20–21 · transition*
 
 **Neither half may be cut.** This session is the split between a notebook and a program.
 
@@ -575,11 +576,11 @@ Sessions  7-12   450
 ```
 
 Notebook phase: sessions 1–15, topics 1–19 (1,125 min / 18 h 45).
-Transition: session 18, topics 20–21 (75 min).
+Transition: session 16, topics 20–21 (75 min).
 Project: sessions 17–18, topics 22–24 (150 min / 2 h 30).
 
 > **This schedule has the least contact time of any the programme has used** — 22½ hours
-> against 30 for three sessions a week and 32 for two of two hours. Nothing was cut from
+> against 30 for three sessions a week and 32 for two of two hours. Nothing was cut from <!--history-->
 > the course: all 24 topics survive, and the practice that no longer fits in the room is
 > set as homework. **That makes homework load-bearing here in a way it was not before**,
 > and the risk is stated plainly in `RATIONALE.md`.

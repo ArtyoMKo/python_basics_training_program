@@ -23,17 +23,17 @@
 ## 2. Timing
 
 Every session's agenda is in `CURRICULUM.md` and sums to exactly **75 minutes**,
-verified by script. There are five shapes, plus bespoke agendas for sessions 1, 15 and 16:
+verified by script. There are three shapes, plus bespoke agendas for sessions 1, 17 and 18:
 
-| | Paired | Single | Discovery | Discovery + |
-|---|---|---|---|---|
-| Recap | 8 | 8 | 6 | 5 |
-| Teach | **12**, then **12** | **12** | 10, then 12 | 8, then 10, then 10 |
-| Hands-on | 18 + 22 + 18 + 25 | 25 + 35 + 32 | 32 + 50 | 25 + 33 + 12 + 12 |
-| Retrospective | 5 | 8 | 10 | 5 |
-| **Hands-on** | **83** | **92** | **82** | **82** |
+| | Single | Discovery | Paired |
+|---|---|---|---|
+| Recap | 5 | 5 | 5 |
+| Teach | **12** | 7, then 9 | **12**, then **12** |
+| Hands-on | 20 + 33 | 22 + 27 | 16 + 16 + 9 |
+| Retrospective | 5 | 5 | 5 |
+| **Hands-on** | **53** | **49** | **41** |
 
-**Hands-on is never below 82 of 120.** That is a floor.
+**Hands-on is never below 41 of 75.** That is a floor.
 
 > **A paired session is two teach blocks of 12, not one of 24.** The cap is per block.
 
@@ -50,7 +50,7 @@ verified by script. There are five shapes, plus bespoke agendas for sessions 1, 
 
 ## 3. The seven discovery topics
 
-**Topics 4, 6, 9, 12, 14, 16, 19** — sessions 3, 5, 7, 9, 10, 11, 13. These are the ones that need the most care.
+**Topics 4, 6, 9, 12, 14, 16, 19** — sessions 3, 5, 7, 9, 11, 13, 15. These are the ones that need the most care.
 
 | What goes wrong | What to do |
 |---|---|
@@ -71,11 +71,32 @@ of line counts. Saying it aloud turns a discovery into a lecture.
 | **9** | `super().__init__()` is forgotten by almost everyone | The `AttributeError` cell is there for this. Run it together, slowly |
 | **12** | The first import of something we did not write | If an import fails here, the setup check was not done. Have a backup: Colab, from topic 20's material, brought forward |
 | **16** | pandas does in one line what topic 16 spent 22 lines on | Some participants find this deflating rather than freeing. Say explicitly that the 22 lines were how you learn what the one line does |
-| **20** | **The only topic needing internet**, and the only one with no laborious half | Topic 20 shares session 14 with topic 21. **If the network fails, teach topic 21 first and topic 20 second**, and if it is still down, carry topic 20 into session 15's recap or set it as reading. Nothing depends on it until topic 24 |
+| **20** | **The only topic needing internet**, and the only one with no laborious half | Topics 20 and 21 share session 16. **If the network fails, teach topic 21 first and topic 20 second**, and if it is still down, carry topic 20 into session 18's recap or set it as reading. Nothing depends on it until topic 24 |
 | **21** | Debugging is hard to teach remotely | Do it on **your** screen, with a bug you introduce live. Do not ask them to watch their own |
 | **22** | Five files at once | Confirm `python main.py` **individually, for every participant, on a shared screen, before anybody leaves** |
 
 ---
+
+## Homework — required on this schedule, and you must say so
+
+Two sessions a week of 75 minutes is **22½ contact hours**, against 30 on the original
+three-a-week schedule. Nothing was cut from the course; the practice moved.
+
+| Session shape | What goes home | Roughly |
+|---|---|---|
+| Single | the Extra tier | 15–25 min |
+| Discovery | the Extra tier | 20–30 min |
+| **Paired** | **the Required tier of both notebooks**, then Extra | **45–60 min** |
+| Setup, transition, project | nothing, or the second notebook's Required | 0–30 min |
+
+- **Nothing new is ever introduced at home.** Every task is already in the notebook and
+  uses only what the session taught.
+- **Every agenda opens with a recap block, and that is where homework is checked.** If you
+  skip it, the paired sessions stop working within a fortnight.
+- **Say in week 1 that homework is required**, and that a participant who does none will
+  not finish. They were told at enrolment; hearing it again from you makes it real.
+- A participant falling behind on homework is the **earliest** signal you get. Act on it
+  in week 2, not week 6.
 
 ## 5. Assessment
 
@@ -133,4 +154,4 @@ Part 2 — and they are told that in advance, at enrolment, not afterwards.
 | Software | **Zero.** Anaconda and VS Code, already installed |
 | Installation | **None** — all three libraries ship with Anaconda |
 | Network | **One session of 16** |
-| Instructor time | 32 contact hours, plus ~3½ hours of assessment |
+| Instructor time | 22½ contact hours, plus ~3½ hours of assessment |

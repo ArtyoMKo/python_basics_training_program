@@ -81,7 +81,7 @@ The source format is identical to grade 10's:
 
 ## The seven discovery topics
 
-**Topics 4, 6, 9, 12, 14, 16, 19** — sessions 3, 5, 7, 9, 10, 11, 13. Each gives a real task, lets participants do it the long
+**Topics 4, 6, 9, 12, 14, 16, 19** — sessions 3, 5, 7, 9, 11, 13, 15. Each gives a real task, lets participants do it the long
 way, then hands them the tool that collapses it — **inside one session, never across
 two.**
 

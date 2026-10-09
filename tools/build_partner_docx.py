@@ -667,7 +667,11 @@ def build():
         "One decision still settling",
         [
             "**Session length.** Sessions run 75 minutes, twice a week — 18 × 75 "
-            "= 22½ hours, and the practice that no longer fits in the room is set as "
+            "= 22½ hours. **This is the lowest contact time the programme has used**, and the "
+            "practice that no longer fits is set as homework — on the three sessions that "
+            "cover two topics that means the **Required** tier of both notebooks, 45–60 "
+            "minutes. Nothing new is ever introduced at home: every task is already in "
+            "the notebook. Teachers are told this at enrolment, not in week three. It is "
             "homework drawn from tasks the notebooks already carry. Once the cohort has adapted we may move to "
             "three of eighty minutes; the topic map and deliverables would not change.",
             "**Tools.** Anaconda, Jupyter and VS Code, with Google Colab and Thonny under "
@@ -1173,7 +1177,7 @@ def build():
             ["**No instructor in the room.** Everything that would have been a thirty-second fix becomes a conversation with a beginner who cannot describe what they are seeing", "High", "All screens shared through hands-on work, with Meet showing every participant at once; each person checked on by name; groups capped at eight so that is possible"],
             ["Laptops that block software installation, or lack the ~5 GB needed", "Medium", "Confirmed with schools, and asked on the enrolment form, before anyone is admitted. A browser-based fallback exists for sessions 1–19, but that participant cannot do days 20–24 fully"],
             ["The editor's interpreter picker — the most common beginner failure", "High", "Only one choice is ever present; a red callout on days 1 and 2; the setup script reports which Python is actually running"],
-            ["Missed sessions — twice a week for nine weeks, on top of a teaching job", "High", "Every topic is self-contained; worked solutions published after each session; topic 19 is a catch-up with nothing new in it. **A missed session now costs more than it did on the old three-a-week schedule** — it is two hours and two topics, not one — and the recap block at the start of every session exists for it"],
+            ["Missed sessions — twice a week for nine weeks, on top of a teaching job", "High", "Every topic is self-contained; worked solutions published after each session; topic 19 is a catch-up with nothing new in it. **A missed session now costs more than it did on the old three-a-week schedule** — twelve of the eighteen sessions carry homework, and three of them set the Required tier of two notebooks — and the recap block at the start of every session exists for it"],
         ],
         [0.42, 0.13, 0.45],
         size=9,

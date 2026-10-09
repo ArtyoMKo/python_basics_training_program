@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **When** | Topic 24, as a separate sitting |
-| **Length** | 90–75 minutes |
+| **Length** | 90–120 minutes |
 | **Total** | **70 points** across questions 1–7, **plus question 8 marked separately** |
 | **Covers** | topics 14–24: functions, `return`, dictionaries, files, the four-file program |
 | **Variants** | A/B/C for questions 1–7. **Question 8 is the same for everyone** |
@@ -15,7 +15,7 @@
 > ### This assessment decides who continues to Part 2
 >
 > Unlike the first two, it has a consequence for the individual. The bar is
-> **a working `python main.py` at session 14 and at least half of the 70 points on questions
+> **a working `python main.py` at session 16 and at least half of the 70 points on questions
 > 1–7** (`docs/RATIONALE.md` §5a). **Question 8 does not count towards it.**
 >
 > Mark questions 1–7 with that in mind: this is the one place in the programme where
@@ -79,7 +79,7 @@ Five numbers decide the two-month direction:
 
 1. Test 1 → test 3 change, per participant, with help levels
 2. Test 2 Q4 — how many wrote a loop
-3. session 14 — how many left with a working `python main.py`
+3. session 16 — how many left with a working `python main.py`
 4. Topic 24 — how many programs a colleague ran unaided
 5. **Question 8, in the four columns above**, with the participants' own words
 

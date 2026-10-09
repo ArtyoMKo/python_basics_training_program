@@ -8,8 +8,8 @@ in practice, and `BUILD_PLAN.md` for what is built.
 
 > **The course teaches 24 topics across 18 sessions.** A topic is one notebook and one
 > idea. A session is 75 minutes in a room. Seven of the eighteen hold one discovery arc,
-> five hold one topic with its practice in the room, and six hold two topics — and those
-> six are the ones whose practice moves to homework.
+> four hold one topic with its practice in the room, and six hold two topics — and on
+> four of those six the practice moves to homework.
 
 ## The session map
 
@@ -37,7 +37,7 @@ in practice, and `BUILD_PLAN.md` for what is built.
 Seven discovery sessions — **3, 5, 7, 9, 11, 13, 15**. Each holds one topic and resolves
 its own difficulty inside its own session. **Never split one.**
 
-> **The "discovery + consolidation" shape is gone.** At 75 minutes a session could hold
+> **The "discovery + consolidation" shape is gone.** At 120 minutes a session could hold <!--history-->
 > an arc and the topic that widens it; at 75 it cannot, so topics 13 and 15 have sessions
 > of their own again — with their practice back in the room, which is better than they
 > had on the previous schedule.
@@ -100,9 +100,9 @@ All three sum to 75.
 | | **Total** | **75** |
 
 > **The paired session is the compromise this schedule forces, and it is stated here
-> rather than hidden.** Hands-on is **41 of 75** against 53 on a single session. Six of
-> the eighteen sessions are built this way, and **none of them is a discovery session** —
-> the arcs always keep their full 75 minutes.
+> rather than hidden.** Hands-on is **41 of 75** against 53 on a single session. **Four** sessions use this agenda — 6, 8, 14 and 16 — and two more hold two topics under
+> a bespoke agenda (1 and 18). **None of the six is a discovery session** — the arcs
+> always keep their full 75 minutes.
 
 Teaching never exceeds **12 minutes** in one block; a paired session is two blocks of 12,
 not one of 24. Hands-on is **53 of 75** on a single session, **49** on a discovery
@@ -293,7 +293,7 @@ Transition: session 17, topic 22 (75 min).
 Project: session 18, topics 23–24 (75 min).
 
 > **This schedule has the least contact time of any the programme has used** — 22½ hours
-> against 30 for three sessions a week and 32 for two of two hours. Nothing was cut: all
+> against 30 for three sessions a week and 32 for two of two hours. Nothing was cut: all <!--history-->
 > 24 topics survive, and the practice that no longer fits in the room is set as homework.
 > **That makes homework load-bearing here in a way it was not before**, and the risk is
 > stated plainly in `RATIONALE.md`.

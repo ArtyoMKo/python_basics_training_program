@@ -76,7 +76,7 @@ point.
 | **Machines** | **Their own laptop**, which they must have for the whole course. Mixed Windows and macOS. Possibly no admin rights. Checked at enrolment (`ENROLMENT.md`). See §12 risks. |
 | **Language** | Materials in **Armenian**; code, keywords and identifiers in English (§7.7) |
 | **Format** | 18 sessions × **75 minutes** = 1,350 minutes = **22 h 30** |
-| **Schedule** | 2 sessions per week × 9 weeks. After the cohort adapts, possibly 2 a week, or 3 of 50 minutes |
+| **Schedule** | 2 sessions per week × 9 weeks. If 75 minutes twice a week proves too thin, the options are three a week again or a longer run | <!--history-->
 | **Group size** | **4–8**, one instructor. Fewer than 4 and they cannot discuss; more than 8 and remote teaching stops working |
 | **Part** | **Part 1 of two.** Part 1 is **2 months** (this specification); Part 2 is **4 months**, outlined in `ROADMAP.md`, and runs only if Part 1 succeeds |
 | **Between sessions** | ~2 days. One optional 10-minute practice task per day; nothing required. |
@@ -88,7 +88,7 @@ point.
 |---|---|---|
 | 13–18, already program | Adults, never programmed | Python **is** the subject, not the medium |
 | 16 identical lab Macs prepared by IT | Mixed personal Windows/Mac laptops | Installation is session 1's entire content, and is the single biggest risk |
-| Lessons of two hours | **Sessions of 75 minutes, twice a week** | Half the length, and six of the eighteen hold two topics — so the agenda has no slack at all |
+| Lessons of two hours | **Sessions of 75 minutes, twice a week** | Half the length, and six of the eighteen hold two topics — so the agenda has no slack at all | <!--history-->
 | External paid API, keys, vendor abstraction | **Standard library only** | No `pip`, no venv, no `requirements.txt`, no keys, no network, no cost |
 | Materials in English for English-schooled teens | **Armenian prose, English code** | A beginner cannot learn a spoken language and a programming language at once |
 | Fast students get an extra challenge | Fear, not boredom, is the failure mode | Every session must be completable by the slowest person; extras are genuinely optional |
@@ -117,33 +117,39 @@ This applies to file names too: instructor-facing notes are `INSTRUCTOR_NOTES.md
 
 Two topics for the transition rather than the methodology’s one, because one block cannot
 hold both "here is what a `.py` file is" and "here are four modules". Topic 20 is one file;
-session 14 is the split. **Neither may be cut** (§13).
+topic 21 is the split, and **session 16** holds both. **Neither may be cut** (§13).
 
 ### Time budget
 
-- 16 × 120 = **1,350 minutes**. Hard ceiling.
-- Every session's agenda sums to **exactly 120**, verified by script (§11.1).
+- 18 × 75 = **1,350 minutes**. Hard ceiling.
+- Every session's agenda sums to **exactly 75**, verified by script (§11.1).
 - If content does not fit, **cut a topic**. Never compress one, never run over — these are
-  working adults and two hours is two hours.
+  working adults and 75 minutes is 75 minutes.
 
-### The four session shapes
+### The three session shapes
 
-The course teaches **24 topics across 18 sessions**. A topic is one notebook and one
-idea; a session is two hours in a room. The shapes are in `CURRICULUM.md`; in summary:
+The course teaches **24 topics across 18 sessions**, two a week over nine weeks. A topic
+is one notebook and one idea; a session is 75 minutes in a room. The shapes are in
+`CURRICULUM.md`; in summary:
 
-| Shape | Holds | Hands-on |
-|---|---|---|
-| **Paired** | two topics | 83 of 120 |
-| **Single** | one topic, with its Extra tier done in the room | 92 of 120 |
-| **Discovery** | one topic, one arc, never split | 82 of 120 |
-| **Transition / project** | their own agendas | throughout |
+| Shape | Sessions | Holds | Hands-on |
+|---|---|---|---|
+| **Single** | 7 | one topic, with its Extra tier reached in the room | 53 of 75 |
+| **Discovery** | 5 | one topic, one arc, never split | 49 of 75 |
+| **Paired** | 3 | two topics; their practice goes home | 41 of 75 |
+| **Setup / transition / project** | 3 | their own agendas — sessions 1, 16 and 18 | 44–52 of 75 |
 
-**Hands-on is never below 68%.** Teaching is capped at 12 minutes in one block and may
-never exceed 15 in any variant agenda. This is the rule the review should check first:
-*if a block talks for more than 15 minutes, it is wrong.*
+**Hands-on is never below 41 of 75.** Teaching is capped at **12 minutes** in one block,
+in every shape and every bespoke agenda. This is the rule the review should check first:
+*if a block talks for more than 12 minutes, it is wrong.*
 
-**A paired session teaches two ideas with a practice block after each**, so the 12-minute
-cap still binds — it is two blocks of 12, not one of 24.
+**A paired session teaches two ideas**, so the cap still binds — it is two blocks of 12,
+not one of 24.
+
+> **The paired session is this schedule's cost and is disclosed, not hidden.** Three
+> sessions use that agenda; three more hold two topics under a bespoke agenda that is more
+> hands-on. On the three a paired session covers, the Required tier of both notebooks is
+> homework **by design** — see §7.3 and `CURRICULUM.md`'s Homework section.
 
 ### The discovery shape
 
@@ -152,23 +158,23 @@ use this instead:
 
 | # | Activity | Min |
 |---|---|---|
-| 1 | Recap, and last session's homework | 6 |
-| 2 | **Teach:** today's task, and the only way we can do it so far | 10 |
-| 3 | **Do it the long way:** the real task, with shipped boilerplate | 32 |
-| 4 | **Teach:** the tool that shortens it | 12 |
-| 5 | **Do the same task again**, with the tool. Compare | 50 |
-| 6 | Retrospective | 10 |
-| | **Total** | **120** |
+| 1 | Recap, and last session's homework | 5 |
+| 2 | **Teach:** today's task, and the only way we can do it so far | 7 |
+| 3 | **Do it the long way:** the real task, with shipped boilerplate | 22 |
+| 4 | **Teach:** the tool that shortens it | 9 |
+| 5 | **Do the same task again**, with the tool. Compare | 27 |
+| 6 | Retrospective | 5 |
+| | **Total** | **75** |
 
-Teaching is 22 minutes but **split into two blocks of 10 and 12** — neither reaches the
-12-minute cap, and the second lands on a participant who now wants it. Hands-on is 82 of
-120.
+Teaching is 16 minutes but **split into two blocks of 7 and 9** — neither approaches the
+cap, and the second lands on a participant who now wants it. Hands-on is 49 of 75.
 
-> **Both halves grew when the schedule changed.** The long half went 22 → 32 and the
-> short half 27 → 50, so the arc was lengthened, not squeezed into a longer session.
+> **This is the original agenda, restored.** The schedule went 3 × 75 → 2 × 120 → 2 × 75,
+> and at 120 minutes the arc was stretched to 32 and 50. It is back to 22 and 27: the arc <!--history-->
+> this course was designed around, unchanged.
 
-Sessions 1, 14 and 16 have bespoke agendas (installation, the transition, and the build
-plus showcase). Each still sums to 120, and every one is written out in full in
+Sessions 1, 16 and 18 have bespoke agendas (installation, the transition, and the build
+plus showcase). Each still sums to 75, and every one is written out in full in
 `CURRICULUM.md`.
 
 ### Per-day deliverable
@@ -642,7 +648,7 @@ removes a file, an import and five minutes of explanation from a 75-minute sessi
 §0 applied.
 
 **Dependency arrows point one way:** `main` → `grades`, `storage` → `settings`.
-`grades.py` must not import `storage.py`. The reason is stated to participants in session 14's
+`grades.py` must not import `storage.py`. The reason is stated to participants in session 16's
 guide: *you can test your average calculation without having a file at all.*
 
 `settings.py` is the pedagogical payoff of topic 9 — one place to change the pass mark —
@@ -845,14 +851,15 @@ sittings, so the agendas are unaffected.
 
 | Week | Sessions | Topics | Arc | Assessment |
 |---|---|---|---|---|
-| 1 | 1–2 | 1–4 | It runs on my laptop, and I know what a value is | *(diagnostic sat before session 1)* |
-| 2 | 3–4 | 5–6 | I can name things, and keep a whole class in one list | |
-| 3 | 5–6 | 7–8 | Every data type I need, and I can find one student | |
-| 4 | 7–8 | 9–11 | Conditions, then one loop marks thirty students | |
-| 5 | 9–10 | 12–15 | I can compute and report on the whole class | **Midpoint** (after session 10) |
-| 6 | 11–12 | 16–17 | I write the calculation once and use it everywhere | |
-| 7 | 13–14 | 18–21 | It is a program now, not a notebook | |
-| 8 | 15–16 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** |
+| 1 | 1–2 | 1–3 | It runs on my laptop, and I know what a value is | *(diagnostic sat before session 1)* |
+| 2 | 3–4 | 4–5 | I can name things | |
+| 3 | 5–6 | 6–7 | A whole class in one list | |
+| 4 | 7–8 | 8–10 | I can find one student, and the computer decides | |
+| 5 | 9–10 | 11–13 | One loop marks thirty students | **Midpoint** (after session 10) |
+| 6 | 11–12 | 14–15 | I can report on the whole class | |
+| 7 | 13–14 | 16–17 | I write the calculation once and use it everywhere | |
+| 8 | 15–16 | 18–21 | It is a program now, not a notebook | |
+| 9 | 17–18 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** (session 18) |
 
 ## 11. Verification discipline
 
@@ -935,7 +942,7 @@ every number and file name that was true before it.
 Cut, never compress. In this order:
 
 1. topic 13 `while` loops — the project menu ships written and can be explained in two
-   minutes on session 14. This is the one genuinely removable day.
+   minutes on session 16. This is the one genuinely removable day.
 2. Topic 16's dict-of-lists (several grades per student) — the project works with one grade.
 3. Topic 19's consolidation day, if the room is already ahead.
 4. Topic 23's own-feature work — it can become optional homework.
@@ -982,10 +989,10 @@ adjectives, the definition of done — applies unchanged.
 | **D2** | Python distribution | **Anaconda**, `base` environment, never activated by hand | §9.1 |
 | **D3** | Grading scale | **1–10, pass mark 4**, written once as `PASS_MARK = 4` from topic 9 | §6.2, §8 |
 | **D4** | Where participants keep their work | Their own laptop, one folder: `Documents/python_course/`. Same folder all 24 days | §9.2 |
-| **D5** | Practice between sessions | **Homework**, introduced with the two-a-week schedule (D12). It is the Extra tier the notebooks already carry — never new work — and the next session's recap block checks it. Required tasks are homework only by overflow | §7.3, `CURRICULUM.md` Homework |
+| **D5** | Practice between sessions | **Homework, and it is required.** On a paired session the **Required** tier of both notebooks is set at home — by design, not by overflow — because 75 minutes cannot hold two topics and their practice. Nothing new is ever introduced at home | §7.3, `CURRICULUM.md` Homework |
 | **D6** | Group size | **4–8, one instructor.** Fewer than 4 and they cannot discuss; more than 8 and the instructor cannot check on everyone remotely | §2, §12 |
 | **D11** | Delivery | **Remote**, over Google Meet with screen sharing. Each teacher needs their own laptop and a connection that holds a 75-minute call | §2, §12, `ENROLMENT.md` |
-| **D12** | Session length | **75 minutes, 2 a week** — 18 sessions over 9 weeks, 22 h 30. Replaces 24 × 75 × 3 a week. The third weekly touchpoint is replaced by homework, which is the Extra tier that no longer fits in the room (`CURRICULUM.md`, Homework) | §3 |
+| **D12** | Session length | **75 minutes, 2 a week** — 18 sessions over 9 weeks, 22 h 30. The third schedule: 24 × 75 three a week, then 16 × 120 twice a week, now this. Contact time is the lowest of the three, and the practice that no longer fits is homework (D5) | §3 | <!--history-->
 | **D13** | Success criterion | **>90% can code** = success · **<50%** = failure · between = adjust and repeat | `RATIONALE.md` §5a |
 | **D7** | Recruitment document | `ANNOUNCEMENT.md`, written **for teachers**. A one-page summary for school administration only if asked for | §9 |
 | **D8** | Version control | Own repository: `git@github.com:AIrtyoMKo/python_basics_training_program.git` | §9.3 |
