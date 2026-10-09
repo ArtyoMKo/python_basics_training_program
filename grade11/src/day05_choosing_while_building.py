@@ -135,6 +135,45 @@ print(grades_of["Ani Hakobyan"])
 </div>
 
 #%% md
+## Բ մաս, շարունակություն: Երբ բանալին կարող է չլինել
+
+Բառարանից արժեք վերցնելը քառակուսի փակագծերով **սխալ է տալիս**, եթե բանալին չկա։
+
+#%% code
+grades = {"Mathematics": 8, "Physics": 6}
+
+try:
+    print(grades["History"])
+except KeyError as problem:
+    print("KeyError:", problem)
+
+#%% md
+Երբեմն դա հենց այն է, ինչ պետք է՝ բացակայող բանալին սխալ է։
+
+Բայց հաճախ ուզում ես ասել՝ «**վերցրու, իսկ եթե չկա՝ տուր սա**»։ Դրա համար կա `.get()`։
+
+#%% code
+print(grades.get("History"))
+print(grades.get("History", 0))
+print(grades.get("Mathematics", 0))
+
+# Useful in a comprehension, where a KeyError would stop everything:
+SUBJECTS = ["Mathematics", "Physics", "Armenian"]
+marks = [grades.get(subject, 0) for subject in SUBJECTS]
+print(marks)
+
+#%% md
+<div style="border-left: 6px solid #0a7; background: #f2fff8; padding: 12px 16px; margin: 12px 0;">
+<p style="color:#0a7; margin:0;">
+✅ <b><code>grades.get(key)</code></b> — եթե բանալին չկա, վերադարձնում է
+<code>None</code>, ոչ թե սխալ։<br/>
+<b><code>grades.get(key, 0)</code></b> — եթե չկա, վերադարձնում է <code>0</code>։<br/><br/>
+<b>Ե՞րբ որը։</b> Քառակուսի փակագիծ, երբ բանալին <b>պետք է</b> լինի և բացակայությունը
+սխալ է։ <code>.get()</code>, երբ բացակայությունը նորմալ է։
+</p>
+</div>
+
+#%% md
 ## Գ մաս: Դասավորել ըստ քո կանոնի
 
 Անցած դասընթացում `sorted()`-ը դասավորում էր ըստ իրերի բնական կարգի։
@@ -317,6 +356,7 @@ print(result)
 - `if`-ը **ձախում** = ընտրում է · `if`-ը **վերջում** = զտում է
 - `{name: value for ... }` — **բառարան** մեկ տողով
 - `{x for ... }` — առանց երկու կետի՝ **set**, առանց կրկնությունների
+- `grades.get(key, default)` — բանալին չկա՞, վերադարձրու կանխադրվածը, ոչ թե սխալ
 - `sorted(items, key=...)` — դասավորել **ըստ քո կանոնի**
 - `lambda x: ...` — անանուն ֆունկցիա։ **Միայն `key`-ի մեջ, այս դասընթացում**
 

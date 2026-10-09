@@ -28,11 +28,11 @@ PROJECT = ROOT / "project" / "school_report"
 # demonstrate them -- and Anaconda already ships all three, so no participant installs
 # anything to follow the course. Nothing else is allowed in: Anaconda ships 300 packages
 # and the other 297 are not on the pupils' syllabus.
-ALLOWED_IMPORTS = {
-    # standard library
-    "pathlib", "sys",
-    # the three, and the two spellings each is imported by
-    "numpy", "np", "matplotlib", "matplotlib.pyplot", "plt", "pandas", "pd",
+# The standard library in full: day 20 is a session about where code comes from, and
+# names several of its modules on purpose.
+ALLOWED_IMPORTS = set(sys.stdlib_module_names) | {
+    # the three Anaconda ships, which is where this course departs from grade 10
+    "numpy", "matplotlib", "pandas",
     # our own modules, from day 22
     "settings", "people", "loading", "charts",
 }

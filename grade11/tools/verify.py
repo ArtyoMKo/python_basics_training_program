@@ -40,7 +40,8 @@ def run_project():
         return False
 
     # The sample class is engineered; these numbers are quoted in the course prose.
-    expected = ["students:      36", "school average: 7.0", "At risk (12 students)"]
+    expected = ["students:          36", "school average:   7.0",
+                "At risk (12 students)"]
     missing = [line for line in expected if line not in result.stdout]
     if missing:
         print("   the program ran but did not print:")
