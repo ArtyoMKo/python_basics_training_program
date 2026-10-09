@@ -189,9 +189,13 @@ def main():
 
     # Participants receive a flat folder, so the notebooks refer to "school.csv" with no
     # path (AGENTS.md, "Where things live"). Keep the copy beside them in step.
-    beside = ROOT / "notebooks" / "school.csv"
-    if beside.parent.exists():
-        beside.write_bytes(OUT.read_bytes())
+    # Participants receive a flat folder, and the solution and exam notebooks run in
+    # their own directories, so every folder that holds a notebook needs its own copy.
+    for folder in ["notebooks", "solutions", "tests", "tests/participant",
+                   "project/school_report/data"]:
+        beside = ROOT / folder / "school.csv"
+        if beside.parent.exists():
+            beside.write_bytes(OUT.read_bytes())
 
     print(f"✅ data/school.csv  (seed {seed})")
     report(rows, averages)
