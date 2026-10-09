@@ -376,8 +376,8 @@ def check_facts():
 
 # -------------------------------------------------------------------------- content
 
-TODAY = "6 October 2026"
-CURRENT = "1.8"
+TODAY = "9 October 2026"
+CURRENT = "2.0"
 BASELINE = "1.1"
 BASELINE_DATE = "Friday 2 October"
 
@@ -413,18 +413,53 @@ def build():
     d.para(
         "This is a programme that teaches school teachers to write computer programs, so "
         "that they can then teach the subject to their pupils. The changes since the "
-        "version you were sent fall into three groups, below. **Nothing has been cancelled "
-        "or cut** — the programme is now longer, taught in smaller groups, and measured "
-        "far more carefully.",
+        "version you were sent fall into four groups, below. **Nothing has been cancelled "
+        "or cut.** The programme is now longer, taught in smaller groups, measured far "
+        "more carefully — and it now covers **both school years, not one**.",
         size=10.5,
     )
 
     # ----------------------------------------------------- how it is organised
+    d.h2("There is now a second course, and it is finished")
+
+    d.para(
+        "The version you were sent prepared a teacher to teach **one school year**. Since "
+        "then a **second course has been written and checked**, which prepares the same "
+        "teacher to teach **the following year**. It is the same length and the same "
+        "shape: two months, three lessons a week, small groups, online.",
+        size=10.5,
+    )
+    d.table(
+        ["", "First course", "Second course"],
+        [
+            ["**Prepares a teacher for**", "the first year of the subject", "**the second year**"],
+            ["**Who can join**", "anyone — it starts from installing the software", "**teachers who finished the first course**, and nobody else"],
+            ["**What they learn**", "the basics of writing a program", "**organising larger programs, and using professional tools to analyse real school data and draw charts from it**"],
+            ["**What they finish with**", "a program that handles their own class", "**a program that handles their whole school** and produces a report with charts"],
+            ["**Is it ready**", "yes", "**yes**"],
+        ],
+        [0.20, 0.33, 0.47],
+        size=9,
+    )
+    d.para(
+        "**Together the two courses now cover almost the whole official school "
+        "curriculum** — all of it except one topic, which has deliberately been left "
+        "until the rest is secure. Sixty hours of teacher training covers a subject the "
+        "ministry gives pupils one hundred and ninety-three hours to learn.",
+        size=10.5,
+    )
+    d.para(
+        "**Neither course has been taught to a group of teachers yet.** Both are written, "
+        "checked and ready. That is the honest position.",
+        size=10.5,
+    )
+
     d.h2("How the programme is organised")
     d.table(
         ["", "Before", "Now", "Why"],
         [
-            ["**Length**", "One course", "**Two parts: 2 months, then 4 months**", "The first part teaches teachers to write code. The second teaches them to solve problems with it. They are different skills, and the second only makes sense once the first is in place"],
+            ["**Shape**", "One course", "**Two courses, one per school year**", "Each one prepares a teacher for the year they will actually be teaching"],
+            ["**Each course**", "—", "**A practical part of 2 months, then a thinking part of 4**", "The first part teaches teachers to write code. The second teaches them to solve problems with it. They are different skills, and the second only makes sense once the first is in place"],
             ["**Lessons**", "50 minutes, 20 hours in total", "**75 minutes, 30 hours in total**", "The extra time is all spent on teachers practising at the keyboard, not on more explaining"],
             ["**Class size**", "Up to 16 teachers", "**4 to 8 teachers**", "Fewer than four and they cannot discuss anything with each other. More than eight and the trainer cannot keep an eye on everyone"],
             ["**Where**", "In a classroom", "**Online**, by video call", "Teachers join from home or school. This removes some problems and creates others, both described in the full document"],

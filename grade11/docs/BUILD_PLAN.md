@@ -2,8 +2,10 @@
 
 **Status board for the agent building this course.**
 
-> **Part 1 is complete and verified as of 2026-10-09.** The only step left open is 15,
-> the partner document, which covers both courses and is written once for the pair. It exists so that a session that
+> **Part 1 is complete and verified as of 2026-10-09. Every step below is done.**
+> What remains is not building work: the Armenian terminology has not been reviewed by a
+> native speaker, `handouts/SETUP.md` has not been run on a clean machine, and nothing
+> has been taught to a cohort. It exists so that a session that
 loses its context can pick up exactly where the last one stopped. Update the Status column
 as each step completes; never mark a step done before `tools/verify.py` passes.
 
@@ -118,7 +120,7 @@ form: **which line of the final school report tool needs it?**
 | **12** | Participant-facing documents | `handouts/SETUP.md`, `CHEATSHEET.md`, `docs/ANNOUNCEMENT.md`, `docs/ENROLMENT.md` | ✅ done |
 | **13** | Colleague-facing documents | `docs/RATIONALE.md`, `docs/OUTLINE.md`, `docs/INSTRUCTOR_NOTES.md`, `docs/ROADMAP.md` | ✅ done |
 | **14** | Full verification; coverage audit against `../shared/GOVERNMENT_ASSIGNMENT.md` | green `verify.py`, the audit in `../shared/GOVERNMENT_ASSIGNMENT.md` §8 | ✅ done |
-| **15** | Partner document covering both courses | `partners/` | ☐ |
+| **15** | Partner document covering both courses | `grade10/partners/` — dossier v2.0 and change log | ✅ done |
 
 ### Rules for working through them
 

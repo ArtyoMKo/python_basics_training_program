@@ -316,6 +316,26 @@ def check_facts():
     if sum(minutes) != 1800:
         problems.append(f"total is {sum(minutes)} minutes, not 1800")
 
+    # The grade-11 course is a sibling folder; section 12 quotes its figures.
+    eleven = ROOT.parent / "grade11"
+    if eleven.exists():
+        eleven_days = re.findall(
+            r"^\|\s*(\d+)\s*\|[^|]+\|[^|]+\|[^|]+\|\s*(\d+)\s*\|\s*$",
+            (eleven / "docs" / "CURRICULUM.md").read_text(encoding="utf-8"), re.M)
+        if [int(n) for n, _ in eleven_days] != list(range(1, 25)):
+            problems.append("grade11 CURRICULUM.md does not list days 1..24")
+        if sum(int(m) for _, m in eleven_days) != 1800:
+            problems.append("grade11 total is not 1800 minutes")
+        discovery = (eleven / "docs" / "CURRICULUM.md").read_text(
+            encoding="utf-8").count("| **Discovery** |")
+        if discovery != 7:
+            problems.append(f"grade11 has {discovery} discovery days, not the 7 quoted")
+        eleven_project = len(list((eleven / "project" / "school_report").glob("*.py")))
+        if eleven_project != 5:
+            problems.append(f"grade11 project has {eleven_project} files, not the 5 quoted")
+    else:
+        problems.append("grade11/ is missing but section 12 describes it")
+
     counts = {
         "notebooks": len(list((ROOT / "notebooks").glob("*.ipynb"))),
         "solutions": len(list((ROOT / "solutions").glob("*.ipynb"))),
@@ -367,7 +387,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "1.8"
+VERSION = "2.0"
 
 
 def build():
@@ -407,7 +427,7 @@ def build():
     d.table(
         ["", ""],
         [
-            ["Structure", "**Two parts.** **Part 1 — coding skills — 2 months.** **Part 2 — algorithmic tasks and theory — 4 months**, and only if Part 1 succeeds. **This dossier describes Part 1.**"],
+            ["Structure", "**Two courses, one per school grade.** Each is a **practical Part 1 of 2 months** and a **theoretical Part 2 of 4 months** that runs only if its Part 1 succeeds. **This dossier describes the grade-10 course's Part 1**; the grade-11 course is summarised in section 12."],
             ["Part 1 format", "24 sessions × 75 minutes = **30 hours**, three times a week over eight weeks, plus three assessment sittings"],
             ["Delivery", "**Remote**, over Google Meet with screen sharing"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
@@ -415,7 +435,7 @@ def build():
             ["Deliverable", "A runnable four-file Python program over the participant's own class data, demonstrated to a colleague"],
             ["Cost", "**Zero.** All software is free; nothing touches a paid service or needs the internet after day one"],
             ["Judged by", "**Can they code?** More than 90% = success, under 50% = failure (section 8) — plus a trial class with real pupils in March"],
-            ["Status", "Part 1 materials complete and verified. **Not yet taught to a cohort.** Part 2 is a vision"],
+            ["Status", "**Both Part 1 courses are complete and verified. Neither has been taught to a cohort.** Both Part 2s are visions"],
             ["Version", f"{VERSION} — for partner review · {TODAY}"],
         ],
         [0.17, 0.83],
@@ -439,10 +459,12 @@ def build():
     d.h1("Executive summary")
 
     d.para(
-        "A programme for public-school teachers who have never written a line of code, "
-        "**in two parts: Part 1 teaches coding skills over two months; Part 2 covers "
-        "algorithmic tasks and the theory Part 1 postponed, over four.** This dossier "
-        "describes **Part 1**: twenty-four sessions, three a week for eight weeks, "
+        "A programme for public-school teachers who have never written a line of code. "
+        "**It is now two courses — one preparing a teacher for grade 10, one for grade "
+        "11 — and each is a practical Part 1 of two months followed by a theoretical "
+        "Part 2 of four.** This dossier describes the **grade-10 course's Part 1**; "
+        "section 12 summarises the second course, which is also built. Part 1 is "
+        "twenty-four sessions, three a week for eight weeks, "
         "**taught remotely in groups of four to eight**. Every participant finishes with "
         "a small program they wrote themselves and can use: a gradebook that opens their "
         "own class list, shows who has passed, calculates the average, and saves changes "
@@ -1183,6 +1205,76 @@ def build():
     d.page_break()
 
     # ------------------------------------------------------- 11. decision point
+    d.h1("The second course — preparing teachers for grade 11")
+
+    d.para(
+        "Since this dossier was last issued, a **second course has been built and "
+        "verified**. It takes a teacher who has finished the course described above and "
+        "prepares them to teach **grade 11**. It is the same length, the same shape and "
+        "the same method: twenty-four sessions of seventy-five minutes, three a week for "
+        "eight weeks, delivered remotely in groups of four to eight."
+    )
+
+    d.table(
+        ["", "Grade-10 course", "Grade-11 course"],
+        [
+            ["Entry", "**None.** Begins with installing software", "**The grade-10 course**, and nothing beyond it"],
+            ["State topics", "1–14", "15–22 and 24"],
+            ["Spine", "one class, in dictionaries", "**the whole school**, as objects with statistics and charts"],
+            ["Teaches", "print, types, variables, lists, dictionaries, conditions, loops, functions, files", "**classes, inheritance, NumPy, Matplotlib, pandas, recursion, debugging**"],
+            ["Deliverable", "a four-file gradebook over the teacher's own class", "a **five-file report tool** over the teacher's own school file, with charts"],
+            ["Discovery sessions", "5 of 24", "**7 of 24**"],
+            ["Status", "built and verified", "**built and verified**"],
+        ],
+        [0.16, 0.42, 0.42],
+    )
+
+    d.h2("What changes between them, and why")
+
+    d.para(
+        "Two rules invert, and both inversions are deliberate. The grade-10 course "
+        "**forbids classes and every third-party library**, because they would let a "
+        "participant skip the mechanics the course exists to build. The grade-11 course "
+        "**makes classes its centre and teaches three libraries**, because those are "
+        "state topics 18, 19, 15, 20 and 21, and a teacher has to be able to demonstrate "
+        "them."
+    )
+    d.para(
+        "**The order is preserved even so.** The session that introduces NumPy first has "
+        "participants write the standard-deviation formula out by hand. The session that "
+        "introduces pandas first spends twenty-two lines parsing a file with the tools "
+        "they already have. The library arrives as relief from work already done — never "
+        "as a way to avoid understanding it."
+    )
+
+    d.callout(
+        "What the two courses cover together",
+        [
+            "**187 of the state curriculum's 193 pupil-hours**, in sixty teacher-hours.",
+            "The six that remain are **topic 23, version control**, deliberately deferred "
+            "until the rest of the subject is secure.",
+            "A teacher who completes both can deliver grade 10 and grade 11 in full, "
+            "apart from that topic.",
+        ],
+        fill=BAND_FILL,
+    )
+
+    d.h2("Three gaps we are naming rather than hiding")
+
+    d.bullets([
+        "**Recursion is taught as mechanics only** — walking a nested structure. Its "
+        "algorithmic half, including the call stack and complexity, is Part 2 material. "
+        "The build fails if the teaching material so much as names factorial or Fibonacci.",
+        "**Topic 21 names six libraries and five environments.** Three libraries are "
+        "taught to the point of use. The rest are named once, in the final session, with "
+        "what each one is and why a grade-11 teacher does not need it — because pupils "
+        "will ask, and «that is difficult» is the wrong answer.",
+        "**Neither course has been taught to a cohort.** Everything above is a design "
+        "claim, not a result.",
+    ])
+
+    d.page_break()
+
     d.h1("The decision point after two months")
 
     d.para(
