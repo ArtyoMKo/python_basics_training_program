@@ -211,9 +211,13 @@ writing the loop at all.
 ## Day 15 — The four charts a school asks for
 
 *Standard shape.* Bar for subject averages, line for a term's progress, histogram for the
-spread of one class, and a grouped bar comparing three classes. Titles and axis labels in
-Armenian — **the only place in the course where Armenian text appears inside a code
-cell's output**, and the `encoding` reason it needs care.
+spread of one class, and a grouped bar comparing three classes.
+
+> **Armenian reaches the chart without ever being typed into a code cell.** The class
+> names in `data/school.csv` are `11Ա`, `11Բ`, `11Գ`, so they arrive as tick labels from
+> the data itself — which is both how a real school's file behaves and the reason the
+> missing-glyph box appears. The font fix is taught here. Axis titles stay English, and
+> the language rule holds without an exception (`AGENTS.md`, rule 1).
 
 ## Day 16 — The school's own file  ⟵ *discovery*
 

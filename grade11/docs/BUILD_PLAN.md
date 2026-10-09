@@ -105,7 +105,7 @@ form: **which line of the final school report tool needs it?**
 | **2** | **This plan**, the course contract, and the full day map with agendas | `BUILD_PLAN.md`, `AGENTS.md`, `CURRICULUM.md` | ✅ done — `PLAN.md` outstanding |
 | **3** | Tooling: copy `tools/` from grade 10 and invert the two rules in `check_style.py`; new sample data | `tools/*.py` | ✅ done |
 | **4** | The sample school — engineered numbers that prose may quote, as `6.5` is quoted in grade 10 | `data/school.csv`, numbers table in `AGENTS.md` | ✅ done |
-| **5** | Days 1–8 sources — setup, functions, comprehensions | `src/day01…day08.py` | ☐ |
+| **5** | Days 1–8 sources — setup, functions, comprehensions | `src/day01…day08.py` | ⏳ day 1 built and verified; 2–8 outstanding |
 | **6** | Days 9–14 sources — classes and inheritance | `src/day09…day14.py` | ☐ |
 | **7** | Days 15–21 sources — NumPy, Matplotlib, pandas, environments | `src/day15…day21.py` | ☐ |
 | **8** | Days 22–24 — recursion, debugging, the project | `src/day22.py`, `guides/day23…day24.md` | ☐ |

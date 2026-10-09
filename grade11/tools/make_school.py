@@ -180,12 +180,18 @@ def main():
 
     OUT.parent.mkdir(exist_ok=True)
     with OUT.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(["class", "student", "subject", "grade", "note"])
         for index, row in enumerate(rows):
             writer.writerow(row)
             if index == 89:
                 handle.write("\n")       # the blank line, halfway down
+
+    # Participants receive a flat folder, so the notebooks refer to "school.csv" with no
+    # path (AGENTS.md, "Where things live"). Keep the copy beside them in step.
+    beside = ROOT / "notebooks" / "school.csv"
+    if beside.parent.exists():
+        beside.write_bytes(OUT.read_bytes())
 
     print(f"✅ data/school.csv  (seed {seed})")
     report(rows, averages)
