@@ -106,13 +106,13 @@ The sample school is engineered, and prose throughout the course quotes these va
 `data/school.csv` changes, **grep for every number that was true before**, then rebuild.
 
 ```
-36 students  ·  3 classes (11Ա 11Բ 11Գ)  ·  5 subjects  ·  180 grades
+36 students  ·  3 classes (11A 11B 11C)  ·  5 subjects  ·  180 grades
 grades total 1260  ·  school average exactly 7.0  ·  pass mark 4
 18 failing grades = exactly 10%  ·  12 students at risk = exactly one third
 
 subject averages   Informatics 7.56 (highest)   History 7.22   Mathematics 7.03
                    Armenian 6.92                Physics 6.28 (lowest)
-class averages     11Ա 6.98      11Բ 6.33       11Գ 7.68
+class averages     11A 6.98      11B 6.33       11C 7.68
 ```
 
 `data/school.csv` is **generated** — `python tools/make_school.py` rebuilds it, and
@@ -132,4 +132,5 @@ and one field with a comma inside it**, because day 16's long half must break on
 | Teaching recursion with factorial or Fibonacci | recursion here walks a real nested school; the algorithms are Part 2 |
 | A class introduced before the dict version has failed | day 6's long half must break first, visibly |
 | Writing "now you see how slow that was" | compare line counts in a table, and say nothing |
+| An Armenian class name in a code cell | **transliterate**: `11A`, not `11Ա` — the same decision grade 10 made for `Ani` |
 | Editing a `.ipynb` | edit `src/`, run `nbbuild.py` |

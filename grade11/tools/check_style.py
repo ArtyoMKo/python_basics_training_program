@@ -57,7 +57,7 @@ FORBIDDEN = [
     (r"\bimport\s+(sklearn|torch|tensorflow|seaborn|scipy|requests)",
      "only numpy, matplotlib and pandas -- the three Anaconda ships"),
     (r"(?m)^\s*import\s+re\b", "regular expressions are excluded"),
-    (r"->\s*(int|str|float|bool|list|dict)\b", "type hints are excluded"),
+    (r"\)\s*->\s*(int|str|float|bool|list|dict)\b", "type hints are excluded"),
     (r"\b(factorial|fibonacci)\b", "factorial and Fibonacci are Part 2, not this course"),
 ]
 

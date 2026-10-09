@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "school.csv"
 
-CLASSES = ["11Ա", "11Բ", "11Գ"]
+CLASSES = ["11A", "11B", "11C"]
 SUBJECTS = ["Mathematics", "Physics", "Armenian", "History", "Informatics"]
 PASS_MARK = 4
 

@@ -213,11 +213,14 @@ writing the loop at all.
 *Standard shape.* Bar for subject averages, line for a term's progress, histogram for the
 spread of one class, and a grouped bar comparing three classes.
 
-> **Armenian reaches the chart without ever being typed into a code cell.** The class
-> names in `data/school.csv` are `11Ա`, `11Բ`, `11Գ`, so they arrive as tick labels from
-> the data itself — which is both how a real school's file behaves and the reason the
-> missing-glyph box appears. The font fix is taught here. Axis titles stay English, and
-> the language rule holds without an exception (`AGENTS.md`, rule 1).
+> **The sample data is transliterated — `11A`, not `11Ա`** — the same decision grade 10
+> made when it named its students `Ani` rather than `Անի`, so the language rule holds
+> everywhere without an exception.
+>
+> **The Armenian font problem is still taught here**, because on day 23 participants load
+> *their own* school's file and the names in it will be Armenian. The session shows the
+> missing-glyph box, and the one line that fixes it, against a name typed in the markdown
+> and pasted in by the participant — never shipped inside a code cell.
 
 ## Day 16 — The school's own file  ⟵ *discovery*
 
