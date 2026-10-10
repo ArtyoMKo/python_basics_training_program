@@ -11,10 +11,10 @@ The file format is:
 
 from pathlib import Path
 
-import settings
+import grades
 
 
-def load_class(file_name=settings.CLASS_FILE):
+def load_class(file_name=grades.CLASS_FILE):
     """
     Read the file and return a dictionary, like {"Ani": 9}.
 
@@ -25,7 +25,7 @@ def load_class(file_name=settings.CLASS_FILE):
 
     if not path.exists():
         print(f"Could not find {file_name}")
-        print("Check that it exists, and that the name in settings.py is right.")
+        print("Check that it exists, and that the name in grades.py is right.")
         return {}
 
     # encoding="utf-8" is required: your own class file will have Armenian
@@ -56,7 +56,7 @@ def load_class(file_name=settings.CLASS_FILE):
     return class_grades
 
 
-def save_class(class_grades, file_name=settings.CLASS_FILE):
+def save_class(class_grades, file_name=grades.CLASS_FILE):
     """Write the dictionary back to the file, in the same format."""
     path = Path(file_name)
     path.parent.mkdir(parents=True, exist_ok=True)

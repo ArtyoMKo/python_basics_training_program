@@ -39,7 +39,7 @@ should continue in this shape at all.
 
 ## Part 1 — coding fluency (built)
 
-Two months, 18 sessions. Teachers who have never programmed finish with a four-file
+Two months, 18 sessions. Teachers who have never programmed finish with a three-file
 gradebook program running over their own class data. Full detail in `CURRICULUM.md`;
 the method is in `RATIONALE.md` §3.
 
@@ -122,7 +122,7 @@ of a participant's attention is available for the problem.
 
 ### Stage 4 — bigger projects
 
-Part 1's project is four files and about 150 lines. Part 2's should be several times that,
+Part 1's project is three files and about 275 lines. Part 2's should be several times that,
 built over weeks rather than three sessions.
 
 - A project the participant chooses, grounded in their own school work

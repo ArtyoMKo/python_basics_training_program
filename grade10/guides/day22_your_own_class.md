@@ -49,7 +49,44 @@
 
 ---
 
-## Քայլ 2 — `save_class`
+## Քայլ 2 — Երրորդ ֆայլը՝ `storage.py`
+
+Մինչ այժմ ծրագիրդ երկու ֆայլ էր՝ `grades.py` հաշվում է, `main.py` խոսում է քեզ հետ։
+Ֆայլ կարդալը և գրելը **ոչ մեկն է, ոչ մյուսը** — դա երրորդ գործ է։
+
+Ստեղծի՛ր **`storage.py`** և գրի՛ր ներսում՝
+
+```python
+from pathlib import Path
+
+import grades
+
+
+def load_class(file_name=grades.CLASS_FILE):
+    """Read the class from a file and return it as a dictionary."""
+    path = Path(file_name)
+    if not path.exists():
+        return {}
+    class_grades = {}
+    for line in path.read_text(encoding="utf-8").strip().splitlines()[1:]:
+        if line == "":
+            continue
+        name, grade = line.split(",")
+        class_grades[name] = int(grade)
+    return class_grades
+```
+
+> **Ահա այն հարցը, որ որոշում է՝ որ ֆայլում գրել նոր կոդ։**
+> Հաշվո՞ւմ է → `grades.py`։ Ֆայլի՞ հետ է աշխատում → `storage.py`։
+> Մարդո՞ւ հետ է խոսում → `main.py`։
+>
+> Նույն հարցը 11-րդ դասարանի դասընթացում հինգ պատասխան ունի։ Սկզբունքը նույնն է։
+
+✅ **ՍՏՈՒԳՈՒՄ։** `python storage.py` — ոչինչ չի տպվում, և դա ճիշտ է։
+
+---
+
+## Քայլ 3 — `save_class`
 
 Բացի՛ր `storage.py`-ն և ավելացրո՛ւ՝
 
@@ -83,7 +120,7 @@ python storage.py
 
 ---
 
-## Քայլ 3 — Կապի՛ր այն մենյուին
+## Քայլ 4 — Կապի՛ր այն մենյուին
 
 Բացի՛ր `main.py`-ն։ Ավելացրո՛ւ երկու հրաման մենյուին՝
 
@@ -138,7 +175,7 @@ def add_grade(class_grades):
 
 ---
 
-## Քայլ 4 — Քո դասարանը
+## Քայլ 5 — Քո դասարանը
 
 Հիմա ամենահետաքրքիրը։
 
@@ -154,7 +191,7 @@ Nare,10
 
 **Հիշի՛ր վերևի կանոնները՝ միայն անուններ, փոխված գնահատականներ։**
 
-3. Բացի՛ր `settings.py`-ն և փոխի՛ր **մեկ տող**՝
+3. Բացի՛ր `grades.py`-ն և փոխի՛ր **մեկ տող**՝
 
 ```python
 CLASS_FILE = "data/my_class.csv"
@@ -165,13 +202,13 @@ CLASS_FILE = "data/my_class.csv"
 ✅ **ՍՏՈՒԳՈՒՄ։** Ծրագիրը ցույց է տալիս **քո** դասարանը։
 
 > **Ուշադրություն՝ մեկ տող փոխեցիր։** Ոչ թե `storage.py`, ոչ թե `grades.py`,
-> ոչ թե `main.py`։ Ահա թե ինչի համար է `settings.py`-ն։
+> ոչ թե `main.py`։ Ահա թե ինչի համար է `grades.py`-ն։
 
 ---
 
-## Քայլ 5 — Կոտրի՛ր դիտավորյալ
+## Քայլ 6 — Կոտրի՛ր դիտավորյալ
 
-Բացի՛ր `settings.py`-ն և գրի՛ր ֆայլի անունը սխալ՝ `"data/my_clas.csv"` (մեկ `s`)։
+Բացի՛ր `grades.py`-ն և գրի՛ր ֆայլի անունը սխալ՝ `"data/my_clas.csv"` (մեկ `s`)։
 
 Գործարկի՛ր՝
 
@@ -207,7 +244,7 @@ Could not find data/my_clas.csv
 - **`encoding="utf-8"`-ը պարտադիր է** հայերենի համար, և՛ կարդալիս, և՛ գրելիս։
 - `line.split(",")` — կտրում է տողը ստորակետով։
 - Ֆայլը ստուգի՛ր, նախքան բացելը՝ `if not path.exists():`։
-- **Մեկ տող `settings.py`-ում փոխեց ամբողջ ծրագրի տվյալները։**
+- **Մեկ տող `grades.py`-ի վերևում փոխեց ամբողջ ծրագրի տվյալները։**
 
 ## Ի՞նչ է գալիս հետո
 

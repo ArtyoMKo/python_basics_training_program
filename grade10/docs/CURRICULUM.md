@@ -27,7 +27,7 @@ session, without exception — in groups of 4–8. Arithmetic verified by `tools
 | 13 | Entering grades one by one | 16 | Single | 75 |
 | 14 | **An average on every card** | 17 | **Discovery** | 75 |
 | 15 | Sending an answer back, and the register assembled | 18–19 | Paired | 75 |
-| 16 | Leaving the notebook, and four files | 20–21 | Transition | 75 |
+| 16 | Leaving the notebook, and two files | 20–21 | Transition | 75 |
 | 17 | **Keeping it after you close it** | 22 | **Discovery** | 75 |
 | 18 | Make it yours, and show it | 23–24 | Project | 75 |
 
@@ -107,7 +107,7 @@ The highest-risk session of the programme. The reward at the end is small and re
 | 7 | Retrospective. What to do if it broke: nothing is wrong with you, and nothing is wrong with your laptop | 5 |
 | | **Total** | **75** |
 
-### Session 16 — Leaving the notebook, and four files · *topics 20–21 · transition*
+### Session 16 — Leaving the notebook, and two files · *topics 20–21 · transition*
 
 **Neither half may be cut.** This session is the split between a notebook and a program.
 
@@ -115,12 +115,18 @@ The highest-risk session of the programme. The reward at the end is small and re
 |---|---|---|
 | 1 | Recap: the assembled notebook, on screen | 4 |
 | 2 | **Teach:** why leave the notebook. A notebook is a workbench; you hand someone the thing, not the bench | 10 |
-| 3 | **Hands-on:** create `grades.py`, move the functions in, save | 14 |
-| 4 | **Hands-on:** the terminal inside VS Code, `python grades.py`, then `if __name__ == "__main__":` | 12 |
-| 5 | **Teach:** four files, one job each, drawn on screen with the arrows between them | 10 |
-| 6 | **Hands-on:** `settings.py`, `storage.py`, `grades.py` importing `settings`, then `main.py`. **Run `python main.py` for the first time** | 20 |
+| 3 | **Hands-on:** create `grades.py`, move the functions in, and the numbers that matter with them | 16 |
+| 4 | **Hands-on:** the terminal inside VS Code, `python grades.py`, then `if __name__ == "__main__":` | 14 |
+| 5 | **Teach:** two files, one job each — *does it calculate, or does it talk to the human?* | 10 |
+| 6 | **Hands-on:** `main.py`, importing `grades`. **Run `python main.py` for the first time** | 16 |
 | 7 | Retrospective. **The instructor confirms `python main.py` individually for every participant, on a shared screen, before they leave** | 5 |
 | | **Total** | **75** |
+
+> **Two files, not four.** The third — `storage.py` — arrives in session 17, where files
+> are actually taught: building a file-reading module before the session that teaches
+> file reading was the wrong order, and `import` is state topic 15, a semester ahead of
+> what this course prepares. The question that decides where code goes is introduced
+> here with two answers, and it is the same question in grade 11 with five.
 
 ### Session 18 — Make it yours, and show it · *topics 23–24 · project*
 
@@ -452,7 +458,7 @@ times, with a formatting change proved in one edit.
 pass_mark=PASS_MARK):`
 
 The difference between a function that prints and one that answers — the difference that
-makes the project's four files possible.
+makes splitting the program into files possible at all.
 
 Standard shape.
 
@@ -496,17 +502,23 @@ your class average — no notebook involved.
 
 ---
 
-## Topic 21 — Four files that each do one thing  ⟵ *transition*
+## Topic 21 — Two files that each do one thing  ⟵ *transition*
 
 **Concepts:** modules · `import` · one job per file
 
-**Tools & Skills:** `import settings` · running a program made of several files
+**Tools & Skills:** `import grades` · running a program made of more than one file
 
-The pivot of the course. `settings.py` is topic 9's `PASS_MARK` made structural: every
-number that might change, in one place.
+The pivot of the course, and the question that decides where any new code goes: **does it
+calculate, or does it talk to the human?** `grades.py` answers the first, `main.py` the
+second. Topic 9's `PASS_MARK` goes at the top of `grades.py` — the same lesson, now
+structural.
 
-**📦 By the end of this topic you have:** **a working `python main.py`** — a real program of
-four files, run from a terminal. Confirmed individually for every participant.
+A third file, `storage.py`, arrives in topic 22 once files have been taught. **Two is
+enough to make the point**, and `import` is state topic 15 — a semester beyond what this
+course prepares a teacher for.
+
+**📦 By the end of this topic you have:** **a working `python main.py`** — a real program
+of two files, run from a terminal. Confirmed individually for every participant.
 
 ---
 

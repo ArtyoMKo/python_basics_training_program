@@ -106,9 +106,8 @@ A runnable local program in the participant's own folder:
 
 ```
 main.py        asks the teacher what they want, and prints
-settings.py    every number you might want to change
 storage.py     reads the class from a file, writes it back
-grades.py      the calculations: average, highest, pass or fail
+grades.py      the settings, and the calculations: average, highest, pass or fail
 data/my_class.csv
 ```
 

@@ -1,4 +1,4 @@
-# Թեմա 21 — Չորս ֆայլ, ամեն մեկը՝ մեկ գործով
+# Թեմա 21 — Երկու ֆայլ, ամեն մեկը՝ մեկ գործով
 
 **Python զրոյից · Թեմա 21-ը 24-ից**
 
@@ -18,7 +18,7 @@ python grades.py
 
 ---
 
-## Ինչո՞ւ չորս ֆայլ
+## Ինչո՞ւ երկու ֆայլ
 
 Այս պահին քո `grades.py`-ն երեք տարբեր գործ է անում՝ հաշվում է, պահում է տվյալները,
 և տպում է։
@@ -32,10 +32,8 @@ python grades.py
 
 | Ֆայլ | Ի՞նչ է անում |
 |---|---|
-| `settings.py` | Բոլոր թվերը, որ կարող ես ուզենալ փոխել։ **Տրամաբանություն չկա։** |
-| `storage.py` | Կարդում է դասարանը ֆայլից և գրում ետ։ **Գնահատականների մասին ոչինչ չգիտի։** |
-| `grades.py` | Հաշվարկները։ **Ֆայլերի մասին ոչինչ չգիտի։** |
-| `main.py` | Խոսում է ուսուցչի հետ։ **Ինքը ոչինչ չի հաշվում։** |
+| `grades.py` | Կարգավորումները և հաշվարկները։ **Ֆայլերի և տպելու մասին ոչինչ չգիտի։** |
+| `main.py` | Խոսում է ուսուցչի հետ՝ հարցնում, կանչում, տպում։ **Ինքը ոչինչ չի հաշվում։** |
 
 > **Կարևոր կանոն.** `grades.py`-ն **չպետք է** ներմուծի `storage.py`-ն։
 >
@@ -44,35 +42,23 @@ python grades.py
 
 ---
 
-## Քայլ 1 — `settings.py`
+## Քայլ 1 — `grades.py`-ի վերևը՝ կարգավորումները
 
-Ստեղծի՛ր նոր ֆայլ՝ **`settings.py`**, և գրի՛ր՝
+Ստեղծի՛ր նոր ֆայլ՝ **`grades.py`**, և վերևում գրի՛ր այն թվերը, որոնք կարող ես
+ուզենալ փոխել՝
 
 ```python
-"""Every number the program uses, in one place."""
+# ----- կարգավորումներ -----
 
-# The pass mark. Change it to match your school.
 PASS_MARK = 4
-
-# Which file holds the class?
 CLASS_FILE = "data/sample_class.csv"
-
-# How many digits after the decimal point?
 DECIMAL_PLACES = 1
-
-# How wide is the name column when printing?
 NAME_WIDTH = 12
 ```
 
-✅ **ՍՏՈՒԳՈՒՄ։** Գործարկի՛ր՝ `python settings.py`
-
-**Ոչինչ չի տպվի, և սխալ չի լինի։** Դա ճիշտ է։ Այս ֆայլը գործ չի անում —
-այն **որոշումներ է պահում**։
-
-> Հիշո՞ւմ ես 9-րդ թեման՝ քսանհինգ տեղում գրված `4`-ը։ Այս ֆայլը այդ դասն է։
-> Երբ ուզում ես ինչ-որ բան փոխել ծրագրում, **նախ նայի՛ր այստեղ**։
-
----
+> **Սա 9-րդ թեմայի դասն է՝ ֆայլի տեսքով։** Այնտեղ սովորեցինք, որ կարևոր թիվը
+> անուն է ստանում։ Հիմա բոլոր այդ անունները մեկ տեղում են՝ ֆայլի վերևում, որ
+> չփնտրես։
 
 ## Քայլ 2 — `data` թղթապանակը
 
@@ -92,93 +78,18 @@ Davit,6
 
 ---
 
-## Քայլ 3 — `storage.py`
+## Քայլ 3 — `grades.py`-ի մնացածը՝ հաշվարկները
 
-Ստեղծի՛ր **`storage.py`**՝
+Կարգավորումներից **ներքև**, նույն ֆայլում, տեղափոխի՛ր 19-րդ թեմայի չորս
+ֆունկցիան՝ `average_of`, `highest_of`, `has_passed`, `report_line`։
 
-```python
-"""Read the class from a file and write it back."""
+Դրանց ներսում `4`-ի փոխարեն գրի՛ր `PASS_MARK`։ Նույն ֆայլում է՝ ոչինչ ներմուծելու
+կարիք չկա։
 
-from pathlib import Path
+✅ **ՍՏՈՒԳՈՒՄ։** Գործարկի՛ր՝ `python grades.py` — ոչինչ չի տպվում, և **դա ճիշտ է**։
+Ֆայլը միայն սահմանում է։
 
-import settings
-
-
-def load_class(file_name=settings.CLASS_FILE):
-    """Read the file and return a dictionary, like {"Ani": 9}."""
-    path = Path(file_name)
-
-    if not path.exists():
-        print(f"Could not find {file_name}")
-        return {}
-
-    lines = path.read_text(encoding="utf-8").strip().splitlines()
-
-    class_grades = {}
-
-    for line in lines[1:]:
-        parts = line.split(",")
-        student_name = parts[0].strip()
-        class_grades[student_name] = int(parts[1].strip())
-
-    return class_grades
-
-
-if __name__ == "__main__":
-    print(load_class())
-```
-
-Երեք նոր բան, և միայն երեքը.
-
-- `import settings` — վերցնում է մյուս ֆայլից։ Օգտագործում ենք որպես `settings.PASS_MARK`։
-- `path.read_text(encoding="utf-8")` — կարդում է ամբողջ ֆայլը։ **`encoding="utf-8"`-ը
-  պարտադիր է**, այլապես հայերեն անունները կկոտրվեն։
-- `line.split(",")` — կտրում է տողը ստորակետով և տալիս ցուցակ՝ `["Անի", "9"]`։
-
-Իսկ `lines[1:]`-ը 7-րդ թեմայի կտրելն է՝ «առաջինից բացի բոլորը», որովհետև առաջինը
-վերնագիրն է։
-
-✅ **ՍՏՈՒԳՈՒՄ։** `python storage.py` տպում է բառարանը՝ 12 աշակերտով, հայերեն
-անուններով։
-
-> **Եթե հայերենը կոտրված է** — ստուգի՛ր `encoding="utf-8"`-ը։
-> **Եթե `FileNotFoundError` է** — `data` թղթապանակը սխալ տեղում է։
-
----
-
-## Քայլ 4 — `grades.py`-ն կապել `settings.py`-ին
-
-Բացի՛ր այս նիստի առաջին կեսի `grades.py`-ն։ Վերևում ջնջի՛ր `PASS_MARK = 4` տողը և փոխարենը գրի՛ր՝
-
-```python
-import settings
-```
-
-Հետո ամենուր, որտեղ գրված է `PASS_MARK`, գրի՛ր `settings.PASS_MARK`։
-
-```python
-def has_passed(grade, pass_mark=settings.PASS_MARK):
-    return grade >= pass_mark
-```
-
-Ավելացրո՛ւ նաև մեկ նոր ֆունկցիա, որը հաջորդ նիստում պետք կգա՝
-
-```python
-def class_average(class_grades):
-    """Return the average grade of the whole class."""
-    return average_of(list(class_grades.values()))
-```
-
-✅ **ՍՏՈՒԳՈՒՄ։** `python grades.py` դեռ աշխատում է։
-
-✅ **ԵՐԿՐՈՐԴ ՍՏՈՒԳՈՒՄ։** Բացի՛ր `settings.py`-ն, փոխի՛ր `PASS_MARK`-ը 8-ի, պահի՛ր,
-գործարկի՛ր `python grades.py` նորից։ **Արդյունքը պետք է փոխվի։**
-
-Հետո փոխի՛ր ետ 4-ի։ **Մեկ խմբագրում, ամբողջ ծրագրի համար։**
-
----
-
-## Քայլ 5 — `main.py`
+## Քայլ 4 — `main.py`
 
 Վերջին ֆայլը։ Ստեղծի՛ր **`main.py`**՝
 
@@ -186,8 +97,6 @@ def class_average(class_grades):
 """Register - a program for teachers."""
 
 import grades
-import settings
-import storage
 
 
 def show_register(class_grades):
@@ -200,7 +109,7 @@ def show_register(class_grades):
             result = "passed"
         else:
             result = "failed"
-        print(f"{student_name:<{settings.NAME_WIDTH}} {grade:>3}   {result}")
+        print(f"{student_name:<{grades.NAME_WIDTH}} {grade:>3}   {result}")
 
     print()
     print(f"students:      {len(class_grades)}")
@@ -208,7 +117,9 @@ def show_register(class_grades):
 
 
 def main():
-    class_grades = storage.load_class()
+    # For now the register lives here, as it did in the notebook.
+    # In topic 22 it moves into a file of its own.
+    class_grades = {"Ani": 9, "Davit": 6, "Nare": 10, "Aram": 3}
 
     while True:
         print()
@@ -231,14 +142,14 @@ if __name__ == "__main__":
 ```
 
 Ուշադրություն՝ **`main.py`-ն ինքը ոչինչ չի հաշվում**։ Նա հարցնում է, հետո խնդրում է
-`storage`-ին կարդալ և `grades`-ին հաշվել։
+`grades`-ին հաշվել։
 
 Եվ ուշադրություն՝ `grades.has_passed(...)` — ֆայլի անունը, կետ, ֆունկցիայի անունը։
 Ուղիղ այնպես, ինչպես `student_names.append(...)`-ը 7-րդ թեմայում։
 
 ---
 
-## Քայլ 6 — Գործարկի՛ր
+## Քայլ 5 — Գործարկի՛ր
 
 ```
 python main.py
@@ -253,7 +164,7 @@ python main.py
 
 ## 📦 Այսօրվա արդյունքը
 
-**Աշխատող `python main.py`** — չորս ֆայլից բաղկացած իսկական ծրագիր, գործարկված
+**Աշխատող `python main.py`** — երկու ֆայլից բաղկացած իսկական ծրագիր, գործարկված
 տերմինալից։
 
 > **Ուսուցիչը այսօր անձամբ ստուգում է ամեն մասնակցի մոտ, որ `python main.py`-ն
@@ -266,7 +177,7 @@ python main.py
 
 | Սխալը | Ի՞նչ է նշանակում |
 |---|---|
-| `ModuleNotFoundError: No module named 'settings'` | Չորս ֆայլերը նույն թղթապանակում չեն |
+| `ModuleNotFoundError: No module named 'grades'` | Երկու ֆայլերը նույն թղթապանակում չեն |
 | `FileNotFoundError` | `data` թղթապանակը սխալ տեղում է, կամ սխալ թղթապանակից ես գործարկում |
 | Հայերենը կոտրված է | `encoding="utf-8"`-ը մոռացվել է |
 | `AttributeError: module 'grades' has no attribute ...` | Ֆունկցիայի անվան մեջ տառասխալ է |

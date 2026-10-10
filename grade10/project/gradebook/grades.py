@@ -1,14 +1,40 @@
 """
-The calculations: average, highest, passed or not.
+The settings, and the calculations: average, highest, passed or not.
 
-This file knows nothing about files and nothing about printing. It only
-calculates.
+This file knows nothing about files and nothing about printing. It only holds
+the decisions and calculates.
 
 That is deliberate: it means you can test the calculations without having a
 data file at all. Run this file on its own and you will see.
+
+Topic 9 taught that a number which matters gets a name (PASS_MARK). The block
+below is that lesson made permanent: when you want to change something about
+the program, look here first.
 """
 
-import settings
+# ----------------------------------------------------------------- settings
+
+# The pass mark. Change it to match your school's rule.
+# This one number decides who has "passed" everywhere in the program.
+PASS_MARK = 4
+
+# Which file holds the class?
+# The file lives in data/ and its first line must be:  name,grade
+CLASS_FILE = "data/sample_class.csv"
+
+# When you are ready to work with your own class (topic 22), change the line
+# above to:
+#     CLASS_FILE = "data/my_class.csv"
+
+# How many digits after the decimal point in an average?
+DECIMAL_PLACES = 1
+
+# How wide should the name column be when printing the register?
+# If your students have long names, make this bigger.
+NAME_WIDTH = 12
+
+
+# ------------------------------------------------------------- calculations
 
 
 def average_of(grades):
@@ -25,10 +51,10 @@ def average_of(grades):
     for grade in grades:
         total = total + grade
 
-    return round(total / len(grades), settings.DECIMAL_PLACES)
+    return round(total / len(grades), DECIMAL_PLACES)
 
 
-def has_passed(grade, pass_mark=settings.PASS_MARK):
+def has_passed(grade, pass_mark=PASS_MARK):
     """Return True if this grade is a pass."""
     return grade >= pass_mark
 
@@ -51,7 +77,7 @@ def highest_of(class_grades):
     return best_name
 
 
-def failing_students(class_grades, pass_mark=settings.PASS_MARK):
+def failing_students(class_grades, pass_mark=PASS_MARK):
     """Return a list of the names of the students who did not pass."""
     failing = []
 

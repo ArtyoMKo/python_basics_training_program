@@ -200,7 +200,7 @@ extra work:
 |---|---|---|
 | **Diagnostic** (before session 1) | Q1: can they run a cell at all, and at what help level? | **The baseline.** Without it we can only report an endpoint, not change |
 | **Midpoint** (after topic 13) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
-| **Final** (session 18) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the four-file project was not reachable |
+| **Final** (session 18) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the three-file project was not reachable |
 | **session 16** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
 | **Session 18** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
 | **Session 18** | Attendance across all 18 sessions | Below a certain point, nothing else is interpretable |

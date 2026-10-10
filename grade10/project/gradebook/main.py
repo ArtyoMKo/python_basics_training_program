@@ -9,7 +9,6 @@ teacher what they want, and then asks the other files to do the work.
 """
 
 import grades
-import settings
 import storage
 
 
@@ -27,7 +26,7 @@ def show_register(class_grades):
             result = "passed"
         else:
             result = "failed"
-        print(f"{student_name:<{settings.NAME_WIDTH}} {grade:>3}   {result}")
+        print(f"{student_name:<{grades.NAME_WIDTH}} {grade:>3}   {result}")
 
     print()
     print(f"students:      {len(class_grades)}")
@@ -84,7 +83,7 @@ def show_menu():
 
 def main():
     class_grades = storage.load_class()
-    print(f"Opened {settings.CLASS_FILE} - {len(class_grades)} students")
+    print(f"Opened {grades.CLASS_FILE} - {len(class_grades)} students")
 
     while True:
         show_menu()

@@ -23,7 +23,7 @@ Record the help level (`3`–`0`) alongside the score, as in test 1.
 | Q | Points | Expected | What a wrong answer tells you |
 |---|---|---|---|
 | 1 | 8 | `.append()` to **both** lists, then correct one grade by index | Appending to one list only is the two-list fragility the course deliberately exposes on topic 8, which the midpoint already covers. **Not a failure** — note it |
-| 2 | 7 | `if grade >= PASS_MARK:` / `else:` | Hardcoding the number instead of using `PASS_MARK` is minor here, but it is the habit `settings.py` depends on at session 16. Mention it individually |
+| 2 | 7 | `if grade >= PASS_MARK:` / `else:` | Hardcoding the number instead of using `PASS_MARK` is minor here, but it is the habit `grades.py`'s settings block depends on at session 16. Mention it individually |
 | 3 | 8 | Spots that the chain is in the wrong order and reorders it, strictest first | **The only question with no error message to guide them.** Not spotting it means they cannot yet reason about code that runs and is wrong — the hardest thing for a beginner to accept, and worth re-teaching out loud |
 | 4 | 10 | A `for` loop over the register, with the condition inside it | **This is the headline result of the whole test.** A loop means the topic 11 discovery structure worked. Hand-written repetition for every student means it did not |
 | 5 | 9 | `total = 0` before the loop, accumulate inside, divide after, `round` | `total = 0` placed *inside* the loop is the classic accumulator bug. Show it once on the board; it recurs at topic 15 |

@@ -302,7 +302,7 @@ loop over, and the register has to exist before anything can decide about it.
 | `for` | 11–13 | Over a list, `range`, totals, counters, filtering into a new list |
 | `while` | 16 | Repeat until told to stop; validating input; stopping a runaway loop |
 | Functions | 17–18 | `def`, parameters, `return`, one default argument |
-| Modules & imports | 20–21 | `import`, `if __name__ == "__main__":`, four files |
+| Modules & imports | 20–21 | `import`, `if __name__ == "__main__":`, two files |
 | Files | 22 | Read and write a text/CSV file; `FileNotFoundError` handled once |
 | Reading errors | every topic | See §6.5 |
 
@@ -358,7 +358,7 @@ The shipped sample class is **fictional** and small (12 students). Participants 
 their own from Topic 22 — see the privacy rule in §12.
 
 **The grading scale is 1–10, and the pass mark is 4.** Fixed, everywhere, in every cell.
-It is written **once**, as `PASS_MARK = 4`, from topic 9 onward, and lives in `settings.py`
+It is written **once**, as `PASS_MARK = 4`, from topic 9 onward, and lives at the top of `grades.py`
 in the project. Two rules follow from it:
 
 - Nothing in shipped code writes `4` as a bare number after topic 9. The whole point of
@@ -625,20 +625,19 @@ reported as a pass rate (§ `RATIONALE.md` 5).
 | Line length | ≤ 80 characters, so it fits a projector at a readable font size |
 | Blank lines | One between logical steps inside a cell; beginners read whitespace as structure |
 | Comment density, notebooks | One comment above each code cell saying **why**; inline comments only on the line that surprises |
-| Comment density, `project/` | `settings.py` ~50% (it is a teaching surface); other modules 15–25% |
+| Comment density, `project/` | `grades.py`'s settings block ~50% (it is a teaching surface); the rest 15–25% |
 | Docstrings | One line, plain language, in every project function: `"""Return the average of a list of grades."""` |
 | `try` / `except` | Exactly one, in `main.py`, around the menu loop. Nowhere else. Topic 22's `FileNotFoundError` is handled with an `if` on whether the file exists, not an exception. |
 | Emoji in output | `✅` and `❌` in check scripts only; never inside teaching code |
 
-### The project's four files
+### The project's three files
 
 Each explainable in one sentence, stated in the project README as a table:
 
 ```
-settings.py    Every number you might want to change.     (no logic — the topic 9 lesson, as a file)
-storage.py     Load the class from a file, save it back.  (knows nothing about grades)
-grades.py      The calculations: average, highest, pass.  (knows nothing about files)
-main.py        Ask the teacher what they want, and print. (does no calculating of its own)
+grades.py      The settings, and the calculations.          (topic 21 — the numbers and the maths)
+storage.py     Reading and writing the class file.          (topic 22 — once files are taught)
+main.py        The menu: ask, call, print.                  (topic 21 — the entry point)
 ```
 
 **Four, not five.** An earlier draft had a separate `report.py` for printing. Printing is
@@ -650,7 +649,7 @@ removes a file, an import and five minutes of explanation from a 75-minute sessi
 `grades.py` must not import `storage.py`. The reason is stated to participants in session 16's
 guide: *you can test your average calculation without having a file at all.*
 
-`settings.py` is the pedagogical payoff of topic 9 — one place to change the pass mark —
+The settings block at the top of `grades.py` is the pedagogical payoff of topic 9 — one place to change the pass mark —
 and the plan should keep that connection explicit in both the guide and the file's own
 comments.
 
@@ -686,13 +685,13 @@ public_school_python/
 │   └── README.md               <- how the three sittings work
 ├── guides/
 │   ├── day20_leaving_the_notebook.md
-│   ├── day21_four_files.md
+│   ├── day21_two_files.md
 │   ├── day22_your_own_class.md
 │   ├── day23_make_it_yours.md
 │   └── day24_finish_and_show.md
 ├── project/
 │   └── gradebook/              <- the finished reference program
-│       ├── settings.py  storage.py  grades.py  main.py
+│       ├── grades.py  storage.py  main.py
 │       ├── data/sample_class.csv
 │       └── README.md
 └── tools/                      <- build and verification, not participant-facing
@@ -830,7 +829,7 @@ is session 1's entire content and the largest single risk to the programme. It m
 | 18 | Sending an answer back | NB | `return`, default parameter | Four grade functions that return values |
 | 19 | The register, assembled | NB | consolidation — no new syntax | The complete register program, in one notebook |
 | 20 | Leaving the notebook | **TR** | a `.py` file, the terminal, `__main__` | `python grades.py` runs in a terminal |
-| 21 | Four files that each do one thing | **TR** | `import`, modules | **A working `python main.py`** — confirmed individually |
+| 21 | Two files that each do one thing | **TR** | `import`, modules | **A working `python main.py`** — confirmed individually |
 | **22** | **Keeping it after you close it** | **D** | retyping every time → **files** | Their own class in `data/my_class.csv`, loaded and saved |
 | 23 | Make it yours | PR | designing a small feature | One self-designed feature working |
 | 24 | Finish and show | PR | README, the fresh-laptop test, demoing | A 90-second demo; a README a colleague can follow |
@@ -964,7 +963,7 @@ day's recap callout, must be enough. Build each notebook so this is true.
 | # | Methodology says | Here | Why |
 |---|---|---|---|
 | O1 | Transition is exactly one lesson | Two (topics 20–21) | 75-minute sessions; one cannot hold both "what a `.py` file is" and a five-module split |
-| O2 | Provider-agnostic pattern is the architectural spine (§7) | **Dropped entirely** | No external service exists in this course. Its replacement as the "one clean abstraction" is `settings.py` — one place for every number — which is the topic 9 lesson made structural |
+| O2 | Provider-agnostic pattern is the architectural spine (§7) | **Dropped entirely** | No external service exists in this course. Its replacement as the "one clean abstraction" is the settings block at the top of `grades.py` — one place for every number — which is the topic 9 lesson made structural |
 | O3 | "Age-appropriate complexity: students already program" | Absolute beginners | Python is the subject, not the medium; §5's exclusion list is far longer |
 | O4 | Python is not taught; a cheatsheet is handed out | Python **is** the course; the cheatsheet is a printable summary that grows with it | Inverted audience |
 | O5 | 1–2 exercise callouts per lesson | 3–5 short ones | 75-minute sessions need smaller units of work |

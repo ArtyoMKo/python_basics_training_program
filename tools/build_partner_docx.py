@@ -368,7 +368,7 @@ def check_facts():
         "project files": len(list((TEN / "project" / "gradebook").glob("*.py"))),
     }
     expected = {"notebooks": 19, "solutions": 18, "tests": 3, "participant tests": 3,
-                "guides": 5, "marking guides": 3, "project files": 4}
+                "guides": 5, "marking guides": 3, "project files": 3}
     for name, want in expected.items():
         if counts[name] != want:
             problems.append(f"{name}: found {counts[name]}, dossier says {want}")
@@ -409,7 +409,7 @@ def check_facts():
 # -------------------------------------------------------------------------- content
 
 TODAY = "2 October 2026"
-VERSION = "3.2"
+VERSION = "3.3"
 
 
 # Phrases from the three-a-week schedule. This document restates its figures in prose
@@ -503,7 +503,7 @@ def build():
             ["Delivery", "**Fully remote**, over Google Meet with screen sharing. No session is held on site, in either course"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
             ["Group size", "**4–8 per group**, one instructor"],
-            ["Deliverable", "A runnable four-file Python program over the participant's own class data, demonstrated to a colleague"],
+            ["Deliverable", "A runnable three-file Python program over the participant's own class data, demonstrated to a colleague"],
             ["Cost", "**Zero.** All software is free; nothing touches a paid service or needs the internet after day one"],
             ["Judged by", "**Can they code?** More than 90% = success, under 50% = failure (section 8) — plus a trial class with real pupils in March"],
             ["Status", "**Both Part 1 courses are complete and verified. Neither has been taught to a cohort.** Both Part 2s are visions"],
@@ -828,7 +828,7 @@ def build():
             ["18", "", "Sending an answer back", "Four working grade functions that return values"],
             ["19", "", "The register, assembled  *(no new syntax)*", "The complete register program in one notebook"],
             ["20", "T", "Leaving the notebook", "`python grades.py` running in a terminal"],
-            ["21", "T", "Four files that each do one thing", "**A working `python main.py`**, confirmed individually"],
+            ["21", "T", "Two files that each do one thing", "**A working `python main.py`**, confirmed individually"],
             ["22", "**D**", "**Keeping it after you close it**", "Their own class in a file, loaded and saved back"],
             ["23", "P", "Make it yours", "One feature of their own design, working"],
             ["24", "P", "Finish and show", "A colleague runs their program from their notes alone"],
@@ -1015,7 +1015,7 @@ def build():
         [
             ["Diagnostic", "Several participants unable to run a cell unaided → a second helper on day 1, or a setup clinic beforehand"],
             ["Midpoint", "**Still writing one block per student instead of a loop** → the clearest early evidence against the method, and it is recorded as such"],
-            ["Final", "Printing instead of returning a value → `return` never landed, and the four-file program rests on it"],
+            ["Final", "Printing instead of returning a value → `return` never landed, and the three-file program rests on it"],
         ],
         [0.15, 0.85],
     )
@@ -1333,7 +1333,7 @@ def build():
             ["State topics", "1–14", "15–22 and 24"],
             ["Spine", "one class, in dictionaries", "**the whole school**, as objects with statistics and charts"],
             ["Teaches", "print, types, variables, lists, dictionaries, conditions, loops, functions, files", "**classes, inheritance, NumPy, Matplotlib, pandas, recursion, debugging**"],
-            ["Deliverable", "a four-file gradebook over the teacher's own class", "a **five-file report tool** over the teacher's own school file, with charts"],
+            ["Deliverable", "a three-file gradebook over the teacher's own class", "a **five-file report tool** over the teacher's own school file, with charts"],
             ["Discovery sessions", "5 of 18", "**7 of 18**"],
             ["Status", "built and verified", "**built and verified**"],
         ],
@@ -1580,7 +1580,7 @@ def build():
             ["Worked solutions", "18", "21", "Participant, after each session"],
             ["Assessments — grader's and participant versions", "3 × 2", "3 × 2", "Participant / instructor"],
             ["Assessment marking guides", "3", "3", "Instructor only"],
-            ["Reference program", "4 files", "5 files", "Participant, from the transition session"],
+            ["Reference program", "3 files", "5 files", "Participant, from the transition session"],
             ["Installation instructions, reference sheet, setup check", "3", "3", "Participant"],
             ["Instructor notes, curriculum, build specification", "3", "3", "Instructor / organiser"],
             ["Recruitment announcement, enrolment guidance", "2", "2", "Prospective participants"],

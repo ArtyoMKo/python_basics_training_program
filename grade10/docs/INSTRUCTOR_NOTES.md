@@ -238,7 +238,7 @@ different teaching problem from the one who worked alone and ran out of time.
 |---|---|---|
 | Diagnostic | Q1 — can they run a cell at all? | Several at help level 0–1 → add a helper to session 1, or run a setup clinic first. This is your advance warning on the riskiest session |
 | Midpoint | **Q4 — did they write a loop?** | Still writing one block per student after nine sessions is the strongest early evidence against the approach. Record it; do not explain it away |
-| Final | Q2 and Q3 — returning or printing? | Printing means `return` never landed, and the four-file project rests on it |
+| Final | Q2 and Q3 — returning or printing? | Printing means `return` never landed, and the three-file project rests on it |
 
 ### The diagnostic is also a planning tool
 

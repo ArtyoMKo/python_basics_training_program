@@ -7,7 +7,7 @@
 | **When** | Topic 24, as a separate sitting |
 | **Length** | 90–120 minutes |
 | **Total** | **70 points** across questions 1–7, **plus question 8 marked separately** |
-| **Covers** | topics 14–24: reports, functions, `return`, files, the four-file program |
+| **Covers** | topics 14–24: reports, functions, `return`, files, the three-file program |
 | **Variants** | A/B/C for questions 1–7. **Question 8 is the same for everyone** |
 
 **This test is marked in two parts, and the second one matters more.**

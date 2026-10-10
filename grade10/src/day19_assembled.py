@@ -43,7 +43,7 @@ NAME_WIDTH = 12
 
 #%% md
 > Ուշադրություն՝ սրանք վերևում են, միասին, մեծատառերով։ **21-րդ թեմայում այս երեք տողը
-> կդառնա առանձին ֆայլ՝ `settings.py`։**
+> կգնա `grades.py`-ի վերևը։**
 
 #%% code
 # The class. On day 22 this will come from a file instead.

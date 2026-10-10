@@ -20,7 +20,7 @@ background, in two parts.**
 | **Part 2** | **algorithmic tasks and the theory Part 1 postponed**, then classes and libraries | **4 months**. Outlined in `docs/ROADMAP.md`, not written |
 
 Part 1 is 18 sessions, 2 a week for 9 weeks, **delivered **fully remotely — every session, without exception**** in groups of **4–8**. Materials are in Armenian; code is in English. It ends with each
-participant running a four-file gradebook program over their own class list.
+participant running a three-file gradebook program over their own class list.
 
 Sessions are **75 minutes**: 18 × 75 = 1,350 minutes = 22 h 30, verified by
 `check_times.py`.

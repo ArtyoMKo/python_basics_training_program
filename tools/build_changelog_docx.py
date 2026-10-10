@@ -359,6 +359,7 @@ def check_facts():
         ("the diagnostic assessment", "Initial diagnostic", False, True),
         ("75-minute sessions", "75 minutes", False, True),
         ("22½ hours", "22½ hours", False, True),
+        ("a three-file program", "three-file", False, True),
         ("18 sessions", "18 sessions", False, True),
         ("fully remote delivery", "Fully remote", False, True),
         ("groups of 4–8", "4–8", False, True),
@@ -380,8 +381,8 @@ def check_facts():
 
 # -------------------------------------------------------------------------- content
 
-TODAY = "13 October 2026"
-CURRENT = "3.2"
+TODAY = "14 October 2026"
+CURRENT = "3.3"
 BASELINE = "1.1"
 BASELINE_DATE = "Friday 2 October"
 

@@ -33,7 +33,7 @@ Part 1 exists to ask.
 
 The grade-11 course **assumes the grade-10 course**, and assumes nothing beyond it. A
 teacher arriving at `grade11/` can write a loop, a dictionary and a function, and can run
-a four-file program. They have never seen a class, an object, a library or a comprehension,
+a three-file program. They have never seen a class, an object, a library or a comprehension,
 and those are taught from zero, practically, the same way the grade-10 course teaches
 variables and loops.
 

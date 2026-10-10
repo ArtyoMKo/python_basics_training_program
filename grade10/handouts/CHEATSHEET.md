@@ -284,7 +284,7 @@ if path.exists():
 ## 11. Մոդուլներ
 
 ```python
-# in settings.py
+# at the top of grades.py
 PASS_MARK = 4
 
 # in main.py
