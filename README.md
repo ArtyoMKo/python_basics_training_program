@@ -45,6 +45,7 @@ Each course folder is self-contained — its own `AGENTS.md`, `docs/`, `src/` an
 cd grade10 && python tools/verify.py     # or grade11 — proves one course's material runs
 python tools/check_docs.py               # from the root — proves the DOCUMENTS agree
 python tools/check_topic_refs.py         # from the root — every "topic N" names the right topic
+python tools/check_guides.py             # from the root — the guides build the project they describe
 python tools/build_partner_docx.py       # from the root — rebuilds the partner dossier
 ```
 

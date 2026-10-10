@@ -640,7 +640,7 @@ storage.py     Reading and writing the class file.          (topic 22 — once f
 main.py        The menu: ask, call, print.                  (topic 21 — the entry point)
 ```
 
-**Four, not five.** An earlier draft had a separate `report.py` for printing. Printing is
+**Three, not four.** An earlier draft kept the settings in a file of their own; folding them into the top of `grades.py` is the same lesson with one less file to explain, and `import` is state topic 15 — a semester beyond what this course prepares.
 two `print()` calls in a loop and does not need its own file; folding it into `main.py`
 removes a file, an import and five minutes of explanation from a 75-minute session. This is
 §0 applied.

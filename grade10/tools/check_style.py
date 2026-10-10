@@ -23,7 +23,7 @@ PROJECT = ROOT / "project" / "gradebook"
 
 # Modules the course is allowed to import. Everything else is a violation --
 # Anaconda ships 300 packages and none of them belong in a beginner's first program.
-ALLOWED_IMPORTS = {"pathlib", "sys", "settings", "grades", "storage"}
+ALLOWED_IMPORTS = {"pathlib", "sys", "grades", "storage"}
 
 # Constructs excluded by docs/PLAN.md section 5. Each is a (regex, why) pair.
 FORBIDDEN = [

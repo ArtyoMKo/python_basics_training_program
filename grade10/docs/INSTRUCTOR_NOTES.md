@@ -100,7 +100,7 @@ Other frequent problems, in order of how often they occur:
 | `NameError` | A cell above was not run | Run → Run All Above |
 | `IndentationError` | Tab/space mix, or a missing four spaces | Retype the line; do not copy it |
 | Nothing prints in a `.py` file (Topic 20+) | They expect notebook behaviour | Everything you want to see needs `print()` |
-| `FileNotFoundError` (session 16+) | Wrong folder, or `data/` misplaced | `python_course` must be the opened folder |
+| `FileNotFoundError` (session 17+) | Wrong folder, or `data/` misplaced | `python_course` must be the opened folder |
 
 ---
 

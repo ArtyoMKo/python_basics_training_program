@@ -122,7 +122,7 @@ of a participant's attention is available for the problem.
 
 ### Stage 4 — bigger projects
 
-Part 1's project is three files and about 275 lines. Part 2's should be several times that,
+Part 1's project is three files and about 300 lines. Part 2's should be several times that,
 built over weeks rather than three sessions.
 
 - A project the participant chooses, grounded in their own school work

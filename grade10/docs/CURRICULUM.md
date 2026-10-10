@@ -128,6 +128,23 @@ The highest-risk session of the programme. The reward at the end is small and re
 > what this course prepares. The question that decides where code goes is introduced
 > here with two answers, and it is the same question in grade 11 with five.
 
+### Session 17 — Keeping it after you close it · *topic 22 · discovery*
+
+**This session carries the third file**, so its second half is longer than the standard
+discovery shape — 30 minutes rather than 27. The three come out of the long half, which
+needs less here because the laborious version is editing one line and losing it, not
+typing thirty.
+
+| # | Activity | Min |
+|---|---|---|
+| 1 | Recap, and last session's homework: `python main.py` runs for everyone | 5 |
+| 2 | **Teach:** the class is written inside the program, so every change means editing the code. *Later in this session, a way to keep it outside* | 7 |
+| 3 | **Do it the long way:** add three students by editing `main.py`. Then close the program, reopen it, and add them again | 18 |
+| 4 | **Teach:** `read_text`, `write_text`, `path.exists()`, `split(",")`, and why `encoding="utf-8"` matters for your own class. **The third answer to "which file does this go in?"** | 10 |
+| 5 | **Do the same again:** build `storage.py`, wire it into `main.py`, and point it at `data/my_class.csv` with **your own class**. Add a student through the menu, save, reopen, confirm it is still there | 30 |
+| 6 | Retrospective | 5 |
+| | **Total** | **75** |
+
 ### Session 18 — Make it yours, and show it · *topics 23–24 · project*
 
 | # | Activity | Min |
@@ -547,7 +564,7 @@ class file will have Armenian names in it.
 
 **Concepts:** choosing a feature · where a new piece of code belongs
 
-**Tools & Skills:** editing across two files · deciding which file a change goes in
+**Tools & Skills:** editing across three files · deciding which file a change goes in
 
 Four suggested features, each achievable in thirty minutes with only what the course has
 taught. Sixteen identical gradebooks would be a failed course.

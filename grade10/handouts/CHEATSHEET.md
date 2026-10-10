@@ -288,10 +288,10 @@ if path.exists():
 PASS_MARK = 4
 
 # in main.py
-import settings
+import grades
 from grades import average_of
 
-print(settings.PASS_MARK)
+print(grades.PASS_MARK)
 ```
 
 ```python

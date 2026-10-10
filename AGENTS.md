@@ -32,7 +32,12 @@ root checkers:
 ```bash
 python tools/check_docs.py        # the documents agree with each other and the material
 python tools/check_topic_refs.py  # every "topic N" claim names the topic that teaches it
+python tools/check_guides.py      # the guides actually build the project they describe
 ```
+
+**`verify.py` proves the finished `project/` folder runs. It does not prove a participant
+following the guides arrives at it** — those are different claims, and the second one is
+the course's hard gate. `check_guides.py` exists for that.
 
 **Renumbering a topic is the change most likely to go wrong**, because a stale topic
 number is still a valid number. `check_topic_refs.py` exists for exactly that.
