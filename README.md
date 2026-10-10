@@ -1,6 +1,6 @@
 # Python for Armenian public-school teachers
 
-Two courses, each two months, that prepare serving teachers to deliver the state
+Two courses, each nine weeks, that prepare serving teachers to deliver the state
 curriculum **«ԱԲ սերունդ» — ՀԱՄԱԿԱՐԳՉԱՅԻՆ ԳԻՏՈՒԹՅՈՒՆ՝ PYTHON ԼԵԶՎՈՎ** (ministry order
 1875 of 09.09.2026) to their own pupils.
 
@@ -12,7 +12,8 @@ curriculum **«ԱԲ սերունդ» — ՀԱՄԱԿԱՐԳՉԱՅԻՆ ԳԻՏՈՒԹ
 | [`partners/`](partners/) | the dossier and change log for external partners, covering **both** courses | — | generated |
 
 Each course is **18 sessions × 75 minutes = 22 h 30**, two a week over nine weeks,
-delivered remotely in groups of 4–8. Materials are in Armenian; code is in English.
+delivered **fully remotely — every session, without exception** — in groups of 4–8,
+with required homework between sessions. Materials are in Armenian; code is in English.
 
 ## The two halves of each course
 
@@ -21,7 +22,7 @@ never mixed:
 
 | | What it is | Length |
 |---|---|---|
-| **Part 1** | **Writing working code**, with the algorithmic difficulty deliberately removed. Mechanics to automaticity | 2 months — the 18 sessions above |
+| **Part 1** | **Writing working code**, with the algorithmic difficulty deliberately removed. Mechanics to automaticity | 9 weeks — the 18 sessions above |
 | **Part 2** | **The theory Part 1 postponed, and algorithmic problems** | Outlined in each course's `docs/ROADMAP.md`; not written |
 
 Part 2 of either course runs only if its Part 1 meets the success criterion

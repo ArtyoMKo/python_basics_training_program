@@ -16,6 +16,19 @@ This repository holds **two courses**, each self-contained:
 Never change a file in one course because of something you read in the other. If a change
 belongs in both, make it twice and say so.
 
+## The shape both courses hold to
+
+| | |
+|---|---|
+| **Sessions** | **18 × 75 minutes = 22 h 30**, two a week over nine weeks |
+| **Delivery** | **Fully remote**, over Google Meet. No session is on site, in either course |
+| **Groups** | 4–8, one instructor |
+| **Topics** | 24 per course. A topic is one notebook; a session is 75 minutes in a room |
+| **Homework** | **Required.** 15–20 min after most sessions, 30–40 after a paired one. Never new work — always tasks already in that session's notebook |
+
+Changing any of these means changing both courses, their partner documents, and
+`tools/check_docs.py`, which is what proves they still agree.
+
 ## What is the same in both
 
 These hold everywhere, and a change to any of them belongs in both courses:
@@ -28,6 +41,8 @@ These hold everywhere, and a change to any of them belongs in both courses:
 4. **Every agenda sums to exactly 75 minutes.** Teaching never exceeds 12 minutes in one
    block. If content does not fit, cut a topic — never compress one.
 5. **Three exercise tiers in every notebook** — Պարտադիր 3–4, Լրացուցիչ 3–4, Մարտահրավեր 1–2.
+   **Homework is drawn from these and never written separately**; a Մարտահրավեր is never
+   set at home.
 6. **Every example is a classroom.** No `foo`, no `x = 5`, no fizzbuzz.
 7. **`notebooks/`, `solutions/` and `tests/` are generated from `src/`.** Never edit a
    `.ipynb`.

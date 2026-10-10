@@ -418,6 +418,16 @@ VERSION = "3.2"
 # Phrases from every schedule this programme has used before the current one:
 # 24 x 75 three a week, then 16 x 120 twice a week. The current schedule is
 # 18 x 75 twice a week over nine weeks -- do not list any of its figures here.
+# Claims this document used to make that the programme has since reversed. A partner
+# acting on any of them would be acting on a course that no longer exists.
+REVERSED_CLAIMS = [
+    "nothing is required between",
+    "optional ten-minute",
+    "four assessments",
+    "never assumes was done",
+    "homework is optional",
+]
+
 STALE_SCHEDULE = [
     "three a week", "three times a week", "eight weeks",
     "24 sessions", "16 sessions", "30 hours", "32 hours",
@@ -439,9 +449,12 @@ def docx_text(path):
 
 
 def check_built_document(path):
-    """Fail if the finished .docx still carries the old schedule anywhere in it."""
+    """Fail if the finished .docx carries an old schedule or a reversed claim."""
     found = []
     text = docx_text(path)
+    for claim in REVERSED_CLAIMS:
+        if claim.lower() in text.lower():
+            found.append(f"{claim!r} — the programme reversed this")
     for phrase in STALE_SCHEDULE:
         if phrase.lower() in text.lower():
             found.append(phrase)
@@ -741,12 +754,40 @@ def build():
         "is what replaces the instructor's physical presence.",
     )
 
-    d.h2("Between sessions")
+    d.h2("Between sessions — homework, and it is required")
+
     d.para(
-        "Sessions are two days apart and the participants are working teachers, so nothing "
-        "is required between them. Each notebook ends with an **optional ten-minute "
-        "practice task** that the next session never assumes was done. The four "
-        "assessments are take-home and consume no session time."
+        "Two sessions a week of 75 minutes is **22½ hours in the room**, against 30 on "
+        "the original three-a-week plan. Nothing was removed from the course; what no "
+        "longer fits is done at home, and **it is required** rather than optional."
+    )
+    d.table(
+        ["After a session covering…", "What is done at home", "How long"],
+        [
+            ["one topic — twelve of the eighteen", "the extra questions", "**15–20 min**"],
+            ["two topics — the remaining six", "the main questions for both notebooks", "**30–40 min**"],
+            ["the build and showcase sessions", "nothing", "—"],
+        ],
+        [0.36, 0.40, 0.24],
+        size=9,
+    )
+    d.callout(
+        "What homework is, and what it is not",
+        [
+            "**Every question is already printed in the notebook the session used**, in "
+            "the same three tiers and the same form as the work done together. Nothing "
+            "new is ever introduced at home.",
+            "**The hardest tier is never set as homework.** Those questions exist for the "
+            "fastest one or two in a room, and only in the room.",
+            "**Every session opens by going through the last one's homework**, so it is "
+            "checked rather than assumed — and a participant falling behind is visible in "
+            "week two rather than week six.",
+            "**Teachers are told this before they enrol.** A course that asks for three "
+            "evenings a week when it advertised two is how a cohort is lost.",
+        ],
+    )
+    d.para(
+        "The **three assessments** are separate sittings and consume no session time."
     )
 
     d.page_break()

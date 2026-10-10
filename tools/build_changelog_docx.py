@@ -490,7 +490,7 @@ def build():
     d.table(
         ["After a session that covered…", "What is done at home", "How long"],
         [
-            ["one topic *(twelve of the eighteen)*", "the optional extra questions", "**15–20 minutes**"],
+            ["one topic *(twelve of the eighteen)*", "the extra questions", "**15–20 minutes**"],
             ["two topics *(six of the eighteen)*", "the main questions for both", "**30–40 minutes**"],
             ["the two practical build sessions", "nothing", "—"],
         ],
