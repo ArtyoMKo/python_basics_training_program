@@ -37,7 +37,7 @@ engineering. Concretely, this course has:
 | One folder — `python_course/` in Documents | A folder per day, a folder per phase |
 | One idea per day, named in the file name | Two related things "while we're here" |
 | One new built-in per concept | The three ways Python can do it |
-| Four files in the final project | Five, or a package |
+| Three files in the final project | Four, five, or a package |
 | Zero installs after session 1 | `pip install` anything, ever |
 | One language per place — Armenian explains, English codes | Armenian inside a code cell |
 
@@ -116,8 +116,10 @@ This applies to file names too: instructor-facing notes are `INSTRUCTOR_NOTES.md
 | **Project** | 22–24 | VS Code + terminal | Own data, own feature, finish and show |
 
 Two topics for the transition rather than the methodology’s one, because one block cannot
-hold both "here is what a `.py` file is" and "here are four modules". Topic 20 is one file;
-topic 21 is the split, and **session 16** holds both. **Neither may be cut** (§13).
+hold both "here is what a `.py` file is" and "here is what splitting one means". Topic 20 is
+one file; topic 21 is the split into two, and **session 16** holds both. The third file,
+`storage.py`, waits for session 17, where reading a file is taught — a module that stores
+cannot be built before storing is. **Neither topic may be cut** (§13).
 
 ### Time budget
 

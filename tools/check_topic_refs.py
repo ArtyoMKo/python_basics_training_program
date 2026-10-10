@@ -31,7 +31,7 @@ SUBJECTS = {
         16: ["`while`", "`.isdigit()`"],
         17: ["`def`"],
         18: ["`return`"],
-        21: ["four files"],
+        21: ["two files"],
         22: ["`read_text`", "`write_text`"],
     },
     "grade11": {

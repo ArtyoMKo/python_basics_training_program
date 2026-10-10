@@ -448,10 +448,35 @@ def docx_text(path):
     return " ".join(node.text or "" for node in root.iter(f"{namespace}t"))
 
 
+def check_file_table(path):
+    """Every file the dossier names must be a file the project actually ships.
+
+    The dossier describes the deliverable file by file. When the project changed from
+    four files to three, the prose count was updated and the TABLE was not -- so a
+    partner was still reading about a module that no longer exists.
+    """
+    shipped = {p.name for p in (TEN / "project" / "gradebook").glob("*.py")}
+    text = docx_text(path)
+    named = set(re.findall(r"\b(\w+\.py)\b", text))
+    ours = {n for n in named if n in RETIRED_FILES or n in shipped}
+    missing = sorted(ours - shipped)
+    absent = sorted(shipped - ours)
+    found = []
+    for name in missing:
+        found.append(f"names {name}, which project/gradebook/ does not ship")
+    for name in absent:
+        found.append(f"never names {name}, which project/gradebook/ does ship")
+    return found
+
+
+RETIRED_FILES = {"settings.py", "report.py"}
+
+
 def check_built_document(path):
     """Fail if the finished .docx carries an old schedule or a reversed claim."""
     found = []
     text = docx_text(path)
+    found.extend(check_file_table(path))
     for claim in REVERSED_CLAIMS:
         if claim.lower() in text.lower():
             found.append(f"{claim!r} — the programme reversed this")
@@ -876,16 +901,16 @@ def build():
 
     d.h2("What every participant leaves with")
     d.para(
-        "A **runnable Python program**, in their own folder, made of four files they typed "
+        "A **runnable Python program**, in their own folder, made of three files they typed "
         "themselves. One command — `python main.py` — opens their class, shows who passed, "
-        "lists who did not, corrects a grade, and saves."
+        "lists who did not, corrects a grade, and saves. Two of the three exist by the end "
+        "of session 16; the third arrives in session 17, when files are taught."
     )
     d.table(
         ["File", "Its one job", "What it deliberately does not know"],
         [
-            ["`settings.py`", "Every number you might want to change", "It contains no logic at all"],
+            ["`grades.py`", "Every number you might want to change, and the calculations: average, highest, pass or fail", "Nothing about files, and nothing about printing"],
             ["`storage.py`", "Reads the class from a file and writes it back", "Nothing about grades or what they mean"],
-            ["`grades.py`", "The calculations: average, highest, pass or fail", "Nothing about files"],
             ["`main.py`", "Asks the teacher what they want, and prints", "It does no calculating of its own"],
         ],
         [0.17, 0.43, 0.40],

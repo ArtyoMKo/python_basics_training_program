@@ -26,7 +26,7 @@ has finished the grade-10 course and prepares them to teach **grade 11** — sta
 ### What a participant knows on session 1, and what they do not
 
 They can write a `for` loop, a dictionary, a function with `return`, read and write a
-file, and run a four-file program. **They have never seen a class, an object, a library,
+file, and run a three-file program. **They have never seen a class, an object, a library,
 a comprehension or a keyword argument**, and none of it may be assumed. Those are taught
 from zero, practically, exactly as the grade-10 course teaches variables and loops.
 

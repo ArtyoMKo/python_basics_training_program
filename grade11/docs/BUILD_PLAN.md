@@ -20,7 +20,7 @@ differs is the entry point, the subject matter, and two rules that invert (§2 b
 ## 0. What this course is
 
 A teacher who has finished the grade-10 course can write a loop, a dictionary and a
-function, and can run a four-file program over their own class list. They have **never
+function, and can run a three-file program over their own class list. They have **never
 seen a class, an object, a library, a comprehension or a keyword argument.**
 
 This course takes them from there to being able to teach **grade 11**, and to teach the
@@ -50,7 +50,7 @@ The same ratio as a course that works on paper. That is the whole argument for b
 
 ## 1. The spine
 
-Grade 10's spine was **one class**: a register, then a four-file gradebook over it.
+Grade 10's spine was **one class**: a register, then a three-file gradebook over it.
 
 This course's spine is **the whole school**. The teacher arrives with a program that
 handles one class in dictionaries. The school asks for three classes, five subjects, a

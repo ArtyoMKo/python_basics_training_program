@@ -234,7 +234,7 @@ solutions/              generated .ipynb — do not edit
 tests/                  generated .ipynb (grader) + participant/ (generated)
                         + mark1–3_guide.md and README.md (hand-written, instructor only)
 guides/                 topics 20–24, markdown, read beside the code  (Armenian)
-project/gradebook/      the finished reference program (4 files)
+project/gradebook/      the finished reference program (3 files)
 ../partners/            generated .docx dossier and change log, covering BOTH
                         courses — built from ../tools/, never edited by hand
 tools/                  nbbuild.py, verify.py, the three checkers,

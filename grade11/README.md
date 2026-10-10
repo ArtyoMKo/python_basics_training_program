@@ -16,7 +16,7 @@ finished the [grade-10 course](../grade10/README.md) and prepares them to teach 
 
 ## What a participant does not know on session 1
 
-They can write a `for` loop, a dictionary and a function, and can run a four-file program.
+They can write a `for` loop, a dictionary and a function, and can run a three-file program.
 **They have never seen a class, an object, a library, a comprehension or a keyword
 argument.** None of it is assumed; all of it is taught from zero, practically, the way
 the grade-10 course teaches variables and loops.
