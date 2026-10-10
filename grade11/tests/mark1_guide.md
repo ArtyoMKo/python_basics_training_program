@@ -21,7 +21,7 @@ this course can affect it. Mark it the day it is sat; the results change how ses
 | **Q1 has no loop** — one block per student | The single most important outcome of the grade-10 course did not land | **Do not start topic 2 as if it had.** Extend session 1's part C and run a loop clinic before topic 2 |
 | **Q3 uses `print` instead of `return`** | Functions are understood as "a way to print", not as something that hands a value back | Topics 2 and 3 slower, with more examples. This course leans on `return` from topic 2 |
 | **Q4 left blank, Q1 fine** | Dictionaries are shakier than loops | Topic 5 and topic 6 are where this hurts. Add five minutes of revision at the start of each |
-| **Q5 blank** | Error messages were never practised | Spend two minutes a day reading a traceback aloud, from topic 2 onward |
+| **Q5 blank** | Error messages were never practised | Spend two minutes a day reading a traceback aloud, from topic 2 onward | <!--ref-ok-->
 | **Q6 blank, everything else fine** | Files were the last thing taught and did not stick | Harmless until topic 16. Mention it then rather than now |
 
 ## Reading the group, not the person

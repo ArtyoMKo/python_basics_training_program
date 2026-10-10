@@ -129,12 +129,12 @@ The same thing happens five times:
 **The relief comes in the same session. Always.** An earlier draft of this course planted
 a problem on Topic 6 and solved it on Topic 10. That is good structure on paper and bad
 teaching in practice: adults who spend an evening on tedious work and go home with no
-resolution do not come back. The long way and its replacement are now always one session apart, never four sessions.
+resolution do not come back. The long way and its replacement are now always in the **same session**, never four sessions apart.
 
 **The tedium is never named.** A participant is never told they are doing something in
 order to suffer, or that the long way was there to make a point. They are building a class
 register because a teacher needs a class register — which is true. The materials say, before
-the long half begins, that a shorter way is coming after the break. They never say
+the long half begins, that a shorter way is coming later in the same session. They never say
 afterwards "now you see how bad that was".
 
 That distinction matters more than it sounds. Work you chose to do, and were then shown a
@@ -200,7 +200,7 @@ extra work:
 |---|---|---|
 | **Diagnostic** (before session 1) | Q1: can they run a cell at all, and at what help level? | **The baseline.** Without it we can only report an endpoint, not change |
 | **Midpoint** (after topic 13) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
-| **Final** (Topic 24) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the four-file project was not reachable |
+| **Final** (session 18) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the four-file project was not reachable |
 | **session 16** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
 | **Session 18** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
 | **Session 18** | Attendance across all 18 sessions | Below a certain point, nothing else is interpretable |
@@ -383,5 +383,5 @@ Two items are openly unverified and named as such in the materials:
    fixing the wrong thing?
 2. **Is 22 h 30 enough** to produce the fluency the bet depends on?
 3. **What should the success numbers be?** (§5) — agreed in advance.
-4. **Will Topics 6 and 9 be accepted or resented?** Anyone who knows this audience better
+4. **Will topics 6 and 8 be accepted or resented?** Anyone who knows this audience better
    than we do should say so before we run it, not after.

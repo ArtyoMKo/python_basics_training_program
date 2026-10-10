@@ -173,6 +173,14 @@ arrives, and so does the reason it works.
 
 ## Topic 4 — Six reports, six loops  ⟵ *discovery*
 
+**The real task:** the head teacher wants six lists out of one register — who passed,
+who failed, the top five, each subject. With what the participant knows, that is one loop
+each, and when the pass mark changes all six must be edited.
+
+**The tool, the same session:** the list comprehension. The notebook promises it in
+writing before the long stretch begins, and ends with the two versions side by side and a
+count of the lines.
+
 ## Topic 5 — Choosing while you build
 
 A comprehension with a condition, the one-line `if`/`else` inside one,
@@ -181,6 +189,18 @@ and a dictionary comprehension once. `lambda` arrives **only** as a sort key —
 meet it in the pupils' material.
 
 ## Topic 6 — A student is more than a grade  ⟵ *discovery*
+
+**The real task:** a student is no longer a name and a grade. They are a name, a class,
+five subject marks, attendance and a note — nine fields. With what the participant knows,
+that is a dictionary per student.
+
+**What breaks:** one key is misspelled `clas`, and `average_of()` and `failed_subjects()`
+both run happily over it. The `KeyError` arrives thirty lines later, in the grouping code,
+naming neither the student nor the line that caused it.
+
+**The tool, the same session:** `class Student`, `__init__`, `self`. The same typo as a
+keyword argument raises on the spot and names it. **That contrast is the argument for
+objects**, and it is made by running code rather than by assertion.
 
 ## Topic 7 — The calculation moves inside
 
@@ -195,6 +215,14 @@ now travel together.
 and a method that loops over them. The school's three classes exist by the end of the hour.
 
 ## Topic 9 — Teachers as well as students  ⟵ *discovery*
+
+**The real task:** the school has teachers too — a name, a class and a phone number like
+a student, plus a subject and a salary. With what the participant knows, that is copying
+the whole `Student` class and editing it. Then a surname rule changes and both need the
+same edit.
+
+**The tool, the same session:** `class Teacher(Person)` and `super().__init__()`. The
+surname change is made once and both classes move.
 
 ## Topic 10 — One loop, many kinds
 
@@ -213,6 +241,15 @@ No new syntax. The grade-10 gradebook, rebuilt with `Person`,
 
 ## Topic 12 — The term's statistics  ⟵ *discovery*
 
+**The real task:** the ministry wants the term's figures — mean, highest, lowest, and how
+spread out the marks are, per subject and per class. The mean and the extremes go fine by
+loop. The spread does not: the formula is written out by hand, and that is where it stops
+being reasonable.
+
+**The tool, the same session:** `import numpy as np`, and `.mean() .min() .max() .std()`.
+**The first import of something the course did not write**, and it arrives as relief from
+work already done.
+
 ## Topic 13 — Whole arrays at once
 
 Creating arrays, indexing and slicing them, arithmetic on a whole array
@@ -220,6 +257,13 @@ at once, and a boolean mask — `grades[grades < PASS_MARK]`. The moment a teach
 writing the loop at all.
 
 ## Topic 14 — Show the head teacher  ⟵ *discovery*
+
+**The real task:** the figures have to be shown at a staff meeting, not read out. With
+what the participant knows, that is a bar chart drawn with `print()` and asterisks, scaled
+by hand. It works, and it cannot go in a report.
+
+**The tool, the same session:** `matplotlib.pyplot`, `plt.bar()`, and `plt.savefig()` —
+after which the file opens on their own desktop.
 
 ## Topic 15 — The four charts a school asks for
 
@@ -240,6 +284,13 @@ for the grade distribution, and a grouped bar comparing three classes across fiv
 
 ## Topic 16 — The school's own file  ⟵ *discovery*
 
+**The real task:** the school's own file has 180 rows, a header, a blank line and a comma
+inside one field. Parsing it with `split(",")` takes twenty-two lines, and the row with
+the comma is still wrong afterwards.
+
+**The tool, the same session:** `pd.read_csv()`. One line, and it handles all three. This
+is the session that pays off the near-miss flagged on topic 1.
+
 ## Topic 17 — Filter, group, describe
 
 Selecting a column, filtering rows by a condition, `.groupby()` for
@@ -253,6 +304,16 @@ chart the result, save both the table and the picture. The session that proves t
 tools are one workflow.
 
 ## Topic 19 — How deep does it go?  ⟵ *discovery*
+
+**The real task:** the ministry's file nests — school, then streams, then classes, then
+groups — and not every branch goes the same depth. A loop per level works until the file
+arrives with one level more.
+
+**The tool, the same session:** a function that calls itself. The base case first, always,
+and the depth stops appearing in the code at all.
+
+> **Factorial and Fibonacci are not mentioned.** They are Part 2, and `check_style.py`
+> fails a build that names either.
 
 ## Topic 20 — Where code comes from
 
@@ -269,13 +330,33 @@ mid-run. The worked example is a function that returns a wrong average, silently
 
 ## Topic 22 — Five files that each do one thing  ⟵ *transition*
 
+**Concepts:** modules · one job per file · an entry point
+
+The session that turns a notebook into a program. The classes, the file reading, the
+charts and the entry point become five files, and the session does not end until
+**`python main.py` has run for every participant individually, on a shared screen**.
+
+**Neither half may be cut.**
+
 ## Topic 23 — Make it yours
+
+**Concepts:** your own data · one feature of your own design
+
+Their own school's file goes in — which is where the Armenian font problem becomes real
+rather than hypothetical — and each participant adds **one** feature they chose. Nobody is
+given code; the instructor moves between shared screens and asks questions.
 
 ## Topic 24 — Finish and show
 
----
+**Concepts:** a program someone else can run · what comes next
 
----
+A `README.md` and a `requirements.txt`, then a colleague runs the folder **from that
+README alone** and reports back. Then ninety seconds each: what it does, one thing that
+broke, one thing they would add.
+
+The session closes on the libraries the pupils' topic 21 names but this course never uses,
+with what each one is and why a grade-11 teacher does not need it — because pupils will
+ask, and "that is difficult" is the wrong answer.
 
 ---
 
@@ -333,7 +414,7 @@ kind of task, never a longer one, and never a new idea:
 
 | | Test | When | Length | Covers |
 |---|---|---|---|---|
-| 1 | Initial diagnostic | **Before session 1** | 30–40 min | What the grade-10 course left them with. Nothing from this course |
+| 1 | Initial diagnostic | **Before session 1** | 45–60 min | What the grade-10 course left them with. Nothing from this course |
 | 2 | Midpoint | **After session 8** | 60–75 min | Topics 2–11: functions, comprehensions, classes, inheritance |
 | 3 | Final practical | **Session 18** | 90–120 min | Topics 12–24: libraries, charts, data, recursion, the project |
 

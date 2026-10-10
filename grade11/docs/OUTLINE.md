@@ -13,7 +13,7 @@ prepares them to teach **grade 11** of the state curriculum «ԱԲ սերուն�
 | **Length** | 18 sessions × 75 minutes = **22 hours 30 minutes**, two a week over nine weeks |
 | **Delivery** | Remote, over Google Meet with screen sharing, in groups of **4–8** |
 | **Entry** | Our grade-10 course. Nothing beyond it is assumed |
-| **Cost** | **Zero.** No accounts, no API keys, no licences. One session needs internet; the other 23 do not |
+| **Cost** | **Zero.** No accounts, no API keys, no licences. One session needs internet; the other 17 do not |
 | **Assessment** | Three sittings — a diagnostic before session 1, a midpoint after topic 11, a final practical in session 18 |
 
 ## What a teacher can do at the end
@@ -60,7 +60,7 @@ deviation formula has just been written out by hand.
 |---|---|
 | Software | **Zero.** Anaconda and VS Code, already installed from the grade-10 course |
 | Installation | **None.** All three libraries ship with Anaconda |
-| Internet | One session of 24 |
+| Internet | One session of 18 |
 | Instructor | One, for 4–8 participants |
 | Materials | 21 notebooks, 21 solution sets, 3 guides, 3 assessments, a reference project — all written and verified |
 

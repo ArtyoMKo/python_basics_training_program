@@ -79,7 +79,7 @@ point.
 | **Schedule** | 2 sessions per week × 9 weeks. If 75 minutes twice a week proves too thin, the options are three a week again or a longer run | <!--history-->
 | **Group size** | **4–8**, one instructor. Fewer than 4 and they cannot discuss; more than 8 and remote teaching stops working |
 | **Part** | **Part 1 of two.** Part 1 is **2 months** (this specification); Part 2 is **4 months**, outlined in `ROADMAP.md`, and runs only if Part 1 succeeds |
-| **Between sessions** | ~2 days. One optional 10-minute practice task per day; nothing required. |
+| **Between sessions** | ~3 days. **Homework is required** — the Extra tier after most sessions, the Required tier of both notebooks after a paired one. Never new work (D5) |
 | **Final deliverable** | A working `python main.py` gradebook over the participant's own class list |
 
 ### What this audience changes, compared with the TUMO courses
@@ -262,7 +262,7 @@ twenty minutes away types the long version willingly; one who does not starts wo
 whether the course knows what it is doing.
 
 Where minor friction does cross a session boundary — printing a list item by item on
-Topic 7, say — the same reassurance names the day: *"Topic 10 makes this three lines."*
+Topic 7, say — the same reassurance names the day: *"Topic 11 makes this three lines."*
 
 ### 4.4 Sizing the laborious half
 
@@ -279,33 +279,32 @@ Never ask a participant to type more than ten repetitive lines.
 
 ### The spine, in the order it is taught
 
-`print` → types → variables → `if`/`else` → **lists** → `for` → **dictionaries** →
+`print` → types → variables → **lists** → **dictionaries** → `if`/`else` → `for` →
 functions → files → modules
 
-Lists and dictionaries are not in the requested order but are required by it: "collect all
-of these variables in one object" and "navigate in a dict or list" *is* the collection
-topic. They are placed where the pain lands — lists after conditions, dictionaries after
-loops — so the requested order (`print → types → variables → conditions → loops →
-functions`) is preserved exactly, with collections interleaved as the relief.
+All four data types come **before** conditions and loops (topics 6–8), because the
+discovery sequence depends on it: a loop is far more useful once there is something to
+loop over, and the register has to exist before anything can decide about it.
 
 ### Taught
 
-| Topic | Days | Depth |
+| Topic | Topics | Depth |
 |---|---|---|
 | `print` | 1–2 | Several values, quotes inside quotes, blank lines |
 | Comments | 2 | `#`, and why |
 | Types `str int float bool` | 3 | `type()`, and what breaks when they are mixed |
 | Conversion, `input()` | 4 | `int()`, `str()`, and "input always gives you text" |
-| Variables, f-strings | 5–6 | Naming, reassignment, `f"{name}: {grade}"` |
-| `if` / `else` / `elif` | 7–9 | Comparisons, `and` / `or` / `not`, indentation |
-| Lists | 10–11 | Index from 0, `len`, `append`, `remove`, `in`, `sort`, `[a:b]` |
-| `for` | 12–14 | Over a list, `range`, totals, counters, filtering into a new list |
-| `while` | 15 | Repeat until told to stop; validating input; stopping a runaway loop |
-| Dictionaries | 16–17 | `name → value`, lookup, add, update, `.items()`, dict of lists |
-| Functions | 18–19 | `def`, parameters, `return`, one default argument |
-| Files | 22 | Read and write a text/CSV file; `FileNotFoundError` handled once |
+| Variables, f-strings | 5 | Naming, reassignment, `f"{name}: {grade}"` |
+| Lists | 6–7 | Index from 0, `len`, `append`, `remove`, `in`, `sort`, `[a:b]` |
+| Tuples and sets | 7 | Shown and compared with lists, **not drilled** |
+| Dictionaries | 8, 14–15 | `name → value`, lookup, add, update, `.items()`, dict of lists |
+| `if` / `else` / `elif` | 9–10 | Comparisons, `and` / `or` / `not`, indentation |
+| `for` | 11–13 | Over a list, `range`, totals, counters, filtering into a new list |
+| `while` | 16 | Repeat until told to stop; validating input; stopping a runaway loop |
+| Functions | 17–18 | `def`, parameters, `return`, one default argument |
 | Modules & imports | 20–21 | `import`, `if __name__ == "__main__":`, four files |
-| Reading errors | every day | See §6.5 |
+| Files | 22 | Read and write a text/CSV file; `FileNotFoundError` handled once |
+| Reading errors | every topic | See §6.5 |
 
 ### Not taught — and this list is as important as the one above
 
@@ -372,7 +371,7 @@ that edit is itself the exercise.
 
 ### 6.3 One idea per day, and it is named in the file name
 
-`day12_for_loops.ipynb`. If a day needs two nouns in its name, it is two days.
+`day11_for_loops.ipynb`. If a day needs two nouns in its name, it is two days.
 
 ### 6.4 Compare the two versions, in writing
 
@@ -523,7 +522,7 @@ addition and one change:
 `input()` blocks a notebook and cannot be executed headlessly, which fights the
 verification discipline (§11.2). Rules:
 
-- Taught on Topic 4, used in exercises on Topics 4, 15 and in the project.
+- Taught on Topic 4, used in exercises on Topics 4, 16 and in the project.
 - **Any cell containing `input()` is tagged `interactive` in its source marker**, so the
   verification runner can feed it a scripted answer. The tag becomes **cell metadata**,
   never a visible comment — a participant should not see `# interactive` in their notebook.
@@ -612,7 +611,7 @@ early warning: a participant who cannot run a cell at help level 3 predicts a ha
 only taught syntax that the course never demonstrates, marked separately and never
 reported as a pass rate (§ `RATIONALE.md` 5).
 
-## 8. Code style for this audience## 8. Code style for this audience
+## 8. Code style for this audience
 
 `METHODOLOGY.md` §6 applies; these override or sharpen it.
 
@@ -672,10 +671,10 @@ public_school_python/
 ├── ANNOUNCEMENT.md             <- recruitment text, written for teachers
 ├── handouts/check_setup.py              <- 6 checks, run on session 1
 ├── notebooks/                  <- GENERATED -- do not edit by hand
-│   ├── day01_first_program.ipynb … day19_return.ipynb             (19)
+│   ├── day01_first_program.ipynb … day19_assembled.ipynb             (19)
 │   └── sample_class.csv        <- the fictional 12-student class
 ├── src/                        <- notebook SOURCES, the thing you edit
-│   ├── day01_first_program.py … day19_return.py                   (19)
+│   ├── day01_first_program.py … day19_assembled.py                   (19)
 │   ├── solutions_source.py     <- all solutions in one reviewable file
 │   └── solutions/              <- split per day by the build step
 ├── solutions/
@@ -941,7 +940,7 @@ every number and file name that was true before it.
 
 Cut, never compress. In this order:
 
-1. topic 13 `while` loops — the project menu ships written and can be explained in two
+1. topic 16 `while` loops — the project menu ships written and can be explained in two
    minutes on session 16. This is the one genuinely removable day.
 2. Topic 16's dict-of-lists (several grades per student) — the project works with one grade.
 3. Topic 19's consolidation day, if the room is already ahead.

@@ -15,10 +15,10 @@ programming background**
 > including the decision rule this part will be judged by (§5a). The second part of the
 > programme is outlined in `ROADMAP.md`. This document is only what Part 1 *is*.
 
-> **Two things are still settling.** Sessions start at **75 minutes**; after the cohort
-> has adapted we may move to two a week, or to three of 50 minutes. And the tools are
-> **Anaconda, Jupyter and VS Code**, with Google Colab and Thonny under discussion as a
-> lighter alternative. Both are flagged where they appear below.
+> **One thing is still open.** The tools are **Anaconda, Jupyter and VS Code**, with
+> Google Colab and Thonny under discussion for a later cohort — the pupils' own
+> curriculum names both, and they are flagged where they appear below. **The schedule is
+> settled:** 18 sessions of 75 minutes, two a week over nine weeks.
 
 ---
 
@@ -91,7 +91,7 @@ glossary, `handouts/check_setup.py`, a fictional 12-student sample class, and th
 reference program.
 
 Every notebook carries **three tiers of exercise** — Required, Extra and Challenge — so
-that the three or four participants who finish early in every session always have
+that the one or two participants who finish early in every session always have
 somewhere to go.
 
 > **⚠️ One preparation item is not optional.** The Anaconda download is ~1 GB. Remotely

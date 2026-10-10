@@ -5,9 +5,11 @@
 > **Part 1 is complete and verified as of 2026-10-09. Every step below is done.**
 > What remains is not building work: the Armenian terminology has not been reviewed by a
 > native speaker, `handouts/SETUP.md` has not been run on a clean machine, and nothing
-> has been taught to a cohort. It exists so that a session that
-loses its context can pick up exactly where the last one stopped. Update the Status column
-as each step completes; never mark a step done before `tools/verify.py` passes.
+> has been taught to a cohort.
+
+This board exists so that a session that loses its context can pick up exactly where the
+last one stopped. Update the Status column as each step completes; never mark a step done
+before `tools/verify.py` passes.
 
 The method, the file layout, the source format, the exercise tiers and the language rule
 are **copied from the grade-10 course without change** (`../grade10/AGENTS.md`). What
@@ -38,11 +40,11 @@ projects — is a vision in `ROADMAP.md`, not built, and runs only if Part 1 suc
 
 | | Pupil hours | Teacher hours | Ratio |
 |---|---|---|---|
-| Grade-10 course | topics 1–14 ≈ 118 | 32 | 3.9 : 1 |
-| **This course** | topics 15–22, 24 ≈ **110** | 32 | **3.7 : 1** |
+| Grade-10 course | topics 1–14 ≈ 118 | 22½ | 5.2 : 1 |
+| **This course** | topics 15–22, 24 ≈ **110** | **22½** | **4.9 : 1** |
 
 The same ratio as a course that works on paper. That is the whole argument for believing
-22 h 30 is enough — not that the material is easier, because it is not.
+22½ hours is enough — not that the material is easier, because it is not.
 
 ---
 
@@ -110,9 +112,9 @@ form: **which line of the final school report tool needs it?**
 | **2** | **This plan**, the course contract, and the full day map with agendas | `BUILD_PLAN.md`, `AGENTS.md`, `CURRICULUM.md` | ✅ done |
 | **3** | Tooling: copy `tools/` from grade 10 and invert the two rules in `check_style.py`; new sample data | `tools/*.py` | ✅ done |
 | **4** | The sample school — engineered numbers that prose may quote, as `6.5` is quoted in grade 10 | `data/school.csv`, numbers table in `AGENTS.md` | ✅ done |
-| **5** | topics 1–8 sources — setup, functions, comprehensions | `src/day01…day08.py` | ✅ done |
-| **6** | topics 9–14 sources — classes and inheritance | `src/day09…day14.py` | ✅ done |
-| **7** | topics 15–21 sources — NumPy, Matplotlib, pandas, environments | `src/day15…day21.py` | ✅ done |
+| **5** | topics 1–5 sources — setup, functions, comprehensions | `src/day01…day05.py` | ✅ done |
+| **6** | topics 6–11 sources — classes and inheritance | `src/day06…day11.py` | ✅ done |
+| **7** | topics 12–21 sources — NumPy, Matplotlib, pandas, environments | `src/day12…day21.py` | ✅ done |
 | **8** | topics 22–24 — recursion, debugging, the project | `guides/day22…day24.md` | ✅ done |
 | **9** | Solutions, all in one reviewable file | `src/solutions_source.py` | ✅ done |
 | **10** | Three assessment sittings, grader and participant builds | `src/tests/*.py`, `tests/mark*_guide.md` | ✅ done |

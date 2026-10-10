@@ -31,7 +31,7 @@ because the previous way stopped working, in the same session, never the next.
 | 4 | six reports the head teacher wants | the same filter loop, six times | **comprehensions** |
 | 6 | a student is now nine fields | a dict per student, and a typo is silent | **classes** |
 | 9 | teachers as well as students | copy the whole class and edit it | **inheritance** |
-| 12 | the term's statistics | mean and spread by loop, over 600 numbers | **NumPy** |
+| 12 | the term's statistics | mean and spread by loop, over 180 numbers | **NumPy** |
 | 14 | show the head teacher | a bar chart made of asterisks | **Matplotlib** |
 | 16 | the school's own CSV | 22 lines of `split(",")` | **pandas** |
 | 19 | a school of unknown depth | a loop per level, and one level too few | **recursion** |
@@ -74,6 +74,10 @@ grade11/
 ```bash
 python tools/nbbuild.py      # rebuild notebooks, solutions and tests from src/
 python tools/verify.py       # nothing is done until this passes
+
+# from the repository root, across both courses:
+#   python tools/check_docs.py        the documents agree with each other
+#   python tools/check_topic_refs.py  every "topic N" names the right topic
 ```
 
 `verify.py` runs five checks:

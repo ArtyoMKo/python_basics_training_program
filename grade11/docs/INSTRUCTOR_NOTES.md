@@ -56,7 +56,7 @@ verified by script. There are three shapes, plus bespoke agendas for sessions 1,
 |---|---|
 | The long half runs over and the tool does not arrive | **Cut the long half short mid-task.** Say "stop there, we have enough" and move to the tool. An unfinished long half is fine; a missing short half is not |
 | Somebody finishes the long half in five minutes | Give them the Extra tasks from the previous day. **Do not** let them start the second half early — the comparison is the lesson |
-| Somebody says "why are we doing it this way, there must be a better way" | **Agree with them, out loud, and say the better way is coming after the break.** This is the best thing that can happen in the session |
+| Somebody says "why are we doing it this way, there must be a better way" | **Agree with them, out loud, and say the better way is coming in the second half of this session.** This is the best thing that can happen in the session |
 
 **Never say "notice how slow that was".** The notebook makes the comparison with a table
 of line counts. Saying it aloud turns a discovery into a lecture.
@@ -85,9 +85,10 @@ three-a-week schedule. Nothing was cut from the course; the practice moved.
 | Session shape | What goes home | Roughly |
 |---|---|---|
 | Single | the Extra tier | 15–20 min |
-| Discovery | the Extra tier | 20–30 min |
-| **Paired** | **the Required tier of both notebooks**, then Extra | **30–40 min** |
-| Setup, transition, project | nothing, or the second notebook's Required | 0–30 min |
+| Discovery | the Extra tier | 15–20 min |
+| **Paired** | **the Required tier of both notebooks — and nothing else** | **30–40 min** |
+| Setup (session 1) | topic 2's Required tier | 15–20 min |
+| Transition, project | nothing | — |
 
 - **Nothing new is ever introduced at home.** Every task is already in the notebook and
   uses only what the session taught.
@@ -102,7 +103,7 @@ three-a-week schedule. Nothing was cut from the course; the practice moved.
 
 | | Test | When | Length | Points |
 |---|---|---|---|---|
-| 1 | Initial diagnostic | **Before session 1** | 30–40 min | 40 |
+| 1 | Initial diagnostic | **Before session 1** | 45–60 min | 40 |
 | 2 | Midpoint | **After session 8** (topics 2–11) | 60–75 min | 50 |
 | 3 | Final practical | **Session 18** | 90–120 min | 70 + 10 separate |
 
@@ -153,5 +154,5 @@ Part 2 — and they are told that in advance, at enrolment, not afterwards.
 |---|---|
 | Software | **Zero.** Anaconda and VS Code, already installed |
 | Installation | **None** — all three libraries ship with Anaconda |
-| Network | **One session of 16** |
+| Network | **One session of 18** |
 | Instructor time | 22½ contact hours, plus ~3½ hours of assessment |

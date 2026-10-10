@@ -54,13 +54,13 @@ say so.
 **Two commands. That is the whole workflow.**
 
 ```bash
-vim src/day10_for_loops.py      # 1. edit the SOURCE
+vim src/day11_for_loops.py      # 1. edit the SOURCE
 
 python tools/nbbuild.py         # 2. rebuild   (notebooks + solutions + tests)
 python tools/verify.py          # 3. verify    (nothing is done until this passes)
 ```
 
-`python tools/nbbuild.py day10` rebuilds one notebook when you are iterating.
+`python tools/nbbuild.py day11` rebuilds one notebook when you are iterating.
 
 `verify.py` runs four checks and prints what failed:
 
@@ -183,7 +183,7 @@ Never a blank cell: always a skeleton with a comment saying what goes where.
 Students, grades, attendance, averages, report lines. **No `foo`, no `x = 5`, no shopping
 baskets, no fizzbuzz.** A participant should see their Tuesday morning in any cell.
 
-The grading scale is **1–10, pass mark 4**, written once as `PASS_MARK = 4` from Topic 8.
+The grading scale is **1–10, pass mark 4**, written once as `PASS_MARK = 4` from Topic 9.
 
 ---
 
@@ -197,7 +197,7 @@ The sample class is engineered, and **prose throughout the course quotes these v
 ```
 
 **If you change `notebooks/sample_class.csv`, you must grep for every number that was true
-before** (`docs/PLAN.md` §11.6). `6.5` in particular is quoted in topic 11 as the moment `float`
+before** (`docs/PLAN.md` §11.6). `6.5` in particular is quoted in topic 12 as the moment `float`
 stops being abstract.
 
 ---
@@ -228,7 +228,7 @@ handouts/check_setup.py          six checks a participant runs on session 1
 src/                    ← EDIT HERE
   day01…day19.py          notebook sources
   solutions_source.py     all 18 solutions in one reviewable file
-  tests/                  the four test sources
+  tests/                  the three test sources
 notebooks/              generated .ipynb — do not edit
 solutions/              generated .ipynb — do not edit
 tests/                  generated .ipynb (grader) + participant/ (generated)
@@ -249,7 +249,7 @@ tools/                  nbbuild.py, verify.py, the three checkers,
 |---|---|---|
 | Editing a `.ipynb` directly | silently overwritten on next build | edit `src/`, run `nbbuild.py` |
 | Armenian in a code comment or string | `check_style.py` fails | Armenian in markdown only |
-| Adding a topic without removing one | an agenda stops summing to 50 | cut something; say what you cut |
+| Adding a topic without removing one | an agenda stops summing to 75 | cut something; say what you cut |
 | Importing `pandas`/`numpy` "just for this" | `check_style.py` fails | standard library only |
 | Writing "now you see how slow that was" | breaks rule 3 | compare line counts in a table |
 | Planting a problem to solve next session | breaks rule 2 | resolve it in the same notebook |
@@ -265,7 +265,7 @@ tools/                  nbbuild.py, verify.py, the three checkers,
 
 ```bash
 python tools/nbbuild.py              # rebuild everything from src/
-python tools/nbbuild.py day10        # rebuild one notebook
+python tools/nbbuild.py day11        # rebuild one notebook
 
 python tools/verify.py               # all four checks — nothing is done until this passes
 

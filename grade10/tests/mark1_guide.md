@@ -50,7 +50,7 @@ teaching problem from the one who worked alone and ran out of time.
 - **Q1 at help level 0 or 1 for several people** → add a second helper to session 1, or run an
   optional setup clinic beforehand. Session 1 is the highest-risk session in the programme and
   this is your advance warning.
-- **Q3 weak across the room** → do not shorten topic 9. The `elif` ordering trap will need
+- **Q3 weak across the room** → do not shorten topic 10. The `elif` ordering trap will need
   the full session.
 - **A wide spread** → plan the pairing from topic 3 deliberately, rather than letting it
   happen.

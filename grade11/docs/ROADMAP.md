@@ -75,7 +75,7 @@ themselves, as on topic 12's timing exercises.
 
 ### Stage 4 — bigger projects
 
-Part 1's project is five files and about 250 lines. Part 2's should be several times
+Part 1's project is five files and about 330 lines. Part 2's should be several times
 that, over several weeks, with a specification that changes partway through — because
 that is the part no single-session exercise can teach.
 

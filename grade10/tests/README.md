@@ -6,7 +6,7 @@ Three sittings, designed with our partner colleague and integrated into the cour
 |---|---|---|---|---|---|
 | 1 | Initial diagnostic | **Before session 1** | 45–60 min | 44 | Nothing — it measures the baseline |
 | 2 | Midpoint | **After session 10** | 60–75 min | 50 | Topics 6–13: data types, conditions, loops |
-| 3 | Final practical | **Session 18** | 90–120 min | 70 **+ 10 reported separately** | topics 14–24: functions, dictionaries, files, the project |
+| 3 | Final practical | **Session 18** | 90–120 min | 70 **+ 10 reported separately** | topics 14–24: reports, functions, files, the project |
 
 **These are separate sittings, not session time.** The 18 teaching sessions remain 22½
 hours exactly; the assessments add roughly 3½ hours on top.

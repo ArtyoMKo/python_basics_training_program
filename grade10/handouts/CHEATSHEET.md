@@ -259,17 +259,27 @@ def has_passed(grade, pass_mark=PASS_MARK):    # a parameter with a default
 ## 10. Ֆայլեր
 
 ```python
+from pathlib import Path
+
+path = Path("data/my_class.csv")
+
 # read
-with open("data/my_class.csv", encoding="utf-8") as file:
-    lines = file.readlines()
+text = path.read_text(encoding="utf-8")
+lines = text.strip().splitlines()
 
 # write
-with open("data/my_class.csv", "w", encoding="utf-8") as file:
-    file.write("name,grade\n")
-    file.write("Ani,9\n")
+path.write_text("name,grade\nAni,9\n", encoding="utf-8")
+
+# does it exist yet?
+if path.exists():
+    ...
 ```
 
 `encoding="utf-8"`-ը **պարտադիր է**, այլապես հայերեն տառերը կկոտրվեն։
+
+> Աշակերտների դասագրքում կտեսնես նաև `open()`-ը՝ `with open(...) as file:`։
+> Նույն գործն է անում։ Մենք `pathlib` ենք օգտագործում, որովհետև կարճ է և
+> ֆայլը ինքն իրեն փակում է։
 
 ## 11. Մոդուլներ
 

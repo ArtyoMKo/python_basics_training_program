@@ -258,6 +258,71 @@ def check_homework_is_disclosed(course):
             fail(f"{course}/{rel}", "still describes homework as optional")
 
 
+def check_exam_durations(course):
+    """An exam duration is not a session length and not a homework figure.
+
+    A homework re-costing sweep once replaced "45–60 min" everywhere and moved the
+    diagnostic's duration with it. The exam sources are the authority; every document
+    that restates a duration must match them.
+    """
+    expected = {"test1_diagnostic": "45–60", "test2_midpoint": "60–75",
+                "test3_final_practical": "90–120"}
+    for name, duration in expected.items():
+        source = read(course, "src", "tests", f"{name}.py")
+        if source and duration not in source:
+            fail(f"{course}/src/tests/{name}.py", f"no longer states {duration} minutes")
+    labels = {"Initial diagnostic": "45–60", "Midpoint": "60–75",
+              "Final practical": "90–120"}
+    for rel in ["docs/CURRICULUM.md", "docs/INSTRUCTOR_NOTES.md", "tests/README.md"]:
+        text = read(course, *rel.split("/"))
+        if not text:
+            continue
+        for line in text.split("\n"):
+            for label, duration in labels.items():
+                if label in line and " min" in line and duration not in line:
+                    fail(f"{course}/{rel}", f"{label} does not say {duration} min")
+
+
+def check_guide_budgets(course):
+    """A guide's minute budget must fit the session its topic sits in.
+
+    The guides carry their own part-by-part timings, written when every topic had a
+    session to itself. check_times.py reads only CURRICULUM.md and never opens guides/,
+    so a guide can prescribe two hours inside a 75-minute session and nothing notices.
+    """
+    curriculum = read(course, "docs", "CURRICULUM.md") or ""
+    rows = re.findall(r"(?m)^\|\s*(\d+)\s*\|[^|]*\|([^|]*)\|[^|]*\|\s*\d+\s*\|$", curriculum)
+    topic_to_session, session_topics = {}, {}
+    for session, topics in rows:
+        found = []
+        for part in topics.split(","):
+            part = part.strip()
+            if re.fullmatch(r"\d+", part):
+                found.append(int(part))
+            elif re.fullmatch(r"\d+\s*[–-]\s*\d+", part):
+                a, b = re.split(r"[–-]", part)
+                found.extend(range(int(a), int(b) + 1))
+        for topic in found:
+            topic_to_session[topic] = int(session)
+        session_topics[int(session)] = found
+
+    budgets = {}
+    for path in sorted((ROOT / course / "guides").glob("day*.md")):
+        topic = int(path.stem[3:5])
+        minutes = sum(int(m) for m in
+                      re.findall(r"\((\d+) րոպե\)", path.read_text(encoding="utf-8")))
+        if minutes:
+            budgets.setdefault(topic_to_session.get(topic, 0), []).append((path.name, minutes))
+
+    for session, guides in sorted(budgets.items()):
+        total = sum(m for _, m in guides)
+        if total > MINUTES:
+            names = ", ".join(f"{n} ({m})" for n, m in guides)
+            fail(f"{course}/guides",
+                 f"session {session} is {MINUTES} minutes but its guides prescribe "
+                 f"{total}: {names}")
+
+
 def check_partner_documents():
     """The dossier goes outside the organisation, so it must cover both courses."""
     import xml.etree.ElementTree as ET
@@ -298,6 +363,8 @@ def main():
         check_assessment(course)
         check_links(course)
         check_homework_is_disclosed(course)
+        check_exam_durations(course)
+        check_guide_budgets(course)
 
     # Shared documents
     shared = read("shared", "GOVERNMENT_ASSIGNMENT.md") or ""
@@ -320,6 +387,8 @@ def main():
     print("✅ every file path quoted in a document exists")
     print("✅ the partner dossier covers both courses — curriculum, schedule, assessment")
     print("✅ homework is disclosed as required in both courses' enrolment material")
+    print("✅ every exam duration matches its exam source")
+    print("✅ no guide prescribes more minutes than its session holds")
     return 0
 
 

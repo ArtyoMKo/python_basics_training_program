@@ -117,7 +117,7 @@ session that ends after the long way and before the short way is the worst outco
 design can produce, and with working adults it is the one that loses people.
 
 **Do not rescue them early, either.** Someone will ask, twenty minutes in, whether there
-is a faster way. The answer is yes, and it is after the break — the notebook says so in
+is a faster way. The answer is yes, and it is in the second half of the same session — the notebook says so in
 writing before the long half starts, so you are keeping a promise, not being evasive.
 
 **Never tell them the long way was a lesson.** They are building a class register because
@@ -135,7 +135,7 @@ Every day's agenda is in `CURRICULUM.md` and sums to exactly 75 minutes, verifie
 script. The standard shape is 5 recap / **12 teach** / 20 run together / 33 exercises /
 5 retrospective.
 
-> **The rule to hold yourself to: if you have been talking for more than 15 minutes, you
+> **The rule to hold yourself to: if you have been talking for more than 12 minutes, you
 > are behind and the lesson is already worse.**
 
 Hands-on is at least 41 of 75 minutes. That is a floor. These are adults who will not ask you to
@@ -164,9 +164,10 @@ three-a-week schedule. Nothing was cut from the course; the practice moved.
 | Session shape | What goes home | Roughly |
 |---|---|---|
 | Single | the Extra tier | 15–20 min |
-| Discovery | the Extra tier | 20–30 min |
-| **Paired** | **the Required tier of both notebooks**, then Extra | **30–40 min** |
-| Setup, transition, project | nothing, or the second notebook's Required | 0–30 min |
+| Discovery | the Extra tier | 15–20 min |
+| **Paired** | **the Required tier of both notebooks — and nothing else** | **30–40 min** |
+| Setup (session 1) | topic 2's Required tier | 15–20 min |
+| Transition, project | nothing | — |
 
 - **Nothing new is ever introduced at home.** Every task is already in the notebook and
   uses only what the session taught.
@@ -202,7 +203,7 @@ colleague. They are **separate sittings** and do not use session time.
 
 | Test | When | Length | Points |
 |---|---|---|---|
-| Initial diagnostic | **Before session 1** | 30–40 min | 44 |
+| Initial diagnostic | **Before session 1** | 45–60 min | 44 |
 | Midpoint | **After session 10** | 60–75 min | 50 |
 | Final practical | **Session 18** | 90–120 min | 70 + 10 separate |
 

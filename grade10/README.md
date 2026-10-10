@@ -132,9 +132,9 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 
 | Check | Result |
 |---|---|
-| Agenda arithmetic | ✅ 11 agenda tables, 18 sessions, 1,350 minutes = 22 h 30 |
+| Agenda arithmetic | ✅ 6 agenda tables, 18 sessions, 1,350 minutes = 22 h 30 |
 | Notebook execution | ✅ 43 notebooks (19 lessons + 18 solutions + 3 assessments × 2 versions), every cell, in order |
-| Deliberate errors | ✅ 9 cells raise exactly the error they claim |
+| Deliberate errors | ✅ 10 cells raise exactly the error they claim |
 | Solutions | ✅ 18 notebooks, every cell runs |
 | Assessments | ✅ 3 sittings × 2 versions + 3 marking guides; every cell runs |
 | Project | ✅ `python main.py` end to end; 4 failure paths give one sentence each |

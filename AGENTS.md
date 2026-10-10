@@ -26,8 +26,16 @@ belongs in both, make it twice and say so.
 | **Topics** | 24 per course. A topic is one notebook; a session is 75 minutes in a room |
 | **Homework** | **Required.** 15–20 min after most sessions, 30–40 after a paired one. Never new work — always tasks already in that session's notebook |
 
-Changing any of these means changing both courses, their partner documents, and
-`tools/check_docs.py`, which is what proves they still agree.
+Changing any of these means changing both courses, their partner documents, and the two
+root checkers:
+
+```bash
+python tools/check_docs.py        # the documents agree with each other and the material
+python tools/check_topic_refs.py  # every "topic N" claim names the topic that teaches it
+```
+
+**Renumbering a topic is the change most likely to go wrong**, because a stale topic
+number is still a valid number. `check_topic_refs.py` exists for exactly that.
 
 ## What is the same in both
 

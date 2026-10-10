@@ -18,7 +18,7 @@ can start.
 ## Question 4 is the one that decides
 
 At 12 of 50 it is the largest single question in any of the three sittings, because
-whether a participant can write a working `__init__` decides whether topic 12 can happen
+whether a participant can write a working `__init__` decides whether topic 12 can happen <!--ref-ok-->
 at all. Everything from topic 12 onward assumes objects.
 
 **Record separately how many wrote a working `__init__`**, not just the score.
@@ -34,7 +34,7 @@ at all. Everything from topic 12 onward assumes objects.
 | What you see | What it means | What to do |
 |---|---|---|
 | **Q5 without `super()`** — parent fields copied by hand | Inheritance is understood as copying, which is the thing it replaces | Ten minutes at the start of topic 12. Show topic 9's side-by-side table again |
-| **Q3 answered with a loop** | Comprehensions did not stick. The answer is correct, so give half marks | Not urgent. Topics 13 and 17 use them naturally; point at them when they appear |
+| **Q3 answered with a loop** | Comprehensions did not stick. The answer is correct, so give half marks | Not urgent. Topics 13 and 17 use them naturally; point at them when they appear | <!--ref-ok-->
 | **Q6 answered with `isinstance`** | Polymorphism was understood as "check the type". Half marks | Mention once on topic 10's material; it does not block anything later |
 | **Q1 and Q2 strong, Q4–Q6 weak** | Functions landed, objects did not | This is the commonest shape. The revision session above is the answer |
 

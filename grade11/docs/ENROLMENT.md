@@ -52,7 +52,7 @@ Four things. All of them are easier to say now than to explain later.
 | **This is harder than the first course** | Classes and libraries are a different kind of difficulty from loops. Saying so sets the right expectation; discovering it in week two does not |
 | **The last assessment decides who continues** | The first two are diagnostic. **The third gates entry to Part 2.** People behave differently knowing this, so telling them afterwards would be unfair and would spoil the result |
 | **Homework is required, and it is 30–40 minutes after some sessions** | Two 75-minute sessions a week cannot hold 24 topics and their practice. On the sessions that cover two topics, the Required tier of both notebooks goes home. **Nothing new is introduced at home** — every task is already in the notebook. Say this before they agree, not in week three |
-| **Missing a session is recoverable; missing four is not** | Every notebook is self-contained and the solutions are published. But the discovery days do not read well alone |
+| **Missing a session is recoverable; missing three is not** | Every notebook is self-contained and the solutions are published. But the discovery days do not read well alone |
 | **In September they teach this** | The whole thing is pointed at that. It is also the best reason anyone has to finish |
 
 ---
@@ -71,7 +71,7 @@ Four things. All of them are easier to say now than to explain later.
 |---|---|
 | **Could not run `check_setup.py` and did not ask for help** | The strongest predictor of dropping out. Call them |
 | **Cannot share a screen and will not try** | Half the course is unavailable to them |
-| **Expects to miss more than four sessions** | Offer them the next cohort instead. This is kinder than letting them fall behind |
+| **Expects to miss more than three sessions** | Offer them the next cohort instead. This is kinder than letting them fall behind |
 | **Did not do the grade-10 course** | See above. Offer them that one |
 
 ---

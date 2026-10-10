@@ -21,7 +21,7 @@ has finished the grade-10 course and prepares them to teach **grade 11** — sta
 | **Entry** | the grade-10 course, and **nothing beyond it** |
 | **Shape** | 18 sessions × 75 min = **22 h 30** · 2 a week × 9 weeks · remote · groups of 4–8 |
 | **Spine** | one class in dictionaries → **the whole school**, as objects, with statistics and charts |
-| **Excluded** | git (topic 23, deferred) · algorithmic recursion, which is Part 2 |
+| **Excluded** | git (state topic 23, deferred) · algorithmic recursion, which is Part 2 |
 
 ### What a participant knows on session 1, and what they do not
 
@@ -92,7 +92,7 @@ two.**
 | 9 | teachers as well as students | copy the whole Student class and edit it | **inheritance** |
 | 12 | the term's statistics | mean, spread and extremes by loop, over 180 numbers | **NumPy** |
 | 14 | show the head teacher | a bar chart drawn with `print()` and asterisks | **Matplotlib** |
-| 16 | the school's own CSV | 40 lines of `split(",")` and `try` | **pandas** |
+| 16 | the school's own CSV | 22 lines of `split(",")` and `try` | **pandas** |
 | 19 | a school of unknown depth | a loop for each level, and one level too few | **recursion** |
 
 **Never split one across two sessions.** If a day runs long, cut its Extra tasks — never

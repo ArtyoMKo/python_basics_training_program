@@ -515,7 +515,7 @@ four files, run from a terminal. Confirmed individually for every participant.
 **Concepts:** files persist and variables do not · reading and writing a file
 
 **Tools & Skills:** typing the class into the code every time, and why that stops scaling ·
-`open()` with `encoding="utf-8"` · `split(",")` · writing the file back
+`read_text()` / `write_text()` with `encoding="utf-8"` · `split(",")` · writing the file back
 
 **The real task:** the register has to survive closing the program.
 
@@ -552,7 +552,7 @@ file.
 **Tools & Skills:** writing a README a colleague can follow · testing on someone else's
 laptop · demoing in 90 seconds
 
-Sixteen demos at 90 seconds is 24 minutes, which is why the group is capped at 16.
+Eight demos at 90 seconds is 12 minutes, which is why the group is capped at 8.
 
 **📦 By the end of this topic you have:** a finished, documented program that a colleague
 successfully ran from your README alone, and a 90-second demo given out loud.
@@ -623,7 +623,7 @@ assessments add roughly 3½ hours on top.
 
 | | Test | When | Length | Points | Covers |
 |---|---|---|---|---|---|
-| 1 | Initial diagnostic | **Before session 1** | 30–40 min | 44 | Nothing — it measures the baseline |
+| 1 | Initial diagnostic | **Before session 1** | 45–60 min | 44 | Nothing — it measures the baseline |
 | 2 | Midpoint | **After session 10** | 60–75 min | 50 | Topics 6–13: lists, tuples, sets, dictionaries, conditions, loops, totals, filtering |
 | 3 | Final practical | **Session 18** | 90–120 min | 70 **+ 10 reported separately** | Topics 14–24: reports, functions, files, the project |
 
