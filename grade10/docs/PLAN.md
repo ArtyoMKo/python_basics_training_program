@@ -573,45 +573,20 @@ above each one is Armenian; the message it explains is not.
 *variable · փոփոխական*, *list · ցուցակ* — because the instructor and the markdown talk
 about these concepts in Armenian even though the code never does.
 
-### 7.8 Assessment — three sittings
+### 7.8 Assessment — being redesigned
 
-**Three assessments, designed with our partner colleague**, replacing an earlier design
-of four take-home tests. They are **separate sittings, not session time**: the 24 teaching
-sessions stay at 22 h 30 exactly and the assessments add roughly 3½ hours.
+**The three assessment sittings — diagnostic, midpoint and final practical — and their
+marking guides were removed on 16 October 2026** and are being redesigned. Two will
+replace them: a midpoint after session 10 and a final assessment in session 18, outside
+session time, under the decision rule in `RATIONALE.md` §5a (D13).
 
-| Test | When | Length | Points | Covers |
-|---|---|---|---|---|
-| `test1_diagnostic` | **Before session 1** | 45–60 min | 44 | nothing — the baseline |
-| `test2_midpoint` | **After session 10** | 60–75 min | 50 | topics 6–13 |
-| `test3_final_practical` | **Session 18** | 90–120 min | 70 + 10 separate | topics 14–24 |
+Rules any replacement keeps:
 
-Rules that make them worth setting:
-
-- **Every question has variants A, B, C**, equivalent in difficulty and points; the
-  platform gives each participant one. Question 8 of the final test is the exception —
-  the same for everyone.
-- **Two notebooks are generated from each source.** `#%% md teacher` cells carry the
-  rubric and appear only in `tests/<name>.ipynb`; `tests/participant/<name>.ipynb` has
-  questions only. **Never hand out the grader's copy** — it states what each question
-  measures and what it is worth.
-- **Every score is recorded with a help level**: `3` independent, `2` after one hint,
-  `1` step-by-step, `0` did not finish. On the diagnostic the help level carries more
-  information than the score.
-- **Scores diagnose the programme, not the teachers**, and the materials say so. The
-  earlier design refused to score at all; scoring plus the explicit framing keeps the
-  diagnostic value while gaining a measurable before-and-after.
-- **Every question is a classroom task**, never a puzzle, and nothing untaught appears —
-  except question 8, which is untaught by design.
-- **A marking guide ships with each test** (`tests/markN_guide.md`): expected answer, and
-  *what a wrong answer tells the instructor*. That second column is the point.
-
-**The diagnostic is what makes the experiment measurable.** Without a before-measurement
-the programme can only report an endpoint; with one it reports change. It is also an
-early warning: a participant who cannot run a cell at help level 3 predicts a hard session 1.
-
-**Question 8 of the final test carries the transfer question** — one small task using
-only taught syntax that the course never demonstrates, marked separately and never
-reported as a pass rate (§ `RATIONALE.md` 5).
+- **The result is the share of tasks done** — a task is done when the code runs and does
+  what was asked. No points, no partial credit.
+- **No help during a sitting**: each participant completes the tasks alone, in the
+  notebook or platform the assessment names.
+- **Every task is a classroom task**, never a puzzle, and nothing untaught appears.
 
 ## 8. Code style for this audience
 
@@ -680,11 +655,6 @@ public_school_python/
 │   └── solutions/              <- split per day by the build step
 ├── solutions/
 │   └── day02.ipynb … day19.ipynb                                  (18)
-├── tests/                      <- assessment (§7.8) -- GENERATED
-│   ├── test1_diagnostic.ipynb … test3_final_practical.ipynb       (3, grader's copy)
-│   ├── participant/            <- the same three, rubric stripped (3)
-│   ├── mark1_guide.md … mark3_guide.md   <- instructor only       (3)
-│   └── README.md               <- how the three sittings work
 ├── guides/
 │   ├── day20_leaving_the_notebook.md
 │   ├── day21_two_files.md
@@ -851,7 +821,7 @@ sittings, so the agendas are unaffected.
 
 | Week | Sessions | Topics | Arc | Assessment |
 |---|---|---|---|---|
-| 1 | 1–2 | 1–3 | It runs on my laptop, and I know what a value is | *(diagnostic sat before session 1)* |
+| 1 | 1–2 | 1–3 | It runs on my laptop, and I know what a value is | |
 | 2 | 3–4 | 4–5 | I can name things | |
 | 3 | 5–6 | 6–7 | A whole class in one list | |
 | 4 | 7–8 | 8–10 | I can find one student, and the computer decides | |
@@ -859,7 +829,7 @@ sittings, so the agendas are unaffected.
 | 6 | 11–12 | 14–15 | I can report on the whole class | |
 | 7 | 13–14 | 16–17 | I write the calculation once and use it everywhere | |
 | 8 | 15–16 | 18–21 | It is a program now, not a notebook | |
-| 9 | 17–18 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical** (session 18) |
+| 9 | 17–18 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final assessment** (session 18) |
 
 ## 11. Verification discipline
 
@@ -993,7 +963,7 @@ adjectives, the definition of done — applies unchanged.
 | **D6** | Group size | **4–8, one instructor.** Fewer than 4 and they cannot discuss; more than 8 and the instructor cannot check on everyone remotely | §2, §12 |
 | **D11** | Delivery | **Remote**, over Google Meet with screen sharing. Each teacher needs their own laptop and a connection that holds a 75-minute call | §2, §12, `ENROLMENT.md` |
 | **D12** | Session length | **75 minutes, 2 a week** — 18 sessions over 9 weeks, 22 h 30. The third schedule: 24 × 75 three a week, then 16 × 120 twice a week, now this. Contact time is the lowest of the three, and the practice that no longer fits is homework (D5) | §3 | <!--history-->
-| **D13** | Success criterion | **>90% can code** = success · **<50%** = failure · between = adjust and repeat | `RATIONALE.md` §5a |
+| **D13** | Success criterion | Teacher, final assessment: **>85%** of tasks = pass · 70–85% = individual review · <70% = leaves (Part 1 is not repeated). Midpoint: >85% = on track · <85% = probation until the final, nobody leaves (partner email 16 Oct 2026). Trial lessons: 1–2 coding in Part 1, 2 theory in Part 2. Cohort: **>80% pass** = success · **<70%** = failure · between = adjust and repeat (agreed with partners 15 Oct 2026) | `RATIONALE.md` §5a |
 | **D7** | Recruitment document | `ANNOUNCEMENT.md`, written **for teachers**. A one-page summary for school administration only if asked for | §9 |
 | **D8** | Version control | Own repository: `git@github.com:AIrtyoMKo/python_basics_training_program.git` | §9.3 |
 | **D9** | Armenian terminology review | The glossary is produced in Block 1 and **reviewed by you later**; the build continues meanwhile. Terminology is confined to the glossary file so a later change is one edit plus a scripted sweep, not a rewrite | §7.7, §11.6 |
@@ -1038,8 +1008,7 @@ exercise size and the retrospective format — and cheap to throw away.
 - [ ] Every discovery day resolves its own laborious half **in the same notebook** (§4.1)
 - [ ] No notebook tells a participant the long way was there to make a point (§4.2)
 - [ ] Every stretch of repetitive work is preceded by the forward reassurance (§4.3)
-- [ ] All three assessments, both versions, and their marking guides exist and run
-- [ ] No `teacher` cell leaks into `tests/participant/`
+- [ ] The redesigned midpoint and final assessment exist (§7.8)
 - [ ] No notebook after session 1 needs the internet
 - [ ] Nothing outside the standard library is imported anywhere — including Anaconda's own bundled packages
 - [ ] `project/gradebook/` runs end to end from a clean folder

@@ -35,8 +35,8 @@ write a lot of very simple code, feel concrete problems, and receive each concep
 fix for a problem they just had. At the end we look at what actually happened and decide
 whether to continue this way or go back.
 
-**This is out of the ordinary and it carries real risk.** That is stated plainly below,
-because the point of an experiment is to be able to say it did not work.
+**This is out of the ordinary**, so it comes with a clear measurement and a decision
+point (§5a), and the one risk that matters is named in §4.
 
 ---
 
@@ -144,47 +144,33 @@ deliberate ordeal, is a trick — and this audience has been let down enough alr
 **A teacher who has written out a whole register by hand understands why a list exists
 better than one who was given a good definition of it.** That is the bet, in one sentence.
 
-## 4. Why this is risky
+## 4. What could get in the way
 
-Stated honestly, because we will have to judge it fairly in two months.
+**One risk really matters: that after Part 1 teachers still do not feel comfortable
+writing code.** That is the goal, so it is also the risk. The course is built to see it
+early: the midpoint shows it a month before the end, while the method can still be
+adjusted for each teacher, and the hard gate and the final assessment confirm it (§5a).
 
-**The core assumption may simply be wrong.** We are betting that coding fluency transfers
-— that someone who can code mechanically will find algorithmic problems learnable later.
-That is plausible, and it is not proven. It is possible to produce teachers who can type
-Python fluently and still cannot solve a problem with it. **If that happens, this failed**,
-and no amount of the course being pleasant changes that.
+The rest are practical matters, each with a plan:
 
-**Participants may not accept it.** Adults often judge a course by how substantial it
-feels. A course that explains little and asks them to type a lot can read as shallow, or
-as not respecting their time. The discovery days are the sharpest version of this risk:
-the first half of those sessions is deliberately laborious. We mitigate it by resolving
-every one of them within the same session, by promising the shortcut in writing
-before the long half starts, and by never framing the work as an ordeal — but a
-participant who leaves on Topic 6 thinking "I typed for twenty minutes" rather than "I
-learned what a list is for" is a real failure mode, and it will happen to somebody.
-
-**Twenty-two and a half hours is not much.** Nine weeks, 75 minutes at a time, for
-working teachers — and more of the practice is at home than on any earlier schedule.
-The scope is deliberately narrow, and narrow means things are missing.
-
-**Attendance.** Two sessions a week for nine weeks, on top of a teaching job. Every
-session is built to be self-contained and solutions go out afterwards, but people will
-still drop out.
-
-**Practical failure modes that have nothing to do with the method.** Laptops that cannot
-install software; a 1 GB download on school wifi; a lost first session. These can sink the
-experiment without telling us anything about whether the approach works — which is
-precisely why they have to be managed hard (`INSTRUCTOR_NOTES.md` §1).
+- **Problem-solving comes later.** Part 1 builds fluency; algorithmic problems are Part 2's
+  work, and the Part 2 benchmark measures it (`ROADMAP.md`).
+- **Some participants may expect more explanation.** The first half of a discovery
+  session is deliberately hands-on. Every one resolves within the same session, and the
+  shortcut is promised in writing before the long half starts.
+- **The time is compact** — 22½ hours, 75 minutes at a time, for working teachers. The
+  scope is deliberately focused.
+- **Attendance.** Two sessions a week on top of a teaching job. Every session is
+  self-contained, solutions go out afterwards, and every session starts with a recap.
+- **Setup.** Laptops that cannot install software, or a large download. Handled before
+  session 1 (`INSTRUCTOR_NOTES.md` §1).
 
 ### The fair comparison
 
-The comparison is **not** "risky new thing versus safe known thing".
-
-The conventional approach has **two years of evidence of not producing the result we
-wanted**. That is not a safe option; it is a known-unsuccessful one. This is a risky option
-with an argument behind it.
-
-**Here we have a chance to succeed.** That is the honest claim — not that it will work.
+The conventional approach has **two years behind it without the result we wanted**. This
+approach has an argument behind it, a defined measurement and a decision point. We believe
+it gives teachers a real chance to become comfortable coding, and the measurement will
+show it.
 
 ---
 
@@ -198,49 +184,22 @@ extra work:
 
 | When | The check | Why it is the right one |
 |---|---|---|
-| **Diagnostic** (before session 1) | Q1: can they run a cell at all, and at what help level? | **The baseline.** Without it we can only report an endpoint, not change |
-| **Midpoint** (after topic 13) | Q4: do they write a loop, or still index by hand? | The first real evidence for or against the method |
-| **Final** (session 18) | Q2/Q3: do they return a value, or print it? | If `return` never landed, the three-file project was not reachable |
+| **Midpoint** (after session 10) | Do they write a loop, or still repeat themselves? | The first real evidence for or against the method |
+| **Final** (session 18) | Do they return a value, or print it? | If `return` never landed, the three-file project was not reachable |
 | **session 16** | **Does `python main.py` run?** Confirmed individually, per person | Binary, unarguable, and the course's hard gate |
 | **Session 18** | Does a colleague run their program **from their README alone**? | Tests that the thing is real, not just that it works on one desk |
 | **Session 18** | Attendance across all 18 sessions | Below a certain point, nothing else is interpretable |
 
-**Three assessments**, designed with our partner colleague: a diagnostic before session 1, a
-midpoint after session 10, and a final practical in session 18. They are supervised sittings
-outside the 22½ teaching hours, scored out of 44, 50 and 70, with a help level recorded
-beside every score.
+**The assessments are being redesigned.** The previous diagnostic, midpoint and final
+practical were removed on 16 October 2026. Their replacements — a midpoint after session 10
+and a final assessment in session 18 — keep two rules: the result is the **share of tasks
+done**, and **no help is given during a sitting**. The decision rule in §5a applies to them
+as agreed.
 
-**Scoring them does not make them exams.** The scores diagnose the programme, not the
-teachers, and the materials say so. What scoring buys is the thing the earlier
-not-graded design could not give us: **a before-measurement**. We can now report change
-rather than an endpoint, and the diagnostic's help levels tell us how much of any result
-came from support rather than from the course.
-
-**The one measurement we have to add.** None of the above tests the actual bet, because
-none of them is an algorithmic problem. So:
-
-> **Question 8 of the final practical** is that measurement, and it is already written:
-> *given a class register, find the student whose grade is closest to the class average.*
-> It uses no syntax the course did not teach, and the course never demonstrates it. It is
-> the same for every participant — the only question with no A/B/C variants — and its 10
-> points are reported separately from the other 70.
->
-> The question asks them to **write their approach in plain words first**, then attempt the
-> code, and to say where they stopped if they could not finish.
-
-Four things get recorded, not one (`tests/mark3_guide.md`):
-
-1. Did they write the plain-words plan at all?
-2. Was the plan a **correct approach**, even if the code failed?
-3. Did the code work?
-4. **Where did they stop, in their own words?**
-
-**A correct plan with incomplete code is a success.** It means they can now reason about a
-problem and the remaining gap is practice — which is exactly what the next course would
-provide. Do not report question 8 as a pass rate.
-
-That is the experiment. Everything else measures whether the course ran well; **this
-measures whether the theory was right.**
+**Problem-solving is measured in Part 2.** The removed final practical carried a transfer
+question — an untaught problem answered first as a plan in plain words. Whether the new
+final assessment keeps one is part of the redesign; the Part 2 benchmark (`ROADMAP.md`)
+measures problem-solving in any case.
 
 Set the target numbers together before session 1. A target chosen afterwards is not a target.
 
@@ -262,30 +221,58 @@ pass/fail and neither of which requires a new instrument:
 | Evidence | Where it comes from |
 |---|---|
 | They left **session 16** with a working `python main.py`, confirmed individually | The hard gate already built into the course |
-| They scored **at least half** of the 70 points on questions 1–7 of the final practical | Those questions require writing code unaided, from a blank cell |
+| Their share of tasks done on the final assessment is in the **pass** band below | Its tasks require writing code unaided, from a blank cell |
 
-A participant meeting both **can code**. Meeting one but not the other is recorded as
-partial and counted in the middle band below — not rounded up.
+### The individual result — three bands, at two exams
 
-> Question 8, the transfer question, is **excluded** from this judgement. It measures
-> problem-solving, which Part 1 does not teach and does not claim. Including it would be
-> grading the course on something it deliberately left for Part 2.
+Agreed with partners on 15 October 2026. The percentage is the share of the exam's tasks
+done.
 
-### The thresholds
+| Tasks passed correctly | Midpoint (after session 10) | Final assessment (session 18) |
+|---|---|---|
+| **More than 85%** | **On track** — continues unconditionally | **Pass** — can code. Continues to Part 2 |
+| **70% to 85%** | **Probation.** Continues; the teacher is told exactly where their problem is, and the method is adjusted for them in the sessions that remain | **Individual review.** The team looks at the teacher's work as a whole and decides whether they continue to Part 2 or leave |
+| **Less than 70%** | **Probation**, with the highest priority | **Leaves the programme** |
+
+**Part 1 is not
+repeated**: a teacher who does not continue after the final assessment leaves the programme.
+
+**Nobody leaves at the midpoint.** A teacher under 85% continues on probation through the
+second month: they know their own problem while there is still time to fix it, and the
+final assessment decides, on the same bands as everyone else. The midpoint also adjusts
+the course. Its bar
+is that a teacher can write code with every topic taught so far, with no algorithmic
+difficulty.
+
+A participant whose score is in the pass band **and** who left session 16 with a working
+`python main.py` **can code**. Meeting one but not the other is not a pass, and goes to the
+individual review — it is not rounded up.
+
+### The thresholds — the cohort result
+
+Agreed with partners on 15 October 2026. The percentage is of teachers who **pass**, in the
+sense above:
 
 | Result | Meaning | What happens next |
 |---|---|---|
-| **More than 90% can code** | **Success** | Continue to Part 2 (`ROADMAP.md`) |
-| **50% to 90%** | **Inconclusive** | The method is not refuted and not proved. Adjust and repeat Part 1 with a second cohort before committing to Part 2 |
-| **Less than 50% can code** | **Failure** | Return to the conventional approach, informed by where it broke (§6) |
+| **More than 80% pass** | **Success** | Continue to Part 2 (`ROADMAP.md`) |
+| **70% to 80%** | **Inconclusive** | The method is not refuted and not proved. Adjust Part 1 and run it with a new cohort before committing to Part 2 |
+| **Less than 70% pass** | **Failure** | Return to the conventional approach, informed by where it broke (§6) |
+
+Here a teacher **passes** if they meet both halves of "can code" above — over 85% on the
+final assessment and a working `python main.py` at session 16. A teacher in the
+70–85% band whom the review lets continue goes on to Part 2, but is reported separately
+rather than counted as a pass, so that the figure measures the method and not the review.
 
 The middle band is not a hedge. It is the most likely outcome of a first run of anything,
 and deciding in advance what we do with it prevents the result being argued into whichever
 camp someone already preferred.
 
-### The trial class — a second criterion, measuring something else
+### The trial classes — a second criterion, measuring something else
 
-**In March, after Part 1, each teacher takes a trial class with real pupils.**
+**Each teacher teaches real pupils: one or two coding trial lessons in Part 1, the first in
+the middle of the second month (around week 7), and two lessons on theoretical material
+in Part 2.**
 
 This matters more than it first appears, because **it does not measure the same thing as
 §5a**. "Can they code" and "can they teach it to a child" are different abilities, and a
@@ -296,7 +283,7 @@ teacher can have either without the other:
 | **Can teach it** | The outcome the programme exists for | Not possible for this material |
 | **Cannot teach it** | **The failure mode we would otherwise miss entirely** | Clear failure |
 
-The top-right cell is why the trial class is worth running. Nothing in the three
+The bottom-left cell is why the trial classes are worth running. Nothing in the
 assessments would detect a teacher who writes correct code and cannot explain it to a
 fifteen-year-old — and that teacher cannot deliver the state curriculum, which is the
 whole point of the programme.
@@ -307,9 +294,9 @@ two separately:
 | | What it answers |
 |---|---|
 | §5a, from the assessments | Can they code? |
-| The trial class | Can they teach what they can code? |
+| The trial classes | Can they teach what they can code? |
 
-**What to record from the trial class.** Agree this before March, and keep it light — a
+**What to record from each trial class.** Agree this before week 7, and keep it light — a
 first trial lesson by a nervous adult is not a performance review:
 
 - Did the lesson happen at all, and did it finish?
@@ -325,15 +312,17 @@ topic 2 onward. If it holds up in front of a class, the method transferred.
 Groups are **4 to 8 teachers** (`OUTLINE.md`). At that size a percentage is a very coarse
 instrument:
 
-| Group size | To reach "more than 90%" | "Less than 50%" means |
+| Group size | To reach "more than 80%" | "Less than 70%" means |
 |---|---|---|
-| 4 | **4 of 4** | 1 of 4 or fewer |
-| 6 | **6 of 6** | 2 of 6 or fewer |
-| 8 | **8 of 8** | 3 of 8 or fewer |
+| 4 | **4 of 4** | 2 of 4 or fewer |
+| 5 | **5 of 5** | 3 of 5 or fewer |
+| 6 | **5 of 6** | 4 of 6 or fewer — **there is no middle band at six** |
+| 8 | **7 of 8** | 5 of 8 or fewer |
 
-**At every group size in our range, "more than 90%" means every single participant
-without exception.** One teacher whose laptop dies in week 6, or who leaves for reasons
-that have nothing to do with the course, moves the group out of "success" on their own.
+**In groups of four or five, "more than 80%" still means every single participant.**
+At six, one teacher short is success and two short is failure, with nothing between. One
+teacher whose laptop dies in week 6, or who leaves for reasons that have nothing to do
+with the course, can decide a small group's result on their own.
 
 Two things follow, and we should agree both before the first cohort:
 
@@ -347,8 +336,7 @@ Neither of these weakens the bar. They stop it from being decided by one broken 
 
 ## 6. What happens after two months
 
-**If it works** — they can code, and the transfer test suggests problem-solving is now
-reachable:
+**If it works** — they can code, comfortably:
 
 - Continue with the same method into **OOP** and more advanced material
 - **Go back and add the theory** we deliberately skipped, now that there is practice to
@@ -382,6 +370,7 @@ Two items are openly unverified and named as such in the materials:
 1. **Is the diagnosis right?** Is "they cannot code" really the bottleneck, or are we
    fixing the wrong thing?
 2. **Is 22 h 30 enough** to produce the fluency the bet depends on?
-3. **What should the success numbers be?** (§5) — agreed in advance.
+3. ~~**What should the success numbers be?**~~ **Agreed with partners on 15 October
+   2026** (§5a): a teacher passes above 85%; the cohort succeeds above 80% passing.
 4. **Will topics 6 and 8 be accepted or resented?** Anyone who knows this audience better
    than we do should say so before we run it, not after.

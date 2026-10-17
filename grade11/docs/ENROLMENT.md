@@ -9,8 +9,7 @@ Who to admit, what to ask them, and what to tell them before they say yes.
 **They completed our grade-10 course.**
 
 Not "have programmed before". Not "are confident with computers". This course is built on
-exactly what that course produced, and on nothing else — and the diagnostic before session 1
-is there to check that it actually produced it.
+exactly what that course produced, and on nothing else.
 
 ### Somebody who did not take the grade-10 course
 
@@ -45,12 +44,13 @@ enrolment**, not the answers.
 
 ## What to tell them before they commit
 
-Four things. All of them are easier to say now than to explain later.
+Six things. All of them are easier to say now than to explain later.
 
 | | |
 |---|---|
 | **This is harder than the first course** | Classes and libraries are a different kind of difficulty from loops. Saying so sets the right expectation; discovering it in week two does not |
-| **The last assessment decides who continues** | The first two are diagnostic. **The third gates entry to Part 2.** People behave differently knowing this, so telling them afterwards would be unfair and would spoil the result |
+| **The final assessment decides who continues** | The assessments are being redesigned, but the rule is agreed: at the midpoint, anyone under 85% continues **on probation** until the final — nobody leaves at the midpoint. **The final assessment gates entry to Part 2**: above 85% continues, 70–85% is reviewed individually, under 70% leaves. **Part 1 is not repeated.** People behave differently knowing this, so telling them afterwards would be unfair and would spoil the result |
+| **There are trial lessons with real pupils** | One or two coding lessons in Part 1, the first around week 7, and two on theoretical material in Part 2 |
 | **Homework is required, and it is 30–40 minutes after some sessions** | Two 75-minute sessions a week cannot hold 24 topics and their practice. On the sessions that cover two topics, the Required tier of both notebooks goes home. **Nothing new is introduced at home** — every task is already in the notebook. Say this before they agree, not in week three |
 | **Missing a session is recoverable; missing three is not** | Every notebook is self-contained and the solutions are published. But the discovery days do not read well alone |
 | **In September they teach this** | The whole thing is pointed at that. It is also the best reason anyone has to finish |
@@ -61,9 +61,8 @@ Four things. All of them are easier to say now than to explain later.
 
 | | |
 |---|---|
-| "I have forgotten everything" | Almost everyone says this. The diagnostic will show whether it is true, and it usually is not |
+| "I have forgotten everything" | Almost everyone says this. Session 1's recap will show whether it is true, and it usually is not |
 | "I am slower than the others" | Groups of 4–8 exist so this does not matter. Extra tasks absorb the fast ones |
-| A weak diagnostic score, high help level | Someone who gets there with hints will get there. Watch, do not exclude |
 
 ## Things that are problems
 
@@ -81,7 +80,8 @@ Four things. All of them are easier to say now than to explain later.
 **4–8, one instructor.** Fewer than four and there is no discussion; more than eight and
 the instructor cannot check everyone's screen in a 75-minute remote session.
 
-> **This interacts with the success criterion.** A threshold of ">90% can code" in a group
-> of six means one person failing puts the cohort in the middle band. Pool results across
+> **This interacts with the success criterion.** A threshold of ">80% pass" in a group
+> of six means one person failing still succeeds and two failing is failure — there is no
+> middle band at that size. Pool results across
 > cohorts before judging, and record withdrawals separately from failures
 > (`RATIONALE.md` §5a).

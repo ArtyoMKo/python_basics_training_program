@@ -353,22 +353,18 @@ def check_facts():
                 problems.append(f"grade11 has {eleven_counts[label]} {label}, "
                                 f"not the {expected} quoted in the appendix")
         eleven_curriculum = (ELEVEN / "docs" / "CURRICULUM.md").read_text(encoding="utf-8")
-        for moment in ["**After session 8**", "**Session 18**", "**Before session 1**"]:
+        for moment in ["**midpoint after session 8**", "**final assessment in session 18**"]:
             if moment not in eleven_curriculum:
-                problems.append(f"grade11 CURRICULUM no longer says {moment} — the "
-                                "assessment table in this document quotes it")
+                problems.append(f"grade11 CURRICULUM no longer says {moment} — this "
+                                "document quotes it")
 
     counts = {
         "notebooks": len(list((TEN / "notebooks").glob("*.ipynb"))),
         "solutions": len(list((TEN / "solutions").glob("*.ipynb"))),
-        "tests": len(list((TEN / "tests").glob("*.ipynb"))),
-        "participant tests": len(list((TEN / "tests" / "participant").glob("*.ipynb"))),
         "guides": len(list((TEN / "guides").glob("*.md"))),
-        "marking guides": len(list((TEN / "tests").glob("mark*_guide.md"))),
         "project files": len(list((TEN / "project" / "gradebook").glob("*.py"))),
     }
-    expected = {"notebooks": 19, "solutions": 18, "tests": 3, "participant tests": 3,
-                "guides": 5, "marking guides": 3, "project files": 3}
+    expected = {"notebooks": 19, "solutions": 18, "guides": 5, "project files": 3}
     for name, want in expected.items():
         if counts[name] != want:
             problems.append(f"{name}: found {counts[name]}, dossier says {want}")
@@ -380,20 +376,13 @@ def check_facts():
         problems.append(f"sample class: {len(grades)} students, sum {sum(grades)}, "
                         f"average {sum(grades) / len(grades)}")
 
-    # The dossier quotes the point totals, so check them against the exams themselves.
-    for name, points in (("test1_diagnostic", 44), ("test2_midpoint", 50),
-                         ("test3_final_practical", 70)):
-        source = (TEN / "src" / "tests" / f"{name}.py").read_text(encoding="utf-8")
-        scored = [int(m) for m in re.findall(r"\*\*Միավոր՝\*\*\s*(\d+)", source)]
-        # The final test's question 8 is reported separately and is not in the total.
-        total = sum(scored[:-1]) if name == "test3_final_practical" else sum(scored)
-        if total != points:
-            problems.append(f"{name}: questions total {total} points, dossier says {points}")
-
-    # No grader-only cell may survive into the participant copy.
-    for path in (TEN / "tests" / "participant").glob("*.ipynb"):
-        if "Ուսուցչի նշում" in path.read_text(encoding="utf-8"):
-            problems.append(f"{path.name}: the rubric leaked into the participant copy")
+    # The assessments were removed on 16 Oct 2026 and the dossier says they are being
+    # redesigned; none may reappear half-built without this document being updated.
+    for grade in (TEN, ELEVEN):
+        for leftover in ("tests", "src/tests"):
+            if (grade / leftover).exists():
+                problems.append(f"{grade.name}/{leftover} exists, but the dossier says the "
+                                "assessments are being redesigned")
 
     # Discovery days must still be the five the dossier names.
     for day in ("day06_class_register", "day08_dictionaries", "day11_for_loops",
@@ -408,8 +397,8 @@ def check_facts():
 
 # -------------------------------------------------------------------------- content
 
-TODAY = "2 October 2026"
-VERSION = "3.3"
+TODAY = "16 October 2026"
+VERSION = "3.6"
 
 
 # Phrases from the three-a-week schedule. This document restates its figures in prose
@@ -426,6 +415,12 @@ REVERSED_CLAIMS = [
     "four assessments",
     "never assumes was done",
     "homework is optional",
+    "Part 1 again",
+    "re-sit",
+    "trial class in March",
+    "no consequence for the individual",
+    "at least one trial",
+    "three of eighty",
 ]
 
 STALE_SCHEDULE = [
@@ -524,13 +519,13 @@ def build():
         ["", ""],
         [
             ["Structure", "**Two courses, one per school grade.** Each is a **practical Part 1 of 2 months** and a **theoretical Part 2 of 4 months** that runs only if its Part 1 succeeds. **Sections 1–10 describe the grade-10 course's Part 1; section 11 describes the grade-11 course's Part 1.** Both are built and verified."],
-            ["Part 1 format", "18 sessions × 75 minutes = **22½ hours**, **twice a week** over nine weeks, plus homework between sessions and three assessment sittings"],
+            ["Part 1 format", "18 sessions × 75 minutes = **22½ hours**, **twice a week** over nine weeks, plus homework between sessions; a midpoint and a final assessment, being redesigned"],
             ["Delivery", "**Fully remote**, over Google Meet with screen sharing. No session is held on site, in either course"],
             ["Audience", "Public-school teachers, any subject. **No prior programming assumed** — the course begins with installing software"],
             ["Group size", "**4–8 per group**, one instructor"],
             ["Deliverable", "A runnable three-file Python program over the participant's own class data, demonstrated to a colleague"],
-            ["Cost", "**Zero.** All software is free; nothing touches a paid service or needs the internet after day one"],
-            ["Judged by", "**Can they code?** More than 90% = success, under 50% = failure (section 8) — plus a trial class with real pupils in March"],
+            ["Cost", "**Zero.** All software is free; nothing touches a paid service or needs the internet after session 1"],
+            ["Judged by", "**Can they code?** A teacher passes with more than 85% of tasks done; the course succeeds if more than 80% of teachers pass, and fails under 70% (section 8). Plus **trial lessons with real pupils**: one or two coding lessons in Part 1, two on theoretical material in Part 2. **Part 2 is judged against teachers who already teach in a school** (section 12)"],
             ["Status", "**Both Part 1 courses are complete and verified. Neither has been taught to a cohort.** Both Part 2s are visions"],
             ["Version", f"{VERSION} — for partner review · {TODAY}"],
         ],
@@ -549,8 +544,8 @@ def build():
             "knows on its first day.",
             "Section 8 sets out how the programme will be judged, including the one "
             "measurement that tests its central assumption.",
-            "Section 9 states the risks plainly, including how this could fail. We would "
-            "rather you read them here than discover them later.",
+            "Section 9 sets out the one risk that matters — that teachers still do not "
+            "feel comfortable coding after Part 1 — and how the course watches for it.",
         ],
     )
 
@@ -586,8 +581,8 @@ def build():
             "**Part 1 is a two-month experiment with a decision at the end, not a "
             "finished methodology.** It is built and verified. **Part 2 — the four months "
             "that follow — is a vision that runs only if Part 1 succeeds** (section 12).",
-            "Part 1 is judged on one question — **can they code?** The threshold is agreed "
-            "and is in section 8.",
+            "Part 1 is judged on one question — **can they code?** The thresholds were "
+            "agreed with you on 15 October and are in section 8.",
         ],
         fill=BAND_FILL,
     )
@@ -641,11 +636,11 @@ def build():
     d.para(
         "Teachers are given a real classroom task, solve it with what they already know, "
         "and then — **in the same session** — meet the tool that collapses it. We call "
-        "these **discovery days**; there are five."
+        "these **discovery sessions**; there are five."
     )
 
     d.table(
-        ["Day", "The real task", "The long way they do it first", "The tool, same session"],
+        ["Topic", "The real task", "The long way they do it first", "The tool, same session"],
         [
             ["6", "A register for the whole class", "One variable per student", "**Lists**"],
             ["8", "Find one student's grade by name", "Two parallel lists, read by hand", "**Dictionaries**"],
@@ -656,11 +651,11 @@ def build():
         [0.07, 0.29, 0.34, 0.30],
     )
 
-    d.h2("A worked example — day 6")
+    d.h2("A worked example — topic 6")
     d.para(
         "Participants are told: *a teacher needs somewhere to keep the whole class — every "
         "name, every score — so the program can work with all of them.* With what they "
-        "know on day 6, that means one variable per student. The notebook supplies twenty; "
+        "know by topic 6, that means one variable per student. The notebook supplies twenty; "
         "they add a few of their own and update the scores. It works, and it takes a while."
     )
     d.para(
@@ -674,7 +669,7 @@ def build():
     d.table(
         ["Rule", "Why, and what it costs us"],
         [
-            ["**The relief comes in the same session. Always.**", "An earlier draft planted a difficulty on day 6 and resolved it on day 10. Good structure on paper, bad teaching in practice: adults who spend an evening on tedious work and go home with no resolution do not come back. If a session runs long, the optional tasks are cut — never the second half"],
+            ["**The relief comes in the same session. Always.**", "An earlier draft planted a difficulty in topic 6 and resolved it four sessions later. Good structure on paper, bad teaching in practice: adults who spend an evening on tedious work and go home with no resolution do not come back. If a session runs long, the optional tasks are cut — never the second half"],
             ["**The task is real, and the tedium is never named.**", "Participants are never told they are doing something in order to struggle. They are building a class register because a teacher needs one — which is true. Work you chose to do, and were then shown a better way to do, is a lesson; the same work revealed afterwards as a deliberate ordeal is a trick, and this audience has been let down enough already"],
             ["**The shortcut is promised in advance, in writing.**", "A participant who knows a shortcut is twenty minutes away types the long version willingly; one who does not starts wondering whether the course knows what it is doing"],
         ],
@@ -706,12 +701,13 @@ def build():
         [
             "**Session length.** Sessions run 75 minutes, twice a week — 18 × 75 "
             "= 22½ hours. **This is the lowest contact time the programme has used**, and the "
-            "practice that no longer fits is set as homework — on the three sessions that "
-            "cover two topics that means the **Required** tier of both notebooks, 30–40 "
+            "practice that no longer fits is set as homework — on the three paired sessions, "
+            "which cover two topics each, that means the **Required** tier of both notebooks, 30–40 "
             "minutes, and the Extra tier is not asked for on top. Nothing new is ever introduced at home: every task is already in "
-            "the notebook. Teachers are told this at enrolment, not in week three. It is "
-            "homework drawn from tasks the notebooks already carry. Once the cohort has adapted we may move to "
-            "three of eighty minutes; the topic map and deliverables would not change.",
+            "the notebook. Teachers are told this at enrolment, not in week three. **Once a group has "
+            "settled in, the rhythm may change** — shorter or longer sessions, or a "
+            "different number per week (an earlier plan had three shorter sessions per "
+            "week). The topics and deliverables would not change.",
             "**Tools.** Anaconda, Jupyter and VS Code, with Google Colab and Thonny under "
             "discussion as a lighter alternative that would remove the installation "
             "problem entirely. Current materials assume Anaconda and VS Code.",
@@ -721,21 +717,22 @@ def build():
     d.table(
         ["Week", "Sessions", "Topics", "What the participant can do by the end of it", "Assessment"],
         [
-            ["1", "1–2", "1–4", "It runs on my laptop, and I know what a value is", "*diagnostic sat before session 1*"],
-            ["2", "3–4", "5–6", "I can name things, and keep a whole class in one list", ""],
-            ["3", "5–6", "7–8", "Every data type I need, and I can find one student", ""],
-            ["4", "7–8", "9–11", "Conditions, then one loop marks thirty students", ""],
-            ["5", "9–10", "12–15", "I can compute and report on the whole class", "**Midpoint**"],
-            ["6", "11–12", "16–17", "I write a calculation once and use it everywhere", ""],
-            ["7", "13–14", "18–21", "It is a program now, not a notebook", ""],
-            ["8", "15–16", "22–24", "It has my class in it, it saves, and I showed it to someone", "**Final practical**"],
+            ["1", "1–2", "1–3", "It runs on my laptop, and I know what a value is", ""],
+            ["2", "3–4", "4–5", "I can name things", ""],
+            ["3", "5–6", "6–7", "A whole class in one list", ""],
+            ["4", "7–8", "8–10", "I can find one student, and the computer decides", ""],
+            ["5", "9–10", "11–13", "One loop marks thirty students", "**Midpoint**, after session 10"],
+            ["6", "11–12", "14–15", "I can report on the whole class", ""],
+            ["7", "13–14", "16–17", "I write the calculation once and use it everywhere", "**Trial class** with real pupils"],
+            ["8", "15–16", "18–21", "It is a program now, not a notebook", ""],
+            ["9", "17–18", "22–24", "It has my class in it, it saves, and I showed it to someone", "**Final assessment**, in session 18"],
         ],
         [0.08, 0.12, 0.11, 0.49, 0.20],
     )
     d.para(
-        "**Week 4 is the centre of the course** — where the first two discovery sessions pay "
-        "off and a loop first does thirty students' work. If the calendar slips, that week "
-        "is protected.",
+        "**Weeks 4 and 5 are the centre of the course** — where the first discovery "
+        "sessions pay off and, in session 9, a loop first does thirty students' work. If the calendar slips, "
+        "those weeks are protected.",
         italic=True,
     )
 
@@ -748,9 +745,9 @@ def build():
         "tool, then the same task again with it, and a comparison."
     )
     d.para(
-        "Teaching never exceeds **12 minutes in one block**, and that ceiling does not "
-        "move when sessions lengthen: **the extra 25 minutes goes to hands-on work** and "
-        "to the second half of the discovery days, which is where the method lives. "
+        "Teaching never exceeds **12 minutes in one block**. **The rest of a session goes "
+        "to hands-on work** and to the second half of the discovery sessions, which is "
+        "where the method lives. "
         "Hands-on is never less than half of a session."
     )
 
@@ -764,7 +761,7 @@ def build():
     d.table(
         ["Remote delivery", "Effect"],
         [
-            ["**Removes the worst day-one risk**", "In a room, sixteen people downloading 1 GB over one school connection would have cost a session. Each teacher now installs at home, on their own connection, before day one"],
+            ["**Removes the worst day-one risk**", "In a room, a whole group downloading 1 GB over one school connection would have cost a session. Each teacher now installs at home, on their own connection, before session 1"],
             ["**Removes the best mitigation**", "An instructor cannot walk over and look at a screen. Everything that was a thirty-second fix becomes a conversation with a beginner who often cannot describe what they are seeing"],
             ["The substitute", "Google Meet can now display **every participant's shared screen at once**, with switching between them. Screens stay shared through hands-on work — the remote equivalent of walking between desks — and with 4–8 people the instructor checks in on each one by name"],
             ["Requires of each teacher", "Their own laptop for the whole course, and a connection that holds a 75-minute video call with screen sharing. A webcam is wanted but not required"],
@@ -789,9 +786,9 @@ def build():
     d.table(
         ["After a session covering…", "What is done at home", "How long"],
         [
-            ["one topic — twelve of the eighteen", "the extra questions", "**15–20 min**"],
-            ["two topics — the remaining six", "the main questions for both notebooks", "**30–40 min**"],
-            ["the build and showcase sessions", "nothing", "—"],
+            ["one topic, or the setup session — thirteen of the eighteen", "the extra questions", "**15–20 min**"],
+            ["two topics, taught together — three of the eighteen", "the main questions for both notebooks", "**30–40 min**"],
+            ["the transition and project sessions — the other two", "nothing", "—"],
         ],
         [0.36, 0.40, 0.24],
         size=9,
@@ -812,7 +809,7 @@ def build():
         ],
     )
     d.para(
-        "The **three assessments** are separate sittings and consume no session time."
+        "The assessments are separate sittings and consume no session time."
     )
 
     d.page_break()
@@ -826,7 +823,7 @@ def build():
         "they solve a problem the participant has just met, rather than where a textbook "
         "would put them. The course teaches **24 topics across 18 sessions of 75 minutes**: a "
         "topic is one notebook and one idea, a session is 75 minutes in a room. "
-        "**D** marks a discovery session, **T** the transition to real files, "
+        "**D** marks a topic taught as a discovery session, **T** the transition to real files, "
         "**P** the project phase."
     )
 
@@ -887,8 +884,8 @@ def build():
         [0.44, 0.14, 0.42],
     )
     d.para(
-        "**A teacher finishing Part 1 can deliver grade 10 semester 1 outright**, and most "
-        "of semester 2. Two orderings differ from the state document deliberately: we "
+        "**A teacher finishing Part 1 can deliver grade 10 semester 1 outright**, and the "
+        "first two topics of semester 2 — functions and files. Two orderings differ from the state document deliberately: we "
         "teach conditions before loops, and every data type before both, because our "
         "discovery sequence depends on having something worth looping over. **Recursion "
         "stays before classes**, as the state curriculum has it."
@@ -927,9 +924,9 @@ def build():
     d.table(
         ["By the end of", "Every participant has"],
         [
-            ["Day 10", "The whole register marked in four lines, proved by adding students without touching the loop"],
-            ["Day 17", "A calculation written once and used in four places, with a change proved in a single edit"],
-            ["**Day 21**", "**A working `python main.py` — confirmed individually, per person, before they leave the room.** Everything after this day assumes it"],
+            ["Session 9", "The whole register marked in four lines, proved by adding students without touching the loop"],
+            ["Session 14", "A calculation written once and used in four places, with a change proved in a single edit"],
+            ["**Session 16**", "**A working `python main.py` — confirmed individually, per person, before they leave the call.** Everything after this session assumes it"],
             ["Session 18", "A documented program a colleague ran unaided, and a 90-second demonstration given aloud"],
         ],
         [0.17, 0.83],
@@ -994,61 +991,17 @@ def build():
 
     d.h2("Assessment")
     d.para(
-        "**Three sittings**, designed jointly with our partner colleague. They are "
-        "**separate sittings, not session time** — the 18 teaching sessions remain 22½ "
-        "hours exactly and the assessments add roughly 3½ hours."
-    )
-    d.table(
-        ["", "Assessment", "When", "Length", "Points", "Covers"],
-        [
-            ["1", "Initial diagnostic", "Before session 1", "45–60 min", "44", "Nothing — it measures the baseline"],
-            ["2", "Midpoint", "After session 10", "60–75 min", "50", "Topics 6–13"],
-            ["3", "Final practical", "Session 18", "90–120 min", "70 + 10", "Topics 14–24"],
-        ],
-        [0.04, 0.21, 0.14, 0.13, 0.11, 0.37],
+        "**The assessments are being redesigned.** The previous three sittings — a "
+        "diagnostic, a midpoint and a final practical — were withdrawn on 16 October 2026. "
+        "Two take their place: a **midpoint after session 10** and a **final assessment in "
+        "session 18**, both outside session time, under the decision rule in section 8."
     )
     d.para(
-        "**Each question has variants A, B and C**, equivalent in difficulty and points; "
-        "the exam platform gives each participant one. Every score is recorded with a "
-        "**help level** — independent, after one hint, with step-by-step help, or not "
-        "finished — which on the diagnostic carries more information than the score."
-    )
-    d.para(
-        "**Scores diagnose the programme, not the teachers**, and the participants are "
-        "told so in writing. They exist to show the instructor where to slow down and to "
-        "give the two-month decision something to stand on."
-    )
-    d.callout(
-        "Why the diagnostic matters more than it looks",
-        [
-            "It is sat **before anyone has been taught anything**, so it cannot be failed. "
-            "What it buys is a **before-measurement**: the programme can report *change* "
-            "rather than just an endpoint, and the help levels show how much of any result "
-            "came from support rather than from the course.",
-            "It is also an early warning. A participant who cannot run a single cell "
-            "unaided tells us to put extra help into day 1 — the riskiest session in the "
-            "programme — six weeks before it would otherwise show.",
-        ],
-    )
-    d.para(
-        "Each assessment ships an instructor marking guide whose **second column is the "
-        "point**: not whether the answer was right, but what a wrong answer tells you and "
-        "what to change next session. Three results change what happens:"
-    )
-    d.table(
-        ["Assessment", "A result that changes what the instructor does next"],
-        [
-            ["Diagnostic", "Several participants unable to run a cell unaided → a second helper on day 1, or a setup clinic beforehand"],
-            ["Midpoint", "**Still writing one block per student instead of a loop** → the clearest early evidence against the method, and it is recorded as such"],
-            ["Final", "Printing instead of returning a value → `return` never landed, and the three-file program rests on it"],
-        ],
-        [0.15, 0.85],
-    )
-    d.para(
-        "Two versions of every assessment are produced automatically — the grader's copy "
-        "with the rubric, and the participant's copy with the questions only — so the "
-        "rubric cannot be handed out by mistake.",
-        italic=True,
+        "Two rules hold whatever their content. **The result is simply the share of tasks "
+        "done** — a task is done when the code runs and does what was asked, with no points "
+        "and no partial credit. **No help is given during a sitting**: each participant "
+        "completes the tasks alone. **Nobody leaves at the midpoint: only the final "
+        "assessment decides who continues** (section 8)."
     )
 
     d.page_break()
@@ -1058,17 +1011,49 @@ def build():
 
     d.h2("The decision rule")
     d.para(
-        "**Part 1 succeeds or fails on one question: can they code?** The threshold was "
-        "agreed with colleagues and is set before the first session rather than after it."
+        "**Part 1 succeeds or fails on one question: can they code?** The thresholds "
+        "were agreed with our partners on 15 October 2026, before the first session "
+        "rather than after it. They are set at two levels: each teacher, then the group. "
+        "**Part 1 cannot be repeated**: a teacher who does not continue after the final "
+        "assessment leaves the programme."
     )
+    d.h3("Each teacher — the two exams that count")
+    d.para(
+        "The percentage is the share of the exam's tasks done. The rule below is agreed; "
+        "the assessments it applies to are being redesigned (section 7)."
+    )
+    d.table(
+        ["Tasks passed correctly", "At the midpoint (after session 10)", "At the final assessment (session 18)"],
+        [
+            ["**More than 85%**", "**On track.** Continues unconditionally", "**Pass.** Continues to Part 2"],
+            ["**70% to 85%**", "**Probation.** Continues; the teacher is told exactly where the problem is, and the method is adjusted for them in the sessions that remain", "**Individual review.** The team looks at the teacher's work as a whole and decides whether they continue to Part 2 or leave"],
+            ["**Less than 70%**", "**Probation**, with the highest priority", "**Leaves the programme**"],
+        ],
+        [0.20, 0.40, 0.40],
+    )
+    d.para(
+        "**Nobody leaves at the midpoint.** A teacher under 85% continues on probation "
+        "through the second month: they know exactly what their own problem is while there "
+        "is still time to fix it, and the final assessment decides, on the same bands as "
+        "everyone else. The midpoint also tells us where to adjust the course. Its bar is that a teacher can write code with every topic "
+        "taught so far, with no algorithmic difficulty."
+    )
+    d.h3("The whole course — the decision rule")
     d.table(
         ["Result", "Meaning", "What happens next"],
         [
-            ["**More than 90%** can code", "**Success**", "Continue to Part 2 (section 12)"],
-            ["50% to 90%", "Inconclusive", "The method is neither proved nor refuted. Adjust and repeat Part 1 with a second cohort before committing to Part 2"],
-            ["**Less than 50%** can code", "**Failure**", "Return to the conventional approach, informed by where it broke"],
+            ["**More than 80%** of teachers pass", "**Success**", "Continue to Part 2 (section 12)"],
+            ["70% to 80%", "Inconclusive", "The method is neither proved nor refuted. Adjust Part 1 and run it with a new cohort before committing to Part 2"],
+            ["**Less than 70%** of teachers pass", "**Failure**", "Return to the conventional approach, informed by where it broke"],
         ],
         [0.22, 0.16, 0.62],
+    )
+    d.para(
+        "Here a teacher **passes** if they meet both halves of \"can code\" below: above "
+        "85% on the final assessment, and a working program at the hard gate. A "
+        "teacher in the 70–85% band whom the review lets continue goes on to Part 2, but "
+        "is reported separately rather than counted as a pass, so that the figure measures "
+        "the method and not the review."
     )
     d.para(
         "The middle band is not a hedge. It is the most likely outcome of a first run of "
@@ -1084,21 +1069,22 @@ def build():
         "produces, both pass or fail:"
     )
     d.bullets([
-        "They left **day 21** with a working `python main.py`, confirmed individually while sharing their screen.",
-        "They scored **at least half** of the 70 points on questions 1–7 of the final practical, which require writing code from a blank cell.",
+        "They left **session 16** with a working `python main.py`, confirmed individually while sharing their screen.",
+        "They did **more than 85%** of the final assessment's tasks. Those tasks require writing code from a blank cell.",
     ])
     d.para(
-        "Meeting both counts. Meeting one counts as partial and falls in the middle band — "
-        "it is not rounded up. **The transfer question is excluded** from this judgement: "
-        "it measures problem-solving, which Part 1 does not teach and does not claim."
+        "Meeting both is a pass. Meeting only one is not a pass and goes to the "
+        "individual review. Problem-solving is not part of this judgement: Part 1 does "
+        "not teach it, and Part 2's benchmark measures it (section 12)."
     )
 
     d.callout(
         "⚠ One thing we would ask you to agree before the first cohort",
         [
-            "Groups are four to eight. **At every size in that range, \"more than 90%\" "
-            "means every single participant without exception** — 6 of 6, 8 of 8. One "
-            "teacher whose laptop dies in week six moves the group out of success on "
+            "Groups are four to eight. **In a group of four or five, \"more than 80%\" "
+            "still means every single participant** — 4 of 4, 5 of 5. In a group of six, "
+            "5 of 6 is success and 4 of 6 is failure, with no middle band at all. One "
+            "teacher whose laptop dies in week six can decide a small group's result on "
             "their own.",
             "So we propose two things: **judge the criterion across all cohorts pooled**, "
             "not per group — four groups of six is 24 people, where a percentage means "
@@ -1109,19 +1095,22 @@ def build():
         ],
     )
 
-    d.h2("The trial class in March — a second criterion")
+    d.h2("Trial classes with real pupils — a second criterion")
     d.para(
-        "After Part 1, **each teacher takes a trial class with real pupils.** It measures "
-        "something none of the assessments can: **whether they can teach what they can "
+        "**Each teacher teaches real pupils during the programme: one or two coding trial "
+        "lessons in Part 1, the first in the middle of the second month (around week 7), "
+        "and two lessons on theoretical material in Part 2.** By week 7 a teacher has covered values, variables, lists, "
+        "dictionaries, conditions and loops — enough for a first coding lesson. The trial classes "
+        "measure something none of the exams can: **whether they can teach what they can "
         "code.** Those are different abilities, and a teacher can have either without the "
         "other."
     )
     d.para(
-        "Nothing in the three written assessments would detect a teacher who writes "
+        "Nothing in the written assessments would detect a teacher who writes "
         "correct code and cannot explain it to a fifteen-year-old — and that teacher "
         "cannot deliver the state curriculum, which is what the whole programme is for. "
-        "**It is reported separately from the coding criterion and is not averaged with "
-        "it.**"
+        "**The trial classes are reported separately from the coding criterion and are "
+        "not averaged with it.**"
     )
     d.para(
         "Four things are recorded, kept deliberately light because a first lesson taught "
@@ -1129,7 +1118,7 @@ def build():
         "finish; did the **pupils** run code themselves or did the teacher demonstrate "
         "throughout; **could the teacher read a pupil's error message and act on it "
         "live**; and one sentence from the teacher on what surprised them. The third is "
-        "the most diagnostic — it is the skill our course drills from day 2 onward, and "
+        "the most diagnostic — it is the skill our course drills from topic 2 onward, and "
         "if it holds up in front of a class, the method transferred."
     )
 
@@ -1137,72 +1126,33 @@ def build():
     d.callout(
         "A gate, announced in advance",
         [
-            "Teachers meeting the \"can code\" bar continue to Part 2. Those who do not "
-            "are **offered Part 1 again**, rather than carried into material that assumes "
-            "fluency they do not have. The bar is the one defined above; the transfer "
-            "question does not gate.",
+            "Teachers above 85% continue to Part 2. Those between 70% and 85% are "
+            "**reviewed individually**, and the team decides whether they continue. Those "
+            "under 70% **leave the programme** — Part 1 is not repeated.",
             "**This makes the last assessment consequential for the individual, so it is "
             "announced before the course starts** — in the recruitment text and at "
             "enrolment. People behave differently when they know, and discovering it "
             "afterwards would be unfair and would spoil the measurement.",
-            "Being filtered out is not a judgement on the teacher. At 22½ hours in the room, with mixed "
-            "laptops and a remote room, the likeliest reasons are time, equipment and "
-            "attendance — so **why** someone did not meet the bar is recorded, not just "
-            "that they did not.",
+            "Not continuing is not a judgement on the teacher. At 22½ hours in the room, "
+            "with mixed laptops and a remote room, the likeliest reasons are time, "
+            "equipment and attendance — so **why** someone did not meet the bar is "
+            "recorded, not just that they did not.",
         ],
     )
 
     d.h2("The checkpoints along the way")
     d.para(
-        "Three results during the course change what the instructor does next, and all "
-        "come from artefacts the course already produces. **The diagnostic**: can they run "
-        "a cell at all, and with how much help — the baseline, without which we could "
-        "report an endpoint but not change. **The midpoint test**: do they write a loop, "
-        "or still repeat themselves — the first real evidence for or against the method. "
-        "**Day 21**: does `python main.py` run, confirmed individually while they share "
-        "their screen. Attendance is recorded throughout, because below a certain point "
-        "nothing else is interpretable."
-    )
-
-    d.h2("The one measurement that tests the theory")
-    d.para(
-        "**None of the checks above tests the actual bet**, because none is an algorithmic "
-        "problem — they measure whether the course ran well. So the final practical ends "
-        "with one question that is different. It is the only question with no A/B/C "
-        "variants, and its 10 points are reported separately from the other 70:"
-    )
-    d.callout(
-        "Final practical, question 8 — the transfer question",
-        [
-            "*Given a class register, find the student whose grade is closest to the class "
-            "average.*",
-            "It uses **no syntax the course did not teach**, and **the course never "
-            "demonstrates it**. The participant is asked to write their approach in plain "
-            "words first, then attempt the code, and to say where they stopped if they "
-            "could not finish.",
-        ],
-    )
-    d.para(
-        "Four things are recorded, not one: whether they wrote the plan at all; whether "
-        "the plan was a **correct approach**, even if the code failed; whether the code "
-        "worked; and **where they stopped, in their own words**."
-    )
-    d.table(
-        ["Pattern", "What it means for the decision"],
-        [
-            ["Plan correct, code works", "The bet paid off: coding fluency freed attention for the problem"],
-            ["**Plan correct, code incomplete**", "**The most important result, and a positive one.** They can now reason about a problem; the remaining gap is practice, which is exactly what the next course provides"],
-            ["Plan vague, code attempted anyway", "Mechanical fluency without problem-solving — the central risk, realised"],
-            ["Nothing attempted, or \"we did not do this in class\"", "The strongest negative signal. The course taught recipes, not capability"],
-        ],
-        [0.33, 0.67],
+        "Results during the course change what the instructor does next, and they come "
+        "from artefacts the course already produces. **Session 1**: can each participant "
+        "run a cell on their own. **The midpoint**: do they write a loop, or still repeat "
+        "themselves — the first real evidence for or against the method. **Session 16**: "
+        "does `python main.py` run, confirmed individually while they share their screen. "
+        "Attendance is recorded throughout, because below a certain point nothing else is "
+        "interpretable."
     )
     d.callout(
         "Please note when reading our final report",
         [
-            "A cohort that mostly produces the **second** pattern is a success, even "
-            "though most of the code will not run. **We will not report this question as "
-            "a pass rate**, and we would ask that it not be read as one.",
             "**Target numbers should be set jointly before the first session.** A target "
             "chosen afterwards is not a target.",
         ],
@@ -1215,17 +1165,19 @@ def build():
     d.h1("Risks")
 
     d.para(
-        "Stated plainly, because the programme has to be judged fairly in two months and "
-        "because we would rather you read these here than discover them later."
+        "**One risk really matters: that after Part 1 teachers still do not feel "
+        "comfortable writing code.** Everything else below is a practical matter with a "
+        "plan already in place."
     )
 
     d.h2("The approach itself")
     d.table(
         ["Risk", "What we do about it"],
         [
-            ["**The core assumption may simply be wrong.** We are betting that coding fluency transfers — that someone who can code mechanically will find algorithmic problems learnable later. That is plausible and unproven. It is possible to produce teachers who type Python fluently and still cannot solve a problem with it", "We measure it directly (section 8) rather than assuming it. If it happens, the programme failed, and no amount of the course being pleasant changes that"],
-            ["**Participants may not accept it.** Adults judge a course by how substantial it feels, and one that explains little and asks for a lot of typing can read as shallow. The first half of each discovery session is deliberately laborious", "Every discovery day resolves inside the same session; the shortcut is promised in writing before the long half starts; the work is never framed as an ordeal. A participant who leaves topic 6 thinking \"I typed for twenty minutes\" rather than \"I learned what a list is for\" is a genuine failure, and it will happen to somebody"],
-            ["**Twenty-two and a half hours is not much**, in 75-minute pieces, for working teachers — and more of the practice is now at home than on any earlier schedule", "The scope is deliberately narrow and the exclusion list is explicit. Narrow means things are missing, by design"],
+            ["**Teachers may still not feel comfortable coding after Part 1.** This is the risk that matters", "It is exactly what the course measures: the midpoint shows it a month early, while the method can still be adjusted for each teacher, and the hard gate and the final assessment confirm it (section 8)"],
+            ["**Problem-solving comes later.** Part 1 builds fluency; algorithmic problems are Part 2's work", "Part 2 is where it is taught, and the benchmark measures it (section 12)"],
+            ["**Some participants may expect more explanation.** The first half of a discovery session is deliberately hands-on", "Every discovery session resolves its own difficulty, and the shortcut is promised in writing before the long half starts"],
+            ["**The time is compact** — 22½ hours, in 75-minute pieces, for working teachers", "The scope is deliberately focused, and homework only repeats the session's own exercises"],
         ],
         [0.46, 0.54],
         size=9,
@@ -1233,31 +1185,29 @@ def build():
 
     d.h2("Delivery")
     d.para(
-        "These can sink the experiment **without telling us anything about whether the "
-        "approach works**, which is why they are managed hard."
+        "Practical matters of running a remote course, each with a plan already in place."
     )
     d.table(
-        ["Risk", "Likelihood", "Mitigation"],
+        ["Point to manage", "What we do"],
         [
-            ["**The ~1 GB software download.** Much lower risk remotely — each teacher downloads at home rather than all at once on one connection", "Medium", "Setup instructions sent three days early, **with a reply required** confirming the setup check is green. No reply means it was not attempted"],
-            ["**No instructor in the room.** Everything that would have been a thirty-second fix becomes a conversation with a beginner who cannot describe what they are seeing", "High", "All screens shared through hands-on work, with Meet showing every participant at once; each person checked on by name; groups capped at eight so that is possible"],
-            ["Laptops that block software installation, or lack the ~5 GB needed", "Medium", "Confirmed with schools, and asked on the enrolment form, before anyone is admitted. A browser-based fallback exists for sessions 1–19, but that participant cannot do days 20–24 fully"],
-            ["The editor's interpreter picker — the most common beginner failure", "High", "Only one choice is ever present; a red callout on days 1 and 2; the setup script reports which Python is actually running"],
-            ["Missed sessions — twice a week for nine weeks, on top of a teaching job", "High", "Every topic is self-contained; worked solutions published after each session; topic 19 is a catch-up with nothing new in it. **A missed session now costs more than it did on the old three-a-week schedule** — twelve of the eighteen sessions carry homework, and three of them set the Required tier of two notebooks — and the recap block at the start of every session exists for it"],
+            ["**The ~1 GB software download**, done by each teacher at home", "Setup instructions sent three days early, with a reply confirming the setup check is green"],
+            ["**Remote support.** A quick fix in a room takes a little longer over a call", "All screens shared during hands-on work, with Meet showing every participant at once; each person checked on by name; groups capped at eight so that is possible"],
+            ["Laptops that block software installation, or lack the ~5 GB needed", "Confirmed with schools, and asked on the enrolment form, before anyone is admitted. A browser-based fallback exists for topics 1–19 (sessions 1–15)"],
+            ["The editor's interpreter picker, a common beginner slip", "Only one choice is ever present; a callout in topics 1 and 2; the setup script reports which Python is running"],
+            ["Missed sessions — twice a week for nine weeks, on top of a teaching job", "Every topic is self-contained; worked solutions published after each session; topic 19 is a catch-up with nothing new in it; every session starts with a recap"],
         ],
-        [0.42, 0.13, 0.45],
+        [0.42, 0.58],
         size=9,
     )
 
     d.callout(
         "The comparison we would ask you to make",
         [
-            "This is not a risky option against a safe one. The conventional approach has "
-            "**two years of evidence of not producing the result we wanted** — that is not "
-            "a safe option, it is a known-unsuccessful one.",
-            "This is a risky option with an argument behind it, a defined measurement and "
-            "a decision point. **We think there is a real chance it succeeds. We are not "
-            "claiming it will.**",
+            "The conventional approach has **two years behind it without the result we "
+            "wanted**.",
+            "This approach has an argument behind it, a defined measurement and a decision "
+            "point. **We believe it gives teachers a real chance to become comfortable "
+            "coding, and the measurement will show it.**",
         ],
         fill=BAND_FILL,
     )
@@ -1271,7 +1221,7 @@ def build():
             ["Per participant", "**Their own laptop for the whole course** — Windows or macOS, about **5 GB free**, and permission to install software"],
             ["Connection", "Good enough for a **75-minute video call with screen sharing**, twice a week. This is the one requirement that most often needs solving before a teacher can start"],
             ["Webcam", "Wanted, not required. Without one the instructor loses the clearest signal that someone is stuck"],
-            ["Software", "**Anaconda** and **VS Code**, both free. Two installations before day one and nothing afterwards; the course uses only Python's standard library"],
+            ["Software", "**Anaconda** and **VS Code**, both free. Two installations before session 1 and nothing afterwards; the course uses only Python's standard library"],
             ["Not needed", "No GPU, no server, no accounts, no API keys, no paid service of any kind"],
             ["Staffing", "One instructor per group of 4–8"],
             ["**Cost**", "**Zero.** The only material cost is instructor time"],
@@ -1300,8 +1250,8 @@ def build():
     d.h2("Verified by automated checks")
     d.para(
         "**All Part 1 materials are written.** Four scripts run against them, and all "
-        "currently pass: every session agenda sums exactly to its stated length; **all 43 "
-        "notebooks** — lessons, worked solutions and both versions of each assessment — "
+        "currently pass: every session agenda sums exactly to its stated length; **all 37 "
+        "notebooks** — lessons and worked solutions — "
         "execute cell by cell, in order, from a clean start; the language and dependency "
         "rules hold, with nothing outside Python's standard library imported anywhere; and "
         "the finished program runs end to end, with missing files, corrupt data and bad "
@@ -1321,22 +1271,16 @@ def build():
             ["**The installation instructions have never been followed on a clean machine**", "Run once on a fresh Windows laptop and once on a fresh Mac, and timed, before the first session"],
             ["**Nothing has been taught to a real cohort**", "Every estimate of pacing here is a design estimate. The first cohort will find things we did not"],
             ["**The toolchain may change**", "Anaconda and VS Code are assumed throughout. Google Colab and Thonny are under discussion as a lighter alternative that would remove the installation problem — and with it the largest remaining delivery risk"],
+            ["**Part 2's hours are not fixed yet**", "Part 2 runs for four months. Its weekly hours, and the principles of its assessment (section 12), are to be fixed and told to teachers **before they enrol in Part 1**, so that they agree to the whole programme and not only to its first half"],
+            ["**Part 2's two exams are not set yet**", "The scope and thresholds of Part 2's midpoint and final exams follow from the benchmark sitting (section 12), which is therefore held **before Part 1 starts**. They are fixed and told to teachers before they enrol, with priority, so that training starts on time"],
         ],
         [0.34, 0.66],
     )
     d.para(
-        "We would rather hand you a document that names these three than one that reads "
+        "We would rather hand you a document that names these six than one that reads "
         "as finished.",
         italic=True,
     )
-
-    d.h2("What we would find most useful from you")
-    d.numbered([
-        "**Is the diagnosis right?** Is \"they cannot code\" really the bottleneck, or are we fixing the wrong thing?",
-        "**Is 22½ hours in the room enough** — with the rest set as homework — to produce the fluency the approach depends on?",
-        "**What should the success numbers be?** Agreed before the first session.",
-        "**Will the discovery sessions be accepted or resented?** Anyone who knows this audience better than we do should say so before we run it, not after.",
-    ])
 
     d.page_break()
 
@@ -1349,6 +1293,13 @@ def build():
         "prepares them to teach **grade 11**. It is the same length, the same shape and "
         "the same method: eighteen sessions of 75 minutes, twice a week for "
         "nine weeks, delivered remotely in groups of four to eight."
+    )
+    d.para(
+        "**It is needed even by a teacher who already teaches grade 10.** The grade-10 "
+        "course touches some grade-11 material but does not concentrate on it, and it "
+        "teaches no classes, inheritance or libraries at all. Those are the hardest parts "
+        "of the grade-11 curriculum, and they need more practice than the grade-10 "
+        "topics, not less."
     )
 
     d.table(
@@ -1386,7 +1337,7 @@ def build():
     d.callout(
         "What the two courses cover together",
         [
-            "**187 of the state curriculum's 193 pupil-hours**, in sixty teacher-hours.",
+            "**187 of the state curriculum's 193 pupil-hours**, in 45 teacher-hours — two Part 1s of 22½ hours each.",
             "The six that remain are **topic 23, version control**, deliberately deferred "
             "until the rest of the subject is secure.",
             "A teacher who completes both can deliver grade 10 and grade 11 in full, "
@@ -1447,14 +1398,15 @@ def build():
     d.table(
         ["Week", "Sessions", "Topics", "What the participant can do by the end of it", "Assessment"],
         [
-            ["1", "1–2", "1–3", "My functions bend to what is asked of them", "*diagnostic sat before session 1*"],
+            ["1", "1–2", "1–3", "My functions bend to what is asked of them", ""],
             ["2", "3–4", "4–5", "One line instead of six", ""],
             ["3", "5–6", "6–8", "A student is a thing, and the school is objects", ""],
-            ["4", "7–8", "9–11", "They share what they have in common", "**Midpoint**"],
-            ["5", "9–10", "12–15", "I can measure a term and draw it", ""],
-            ["6", "11–12", "16–18", "The school's own file goes in, a report comes out", ""],
-            ["7", "13–14", "19–21", "Any depth, and I can find out why it is wrong", ""],
-            ["8", "15–16", "22–24", "It runs on my school's data, and I showed it", "**Final practical**"],
+            ["4", "7–8", "9–11", "They share what they have in common", "**Midpoint**, after session 8"],
+            ["5", "9–10", "12–13", "I can measure a term", ""],
+            ["6", "11–12", "14–15", "I can draw it", ""],
+            ["7", "13–14", "16–18", "The school's own file goes in, a report comes out", "**Trial class** with real pupils"],
+            ["8", "15–16", "19–21", "Any depth, and I can find out why it is wrong", ""],
+            ["9", "17–18", "22–24", "It is a program now, it runs on my school, and I showed it", "**Final assessment**, in session 18"],
         ],
         [0.08, 0.12, 0.11, 0.49, 0.20],
         size=9,
@@ -1463,33 +1415,12 @@ def build():
     d.h2("How the grade-11 course is assessed")
 
     d.para(
-        "Three sittings, on the same principle as the first course: the first two measure "
-        "the programme, the third decides who continues."
-    )
-
-    d.table(
-        ["", "Sitting", "When", "Length", "Points", "What it covers"],
-        [
-            ["1", "Initial diagnostic", "Before session 1", "45–60 min", "40", "**What the first course actually produced** — nothing from this one"],
-            ["2", "Midpoint", "After session 8", "60–75 min", "50", "Topics 2–11: functions, comprehensions, classes, inheritance"],
-            ["3", "Final practical", "Session 16", "90–120 min", "70 + 10", "Topics 12–24: libraries, charts, data, recursion, the project"],
-        ],
-        [0.04, 0.17, 0.15, 0.12, 0.10, 0.42],
-        size=9,
-    )
-
-    d.callout(
-        "Two things worth your attention in that table",
-        [
-            "**The diagnostic measures the first course, not this one.** It is the only "
-            "point at which we find out what the grade-10 programme actually produced, "
-            "taken before the second course can affect the answer. Its marking guide "
-            "includes the option of sending a cohort back to repeat the first course.",
-            "**The midpoint is a go/no-go on objects.** Whether a participant can write a "
-            "working class decides whether the libraries half of the course can start at "
-            "all. If the cohort fails it, the instruction is to spend a session on "
-            "revision rather than press on.",
-        ],
+        "**Being redesigned, on the same principle and with the same thresholds as the "
+        "first course** (section 8): a **midpoint after session 8** and a **final "
+        "assessment in session 18**. The midpoint matters more here — whether a participant "
+        "can write a working class decides whether the libraries half of the course can "
+        "start, and if the cohort is not there, the instruction is to spend a session on "
+        "revision rather than press on."
     )
 
     d.h2("What a grade-11 participant finishes with")
@@ -1524,12 +1455,13 @@ def build():
         "and both outcomes are useful."
     )
 
-    d.h2("Between the parts — the trial class")
+    d.h2("The trial classes")
     d.para(
-        "**March.** Each teacher teaches one lesson to real pupils, after Part 1 and "
-        "before any decision about Part 2. It is the only point in the programme that "
-        "tests the thing the programme exists for, and it informs the decision below "
-        "alongside the coding criterion."
+        "**One or two coding lessons in Part 1, the first around week 7, and two on "
+        "theoretical material in Part 2.** Each "
+        "teacher teaches a lesson to real pupils. They are the only points in the "
+        "programme that test the thing the programme exists for, and they inform the "
+        "decision below alongside the coding criterion (section 8)."
     )
 
     d.h2("If it works — Part 2, four months")
@@ -1558,15 +1490,50 @@ def build():
         "and the remaining tooling go in; if not, the time is better spent elsewhere.",
         italic=True,
     )
-    d.callout(
-        "The honest uncertainty in Part 2",
+    d.h3("How Part 2 is judged — the final milestone")
+    d.para(
+        "**The milestone is a real teacher's level, not a number we chose.** Teachers who "
+        "completed an earlier run of this training and now teach Python in a school are "
+        "the benchmark — **two or three teachers**. **Before Part 1 begins**, they solve a "
+        "set of **beginner Python problems from LeetCode** (Easy level), under the "
+        "conditions Part 2 participants will meet at the end: the same problems, the same "
+        "time limit, no internet and no AI. **Their results are the milestone our "
+        "teachers should reach by the end of the school year.** It shows from the start "
+        "where we are going and how far there is to go, and it sets the content, depth "
+        "and thresholds of Part 2's exams."
+    )
+    d.table(
+        ["Step", "What happens"],
         [
-            "**Whether our method carries over is unproven.** \"Do it the long way, then "
-            "get the tool\" works for concrete mechanics, where the long way is tedious "
-            "but obvious. Algorithmic thinking may need a different shape entirely.",
-            "We would rather expect to discover that in stage 2 than assume it now. "
-            "Part 1's assessments measure mechanics; **measuring problem-solving will need "
-            "a different instrument**, and designing it is part of Part 2's work.",
+            ["Before Part 1", "The problem set is fixed. The benchmark teachers sit it; problems solved correctly and time taken are recorded for each of them"],
+            ["After the benchmark", "**The scope and thresholds of Part 2's two exams are set from their results**, and teachers are told them before they enrol"],
+            ["During Part 2", "Similar problems are practised, and two trial lessons on theoretical material are taught. **The exact benchmark problems are not practised**, or the milestone would measure memory"],
+            ["Midway through Part 2", "A **midpoint exam**, on the same principle as Part 1's: on track, or probation for the rest of Part 2. Nobody leaves at it"],
+            ["End of Part 2, by the end of the school year", "Participants sit the same set and are judged against the benchmark teachers' results: pass, individual review, or leave"],
+        ],
+        [0.20, 0.80],
+    )
+    d.para(
+        "**Like Part 1, Part 2 has a midpoint exam and a final exam, each with three "
+        "outcomes.** Their percentages are set once the benchmark has been sat and "
+        "analysed, because before that there is nothing to set them from — which is why "
+        "the benchmark comes before Part 1, not before Part 2."
+    )
+    d.para(
+        "A handful of teachers is a small baseline. Each benchmark result is recorded "
+        "separately as well as together, and if they differ widely the report says so "
+        "rather than averaging it away.",
+        italic=True,
+    )
+    d.callout(
+        "What Part 2 will show",
+        [
+            "\"Do it the long way, then get the tool\" works for concrete mechanics. "
+            "Stage 2 shows how well it suits algorithmic thinking, and the method adapts "
+            "there if it needs to.",
+            "Part 1's assessments measure mechanics. **The way Part 2's final milestone "
+            "is set is now agreed** (above); the exact ranges of both Part 2 exams "
+            "follow from the benchmark sitting.",
         ],
     )
 
@@ -1603,8 +1570,7 @@ def build():
             ["Lesson notebooks", "19", "21", "Participant"],
             ["Written guides", "5", "3", "Participant"],
             ["Worked solutions", "18", "21", "Participant, after each session"],
-            ["Assessments — grader's and participant versions", "3 × 2", "3 × 2", "Participant / instructor"],
-            ["Assessment marking guides", "3", "3", "Instructor only"],
+            ["Assessments", "Being redesigned", "Being redesigned", "Participant / instructor"],
             ["Reference program", "3 files", "5 files", "Participant, from the transition session"],
             ["Installation instructions, reference sheet, setup check", "3", "3", "Participant"],
             ["Instructor notes, curriculum, build specification", "3", "3", "Instructor / organiser"],

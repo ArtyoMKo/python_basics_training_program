@@ -166,11 +166,11 @@ def check_inventory(course):
     counts = {
         "notebooks": len(list((ROOT / course / "notebooks").glob("*.ipynb"))),
         "solutions": len(list((ROOT / course / "solutions").glob("*.ipynb"))),
-        "tests": len(list((ROOT / course / "tests").glob("*.ipynb"))),
-        "participant tests": len(list((ROOT / course / "tests" / "participant").glob("*.ipynb"))),
     }
-    if counts["tests"] != 3 or counts["participant tests"] != 3:
-        fail(course, f"expected 3 exams in each build, found {counts}")
+    # The assessments were removed on 16 Oct 2026; none may come back half-built.
+    for leftover in ("tests", "src/tests"):
+        if (ROOT / course / leftover).exists():
+            fail(course, f"{leftover}/ exists, but the assessments were removed")
     # Every notebook that sets exercises needs a solution set. Grade 10's setup notebook
     # sets none, so it has none; grade 11's does, so it has one.
     gap = counts["notebooks"] - counts["solutions"]
@@ -183,37 +183,6 @@ def check_inventory(course):
         total = sum(counts.values())
         if int(claimed.group(1)) != total:
             fail(f"{course}/README", f"claims {claimed.group(1)} notebooks, there are {total}")
-
-
-# ------------------------------------------------------------ assessment timing
-def check_assessment(course):
-    """The three sittings must name the same moment everywhere they appear."""
-    curriculum = read(course, "docs", "CURRICULUM.md") or ""
-    midpoint = re.search(r"Midpoint \| \*\*After session (\d+)\*\*", curriculum)
-    if not midpoint:
-        return fail(f"{course}/CURRICULUM", "the midpoint's session is not stated")
-    session = midpoint.group(1)
-
-    for rel in ["tests/README.md", "tests/mark2_guide.md", "docs/INSTRUCTOR_NOTES.md"]:
-        text = read(course, *rel.split("/"))
-        if text and "midpoint" in text.lower():
-            if f"session {session}" not in text and f"After session {session}" not in text:
-                fail(f"{course}/{rel}", f"does not place the midpoint after session {session}")
-
-    final = f"session {SESSIONS}"
-    for rel in ["tests/README.md", "tests/mark3_guide.md"]:
-        text = read(course, *rel.split("/"))
-        if text and final not in text.lower():
-            fail(f"{course}/{rel}", f"does not place the final practical in {final}")
-
-    # The exam sources are what a participant actually reads, so check them too.
-    exams = {"test2_midpoint": f"{session}-րդ նիստից հետո",
-             "test3_final_practical": f"{SESSIONS}-րդ նիստ"}
-    for name, expected in exams.items():
-        text = read(course, "src", "tests", f"{name}.py")
-        if text and expected not in text:
-            fail(f"{course}/src/tests/{name}.py",
-                 f"its header does not say {expected!r} — this ships to participants")
 
 
 # -------------------------------------------------------- links point at real files
@@ -256,31 +225,6 @@ def check_homework_is_disclosed(course):
             fail(f"{course}/{rel}", "never mentions homework, which is now required")
         if "ոչ պարտադիր" in lowered or "optional and the next" in lowered:
             fail(f"{course}/{rel}", "still describes homework as optional")
-
-
-def check_exam_durations(course):
-    """An exam duration is not a session length and not a homework figure.
-
-    A homework re-costing sweep once replaced "45–60 min" everywhere and moved the
-    diagnostic's duration with it. The exam sources are the authority; every document
-    that restates a duration must match them.
-    """
-    expected = {"test1_diagnostic": "45–60", "test2_midpoint": "60–75",
-                "test3_final_practical": "90–120"}
-    for name, duration in expected.items():
-        source = read(course, "src", "tests", f"{name}.py")
-        if source and duration not in source:
-            fail(f"{course}/src/tests/{name}.py", f"no longer states {duration} minutes")
-    labels = {"Initial diagnostic": "45–60", "Midpoint": "60–75",
-              "Final practical": "90–120"}
-    for rel in ["docs/CURRICULUM.md", "docs/INSTRUCTOR_NOTES.md", "tests/README.md"]:
-        text = read(course, *rel.split("/"))
-        if not text:
-            continue
-        for line in text.split("\n"):
-            for label, duration in labels.items():
-                if label in line and " min" in line and duration not in line:
-                    fail(f"{course}/{rel}", f"{label} does not say {duration} min")
 
 
 def check_guide_budgets(course):
@@ -360,10 +304,8 @@ def main():
         check_session_map(course)
         check_figures(course)
         check_inventory(course)
-        check_assessment(course)
         check_links(course)
         check_homework_is_disclosed(course)
-        check_exam_durations(course)
         check_guide_budgets(course)
 
     # Shared documents
@@ -382,12 +324,11 @@ def main():
 
     print(f"✅ both session maps: {SESSIONS} sessions × {MINUTES} min = {TOTAL} min = {DURATION}")
     print(f"✅ all {TOPICS} topics covered exactly once, in both courses")
-    print("✅ no figures from an earlier schedule, in any document, source or exam")
-    print("✅ assessment timing agrees across curriculum, guides and instructor notes")
+    print("✅ no figures from an earlier schedule, in any document or source")
+    print("✅ no removed assessment folder has come back (tests/, src/tests/)")
     print("✅ every file path quoted in a document exists")
     print("✅ the partner dossier covers both courses — curriculum, schedule, assessment")
     print("✅ homework is disclosed as required in both courses' enrolment material")
-    print("✅ every exam duration matches its exam source")
     print("✅ no guide prescribes more minutes than its session holds")
     return 0
 

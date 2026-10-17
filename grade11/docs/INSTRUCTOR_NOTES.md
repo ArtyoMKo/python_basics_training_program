@@ -8,7 +8,6 @@
 
 | | |
 |---|---|
-| **The diagnostic is sat before session 1** | Mark it the same day. It changes how session 1 runs — see `tests/mark1_guide.md` |
 | **Every participant has run `check_setup.py`** and replied | Six green lines. **Do not start without the reply**; a silent participant is a broken install |
 | **You have run session 1 yourself**, on a machine that is not yours | Especially the three imports |
 | **The Google Meet link is sent**, with screen sharing tested | Ten-minute call with anyone who has not shared a screen before |
@@ -101,38 +100,24 @@ three-a-week schedule. Nothing was cut from the course; the practice moved.
 
 ## 5. Assessment
 
-| | Test | When | Length | Points |
-|---|---|---|---|---|
-| 1 | Initial diagnostic | **Before session 1** | 45–60 min | 40 |
-| 2 | Midpoint | **After session 8** (topics 2–11) | 60–75 min | 50 |
-| 3 | Final practical | **Session 18** | 90–120 min | 70 + 10 separate |
+**Being redesigned.** The previous three sittings and their marking guides were removed on
+16 October 2026. A midpoint (after session 8) and a final assessment (session 18) will
+replace them, under the decision rule in `RATIONALE.md` §5a: the result is the **share of
+tasks done**, and **no help is given during a sitting**.
 
-**Record a help level with every score** — `3` independent, `2` after one hint, `1`
-step-by-step, `0` did not finish. On the diagnostic this matters more than the score.
+Two signals still change what you do next, and the sessions show them without a test:
 
-**Hand out the participant build**, `tests/participant/*.ipynb`. The other one has the
-rubric in it.
-
-### The two questions that change what you do next
-
-| | Question | If it is weak |
+| When | Watch | If it is weak |
 |---|---|---|
-| Diagnostic | **Q1 — did they write a loop?** | Extend session 1 and run a loop clinic before topic 2. Do not carry on as planned |
-| Midpoint | **Q4 — did they write a working `__init__`?** | **Do not start session 9.** Add a revision session on topics 6–8 |
-
-Each guide — `tests/mark1_guide.md` and so on — says what every wrong answer means.
+| Session 1 | **Do they write a loop?** | Extend session 1 and run a loop clinic before topic 2. If the gap is wide, discuss with colleagues whether to repeat the grade-10 course first |
+| By session 8 | **Can they write a working `__init__`?** | **Do not start session 9.** Add a revision session on topics 6–8 |
 
 ---
 
-## 6. Telling participants what the scores are for
+## 6. Telling participants about the assessments
 
-Say this out loud, before the first sitting, in these words or close to them:
-
-> «Այս թեստը գնահատում է **ծրագիրը**, ոչ թե ձեզ։»
-
-Participants who believe they are being judged behave differently, and the measurement is
-worthless if they do. The one exception is the **third** sitting, which does gate entry to
-Part 2 — and they are told that in advance, at enrolment, not afterwards.
+Tell them at enrolment, not afterwards: **nobody leaves at the midpoint**, and the **final
+assessment gates entry to Part 2**.
 
 ---
 
@@ -155,4 +140,4 @@ Part 2 — and they are told that in advance, at enrolment, not afterwards.
 | Software | **Zero.** Anaconda and VS Code, already installed |
 | Installation | **None** — all three libraries ship with Anaconda |
 | Network | **One session of 18** |
-| Instructor time | 22½ contact hours, plus ~3½ hours of assessment |
+| Instructor time | 22½ contact hours, plus the assessment sittings (being redesigned) |

@@ -117,7 +117,7 @@ form: **which line of the final school report tool needs it?**
 | **7** | topics 12–21 sources — NumPy, Matplotlib, pandas, environments | `src/day12…day21.py` | ✅ done |
 | **8** | topics 22–24 — recursion, debugging, the project | `guides/day22…day24.md` | ✅ done |
 | **9** | Solutions, all in one reviewable file | `src/solutions_source.py` | ✅ done |
-| **10** | Three assessment sittings, grader and participant builds | `src/tests/*.py`, `tests/mark*_guide.md` | ✅ done |
+| **10** | Three assessment sittings, grader and participant builds | — | removed 16 Oct 2026, being redesigned |
 | **11** | The reference project — the school report tool | `project/school_report/` | ✅ done |
 | **12** | Participant-facing documents | `handouts/SETUP.md`, `CHEATSHEET.md`, `docs/ANNOUNCEMENT.md`, `docs/ENROLMENT.md` | ✅ done |
 | **13** | Colleague-facing documents | `docs/RATIONALE.md`, `docs/OUTLINE.md`, `docs/INSTRUCTOR_NOTES.md`, `docs/ROADMAP.md` | ✅ done |

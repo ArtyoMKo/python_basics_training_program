@@ -6,7 +6,7 @@ Run every check. Nothing is done until this passes.
 Four checks, in the order that makes a failure easiest to read:
 
   1. check_times        every agenda sums to 75; 18 sessions = 1,350 minutes
-  2. run_all_notebooks  every cell of every notebook, solution and test runs in order
+  2. run_all_notebooks  every cell of every notebook and solution runs in order
   3. check_style        language rule, standard library only, excluded constructs
   4. the project        python main.py runs end to end over the sample class
 """

@@ -65,7 +65,6 @@ public_school_python/
 ├── notebooks/              <- Topics 1-19  (GENERATED)  + sample_class.csv
 ├── solutions/              <- Topics 2-19, handed out after each session  (GENERATED)
 ├── guides/                 <- Topics 20-24, markdown, read beside the code
-├── tests/                  <- 3 assessments: grader's copy, participant/, marking guides
 ├── project/gradebook/      <- the finished reference program
 ├── src/                    <- notebook SOURCES, the thing you edit
 └── tools/                  <- builder, verifier and the three checkers
@@ -82,7 +81,7 @@ public_school_python/
 
 Nineteen notebooks are nineteen large JSON files, and editing Armenian prose inside JSON
 string arrays is unreviewable. So the source of truth is a readable text file per day, and
-`notebooks/`, `solutions/` and `tests/` are built from it.
+`notebooks/` and `solutions/` are built from it.
 
 **The whole workflow is two commands:**
 
@@ -113,9 +112,9 @@ refuses to write the file if any of them disagree. The build is idempotent, so
 `git status` after a rebuild shows exactly what you changed.
 
 Cell markers: `#%% md`, `#%% code`, `#%% code expected-error: TypeError`,
-`#%% code interactive: 9`, and `#%% md teacher`. The last three become cell metadata, not
-text the participant sees — and `teacher` cells are dropped entirely from the participant
-copy of each assessment, so the rubric cannot be handed out by accident.
+`#%% code interactive: 9`, and `#%% md teacher`. The middle two become cell metadata, not
+text the participant sees; `teacher` marks an instructor-only cell and is unused since the
+assessments were removed.
 
 ## Verification
 
@@ -124,7 +123,7 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 | | What it proves |
 |---|---|
 | agenda arithmetic | every agenda sums to 75; 18 sessions = 1,350 minutes |
-| notebooks execute | all 43 notebooks — lessons, solutions and both versions of each assessment — run cell by cell in order, with `input()` stubbed and every **break-it-on-purpose** cell raising exactly the error it claims. A demo that stops failing is a bug |
+| notebooks execute | all 37 notebooks — lessons and solutions — run cell by cell in order, with `input()` stubbed and every **break-it-on-purpose** cell raising exactly the error it claims. A demo that stops failing is a bug |
 | style and language | no Armenian inside any code cell, standard library only, no excluded constructs |
 | project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
 
@@ -133,10 +132,10 @@ copy of each assessment, so the rubric cannot be handed out by accident.
 | Check | Result |
 |---|---|
 | Agenda arithmetic | ✅ 6 agenda tables, 18 sessions, 1,350 minutes = 22 h 30 |
-| Notebook execution | ✅ 43 notebooks (19 lessons + 18 solutions + 3 assessments × 2 versions), every cell, in order |
+| Notebook execution | ✅ 37 notebooks (19 lessons + 18 solutions), every cell, in order |
 | Deliberate errors | ✅ 10 cells raise exactly the error they claim |
 | Solutions | ✅ 18 notebooks, every cell runs |
-| Assessments | ✅ 3 sittings × 2 versions + 3 marking guides; every cell runs |
+| Assessments | Removed 16 Oct 2026 — being redesigned (`docs/RATIONALE.md` §5a keeps the decision rule) |
 | Project | ✅ `python main.py` end to end; 4 failure paths give one sentence each |
 | Style | ✅ stdlib only, no excluded constructs, every identifier English |
 | Language rule | ✅ no Armenian anywhere inside a code cell — verified by script |

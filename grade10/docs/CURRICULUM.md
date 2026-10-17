@@ -154,7 +154,7 @@ typing thirty.
 | 3 | **Hands-on:** build the one you chose. The instructor moves between shared screens; nobody is given code | 25 |
 | 4 | **Hands-on:** write your `README.md` | 10 |
 | 5 | **Hands-on:** send your folder to a colleague, who runs it **from your README alone** | 17 |
-| 6 | **Showcase**, then where to go next, and what happens in March | 10 |
+| 6 | **Showcase**, then where to go next, and what happens in Part 2 | 10 |
 | | **Total** | **75** |
 
 ---
@@ -395,8 +395,7 @@ Standard shape.
 **📦 By the end of this topic you have:** for your own class — who failed, how many passed, and
 the highest grade, each computed by a loop.
 
-> **The midpoint test is sat after this session**, as a separate 60–75 minute sitting
-> covering topics 6–13.
+> **The midpoint assessment comes after this session** (being redesigned; `RATIONALE.md` §5a).
 
 ---
 
@@ -586,8 +585,7 @@ Eight demos at 90 seconds is 12 minutes, which is why the group is capped at 8.
 **📦 By the end of this topic you have:** a finished, documented program that a colleague
 successfully ran from your README alone, and a 90-second demo given out loud.
 
-> **The final practical is sat on this day**, as a separate 90–120 minute sitting. Its
-> last question is the transfer question described in `RATIONALE.md` §5.
+> **The final assessment is on this day** (being redesigned; `RATIONALE.md` §5a).
 
 ---
 
@@ -646,39 +644,23 @@ kind of task, never a longer one, and never a new idea:
 
 ## Assessment
 
-**Three sittings**, designed with our partner colleague. They are **separate sittings,
-not session time** — the 18 teaching sessions remain 22½ hours exactly, and the
-assessments add roughly 3½ hours on top.
-
-| | Test | When | Length | Points | Covers |
-|---|---|---|---|---|---|
-| 1 | Initial diagnostic | **Before session 1** | 45–60 min | 44 | Nothing — it measures the baseline |
-| 2 | Midpoint | **After session 10** | 60–75 min | 50 | Topics 6–13: lists, tuples, sets, dictionaries, conditions, loops, totals, filtering |
-| 3 | Final practical | **Session 18** | 90–120 min | 70 **+ 10 reported separately** | Topics 14–24: reports, functions, files, the project |
-
-- **Each question has variants A, B and C**, equivalent in difficulty and points.
-- **Two versions of every test are generated**: `tests/<name>.ipynb` for the grader, with
-  the rubric, and `tests/participant/<name>.ipynb` with questions only. Hand out the
-  participant copy.
-- **Record a help level with every score** — `3` independent, `2` after one hint, `1`
-  with step-by-step help, `0` did not finish.
-- **Scores diagnose the programme, not the teachers**, and participants are told so.
-- Each test ships a marking guide at `tests/markN_guide.md`.
-
-**Question 8 of the final test is the transfer question** — one small task using only
-taught syntax that the course never demonstrates. It is marked separately, never reported
-as a pass rate, and a correct plan with incomplete code counts as a success.
+**Being redesigned.** The previous assessments — a diagnostic, a midpoint and a final
+practical, with their marking guides — were removed on 16 October 2026. Two take their
+place: a **midpoint after session 10** and a **final assessment in session 18**, both
+outside session time. The decision rule they feed is already agreed
+(`RATIONALE.md` §5a), and scoring stays simple: the share of tasks done, with no help
+during a sitting.
 
 ## Week map
 
 | Week | Sessions | Topics | Arc | Assessment |
 |---|---|---|---|---|
-| 1 | 1–2 | 1–3 | It runs on my laptop, and I know what a value is | *(diagnostic sat before session 1)* |
+| 1 | 1–2 | 1–3 | It runs on my laptop, and I know what a value is | |
 | 2 | 3–4 | 4–5 | I can name things | |
 | 3 | 5–6 | 6–7 | A whole class in one list | |
 | 4 | 7–8 | 8–10 | I can find one student, and the computer decides | |
-| 5 | 9–10 | 11–13 | One loop marks thirty students | **Midpoint**, sat after session 10 |
+| 5 | 9–10 | 11–13 | One loop marks thirty students | **Midpoint**, after session 10 |
 | 6 | 11–12 | 14–15 | I can report on the whole class | |
 | 7 | 13–14 | 16–17 | I write the calculation once and use it everywhere | |
 | 8 | 15–16 | 18–21 | It is a program now, not a notebook | |
-| 9 | 17–18 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final practical**, sat in session 18 |
+| 9 | 17–18 | 22–24 | It has my class in it, it saves, and I showed it to someone | **Final assessment**, session 18 |

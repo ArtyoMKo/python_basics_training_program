@@ -352,7 +352,8 @@ def check_facts():
         ("groups of up to 16", "Up to 16", True, False),
         ("four take-home tests", "Four take-home", True, False),
         ("Part 2", "Part 2", False, True),
-        ("the decision rule", "More than 90%", False, True),
+        ("the decision rule", "More than 80%", False, True),
+        ("the Part 2 benchmark", "benchmark teachers", False, True),
         ("the trial class", "trial class", False, True),
         ("the state curriculum", "ԱԲ սերունդ", False, True),
         ("remote delivery", "Remote", False, True),
@@ -381,8 +382,8 @@ def check_facts():
 
 # -------------------------------------------------------------------------- content
 
-TODAY = "14 October 2026"
-CURRENT = "3.3"
+TODAY = "15 October 2026"
+CURRENT = "3.4"
 BASELINE = "1.1"
 BASELINE_DATE = "Friday 2 October"
 
@@ -455,7 +456,7 @@ def build():
     d.para(
         "**Together the two courses now cover almost the whole official school "
         "curriculum** — all of it except one topic, which has deliberately been left "
-        "until the rest is secure. Sixty hours of teacher training covers a subject the "
+        "until the rest is secure. Forty-five hours of teacher training covers a subject the "
         "ministry gives pupils one hundred and ninety-three hours to learn.",
         size=10.5,
     )
@@ -491,8 +492,8 @@ def build():
     d.table(
         ["After a session that covered…", "What is done at home", "How long"],
         [
-            ["one topic *(twelve of the eighteen)*", "the extra questions", "**15–20 minutes**"],
-            ["two topics *(six of the eighteen)*", "the main questions for both", "**30–40 minutes**"],
+            ["one topic, or the setup session *(thirteen of the eighteen)*", "the extra questions", "**15–20 minutes**"],
+            ["two topics taught together *(three of the eighteen)*", "the main questions for both", "**30–40 minutes**"],
             ["the two practical build sessions", "nothing", "—"],
         ],
         [0.38, 0.38, 0.24],
@@ -515,9 +516,11 @@ def build():
     d.table(
         ["", ""],
         [
-            ["**A clear pass mark for the programme**", "If **more than 90%** of teachers can write working programs by the end, the approach worked and we continue. If **fewer than half** can, it did not, and we go back to the old way of teaching. Anything in between means we adjust and try once more. **These numbers are agreed now, before we start**, so the result cannot be argued about afterwards"],
-            ["**A test before the course begins**", "Teachers sit a short assessment on day one, before being taught anything. Nobody can fail it. It tells us where each teacher is starting from — so at the end we can report **how much they improved**, not just where they ended up"],
-            ["**Teaching a real class in March**", "After the first part, every teacher teaches one lesson to real pupils. This answers a question no written test can: being able to write a program and being able to **teach** it are different abilities, and a teacher who has one without the other would otherwise go unnoticed"],
+            ["**A clear pass mark for the programme**", "Agreed with you on 15 October. **Each teacher** passes with more than 85% of the final tasks correct. Between 70% and 85%, the team looks at their work individually and decides whether they continue; under 70%, they leave — the first part is not repeated. **The course** worked if more than 80% of teachers pass, and did not if fewer than 70% do; anything in between means we adjust and try once more. **These numbers are agreed now, before we start**, so the result cannot be argued about afterwards"],
+            ["**A midpoint test that helps the teacher**", "Halfway through, every teacher learns exactly where their difficulty is. Anyone between 70% and 85% gets extra attention, and the teaching is adjusted for them while there is still time. Nobody is removed at this point"],
+            ["**A real target for the second part**", "Teachers who took this training earlier and now teach Python in a school solve a set of beginner programming problems before the second part starts. **Their results become the finish line**, and the exact pass marks for the second part are set once we have them. Like the first part, the second will have a midpoint test"],
+            ["**A test before the course begins**", "Teachers sit a short assessment before the first session, before being taught anything. Nobody can fail it. It tells us where each teacher is starting from — so at the end we can report **how much they improved**, not just where they ended up"],
+            ["**Teaching real classes**", "Every teacher teaches real pupils at least once during the first part, around week 7, and once or twice in the second. This answers a question no written test can: being able to write a program and being able to **teach** it are different abilities, and a teacher who has one without the other would otherwise go unnoticed"],
             ["**Three proper exams instead of four homework tasks**", "Supervised and marked, each with three equivalent versions so that neighbours cannot copy. The last one decides who continues to the second part — and teachers are told this **before** they enrol, not afterwards"],
         ],
         [0.26, 0.74],
@@ -531,7 +534,8 @@ def build():
         "in Python, approved in September. Every one of its topics has been matched to the "
         "part of our programme that prepares teachers for it, and the few that were "
         "missing have been added or scheduled. **A teacher finishing the first part will "
-        "be ready to teach the whole of the first school year.**",
+        "be ready to teach the first half of the first school year in full, and most of "
+        "the second half.**",
         size=10,
     )
 

@@ -61,8 +61,8 @@ grade11/
 │   ├── ANNOUNCEMENT.md       recruitment text                     (Armenian)
 │   └── ENROLMENT.md          who to admit, and what to tell them
 ├── handouts/                 SETUP.md · CHEATSHEET.md · check_setup.py   (Armenian)
-├── src/                      ← EDIT HERE. day01…day21, solutions_source, tests/
-├── notebooks/ solutions/ tests/    generated — never edit a .ipynb
+├── src/                      ← EDIT HERE. day01…day21, solutions_source
+├── notebooks/ solutions/    generated — never edit a .ipynb
 ├── guides/                   topics 22–24, markdown                 (Armenian)
 ├── project/school_report/    the finished five-file program
 ├── data/school.csv           generated and engineered
@@ -85,7 +85,7 @@ python tools/verify.py       # nothing is done until this passes
 | | What it proves |
 |---|---|
 | agenda arithmetic | every agenda sums to 75; 18 sessions = 1,350 minutes |
-| notebooks execute | all 48 — lessons, solutions and both builds of each exam — run cell by cell, with `input()` stubbed and every deliberate-error cell raising exactly what it claims |
+| notebooks execute | all 42 — lessons and solutions — run cell by cell, with `input()` stubbed and every deliberate-error cell raising exactly what it claims |
 | style and language | the language rule, the three allowed libraries, excluded constructs, exercise sections present |
 | the sample school | the engineered figures the course prose quotes |
 | project end to end | `python main.py` prints 36 students, average 7.0, 12 at risk |

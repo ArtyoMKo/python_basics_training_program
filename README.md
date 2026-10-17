@@ -9,7 +9,7 @@ curriculum **«ԱԲ սերունդ» — ՀԱՄԱԿԱՐԳՉԱՅԻՆ ԳԻՏՈՒԹ
 | **[`grade10/`](grade10/README.md)** | **Grade 10** | 1–14 | **Built and verified.** Not yet taught |
 | **[`grade11/`](grade11/README.md)** | **Grade 11** | 15–22, 24 | **Built and verified.** Not yet taught |
 | [`shared/`](shared/GOVERNMENT_ASSIGNMENT.md) | the curriculum both answer to | all 24 | reference |
-| [`partners/`](partners/) | the dossier and change log for external partners, covering **both** courses | — | generated |
+| [`partners/`](partners/) | the dossier for external partners, covering **both** courses | — | generated |
 
 Each course is **18 sessions × 75 minutes = 22 h 30**, two a week over nine weeks,
 delivered **fully remotely — every session, without exception** — in groups of 4–8,

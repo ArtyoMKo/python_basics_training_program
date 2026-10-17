@@ -60,7 +60,7 @@ Before adding anything, answer: **which line of the final school report tool nee
 
 ## The build loop
 
-> ### ⛔ `notebooks/`, `solutions/` and `tests/` are GENERATED. Never edit a `.ipynb`.
+> ### ⛔ `notebooks/` and `solutions/` are GENERATED. Never edit a `.ipynb`.
 
 ```bash
 python tools/nbbuild.py         # rebuild from src/
@@ -74,7 +74,7 @@ The source format is identical to grade 10's:
 #%% code                                a code cell      (English)
 #%% code expected-error: KeyError       this cell MUST raise KeyError
 #%% code interactive: 9; 6; quit        input() is fed these answers, in order
-#%% md teacher                          grader-only; dropped from the participant build
+#%% md teacher                          instructor-only (was used by the removed assessments)
 ```
 
 ---

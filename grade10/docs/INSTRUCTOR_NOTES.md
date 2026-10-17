@@ -196,72 +196,36 @@ These are working adults meeting twice a week. Some will miss sessions.
 
 ---
 
-## 5b. The three assessments
+## 5b. Assessments
 
-**Three sittings, not four take-home tests** — the design agreed with our partner
-colleague. They are **separate sittings** and do not use session time.
+**Being redesigned.** The previous three sittings and their marking guides were removed on
+16 October 2026. A midpoint (after session 10) and a final assessment (session 18) will
+replace them, under the decision rule in `RATIONALE.md` §5a. Whatever their content, two
+rules hold: the result is the **share of tasks done**, and **no help is given during a
+sitting**.
 
-| Test | When | Length | Points |
-|---|---|---|---|
-| Initial diagnostic | **Before session 1** | 45–60 min | 44 |
-| Midpoint | **After session 10** | 60–75 min | 50 |
-| Final practical | **Session 18** | 90–120 min | 70 + 10 separate |
-
-### Before each sitting
-
-> **Hand out `tests/participant/<name>.ipynb`, never `tests/<name>.ipynb`.**
->
-> The second one is the grader's copy. It states what every question measures and what it
-> is worth. Giving it out by accident is the one irreversible mistake available here, so
-> the two are generated as separate files rather than by remembering to delete cells.
-
-The platform assigns each participant **one** of variants A, B or C per question. They are
-equivalent in difficulty and points.
-
-### What to say when you hand out the first one
-
-Say it plainly: **these are not exams and nobody is being ranked.** The scores tell you
-where to slow down and tell the programme whether the method is working
-(`RATIONALE.md` §5). An honest blank is more useful than a copied answer, and the tests
-say so in writing.
-
-### Record two numbers per question
-
-Alongside the score, record the **help level** — `3` independent, `2` after one hint, `1`
-step-by-step, `0` did not finish. On the diagnostic this matters more than the score: two
-people can both reach 30/44, and the one who needed step-by-step help four times is a
-different teaching problem from the one who worked alone and ran out of time.
-
-### Three results that change what you do next
-
-| Test | Watch | If it goes wrong |
-|---|---|---|
-| Diagnostic | Q1 — can they run a cell at all? | Several at help level 0–1 → add a helper to session 1, or run a setup clinic first. This is your advance warning on the riskiest session |
-| Midpoint | **Q4 — did they write a loop?** | Still writing one block per student after nine sessions is the strongest early evidence against the approach. Record it; do not explain it away |
-| Final | Q2 and Q3 — returning or printing? | Printing means `return` never landed, and the three-file project rests on it |
-
-### The diagnostic is also a planning tool
-
-It is sat before anyone has been taught anything, so it cannot be failed. Use the spread
-to plan the pairing from topic 3, and keep the four self-assessment numbers — the
-interesting comparison at the end is **confidence before against capability after**.
+Until then, watch the signals the sessions already give you: can each participant run a
+cell on their own in session 1; do they write a loop rather than one block per student
+by session 10; and do they return a value rather than print it by session 15.
 
 ---
 
----
+## 5c. The trial classes
 
-## 5c. The trial class, in March
-
-After Part 1, **each teacher takes one trial class with real pupils.** It is the only
-point in the programme that tests what the programme is for.
+**Each teacher teaches real pupils: one or two coding trial lessons in Part 1, the first in
+the middle of the second month — around week 7, after session 12 — and two lessons on
+theoretical material in Part 2.** By then
+they have covered topics 1–15: values, variables, lists, dictionaries, conditions and
+loops. The trial classes are the only points in the programme that test what the
+programme is for.
 
 **Set expectations low and say so.** A first lesson taught by a nervous adult who learned
-to code nine weeks ago is not a performance review, and treating it as one will produce
+to code a few weeks ago is not a performance review, and treating it as one will produce
 a worse lesson and a worse measurement. Tell them that in advance.
 
 ### What to record
 
-Four things, agreed before March and kept light (`docs/RATIONALE.md` §5a):
+Four things, agreed before week 7 and kept light (`docs/RATIONALE.md` §5a):
 
 1. Did the lesson happen, and did it finish?
 2. Did the **pupils** end up running code themselves, or did the teacher demonstrate throughout?

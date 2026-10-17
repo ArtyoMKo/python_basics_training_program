@@ -9,11 +9,11 @@ not their rules. A rule from one is not a rule in the other.
 
 The one thing worth repeating, because it silently destroys work:
 
-> **`notebooks/`, `solutions/` and `tests/` are generated from `src/`.**
+> **`notebooks/` and `solutions/` are generated from `src/`.**
 > Never edit a `.ipynb`.
 
 ```bash
 cd grade10                   # or grade11
-python tools/nbbuild.py      # rebuild notebooks, solutions and tests from src/
+python tools/nbbuild.py      # rebuild notebooks and solutions from src/
 python tools/verify.py       # nothing is done until this passes
 ```

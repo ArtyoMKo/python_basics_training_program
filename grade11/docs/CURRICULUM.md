@@ -236,7 +236,7 @@ No new syntax. The grade-10 gradebook, rebuilt with `Person`,
 `Student`, `Teacher` and `SchoolClass`, side by side with the dictionary version.
 
 > **The consolidation session for the whole object block, and the last before the
-> midpoint**, which is sat after this day. The block boundary is deliberate: everything
+> midpoint**, which comes after this day. The block boundary is deliberate: everything
 > the midpoint asks about has been taught by now, and nothing after it is a library.
 
 ## Topic 12 — The term's statistics  ⟵ *discovery*
@@ -409,35 +409,22 @@ kind of task, never a longer one, and never a new idea:
 
 ## Assessment
 
-**Three sittings.** They are **separate from the 18 teaching sessions**, which remain
-22½ hours exactly.
-
-| | Test | When | Length | Covers |
-|---|---|---|---|---|
-| 1 | Initial diagnostic | **Before session 1** | 45–60 min | What the grade-10 course left them with. Nothing from this course |
-| 2 | Midpoint | **After session 8** | 60–75 min | Topics 2–11: functions, comprehensions, classes, inheritance |
-| 3 | Final practical | **Session 18** | 90–120 min | Topics 12–24: libraries, charts, data, recursion, the project |
-
-- **Each question has variants A, B and C**, equivalent in difficulty.
-- **Two versions of every test are generated** — `tests/<name>.ipynb` for the grader, with
-  the rubric, and `tests/participant/<name>.ipynb` with questions only.
-- **Record a help level with every score** — `3` independent, `2` after one hint, `1` with
-  step-by-step help, `0` did not finish.
-- **Scores diagnose the programme, not the teachers**, and participants are told so.
-
-**The diagnostic matters more here than it did in grade 10.** It is the only measurement
-of what the first course actually produced, taken before this one can affect it.
+**Being redesigned.** The previous assessments — a diagnostic, a midpoint and a final
+practical, with their marking guides — were removed on 16 October 2026. Two take their
+place: a **midpoint after session 8** (topics 2–11) and a **final assessment in session 18**,
+both outside session time. The decision rule they feed is agreed (`RATIONALE.md` §5a), and
+scoring stays simple: the share of tasks done, with no help during a sitting.
 
 ## Week map
 
 | Week | Sessions | Topics | Arc | Assessment |
 |---|---|---|---|---|
-| 1 | 1–2 | 1–3 | My functions bend to what is asked of them | *(diagnostic sat before session 1)* |
+| 1 | 1–2 | 1–3 | My functions bend to what is asked of them | |
 | 2 | 3–4 | 4–5 | One line instead of six | |
 | 3 | 5–6 | 6–8 | A student is a thing, and the school is objects | |
-| 4 | 7–8 | 9–11 | They share what they have in common | **Midpoint**, sat after session 8 |
+| 4 | 7–8 | 9–11 | They share what they have in common | **Midpoint**, after session 8 |
 | 5 | 9–10 | 12–13 | I can measure a term | |
 | 6 | 11–12 | 14–15 | I can draw it | |
 | 7 | 13–14 | 16–18 | The school's own file goes in, a report comes out | |
 | 8 | 15–16 | 19–21 | Any depth, and I can find out why it is wrong | |
-| 9 | 17–18 | 22–24 | It is a program now, it runs on my school, and I showed it | **Final practical**, sat in session 18 |
+| 9 | 17–18 | 22–24 | It is a program now, it runs on my school, and I showed it | **Final assessment**, session 18 |

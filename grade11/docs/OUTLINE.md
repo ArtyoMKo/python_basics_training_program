@@ -14,7 +14,7 @@ prepares them to teach **grade 11** of the state curriculum «ԱԲ սերուն�
 | **Delivery** | Remote, over Google Meet with screen sharing, in groups of **4–8** |
 | **Entry** | Our grade-10 course. Nothing beyond it is assumed |
 | **Cost** | **Zero.** No accounts, no API keys, no licences. One session needs internet; the other 17 do not |
-| **Assessment** | Three sittings — a diagnostic before session 1, a midpoint after topic 11, a final practical in session 18 |
+| **Assessment** | Being redesigned — a midpoint after topic 11 and a final assessment in session 18, under the decision rule in `RATIONALE.md` §5a |
 
 ## What a teacher can do at the end
 
@@ -62,7 +62,7 @@ deviation formula has just been written out by hand.
 | Installation | **None.** All three libraries ship with Anaconda |
 | Internet | One session of 18 |
 | Instructor | One, for 4–8 participants |
-| Materials | 21 notebooks, 21 solution sets, 3 guides, 3 assessments, a reference project — all written and verified |
+| Materials | 21 notebooks, 21 solution sets, 3 guides, a reference project — all written and verified |
 
 ## Status
 

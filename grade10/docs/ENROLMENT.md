@@ -81,8 +81,8 @@ conversation rather than being discovered during the course:
 
 | | |
 |---|---|
-| **The last assessment decides who continues** | The first two are diagnostic and are not graded. **The third gates entry to Part 2.** People behave differently when they know this, so telling them afterwards would be both unfair and would spoil the result |
-| **There is a trial class with real pupils in March** | After Part 1. It is the point of the whole programme, and some teachers will find it the most daunting part. Saying so early gives them months to get used to the idea rather than three weeks |
+| **The final assessment decides who continues** | The assessments are being redesigned, but the rule is agreed: at the midpoint, anyone under 85% continues **on probation** until the final — nobody leaves at the midpoint. **The final assessment gates entry to Part 2**: above 85% continues, 70–85% is reviewed individually, under 70% leaves. **Part 1 is not repeated.** People behave differently when they know this, so telling them afterwards would be unfair and would spoil the result |
+| **There are trial lessons with real pupils** | One or two coding lessons in Part 1, the first around week 7, and two on theoretical material in Part 2. They are the point of the whole programme, and some teachers will find them the most daunting part. Saying so early gives them weeks to get used to the idea rather than days |
 
 Both are in `docs/ANNOUNCEMENT.md` in Armenian, so a teacher reads them before applying.
 

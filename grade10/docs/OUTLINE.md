@@ -84,9 +84,8 @@ install software. Anaconda + VS Code — two installs on session 1, nothing afte
 accounts, no API keys, **no internet after session 1**. **Cost: zero.**
 
 **Provided:** 19 notebooks, 5 guides, 18 solutions (handed out after each session so a
-missed day is recoverable), **3 assessment sittings** — a diagnostic before session 1, a midpoint after session 10 and a
-final practical in session 18 — each in a grader's and a participant version, with
-instructor marking guides, `handouts/SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
+missed day is recoverable), **assessments being redesigned** — a midpoint after session 10 and a final assessment in
+session 18, under the decision rule in `RATIONALE.md` §5a; `handouts/SETUP.md` for Windows and macOS, a printable cheatsheet with a bilingual
 glossary, `handouts/check_setup.py`, a fictional 12-student sample class, and the finished
 reference program.
 

@@ -57,7 +57,7 @@ These hold everywhere, and a change to any of them belongs in both courses:
    **Homework is drawn from these and never written separately**; a Մարտահրավեր is never
    set at home.
 6. **Every example is a classroom.** No `foo`, no `x = 5`, no fizzbuzz.
-7. **`notebooks/`, `solutions/` and `tests/` are generated from `src/`.** Never edit a
+7. **`notebooks/` and `solutions/` are generated from `src/`.** Never edit a
    `.ipynb`.
 
 ## The build loop, in either course

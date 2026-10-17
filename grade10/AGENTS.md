@@ -47,7 +47,7 @@ say so.
 
 ## The build loop — get this wrong and your work is lost
 
-> ### ⛔ `notebooks/`, `solutions/` and `tests/` are GENERATED. Never edit a `.ipynb`.
+> ### ⛔ `notebooks/` and `solutions/` are GENERATED. Never edit a `.ipynb`.
 >
 > They are rebuilt from `src/` and your edits will be silently overwritten.
 
@@ -67,7 +67,7 @@ python tools/verify.py          # 3. verify    (nothing is done until this passe
 | | What it proves |
 |---|---|
 | agenda arithmetic | every agenda sums to 75; 18 sessions = 1,350 minutes |
-| notebooks execute | all 43 notebooks — lessons, solutions **and** both versions of each assessment — run cell by cell, in order, with `input()` stubbed and every deliberate-error cell raising exactly the error it claims |
+| notebooks execute | all 37 notebooks — lessons **and** solutions — run cell by cell, in order, with `input()` stubbed and every deliberate-error cell raising exactly the error it claims |
 | style and language | the language rule, standard library only, excluded constructs, exercise sections present |
 | project end to end | `python main.py` prints 12 students, average 6.5, 2 failing |
 
@@ -84,11 +84,8 @@ python tools/verify.py          # 3. verify    (nothing is done until this passe
 The first three become **cell metadata**, never visible text. A participant must never
 see `# interactive` in their notebook.
 
-**`teacher` is different: those cells are removed entirely** from
-`tests/participant/*.ipynb`. The assessments build twice — `tests/<name>.ipynb` for the
-grader, with the rubric and the points, and `tests/participant/<name>.ipynb` with
-questions only. Handing out the grader's copy would give away what each question measures
-and what it is worth.
+**`teacher`** marks an instructor-only cell. It was used by the assessments, which were
+removed on 16 Oct 2026 and are being redesigned; no current source uses it.
 
 **The 18 solutions live in one source file**, `src/solutions_source.py`, split per day at
 build time — so a reviewer reads them in one pass instead of opening eighteen files.
@@ -209,7 +206,7 @@ Root holds **only** `README.md` and the agent files. Everything else is foldered
 > **One rule that is easy to get backwards.** Participants receive a *flat folder* — a
 > notebook, a guide, `SETUP.md`, `CHEATSHEET.md`. So **participant-facing material
 > (`notebooks/`, `guides/`, `handouts/`) refers to files by bare name**, because that is
-> what the participant sees. Everything else — `docs/`, `tools/`, `tests/*_guide.md`,
+> what the participant sees. Everything else — `docs/`, `tools/`,
 > this file — uses full repo paths.
 
 ## File map
@@ -228,11 +225,8 @@ handouts/check_setup.py          six checks a participant runs on session 1
 src/                    ← EDIT HERE
   day01…day19.py          notebook sources
   solutions_source.py     all 18 solutions in one reviewable file
-  tests/                  the three test sources
 notebooks/              generated .ipynb — do not edit
 solutions/              generated .ipynb — do not edit
-tests/                  generated .ipynb (grader) + participant/ (generated)
-                        + mark1–3_guide.md and README.md (hand-written, instructor only)
 guides/                 topics 20–24, markdown, read beside the code  (Armenian)
 project/gradebook/      the finished reference program (3 files)
 ../partners/            generated .docx dossier and change log, covering BOTH
@@ -256,7 +250,6 @@ tools/                  nbbuild.py, verify.py, the three checkers,
 | Committing notebooks with outputs | unreadable diffs, stale numbers | outputs stay cleared |
 | Changing the sample class casually | silently falsifies prose in several days | grep every quoted number, then rebuild the dossier |
 | Editing the `.docx` in `../partners/` | overwritten on next build | edit `../tools/build_partner_docx.py` |
-| Putting a rubric in a plain `#%% md` cell in an exam | it reaches the participant | mark it `#%% md teacher` |
 | Marking a deliberate-error cell as a bug | it is a teaching device | `expected-error:` cells must raise |
 
 ---

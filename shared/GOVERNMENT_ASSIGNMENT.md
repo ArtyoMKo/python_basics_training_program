@@ -125,7 +125,7 @@ is the format any material we hand to the ministry would be expected to match:
 ## 6. What this means for our programme
 
 **Our Part 1 covers the pupils' topics 1–14, plus the `import` half of topic 15**,
-compressed from ~118 pupil-hours into roughly 22½ teacher-hours. A teacher finishing Part 1
+compressed from about 80 pupil-hours (topics 1–14), plus part of topic 15, into roughly 22½ teacher-hours. A teacher finishing Part 1
 can teach **grade 10 semester 1 outright**, and the first two topics of semester 2
 (functions and files).
 
@@ -133,7 +133,7 @@ Deliberate divergences, agreed and recorded:
 
 | | The document | Us | Why |
 |---|---|---|---|
-| Order | loops (8) **before** conditions (9) | conditions **before** loops | Our day-10 discovery needs conditions to already exist |
+| Order | loops (8) **before** conditions (9) | conditions **before** loops | Our topic-11 discovery (session 9, `for` loops) needs conditions to already exist |
 | Order | lists and dicts (10–12) **after** loops | all data types **before** conditions and loops | Our discovery sequence depends on it, and loops are far more useful once there is something to loop over |
 | Order | recursion (17) before OOP (18) | **same** — recursion before OOP in Part 2 | Follows the document |
 | OOP | grade 11 | Part 2 | Same relative position |

@@ -89,55 +89,62 @@ disappointing.
 
 | Result | What it means | What we do |
 |---|---|---|
-| **More than 90%** meet the pass criterion | The approach works | Run it again, and write Part 2 |
-| **Between 50% and 90%** | It partly works | Adjust and repeat Part 1. **Do not start Part 2** |
-| **Under 50%** | It does not work | Stop and redesign. A third repeat of an approach that has not worked is not persistence |
+| **More than 80%** meet the pass criterion | The approach works | Run it again, and write Part 2 |
+| **Between 70% and 80%** | It partly works | Adjust Part 1 and run it with a new cohort. **Do not start Part 2** |
+| **Under 70%** | It does not work | Stop and redesign. A third repeat of an approach that has not worked is not persistence |
+
+The thresholds were agreed with partners on 15 October 2026, and are the same as the
+grade-10 course's.
 
 **The pass criterion**, both halves required:
 
-1. `python main.py` runs on their **own school's data** — confirmed individually on day
-   23, on a shared screen, not self-reported
-2. At least **35 of 70** on questions 1–7 of the final practical
+1. `python main.py` runs on their **own school's data** — confirmed individually in
+   session 18 (topic 23), on a shared screen, not self-reported
+2. **More than 85%** of the final assessment's tasks done
 
-### 5b. The second criterion — the trial class
+**The individual result has three bands, at two exams** — the same as the grade-10
+course's:
+
+| Tasks passed correctly | Midpoint (after session 8) | Final assessment (session 18) |
+|---|---|---|
+| **More than 85%** | **On track** — continues unconditionally | **Pass** — continues to Part 2 |
+| **70% to 85%** | **Probation** — continues; told where the problem is; the method is adjusted for them | **Individual review** — the team decides whether they continue or leave |
+| **Less than 70%** | **Probation**, with the highest priority | **Leaves the programme** |
+
+The assessments themselves are being redesigned (removed 16 Oct 2026); this rule applies to
+them as agreed. **Part 1 is not repeated.** **Nobody
+leaves at the midpoint**: under 85% there means probation until the final assessment. In
+the cohort figure above, only a pass in the sense above counts; a reviewed teacher who continues is reported separately.
+
+### 5b. The second criterion — the trial classes
 
 A teacher who can write code is not the same as a teacher who can teach it. **The real
-measurement is a trial class with real pupils**, as for the grade-10 course.
+measurement is teaching real pupils**, as for the grade-10 course: one or two coding
+trial lessons in Part 1, the first in the middle of the second month (around week 7), and
+two lessons on theoretical material in Part 2.
 
 What to record is agreed in advance, and kept light: did the lesson happen, did the
 pupils run something themselves, what did the teacher do when a pupil's code broke.
-
-### 5c. The transfer question
-
-**Question 8 of the final practical measures what this course does not teach.** It uses
-only taught syntax on a problem never demonstrated.
-
-It is **never counted towards the pass rate**, and reported separately. A correct plan
-with incomplete code is a success.
-
-It exists because the central claim of the whole programme is that mechanical fluency
-frees attention for thinking. Question 8 is the first point at which that claim meets
-evidence — as a baseline, before Part 2, not as a verdict on anyone.
 
 ---
 
 ## 6. What could go wrong
 
-Stated honestly, because we will have to judge it fairly in two months.
+Practical points to watch, each with a plan.
 
 **The entry assumption may be wrong.** This course assumes a teacher arrives able to
 write a loop and a function. If the grade-10 course did not produce that, everything from
-topic 2 is built on sand. **The diagnostic exists to find that out before session 1**, and its
-marking guide says what to do — including the option of repeating the grade-10 course
-instead of starting this one.
+topic 2 is built on sand. **Session 1 shows it early**, and the instructor notes say what
+to do — including the option of repeating the grade-10 course instead of starting this one.
 
-**Objects may not land in six days.** Topics 6 to 11 are 7.5 hours for what the pupils'
-curriculum gives 22. If question 4 of the midpoint comes back weak, the libraries block
-cannot start, and we lose a session to revision. That is budgeted for and it is cheaper
-than pressing on.
+**Objects may not land in four sessions.** Topics 6 to 11 are sessions 5–8, 5 hours for
+what the pupils' curriculum gives 22. If classes have not landed by session 8, the
+libraries block cannot start, and we lose a session to revision. Nothing in the 18 × 75
+shape is spare, so the time comes out of the cut list (`INSTRUCTOR_NOTES.md`); it is
+still cheaper than pressing on.
 
-**Three libraries in seven days may be too fast.** NumPy, Matplotlib and pandas get two
-days each. That is enough to use them and not enough to be comfortable. We are betting
+**Three libraries in five sessions may be too fast.** NumPy gets one session (10),
+Matplotlib and pandas two each (11–12, 13–14). That is enough to use them and not enough to be comfortable. We are betting
 that a teacher who has *used* each one on their own school's data can teach the pupils'
 version, which is shallower than ours.
 
