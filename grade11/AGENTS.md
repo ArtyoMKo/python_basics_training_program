@@ -2,7 +2,7 @@
 
 **Read this before changing anything in `grade11/`. It is the authority here.**
 
-The repository root's `AGENTS.md` lists the seven rules both courses share. This file
+The repository root's `AGENTS.md` lists the eight rules both courses share. This file
 holds what is true *only* here. Where they disagree, this file wins inside `grade11/`.
 
 `docs/BUILD_PLAN.md` is the build specification and wins any disagreement with this file.

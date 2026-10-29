@@ -59,6 +59,14 @@ These hold everywhere, and a change to any of them belongs in both courses:
 6. **Every example is a classroom.** No `foo`, no `x = 5`, no fizzbuzz.
 7. **`notebooks/` and `solutions/` are generated from `src/`.** Never edit a
    `.ipynb`.
+8. **The required tasks are a ladder at the end of the notebook.** The group runs the taught
+   cells together. Then the Պարտադիր tasks rebuild the session's idea in small steps, each
+   adding one thing to the one before. Every task is a skeleton whose blanks are real values
+   (`None`, `""`, `[]`), and it prints what is still missing (⏳) instead of crashing. So
+   "Run all" never stops at an unfinished task. The solved version lives in `solutions/`,
+   and a notebook is verified with the blanks unfilled *and* with them filled. Applies to
+   every new or revised notebook (adopted 2026-10-17, from the TUMO workshop's practical
+   ladder).
 
 ## The build loop, in either course
 
