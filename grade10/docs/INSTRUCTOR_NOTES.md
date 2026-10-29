@@ -204,6 +204,8 @@ replace them, under the decision rule in `RATIONALE.md` §5a. Whatever their con
 rules hold: the result is the **share of tasks done**, and **no help is given during a
 sitting**.
 
+A **pretest** before session 1 (`pretest/`, on Google Colab) is the before-measurement: 18 tasks within the midpoint's scope (topics 1–13), the share done, nobody filtered on it. The midpoint re-sits the same tasks, so each participant's progress is read task by task. Marking: `pretest/README.md`.
+
 Until then, watch the signals the sessions already give you: can each participant run a
 cell on their own in session 1; do they write a loop rather than one block per student
 by session 10; and do they return a value rather than print it by session 15.

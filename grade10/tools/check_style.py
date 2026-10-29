@@ -81,7 +81,7 @@ def main():
     # --- 1 and 2: imports and forbidden constructs, notebooks and project alike ---
     sources = sorted(NOTEBOOKS.glob("*.ipynb"))
     solutions = sorted((ROOT / "solutions").glob("*.ipynb"))
-    tests = sorted((ROOT / "tests").rglob("*.ipynb"))
+    tests = sorted((ROOT / "pretest").glob("*.ipynb"))
     for path in sources + solutions + tests:
         for index, source, _ in code_cells(path):
             for module in re.findall(r"^\s*(?:import|from)\s+([\w.]+)", source, re.M):
@@ -140,7 +140,7 @@ def main():
             print(f"   {problem}")
         return 1
 
-    print(f"✅ {len(sources)} notebooks + {len(solutions)} solutions + {len(tests)} tests "
+    print(f"✅ {len(sources)} notebooks + {len(solutions)} solutions + {len(tests)} pretest "
           f"+ {len(list(PROJECT.glob('*.py')))} project files")
     print("✅ standard library only; no excluded constructs")
     print("✅ every notebook has its retrospective sections")

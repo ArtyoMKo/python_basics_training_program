@@ -588,6 +588,12 @@ Rules any replacement keeps:
   notebook or platform the assessment names.
 - **Every task is a classroom task**, never a puzzle, and nothing untaught appears.
 
+**The pretest** (`pretest/`, built from `src/pretest.py`) is the one sitting that tests
+untaught material on purpose: it is the before-measurement, sat before session 1 on
+Google Colab. Part A needs no programming, Part B reads code and predicts its output,
+Part C writes code; B and C cover only topics 1–13, the scope of the midpoint after session
+10, which re-sits the same tasks so progress is read task by task. Same scoring, no help.
+
 ## 8. Code style for this audience
 
 `METHODOLOGY.md` §6 applies; these override or sharpen it.
@@ -814,7 +820,7 @@ Project          Sessions 17–18   topics 22–24     150 min    2 h 30
                                                  1,350 min  = 22 h 30  ✓
 ```
 
-**Assessments** before session 1, after session 10 and in session 18 (§7.8) — separate
+**Assessments**: the pretest before session 1, a midpoint after session 10 and a final in session 18 (§7.8) — separate
 sittings, so the agendas are unaffected.
 
 ### Week map (2 sessions/week × 9 weeks)

@@ -84,8 +84,9 @@ python tools/verify.py          # 3. verify    (nothing is done until this passe
 The first three become **cell metadata**, never visible text. A participant must never
 see `# interactive` in their notebook.
 
-**`teacher`** marks an instructor-only cell. It was used by the assessments, which were
-removed on 16 Oct 2026 and are being redesigned; no current source uses it.
+**`teacher`** marks an instructor-only cell. Only `src/pretest.py` uses it, for the
+reference answers: `nbbuild.py` drops those cells from `pretest/pretest.ipynb` (handed out
+on Colab) and keeps them in `pretest/pretest_answers.ipynb` (never handed out).
 
 **The 18 solutions live in one source file**, `src/solutions_source.py`, split per day at
 build time — so a reviewer reads them in one pass instead of opening eighteen files.

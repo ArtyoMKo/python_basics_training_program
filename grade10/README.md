@@ -135,7 +135,8 @@ assessments were removed.
 | Notebook execution | ✅ 37 notebooks (19 lessons + 18 solutions), every cell, in order |
 | Deliberate errors | ✅ 10 cells raise exactly the error they claim |
 | Solutions | ✅ 18 notebooks, every cell runs |
-| Assessments | Removed 16 Oct 2026 — being redesigned (`docs/RATIONALE.md` §5a keeps the decision rule) |
+| Pretest | ✅ `pretest/` — 18 tasks (topics 1–13), sat on Colab before session 1, re-sat at the midpoint; participant + answers notebooks, both run |
+| Assessments | Midpoint and final removed 16 Oct 2026 — being redesigned (`docs/RATIONALE.md` §5a keeps the decision rule) |
 | Project | ✅ `python main.py` end to end; 4 failure paths give one sentence each |
 | Style | ✅ stdlib only, no excluded constructs, every identifier English |
 | Language rule | ✅ no Armenian anywhere inside a code cell — verified by script |

@@ -649,7 +649,7 @@ practical, with their marking guides — were removed on 16 October 2026. Two ta
 place: a **midpoint after session 10** and a **final assessment in session 18**, both
 outside session time. The decision rule they feed is already agreed
 (`RATIONALE.md` §5a), and scoring stays simple: the share of tasks done, with no help
-during a sitting.
+during a sitting. A **pretest** before session 1 (`pretest/`, on Google Colab) is the before-measurement: 18 tasks within the midpoint's scope (topics 1–13), the share done, nobody filtered on it. The midpoint re-sits the same tasks, so each participant's progress is read task by task.
 
 ## Week map
 

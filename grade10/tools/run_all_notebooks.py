@@ -27,7 +27,7 @@ NOTEBOOKS = ROOT / "notebooks"
 
 # Every directory of generated notebooks. Solutions must run too: a solution that no
 # longer works is worse than no solution, because it is handed out as an answer.
-FOLDERS = ["notebooks", "solutions"]
+FOLDERS = ["notebooks", "solutions", "pretest"]
 
 
 def run_notebook(path):
